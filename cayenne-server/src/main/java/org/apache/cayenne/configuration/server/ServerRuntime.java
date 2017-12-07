@@ -183,11 +183,6 @@ extends|extends
 name|CayenneRuntime
 block|{
 comment|/**      * Creates a builder of ServerRuntime.      *      * @return a builder of ServerRuntime.      * @since 4.0      */
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"deprecation"
-argument_list|)
 specifier|public
 specifier|static
 name|ServerRuntimeBuilder
@@ -197,15 +192,12 @@ block|{
 return|return
 operator|new
 name|ServerRuntimeBuilder
-argument_list|()
+argument_list|(
+literal|null
+argument_list|)
 return|;
 block|}
 comment|/**      * Creates a builder of ServerRuntime.      *      * @param name optional symbolic name of the created runtime.      * @return a named builder of ServerRuntime.      */
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"deprecation"
-argument_list|)
 specifier|public
 specifier|static
 name|ServerRuntimeBuilder
