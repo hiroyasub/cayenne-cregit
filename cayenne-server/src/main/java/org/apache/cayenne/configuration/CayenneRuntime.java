@@ -321,37 +321,6 @@ name|parentChannel
 argument_list|)
 return|;
 block|}
-comment|/**      * @deprecated since 3.1 use better named {@link #newContext()} instead.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|ObjectContext
-name|getContext
-parameter_list|()
-block|{
-return|return
-name|newContext
-argument_list|()
-return|;
-block|}
-comment|/**      * @deprecated since 3.1 use better named {@link #newContext(DataChannel)}      * instead.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|ObjectContext
-name|getContext
-parameter_list|(
-name|DataChannel
-name|parentChannel
-parameter_list|)
-block|{
-return|return
-name|newContext
-argument_list|(
-name|parentChannel
-argument_list|)
-return|;
-block|}
 block|}
 end_class
 

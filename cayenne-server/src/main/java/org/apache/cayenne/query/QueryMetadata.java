@@ -219,14 +219,6 @@ name|String
 name|getCacheKey
 parameter_list|()
 function_decl|;
-comment|/**      * Returns an optional array of cache "groups". Cache groups allow to invalidate query      * caches in bulk on different events. Usually the first group in the array is      * considered to be the "main" group that is used for declarative cache invalidation      * with some cache providers.      *       * @since 3.0      * @deprecated since 4.0 only single cache group supported, use {@link QueryMetadata#getCacheGroup()} instead      * @see QueryMetadata#getCacheGroup()      */
-annotation|@
-name|Deprecated
-name|String
-index|[]
-name|getCacheGroups
-parameter_list|()
-function_decl|;
 comment|/**      * Returns an optional cache "group".      * Cache groups allow to invalidate query caches in bulk on different events.      *      * @since 4.0      */
 name|String
 name|getCacheGroup
@@ -255,13 +247,6 @@ function_decl|;
 comment|/**      * Returns the limit on the maximum number of records that can be returned by this      * query. If the actual number of rows in the result exceeds the fetch limit, they      * will be discarded. One possible use of fetch limit is using it as a safeguard      * against large result sets that may lead to the application running out of memory,      * etc. If a fetch limit is greater or equal to zero, all rows will be returned.      *       * @return the limit on the maximum number of records that can be returned by this      *         query      */
 name|int
 name|getFetchLimit
-parameter_list|()
-function_decl|;
-comment|/**      * @since 3.0      * @deprecated since 4.0, use {@link QueryMetadata#getOriginatingQuery()}      */
-annotation|@
-name|Deprecated
-name|Query
-name|getOrginatingQuery
 parameter_list|()
 function_decl|;
 comment|/**      * Returns a query that originated this query. Originating query is a query whose      * result is needed to obtain the result of the query owning this metadata. Most often      * than not the returned value is null. One example of non-null originating query is a      * query for a range of objects in a previously fetched paginated list. The query that      * fetched the original paginated list is an "originated" query. It may be used to      * restore a list that got lost due to a cache overflow, etc.      *      * @since 4.0      */

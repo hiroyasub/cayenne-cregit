@@ -736,14 +736,6 @@ operator|.
 name|getEntityResolver
 argument_list|()
 operator|.
-name|applyObjectLayerDefaults
-argument_list|()
-expr_stmt|;
-name|dataDomain
-operator|.
-name|getEntityResolver
-argument_list|()
-operator|.
 name|setValueObjectTypeRegistry
 argument_list|(
 name|valueObjectTypeRegistry

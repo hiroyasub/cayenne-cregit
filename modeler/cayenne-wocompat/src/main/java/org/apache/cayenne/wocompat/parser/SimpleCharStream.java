@@ -789,36 +789,6 @@ name|c
 operator|)
 return|;
 block|}
-comment|/**    * @deprecated     * @see #getEndColumn    */
-annotation|@
-name|Deprecated
-specifier|public
-name|int
-name|getColumn
-parameter_list|()
-block|{
-return|return
-name|bufcolumn
-index|[
-name|bufpos
-index|]
-return|;
-block|}
-comment|/**    * @deprecated     * @see #getEndLine    */
-annotation|@
-name|Deprecated
-specifier|public
-name|int
-name|getLine
-parameter_list|()
-block|{
-return|return
-name|bufline
-index|[
-name|bufpos
-index|]
-return|;
-block|}
 specifier|public
 name|int
 name|getEndColumn

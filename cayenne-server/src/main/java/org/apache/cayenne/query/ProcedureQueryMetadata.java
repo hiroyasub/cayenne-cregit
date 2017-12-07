@@ -150,8 +150,6 @@ argument_list|(
 name|resultRoot
 argument_list|,
 name|resolver
-argument_list|,
-literal|null
 argument_list|)
 condition|)
 block|{

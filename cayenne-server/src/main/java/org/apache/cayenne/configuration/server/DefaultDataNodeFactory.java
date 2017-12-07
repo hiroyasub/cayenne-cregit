@@ -307,16 +307,6 @@ argument_list|(
 name|sqlTemplateProcessor
 argument_list|)
 expr_stmt|;
-name|dataNode
-operator|.
-name|setDataSourceLocation
-argument_list|(
-name|nodeDescriptor
-operator|.
-name|getParameters
-argument_list|()
-argument_list|)
-expr_stmt|;
 name|DataSource
 name|dataSource
 init|=

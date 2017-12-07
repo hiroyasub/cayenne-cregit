@@ -889,29 +889,6 @@ name|column
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * @deprecated since 4.0 	 */
-annotation|@
-name|Deprecated
-annotation|@
-name|Override
-specifier|public
-name|QuotingStrategy
-name|getQuotingStrategy
-parameter_list|(
-name|boolean
-name|isQuoteStrategy
-parameter_list|)
-block|{
-return|return
-name|getAdapter
-argument_list|()
-operator|.
-name|getQuotingStrategy
-argument_list|(
-name|isQuoteStrategy
-argument_list|)
-return|;
-block|}
 comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override

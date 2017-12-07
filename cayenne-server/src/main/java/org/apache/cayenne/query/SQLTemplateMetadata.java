@@ -115,8 +115,6 @@ argument_list|(
 name|root
 argument_list|,
 name|resolver
-argument_list|,
-literal|null
 argument_list|)
 condition|)
 block|{

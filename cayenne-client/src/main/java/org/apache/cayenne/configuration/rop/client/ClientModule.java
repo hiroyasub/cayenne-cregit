@@ -266,57 +266,6 @@ name|ClientModule
 implements|implements
 name|Module
 block|{
-comment|/**      * @deprecated since 4.0 in favour of {@link ClientRuntimeBuilder}      * @see ClientRuntimeBuilder#properties(Map)      */
-annotation|@
-name|Deprecated
-specifier|protected
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
-name|properties
-init|=
-literal|null
-decl_stmt|;
-comment|/**      * @deprecated since 4.0 in favour of {@link ClientRuntimeBuilder}      * @see ClientRuntimeBuilder#properties(Map)      */
-annotation|@
-name|Deprecated
-specifier|public
-name|ClientModule
-parameter_list|(
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
-name|properties
-parameter_list|)
-block|{
-if|if
-condition|(
-name|properties
-operator|==
-literal|null
-condition|)
-block|{
-throw|throw
-operator|new
-name|NullPointerException
-argument_list|(
-literal|"Null 'properties' map"
-argument_list|)
-throw|;
-block|}
-name|this
-operator|.
-name|properties
-operator|=
-name|properties
-expr_stmt|;
-block|}
 comment|/**      * @since 4.0      */
 specifier|public
 name|ClientModule
@@ -350,23 +299,6 @@ argument_list|(
 name|binder
 argument_list|)
 decl_stmt|;
-comment|// expose user-provided ROP properties as the main properties map
-comment|// binding here is left only for backward compatibility, should go away with the deprecated code.
-if|if
-condition|(
-name|properties
-operator|!=
-literal|null
-condition|)
-block|{
-name|propertiesBuilder
-operator|.
-name|putAll
-argument_list|(
-name|properties
-argument_list|)
-expr_stmt|;
-block|}
 name|binder
 operator|.
 name|bind

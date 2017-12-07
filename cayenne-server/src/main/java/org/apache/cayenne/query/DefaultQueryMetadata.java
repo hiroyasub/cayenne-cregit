@@ -217,18 +217,6 @@ return|return
 literal|false
 return|;
 block|}
-comment|/**      * @since 3.0      * @deprecated use {@link DefaultQueryMetadata#getOriginatingQuery()}      */
-annotation|@
-name|Deprecated
-specifier|public
-name|Query
-name|getOrginatingQuery
-parameter_list|()
-block|{
-return|return
-literal|null
-return|;
-block|}
 comment|/**      * @since 4.0      */
 specifier|public
 name|Query
@@ -291,19 +279,6 @@ block|}
 specifier|public
 name|String
 name|getCacheKey
-parameter_list|()
-block|{
-return|return
-literal|null
-return|;
-block|}
-comment|/**      * @deprecated since 4.0, use {@link DefaultQueryMetadata#getCacheGroup()}      */
-annotation|@
-name|Deprecated
-specifier|public
-name|String
-index|[]
-name|getCacheGroups
 parameter_list|()
 block|{
 return|return

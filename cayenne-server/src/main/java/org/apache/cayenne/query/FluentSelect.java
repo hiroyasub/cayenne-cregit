@@ -234,11 +234,7 @@ comment|/**      * Translates self to a SelectQuery.      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
-block|{
-literal|"deprecation"
-block|,
 literal|"unchecked"
-block|}
 argument_list|)
 annotation|@
 name|Override
@@ -371,13 +367,6 @@ literal|"Undefined root entity of the query"
 argument_list|)
 throw|;
 block|}
-name|replacement
-operator|.
-name|setName
-argument_list|(
-name|name
-argument_list|)
-expr_stmt|;
 name|replacement
 operator|.
 name|setQualifier

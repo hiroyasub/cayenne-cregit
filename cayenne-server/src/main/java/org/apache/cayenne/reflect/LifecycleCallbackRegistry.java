@@ -812,36 +812,6 @@ name|methodName
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * @since 4.0 renamed to {@link #addCallback(LifecycleEvent, Class, String)}. 	 */
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|addListener
-parameter_list|(
-name|LifecycleEvent
-name|type
-parameter_list|,
-name|Class
-argument_list|<
-name|?
-argument_list|>
-name|entityClass
-parameter_list|,
-name|String
-name|methodName
-parameter_list|)
-block|{
-name|addCallback
-argument_list|(
-name|type
-argument_list|,
-name|entityClass
-argument_list|,
-name|methodName
-argument_list|)
-expr_stmt|;
-block|}
 comment|/** 	 * Adds a listener, mapping its methods to events based on annotations. 	 *  	 * @since 3.1 	 */
 specifier|public
 name|void

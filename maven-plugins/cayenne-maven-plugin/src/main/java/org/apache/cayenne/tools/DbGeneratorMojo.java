@@ -449,28 +449,6 @@ specifier|private
 name|boolean
 name|createFK
 decl_stmt|;
-comment|/**      * @deprecated use {@code<dataSource>} tag to set connection properties      */
-annotation|@
-name|Deprecated
-annotation|@
-name|Parameter
-argument_list|(
-name|name
-operator|=
-literal|"driver"
-argument_list|,
-name|property
-operator|=
-literal|"driver"
-argument_list|)
-specifier|private
-specifier|final
-name|String
-name|oldDriver
-init|=
-literal|""
-decl_stmt|;
-comment|// TODO remove in 4.0.BETA
 specifier|public
 name|void
 name|execute
@@ -815,26 +793,6 @@ argument_list|()
 argument_list|)
 argument_list|)
 return|;
-block|}
-annotation|@
-name|Deprecated
-specifier|public
-name|void
-name|setDriver
-parameter_list|(
-name|String
-name|driver
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|(
-literal|"Connection properties were replaced with<dataSource> tag since 4.0.M5.\n"
-operator|+
-literal|"\tFor additional information see http://cayenne.apache.org/docs/4.0/cayenne-guide/including-cayenne-in-project.html#maven-projects"
-argument_list|)
-throw|;
 block|}
 block|}
 end_class
