@@ -113,7 +113,7 @@ name|void
 name|removeGroup
 parameter_list|(
 name|String
-name|grou3pKey
+name|groupKey
 parameter_list|,
 name|Class
 argument_list|<

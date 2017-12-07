@@ -502,8 +502,8 @@ argument_list|>
 name|modules
 parameter_list|)
 block|{
-comment|// TODO: this is dirty... "CayenneModeler" is not a project name, and ServerModule is out of place inside
-comment|// the Modeler... If we need ServerRuntime for certain operations, those should start their own stack...
+comment|// TODO: this is dirty... ServerModule is out of place inside the Modeler...
+comment|// If we need ServerRuntime for certain operations, those should start their own stack...
 name|modules
 operator|.
 name|add

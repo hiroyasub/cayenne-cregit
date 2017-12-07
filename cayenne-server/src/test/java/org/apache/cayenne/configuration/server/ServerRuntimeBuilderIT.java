@@ -422,7 +422,9 @@ name|localRuntime
 operator|=
 operator|new
 name|ServerRuntimeBuilder
-argument_list|()
+argument_list|(
+literal|null
+argument_list|)
 operator|.
 name|jdbcDriver
 argument_list|(
@@ -512,7 +514,9 @@ name|localRuntime
 operator|=
 operator|new
 name|ServerRuntimeBuilder
-argument_list|()
+argument_list|(
+literal|null
+argument_list|)
 operator|.
 name|addConfig
 argument_list|(
@@ -637,7 +641,9 @@ name|localRuntime
 operator|=
 operator|new
 name|ServerRuntimeBuilder
-argument_list|()
+argument_list|(
+literal|null
+argument_list|)
 operator|.
 name|dataSource
 argument_list|(
@@ -690,7 +696,9 @@ name|localRuntime
 operator|=
 operator|new
 name|ServerRuntimeBuilder
-argument_list|()
+argument_list|(
+literal|null
+argument_list|)
 operator|.
 name|addConfig
 argument_list|(
@@ -778,7 +786,9 @@ name|localRuntime
 operator|=
 operator|new
 name|ServerRuntimeBuilder
-argument_list|()
+argument_list|(
+literal|null
+argument_list|)
 operator|.
 name|addConfigs
 argument_list|(
@@ -863,7 +873,9 @@ name|localRuntime
 operator|=
 operator|new
 name|ServerRuntimeBuilder
-argument_list|()
+argument_list|(
+literal|null
+argument_list|)
 operator|.
 name|addConfigs
 argument_list|(

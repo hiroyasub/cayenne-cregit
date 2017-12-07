@@ -261,17 +261,6 @@ specifier|private
 name|boolean
 name|autoLoadModules
 decl_stmt|;
-comment|/**      * Creates an empty builder.      */
-specifier|protected
-name|ServerRuntimeBuilder
-parameter_list|()
-block|{
-name|this
-argument_list|(
-literal|null
-argument_list|)
-expr_stmt|;
-block|}
 comment|/**      * Creates a builder with a fixed name of the DataDomain of the resulting      * ServerRuntime. Specifying explicit name is often needed for consistency      * in runtimes merged from multiple configs, each having its own name.      */
 specifier|protected
 name|ServerRuntimeBuilder
