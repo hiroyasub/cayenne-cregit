@@ -353,10 +353,6 @@ argument_list|(
 operator|new
 name|RemoveAttributeUndoableEdit
 argument_list|(
-name|domain
-argument_list|,
-name|map
-argument_list|,
 name|entity
 argument_list|,
 operator|new

@@ -304,7 +304,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Removes currently selected attribute from either the DbEntity or ObjEntity.  *   */
+comment|/**  * Removes currently selected attribute from either the DbEntity or ObjEntity.  */
 end_comment
 
 begin_class
@@ -385,18 +385,11 @@ name|ConfigurationNode
 name|object
 parameter_list|)
 block|{
-if|if
-condition|(
+return|return
 name|object
-operator|==
+operator|!=
 literal|null
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
-return|return
+operator|&&
 name|object
 operator|instanceof
 name|Attribute
@@ -618,22 +611,6 @@ argument_list|(
 operator|new
 name|RemoveAttributeUndoableEdit
 argument_list|(
-operator|(
-name|DataChannelDescriptor
-operator|)
-name|mediator
-operator|.
-name|getProject
-argument_list|()
-operator|.
-name|getRootNode
-argument_list|()
-argument_list|,
-name|mediator
-operator|.
-name|getCurrentDataMap
-argument_list|()
-argument_list|,
 name|entity
 argument_list|,
 name|objAttrs
@@ -721,22 +698,6 @@ argument_list|(
 operator|new
 name|RemoveAttributeUndoableEdit
 argument_list|(
-operator|(
-name|DataChannelDescriptor
-operator|)
-name|mediator
-operator|.
-name|getProject
-argument_list|()
-operator|.
-name|getRootNode
-argument_list|()
-argument_list|,
-name|mediator
-operator|.
-name|getCurrentDataMap
-argument_list|()
-argument_list|,
 name|entity
 argument_list|,
 name|dbAttrs
