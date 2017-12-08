@@ -263,6 +263,8 @@ argument_list|(
 literal|"PK_ATTRIBUTE"
 argument_list|,
 literal|"DESCR"
+argument_list|,
+literal|"INT_ATTRIBUTE"
 argument_list|)
 expr_stmt|;
 block|}
@@ -297,6 +299,8 @@ argument_list|,
 literal|"a"
 operator|+
 name|i
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
