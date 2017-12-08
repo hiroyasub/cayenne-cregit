@@ -23,6 +23,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|map
+operator|.
+name|ObjAttribute
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|util
 operator|.
 name|Util
@@ -36,26 +50,6 @@ operator|.
 name|util
 operator|.
 name|ArrayList
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collections
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Comparator
 import|;
 end_import
 
@@ -105,9 +99,6 @@ name|String
 name|importOrdering
 index|[]
 init|=
-operator|new
-name|String
-index|[]
 block|{
 literal|"java."
 block|,
@@ -124,9 +115,6 @@ name|String
 name|primitives
 index|[]
 init|=
-operator|new
-name|String
-index|[]
 block|{
 literal|"long"
 block|,
@@ -281,14 +269,6 @@ specifier|protected
 name|String
 name|packageName
 decl_stmt|;
-specifier|public
-name|ImportUtils
-parameter_list|()
-block|{
-name|super
-argument_list|()
-expr_stmt|;
-block|}
 specifier|protected
 name|boolean
 name|canRegisterType
@@ -304,9 +284,11 @@ literal|null
 operator|==
 name|typeName
 condition|)
+block|{
 return|return
 literal|false
 return|;
+block|}
 name|StringUtils
 name|stringUtils
 init|=
@@ -344,10 +326,12 @@ argument_list|()
 operator|==
 literal|0
 condition|)
+block|{
 return|return
 literal|false
 return|;
 comment|// disallow non-packaged types (primitives, probably)
+block|}
 if|if
 condition|(
 literal|"java.lang"
@@ -357,9 +341,11 @@ argument_list|(
 name|typePackageName
 argument_list|)
 condition|)
+block|{
 return|return
 literal|false
 return|;
+block|}
 comment|// Can only have one type -- rest must use fqn
 if|if
 condition|(
@@ -370,23 +356,19 @@ argument_list|(
 name|typeClassName
 argument_list|)
 condition|)
+block|{
 return|return
 literal|false
 return|;
-if|if
-condition|(
+block|}
+return|return
+operator|!
 name|importTypesMap
 operator|.
 name|containsKey
 argument_list|(
 name|typeClassName
 argument_list|)
-condition|)
-return|return
-literal|false
-return|;
-return|return
-literal|true
 return|;
 block|}
 comment|/** 	 * Reserve a fully-qualified data type class name so it cannot be used by 	 * another class. No import statements will be generated for reserved types. 	 * Typically, this is the fully-qualified class name of the class being 	 * generated. 	 *  	 * @param typeName 	 *            FQ data type class name. 	 */
@@ -406,7 +388,9 @@ argument_list|(
 name|typeName
 argument_list|)
 condition|)
+block|{
 return|return;
+block|}
 name|StringUtils
 name|stringUtils
 init|=
@@ -452,7 +436,9 @@ argument_list|(
 name|typeName
 argument_list|)
 condition|)
+block|{
 return|return;
+block|}
 name|StringUtils
 name|stringUtils
 init|=
@@ -471,16 +457,6 @@ argument_list|(
 name|typeName
 argument_list|)
 decl_stmt|;
-name|String
-name|typeClassName
-init|=
-name|stringUtils
-operator|.
-name|stripPackageName
-argument_list|(
-name|typeName
-argument_list|)
-decl_stmt|;
 if|if
 condition|(
 name|typePackageName
@@ -490,18 +466,25 @@ argument_list|(
 name|packageName
 argument_list|)
 condition|)
+block|{
 return|return;
+block|}
 name|importTypesMap
 operator|.
 name|put
 argument_list|(
-name|typeClassName
+name|stringUtils
+operator|.
+name|stripPackageName
+argument_list|(
+name|typeName
+argument_list|)
 argument_list|,
 name|typeName
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Add the package name to use for this importUtil invocation. 	 *  	 * @param packageName 	 */
+comment|/** 	 * Add the package name to use for this importUtil invocation. 	 */
 specifier|public
 name|void
 name|setPackage
@@ -633,20 +616,14 @@ name|containsKey
 argument_list|(
 name|typeClassName
 argument_list|)
-condition|)
-block|{
-if|if
-condition|(
+operator|&&
 name|importTypesMap
 operator|.
 name|containsKey
 argument_list|(
 name|typeClassName
 argument_list|)
-condition|)
-block|{
-if|if
-condition|(
+operator|&&
 name|typeName
 operator|.
 name|equals
@@ -659,10 +636,10 @@ name|typeClassName
 argument_list|)
 argument_list|)
 condition|)
+block|{
 return|return
 name|typeClassName
 return|;
-block|}
 block|}
 name|String
 name|typePackageName
@@ -683,9 +660,11 @@ argument_list|(
 name|typePackageName
 argument_list|)
 condition|)
+block|{
 return|return
 name|typeClassName
 return|;
+block|}
 if|if
 condition|(
 operator|(
@@ -703,9 +682,11 @@ name|typePackageName
 argument_list|)
 operator|)
 condition|)
+block|{
 return|return
 name|typeClassName
 return|;
+block|}
 block|}
 return|return
 name|typeName
@@ -807,6 +788,30 @@ name|type
 argument_list|)
 return|;
 block|}
+comment|/** 	 * 	 * This method decide can primitive type be used for given attribute. 	 * It can be used in following cases: 	 * 		- attribute is PK and primitive 	 * 		- attribute not PK and is mandatory 	 * 	 * @param attribute to check 	 * @return can primitive Java type be used 	 * 	 * @since 4.1 	 */
+specifier|public
+name|boolean
+name|canUsePrimitive
+parameter_list|(
+name|ObjAttribute
+name|attribute
+parameter_list|)
+block|{
+return|return
+name|attribute
+operator|.
+name|isMandatory
+argument_list|()
+operator|&&
+name|isPrimitive
+argument_list|(
+name|attribute
+operator|.
+name|getType
+argument_list|()
+argument_list|)
+return|;
+block|}
 comment|/** 	 * Generate package and list of import statements based on the registered 	 * types. 	 */
 specifier|public
 name|String
@@ -841,10 +846,8 @@ argument_list|(
 name|packageName
 argument_list|)
 expr_stmt|;
-comment|// Using UNIX line endings intentionally - generated Java files
-comment|// should look
-comment|// the same regardless of platform to prevent developer teams
-comment|// working on
+comment|// Using UNIX line endings intentionally - generated Java files should look
+comment|// the same regardless of platform to prevent developer teams working on
 comment|// multiple OS's to override each other's work
 name|outputBuffer
 operator|.
@@ -870,29 +873,16 @@ name|values
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|Collections
+name|typesList
 operator|.
 name|sort
 argument_list|(
-name|typesList
-argument_list|,
-operator|new
-name|Comparator
-argument_list|<
-name|String
-argument_list|>
-argument_list|()
-block|{
-specifier|public
-name|int
-name|compare
 parameter_list|(
-name|String
 name|s1
 parameter_list|,
-name|String
 name|s2
 parameter_list|)
+lambda|->
 block|{
 for|for
 control|(
@@ -964,7 +954,6 @@ argument_list|(
 name|s2
 argument_list|)
 return|;
-block|}
 block|}
 argument_list|)
 expr_stmt|;
@@ -1054,8 +1043,7 @@ block|{
 comment|// and it's different from the last import
 if|if
 condition|(
-literal|false
-operator|==
+operator|!
 name|thisStringPrefix
 operator|.
 name|equals
