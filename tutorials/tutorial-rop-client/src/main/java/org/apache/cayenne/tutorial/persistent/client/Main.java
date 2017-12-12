@@ -147,7 +147,7 @@ name|ClientConstants
 operator|.
 name|ROP_SERVICE_URL_PROPERTY
 argument_list|,
-literal|"http://localhost:8080/tutorial-rop-server/cayenne-service"
+literal|"http://localhost:8080/cayenne-service"
 argument_list|)
 expr_stmt|;
 name|properties
