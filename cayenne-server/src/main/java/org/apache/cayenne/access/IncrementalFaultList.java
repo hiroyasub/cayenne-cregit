@@ -406,9 +406,7 @@ name|internalQuery
 operator|=
 operator|new
 name|SelectQuery
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|(
 name|rootEntity
 argument_list|)

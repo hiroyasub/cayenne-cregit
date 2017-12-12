@@ -439,8 +439,6 @@ throw|;
 block|}
 name|Persistent
 name|dataObject
-init|=
-literal|null
 decl_stmt|;
 try|try
 block|{

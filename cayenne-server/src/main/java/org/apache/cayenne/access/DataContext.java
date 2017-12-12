@@ -3265,6 +3265,9 @@ name|tx
 argument_list|)
 expr_stmt|;
 name|ResultIterator
+argument_list|<
+name|?
+argument_list|>
 name|result
 decl_stmt|;
 try|try
@@ -3339,6 +3342,7 @@ block|}
 return|return
 operator|new
 name|TransactionResultIteratorDecorator
+argument_list|<>
 argument_list|(
 name|result
 argument_list|,

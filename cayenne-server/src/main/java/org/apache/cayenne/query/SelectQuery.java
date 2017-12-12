@@ -401,9 +401,7 @@ block|{
 return|return
 operator|new
 name|SelectQuery
-argument_list|<
-name|T
-argument_list|>
+argument_list|<>
 argument_list|(
 name|rootClass
 argument_list|)
@@ -434,9 +432,7 @@ block|{
 return|return
 operator|new
 name|SelectQuery
-argument_list|<
-name|T
-argument_list|>
+argument_list|<>
 argument_list|(
 name|rootClass
 argument_list|,
@@ -477,9 +473,7 @@ block|{
 return|return
 operator|new
 name|SelectQuery
-argument_list|<
-name|T
-argument_list|>
+argument_list|<>
 argument_list|(
 name|rootClass
 argument_list|,
@@ -514,9 +508,7 @@ name|query
 init|=
 operator|new
 name|SelectQuery
-argument_list|<
-name|DataRow
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|query
@@ -1041,12 +1033,6 @@ name|context
 operator|.
 name|iterate
 argument_list|(
-operator|(
-name|Select
-argument_list|<
-name|T
-argument_list|>
-operator|)
 name|this
 argument_list|,
 name|callback
@@ -1386,9 +1372,7 @@ name|query
 init|=
 operator|new
 name|SelectQuery
-argument_list|<
-name|T
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|query
@@ -1602,9 +1586,6 @@ name|orderings
 else|:
 name|Collections
 operator|.
-expr|<
-name|Ordering
-operator|>
 name|emptyList
 argument_list|()
 return|;

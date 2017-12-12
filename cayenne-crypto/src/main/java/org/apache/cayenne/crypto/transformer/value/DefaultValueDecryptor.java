@@ -130,6 +130,11 @@ name|Object
 name|value
 parameter_list|)
 block|{
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 name|byte
 index|[]
 name|bytes

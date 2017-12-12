@@ -71,7 +71,8 @@ name|runtimeProperties
 else|:
 name|Collections
 operator|.
-name|EMPTY_MAP
+name|emptyMap
+argument_list|()
 return|;
 block|}
 name|void

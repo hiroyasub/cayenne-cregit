@@ -193,10 +193,6 @@ name|ServerRuntime
 name|runtime
 decl_stmt|;
 specifier|private
-name|DBHelper
-name|dbHelper
-decl_stmt|;
-specifier|private
 name|TableHelper
 name|e1Helper
 decl_stmt|;
@@ -210,8 +206,6 @@ specifier|public
 name|void
 name|setUp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|runtime
 operator|=
@@ -228,8 +222,9 @@ operator|.
 name|build
 argument_list|()
 expr_stmt|;
+name|DBHelper
 name|dbHelper
-operator|=
+init|=
 operator|new
 name|DBHelper
 argument_list|(
@@ -240,7 +235,7 @@ argument_list|(
 literal|"lifecycle-db"
 argument_list|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|e1Helper
 operator|=
 operator|new
@@ -272,8 +267,6 @@ specifier|public
 name|void
 name|tearDown
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|runtime
 operator|.
@@ -531,9 +524,7 @@ name|ids
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|Number
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|DataRow
@@ -604,7 +595,7 @@ name|ids
 operator|.
 name|contains
 argument_list|(
-literal|3l
+literal|3L
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -614,7 +605,7 @@ name|ids
 operator|.
 name|contains
 argument_list|(
-literal|4l
+literal|4L
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -713,9 +704,7 @@ name|ids
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 while|while
@@ -726,6 +715,11 @@ name|next
 argument_list|()
 condition|)
 block|{
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 name|List
 argument_list|<
 name|DataRow

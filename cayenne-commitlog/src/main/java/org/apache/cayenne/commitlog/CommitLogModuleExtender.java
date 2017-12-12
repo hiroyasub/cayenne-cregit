@@ -442,22 +442,6 @@ range|:
 name|listenerTypes
 control|)
 block|{
-comment|// TODO: temp hack - need to bind each type before adding to collection...
-name|binder
-operator|.
-name|bind
-argument_list|(
-name|type
-argument_list|)
-operator|.
-name|to
-argument_list|(
-operator|(
-name|Class
-operator|)
-name|type
-argument_list|)
-expr_stmt|;
 name|listeners
 operator|.
 name|add
