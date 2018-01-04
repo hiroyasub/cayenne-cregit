@@ -191,6 +191,7 @@ name|context
 parameter_list|)
 block|{
 comment|// creating new Artist
+comment|// tag::new-artist[]
 name|Artist
 name|picasso
 init|=
@@ -217,7 +218,9 @@ argument_list|(
 literal|"18811025"
 argument_list|)
 expr_stmt|;
+comment|// end::new-artist[]
 comment|// Creating other objects
+comment|// tag::new-painting[]
 name|Gallery
 name|metropolitan
 init|=
@@ -275,7 +278,9 @@ argument_list|(
 literal|"Gertrude Stein"
 argument_list|)
 expr_stmt|;
+comment|// end::new-painting[]
 comment|// connecting objects together via relationships
+comment|// tag::link-objects[]
 name|picasso
 operator|.
 name|addToPaintings
@@ -304,12 +309,15 @@ argument_list|(
 name|metropolitan
 argument_list|)
 expr_stmt|;
+comment|// end::link-objects[]
 comment|// saving all the changes above
+comment|// tag::commit[]
 name|context
 operator|.
 name|commitChanges
 argument_list|()
 expr_stmt|;
+comment|// end::commit[]
 block|}
 specifier|static
 name|void
