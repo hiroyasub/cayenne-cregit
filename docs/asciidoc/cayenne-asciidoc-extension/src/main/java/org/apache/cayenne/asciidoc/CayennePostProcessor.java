@@ -159,18 +159,6 @@ name|Jsoup
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|jsoup
-operator|.
-name|nodes
-operator|.
-name|Element
-import|;
-end_import
-
 begin_comment
 comment|/**  *<p>  * AsciidoctorJ post processor, that extracts ToC into separate file and optionally can inject content into rendered document.  * Can be used only for HTML backend, will<b>fail</b> if used with PDF.  *<p>  * It is targeted to inject "front-matter" section suitable for cayenne website tools.  *<p>  * Extension controlled by attributes in *.adoc file:  *<ul>  *<li>cayenne-header: header file name or constant "front-matter" that will inject empty front matter markup  *<li>cayenne-header-position [optional]: "top" to inject just above all content or "body" to inject right after&gt;body&lt; tag  *<li>cayenne-footer: footer file name or constant "front-matter" that will inject empty front matter markup  *<li>cayenne-footer-position [optional]: "bottom" to inject just after all content or "body" to inject right before&gt;/body&lt; tag  *</ul>  *  * @since 4.1  */
 end_comment
@@ -255,7 +243,7 @@ argument_list|)
 expr_stmt|;
 name|output
 operator|=
-name|fixupTableClasses
+name|fixupDom
 argument_list|(
 name|document
 argument_list|,
@@ -286,7 +274,7 @@ return|;
 block|}
 specifier|private
 name|String
-name|fixupTableClasses
+name|fixupDom
 parameter_list|(
 name|Document
 name|document
@@ -396,6 +384,16 @@ expr_stmt|;
 block|}
 block|}
 argument_list|)
+expr_stmt|;
+name|jsoupDoc
+operator|.
+name|select
+argument_list|(
+literal|"div#preamble"
+argument_list|)
+operator|.
+name|remove
+argument_list|()
 expr_stmt|;
 return|return
 name|jsoupDoc
