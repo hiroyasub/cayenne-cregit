@@ -127,7 +127,7 @@ name|reverse
 operator|.
 name|dbimport
 operator|.
-name|DbImportConfigurationValidator
+name|DbImportConfiguration
 import|;
 end_import
 
@@ -145,7 +145,7 @@ name|reverse
 operator|.
 name|dbimport
 operator|.
-name|DbImportConfiguration
+name|DbImportConfigurationValidator
 import|;
 end_import
 
@@ -200,6 +200,24 @@ operator|.
 name|dbimport
 operator|.
 name|ExcludeProcedure
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dbsync
+operator|.
+name|reverse
+operator|.
+name|dbimport
+operator|.
+name|ExcludeRelationship
 import|;
 end_import
 
@@ -564,6 +582,23 @@ operator|.
 name|addExcludeTable
 argument_list|(
 name|excludeTable
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * @since 4.1      */
+specifier|public
+name|void
+name|addExcludeRelationship
+parameter_list|(
+name|ExcludeRelationship
+name|excludeRelationship
+parameter_list|)
+block|{
+name|reverseEngineering
+operator|.
+name|addExcludeRelationship
+argument_list|(
+name|excludeRelationship
 argument_list|)
 expr_stmt|;
 block|}
