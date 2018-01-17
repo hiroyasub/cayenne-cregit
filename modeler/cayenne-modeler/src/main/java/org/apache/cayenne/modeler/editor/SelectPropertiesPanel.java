@@ -285,20 +285,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|lang
-operator|.
-name|StringUtils
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|slf4j
 operator|.
 name|Logger
@@ -312,6 +298,22 @@ operator|.
 name|slf4j
 operator|.
 name|LoggerFactory
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Util
+operator|.
+name|isNumeric
 import|;
 end_import
 
@@ -921,8 +923,6 @@ else|else
 block|{
 if|if
 condition|(
-name|StringUtils
-operator|.
 name|isNumeric
 argument_list|(
 name|string
@@ -1002,8 +1002,6 @@ else|else
 block|{
 if|if
 condition|(
-name|StringUtils
-operator|.
 name|isNumeric
 argument_list|(
 name|string
@@ -1083,8 +1081,6 @@ else|else
 block|{
 if|if
 condition|(
-name|StringUtils
-operator|.
 name|isNumeric
 argument_list|(
 name|string
