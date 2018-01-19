@@ -425,7 +425,7 @@ block|}
 comment|/**      * @since 4.1      */
 specifier|public
 name|void
-name|clearExcludeRelationship
+name|clearExcludeRelationships
 parameter_list|()
 block|{
 name|excludeRelationshipCollection

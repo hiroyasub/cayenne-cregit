@@ -1715,7 +1715,7 @@ argument_list|()
 expr_stmt|;
 name|catalog
 operator|.
-name|clearExcludeRelationship
+name|clearExcludeRelationships
 argument_list|()
 expr_stmt|;
 for|for
@@ -1741,7 +1741,7 @@ argument_list|()
 expr_stmt|;
 name|schema
 operator|.
-name|clearExcludeRelationship
+name|clearExcludeRelationships
 argument_list|()
 expr_stmt|;
 block|}
@@ -1778,7 +1778,7 @@ argument_list|()
 expr_stmt|;
 name|engineering
 operator|.
-name|clearExcludeRelationship
+name|clearExcludeRelationships
 argument_list|()
 expr_stmt|;
 name|engineering
