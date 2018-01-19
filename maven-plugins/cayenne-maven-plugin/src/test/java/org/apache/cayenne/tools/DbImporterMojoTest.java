@@ -377,11 +377,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
+name|cayenne
 operator|.
-name|lang
+name|util
 operator|.
-name|StringUtils
+name|Util
 operator|.
 name|isBlank
 import|;
