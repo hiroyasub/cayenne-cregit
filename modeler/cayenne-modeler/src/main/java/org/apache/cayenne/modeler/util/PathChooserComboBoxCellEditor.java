@@ -69,11 +69,11 @@ name|org
 operator|.
 name|apache
 operator|.
-name|commons
+name|cayenne
 operator|.
-name|lang3
+name|util
 operator|.
-name|StringUtils
+name|Util
 import|;
 end_import
 
@@ -646,11 +646,6 @@ init|=
 operator|new
 name|ArrayList
 argument_list|<>
-argument_list|()
-decl_stmt|;
-name|currentNodeChildren
-operator|.
-name|addAll
 argument_list|(
 name|getChildren
 argument_list|(
@@ -662,7 +657,7 @@ argument_list|,
 name|pathString
 argument_list|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|comboBoxPathChooser
 operator|.
 name|setModel
@@ -774,7 +769,7 @@ argument_list|()
 expr_stmt|;
 name|previousEmbeddedLevel
 operator|=
-name|StringUtils
+name|Util
 operator|.
 name|countMatches
 argument_list|(
@@ -788,7 +783,7 @@ block|}
 name|int
 name|currentEmbeddedLevel
 init|=
-name|StringUtils
+name|Util
 operator|.
 name|countMatches
 argument_list|(
@@ -863,11 +858,6 @@ init|=
 operator|new
 name|ArrayList
 argument_list|<>
-argument_list|()
-decl_stmt|;
-name|currentNodeChildren
-operator|.
-name|addAll
 argument_list|(
 name|getChildren
 argument_list|(
@@ -879,7 +869,7 @@ argument_list|,
 name|pathString
 argument_list|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|comboBoxPathChooser
 operator|.
 name|setModel
