@@ -190,11 +190,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An implementation of the Velocity ResourceManager and ResourceLoader that  * creates templates from in-memory Strings.  *  * @since 1.1  */
-end_comment
-
-begin_comment
-comment|/**  * @deprecated since 4.1 is unused  */
+comment|/**  * An implementation of the Velocity ResourceManager and ResourceLoader that  * creates templates from in-memory Strings.  *  * @since 1.1  * @deprecated since 4.1 is unused  */
 end_comment
 
 begin_class
