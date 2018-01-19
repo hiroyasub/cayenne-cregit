@@ -515,6 +515,8 @@ argument_list|(
 name|tokenFactory
 argument_list|,
 name|skipRelationshipsTokens
+argument_list|,
+name|filters
 argument_list|)
 argument_list|,
 name|dbEntityMerger
