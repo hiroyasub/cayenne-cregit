@@ -476,6 +476,24 @@ name|DataNodeDescriptor
 name|nodeDescriptor
 parameter_list|)
 block|{
+if|if
+condition|(
+operator|!
+name|logger
+operator|.
+name|isInfoEnabled
+argument_list|()
+operator|||
+name|nodeDescriptor
+operator|.
+name|getDataChannelDescriptor
+argument_list|()
+operator|==
+literal|null
+condition|)
+block|{
+return|return;
+block|}
 name|boolean
 name|found
 init|=
@@ -510,7 +528,7 @@ name|logResult
 operator|.
 name|append
 argument_list|(
-literal|"Found unused runtime properties for '"
+literal|"Following runtime properties were ignored for node '"
 argument_list|)
 operator|.
 name|append
@@ -663,19 +681,15 @@ operator|.
 name|length
 argument_list|()
 argument_list|)
-expr_stmt|;
-name|logResult
 operator|.
 name|append
 argument_list|(
-literal|". This runtime properties was ignored. Configuration were taken from project DataSource. "
+literal|". Will use project DataSource configuration. "
 argument_list|)
-expr_stmt|;
-name|logResult
 operator|.
 name|append
 argument_list|(
-literal|"For using configuration from runtime properties, move driver and url configuration to properties."
+literal|"Set driver and url properties to enable DataSource configuration override. "
 argument_list|)
 expr_stmt|;
 name|logger
@@ -765,28 +779,11 @@ operator|==
 literal|null
 condition|)
 block|{
-if|if
-condition|(
-operator|(
-name|channelName
-operator|!=
-literal|null
-operator|)
-operator|&&
-operator|(
-name|logger
-operator|.
-name|isInfoEnabled
-argument_list|()
-operator|)
-condition|)
-block|{
 name|findUnusedProperties
 argument_list|(
 name|nodeDescriptor
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 literal|false
 return|;
@@ -838,28 +835,11 @@ operator|==
 literal|null
 condition|)
 block|{
-if|if
-condition|(
-operator|(
-name|channelName
-operator|!=
-literal|null
-operator|)
-operator|&&
-operator|(
-name|logger
-operator|.
-name|isInfoEnabled
-argument_list|()
-operator|)
-condition|)
-block|{
 name|findUnusedProperties
 argument_list|(
 name|nodeDescriptor
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 literal|false
 return|;
