@@ -1199,6 +1199,7 @@ name|flag
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @since 4.0      */
 specifier|public
 name|void
 name|setUseJava7Types
@@ -1281,6 +1282,36 @@ operator|.
 name|setTargetDataMap
 argument_list|(
 name|map
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * @since 4.1      */
+specifier|public
+name|File
+name|getCayenneProject
+parameter_list|()
+block|{
+return|return
+name|config
+operator|.
+name|getCayenneProject
+argument_list|()
+return|;
+block|}
+comment|/**      * @since 4.1      */
+specifier|public
+name|void
+name|setCayenneProject
+parameter_list|(
+name|File
+name|cayenneProject
+parameter_list|)
+block|{
+name|config
+operator|.
+name|setCayenneProject
+argument_list|(
+name|cayenneProject
 argument_list|)
 expr_stmt|;
 block|}

@@ -366,6 +366,13 @@ specifier|private
 name|File
 name|map
 decl_stmt|;
+comment|/**      * Project XML file to use. If set cayenneProject will be created or updated after DB importing.      * This is optional parameter.      * @since 4.1      */
+annotation|@
+name|Parameter
+specifier|private
+name|File
+name|cayenneProject
+decl_stmt|;
 comment|/**      * An object that contains reverse engineering rules.      */
 annotation|@
 name|Parameter
@@ -718,6 +725,13 @@ operator|.
 name|setTargetDataMap
 argument_list|(
 name|map
+argument_list|)
+expr_stmt|;
+name|config
+operator|.
+name|setCayenneProject
+argument_list|(
+name|cayenneProject
 argument_list|)
 expr_stmt|;
 name|config
