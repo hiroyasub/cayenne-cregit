@@ -70,6 +70,7 @@ name|DefaultDocumentProvider
 implements|implements
 name|DocumentProvider
 block|{
+specifier|private
 name|Map
 argument_list|<
 name|String

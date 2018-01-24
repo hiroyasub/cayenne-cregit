@@ -703,10 +703,12 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|first
 operator|=
 literal|false
 expr_stmt|;
+block|}
 name|buf
 operator|.
 name|append

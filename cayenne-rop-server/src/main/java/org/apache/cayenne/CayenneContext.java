@@ -812,7 +812,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|NullPointerException
+name|IllegalArgumentException
 argument_list|(
 literal|"Persistent class can't be null."
 argument_list|)
@@ -922,7 +922,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|NullPointerException
+name|IllegalArgumentException
 argument_list|(
 literal|"An attempt to register null object."
 argument_list|)
@@ -1312,11 +1312,6 @@ condition|(
 name|childContext
 condition|)
 block|{
-comment|// PropertyChangeProcessingStrategy oldStrategy =
-comment|// getPropertyChangeProcessingStrategy();
-comment|// setPropertyChangeProcessingStrategy(PropertyChangeProcessingStrategy.RECORD);
-try|try
-block|{
 name|changes
 operator|.
 name|apply
@@ -1328,11 +1323,6 @@ name|this
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
-finally|finally
-block|{
-comment|// setPropertyChangeProcessingStrategy(oldStrategy);
-block|}
 name|fireDataChannelChanged
 argument_list|(
 name|originatingContext

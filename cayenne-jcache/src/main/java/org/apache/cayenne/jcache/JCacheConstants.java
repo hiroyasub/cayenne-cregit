@@ -19,24 +19,36 @@ begin_comment
 comment|/**  * @since 4.0  */
 end_comment
 
-begin_interface
+begin_class
 specifier|public
-interface|interface
+specifier|final
+class|class
 name|JCacheConstants
 block|{
+specifier|private
+name|JCacheConstants
+parameter_list|()
+block|{
+block|}
 comment|/**      * Default JCache cache name. This will be the cache used for queries with no explicit cache groups.      */
+specifier|public
+specifier|static
+specifier|final
 name|String
 name|DEFAULT_CACHE_NAME
 init|=
 literal|"cayenne.default.cache"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
 name|String
 name|JCACHE_PROVIDER_CONFIG
 init|=
 literal|"cayenne.jcache.provider_config"
 decl_stmt|;
 block|}
-end_interface
+end_class
 
 end_unit
 

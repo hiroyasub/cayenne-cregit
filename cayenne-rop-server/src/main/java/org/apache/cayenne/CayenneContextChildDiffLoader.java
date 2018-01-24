@@ -534,13 +534,9 @@ name|target
 index|[
 literal|0
 index|]
-operator|==
+operator|!=
 literal|null
 condition|)
-block|{
-comment|// ignore?
-block|}
-else|else
 block|{
 name|property
 operator|.

@@ -715,6 +715,7 @@ name|d
 operator|<
 literal|26
 condition|)
+block|{
 return|return
 operator|(
 name|char
@@ -725,12 +726,14 @@ operator|+
 literal|'A'
 operator|)
 return|;
+block|}
 if|else if
 condition|(
 name|d
 operator|<
 literal|52
 condition|)
+block|{
 return|return
 operator|(
 name|char
@@ -743,12 +746,14 @@ operator|-
 literal|26
 operator|)
 return|;
+block|}
 if|else if
 condition|(
 name|d
 operator|<
 literal|62
 condition|)
+block|{
 return|return
 operator|(
 name|char
@@ -761,19 +766,24 @@ operator|-
 literal|52
 operator|)
 return|;
+block|}
 if|else if
 condition|(
 name|d
 operator|==
 literal|62
 condition|)
+block|{
 return|return
 literal|'+'
 return|;
+block|}
 else|else
+block|{
 return|return
 literal|'/'
 return|;
+block|}
 block|}
 block|}
 end_class

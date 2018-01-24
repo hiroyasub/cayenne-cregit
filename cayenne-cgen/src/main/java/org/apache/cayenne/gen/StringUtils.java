@@ -158,9 +158,11 @@ argument_list|()
 operator|==
 literal|0
 condition|)
+block|{
 return|return
 name|aString
 return|;
+block|}
 name|int
 name|lastDot
 init|=
@@ -178,9 +180,11 @@ literal|1
 operator|==
 name|lastDot
 condition|)
+block|{
 return|return
 literal|""
 return|;
+block|}
 return|return
 name|aString
 operator|.
@@ -250,9 +254,11 @@ argument_list|()
 operator|==
 literal|0
 condition|)
+block|{
 return|return
 name|name
 return|;
+block|}
 comment|// clear of non-java chars. While the method name implies that a passed identifier
 comment|// is pure Java, it is used to build pk columns names and such, so extra safety
 comment|// check is a good idea

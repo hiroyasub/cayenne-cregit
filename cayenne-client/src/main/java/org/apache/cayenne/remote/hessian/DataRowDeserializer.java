@@ -199,8 +199,9 @@ name|set
 argument_list|(
 name|row
 argument_list|,
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|in
 operator|.
