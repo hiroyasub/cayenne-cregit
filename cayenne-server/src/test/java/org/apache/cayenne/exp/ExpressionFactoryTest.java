@@ -204,8 +204,6 @@ specifier|public
 name|void
 name|before
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|handler
 operator|=
@@ -227,8 +225,6 @@ specifier|public
 name|void
 name|testExpressionOfBadType
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 comment|// non existing type
 name|int
@@ -251,8 +247,6 @@ specifier|public
 name|void
 name|testBetweenExp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Object
 name|v1
@@ -326,8 +320,6 @@ specifier|public
 name|void
 name|testBetweenDbExp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Object
 name|v1
@@ -401,8 +393,6 @@ specifier|public
 name|void
 name|testNotBetweenExp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Object
 name|v1
@@ -476,8 +466,6 @@ specifier|public
 name|void
 name|testNotBetweenDbExp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Object
 name|v1
@@ -551,8 +539,6 @@ specifier|public
 name|void
 name|testGreaterExp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Object
 name|v
@@ -592,8 +578,6 @@ specifier|public
 name|void
 name|testGreaterDbExp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Object
 name|v
@@ -658,8 +642,6 @@ specifier|public
 name|void
 name|testGreaterOrEqualExp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Object
 name|v
@@ -699,8 +681,6 @@ specifier|public
 name|void
 name|testGreaterOrEqualDbExp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Object
 name|v
@@ -765,8 +745,6 @@ specifier|public
 name|void
 name|testLessExp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Object
 name|v
@@ -806,8 +784,6 @@ specifier|public
 name|void
 name|testLessDbExp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Object
 name|v
@@ -872,8 +848,6 @@ specifier|public
 name|void
 name|testLessOrEqualExp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Object
 name|v
@@ -938,8 +912,6 @@ specifier|public
 name|void
 name|testLessOrEqualDbExp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Object
 name|v
@@ -1004,8 +976,6 @@ specifier|public
 name|void
 name|testInExp1
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Expression
 name|exp
@@ -1040,8 +1010,6 @@ specifier|public
 name|void
 name|testInExp2
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|List
 argument_list|<
@@ -1099,8 +1067,6 @@ specifier|public
 name|void
 name|testInExp3
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|List
 argument_list|<
@@ -1144,8 +1110,6 @@ specifier|public
 name|void
 name|testNotInExp1
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Expression
 name|exp
@@ -1180,8 +1144,6 @@ specifier|public
 name|void
 name|testNotInExp2
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|List
 argument_list|<
@@ -1239,8 +1201,6 @@ specifier|public
 name|void
 name|testNotInExp3
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|List
 argument_list|<
@@ -1284,8 +1244,6 @@ specifier|public
 name|void
 name|testLikeExp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|String
 name|v
@@ -1348,8 +1306,6 @@ specifier|public
 name|void
 name|testLikeDbExp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|String
 name|v
@@ -1412,8 +1368,6 @@ specifier|public
 name|void
 name|testLikeExpEscape
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|String
 name|v
@@ -1493,8 +1447,6 @@ specifier|public
 name|void
 name|testLikeIgnoreCaseExp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|String
 name|v
@@ -1572,8 +1524,6 @@ specifier|public
 name|void
 name|testLikeIgnoreCaseExpEscape
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|String
 name|v
@@ -1653,8 +1603,6 @@ specifier|public
 name|void
 name|testLikeIgnoreCaseDbExp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|String
 name|v
@@ -1717,8 +1665,6 @@ specifier|public
 name|void
 name|testNotLikeIgnoreCaseExp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|String
 name|v
@@ -1757,8 +1703,6 @@ specifier|public
 name|void
 name|testLikeExpNull
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Expression
 name|exp
@@ -1826,8 +1770,6 @@ specifier|public
 name|void
 name|testMatchAllExp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 comment|// create expressions and check the counts,
 comment|// leaf count should be (2N) : 2 leafs for each pair
@@ -1975,8 +1917,6 @@ specifier|public
 name|void
 name|testJoinExp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 comment|// create expressions and check the counts,
 comment|// leaf count should be (2N) : 2 leafs for each expression
@@ -2272,9 +2212,6 @@ name|and
 argument_list|(
 name|Collections
 operator|.
-expr|<
-name|Expression
-operator|>
 name|emptyList
 argument_list|()
 argument_list|)
@@ -2805,6 +2742,59 @@ expr_stmt|;
 block|}
 annotation|@
 name|Test
+specifier|public
+name|void
+name|testExp_EnumValid1
+parameter_list|()
+block|{
+name|Bean
+name|a
+init|=
+operator|new
+name|Bean
+argument_list|()
+decl_stmt|;
+name|a
+operator|.
+name|setA
+argument_list|(
+name|ExpEnum1
+operator|.
+name|TWO
+argument_list|)
+expr_stmt|;
+name|Expression
+name|exp
+init|=
+name|ExpressionFactory
+operator|.
+name|exp
+argument_list|(
+literal|"a = enum:org.apache.cayenne.exp.ExpEnum1.TWO"
+argument_list|)
+decl_stmt|;
+name|Object
+name|result
+init|=
+name|exp
+operator|.
+name|evaluate
+argument_list|(
+name|a
+argument_list|)
+decl_stmt|;
+name|assertEquals
+argument_list|(
+name|Boolean
+operator|.
+name|TRUE
+argument_list|,
+name|result
+argument_list|)
+expr_stmt|;
+block|}
+annotation|@
+name|Test
 argument_list|(
 name|expected
 operator|=
@@ -2817,11 +2807,37 @@ name|void
 name|testExp_EnumInvalid1
 parameter_list|()
 block|{
+name|Bean
+name|a
+init|=
+operator|new
+name|Bean
+argument_list|()
+decl_stmt|;
+name|a
+operator|.
+name|setA
+argument_list|(
+name|ExpEnum1
+operator|.
+name|TWO
+argument_list|)
+expr_stmt|;
+name|Expression
+name|exp
+init|=
 name|ExpressionFactory
 operator|.
 name|exp
 argument_list|(
 literal|"a = enum:org.apache.cayenne.exp.ExpEnum1.BOGUS"
+argument_list|)
+decl_stmt|;
+name|exp
+operator|.
+name|evaluate
+argument_list|(
+name|a
 argument_list|)
 expr_stmt|;
 block|}
@@ -2977,6 +2993,40 @@ argument_list|(
 literal|"name like %32_65415'"
 argument_list|)
 expr_stmt|;
+block|}
+specifier|public
+specifier|static
+class|class
+name|Bean
+block|{
+specifier|public
+name|ExpEnum1
+name|a
+decl_stmt|;
+specifier|public
+name|ExpEnum1
+name|getA
+parameter_list|()
+block|{
+return|return
+name|a
+return|;
+block|}
+specifier|public
+name|void
+name|setA
+parameter_list|(
+name|ExpEnum1
+name|a
+parameter_list|)
+block|{
+name|this
+operator|.
+name|a
+operator|=
+name|a
+expr_stmt|;
+block|}
 block|}
 block|}
 end_class

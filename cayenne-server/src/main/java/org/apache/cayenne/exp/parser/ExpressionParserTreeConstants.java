@@ -363,6 +363,12 @@ init|=
 literal|55
 decl_stmt|;
 specifier|public
+name|int
+name|JJTENUM
+init|=
+literal|56
+decl_stmt|;
+specifier|public
 name|String
 index|[]
 name|jjtNodeName
@@ -479,13 +485,15 @@ block|,
 literal|"ObjPath"
 block|,
 literal|"DbPath"
+block|,
+literal|"Enum"
 block|,   }
 decl_stmt|;
 block|}
 end_interface
 
 begin_comment
-comment|/* JavaCC - OriginalChecksum=fa5ebea216f594b98b337cf22871715e (do not edit this line) */
+comment|/* JavaCC - OriginalChecksum=6976e9a526d76d12c8693beadbe8a363 (do not edit this line) */
 end_comment
 
 end_unit
