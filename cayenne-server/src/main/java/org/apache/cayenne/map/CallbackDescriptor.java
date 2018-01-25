@@ -259,6 +259,7 @@ name|currentIndex
 operator|<
 literal|0
 condition|)
+block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -268,6 +269,7 @@ operator|+
 name|callbackMethod
 argument_list|)
 throw|;
+block|}
 name|boolean
 name|changed
 init|=

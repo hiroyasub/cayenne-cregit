@@ -290,6 +290,7 @@ name|DataChannelDescriptorLoader
 block|{
 specifier|private
 specifier|static
+specifier|final
 name|Logger
 name|logger
 init|=
@@ -509,7 +510,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|NullPointerException
+name|IllegalArgumentException
 argument_list|(
 literal|"Null configurationResource"
 argument_list|)

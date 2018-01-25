@@ -263,7 +263,9 @@ condition|(
 operator|!
 name|progress
 condition|)
+block|{
 break|break;
+block|}
 name|progress
 operator|=
 literal|false

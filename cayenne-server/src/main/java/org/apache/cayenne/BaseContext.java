@@ -655,7 +655,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|NullPointerException
+name|IllegalArgumentException
 argument_list|(
 literal|"Null channel"
 argument_list|)
@@ -831,7 +831,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|NullPointerException
+name|IllegalArgumentException
 argument_list|(
 literal|"Null object argument"
 argument_list|)
@@ -2078,7 +2078,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|NullPointerException
+name|IllegalArgumentException
 argument_list|(
 literal|"Null collection of objects to invalidate"
 argument_list|)

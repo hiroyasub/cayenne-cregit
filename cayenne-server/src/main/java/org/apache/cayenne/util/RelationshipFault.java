@@ -171,7 +171,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|NullPointerException
+name|IllegalArgumentException
 argument_list|(
 literal|"'relationshipOwner' can't be null."
 argument_list|)
@@ -186,7 +186,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|NullPointerException
+name|IllegalArgumentException
 argument_list|(
 literal|"'relationshipName' can't be null."
 argument_list|)

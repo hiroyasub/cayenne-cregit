@@ -240,11 +240,13 @@ operator|.
 name|hasNext
 argument_list|()
 condition|)
+block|{
 name|i
 operator|.
 name|next
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 else|else
 block|{

@@ -181,7 +181,7 @@ argument_list|>
 name|deletedIds
 init|=
 operator|new
-name|Vector
+name|ArrayList
 argument_list|<>
 argument_list|()
 decl_stmt|;

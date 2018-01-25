@@ -145,11 +145,13 @@ operator|<=
 literal|'M'
 operator|)
 condition|)
+block|{
 name|c
 operator|+=
 literal|13
 expr_stmt|;
 comment|// The first half of the alphabet goes forward 13 letters
+block|}
 if|else if
 condition|(
 operator|(
@@ -172,11 +174,13 @@ operator|<=
 literal|'Z'
 operator|)
 condition|)
+block|{
 name|c
 operator|-=
 literal|13
 expr_stmt|;
 comment|// The last half of the alphabet goes backward 13 letters
+block|}
 name|result
 operator|.
 name|append

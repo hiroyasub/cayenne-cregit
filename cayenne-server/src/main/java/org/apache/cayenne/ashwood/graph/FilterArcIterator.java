@@ -176,10 +176,12 @@ argument_list|(
 name|nextOrigin
 argument_list|)
 condition|)
+block|{
 name|nextOrigin
 operator|=
 literal|null
 expr_stmt|;
+block|}
 name|nextDst
 operator|=
 name|iterator
@@ -197,10 +199,12 @@ argument_list|(
 name|nextDst
 argument_list|)
 condition|)
+block|{
 name|nextDst
 operator|=
 literal|null
 expr_stmt|;
+block|}
 block|}
 specifier|public
 name|E

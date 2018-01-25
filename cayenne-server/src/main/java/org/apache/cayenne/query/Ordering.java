@@ -873,6 +873,7 @@ name|SortOrder
 operator|.
 name|DESCENDING
 condition|)
+block|{
 name|setSortOrder
 argument_list|(
 name|SortOrder
@@ -880,6 +881,7 @@ operator|.
 name|ASCENDING
 argument_list|)
 expr_stmt|;
+block|}
 if|else if
 condition|(
 name|sortOrder
@@ -888,6 +890,7 @@ name|SortOrder
 operator|.
 name|DESCENDING_INSENSITIVE
 condition|)
+block|{
 name|setSortOrder
 argument_list|(
 name|SortOrder
@@ -895,6 +898,7 @@ operator|.
 name|ASCENDING_INSENSITIVE
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/** 	 * If the sort order is ASCENDING or ASCENDING_INSENSITIVE, sets the sort 	 * order to DESCENDING or DESCENDING_INSENSITIVE, respectively. 	 *  	 * @since 3.0 	 */
 specifier|public
@@ -914,6 +918,7 @@ name|SortOrder
 operator|.
 name|ASCENDING
 condition|)
+block|{
 name|setSortOrder
 argument_list|(
 name|SortOrder
@@ -921,6 +926,7 @@ operator|.
 name|DESCENDING
 argument_list|)
 expr_stmt|;
+block|}
 if|else if
 condition|(
 name|sortOrder
@@ -929,6 +935,7 @@ name|SortOrder
 operator|.
 name|ASCENDING_INSENSITIVE
 condition|)
+block|{
 name|setSortOrder
 argument_list|(
 name|SortOrder
@@ -936,6 +943,7 @@ operator|.
 name|DESCENDING_INSENSITIVE
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/** Returns true if the sorting is case insensitive */
 specifier|public
@@ -991,6 +999,7 @@ name|SortOrder
 operator|.
 name|ASCENDING
 condition|)
+block|{
 name|setSortOrder
 argument_list|(
 name|SortOrder
@@ -998,6 +1007,7 @@ operator|.
 name|ASCENDING_INSENSITIVE
 argument_list|)
 expr_stmt|;
+block|}
 if|else if
 condition|(
 name|sortOrder
@@ -1006,6 +1016,7 @@ name|SortOrder
 operator|.
 name|DESCENDING
 condition|)
+block|{
 name|setSortOrder
 argument_list|(
 name|SortOrder
@@ -1013,6 +1024,7 @@ operator|.
 name|DESCENDING_INSENSITIVE
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/** 	 * If the sort order is ASCENDING_INSENSITIVE or DESCENDING_INSENSITIVE, 	 * sets the sort order to ASCENDING or DESCENDING, respectively. 	 *  	 * @since 3.0 	 */
 specifier|public
@@ -1032,6 +1044,7 @@ name|SortOrder
 operator|.
 name|ASCENDING_INSENSITIVE
 condition|)
+block|{
 name|setSortOrder
 argument_list|(
 name|SortOrder
@@ -1039,6 +1052,7 @@ operator|.
 name|ASCENDING
 argument_list|)
 expr_stmt|;
+block|}
 if|else if
 condition|(
 name|sortOrder
@@ -1047,6 +1061,7 @@ name|SortOrder
 operator|.
 name|DESCENDING_INSENSITIVE
 condition|)
+block|{
 name|setSortOrder
 argument_list|(
 name|SortOrder
@@ -1054,6 +1069,7 @@ operator|.
 name|DESCENDING
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/** 	 * Returns the expression defining a ordering Java Bean property. 	 */
 specifier|public

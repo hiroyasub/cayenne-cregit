@@ -1338,6 +1338,7 @@ name|childIndex
 operator|==
 literal|0
 condition|)
+block|{
 name|out
 operator|.
 name|append
@@ -1345,12 +1346,14 @@ argument_list|(
 literal|" BETWEEN "
 argument_list|)
 expr_stmt|;
+block|}
 if|else if
 condition|(
 name|childIndex
 operator|==
 literal|1
 condition|)
+block|{
 name|out
 operator|.
 name|append
@@ -1358,6 +1361,7 @@ argument_list|(
 literal|" AND "
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|Expression
@@ -1370,6 +1374,7 @@ name|childIndex
 operator|==
 literal|0
 condition|)
+block|{
 name|out
 operator|.
 name|append
@@ -1377,12 +1382,14 @@ argument_list|(
 literal|" NOT BETWEEN "
 argument_list|)
 expr_stmt|;
+block|}
 if|else if
 condition|(
 name|childIndex
 operator|==
 literal|1
 condition|)
+block|{
 name|out
 operator|.
 name|append
@@ -1390,6 +1397,7 @@ argument_list|(
 literal|" AND "
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|Expression

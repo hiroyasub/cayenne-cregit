@@ -27,6 +27,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Objects
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -168,6 +178,7 @@ literal|3748394113864532902L
 decl_stmt|;
 specifier|private
 specifier|static
+specifier|final
 name|Logger
 name|logger
 init|=
@@ -612,6 +623,46 @@ return|;
 block|}
 return|return
 literal|true
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|int
+name|hashCode
+parameter_list|()
+block|{
+return|return
+name|Objects
+operator|.
+name|hash
+argument_list|(
+name|userName
+argument_list|,
+name|password
+argument_list|,
+name|jdbcDriver
+argument_list|,
+name|dataSourceUrl
+argument_list|,
+name|adapterClassName
+argument_list|,
+name|minConnections
+argument_list|,
+name|maxConnections
+argument_list|,
+name|passwordEncoderClass
+argument_list|,
+name|passwordEncoderKey
+argument_list|,
+name|passwordLocation
+argument_list|,
+name|passwordSourceFilename
+argument_list|,
+name|passwordSourceModel
+argument_list|,
+name|passwordSourceUrl
+argument_list|)
 return|;
 block|}
 comment|/** 	 * @since 3.1 	 */
@@ -1140,6 +1191,7 @@ name|passwordEncoderClass
 operator|==
 literal|null
 condition|)
+block|{
 name|this
 operator|.
 name|passwordEncoderClass
@@ -1151,13 +1203,16 @@ index|[
 literal|0
 index|]
 expr_stmt|;
+block|}
 else|else
+block|{
 name|this
 operator|.
 name|passwordEncoderClass
 operator|=
 name|passwordEncoderClass
 expr_stmt|;
+block|}
 block|}
 comment|/** 	 * @return the passwordEncoderKey 	 */
 specifier|public
@@ -1288,10 +1343,12 @@ argument_list|(
 name|PASSWORD_LOCATION_CLASSPATH
 argument_list|)
 condition|)
+block|{
 return|return
 name|getPasswordSourceFilename
 argument_list|()
 return|;
+block|}
 if|else if
 condition|(
 name|getPasswordLocation
@@ -1302,10 +1359,12 @@ argument_list|(
 name|PASSWORD_LOCATION_EXECUTABLE
 argument_list|)
 condition|)
+block|{
 return|return
 name|getPasswordSourceExecutable
 argument_list|()
 return|;
+block|}
 if|else if
 condition|(
 name|getPasswordLocation
@@ -1316,10 +1375,12 @@ argument_list|(
 name|PASSWORD_LOCATION_MODEL
 argument_list|)
 condition|)
+block|{
 return|return
 name|getPasswordSourceModel
 argument_list|()
 return|;
+block|}
 if|else if
 condition|(
 name|getPasswordLocation
@@ -1330,10 +1391,12 @@ argument_list|(
 name|PASSWORD_LOCATION_URL
 argument_list|)
 condition|)
+block|{
 return|return
 name|getPasswordSourceUrl
 argument_list|()
 return|;
+block|}
 throw|throw
 operator|new
 name|RuntimeException
@@ -1361,11 +1424,13 @@ argument_list|(
 name|PASSWORD_LOCATION_CLASSPATH
 argument_list|)
 condition|)
+block|{
 name|setPasswordSourceFilename
 argument_list|(
 name|passwordSource
 argument_list|)
 expr_stmt|;
+block|}
 if|else if
 condition|(
 name|getPasswordLocation
@@ -1376,11 +1441,13 @@ argument_list|(
 name|PASSWORD_LOCATION_EXECUTABLE
 argument_list|)
 condition|)
+block|{
 name|setPasswordSourceExecutable
 argument_list|(
 name|passwordSource
 argument_list|)
 expr_stmt|;
+block|}
 if|else if
 condition|(
 name|getPasswordLocation
@@ -1391,11 +1458,13 @@ argument_list|(
 name|PASSWORD_LOCATION_URL
 argument_list|)
 condition|)
+block|{
 name|setPasswordSourceUrl
 argument_list|(
 name|passwordSource
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/** 	 * @return the passwordLocation 	 */
 specifier|public
@@ -1422,6 +1491,7 @@ name|passwordLocation
 operator|==
 literal|null
 condition|)
+block|{
 name|this
 operator|.
 name|passwordLocation
@@ -1430,13 +1500,16 @@ name|DataSourceInfo
 operator|.
 name|PASSWORD_LOCATION_MODEL
 expr_stmt|;
+block|}
 else|else
+block|{
 name|this
 operator|.
 name|passwordLocation
 operator|=
 name|passwordLocation
 expr_stmt|;
+block|}
 block|}
 annotation|@
 name|Override

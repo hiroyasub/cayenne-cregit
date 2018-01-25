@@ -191,6 +191,7 @@ name|enumerationClass
 operator|==
 literal|null
 condition|)
+block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -198,6 +199,7 @@ argument_list|(
 literal|"Null ExtendedEnumType class"
 argument_list|)
 throw|;
+block|}
 name|this
 operator|.
 name|enumerationClass
@@ -589,6 +591,7 @@ argument_list|(
 name|enumeration
 argument_list|)
 condition|)
+block|{
 throw|throw
 operator|new
 name|CayenneRuntimeException
@@ -596,6 +599,7 @@ argument_list|(
 literal|"Enumerations/values may not be duplicated."
 argument_list|)
 throw|;
+block|}
 comment|// Store by database value/enum because we have to lookup by db value later.
 name|enumerationMappings
 operator|.

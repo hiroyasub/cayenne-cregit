@@ -978,6 +978,7 @@ index|]
 operator|>
 name|max
 condition|)
+block|{
 name|max
 operator|=
 name|allTypes
@@ -985,6 +986,7 @@ index|[
 name|i
 index|]
 expr_stmt|;
+block|}
 if|else if
 condition|(
 name|allTypes
@@ -994,6 +996,7 @@ index|]
 operator|<
 name|min
 condition|)
+block|{
 name|min
 operator|=
 name|allTypes
@@ -1002,6 +1005,7 @@ name|i
 index|]
 expr_stmt|;
 block|}
+block|}
 comment|// sanity check....
 if|if
 condition|(
@@ -1009,6 +1013,7 @@ name|max
 operator|>
 literal|500
 condition|)
+block|{
 throw|throw
 operator|new
 name|RuntimeException
@@ -1018,12 +1023,14 @@ operator|+
 name|max
 argument_list|)
 throw|;
+block|}
 if|if
 condition|(
 name|min
 operator|<
 literal|0
 condition|)
+block|{
 throw|throw
 operator|new
 name|RuntimeException
@@ -1033,6 +1040,7 @@ operator|+
 name|min
 argument_list|)
 throw|;
+block|}
 comment|// now we know that if types are used as indexes,
 comment|// they will fit in array "max + 1" long (though gaps are possible)
 name|typeLookup
@@ -1937,7 +1945,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|NullPointerException
+name|IllegalArgumentException
 argument_list|(
 literal|"Null values collection"
 argument_list|)
@@ -1994,7 +2002,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|NullPointerException
+name|IllegalArgumentException
 argument_list|(
 literal|"Null values collection"
 argument_list|)
@@ -5651,7 +5659,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|NullPointerException
+name|IllegalArgumentException
 argument_list|(
 literal|"Null expression string."
 argument_list|)

@@ -399,6 +399,8 @@ class|class
 name|DbGenerator
 block|{
 specifier|private
+specifier|static
+specifier|final
 name|Logger
 name|logObj
 init|=

@@ -690,6 +690,7 @@ name|fromIndex
 operator|<
 literal|0
 condition|)
+block|{
 throw|throw
 operator|new
 name|IndexOutOfBoundsException
@@ -699,6 +700,7 @@ operator|+
 name|fromIndex
 argument_list|)
 throw|;
+block|}
 if|if
 condition|(
 name|toIndex

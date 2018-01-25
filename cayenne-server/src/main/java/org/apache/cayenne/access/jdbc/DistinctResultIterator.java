@@ -232,7 +232,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|NullPointerException
+name|IllegalArgumentException
 argument_list|(
 literal|"Null wrapped iterator."
 argument_list|)
@@ -247,7 +247,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|NullPointerException
+name|IllegalArgumentException
 argument_list|(
 literal|"Null defaultEntity."
 argument_list|)

@@ -78,9 +78,11 @@ name|value
 operator|==
 literal|null
 condition|)
+block|{
 return|return
 literal|null
 return|;
+block|}
 if|if
 condition|(
 name|type
@@ -93,6 +95,7 @@ name|getClass
 argument_list|()
 argument_list|)
 condition|)
+block|{
 return|return
 operator|(
 name|T
@@ -100,6 +103,7 @@ operator|)
 name|value
 return|;
 comment|// no conversion needed
+block|}
 try|try
 block|{
 name|Constructor

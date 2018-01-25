@@ -604,6 +604,7 @@ name|Types
 operator|.
 name|DATE
 condition|)
+block|{
 return|return
 operator|new
 name|java
@@ -618,6 +619,7 @@ name|getTimeInMillis
 argument_list|()
 argument_list|)
 return|;
+block|}
 if|else if
 condition|(
 name|type
@@ -626,6 +628,7 @@ name|Types
 operator|.
 name|TIME
 condition|)
+block|{
 return|return
 operator|new
 name|java
@@ -640,6 +643,7 @@ name|getTimeInMillis
 argument_list|()
 argument_list|)
 return|;
+block|}
 if|else if
 condition|(
 name|type
@@ -648,6 +652,7 @@ name|Types
 operator|.
 name|TIMESTAMP
 condition|)
+block|{
 return|return
 operator|new
 name|java
@@ -662,7 +667,9 @@ name|getTimeInMillis
 argument_list|()
 argument_list|)
 return|;
+block|}
 else|else
+block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -682,6 +689,7 @@ name|type
 argument_list|)
 argument_list|)
 throw|;
+block|}
 block|}
 annotation|@
 name|Override

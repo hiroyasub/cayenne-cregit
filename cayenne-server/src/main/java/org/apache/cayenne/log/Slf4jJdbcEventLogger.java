@@ -394,9 +394,11 @@ argument_list|()
 operator|==
 literal|0
 condition|)
+block|{
 return|return
 literal|false
 return|;
+block|}
 name|char
 name|firstCharacter
 init|=

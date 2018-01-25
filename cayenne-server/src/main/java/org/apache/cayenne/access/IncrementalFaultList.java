@@ -1538,6 +1538,7 @@ operator|.
 name|size
 argument_list|()
 condition|)
+block|{
 throw|throw
 operator|new
 name|NoSuchElementException
@@ -1545,6 +1546,7 @@ argument_list|(
 literal|"no more elements"
 argument_list|)
 throw|;
+block|}
 return|return
 name|get
 argument_list|(
@@ -2953,6 +2955,7 @@ operator|.
 name|size
 argument_list|()
 condition|)
+block|{
 throw|throw
 operator|new
 name|NoSuchElementException
@@ -2960,6 +2963,7 @@ argument_list|(
 literal|"at the end of the list"
 argument_list|)
 throw|;
+block|}
 return|return
 name|get
 argument_list|(
@@ -2988,6 +2992,7 @@ name|listIndex
 operator|<
 literal|1
 condition|)
+block|{
 throw|throw
 operator|new
 name|NoSuchElementException
@@ -2995,6 +3000,7 @@ argument_list|(
 literal|"at the beginning of the list"
 argument_list|)
 throw|;
+block|}
 return|return
 name|get
 argument_list|(

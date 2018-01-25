@@ -517,7 +517,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|NullPointerException
+name|IllegalArgumentException
 argument_list|(
 literal|"ReferenceMap can't contain null values"
 argument_list|)
@@ -661,7 +661,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|NullPointerException
+name|IllegalArgumentException
 argument_list|(
 literal|"ReferenceMap can't contain null values"
 argument_list|)

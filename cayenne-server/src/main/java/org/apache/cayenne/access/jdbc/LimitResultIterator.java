@@ -167,7 +167,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|NullPointerException
+name|IllegalArgumentException
 argument_list|(
 literal|"Null delegate iterator."
 argument_list|)
