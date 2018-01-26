@@ -1404,7 +1404,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|IllegalArgumentException
+name|NullPointerException
 argument_list|(
 literal|"properties is null"
 argument_list|)

@@ -915,7 +915,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|IllegalArgumentException
+name|NullPointerException
 argument_list|(
 literal|"Attempt to add null target DataObject."
 argument_list|)

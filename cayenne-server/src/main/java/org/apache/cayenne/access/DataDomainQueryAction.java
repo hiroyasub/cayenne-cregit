@@ -2480,7 +2480,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|IllegalArgumentException
+name|NullPointerException
 argument_list|(
 literal|"Null DataMap, can't determine DataNode."
 argument_list|)

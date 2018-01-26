@@ -253,7 +253,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|IllegalArgumentException
+name|NullPointerException
 argument_list|(
 literal|"Null 'nullQualifierNames'"
 argument_list|)

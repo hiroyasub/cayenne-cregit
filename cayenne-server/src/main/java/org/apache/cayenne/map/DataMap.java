@@ -1763,7 +1763,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|IllegalArgumentException
+name|NullPointerException
 argument_list|(
 literal|"Can't add null query."
 argument_list|)
@@ -1781,7 +1781,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|IllegalArgumentException
+name|NullPointerException
 argument_list|(
 literal|"Query name can't be null."
 argument_list|)
@@ -1996,7 +1996,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|IllegalArgumentException
+name|NullPointerException
 argument_list|(
 literal|"Null embeddable"
 argument_list|)
@@ -2014,7 +2014,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|IllegalArgumentException
+name|NullPointerException
 argument_list|(
 literal|"Attempt to add Embeddable with no class name."
 argument_list|)
@@ -2106,7 +2106,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|IllegalArgumentException
+name|NullPointerException
 argument_list|(
 literal|"Null result"
 argument_list|)
@@ -2124,7 +2124,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|IllegalArgumentException
+name|NullPointerException
 argument_list|(
 literal|"Attempt to add resultSetMapping with no name."
 argument_list|)
@@ -2209,7 +2209,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|IllegalArgumentException
+name|NullPointerException
 argument_list|(
 literal|"Attempt to add ObjEntity with no name."
 argument_list|)
@@ -2304,7 +2304,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|IllegalArgumentException
+name|NullPointerException
 argument_list|(
 literal|"Attempt to add DbEntity with no name."
 argument_list|)
@@ -3306,7 +3306,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|IllegalArgumentException
+name|NullPointerException
 argument_list|(
 literal|"Attempt to add procedure with no name."
 argument_list|)

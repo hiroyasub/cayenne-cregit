@@ -1400,7 +1400,7 @@ name|Test
 argument_list|(
 name|expected
 operator|=
-name|IllegalArgumentException
+name|NullPointerException
 operator|.
 name|class
 argument_list|)
@@ -1437,7 +1437,7 @@ name|Test
 argument_list|(
 name|expected
 operator|=
-name|IllegalArgumentException
+name|NullPointerException
 operator|.
 name|class
 argument_list|)

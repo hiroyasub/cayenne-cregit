@@ -1299,7 +1299,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|IllegalArgumentException
+name|NullPointerException
 argument_list|(
 literal|"Null objectClass. Descriptor wasn't initialized properly."
 argument_list|)

@@ -418,7 +418,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|IllegalArgumentException
+name|NullPointerException
 argument_list|(
 literal|"Null DataChannelDescriptor name"
 argument_list|)
@@ -449,7 +449,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|IllegalArgumentException
+name|NullPointerException
 argument_list|(
 literal|"Null DataMap name"
 argument_list|)

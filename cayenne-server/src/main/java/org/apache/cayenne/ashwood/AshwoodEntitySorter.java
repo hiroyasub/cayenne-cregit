@@ -1925,7 +1925,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|IllegalArgumentException
+name|NullPointerException
 argument_list|(
 literal|"No record for DbEntity: "
 operator|+
@@ -1942,7 +1942,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|IllegalArgumentException
+name|NullPointerException
 argument_list|(
 literal|"No record for DbEntity: "
 operator|+

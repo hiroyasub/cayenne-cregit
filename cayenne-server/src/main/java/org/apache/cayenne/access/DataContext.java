@@ -1954,7 +1954,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|IllegalArgumentException
+name|NullPointerException
 argument_list|(
 literal|"Null 'persistentClass'"
 argument_list|)
@@ -2129,7 +2129,7 @@ condition|)
 block|{
 throw|throw
 operator|new
-name|IllegalArgumentException
+name|NullPointerException
 argument_list|(
 literal|"Can't register null object."
 argument_list|)
