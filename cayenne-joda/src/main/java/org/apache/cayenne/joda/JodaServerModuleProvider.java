@@ -66,10 +66,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 4.0  */
+comment|/**  * @since 4.0  * @deprecated since 4.1  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|JodaServerModuleProvider
