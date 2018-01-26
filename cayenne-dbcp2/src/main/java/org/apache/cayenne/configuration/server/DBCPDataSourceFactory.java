@@ -132,10 +132,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link DataSourceFactory} based on DBCP2 connection pool library.  */
+comment|/**  * A {@link DataSourceFactory} based on DBCP2 connection pool library.  * @deprecated since 4.1  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|DBCPDataSourceFactory
