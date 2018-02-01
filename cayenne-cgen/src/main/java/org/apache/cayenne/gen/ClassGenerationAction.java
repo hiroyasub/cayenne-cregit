@@ -23,18 +23,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|CayenneRuntimeException
 import|;
 end_import
@@ -430,6 +418,11 @@ specifier|protected
 name|boolean
 name|createPropertyNames
 decl_stmt|;
+specifier|protected
+name|boolean
+name|force
+decl_stmt|;
+comment|// force run generator
 comment|// runtime ivars
 specifier|protected
 name|VelocityContext
@@ -458,10 +451,7 @@ name|this
 operator|.
 name|timestamp
 operator|=
-name|System
-operator|.
-name|currentTimeMillis
-argument_list|()
+literal|0L
 expr_stmt|;
 name|this
 operator|.
@@ -1067,8 +1057,6 @@ parameter_list|(
 name|TemplateType
 name|type
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|String
 name|templateName
@@ -1093,11 +1081,9 @@ name|type
 argument_list|)
 expr_stmt|;
 block|}
-comment|// Velocity< 1.5 has some memory problems, so we will create a
-comment|// VelocityEngine
-comment|// every time, and store templates in an internal cache, to avoid
-comment|// uncontrolled
-comment|// memory leaks... Presumably 1.5 fixes it.
+comment|// Velocity< 1.5 has some memory problems, so we will create a VelocityEngine every time,
+comment|// and store templates in an internal cache, to avoid uncontrolled memory leaks...
+comment|// Presumably 1.5 fixes it.
 name|Template
 name|template
 init|=
@@ -1191,7 +1177,7 @@ return|return
 name|template
 return|;
 block|}
-comment|/** 	 * Validates the state of this class generator. Throws 	 * CayenneRuntimeException if it is in an inconsistent state. Called 	 * internally from "execute". 	 */
+comment|/** 	 * Validates the state of this class generator. 	 * Throws CayenneRuntimeException if it is in an inconsistent state. 	 * Called internally from "execute". 	 */
 specifier|protected
 name|void
 name|validateAttributes
@@ -1584,9 +1570,6 @@ argument_list|,
 name|filename
 argument_list|)
 decl_stmt|;
-comment|// Ignore if the destination is newer than the map
-comment|// (internal timestamp), i.e. has been generated after the map was
-comment|// last saved AND the template is older than the destination file
 if|if
 condition|(
 name|dest
@@ -1595,49 +1578,17 @@ name|exists
 argument_list|()
 operator|&&
 operator|!
-name|isOld
+name|fileNeedUpdate
 argument_list|(
 name|dest
-argument_list|)
-condition|)
-block|{
-if|if
-condition|(
+argument_list|,
 name|superTemplate
-operator|==
-literal|null
+argument_list|)
 condition|)
 block|{
 return|return
 literal|null
 return|;
-block|}
-name|File
-name|superTemplateFile
-init|=
-operator|new
-name|File
-argument_list|(
-name|superTemplate
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|superTemplateFile
-operator|.
-name|lastModified
-argument_list|()
-operator|<
-name|dest
-operator|.
-name|lastModified
-argument_list|()
-condition|)
-block|{
-return|return
-literal|null
-return|;
-block|}
 block|}
 return|return
 name|dest
@@ -1743,12 +1694,49 @@ return|return
 literal|null
 return|;
 block|}
-comment|// Ignore if the destination is newer than the map
-comment|// (internal timestamp), i.e. has been generated after the map was
-comment|// last saved AND the template is older than the destination file
 if|if
 condition|(
 operator|!
+name|fileNeedUpdate
+argument_list|(
+name|dest
+argument_list|,
+name|template
+argument_list|)
+condition|)
+block|{
+return|return
+literal|null
+return|;
+block|}
+block|}
+return|return
+name|dest
+return|;
+block|}
+comment|/** 	 * Ignore if the destination is newer than the map 	 * (internal timestamp), i.e. has been generated after the map was 	 * last saved AND the template is older than the destination file 	 */
+specifier|protected
+name|boolean
+name|fileNeedUpdate
+parameter_list|(
+name|File
+name|dest
+parameter_list|,
+name|String
+name|templateFileName
+parameter_list|)
+block|{
+if|if
+condition|(
+name|force
+condition|)
+block|{
+return|return
+literal|true
+return|;
+block|}
+if|if
+condition|(
 name|isOld
 argument_list|(
 name|dest
@@ -1757,13 +1745,13 @@ condition|)
 block|{
 if|if
 condition|(
-name|template
+name|templateFileName
 operator|==
 literal|null
 condition|)
 block|{
 return|return
-literal|null
+literal|false
 return|;
 block|}
 name|File
@@ -1772,33 +1760,26 @@ init|=
 operator|new
 name|File
 argument_list|(
-name|template
+name|templateFileName
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
+return|return
 name|templateFile
 operator|.
 name|lastModified
 argument_list|()
-operator|<
+operator|>=
 name|dest
 operator|.
 name|lastModified
 argument_list|()
-condition|)
-block|{
-return|return
-literal|null
 return|;
 block|}
-block|}
-block|}
 return|return
-name|dest
+literal|true
 return|;
 block|}
-comment|/** 	 * Returns true if<code>file</code> parameter is older than internal 	 * timestamp of this class generator. 	 */
+comment|/** 	 * Is file modified after internal timestamp (usually equal to mtime of datamap file) 	 */
 specifier|protected
 name|boolean
 name|isOld
@@ -1812,7 +1793,7 @@ name|file
 operator|.
 name|lastModified
 argument_list|()
-operator|<=
+operator|>
 name|timestamp
 return|;
 block|}
@@ -1945,7 +1926,7 @@ operator|=
 name|superPkg
 expr_stmt|;
 block|}
-comment|/** 	 * @param dataMap 	 *            The dataMap to set. 	 */
+comment|/** 	 * @param dataMap The dataMap to set. 	 */
 specifier|public
 name|void
 name|setDataMap
@@ -1961,8 +1942,7 @@ operator|=
 name|dataMap
 expr_stmt|;
 block|}
-comment|/** 	 * Adds entities to the internal entity list. 	 */
-comment|/** 	 * 	 * @param entities 	 * @throws CayenneException 	 * 	 * @since 4.0 throws exception 	 */
+comment|/** 	 * Adds entities to the internal entity list. 	 * @param entities collection 	 * 	 * @since 4.0 throws exception 	 */
 specifier|public
 name|void
 name|addEntities
@@ -1973,8 +1953,6 @@ name|ObjEntity
 argument_list|>
 name|entities
 parameter_list|)
-throws|throws
-name|CayenneRuntimeException
 block|{
 if|if
 condition|(
@@ -2103,9 +2081,8 @@ operator|.
 name|ALL
 condition|)
 block|{
-comment|// TODO: andrus 10.12.2010 - why not also check for empty query
-comment|// list?? Or
-comment|// create a better API for enabling DataMapArtifact
+comment|// TODO: andrus 10.12.2010 - why not also check for empty query list??
+comment|// Or create a better API for enabling DataMapArtifact
 if|if
 condition|(
 name|queries
@@ -2258,6 +2235,30 @@ operator|.
 name|ALL
 expr_stmt|;
 block|}
+block|}
+specifier|public
+name|boolean
+name|isForce
+parameter_list|()
+block|{
+return|return
+name|force
+return|;
+block|}
+specifier|public
+name|void
+name|setForce
+parameter_list|(
+name|boolean
+name|force
+parameter_list|)
+block|{
+name|this
+operator|.
+name|force
+operator|=
+name|force
+expr_stmt|;
 block|}
 block|}
 end_class

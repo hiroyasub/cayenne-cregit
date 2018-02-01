@@ -239,16 +239,6 @@ name|File
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
-name|FilenameFilter
-import|;
-end_import
-
 begin_comment
 comment|/**  * Maven mojo to perform class generation from data map. This class is an Maven  * adapter to DefaultClassGenerator class.  *   * @since 3.0  */
 end_comment
@@ -457,6 +447,22 @@ specifier|private
 name|boolean
 name|createPropertyNames
 decl_stmt|;
+comment|/** 	 * If set to<code>true</code>, will skip file modification time validation and regenerate all. 	 * Default is<code>false</code>. 	 * 	 * @since 4.1 	 */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"false"
+argument_list|,
+name|property
+operator|=
+literal|"force"
+argument_list|)
+specifier|private
+name|boolean
+name|force
+decl_stmt|;
 specifier|private
 specifier|transient
 name|Injector
@@ -595,6 +601,20 @@ argument_list|(
 name|logger
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|force
+condition|)
+block|{
+comment|// will (re-)generate all files
+name|generator
+operator|.
+name|setForce
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
+block|}
 name|generator
 operator|.
 name|setTimestamp
@@ -624,9 +644,6 @@ name|dataMap
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// ksenia khailenko 15.10.2010
-comment|// TODO add the "includeEmbeddables" and "excludeEmbeddables"
-comment|// attributes
 name|generator
 operator|.
 name|addEmbeddables
@@ -637,7 +654,6 @@ name|getEmbeddables
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// TODO add the "includeQueries" and "excludeQueries" attributes
 name|generator
 operator|.
 name|addQueries
@@ -708,27 +724,17 @@ literal|"'additionalMaps' must be a directory."
 argument_list|)
 throw|;
 block|}
-name|FilenameFilter
-name|mapFilter
-init|=
-operator|new
-name|FilenameFilter
-argument_list|()
-block|{
-annotation|@
-name|Override
-specifier|public
-name|boolean
-name|accept
+return|return
+name|additionalMaps
+operator|.
+name|listFiles
+argument_list|(
 parameter_list|(
-name|File
 name|dir
 parameter_list|,
-name|String
 name|name
 parameter_list|)
-block|{
-return|return
+lambda|->
 name|name
 operator|!=
 literal|null
@@ -742,16 +748,6 @@ name|endsWith
 argument_list|(
 literal|".map.xml"
 argument_list|)
-return|;
-block|}
-block|}
-decl_stmt|;
-return|return
-name|additionalMaps
-operator|.
-name|listFiles
-argument_list|(
-name|mapFilter
 argument_list|)
 return|;
 block|}
