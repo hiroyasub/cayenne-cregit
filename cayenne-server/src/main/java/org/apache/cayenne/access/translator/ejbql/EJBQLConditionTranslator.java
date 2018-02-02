@@ -3538,8 +3538,9 @@ try|try
 block|{
 name|longValue
 operator|=
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
 name|text
 argument_list|)

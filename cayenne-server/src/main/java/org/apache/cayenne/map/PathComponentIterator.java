@@ -278,6 +278,7 @@ operator|.
 name|hasMoreTokens
 argument_list|()
 condition|)
+block|{
 throw|throw
 operator|new
 name|ExpressionException
@@ -293,6 +294,7 @@ argument_list|,
 literal|null
 argument_list|)
 throw|;
+block|}
 return|return
 operator|new
 name|AttributePathComponent

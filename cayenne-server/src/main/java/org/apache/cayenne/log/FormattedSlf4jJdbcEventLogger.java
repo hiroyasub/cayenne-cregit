@@ -389,12 +389,14 @@ argument_list|)
 operator|==
 literal|'\''
 condition|)
+block|{
 name|apixCount
 operator|=
 name|apixCount
 operator|-
 literal|2
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(

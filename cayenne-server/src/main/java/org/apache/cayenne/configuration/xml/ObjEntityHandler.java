@@ -157,6 +157,22 @@ name|SAXException
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Util
+operator|.
+name|isBlank
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 4.1  */
 end_comment
@@ -1017,15 +1033,10 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|isBlank
+argument_list|(
 name|qualifier
-operator|.
-name|trim
-argument_list|()
-operator|.
-name|length
-argument_list|()
-operator|==
-literal|0
+argument_list|)
 condition|)
 block|{
 return|return;

@@ -228,6 +228,7 @@ name|to
 argument_list|)
 operator|)
 condition|)
+block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -235,6 +236,7 @@ argument_list|(
 literal|"Nonexistent vertex"
 argument_list|)
 throw|;
+block|}
 name|neighbors
 operator|.
 name|get

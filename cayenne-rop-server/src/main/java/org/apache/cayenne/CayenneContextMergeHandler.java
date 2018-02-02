@@ -670,8 +670,6 @@ name|targetNodeId
 argument_list|)
 expr_stmt|;
 block|}
-try|try
-block|{
 if|if
 condition|(
 name|p
@@ -707,10 +705,6 @@ argument_list|,
 name|target
 argument_list|)
 expr_stmt|;
-block|}
-block|}
-finally|finally
-block|{
 block|}
 block|}
 specifier|public
@@ -814,8 +808,6 @@ name|targetNodeId
 argument_list|)
 expr_stmt|;
 block|}
-try|try
-block|{
 if|if
 condition|(
 name|p
@@ -851,10 +843,6 @@ argument_list|,
 literal|null
 argument_list|)
 expr_stmt|;
-block|}
-block|}
-finally|finally
-block|{
 block|}
 block|}
 specifier|private

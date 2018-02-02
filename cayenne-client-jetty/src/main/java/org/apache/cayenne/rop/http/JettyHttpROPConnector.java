@@ -256,6 +256,7 @@ name|ROPConnector
 block|{
 specifier|private
 specifier|static
+specifier|final
 name|Logger
 name|logger
 init|=
@@ -317,6 +318,7 @@ name|httpClient
 operator|==
 literal|null
 condition|)
+block|{
 throw|throw
 operator|new
 name|IllegalArgumentException
@@ -326,6 +328,7 @@ operator|+
 literal|"for this ROPConnector implementation."
 argument_list|)
 throw|;
+block|}
 name|this
 operator|.
 name|httpClient

@@ -556,7 +556,9 @@ argument_list|(
 name|dst
 argument_list|)
 condition|)
+block|{
 continue|continue;
+block|}
 name|Collection
 argument_list|<
 name|E
@@ -722,15 +724,18 @@ name|root
 operator|==
 literal|null
 condition|)
+block|{
 return|return
 literal|false
 return|;
+block|}
 if|if
 condition|(
 name|directDfs
 operator|==
 literal|null
 condition|)
+block|{
 name|directDfs
 operator|=
 operator|new
@@ -742,7 +747,9 @@ argument_list|,
 name|root
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|directDfs
 operator|.
 name|reset
@@ -750,6 +757,7 @@ argument_list|(
 name|root
 argument_list|)
 expr_stmt|;
+block|}
 name|int
 name|stamp
 decl_stmt|;
@@ -867,6 +875,7 @@ name|reverseDfs
 operator|==
 literal|null
 condition|)
+block|{
 name|reverseDfs
 operator|=
 operator|new
@@ -878,7 +887,9 @@ argument_list|,
 name|root
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|reverseDfs
 operator|.
 name|reset
@@ -886,6 +897,7 @@ argument_list|(
 name|root
 argument_list|)
 expr_stmt|;
+block|}
 while|while
 condition|(
 name|reverseDfs

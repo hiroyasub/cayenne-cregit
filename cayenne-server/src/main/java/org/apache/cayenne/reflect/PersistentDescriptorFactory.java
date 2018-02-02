@@ -479,11 +479,11 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-name|collectionType
+literal|"java.util.Map"
 operator|.
 name|equals
 argument_list|(
-literal|"java.util.Map"
+name|collectionType
 argument_list|)
 condition|)
 block|{
@@ -497,11 +497,11 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-name|collectionType
+literal|"java.util.Set"
 operator|.
 name|equals
 argument_list|(
-literal|"java.util.Set"
+name|collectionType
 argument_list|)
 condition|)
 block|{
@@ -515,11 +515,11 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-name|collectionType
+literal|"java.util.Collection"
 operator|.
 name|equals
 argument_list|(
-literal|"java.util.Collection"
+name|collectionType
 argument_list|)
 condition|)
 block|{

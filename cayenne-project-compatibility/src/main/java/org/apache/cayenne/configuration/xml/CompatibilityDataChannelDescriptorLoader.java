@@ -346,6 +346,7 @@ name|XMLDataChannelDescriptorLoader
 block|{
 specifier|private
 specifier|static
+specifier|final
 name|Logger
 name|logger
 init|=

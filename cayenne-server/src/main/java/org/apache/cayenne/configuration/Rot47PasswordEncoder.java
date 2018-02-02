@@ -148,10 +148,12 @@ name|c
 operator|>
 literal|'~'
 condition|)
+block|{
 name|c
 operator|-=
 literal|94
 expr_stmt|;
+block|}
 block|}
 name|result
 operator|.

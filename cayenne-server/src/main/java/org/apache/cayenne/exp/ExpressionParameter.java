@@ -39,6 +39,16 @@ name|Serializable
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Objects
+import|;
+end_import
+
 begin_comment
 comment|/**  * Named parameter for parameterized expressions.  */
 end_comment
@@ -142,6 +152,22 @@ name|name
 argument_list|,
 name|parameter
 operator|.
+name|name
+argument_list|)
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|int
+name|hashCode
+parameter_list|()
+block|{
+return|return
+name|Objects
+operator|.
+name|hash
+argument_list|(
 name|name
 argument_list|)
 return|;

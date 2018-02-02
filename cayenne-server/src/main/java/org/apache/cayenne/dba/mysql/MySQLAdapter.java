@@ -1113,25 +1113,25 @@ comment|// per
 comment|// http://dev.mysql.com/doc/refman/5.0/en/connector-j-reference-type-conversions.html
 if|if
 condition|(
-name|typeName
-operator|.
-name|equals
-argument_list|(
 literal|"int unsigned"
-argument_list|)
-operator|||
-name|typeName
 operator|.
 name|equals
 argument_list|(
+name|typeName
+argument_list|)
+operator|||
 literal|"integer unsigned"
-argument_list|)
-operator|||
-name|typeName
 operator|.
 name|equals
 argument_list|(
+name|typeName
+argument_list|)
+operator|||
 literal|"mediumint unsigned"
+operator|.
+name|equals
+argument_list|(
+name|typeName
 argument_list|)
 condition|)
 block|{
@@ -1431,11 +1431,14 @@ if|if
 condition|(
 name|firstPk
 condition|)
+block|{
 name|firstPk
 operator|=
 literal|false
 expr_stmt|;
+block|}
 else|else
+block|{
 name|sqlBuffer
 operator|.
 name|append
@@ -1443,6 +1446,7 @@ argument_list|(
 literal|", "
 argument_list|)
 expr_stmt|;
+block|}
 name|DbAttribute
 name|at
 init|=

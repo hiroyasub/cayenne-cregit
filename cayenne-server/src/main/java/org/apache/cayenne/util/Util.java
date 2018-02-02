@@ -1426,9 +1426,11 @@ argument_list|()
 operator|==
 literal|0
 condition|)
+block|{
 return|return
 name|name
 return|;
+block|}
 name|char
 name|c
 init|=
@@ -1494,9 +1496,11 @@ argument_list|()
 operator|==
 literal|0
 condition|)
+block|{
 return|return
 name|aString
 return|;
+block|}
 name|char
 name|c
 init|=
@@ -1816,9 +1820,11 @@ argument_list|()
 operator|==
 literal|0
 condition|)
+block|{
 return|return
 name|className
 return|;
+block|}
 name|int
 name|lastDot
 init|=
@@ -1851,9 +1857,11 @@ operator|==
 name|lastDot
 operator|)
 condition|)
+block|{
 return|return
 name|className
 return|;
+block|}
 return|return
 name|className
 operator|.

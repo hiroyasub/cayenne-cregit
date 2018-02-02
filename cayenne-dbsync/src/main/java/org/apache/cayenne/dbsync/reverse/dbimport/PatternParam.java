@@ -19,6 +19,22 @@ name|dbimport
 package|;
 end_package
 
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Util
+operator|.
+name|isBlank
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 4.0.  */
 end_comment
@@ -115,13 +131,10 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|isBlank
+argument_list|(
 name|pattern
-operator|.
-name|trim
-argument_list|()
-operator|.
-name|isEmpty
-argument_list|()
+argument_list|)
 condition|)
 block|{
 return|return;

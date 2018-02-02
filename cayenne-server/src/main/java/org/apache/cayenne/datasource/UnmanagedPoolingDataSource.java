@@ -300,6 +300,7 @@ literal|20000
 decl_stmt|;
 specifier|private
 specifier|static
+specifier|final
 name|Logger
 name|LOGGER
 init|=
