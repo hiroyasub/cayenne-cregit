@@ -134,9 +134,6 @@ condition|(
 name|isBlank
 argument_list|(
 name|pattern
-operator|.
-name|trim
-argument_list|()
 argument_list|)
 condition|)
 block|{

@@ -518,9 +518,6 @@ operator|.
 name|isBlank
 argument_list|(
 name|name
-operator|.
-name|trim
-argument_list|()
 argument_list|)
 condition|)
 block|{

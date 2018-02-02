@@ -1310,7 +1310,7 @@ name|logger
 operator|.
 name|warn
 argument_list|(
-literal|"Message: "
+literal|"Can't get additional dataMap resources: "
 argument_list|,
 name|ex
 argument_list|)
@@ -1393,7 +1393,7 @@ name|logger
 operator|.
 name|warn
 argument_list|(
-literal|"Message: "
+literal|"Can't save the document: "
 argument_list|,
 name|ex
 argument_list|)
@@ -1527,9 +1527,6 @@ operator|||
 name|isBlank
 argument_list|(
 name|version
-operator|.
-name|trim
-argument_list|()
 argument_list|)
 condition|)
 block|{
