@@ -183,6 +183,13 @@ name|DATA_MAP_TAG
 init|=
 literal|"data-map"
 decl_stmt|;
+specifier|static
+specifier|final
+name|String
+name|DOMAIN_TAG
+init|=
+literal|"domain"
+decl_stmt|;
 specifier|private
 name|XMLDataChannelDescriptorLoader
 name|xmlDataChannelDescriptorLoader
@@ -275,6 +282,12 @@ argument_list|(
 name|attributes
 argument_list|)
 expr_stmt|;
+return|return
+literal|true
+return|;
+case|case
+name|DOMAIN_TAG
+case|:
 return|return
 literal|true
 return|;
