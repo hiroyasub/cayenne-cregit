@@ -138,6 +138,9 @@ specifier|public
 specifier|abstract
 class|class
 name|RelationshipFault
+parameter_list|<
+name|E
+parameter_list|>
 block|{
 specifier|protected
 name|Persistent
@@ -283,12 +286,18 @@ name|void
 name|mergeLocalChanges
 parameter_list|(
 name|List
+argument_list|<
+name|E
+argument_list|>
 name|resolved
 parameter_list|)
 function_decl|;
 comment|/**      * Executes a query that returns related objects. Subclasses would invoke      * this method whenever they need to resolve a fault.      */
 specifier|protected
 name|List
+argument_list|<
+name|E
+argument_list|>
 name|resolveFromDB
 parameter_list|()
 block|{
@@ -302,10 +311,14 @@ block|{
 return|return
 operator|new
 name|ArrayList
+argument_list|<>
 argument_list|()
 return|;
 block|}
 name|List
+argument_list|<
+name|E
+argument_list|>
 name|resolved
 init|=
 name|relationshipOwner
@@ -329,7 +342,7 @@ literal|false
 argument_list|)
 argument_list|)
 decl_stmt|;
-comment|/**          * Duplicating the list (see CAY-1194). Doing that only for          * RelationshipFault query results, so only for nested DataContexts          */
+comment|/*          * Duplicating the list (see CAY-1194). Doing that only for          * RelationshipFault query results, so only for nested DataContexts          */
 if|if
 condition|(
 name|resolved
@@ -341,6 +354,7 @@ name|resolved
 operator|=
 operator|new
 name|ArrayList
+argument_list|<>
 argument_list|(
 name|resolved
 argument_list|)
@@ -381,6 +395,9 @@ name|void
 name|updateReverse
 parameter_list|(
 name|List
+argument_list|<
+name|E
+argument_list|>
 name|resolved
 parameter_list|)
 block|{

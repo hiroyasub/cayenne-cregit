@@ -33,24 +33,28 @@ begin_interface
 specifier|public
 interface|interface
 name|PersistentObjectCollection
+parameter_list|<
+name|E
+parameter_list|>
 extends|extends
 name|Collection
+argument_list|<
+name|E
+argument_list|>
 block|{
 comment|/**      * Adds an object without triggering an event       */
-specifier|public
 name|void
 name|addDirectly
 parameter_list|(
-name|Object
+name|E
 name|target
 parameter_list|)
 function_decl|;
 comment|/**      * Removes an object without triggering an event       */
-specifier|public
 name|void
 name|removeDirectly
 parameter_list|(
-name|Object
+name|E
 name|target
 parameter_list|)
 function_decl|;

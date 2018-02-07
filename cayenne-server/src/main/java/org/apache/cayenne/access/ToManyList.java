@@ -101,8 +101,14 @@ begin_class
 specifier|public
 class|class
 name|ToManyList
+parameter_list|<
+name|E
+parameter_list|>
 extends|extends
 name|PersistentObjectList
+argument_list|<
+name|E
+argument_list|>
 implements|implements
 name|Serializable
 block|{
@@ -135,6 +141,7 @@ name|objectList
 operator|=
 operator|new
 name|LinkedList
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}
@@ -255,6 +262,11 @@ name|void
 name|postprocessAdd
 parameter_list|(
 name|Collection
+argument_list|<
+name|?
+extends|extends
+name|E
+argument_list|>
 name|collection
 parameter_list|)
 block|{
@@ -267,6 +279,11 @@ name|void
 name|postprocessRemove
 parameter_list|(
 name|Collection
+argument_list|<
+name|?
+extends|extends
+name|E
+argument_list|>
 name|collection
 parameter_list|)
 block|{
@@ -278,7 +295,7 @@ specifier|protected
 name|void
 name|postprocessAdd
 parameter_list|(
-name|Object
+name|E
 name|addedObject
 parameter_list|)
 block|{
@@ -290,7 +307,7 @@ specifier|protected
 name|void
 name|postprocessRemove
 parameter_list|(
-name|Object
+name|E
 name|removedObject
 parameter_list|)
 block|{
@@ -303,6 +320,9 @@ name|void
 name|updateReverse
 parameter_list|(
 name|List
+argument_list|<
+name|E
+argument_list|>
 name|resolved
 parameter_list|)
 block|{

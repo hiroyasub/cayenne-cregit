@@ -815,6 +815,7 @@ name|table2Array
 operator|=
 operator|new
 name|PersistentObjectList
+argument_list|<>
 argument_list|(
 name|this
 argument_list|,
@@ -868,6 +869,7 @@ name|table2Array
 operator|=
 operator|new
 name|PersistentObjectList
+argument_list|<>
 argument_list|(
 name|this
 argument_list|,
@@ -927,6 +929,7 @@ name|table2Array
 operator|=
 operator|new
 name|PersistentObjectList
+argument_list|<>
 argument_list|(
 name|this
 argument_list|,

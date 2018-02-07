@@ -145,6 +145,9 @@ name|globalAttribute
 decl_stmt|;
 specifier|protected
 name|ValueHolder
+argument_list|<
+name|ClientMtTable1
+argument_list|>
 name|table1
 decl_stmt|;
 specifier|public
@@ -263,6 +266,7 @@ name|table1
 operator|=
 operator|new
 name|PersistentObjectHolder
+argument_list|<>
 argument_list|(
 name|this
 argument_list|,
@@ -271,9 +275,6 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-operator|(
-name|ClientMtTable1
-operator|)
 name|table1
 operator|.
 name|getValue
@@ -340,6 +341,7 @@ name|table1
 operator|=
 operator|new
 name|PersistentObjectHolder
+argument_list|<>
 argument_list|(
 name|this
 argument_list|,

@@ -341,7 +341,8 @@ argument_list|)
 else|:
 name|Collections
 operator|.
-name|EMPTY_MAP
+name|emptyMap
+argument_list|()
 return|;
 block|}
 comment|/** 	 * Creates a new ServerSession with a dedicated DataChannel. 	 */
@@ -457,8 +458,6 @@ parameter_list|(
 name|ClientMessage
 name|message
 parameter_list|)
-throws|throws
-name|Throwable
 block|{
 if|if
 condition|(
@@ -534,22 +533,11 @@ name|Throwable
 name|th
 parameter_list|)
 block|{
-name|StringBuilder
-name|wrapperMessage
+name|String
+name|wrapperMessageString
 init|=
-operator|new
-name|StringBuilder
-argument_list|()
-decl_stmt|;
-name|wrapperMessage
-operator|.
-name|append
-argument_list|(
 literal|"Exception processing message "
-argument_list|)
-operator|.
-name|append
-argument_list|(
+operator|+
 name|message
 operator|.
 name|getClass
@@ -557,25 +545,10 @@ argument_list|()
 operator|.
 name|getName
 argument_list|()
-argument_list|)
-operator|.
-name|append
-argument_list|(
+operator|+
 literal|" of type "
-argument_list|)
-operator|.
-name|append
-argument_list|(
+operator|+
 name|message
-argument_list|)
-expr_stmt|;
-name|String
-name|wrapperMessageString
-init|=
-name|wrapperMessage
-operator|.
-name|toString
-argument_list|()
 decl_stmt|;
 name|logger
 operator|.

@@ -81,17 +81,26 @@ begin_class
 specifier|public
 class|class
 name|PersistentObjectHolder
+parameter_list|<
+name|E
+parameter_list|>
 extends|extends
 name|RelationshipFault
+argument_list|<
+name|E
+argument_list|>
 implements|implements
 name|ValueHolder
+argument_list|<
+name|E
+argument_list|>
 block|{
 specifier|protected
 name|boolean
 name|fault
 decl_stmt|;
 specifier|protected
-name|Object
+name|E
 name|value
 decl_stmt|;
 comment|// exists for the benefit of manual serialization schemes such as the one in Hessian.
@@ -159,7 +168,7 @@ expr_stmt|;
 block|}
 comment|/**      * Returns a value resolving it via a query on the first call to this method.      */
 specifier|public
-name|Object
+name|E
 name|getValue
 parameter_list|()
 throws|throws
@@ -179,7 +188,7 @@ name|value
 return|;
 block|}
 specifier|public
-name|Object
+name|E
 name|getValueDirectly
 parameter_list|()
 throws|throws
@@ -192,10 +201,10 @@ block|}
 comment|/**      * Sets an object value, marking this ValueHolder as resolved.      */
 specifier|public
 specifier|synchronized
-name|Object
+name|E
 name|setValue
 parameter_list|(
-name|Object
+name|E
 name|value
 parameter_list|)
 throws|throws
@@ -210,7 +219,7 @@ name|resolve
 argument_list|()
 expr_stmt|;
 block|}
-name|Object
+name|E
 name|oldValue
 init|=
 name|setValueDirectly
@@ -298,10 +307,10 @@ name|oldValue
 return|;
 block|}
 specifier|public
-name|Object
+name|E
 name|setValueDirectly
 parameter_list|(
-name|Object
+name|E
 name|value
 parameter_list|)
 throws|throws
@@ -315,8 +324,6 @@ operator|instanceof
 name|Persistent
 condition|)
 block|{
-name|value
-operator|=
 name|connect
 argument_list|(
 operator|(
@@ -326,7 +333,7 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
-name|Object
+name|E
 name|oldValue
 init|=
 name|this
@@ -351,7 +358,7 @@ return|;
 block|}
 comment|/**      * Returns an object that should be stored as a value in this ValueHolder, ensuring      * that it is registered with the same context.      */
 specifier|protected
-name|Object
+name|void
 name|connect
 parameter_list|(
 name|Persistent
@@ -365,9 +372,7 @@ operator|==
 literal|null
 condition|)
 block|{
-return|return
-literal|null
-return|;
+return|return;
 block|}
 if|if
 condition|(
@@ -394,9 +399,6 @@ name|relationshipName
 argument_list|)
 throw|;
 block|}
-return|return
-name|persistent
-return|;
 block|}
 comment|/**      * Reads an object from the database.      */
 specifier|protected
@@ -416,6 +418,9 @@ block|}
 comment|// TODO: should build a HOLLOW object instead of running a query if relationship
 comment|// is required and thus expected to be not null.
 name|List
+argument_list|<
+name|E
+argument_list|>
 name|objects
 init|=
 name|resolveFromDB

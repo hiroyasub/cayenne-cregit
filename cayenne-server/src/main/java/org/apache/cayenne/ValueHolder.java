@@ -31,38 +31,41 @@ begin_interface
 specifier|public
 interface|interface
 name|ValueHolder
+parameter_list|<
+name|E
+parameter_list|>
 extends|extends
 name|Serializable
 block|{
 comment|/**      * Returns an object stored by this ValueHolder.      */
-name|Object
+name|E
 name|getValue
 parameter_list|()
 throws|throws
 name|CayenneRuntimeException
 function_decl|;
 comment|/**      * Retrieves ValueHolder value without triggering fault resolution.      */
-name|Object
+name|E
 name|getValueDirectly
 parameter_list|()
 throws|throws
 name|CayenneRuntimeException
 function_decl|;
 comment|/**      * Sets an object stored by this ValueHolder.      *       * @param value a new value of the ValueHolder.      * @return a previous value saved in the ValueHolder.      */
-name|Object
+name|E
 name|setValue
 parameter_list|(
-name|Object
+name|E
 name|value
 parameter_list|)
 throws|throws
 name|CayenneRuntimeException
 function_decl|;
 comment|/**      * Sets ValueHolder vaue without triggering fault resolution.      */
-name|Object
+name|E
 name|setValueDirectly
 parameter_list|(
-name|Object
+name|E
 name|value
 parameter_list|)
 throws|throws
