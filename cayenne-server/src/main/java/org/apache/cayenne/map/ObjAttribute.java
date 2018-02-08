@@ -976,11 +976,9 @@ argument_list|()
 decl_stmt|;
 return|return
 name|dbAttribute
-operator|==
+operator|!=
 literal|null
-condition|?
-literal|false
-else|:
+operator|&&
 name|dbAttribute
 operator|.
 name|isMandatory
