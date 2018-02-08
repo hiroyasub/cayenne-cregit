@@ -3531,13 +3531,10 @@ argument_list|()
 argument_list|)
 throw|;
 block|}
-comment|// add columns from the target entity, including those that are
-comment|// matched
-comment|// against the FK of the source entity. This is needed to
-comment|// determine
-comment|// whether optional relationships are null
-comment|// go via target OE to make sure that Java types are mapped
-comment|// correctly...
+comment|// add columns from the target entity, including those that are matched
+comment|// against the FK of the source entity.
+comment|// This is needed to determine whether optional relationships are null
+comment|// go via target OE to make sure that Java types are mapped correctly...
 name|ObjRelationship
 name|targetRel
 init|=
@@ -3567,17 +3564,29 @@ operator|.
 name|getPath
 argument_list|()
 decl_stmt|;
-for|for
-control|(
+name|PropertyVisitor
+name|prefetchVisitor
+init|=
+operator|new
+name|PropertyVisitor
+argument_list|()
+block|{
+specifier|public
+name|boolean
+name|visitAttribute
+parameter_list|(
+name|AttributeProperty
+name|property
+parameter_list|)
+block|{
 name|ObjAttribute
 name|oa
-range|:
-name|targetEntity
+init|=
+name|property
 operator|.
-name|getAttributes
+name|getAttribute
 argument_list|()
-control|)
-block|{
+decl_stmt|;
 name|Iterator
 argument_list|<
 name|CayenneMapEntry
@@ -3660,7 +3669,7 @@ name|DbAttribute
 condition|)
 block|{
 name|DbAttribute
-name|attribute
+name|dbAttr
 init|=
 operator|(
 name|DbAttribute
@@ -3673,7 +3682,7 @@ name|columns
 argument_list|,
 name|oa
 argument_list|,
-name|attribute
+name|dbAttr
 argument_list|,
 name|attributes
 argument_list|,
@@ -3681,7 +3690,7 @@ name|labelPrefix
 operator|+
 literal|'.'
 operator|+
-name|attribute
+name|dbAttr
 operator|.
 name|getName
 argument_list|()
@@ -3689,7 +3698,56 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+return|return
+literal|true
+return|;
 block|}
+specifier|public
+name|boolean
+name|visitToMany
+parameter_list|(
+name|ToManyProperty
+name|property
+parameter_list|)
+block|{
+return|return
+literal|true
+return|;
+block|}
+specifier|public
+name|boolean
+name|visitToOne
+parameter_list|(
+name|ToOneProperty
+name|property
+parameter_list|)
+block|{
+return|return
+literal|true
+return|;
+block|}
+block|}
+decl_stmt|;
+name|ClassDescriptor
+name|prefetchClassDescriptor
+init|=
+name|entityResolver
+operator|.
+name|getClassDescriptor
+argument_list|(
+name|targetEntity
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+decl_stmt|;
+name|prefetchClassDescriptor
+operator|.
+name|visitAllProperties
+argument_list|(
+name|prefetchVisitor
+argument_list|)
+expr_stmt|;
 comment|// append remaining target attributes such as keys
 name|DbEntity
 name|targetDbEntity

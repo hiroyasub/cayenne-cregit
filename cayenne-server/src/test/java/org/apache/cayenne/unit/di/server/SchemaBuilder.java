@@ -648,6 +648,8 @@ block|,
 literal|"hybrid-data-object.map.xml"
 block|,
 literal|"java8.map.xml"
+block|,
+literal|"inheritance-with-enum.map.xml"
 block|}
 decl_stmt|;
 comment|// hardcoded dependent entities that should be excluded

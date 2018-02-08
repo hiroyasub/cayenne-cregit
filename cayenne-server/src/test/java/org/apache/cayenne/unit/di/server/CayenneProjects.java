@@ -477,6 +477,14 @@ name|JAVA8
 init|=
 literal|"cayenne-java8.xml"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|INHERITANCE_WITH_ENUM_PROJECT
+init|=
+literal|"cayenne-inheritance-with-enum.xml"
+decl_stmt|;
 block|}
 end_class
 
