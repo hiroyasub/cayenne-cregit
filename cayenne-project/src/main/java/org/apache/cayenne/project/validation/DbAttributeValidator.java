@@ -184,7 +184,6 @@ literal|"DbAttribute has no type"
 argument_list|)
 expr_stmt|;
 block|}
-comment|// VARCHAR and CHAR attributes must have max length
 if|else if
 condition|(
 name|attribute
@@ -249,6 +248,7 @@ name|NCHAR
 operator|)
 condition|)
 block|{
+comment|// VARCHAR and CHAR attributes must have max length
 name|addFailure
 argument_list|(
 name|validationResult

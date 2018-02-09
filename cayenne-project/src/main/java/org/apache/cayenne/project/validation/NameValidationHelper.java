@@ -437,9 +437,8 @@ name|String
 name|invalidChars
 parameter_list|)
 block|{
-comment|// TODO: Java spec seems to allow "$" char in identifiers... Cayenne expressions
-comment|// do
-comment|// not, so we should probably check for this char presence...
+comment|// TODO: Java spec seems to allow "$" char in identifiers...
+comment|// Cayenne expressions do not, so we should probably check for this char presence...
 name|int
 name|len
 init|=

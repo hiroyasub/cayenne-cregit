@@ -188,7 +188,6 @@ literal|"Unnamed ObjRelationship"
 argument_list|)
 expr_stmt|;
 block|}
-comment|// check if there are attributes having the same name
 if|else if
 condition|(
 name|relationship
@@ -207,6 +206,7 @@ operator|!=
 literal|null
 condition|)
 block|{
+comment|// check if there are attributes having the same name
 name|addFailure
 argument_list|(
 name|validationResult
@@ -365,15 +365,10 @@ block|{
 name|DbEntity
 name|expectedSrc
 init|=
-operator|(
-operator|(
-name|ObjEntity
-operator|)
 name|relationship
 operator|.
 name|getSourceEntity
 argument_list|()
-operator|)
 operator|.
 name|getDbEntity
 argument_list|()
@@ -381,15 +376,10 @@ decl_stmt|;
 name|DbEntity
 name|expectedTarget
 init|=
-operator|(
-operator|(
-name|ObjEntity
-operator|)
 name|relationship
 operator|.
 name|getTargetEntity
 argument_list|()
-operator|)
 operator|.
 name|getDbEntity
 argument_list|()
@@ -584,9 +574,6 @@ comment|// check for relationships with same source and target entities
 name|ObjEntity
 name|entity
 init|=
-operator|(
-name|ObjEntity
-operator|)
 name|relationship
 operator|.
 name|getSourceEntity
@@ -789,19 +776,9 @@ operator|.
 name|getDbRelationshipPath
 argument_list|()
 decl_stmt|;
-if|if
-condition|(
-name|dbRelationshipPath
-operator|!=
-literal|null
-condition|)
-block|{
 name|ObjEntity
 name|entity
 init|=
-operator|(
-name|ObjEntity
-operator|)
 name|relationship
 operator|.
 name|getSourceEntity
@@ -873,7 +850,6 @@ argument_list|)
 expr_stmt|;
 return|return;
 comment|// Duplicate found, stop.
-block|}
 block|}
 block|}
 block|}
