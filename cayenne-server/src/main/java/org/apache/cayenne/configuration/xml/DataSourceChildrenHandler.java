@@ -301,13 +301,6 @@ name|Attributes
 name|attributes
 parameter_list|)
 block|{
-name|logger
-operator|.
-name|info
-argument_list|(
-literal|"loading user name and password."
-argument_list|)
-expr_stmt|;
 name|String
 name|encoderClass
 init|=
