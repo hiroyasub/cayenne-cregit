@@ -2358,8 +2358,17 @@ block|{
 name|createJointPrefetchDataSet
 argument_list|()
 expr_stmt|;
-name|SQLSelect
-name|sqlSelect
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
+specifier|final
+name|List
+argument_list|<
+name|Artist
+argument_list|>
+name|objects
 init|=
 name|SQLSelect
 operator|.
@@ -2383,8 +2392,6 @@ literal|"FROM ARTIST t0, PAINTING t1 "
 operator|+
 literal|"WHERE t0.ARTIST_ID = t1.ARTIST_ID"
 argument_list|)
-decl_stmt|;
-name|sqlSelect
 operator|.
 name|addPrefetch
 argument_list|(
@@ -2395,26 +2402,6 @@ operator|.
 name|joint
 argument_list|()
 argument_list|)
-expr_stmt|;
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
-specifier|final
-name|List
-argument_list|<
-name|Artist
-argument_list|>
-name|objects
-init|=
-operator|(
-name|List
-argument_list|<
-name|Artist
-argument_list|>
-operator|)
-name|sqlSelect
 operator|.
 name|select
 argument_list|(
@@ -2511,9 +2498,6 @@ name|createJointPrefetchDataSet
 argument_list|()
 expr_stmt|;
 name|SQLSelect
-name|sqlSelect
-init|=
-name|SQLSelect
 operator|.
 name|query
 argument_list|(
@@ -2531,8 +2515,6 @@ literal|"#result('t0.ARTIST_ID' 'int' '' 'ARTIST_ID') "
 operator|+
 literal|"FROM ARTIST t0, GALLERY t2 "
 argument_list|)
-decl_stmt|;
-name|sqlSelect
 operator|.
 name|addPrefetch
 argument_list|(
@@ -2550,8 +2532,6 @@ operator|.
 name|joint
 argument_list|()
 argument_list|)
-expr_stmt|;
-name|sqlSelect
 operator|.
 name|select
 argument_list|(

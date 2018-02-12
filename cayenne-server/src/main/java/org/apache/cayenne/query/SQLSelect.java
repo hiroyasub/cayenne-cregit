@@ -1099,6 +1099,13 @@ argument_list|(
 name|cacheStrategy
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|prefetches
+operator|!=
+literal|null
+condition|)
+block|{
 name|template
 operator|.
 name|addPrefetch
@@ -1106,6 +1113,7 @@ argument_list|(
 name|prefetches
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|positionalParams
