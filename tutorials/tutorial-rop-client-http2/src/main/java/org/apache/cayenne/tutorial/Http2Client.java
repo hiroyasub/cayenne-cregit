@@ -457,13 +457,6 @@ name|ClientJettyHttp2Module
 argument_list|()
 argument_list|)
 operator|.
-name|addModule
-argument_list|(
-operator|new
-name|ProtostuffModule
-argument_list|()
-argument_list|)
-operator|.
 name|build
 argument_list|()
 decl_stmt|;
