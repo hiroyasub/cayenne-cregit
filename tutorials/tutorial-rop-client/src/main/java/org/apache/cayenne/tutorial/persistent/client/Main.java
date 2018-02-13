@@ -192,17 +192,6 @@ name|put
 argument_list|(
 name|ClientConstants
 operator|.
-name|ROP_SERVICE_USE_ALPN_PROPERTY
-argument_list|,
-literal|"false"
-argument_list|)
-expr_stmt|;
-name|properties
-operator|.
-name|put
-argument_list|(
-name|ClientConstants
-operator|.
 name|ROP_SERVICE_USERNAME_PROPERTY
 argument_list|,
 literal|"cayenne-user"
