@@ -385,7 +385,7 @@ name|this
 operator|.
 name|root
 operator|=
-name|value
+literal|null
 expr_stmt|;
 block|}
 else|else
@@ -1369,9 +1369,6 @@ argument_list|()
 else|:
 name|Collections
 operator|.
-expr|<
-name|String
-operator|>
 name|emptyList
 argument_list|()
 return|;
@@ -1425,11 +1422,6 @@ name|map
 else|:
 name|Collections
 operator|.
-expr|<
-name|String
-operator|,
-name|Object
-operator|>
 name|emptyMap
 argument_list|()
 return|;
@@ -1565,11 +1557,7 @@ argument_list|)
 else|:
 operator|new
 name|HashMap
-argument_list|<
-name|String
-argument_list|,
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}
@@ -1620,22 +1608,11 @@ name|PrefetchTreeNode
 name|prefetchElement
 parameter_list|)
 block|{
-if|if
-condition|(
-name|hasDisjointNode
+name|checkForDisjointNode
 argument_list|(
 name|prefetchElement
 argument_list|)
-condition|)
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"This query supports only 'joint' and 'disjointById' prefetching semantics."
-argument_list|)
-throw|;
-block|}
+expr_stmt|;
 name|metaData
 operator|.
 name|mergePrefetch
@@ -1644,9 +1621,10 @@ name|prefetchElement
 argument_list|)
 expr_stmt|;
 block|}
+comment|/** 	 * Check for disjoint element and throw if it's found. 	 * @param prefetchElement to check 	 */
 specifier|private
-name|boolean
-name|hasDisjointNode
+name|void
+name|checkForDisjointNode
 parameter_list|(
 name|PrefetchTreeNode
 name|prefetchElement
@@ -1660,9 +1638,13 @@ name|isDisjointPrefetch
 argument_list|()
 condition|)
 block|{
-return|return
-literal|true
-return|;
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"This query supports only 'joint' and 'disjointById' prefetching semantics."
+argument_list|)
+throw|;
 block|}
 for|for
 control|(
@@ -1675,22 +1657,12 @@ name|getChildren
 argument_list|()
 control|)
 block|{
-if|if
-condition|(
-name|hasDisjointNode
+name|checkForDisjointNode
 argument_list|(
 name|child
 argument_list|)
-condition|)
-block|{
-return|return
-literal|true
-return|;
+expr_stmt|;
 block|}
-block|}
-return|return
-literal|false
-return|;
 block|}
 comment|/** 	 * @since 1.2 	 */
 specifier|public

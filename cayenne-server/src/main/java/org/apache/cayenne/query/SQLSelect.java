@@ -985,7 +985,7 @@ return|;
 block|}
 annotation|@
 name|Override
-specifier|public
+specifier|protected
 name|Query
 name|createReplacementQuery
 parameter_list|(
