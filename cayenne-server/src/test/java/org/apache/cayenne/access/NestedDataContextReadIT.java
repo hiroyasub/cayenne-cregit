@@ -2104,7 +2104,7 @@ argument_list|()
 decl_stmt|;
 name|assertEquals
 argument_list|(
-name|ArrayList
+name|ToManyList
 operator|.
 name|class
 argument_list|,
