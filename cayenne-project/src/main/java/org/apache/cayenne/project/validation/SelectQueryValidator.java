@@ -242,7 +242,7 @@ if|if
 condition|(
 name|query
 operator|.
-name|getPrefetches
+name|getPrefetchesMap
 argument_list|()
 operator|!=
 literal|null
@@ -255,7 +255,10 @@ name|prefetchPath
 range|:
 name|query
 operator|.
-name|getPrefetches
+name|getPrefetchesMap
+argument_list|()
+operator|.
+name|keySet
 argument_list|()
 control|)
 block|{
