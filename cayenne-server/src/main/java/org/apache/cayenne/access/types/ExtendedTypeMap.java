@@ -455,16 +455,6 @@ argument_list|,
 name|type
 argument_list|)
 expr_stmt|;
-comment|// factory to handle subclasses of type.className
-name|addFactory
-argument_list|(
-operator|new
-name|SubclassTypeFactory
-argument_list|(
-name|type
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 comment|/** 	 * Returns a default ExtendedType that is used to handle unmapped types. 	 */
 specifier|public

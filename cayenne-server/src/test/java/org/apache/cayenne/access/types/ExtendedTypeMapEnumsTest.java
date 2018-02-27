@@ -465,11 +465,10 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-comment|// this and subsequent tests verify that no memory leak occurs per
-comment|// CAY-2066
+comment|// this and subsequent tests verify that no memory leak occurs per CAY-2066
 name|assertEquals
 argument_list|(
-literal|1
+literal|0
 argument_list|,
 name|map
 operator|.
@@ -495,7 +494,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|1
+literal|0
 argument_list|,
 name|map
 operator|.
@@ -526,7 +525,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|1
+literal|0
 argument_list|,
 name|map
 operator|.
@@ -557,7 +556,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|1
+literal|0
 argument_list|,
 name|map
 operator|.

@@ -366,10 +366,8 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-name|assertSame
+name|assertNull
 argument_list|(
-name|valueObjectType2
-argument_list|,
 name|valueObjectType
 argument_list|)
 expr_stmt|;
@@ -391,7 +389,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|4
+literal|2
 argument_list|,
 name|registry
 operator|.
@@ -401,7 +399,7 @@ name|size
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 name|registry
 operator|.
@@ -418,7 +416,7 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
 name|registry
 operator|.

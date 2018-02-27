@@ -264,7 +264,7 @@ name|class
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|assertSame
+name|assertNotSame
 argument_list|(
 name|tstType1
 argument_list|,
