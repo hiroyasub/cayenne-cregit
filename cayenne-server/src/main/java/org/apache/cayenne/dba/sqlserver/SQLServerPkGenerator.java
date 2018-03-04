@@ -562,7 +562,7 @@ name|selectAllSequencesQuery
 parameter_list|()
 block|{
 return|return
-literal|"SELECT sch.name + '.' + seq.name"
+literal|"SELECT seq.name"
 operator|+
 literal|" FROM sys.sequences AS seq"
 operator|+
