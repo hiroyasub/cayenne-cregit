@@ -2883,6 +2883,8 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
+comment|//a default PkGeneratorFactory used to load custom and automatic
+comment|//PkGenerators
 name|binder
 operator|.
 name|bind
