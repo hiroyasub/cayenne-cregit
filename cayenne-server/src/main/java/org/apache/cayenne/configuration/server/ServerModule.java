@@ -1015,6 +1015,20 @@ name|cayenne
 operator|.
 name|dba
 operator|.
+name|PkGenerator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dba
+operator|.
 name|db2
 operator|.
 name|DB2Sniffer
@@ -1209,7 +1223,39 @@ name|dba
 operator|.
 name|sqlserver
 operator|.
+name|SQLServerPkGenerator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dba
+operator|.
+name|sqlserver
+operator|.
 name|SQLServerSniffer
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dba
+operator|.
+name|sybase
+operator|.
+name|SybasePkGenerator
 import|;
 end_import
 
@@ -1645,6 +1691,38 @@ name|GregorianCalendar
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dba
+operator|.
+name|DbVersion
+operator|.
+name|MS_SQL_2008
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dba
+operator|.
+name|DbVersion
+operator|.
+name|MS_SQL_2012
+import|;
+end_import
+
 begin_comment
 comment|/**  * A DI module containing all Cayenne server runtime configuration.  *  * @since 3.1  */
 end_comment
@@ -1664,7 +1742,7 @@ name|DEFAULT_MAX_ID_QUALIFIER_SIZE
 init|=
 literal|10000
 decl_stmt|;
-comment|/**      * Sets transaction management to either external or internal transactions. Default is internally-managed transactions.      *      * @param binder  DI binder passed to the module during injector startup.      * @param useExternal whether external (true) or internal (false) transaction management should be used.      * @since 4.0      */
+comment|/**      * Sets transaction management to either external or internal transactions. Default is internally-managed transactions.      *      * @param binder      DI binder passed to the module during injector startup.      * @param useExternal whether external (true) or internal (false) transaction management should be used.      * @since 4.0      */
 specifier|public
 specifier|static
 name|void
@@ -1697,7 +1775,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Sets max size of snapshot cache, in pre 4.0 version this was set in the Modeler.      *      * @param binder DI binder passed to the module during injector startup.      * @param size max size of snapshot cache      * @since 4.0      */
+comment|/**      * Sets max size of snapshot cache, in pre 4.0 version this was set in the Modeler.      *      * @param binder DI binder passed to the module during injector startup.      * @param size   max size of snapshot cache      * @since 4.0      */
 specifier|public
 specifier|static
 name|void
@@ -1842,6 +1920,34 @@ name|SERVER_ADAPTER_DETECTORS_LIST
 argument_list|)
 return|;
 block|}
+comment|/**      * Provides access to a DI map builder for {@link PkGenerator}'s that allows downstream modules to      * "contribute" their own pk generators.      *      * @param binder DI binder passed to the module during injector startup.      * @return MapBuilder for properties.      */
+specifier|public
+specifier|static
+name|MapBuilder
+argument_list|<
+name|Class
+argument_list|>
+name|contributePkGenerators
+parameter_list|(
+name|Binder
+name|binder
+parameter_list|)
+block|{
+return|return
+name|binder
+operator|.
+name|bindMap
+argument_list|(
+name|Class
+operator|.
+name|class
+argument_list|,
+name|Constants
+operator|.
+name|SERVER_PK_GENERATORS_MAP
+argument_list|)
+return|;
+block|}
 comment|/**      * Provides access to a DI map builder for runtime properties that allows downstream modules to      * "contribute" their own properties.      *      * @param binder DI binder passed to the module during injector startup.      * @return MapBuilder for properties.      * @since 4.0      */
 specifier|public
 specifier|static
@@ -1954,7 +2060,7 @@ name|SERVER_USER_TYPES_LIST
 argument_list|)
 return|;
 block|}
-comment|/**      *      * @param binder DI binder passed to module during injector startup      * @return ListBuilder for user-contributed ValueObjectTypes      * @since 4.0      */
+comment|/**      * @param binder DI binder passed to module during injector startup      * @return ListBuilder for user-contributed ValueObjectTypes      * @since 4.0      */
 specifier|public
 specifier|static
 name|ListBuilder
@@ -2165,6 +2271,41 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
+name|contributePkGenerators
+argument_list|(
+name|binder
+argument_list|)
+operator|.
+name|put
+argument_list|(
+name|String
+operator|.
+name|valueOf
+argument_list|(
+name|MS_SQL_2008
+argument_list|)
+argument_list|,
+name|SybasePkGenerator
+operator|.
+name|class
+argument_list|)
+comment|//adding a generator for MS SQL version 2012 and higher
+operator|.
+name|put
+argument_list|(
+name|String
+operator|.
+name|valueOf
+argument_list|(
+name|MS_SQL_2012
+argument_list|)
+argument_list|,
+name|SQLServerPkGenerator
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
+comment|//adding a generator since MS SQL version 2012
 comment|// configure a filter chain with only one TransactionFilter as default
 name|contributeDomainFilters
 argument_list|(
@@ -2738,6 +2879,22 @@ operator|.
 name|to
 argument_list|(
 name|DefaultDbAdapterFactory
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
+name|binder
+operator|.
+name|bind
+argument_list|(
+name|PkGeneratorFactory
+operator|.
+name|class
+argument_list|)
+operator|.
+name|to
+argument_list|(
+name|DefaultPkGeneratorFactory
 operator|.
 name|class
 argument_list|)
