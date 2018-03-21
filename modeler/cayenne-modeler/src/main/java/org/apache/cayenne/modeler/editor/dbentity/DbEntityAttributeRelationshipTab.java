@@ -167,7 +167,7 @@ name|modeler
 operator|.
 name|action
 operator|.
-name|CreateObjEntityAction
+name|CreateObjEntityFromDbAction
 import|;
 end_import
 
@@ -724,7 +724,7 @@ name|actionManager
 operator|.
 name|getAction
 argument_list|(
-name|CreateObjEntityAction
+name|CreateObjEntityFromDbAction
 operator|.
 name|class
 argument_list|)

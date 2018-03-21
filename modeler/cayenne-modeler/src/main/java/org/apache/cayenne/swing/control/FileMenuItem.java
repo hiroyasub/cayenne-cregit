@@ -132,9 +132,6 @@ name|isEnabled
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|updateActiveIcon
-argument_list|()
-expr_stmt|;
 block|}
 comment|/**      * Returns a file if this menu item points to a readable file or directory, or null      * otherwise.      */
 specifier|public

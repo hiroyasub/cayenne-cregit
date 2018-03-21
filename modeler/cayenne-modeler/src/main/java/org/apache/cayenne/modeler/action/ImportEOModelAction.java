@@ -589,6 +589,15 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
+name|String
+name|getIconName
+parameter_list|()
+block|{
+return|return
+literal|"icon-eomodel.png"
+return|;
+block|}
+specifier|public
 name|void
 name|performAction
 parameter_list|(
@@ -1672,9 +1681,6 @@ comment|// fix DataMap name, as there maybe a map with the same name already
 name|ConfigurationNode
 name|root
 init|=
-operator|(
-name|DataChannelDescriptor
-operator|)
 name|mediator
 operator|.
 name|getProject

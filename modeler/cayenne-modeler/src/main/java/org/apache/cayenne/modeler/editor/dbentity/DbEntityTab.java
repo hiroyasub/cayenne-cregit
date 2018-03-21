@@ -43,30 +43,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|awt
-operator|.
-name|event
-operator|.
-name|ItemEvent
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|event
-operator|.
-name|ItemListener
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|EventObject
@@ -237,20 +213,6 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|ObjRelationship
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
 name|event
 operator|.
 name|EntityEvent
@@ -329,7 +291,7 @@ name|modeler
 operator|.
 name|action
 operator|.
-name|CreateObjEntityAction
+name|CreateObjEntityFromDbAction
 import|;
 end_import
 
@@ -739,7 +701,7 @@ name|actionManager
 operator|.
 name|getAction
 argument_list|(
-name|CreateObjEntityAction
+name|CreateObjEntityFromDbAction
 operator|.
 name|class
 argument_list|)
@@ -1236,17 +1198,8 @@ name|pkGeneratorType
 operator|.
 name|addItemListener
 argument_list|(
-operator|new
-name|ItemListener
-argument_list|()
-block|{
-specifier|public
-name|void
-name|itemStateChanged
-parameter_list|(
-name|ItemEvent
 name|e
-parameter_list|)
+lambda|->
 block|{
 name|pkGeneratorDetailLayout
 operator|.
@@ -1323,7 +1276,6 @@ name|entity
 argument_list|)
 expr_stmt|;
 break|break;
-block|}
 block|}
 block|}
 block|}
@@ -1404,9 +1356,7 @@ condition|)
 block|{
 return|return;
 block|}
-comment|// if entity hasn't changed, still notify PK Generator panels, as entity
-comment|// PK may
-comment|// have changed...
+comment|// if entity hasn't changed, still notify PK Generator panels, as entity PK may have changed...
 for|for
 control|(
 name|int
