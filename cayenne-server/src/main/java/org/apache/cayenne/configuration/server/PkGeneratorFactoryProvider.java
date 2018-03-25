@@ -21,9 +21,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|dba
+name|configuration
 operator|.
-name|DbVersion
+name|Constants
 import|;
 end_import
 
@@ -37,7 +37,7 @@ name|cayenne
 operator|.
 name|dba
 operator|.
-name|JdbcAdapter
+name|PerAdapterProvider
 import|;
 end_import
 
@@ -57,11 +57,15 @@ end_import
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|sql
+name|apache
 operator|.
-name|DatabaseMetaData
+name|cayenne
+operator|.
+name|di
+operator|.
+name|Inject
 import|;
 end_import
 
@@ -69,41 +73,56 @@ begin_import
 import|import
 name|java
 operator|.
-name|sql
+name|util
 operator|.
-name|SQLException
+name|Map
 import|;
 end_import
 
-begin_comment
-comment|/**  * Interface for generator definition  */
-end_comment
-
-begin_interface
+begin_class
 specifier|public
-interface|interface
-name|PkGeneratorFactory
-block|{
-comment|/**      * Discovering the primary key based on the database metadata      *      * @param dbType  database type      * @param adapter adapter for generator instantiation      * @param md      connection metadata      * @return an instantiated instance of a specific generator for the current version of the database      * @throws SQLException      */
+class|class
+name|PkGeneratorFactoryProvider
+extends|extends
+name|PerAdapterProvider
+argument_list|<
 name|PkGenerator
-name|detectPkGenerator
+argument_list|>
+block|{
+specifier|public
+name|PkGeneratorFactoryProvider
 parameter_list|(
-name|DbVersion
+annotation|@
+name|Inject
+argument_list|(
+name|Constants
 operator|.
-name|DbType
-name|dbType
+name|SERVER_PK_GENERATORS_MAP
+argument_list|)
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|PkGenerator
+argument_list|>
+name|perAdapterValues
 parameter_list|,
-name|JdbcAdapter
-name|adapter
-parameter_list|,
-name|DatabaseMetaData
-name|md
+annotation|@
+name|Inject
+name|PkGenerator
+name|defaultValue
 parameter_list|)
-throws|throws
-name|SQLException
-function_decl|;
+block|{
+name|super
+argument_list|(
+name|perAdapterValues
+argument_list|,
+name|defaultValue
+argument_list|)
+expr_stmt|;
 block|}
-end_interface
+block|}
+end_class
 
 end_unit
 

@@ -375,7 +375,7 @@ name|access
 operator|.
 name|types
 operator|.
-name|CharacterValueType
+name|CharType
 import|;
 end_import
 
@@ -391,7 +391,7 @@ name|access
 operator|.
 name|types
 operator|.
-name|CharType
+name|CharacterValueType
 import|;
 end_import
 
@@ -648,6 +648,22 @@ operator|.
 name|types
 operator|.
 name|UtilDateType
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|types
+operator|.
+name|ValueObjectType
 import|;
 end_import
 
@@ -1015,6 +1031,20 @@ name|cayenne
 operator|.
 name|dba
 operator|.
+name|JdbcPkGenerator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dba
+operator|.
 name|PkGenerator
 import|;
 end_import
@@ -1223,7 +1253,7 @@ name|dba
 operator|.
 name|sqlserver
 operator|.
-name|SQLServerPkGenerator
+name|SQLServerAdapter
 import|;
 end_import
 
@@ -1429,20 +1459,6 @@ name|cayenne
 operator|.
 name|event
 operator|.
-name|NoopEventBridgeProvider
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|event
-operator|.
 name|EventBridge
 import|;
 end_import
@@ -1469,9 +1485,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|log
+name|event
 operator|.
-name|Slf4jJdbcEventLogger
+name|NoopEventBridgeProvider
 import|;
 end_import
 
@@ -1497,9 +1513,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|log
 operator|.
-name|EntitySorter
+name|Slf4jJdbcEventLogger
 import|;
 end_import
 
@@ -1511,11 +1527,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
+name|map
 operator|.
-name|types
-operator|.
-name|ValueObjectType
+name|EntitySorter
 import|;
 end_import
 
@@ -1688,38 +1702,6 @@ operator|.
 name|util
 operator|.
 name|GregorianCalendar
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|dba
-operator|.
-name|DbVersion
-operator|.
-name|MS_SQL_2008
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|dba
-operator|.
-name|DbVersion
-operator|.
-name|MS_SQL_2012
 import|;
 end_import
 
@@ -1925,7 +1907,7 @@ specifier|public
 specifier|static
 name|MapBuilder
 argument_list|<
-name|Class
+name|PkGenerator
 argument_list|>
 name|contributePkGenerators
 parameter_list|(
@@ -1938,7 +1920,7 @@ name|binder
 operator|.
 name|bindMap
 argument_list|(
-name|Class
+name|PkGenerator
 operator|.
 name|class
 argument_list|,
@@ -2271,6 +2253,39 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
+comment|//installing Pk for adapters
+name|binder
+operator|.
+name|bind
+argument_list|(
+name|PkGeneratorFactoryProvider
+operator|.
+name|class
+argument_list|)
+operator|.
+name|to
+argument_list|(
+name|PkGeneratorFactoryProvider
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
+name|binder
+operator|.
+name|bind
+argument_list|(
+name|PkGenerator
+operator|.
+name|class
+argument_list|)
+operator|.
+name|to
+argument_list|(
+name|JdbcPkGenerator
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
 name|contributePkGenerators
 argument_list|(
 name|binder
@@ -2278,34 +2293,19 @@ argument_list|)
 operator|.
 name|put
 argument_list|(
-name|String
+name|SQLServerAdapter
 operator|.
-name|valueOf
-argument_list|(
-name|MS_SQL_2008
-argument_list|)
+name|class
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 name|SybasePkGenerator
 operator|.
 name|class
 argument_list|)
-comment|//adding a generator for MS SQL version 2012 and higher
-operator|.
-name|put
-argument_list|(
-name|String
-operator|.
-name|valueOf
-argument_list|(
-name|MS_SQL_2012
-argument_list|)
-argument_list|,
-name|SQLServerPkGenerator
-operator|.
-name|class
-argument_list|)
 expr_stmt|;
-comment|//adding a generator since MS SQL version 2012
+comment|/*contributePkGenerators(binder)                 .put(DB2Adapter.class.getName(), DB2PkGenerator.class)                 .put(DerbyAdapter.class.getName(), DerbyPkGenerator.class)                 .put(FrontBaseAdapter.class.getName(), FrontBaseAdapter.class)                 .put(H2Adapter.class.getName(), H2PkGenerator.class)                 .put(IngresAdapter.class.getName(), IngresPkGenerator.class)                 .put(MySQLAdapter.class.getName(), MySQLPkGenerator.class)                 .put(OpenBaseAdapter.class.getName(), OpenBasePkGenerator.class)                 .put(OracleAdapter.class.getName(), OraclePkGenerator.class)                 .put(Oracle8Adapter.class.getName(), OraclePkGenerator.class)                 .put(PostgresAdapter.class.getName(), PostgresPkGenerator.class)                 .put(SQLServerAdapter.class.getName(), SybasePkGenerator.class)                 .put(SybaseAdapter.class.getName(), SybasePkGenerator.class); */
 comment|// configure a filter chain with only one TransactionFilter as default
 name|contributeDomainFilters
 argument_list|(
@@ -2879,24 +2879,6 @@ operator|.
 name|to
 argument_list|(
 name|DefaultDbAdapterFactory
-operator|.
-name|class
-argument_list|)
-expr_stmt|;
-comment|//a default PkGeneratorFactory used to load custom and automatic
-comment|//PkGenerators
-name|binder
-operator|.
-name|bind
-argument_list|(
-name|PkGeneratorFactory
-operator|.
-name|class
-argument_list|)
-operator|.
-name|to
-argument_list|(
-name|DefaultPkGeneratorFactory
 operator|.
 name|class
 argument_list|)

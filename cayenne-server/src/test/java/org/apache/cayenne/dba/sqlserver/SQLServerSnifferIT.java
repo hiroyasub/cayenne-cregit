@@ -18,40 +18,6 @@ package|;
 end_package
 
 begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNotNull
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNull
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|Connection
-import|;
-end_import
-
-begin_import
 import|import
 name|org
 operator|.
@@ -63,7 +29,7 @@ name|configuration
 operator|.
 name|server
 operator|.
-name|PkGeneratorFactory
+name|PkGeneratorFactoryProvider
 import|;
 end_import
 
@@ -219,6 +185,40 @@ name|Test
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|Connection
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNotNull
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNull
+import|;
+end_import
+
 begin_class
 annotation|@
 name|UseServerRuntime
@@ -254,8 +254,8 @@ decl_stmt|;
 annotation|@
 name|Inject
 specifier|private
-name|PkGeneratorFactory
-name|pkGeneratorFactory
+name|PkGeneratorFactoryProvider
+name|pkGeneratorProvider
 decl_stmt|;
 annotation|@
 name|Test
@@ -274,7 +274,7 @@ name|SQLServerSniffer
 argument_list|(
 name|objectFactory
 argument_list|,
-name|pkGeneratorFactory
+name|pkGeneratorProvider
 argument_list|)
 decl_stmt|;
 name|DbAdapter

@@ -362,6 +362,11 @@ name|DEFAULT_PK_START_VALUE
 decl_stmt|;
 specifier|public
 name|JdbcPkGenerator
+parameter_list|()
+block|{
+block|}
+specifier|public
+name|JdbcPkGenerator
 parameter_list|(
 name|JdbcAdapter
 name|adapter
@@ -380,6 +385,8 @@ name|getAdapter
 parameter_list|()
 block|{
 return|return
+name|this
+operator|.
 name|adapter
 return|;
 block|}
@@ -540,7 +547,7 @@ return|return
 name|list
 return|;
 block|}
-comment|/** 	 * Drops table named "AUTO_PK_SUPPORT" if it exists in the database. 	 */
+comment|/**      * Drops table named "AUTO_PK_SUPPORT" if it exists in the database.      */
 specifier|public
 name|void
 name|dropAutoPk
@@ -798,7 +805,7 @@ return|return
 literal|"DROP TABLE AUTO_PK_SUPPORT"
 return|;
 block|}
-comment|/** 	 * Checks if AUTO_PK_TABLE already exists in the database. 	 */
+comment|/**      * Checks if AUTO_PK_TABLE already exists in the database.      */
 specifier|protected
 name|boolean
 name|autoPkTableExists
@@ -859,7 +866,7 @@ return|;
 block|}
 block|}
 block|}
-comment|/** 	 * Runs JDBC update over a Connection obtained from DataNode. Returns a 	 * number of objects returned from update. 	 *  	 * @throws SQLException 	 *             in case of query failure. 	 */
+comment|/**      * Runs JDBC update over a Connection obtained from DataNode. Returns a      * number of objects returned from update.      *      * @throws SQLException in case of query failure.      */
 specifier|public
 name|int
 name|runUpdate
@@ -919,7 +926,7 @@ return|;
 block|}
 block|}
 block|}
-comment|/** 	 * Generates a unique and non-repeating primary key for specified dbEntity. 	 *<p> 	 * This implementation is naive since it does not lock the database rows 	 * when executing select and subsequent update. Adapter-specific 	 * implementations are more robust. 	 *</p> 	 *  	 * @since 3.0 	 */
+comment|/**      * Generates a unique and non-repeating primary key for specified dbEntity.      *<p>      * This implementation is naive since it does not lock the database rows      * when executing select and subsequent update. Adapter-specific      * implementations are more robust.      *</p>      *      * @since 3.0      */
 specifier|public
 name|Object
 name|generatePk
@@ -1176,7 +1183,27 @@ argument_list|()
 return|;
 block|}
 block|}
-comment|/** 	 * Performs primary key generation ignoring cache. Generates a range of 	 * primary keys as specified by "pkCacheSize" bean property. 	 *<p> 	 * This method is called internally from "generatePkForDbEntity" and then 	 * generated range of key values is saved in cache for performance. 	 * Subclasses that implement different primary key generation solutions 	 * should override this method, not "generatePkForDbEntity". 	 *</p> 	 *  	 * @since 3.0 	 */
+annotation|@
+name|Override
+specifier|public
+name|void
+name|setAdapter
+parameter_list|(
+name|DbAdapter
+name|adapter
+parameter_list|)
+block|{
+name|this
+operator|.
+name|adapter
+operator|=
+operator|(
+name|JdbcAdapter
+operator|)
+name|adapter
+expr_stmt|;
+block|}
+comment|/**      * Performs primary key generation ignoring cache. Generates a range of      * primary keys as specified by "pkCacheSize" bean property.      *<p>      * This method is called internally from "generatePkForDbEntity" and then      * generated range of key values is saved in cache for performance.      * Subclasses that implement different primary key generation solutions      * should override this method, not "generatePkForDbEntity".      *</p>      *      * @since 3.0      */
 specifier|protected
 name|long
 name|longPkFromDatabase
@@ -1278,7 +1305,7 @@ name|getId
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Returns a size of the entity primary key cache. Default value is 20. If 	 * cache size is set to a value less or equals than "one", no primary key 	 * caching is done. 	 */
+comment|/**      * Returns a size of the entity primary key cache. Default value is 20. If      * cache size is set to a value less or equals than "one", no primary key      * caching is done.      */
 specifier|public
 name|int
 name|getPkCacheSize
@@ -1288,7 +1315,7 @@ return|return
 name|pkCacheSize
 return|;
 block|}
-comment|/** 	 * Sets the size of the entity primary key cache. If 	 *<code>pkCacheSize</code> parameter is less than 1, cache size is set to 	 * "one". 	 *<p> 	 *<i>Note that our tests show that setting primary key cache value to 	 * anything much bigger than 20 does not give any significant performance 	 * increase. Therefore it does not make sense to use bigger values, since 	 * this may potentially create big gaps in the database primary key 	 * sequences in cases like application crashes or restarts.</i> 	 *</p> 	 */
+comment|/**      * Sets the size of the entity primary key cache. If      *<code>pkCacheSize</code> parameter is less than 1, cache size is set to      * "one".      *<p>      *<i>Note that our tests show that setting primary key cache value to      * anything much bigger than 20 does not give any significant performance      * increase. Therefore it does not make sense to use bigger values, since      * this may potentially create big gaps in the database primary key      * sequences in cases like application crashes or restarts.</i>      *</p>      */
 specifier|public
 name|void
 name|setPkCacheSize
@@ -1345,7 +1372,7 @@ name|clear
 argument_list|()
 expr_stmt|;
 block|}
-comment|/** 	 * OperationObserver for primary key retrieval. 	 */
+comment|/**      * OperationObserver for primary key retrieval.      */
 specifier|final
 class|class
 name|PkRetrieveProcessor

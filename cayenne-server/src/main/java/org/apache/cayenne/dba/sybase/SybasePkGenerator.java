@@ -174,6 +174,14 @@ name|SybasePkGenerator
 extends|extends
 name|JdbcPkGenerator
 block|{
+specifier|public
+name|SybasePkGenerator
+parameter_list|()
+block|{
+name|super
+argument_list|()
+expr_stmt|;
+block|}
 specifier|protected
 name|SybasePkGenerator
 parameter_list|(
