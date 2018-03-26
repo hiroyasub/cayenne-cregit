@@ -15,20 +15,6 @@ name|di
 package|;
 end_package
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|di
-operator|.
-name|DIRuntimeException
-import|;
-end_import
-
 begin_comment
 comment|/**  * A binding builder that helps with fluent binding creation.  *   * @param<T> An interface type of the service being bound.  * @since 3.1  */
 end_comment
