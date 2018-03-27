@@ -98,10 +98,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Handles<code>org.joda.time.LocalDateTime</code> type mapping.  *  * @since 4.0  */
+comment|/**  * Handles<code>org.joda.time.LocalDateTime</code> type mapping.  *  * @since 4.0  * @deprecated since 4.1  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|LocalDateTimeType

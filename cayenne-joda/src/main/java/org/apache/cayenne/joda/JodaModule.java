@@ -131,17 +131,54 @@ name|LocalTimeType
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|LoggerFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|Logger
+import|;
+end_import
+
 begin_comment
-comment|/**  * Auto-loadable Cayenne module that adds support for Joda {@link org.apache.cayenne.access.types.ExtendedType} types.  *  * @since 4.0  */
+comment|/**  * Auto-loadable Cayenne module that adds support for Joda {@link org.apache.cayenne.access.types.ExtendedType} types.  *  * @since 4.0  * @deprecated since 4.1  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|JodaModule
 implements|implements
 name|Module
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|Logger
+name|logger
+init|=
+name|LoggerFactory
+operator|.
+name|getLogger
+argument_list|(
+name|JodaModule
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 annotation|@
 name|Override
 specifier|public
@@ -152,6 +189,13 @@ name|Binder
 name|binder
 parameter_list|)
 block|{
+name|logger
+operator|.
+name|warn
+argument_list|(
+literal|"Since 4.1 Cayenne-Joda module was deprecated."
+argument_list|)
+expr_stmt|;
 name|ServerModule
 operator|.
 name|contributeDefaultTypes
