@@ -176,7 +176,7 @@ argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|protected
-name|HashMap
+name|Map
 argument_list|<
 name|String
 argument_list|,
@@ -350,7 +350,7 @@ expr_stmt|;
 block|}
 comment|/**      * Returns map of prefetch paths with semantics for this query.      *      * @since 4.1      */
 specifier|public
-name|HashMap
+name|Map
 argument_list|<
 name|String
 argument_list|,

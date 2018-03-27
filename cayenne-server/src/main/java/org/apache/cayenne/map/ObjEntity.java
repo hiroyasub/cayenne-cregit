@@ -295,16 +295,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|SortedMap
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|TreeMap
 import|;
 end_import
@@ -1967,11 +1957,11 @@ return|return
 literal|null
 return|;
 block|}
-comment|/**      * Returns a SortedMap of all attributes that either belong to this      * ObjEntity or inherited.      */
+comment|/**      * Returns a Map of all attributes that either belong to this      * ObjEntity or inherited.      */
 annotation|@
 name|Override
 specifier|public
-name|SortedMap
+name|Map
 argument_list|<
 name|String
 argument_list|,
@@ -1992,7 +1982,7 @@ name|getAttributeMapInternal
 argument_list|()
 return|;
 block|}
-name|SortedMap
+name|Map
 argument_list|<
 name|String
 argument_list|,
@@ -2001,7 +1991,7 @@ argument_list|>
 name|attributeMap
 init|=
 operator|new
-name|TreeMap
+name|HashMap
 argument_list|<>
 argument_list|()
 decl_stmt|;
@@ -2049,7 +2039,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|SortedMap
+name|Map
 argument_list|<
 name|String
 argument_list|,
@@ -2058,7 +2048,7 @@ argument_list|>
 name|attributeMap
 init|=
 operator|new
-name|TreeMap
+name|HashMap
 argument_list|<>
 argument_list|()
 decl_stmt|;
@@ -2144,7 +2134,7 @@ argument_list|(
 literal|"unchecked"
 argument_list|)
 specifier|final
-name|SortedMap
+name|Map
 argument_list|<
 name|String
 argument_list|,
@@ -2155,7 +2145,7 @@ parameter_list|()
 block|{
 return|return
 operator|(
-name|SortedMap
+name|Map
 argument_list|<
 name|String
 argument_list|,
@@ -2366,7 +2356,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|SortedMap
+name|Map
 argument_list|<
 name|String
 argument_list|,
@@ -2387,7 +2377,7 @@ name|getRelationshipMapInternal
 argument_list|()
 return|;
 block|}
-name|SortedMap
+name|Map
 argument_list|<
 name|String
 argument_list|,
@@ -2396,7 +2386,7 @@ argument_list|>
 name|relationshipMap
 init|=
 operator|new
-name|TreeMap
+name|HashMap
 argument_list|<>
 argument_list|()
 decl_stmt|;
@@ -2477,7 +2467,7 @@ argument_list|(
 literal|"unchecked"
 argument_list|)
 specifier|final
-name|SortedMap
+name|Map
 argument_list|<
 name|String
 argument_list|,
@@ -2488,7 +2478,7 @@ parameter_list|()
 block|{
 return|return
 operator|(
-name|SortedMap
+name|Map
 argument_list|<
 name|String
 argument_list|,

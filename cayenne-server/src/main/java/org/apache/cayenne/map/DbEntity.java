@@ -345,16 +345,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|SortedMap
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|function
 operator|.
 name|Function
@@ -1120,7 +1110,7 @@ argument_list|)
 annotation|@
 name|Override
 specifier|public
-name|SortedMap
+name|Map
 argument_list|<
 name|String
 argument_list|,
@@ -1131,7 +1121,7 @@ parameter_list|()
 block|{
 return|return
 operator|(
-name|SortedMap
+name|Map
 argument_list|<
 name|String
 argument_list|,

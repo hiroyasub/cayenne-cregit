@@ -51,7 +51,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|SortedMap
+name|Map
 import|;
 end_import
 
@@ -62,18 +62,6 @@ operator|.
 name|util
 operator|.
 name|TreeMap
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|CayenneRuntimeException
 import|;
 end_import
 
@@ -102,34 +90,6 @@ operator|.
 name|configuration
 operator|.
 name|ConfigurationNodeVisitor
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|di
-operator|.
-name|AdhocObjectFactory
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
-name|Util
 import|;
 end_import
 
@@ -190,7 +150,7 @@ name|String
 name|className
 decl_stmt|;
 specifier|protected
-name|SortedMap
+name|Map
 argument_list|<
 name|String
 argument_list|,
@@ -331,7 +291,7 @@ return|;
 block|}
 comment|/** 	 * Returns an unmodifiable sorted map of embeddable attributes. 	 */
 specifier|public
-name|SortedMap
+name|Map
 argument_list|<
 name|String
 argument_list|,
@@ -345,7 +305,7 @@ comment|// serialization issues (esp. with Hessian).
 return|return
 name|Collections
 operator|.
-name|unmodifiableSortedMap
+name|unmodifiableMap
 argument_list|(
 name|attributes
 argument_list|)
