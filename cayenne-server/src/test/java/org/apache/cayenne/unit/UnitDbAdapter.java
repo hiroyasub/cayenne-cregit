@@ -1492,6 +1492,15 @@ return|return
 literal|true
 return|;
 block|}
+specifier|public
+name|boolean
+name|supportsSerializableTransactionIsolation
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
 block|}
 end_class
 

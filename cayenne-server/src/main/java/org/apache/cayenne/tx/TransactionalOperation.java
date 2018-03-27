@@ -20,6 +20,8 @@ comment|/**  * @since 4.0  */
 end_comment
 
 begin_interface
+annotation|@
+name|FunctionalInterface
 specifier|public
 interface|interface
 name|TransactionalOperation

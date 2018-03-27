@@ -16,28 +16,54 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * @since 4.0  */
+comment|/**  * @since 4.1  */
 end_comment
 
-begin_interface
+begin_class
 specifier|public
-interface|interface
-name|TransactionFactory
-block|{
-name|Transaction
-name|createTransaction
-parameter_list|()
-function_decl|;
-comment|/**      *      * @param descriptor with required transaction properties      * @return new transaction      *      * @since 4.1      */
-name|Transaction
-name|createTransaction
-parameter_list|(
+class|class
+name|DefaultTransactionDescriptor
+extends|extends
 name|TransactionDescriptor
-name|descriptor
-parameter_list|)
-function_decl|;
+block|{
+specifier|private
+specifier|static
+specifier|final
+name|DefaultTransactionDescriptor
+name|instance
+init|=
+operator|new
+name|DefaultTransactionDescriptor
+argument_list|()
+decl_stmt|;
+specifier|public
+specifier|static
+name|TransactionDescriptor
+name|getInstance
+parameter_list|()
+block|{
+return|return
+name|instance
+return|;
 block|}
-end_interface
+specifier|private
+name|DefaultTransactionDescriptor
+parameter_list|()
+block|{
+name|super
+argument_list|(
+name|TransactionDescriptor
+operator|.
+name|ISOLATION_DEFAULT
+argument_list|,
+name|TransactionPropagation
+operator|.
+name|NESTED
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_class
 
 end_unit
 

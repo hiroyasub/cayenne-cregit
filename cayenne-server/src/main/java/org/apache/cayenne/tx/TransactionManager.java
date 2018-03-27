@@ -24,7 +24,7 @@ specifier|public
 interface|interface
 name|TransactionManager
 block|{
-comment|/**      * Starts a new transaction (or joins an existing one) calling      * {@link org.apache.cayenne.tx.TransactionalOperation#perform()}, and then committing or rolling back the      * transaction.      *      * @param op an operation to perform within the transaction.      * @return a value returned by the "op" operation.      */
+comment|/**      * Starts a new transaction (or joins an existing one) calling      * {@link org.apache.cayenne.tx.TransactionalOperation#perform()}, and then committing or rolling back the      * transaction.      *      * @param op an operation to perform within the transaction.      * @param<T> returned value type      * @return a value returned by the "op" operation.      */
 parameter_list|<
 name|T
 parameter_list|>
@@ -38,7 +38,7 @@ argument_list|>
 name|op
 parameter_list|)
 function_decl|;
-comment|/**      * Starts a new transaction (or joins an existing one) calling      * {@link org.apache.cayenne.tx.TransactionalOperation#perform()}, and then committing or rolling back the      * transaction. As transaction goes through stages, callback methods are invoked allowing the caller to customize      * transaction parameters.      *      * @param op       an operation to perform within the transaction.      * @param callback a callback to notify as transaction progresses through stages.      * @return a value returned by the "op" operation.      */
+comment|/**      * Starts a new transaction (or joins an existing one) calling      * {@link org.apache.cayenne.tx.TransactionalOperation#perform()}, and then committing or rolling back the      * transaction. As transaction goes through stages, callback methods are invoked allowing the caller to customize      * transaction parameters.      *      * @param op       an operation to perform within the transaction.      * @param callback a callback to notify as transaction progresses through stages.      * @param<T> returned value type      * @return a value returned by the "op" operation.      */
 parameter_list|<
 name|T
 parameter_list|>
@@ -53,6 +53,43 @@ name|op
 parameter_list|,
 name|TransactionListener
 name|callback
+parameter_list|)
+function_decl|;
+comment|/**      * Performs operation in a transaction which parameters described by descriptor.      *      * @param op         an operation to perform within the transaction.      * @param descriptor transaction descriptor      * @param<T> result type      * @return a value returned by the "op" operation.      *      * @since 4.1      */
+parameter_list|<
+name|T
+parameter_list|>
+name|T
+name|performInTransaction
+parameter_list|(
+name|TransactionalOperation
+argument_list|<
+name|T
+argument_list|>
+name|op
+parameter_list|,
+name|TransactionDescriptor
+name|descriptor
+parameter_list|)
+function_decl|;
+comment|/**      * Performs operation in a transaction which parameters described by descriptor.      * As transaction goes through stages, callback methods are invoked allowing the caller to customize      * transaction parameters.      *      * @param op         an operation to perform within the transaction.      * @param callback   a callback to notify as transaction progresses through stages.      * @param descriptor transaction descriptor      * @param<T> returned value type      * @return a value returned by the "op" operation.      *      * @since 4.1      */
+parameter_list|<
+name|T
+parameter_list|>
+name|T
+name|performInTransaction
+parameter_list|(
+name|TransactionalOperation
+argument_list|<
+name|T
+argument_list|>
+name|op
+parameter_list|,
+name|TransactionListener
+name|callback
+parameter_list|,
+name|TransactionDescriptor
+name|descriptor
 parameter_list|)
 function_decl|;
 block|}

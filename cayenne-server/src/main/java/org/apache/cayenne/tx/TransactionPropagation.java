@@ -16,28 +16,24 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * @since 4.0  */
+comment|/**  * Propagation behaviour of transaction  */
 end_comment
 
-begin_interface
+begin_enum
 specifier|public
-interface|interface
-name|TransactionFactory
+enum|enum
+name|TransactionPropagation
 block|{
-name|Transaction
-name|createTransaction
-parameter_list|()
-function_decl|;
-comment|/**      *      * @param descriptor with required transaction properties      * @return new transaction      *      * @since 4.1      */
-name|Transaction
-name|createTransaction
-parameter_list|(
-name|TransactionDescriptor
-name|descriptor
-parameter_list|)
-function_decl|;
+comment|/**      * Support a current transaction, throw an exception if none exists.      */
+name|MANDATORY
+block|,
+comment|/**      * Execute within a nested transaction if a current transaction exists,      * create a new one if none exists.      */
+name|NESTED
+block|,
+comment|/**      * Create a new transaction, and suspend the current transaction if one exists.      */
+name|REQUIRES_NEW
 block|}
-end_interface
+end_enum
 
 end_unit
 
