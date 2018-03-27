@@ -466,7 +466,7 @@ name|NO_LOCAL_DATA_SOURCE
 init|=
 literal|"Select DataSource for Local Work..."
 decl_stmt|;
-specifier|private
+specifier|public
 specifier|static
 specifier|final
 name|String
