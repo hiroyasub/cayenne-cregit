@@ -51,7 +51,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Map
+name|HashMap
 import|;
 end_import
 
@@ -61,7 +61,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|TreeMap
+name|Map
 import|;
 end_import
 
@@ -184,12 +184,8 @@ operator|.
 name|attributes
 operator|=
 operator|new
-name|TreeMap
-argument_list|<
-name|String
-argument_list|,
-name|EmbeddableAttribute
-argument_list|>
+name|HashMap
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this
