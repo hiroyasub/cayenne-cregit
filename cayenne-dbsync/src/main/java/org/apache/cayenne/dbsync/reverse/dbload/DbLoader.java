@@ -447,6 +447,8 @@ return|return
 name|getStrings
 argument_list|(
 name|rs
+argument_list|,
+literal|1
 argument_list|)
 return|;
 block|}
@@ -484,6 +486,8 @@ return|return
 name|getStrings
 argument_list|(
 name|rs
+argument_list|,
+literal|1
 argument_list|)
 return|;
 block|}
@@ -498,6 +502,9 @@ name|getStrings
 parameter_list|(
 name|ResultSet
 name|rs
+parameter_list|,
+name|int
+name|columnIndex
 parameter_list|)
 throws|throws
 name|SQLException
@@ -529,7 +536,7 @@ name|rs
 operator|.
 name|getString
 argument_list|(
-literal|1
+name|columnIndex
 argument_list|)
 argument_list|)
 expr_stmt|;
