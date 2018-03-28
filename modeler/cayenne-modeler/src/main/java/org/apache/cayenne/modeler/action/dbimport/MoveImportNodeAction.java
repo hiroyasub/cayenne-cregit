@@ -14,6 +14,8 @@ operator|.
 name|modeler
 operator|.
 name|action
+operator|.
+name|dbimport
 package|;
 end_package
 
@@ -225,6 +227,8 @@ name|modeler
 operator|.
 name|editor
 operator|.
+name|dbimport
+operator|.
 name|DbImportTree
 import|;
 end_import
@@ -241,6 +245,8 @@ name|modeler
 operator|.
 name|editor
 operator|.
+name|dbimport
+operator|.
 name|DbImportView
 import|;
 end_import
@@ -256,6 +262,8 @@ operator|.
 name|modeler
 operator|.
 name|editor
+operator|.
+name|dbimport
 operator|.
 name|DraggableTreePanel
 import|;
@@ -419,6 +427,7 @@ name|Class
 argument_list|>
 name|classMap
 decl_stmt|;
+specifier|public
 name|MoveImportNodeAction
 parameter_list|(
 name|Application
@@ -962,6 +971,21 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|previousNode
+operator|==
+literal|null
+condition|)
+block|{
+name|previousNode
+operator|=
+name|targetTree
+operator|.
+name|getRootNode
+argument_list|()
+expr_stmt|;
+block|}
 name|TreeManipulationAction
 name|manipulationAction
 init|=

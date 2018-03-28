@@ -14,6 +14,8 @@ operator|.
 name|modeler
 operator|.
 name|action
+operator|.
+name|dbimport
 package|;
 end_package
 
@@ -31,7 +33,7 @@ name|reverse
 operator|.
 name|dbimport
 operator|.
-name|ExcludeProcedure
+name|IncludeProcedure
 import|;
 end_import
 
@@ -56,7 +58,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|AddExcludeProcedureAction
+name|AddIncludeProcedureAction
 extends|extends
 name|AddPatternParamAction
 block|{
@@ -66,7 +68,7 @@ specifier|final
 name|String
 name|ACTION_NAME
 init|=
-literal|"Add Exclude Procedure"
+literal|"Add Include Procedure"
 decl_stmt|;
 specifier|private
 specifier|static
@@ -74,10 +76,10 @@ specifier|final
 name|String
 name|ICON_NAME
 init|=
-literal|"icon-dbi-excludeProcedure.png"
+literal|"icon-dbi-includeProcedure.png"
 decl_stmt|;
 specifier|public
-name|AddExcludeProcedureAction
+name|AddIncludeProcedureAction
 parameter_list|(
 name|Application
 name|application
@@ -92,7 +94,7 @@ argument_list|)
 expr_stmt|;
 name|insertableNodeClass
 operator|=
-name|ExcludeProcedure
+name|IncludeProcedure
 operator|.
 name|class
 expr_stmt|;

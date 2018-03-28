@@ -14,6 +14,8 @@ operator|.
 name|modeler
 operator|.
 name|editor
+operator|.
+name|dbimport
 package|;
 end_package
 
@@ -205,6 +207,8 @@ name|modeler
 operator|.
 name|action
 operator|.
+name|dbimport
+operator|.
 name|AddCatalogAction
 import|;
 end_import
@@ -220,6 +224,8 @@ operator|.
 name|modeler
 operator|.
 name|action
+operator|.
+name|dbimport
 operator|.
 name|AddExcludeColumnAction
 import|;
@@ -237,6 +243,8 @@ name|modeler
 operator|.
 name|action
 operator|.
+name|dbimport
+operator|.
 name|AddExcludeProcedureAction
 import|;
 end_import
@@ -252,6 +260,8 @@ operator|.
 name|modeler
 operator|.
 name|action
+operator|.
+name|dbimport
 operator|.
 name|AddExcludeTableAction
 import|;
@@ -269,6 +279,8 @@ name|modeler
 operator|.
 name|action
 operator|.
+name|dbimport
+operator|.
 name|AddIncludeColumnAction
 import|;
 end_import
@@ -284,6 +296,8 @@ operator|.
 name|modeler
 operator|.
 name|action
+operator|.
+name|dbimport
 operator|.
 name|AddIncludeProcedureAction
 import|;
@@ -301,6 +315,8 @@ name|modeler
 operator|.
 name|action
 operator|.
+name|dbimport
+operator|.
 name|AddIncludeTableAction
 import|;
 end_import
@@ -316,6 +332,8 @@ operator|.
 name|modeler
 operator|.
 name|action
+operator|.
+name|dbimport
 operator|.
 name|AddPatternParamAction
 import|;
@@ -333,6 +351,8 @@ name|modeler
 operator|.
 name|action
 operator|.
+name|dbimport
+operator|.
 name|AddSchemaAction
 import|;
 end_import
@@ -349,6 +369,8 @@ name|modeler
 operator|.
 name|action
 operator|.
+name|dbimport
+operator|.
 name|DeleteNodeAction
 import|;
 end_import
@@ -364,6 +386,8 @@ operator|.
 name|modeler
 operator|.
 name|action
+operator|.
+name|dbimport
 operator|.
 name|EditNodeAction
 import|;
@@ -397,6 +421,8 @@ name|modeler
 operator|.
 name|action
 operator|.
+name|dbimport
+operator|.
 name|TreeManipulationAction
 import|;
 end_import
@@ -418,6 +444,42 @@ operator|.
 name|load
 operator|.
 name|DbImportTreeNode
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
+name|editor
+operator|.
+name|dbimport
+operator|.
+name|DbImportTree
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
+name|editor
+operator|.
+name|dbimport
+operator|.
+name|DraggableTreePanel
 import|;
 end_import
 

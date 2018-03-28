@@ -14,6 +14,8 @@ operator|.
 name|modeler
 operator|.
 name|action
+operator|.
+name|dbimport
 package|;
 end_package
 

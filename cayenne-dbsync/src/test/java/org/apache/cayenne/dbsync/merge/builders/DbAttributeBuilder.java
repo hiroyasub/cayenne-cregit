@@ -355,12 +355,10 @@ name|Util
 operator|.
 name|isEmptyString
 argument_list|(
-operator|(
 name|obj
 operator|.
 name|getName
 argument_list|()
-operator|)
 argument_list|)
 condition|)
 block|{

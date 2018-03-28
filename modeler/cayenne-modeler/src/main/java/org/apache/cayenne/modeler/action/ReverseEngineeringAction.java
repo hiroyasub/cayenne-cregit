@@ -119,6 +119,8 @@ name|modeler
 operator|.
 name|editor
 operator|.
+name|dbimport
+operator|.
 name|DbImportView
 import|;
 end_import

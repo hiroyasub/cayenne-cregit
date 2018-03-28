@@ -14,6 +14,8 @@ operator|.
 name|modeler
 operator|.
 name|editor
+operator|.
+name|dbimport
 package|;
 end_package
 
@@ -97,6 +99,8 @@ name|modeler
 operator|.
 name|editor
 operator|.
+name|dbimport
+operator|.
 name|DbImportNodeHandler
 operator|.
 name|LABEL_COLOR
@@ -114,6 +118,8 @@ operator|.
 name|modeler
 operator|.
 name|editor
+operator|.
+name|dbimport
 operator|.
 name|DbImportNodeHandler
 operator|.
@@ -360,18 +366,18 @@ literal|true
 argument_list|)
 expr_stmt|;
 name|int
-name|bypassResult
+name|traverseResult
 init|=
 name|handler
 operator|.
-name|bypassTree
+name|traverseTree
 argument_list|(
 name|root
 argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|bypassResult
+name|traverseResult
 operator|>
 literal|0
 condition|)

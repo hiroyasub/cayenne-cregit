@@ -14,6 +14,8 @@ operator|.
 name|modeler
 operator|.
 name|editor
+operator|.
+name|dbimport
 package|;
 end_package
 
@@ -170,30 +172,6 @@ operator|.
 name|swing
 operator|.
 name|JTextField
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|event
-operator|.
-name|ActionEvent
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|event
-operator|.
-name|ActionListener
 import|;
 end_import
 

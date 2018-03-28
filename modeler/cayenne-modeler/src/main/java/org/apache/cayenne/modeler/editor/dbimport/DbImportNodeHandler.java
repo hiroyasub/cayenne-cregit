@@ -14,6 +14,8 @@ operator|.
 name|modeler
 operator|.
 name|editor
+operator|.
+name|dbimport
 package|;
 end_package
 
@@ -1032,16 +1034,16 @@ return|return
 literal|false
 return|;
 block|}
-comment|/*     *  Recursively bypasses DbImportTree,     *  Increment result if rendered node exists in configuration tree,     *  Subtract EXCLUDE_TABLE_RATE from result, if found Exclude-node for rendered node,     *  Return 0, if rendered node not found.     */
+comment|/*     *  Recursively traverse DbImportTree,     *  Increment result if rendered node exists in configuration tree,     *  Subtract EXCLUDE_TABLE_RATE from result, if found Exclude-node for rendered node,     *  Return 0, if rendered node not found.     */
 name|int
-name|bypassTree
+name|traverseTree
 parameter_list|(
 name|DbImportTreeNode
 name|rootNode
 parameter_list|)
 block|{
 name|int
-name|bypassResult
+name|traverseResult
 init|=
 literal|0
 decl_stmt|;
@@ -1075,7 +1077,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|bypassResult
+name|traverseResult
 operator|++
 expr_stmt|;
 block|}
@@ -1087,7 +1089,7 @@ name|rootNode
 argument_list|)
 condition|)
 block|{
-name|bypassResult
+name|traverseResult
 operator|++
 expr_stmt|;
 block|}
@@ -1140,7 +1142,7 @@ argument_list|()
 operator|)
 condition|)
 block|{
-name|bypassResult
+name|traverseResult
 operator|++
 expr_stmt|;
 block|}
@@ -1288,9 +1290,9 @@ operator|>
 literal|0
 condition|)
 block|{
-name|bypassResult
+name|traverseResult
 operator|+=
-name|bypassTree
+name|traverseTree
 argument_list|(
 operator|(
 name|DbImportTreeNode
@@ -1304,7 +1306,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|bypassResult
+name|traverseResult
 operator|++
 expr_stmt|;
 name|hasProcedures
@@ -1340,7 +1342,7 @@ argument_list|()
 operator|)
 condition|)
 block|{
-name|bypassResult
+name|traverseResult
 operator|++
 expr_stmt|;
 block|}
@@ -1362,7 +1364,7 @@ argument_list|()
 operator|)
 condition|)
 block|{
-name|bypassResult
+name|traverseResult
 operator|+=
 name|EXCLUDE_TABLE_RATE
 expr_stmt|;
@@ -1407,9 +1409,9 @@ operator|>
 literal|0
 condition|)
 block|{
-name|bypassResult
+name|traverseResult
 operator|+=
-name|bypassTree
+name|traverseTree
 argument_list|(
 name|tmpNode
 argument_list|)
@@ -1427,7 +1429,7 @@ name|isExcludeProcedure
 argument_list|()
 condition|)
 block|{
-name|bypassResult
+name|traverseResult
 operator|+=
 name|EXCLUDE_TABLE_RATE
 expr_stmt|;
@@ -1455,7 +1457,7 @@ name|isIncludeProcedure
 argument_list|()
 condition|)
 block|{
-name|bypassResult
+name|traverseResult
 operator|++
 expr_stmt|;
 block|}
@@ -1491,19 +1493,19 @@ name|isExcludeProcedure
 argument_list|()
 condition|)
 block|{
-name|bypassResult
+name|traverseResult
 operator|+=
 name|EXCLUDE_TABLE_RATE
 expr_stmt|;
 block|}
-name|bypassResult
+name|traverseResult
 operator|++
 expr_stmt|;
 block|}
 block|}
 block|}
 return|return
-name|bypassResult
+name|traverseResult
 return|;
 block|}
 name|Color

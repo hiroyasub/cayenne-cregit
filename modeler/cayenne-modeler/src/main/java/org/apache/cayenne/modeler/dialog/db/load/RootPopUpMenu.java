@@ -33,6 +33,8 @@ name|modeler
 operator|.
 name|action
 operator|.
+name|dbimport
+operator|.
 name|AddCatalogAction
 import|;
 end_import
@@ -48,6 +50,8 @@ operator|.
 name|modeler
 operator|.
 name|action
+operator|.
+name|dbimport
 operator|.
 name|AddExcludeColumnAction
 import|;
@@ -65,6 +69,8 @@ name|modeler
 operator|.
 name|action
 operator|.
+name|dbimport
+operator|.
 name|AddExcludeProcedureAction
 import|;
 end_import
@@ -80,6 +86,8 @@ operator|.
 name|modeler
 operator|.
 name|action
+operator|.
+name|dbimport
 operator|.
 name|AddExcludeTableAction
 import|;
@@ -97,6 +105,8 @@ name|modeler
 operator|.
 name|action
 operator|.
+name|dbimport
+operator|.
 name|AddIncludeColumnAction
 import|;
 end_import
@@ -112,6 +122,8 @@ operator|.
 name|modeler
 operator|.
 name|action
+operator|.
+name|dbimport
 operator|.
 name|AddIncludeProcedureAction
 import|;
@@ -129,6 +141,8 @@ name|modeler
 operator|.
 name|action
 operator|.
+name|dbimport
+operator|.
 name|AddIncludeTableAction
 import|;
 end_import
@@ -144,6 +158,8 @@ operator|.
 name|modeler
 operator|.
 name|action
+operator|.
+name|dbimport
 operator|.
 name|AddSchemaAction
 import|;

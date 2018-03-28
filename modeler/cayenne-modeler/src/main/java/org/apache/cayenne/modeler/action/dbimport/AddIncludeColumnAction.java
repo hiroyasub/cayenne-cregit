@@ -14,6 +14,8 @@ operator|.
 name|modeler
 operator|.
 name|action
+operator|.
+name|dbimport
 package|;
 end_package
 
@@ -31,7 +33,7 @@ name|reverse
 operator|.
 name|dbimport
 operator|.
-name|IncludeProcedure
+name|IncludeColumn
 import|;
 end_import
 
@@ -56,7 +58,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|AddIncludeProcedureAction
+name|AddIncludeColumnAction
 extends|extends
 name|AddPatternParamAction
 block|{
@@ -66,7 +68,7 @@ specifier|final
 name|String
 name|ACTION_NAME
 init|=
-literal|"Add Include Procedure"
+literal|"Add Include Column"
 decl_stmt|;
 specifier|private
 specifier|static
@@ -74,10 +76,10 @@ specifier|final
 name|String
 name|ICON_NAME
 init|=
-literal|"icon-dbi-includeProcedure.png"
+literal|"icon-dbi-includeColumn.png"
 decl_stmt|;
 specifier|public
-name|AddIncludeProcedureAction
+name|AddIncludeColumnAction
 parameter_list|(
 name|Application
 name|application
@@ -92,7 +94,7 @@ argument_list|)
 expr_stmt|;
 name|insertableNodeClass
 operator|=
-name|IncludeProcedure
+name|IncludeColumn
 operator|.
 name|class
 expr_stmt|;

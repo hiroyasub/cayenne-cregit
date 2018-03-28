@@ -14,6 +14,8 @@ operator|.
 name|modeler
 operator|.
 name|editor
+operator|.
+name|dbimport
 package|;
 end_package
 
@@ -140,24 +142,6 @@ operator|.
 name|dbimport
 operator|.
 name|IncludeTable
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|dbsync
-operator|.
-name|reverse
-operator|.
-name|dbimport
-operator|.
-name|ReverseEngineering
 import|;
 end_import
 

@@ -14,6 +14,8 @@ operator|.
 name|modeler
 operator|.
 name|editor
+operator|.
+name|dbimport
 package|;
 end_package
 
@@ -43,6 +45,8 @@ name|modeler
 operator|.
 name|action
 operator|.
+name|dbimport
+operator|.
 name|DeleteNodeAction
 import|;
 end_import
@@ -58,6 +62,8 @@ operator|.
 name|modeler
 operator|.
 name|action
+operator|.
+name|dbimport
 operator|.
 name|EditNodeAction
 import|;

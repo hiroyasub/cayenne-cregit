@@ -51,6 +51,24 @@ name|ProjectController
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
+name|editor
+operator|.
+name|dbimport
+operator|.
+name|DbImportView
+import|;
+end_import
+
 begin_comment
 comment|/**  * Data map editing tabs container  *  */
 end_comment

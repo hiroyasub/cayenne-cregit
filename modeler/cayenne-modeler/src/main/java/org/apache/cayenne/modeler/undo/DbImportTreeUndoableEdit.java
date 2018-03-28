@@ -81,6 +81,8 @@ name|modeler
 operator|.
 name|editor
 operator|.
+name|dbimport
+operator|.
 name|DbImportTree
 import|;
 end_import

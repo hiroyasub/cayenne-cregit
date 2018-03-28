@@ -50,8 +50,6 @@ class|class
 name|SchemaContainer
 extends|extends
 name|FilterContainer
-implements|implements
-name|Cloneable
 block|{
 specifier|private
 specifier|final

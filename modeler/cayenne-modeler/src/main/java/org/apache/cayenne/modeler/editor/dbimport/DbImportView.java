@@ -14,6 +14,8 @@ operator|.
 name|modeler
 operator|.
 name|editor
+operator|.
+name|dbimport
 package|;
 end_package
 
@@ -304,6 +306,7 @@ specifier|private
 name|ProjectController
 name|projectController
 decl_stmt|;
+specifier|public
 name|DbImportView
 parameter_list|(
 name|ProjectController
