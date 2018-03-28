@@ -460,10 +460,14 @@ name|keys
 argument_list|)
 expr_stmt|;
 name|DefaultComboBoxModel
+argument_list|<
+name|Object
+argument_list|>
 name|dataSourceModel
 init|=
 operator|new
 name|DefaultComboBoxModel
+argument_list|<>
 argument_list|(
 name|keys
 argument_list|)
@@ -726,6 +730,7 @@ name|setModel
 argument_list|(
 operator|new
 name|DefaultComboBoxModel
+argument_list|<>
 argument_list|(
 name|keys
 argument_list|)
@@ -861,6 +866,7 @@ name|setModel
 argument_list|(
 operator|new
 name|DefaultComboBoxModel
+argument_list|<>
 argument_list|(
 name|keys
 argument_list|)
@@ -958,6 +964,7 @@ name|setModel
 argument_list|(
 operator|new
 name|DefaultComboBoxModel
+argument_list|<>
 argument_list|(
 name|keys
 argument_list|)

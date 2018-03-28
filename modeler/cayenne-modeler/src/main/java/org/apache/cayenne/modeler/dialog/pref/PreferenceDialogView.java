@@ -233,7 +233,7 @@ decl_stmt|;
 specifier|protected
 name|JList
 argument_list|<
-name|Object
+name|String
 argument_list|>
 name|list
 decl_stmt|;
@@ -589,6 +589,9 @@ expr_stmt|;
 block|}
 specifier|public
 name|JList
+argument_list|<
+name|String
+argument_list|>
 name|getList
 parameter_list|()
 block|{
