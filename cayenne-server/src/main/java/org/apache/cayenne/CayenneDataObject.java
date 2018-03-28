@@ -118,12 +118,6 @@ operator|-
 literal|313743913882350400L
 decl_stmt|;
 specifier|protected
-name|long
-name|snapshotVersion
-init|=
-name|DEFAULT_VERSION
-decl_stmt|;
-specifier|protected
 name|Map
 argument_list|<
 name|String
