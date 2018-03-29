@@ -111,6 +111,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|TreeMap
+import|;
+end_import
+
+begin_import
+import|import
 name|javax
 operator|.
 name|swing
@@ -479,10 +489,15 @@ name|this
 operator|.
 name|overrideAttr
 operator|=
+operator|new
+name|TreeMap
+argument_list|<>
+argument_list|(
 name|embeddedAttribute
 operator|.
 name|getAttributeOverrides
 argument_list|()
+argument_list|)
 expr_stmt|;
 block|}
 else|else

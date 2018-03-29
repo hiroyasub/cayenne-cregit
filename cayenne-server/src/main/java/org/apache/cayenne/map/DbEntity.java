@@ -345,7 +345,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|SortedMap
+name|TreeMap
 import|;
 end_import
 
@@ -631,8 +631,13 @@ name|encoder
 operator|.
 name|nested
 argument_list|(
+operator|new
+name|TreeMap
+argument_list|<>
+argument_list|(
 name|getAttributeMap
 argument_list|()
+argument_list|)
 argument_list|,
 name|delegate
 argument_list|)
@@ -1120,7 +1125,7 @@ argument_list|)
 annotation|@
 name|Override
 specifier|public
-name|SortedMap
+name|Map
 argument_list|<
 name|String
 argument_list|,
@@ -1131,7 +1136,7 @@ parameter_list|()
 block|{
 return|return
 operator|(
-name|SortedMap
+name|Map
 argument_list|<
 name|String
 argument_list|,

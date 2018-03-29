@@ -391,6 +391,22 @@ name|modeler
 operator|.
 name|util
 operator|.
+name|Comparators
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
+name|util
+operator|.
 name|FileFilters
 import|;
 end_import
@@ -435,7 +451,17 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|*
+name|JDialog
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|JFileChooser
 import|;
 end_import
 
@@ -457,7 +483,17 @@ name|java
 operator|.
 name|awt
 operator|.
-name|*
+name|Component
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|awt
+operator|.
+name|HeadlessException
 import|;
 end_import
 
@@ -519,7 +555,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
+name|List
 import|;
 end_import
 
