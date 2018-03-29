@@ -17,16 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -49,20 +39,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conn
-operator|.
-name|DataSourceInfo
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|map
 operator|.
 name|DbAttribute
@@ -70,7 +46,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 3.1  */
+comment|/**  * Noop implementation of JdbcEventLogger  *  * @since 3.1  */
 end_comment
 
 begin_class
