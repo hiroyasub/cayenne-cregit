@@ -62,7 +62,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * PK generator for Derby that uses sequences.  *   * @since 4.0 (old one used AUTO_PK_SUPPORT table)  */
+comment|/**  * PK generator for Derby that uses sequences.  *  * @since 4.0 (old one used AUTO_PK_SUPPORT table)  */
 end_comment
 
 begin_class
@@ -72,6 +72,14 @@ name|DerbyPkGenerator
 extends|extends
 name|OraclePkGenerator
 block|{
+specifier|public
+name|DerbyPkGenerator
+parameter_list|()
+block|{
+name|super
+argument_list|()
+expr_stmt|;
+block|}
 name|DerbyPkGenerator
 parameter_list|(
 name|JdbcAdapter

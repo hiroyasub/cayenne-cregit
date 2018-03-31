@@ -197,6 +197,14 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+specifier|public
+name|MySQLPkGenerator
+parameter_list|()
+block|{
+name|super
+argument_list|()
+expr_stmt|;
+block|}
 name|MySQLPkGenerator
 parameter_list|(
 name|JdbcAdapter
@@ -209,7 +217,7 @@ name|adapter
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Overrides superclass's implementation to perform locking of the primary 	 * key lookup table. 	 *  	 * @since 3.0 	 */
+comment|/**      * Overrides superclass's implementation to perform locking of the primary      * key lookup table.      *      * @since 3.0      */
 annotation|@
 name|Override
 specifier|protected
@@ -460,7 +468,7 @@ return|return
 name|pk
 return|;
 block|}
-comment|/** 	 * Appends a new SQLException to the chain. If parent is null, uses the 	 * exception as the chain root. 	 */
+comment|/**      * Appends a new SQLException to the chain. If parent is null, uses the      * exception as the chain root.      */
 specifier|protected
 name|SQLException
 name|processSQLException
@@ -524,7 +532,7 @@ operator|.
 name|DEFAULT_STORAGE_ENGINE
 return|;
 block|}
-comment|/** 	 * @since 3.0 	 */
+comment|/**      * @since 3.0      */
 specifier|protected
 name|long
 name|getLongPrimaryKey

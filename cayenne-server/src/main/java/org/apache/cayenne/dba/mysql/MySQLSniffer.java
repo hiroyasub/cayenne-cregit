@@ -41,9 +41,39 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|configuration
+operator|.
+name|server
+operator|.
+name|PkGeneratorFactoryProvider
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|dba
 operator|.
 name|DbAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dba
+operator|.
+name|PkGenerator
 import|;
 end_import
 
@@ -115,6 +145,16 @@ name|Statement
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Objects
+import|;
+end_import
+
 begin_comment
 comment|/**  * Detects MySQL database from JDBC metadata.  *   * @since 1.2  */
 end_comment
@@ -130,6 +170,10 @@ specifier|protected
 name|AdhocObjectFactory
 name|objectFactory
 decl_stmt|;
+specifier|protected
+name|PkGeneratorFactoryProvider
+name|pkGeneratorProvider
+decl_stmt|;
 specifier|public
 name|MySQLSniffer
 parameter_list|(
@@ -137,6 +181,11 @@ annotation|@
 name|Inject
 name|AdhocObjectFactory
 name|objectFactory
+parameter_list|,
+annotation|@
+name|Inject
+name|PkGeneratorFactoryProvider
+name|pkGeneratorProvider
 parameter_list|)
 block|{
 name|this
@@ -144,6 +193,19 @@ operator|.
 name|objectFactory
 operator|=
 name|objectFactory
+expr_stmt|;
+name|this
+operator|.
+name|pkGeneratorProvider
+operator|=
+name|Objects
+operator|.
+name|requireNonNull
+argument_list|(
+name|pkGeneratorProvider
+argument_list|,
+literal|"Null pkGeneratorProvider"
+argument_list|)
 expr_stmt|;
 block|}
 annotation|@
@@ -208,7 +270,6 @@ argument_list|()
 operator|.
 name|createStatement
 argument_list|()
-init|;
 init|)
 block|{
 comment|// http://dev.mysql.com/doc/refman/5.0/en/storage-engines.html
@@ -228,7 +289,6 @@ name|executeQuery
 argument_list|(
 literal|"SHOW VARIABLES LIKE 'table_type'"
 argument_list|)
-init|;
 init|)
 block|{
 if|if
@@ -290,6 +350,31 @@ argument_list|(
 name|adapterStorageEngine
 argument_list|)
 expr_stmt|;
+name|PkGenerator
+name|pkGenerator
+init|=
+name|pkGeneratorProvider
+operator|.
+name|get
+argument_list|(
+name|adapter
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|pkGenerator
+operator|!=
+literal|null
+condition|)
+block|{
+name|adapter
+operator|.
+name|setPkGenerator
+argument_list|(
+name|pkGenerator
+argument_list|)
+expr_stmt|;
+block|}
 return|return
 name|adapter
 return|;

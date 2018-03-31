@@ -72,6 +72,14 @@ name|DB2PkGenerator
 extends|extends
 name|OraclePkGenerator
 block|{
+specifier|public
+name|DB2PkGenerator
+parameter_list|()
+block|{
+name|super
+argument_list|()
+expr_stmt|;
+block|}
 name|DB2PkGenerator
 parameter_list|(
 name|JdbcAdapter

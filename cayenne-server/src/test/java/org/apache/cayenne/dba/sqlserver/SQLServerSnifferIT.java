@@ -294,7 +294,6 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-init|;
 init|)
 block|{
 name|adapter

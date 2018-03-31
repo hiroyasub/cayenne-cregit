@@ -184,8 +184,6 @@ name|requireNonNull
 argument_list|(
 name|pkGeneratorProvider
 argument_list|,
-parameter_list|()
-lambda|->
 literal|"Null pkGeneratorProvider"
 argument_list|)
 expr_stmt|;

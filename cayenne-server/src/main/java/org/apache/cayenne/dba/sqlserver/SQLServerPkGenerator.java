@@ -510,7 +510,7 @@ operator|.
 name|getEntity
 argument_list|()
 decl_stmt|;
-comment|//check key on UNIQUEIDENTIFIER; UNIQUEIDENTIFIER is a character with a length of 35
+comment|//check key on UNIQUEIDENTIFIER; UNIQUEIDENTIFIER is a character with a length of 36
 if|if
 condition|(
 name|TypesMapping

@@ -198,6 +198,14 @@ name|JdbcPkGenerator
 block|{
 specifier|public
 name|FrontBasePkGenerator
+parameter_list|()
+block|{
+name|super
+argument_list|()
+expr_stmt|;
+block|}
+specifier|public
+name|FrontBasePkGenerator
 parameter_list|(
 name|JdbcAdapter
 name|adapter
@@ -213,7 +221,7 @@ operator|=
 literal|1000000
 expr_stmt|;
 block|}
-comment|/** 	 * Returns zero as PK caching is not supported by FrontBaseAdapter. 	 */
+comment|/**      * Returns zero as PK caching is not supported by FrontBaseAdapter.      */
 annotation|@
 name|Override
 specifier|public
@@ -484,7 +492,7 @@ return|return
 literal|""
 return|;
 block|}
-comment|/** 	 * @since 3.0 	 */
+comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|protected

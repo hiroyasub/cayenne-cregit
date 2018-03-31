@@ -174,7 +174,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Sequence-based primary key generator implementation for Oracle. Uses Oracle  * sequences to generate primary key values. This approach is at least 50%  * faster when tested with Oracle compared to the lookup table approach.  *<p>  * When using Cayenne key caching mechanism, make sure that sequences in the  * database have "INCREMENT BY" greater or equal to OraclePkGenerator  * "pkCacheSize" property value. If this is not the case, you will need to  * adjust PkGenerator value accordingly. For example when sequence is  * incremented by 1 each time, use the following code:  *</p>  *   *<pre>  * dataNode.getAdapter().getPkGenerator().setPkCacheSize(1);  *</pre>  */
+comment|/**  * Sequence-based primary key generator implementation for Oracle. Uses Oracle  * sequences to generate primary key values. This approach is at least 50%  * faster when tested with Oracle compared to the lookup table approach.  *<p>  * When using Cayenne key caching mechanism, make sure that sequences in the  * database have "INCREMENT BY" greater or equal to OraclePkGenerator  * "pkCacheSize" property value. If this is not the case, you will need to  * adjust PkGenerator value accordingly. For example when sequence is  * incremented by 1 each time, use the following code:  *</p>  *  *<pre>  * dataNode.getAdapter().getPkGenerator().setPkCacheSize(1);  *</pre>  */
 end_comment
 
 begin_class
@@ -184,6 +184,14 @@ name|OraclePkGenerator
 extends|extends
 name|JdbcPkGenerator
 block|{
+specifier|public
+name|OraclePkGenerator
+parameter_list|()
+block|{
+name|super
+argument_list|()
+expr_stmt|;
+block|}
 specifier|protected
 name|OraclePkGenerator
 parameter_list|(
@@ -270,7 +278,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/** 	 * Creates a list of CREATE SEQUENCE statements for the list of DbEntities. 	 */
+comment|/**      * Creates a list of CREATE SEQUENCE statements for the list of DbEntities.      */
 annotation|@
 name|Override
 specifier|public
@@ -326,7 +334,7 @@ return|return
 name|list
 return|;
 block|}
-comment|/** 	 * Drops PK sequences for all specified DbEntities. 	 */
+comment|/**      * Drops PK sequences for all specified DbEntities.      */
 annotation|@
 name|Override
 specifier|public
@@ -464,7 +472,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/** 	 * Creates a list of DROP SEQUENCE statements for the list of DbEntities. 	 */
+comment|/**      * Creates a list of DROP SEQUENCE statements for the list of DbEntities.      */
 annotation|@
 name|Override
 specifier|public
@@ -548,7 +556,7 @@ name|ent
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Returns a SQL string needed to drop any database objects associated with 	 * automatic primary key generation process for a specific DbEntity. 	 */
+comment|/**      * Returns a SQL string needed to drop any database objects associated with      * automatic primary key generation process for a specific DbEntity.      */
 specifier|protected
 name|String
 name|dropSequenceString
@@ -591,7 +599,7 @@ return|return
 literal|"SELECT LOWER(SEQUENCE_NAME) FROM ALL_SEQUENCES"
 return|;
 block|}
-comment|/** 	 * Generates primary key by calling Oracle sequence corresponding to the 	 *<code>dbEntity</code>. Executed SQL looks like this: 	 *  	 *<pre> 	 *   SELECT pk_table_name.nextval FROM DUAL 	 *</pre> 	 *  	 * @since 3.0 	 */
+comment|/**      * Generates primary key by calling Oracle sequence corresponding to the      *<code>dbEntity</code>. Executed SQL looks like this:      *      *<pre>      *   SELECT pk_table_name.nextval FROM DUAL      *</pre>      *      * @since 3.0      */
 annotation|@
 name|Override
 specifier|protected
@@ -832,7 +840,7 @@ argument_list|()
 return|;
 block|}
 block|}
-comment|/** 	 * Returns expected primary key sequence name for a DbEntity. 	 */
+comment|/**      * Returns expected primary key sequence name for a DbEntity.      */
 specifier|protected
 name|String
 name|sequenceName
@@ -971,7 +979,7 @@ else|:
 name|sequenceName
 return|;
 block|}
-comment|/** 	 * Fetches a list of existing sequences that might match Cayenne generated 	 * ones. 	 */
+comment|/**      * Fetches a list of existing sequences that might match Cayenne generated      * ones.      */
 specifier|protected
 name|List
 argument_list|<

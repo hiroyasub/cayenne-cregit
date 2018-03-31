@@ -604,7 +604,7 @@ specifier|protected
 name|boolean
 name|caseInsensitiveCollations
 decl_stmt|;
-comment|/** 	 * @since 3.1 	 * @deprecated since 4.0 BatchQueryBuilderfactory is attached to the DataNode. 	 */
+comment|/**      * @since 3.1      * @deprecated since 4.0 BatchQueryBuilderfactory is attached to the DataNode.      */
 annotation|@
 name|Inject
 specifier|protected
@@ -617,7 +617,7 @@ specifier|protected
 name|JdbcEventLogger
 name|logger
 decl_stmt|;
-comment|/** 	 * Creates new JdbcAdapter with a set of default parameters. 	 */
+comment|/**      * Creates new JdbcAdapter with a set of default parameters.      */
 specifier|public
 name|JdbcAdapter
 parameter_list|(
@@ -772,7 +772,7 @@ name|valueObjectTypeRegistry
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Returns default separator - a semicolon. 	 * 	 * @since 1.0.4 	 */
+comment|/**      * Returns default separator - a semicolon.      *      * @since 1.0.4      */
 annotation|@
 name|Override
 specifier|public
@@ -784,7 +784,7 @@ return|return
 literal|";"
 return|;
 block|}
-comment|/** 	 * @since 3.1 	 */
+comment|/**      * @since 3.1      */
 specifier|public
 name|JdbcEventLogger
 name|getJdbcEventLogger
@@ -796,7 +796,7 @@ operator|.
 name|logger
 return|;
 block|}
-comment|/** 	 * Locates and returns a named adapter resource. A resource can be an XML 	 * file, etc. 	 *<p> 	 * This implementation is based on the premise that each adapter is located 	 * in its own Java package and all resources are in the same package as 	 * well. Resource lookup is recursive, so that if DbAdapter is a subclass of 	 * another adapter, parent adapter package is searched as a failover. 	 *</p> 	 * 	 * @since 3.0 	 */
+comment|/**      * Locates and returns a named adapter resource. A resource can be an XML      * file, etc.      *<p>      * This implementation is based on the premise that each adapter is located      * in its own Java package and all resources are in the same package as      * well. Resource lookup is recursive, so that if DbAdapter is a subclass of      * another adapter, parent adapter package is searched as a failover.      *</p>      *      * @since 3.0      */
 specifier|protected
 name|URL
 name|findResource
@@ -892,7 +892,7 @@ return|return
 literal|null
 return|;
 block|}
-comment|/** 	 * Called from {@link #initExtendedTypes(List, List, List, ValueObjectTypeRegistry)} to load 	 * adapter-specific types into the ExtendedTypeMap right after the default 	 * types are loaded, but before the DI overrides are. This method has 	 * specific implementations in JdbcAdapter subclasses. 	 */
+comment|/**      * Called from {@link #initExtendedTypes(List, List, List, ValueObjectTypeRegistry)} to load      * adapter-specific types into the ExtendedTypeMap right after the default      * types are loaded, but before the DI overrides are. This method has      * specific implementations in JdbcAdapter subclasses.      */
 specifier|protected
 name|void
 name|configureExtendedTypes
@@ -903,7 +903,7 @@ parameter_list|)
 block|{
 comment|// noop... subclasses may override to install custom types
 block|}
-comment|/** 	 * @since 3.1 	 */
+comment|/**      * @since 3.1      */
 specifier|protected
 name|void
 name|initExtendedTypes
@@ -998,7 +998,9 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Creates and returns a primary key generator. This factory method should 	 * be overriden by JdbcAdapter subclasses to provide custom implementations 	 * of PKGenerator. 	 */
+comment|/**      * Creates and returns a primary key generator. This factory method should      * be overriden by JdbcAdapter subclasses to provide custom implementations      * of PKGenerator.      */
+annotation|@
+name|Deprecated
 specifier|protected
 name|PkGenerator
 name|createPkGenerator
@@ -1012,7 +1014,7 @@ name|this
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Creates and returns an {@link EJBQLTranslatorFactory} used to generate 	 * visitors for EJBQL to SQL translations. This method should be overriden 	 * by subclasses that need to customize EJBQL generation. 	 * 	 * @since 3.0 	 */
+comment|/**      * Creates and returns an {@link EJBQLTranslatorFactory} used to generate      * visitors for EJBQL to SQL translations. This method should be overriden      * by subclasses that need to customize EJBQL generation.      *      * @since 3.0      */
 specifier|protected
 name|EJBQLTranslatorFactory
 name|createEJBQLTranslatorFactory
@@ -1036,7 +1038,7 @@ return|return
 name|translatorFactory
 return|;
 block|}
-comment|/** 	 * Returns primary key generator associated with this DbAdapter. 	 */
+comment|/**      * Returns primary key generator associated with this DbAdapter.      */
 annotation|@
 name|Override
 specifier|public
@@ -1048,7 +1050,7 @@ return|return
 name|pkGenerator
 return|;
 block|}
-comment|/** 	 * Sets new primary key generator. 	 * 	 * @since 1.1 	 */
+comment|/**      * Sets new primary key generator.      *      * @since 1.1      */
 specifier|public
 name|void
 name|setPkGenerator
@@ -1064,7 +1066,7 @@ operator|=
 name|pkGenerator
 expr_stmt|;
 block|}
-comment|/** 	 * Returns true. 	 * 	 * @since 1.1 	 */
+comment|/**      * Returns true.      *      * @since 1.1      */
 annotation|@
 name|Override
 specifier|public
@@ -1076,7 +1078,7 @@ return|return
 name|supportsUniqueConstraints
 return|;
 block|}
-comment|/** 	 * Returns true. 	 * 	 * @since 4.0 	 */
+comment|/**      * Returns true.      *      * @since 4.0      */
 annotation|@
 name|Override
 specifier|public
@@ -1088,7 +1090,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/** 	 * @since 1.1 	 */
+comment|/**      * @since 1.1      */
 specifier|public
 name|void
 name|setSupportsUniqueConstraints
@@ -1104,7 +1106,7 @@ operator|=
 name|flag
 expr_stmt|;
 block|}
-comment|/** 	 * Returns true if supplied type can have a length attribute as a part of 	 * column definition 	 * 	 * @since 4.0 	 */
+comment|/**      * Returns true if supplied type can have a length attribute as a part of      * column definition      *      * @since 4.0      */
 specifier|public
 name|boolean
 name|typeSupportsLength
@@ -1122,7 +1124,7 @@ name|type
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Returns true if supplied type can have a length attribute as a part of 	 * column definition 	 *<p/> 	 * TODO: this is a static method only to support the deprecated method 	 * {@link TypesMapping#supportsLength(int)} When the deprecated method is 	 * removed this body should be moved in to {@link #typeSupportsLength(int)} 	 * 	 * @deprecated 	 */
+comment|/**      * Returns true if supplied type can have a length attribute as a part of      * column definition      *<p/>      * TODO: this is a static method only to support the deprecated method      * {@link TypesMapping#supportsLength(int)} When the deprecated method is      * removed this body should be moved in to {@link #typeSupportsLength(int)}      *      * @deprecated      */
 specifier|static
 name|boolean
 name|supportsLength
@@ -1205,7 +1207,7 @@ operator|.
 name|VARCHAR
 return|;
 block|}
-comment|/** 	 * @since 3.0 	 */
+comment|/**      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -1235,7 +1237,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Returns a SQL string that can be used to create database table 	 * corresponding to<code>ent</code> parameter. 	 */
+comment|/**      * Returns a SQL string that can be used to create database table      * corresponding to<code>ent</code> parameter.      */
 annotation|@
 name|Override
 specifier|public
@@ -1404,7 +1406,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/** 	 * @since 1.2 	 */
+comment|/**      * @since 1.2      */
 specifier|protected
 name|void
 name|createTableAppendPKClause
@@ -1508,7 +1510,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/** 	 * Appends SQL for column creation to CREATE TABLE buffer. 	 * 	 * @since 1.2 	 */
+comment|/**      * Appends SQL for column creation to CREATE TABLE buffer.      *      * @since 1.2      */
 annotation|@
 name|Override
 specifier|public
@@ -1777,7 +1779,7 @@ literal|0
 index|]
 return|;
 block|}
-comment|/** 	 * Returns a DDL string to create a unique constraint over a set of columns. 	 * 	 * @since 1.1 	 */
+comment|/**      * Returns a DDL string to create a unique constraint over a set of columns.      *      * @since 1.1      */
 annotation|@
 name|Override
 specifier|public
@@ -1928,7 +1930,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Returns a SQL string that can be used to create a foreign key constraint 	 * for the relationship. 	 */
+comment|/**      * Returns a SQL string that can be used to create a foreign key constraint      * for the relationship.      */
 annotation|@
 name|Override
 specifier|public
@@ -2245,7 +2247,7 @@ return|return
 literal|"VIEW"
 return|;
 block|}
-comment|/** 	 * Creates and returns a default implementation of a qualifier translator. 	 */
+comment|/**      * Creates and returns a default implementation of a qualifier translator.      */
 annotation|@
 name|Override
 specifier|public
@@ -2276,7 +2278,7 @@ return|return
 name|translator
 return|;
 block|}
-comment|/** 	 * Uses JdbcActionBuilder to create the right action. 	 * 	 * @since 1.2 	 */
+comment|/**      * Uses JdbcActionBuilder to create the right action.      *      * @since 1.2      */
 annotation|@
 name|Override
 specifier|public
@@ -2333,6 +2335,11 @@ return|;
 block|}
 annotation|@
 name|Override
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|public
 name|void
 name|bindParameter
@@ -2436,7 +2443,7 @@ operator|=
 name|flag
 expr_stmt|;
 block|}
-comment|/** 	 * @since 1.2 	 */
+comment|/**      * @since 1.2      */
 annotation|@
 name|Override
 specifier|public
@@ -2448,7 +2455,7 @@ return|return
 name|supportsGeneratedKeys
 return|;
 block|}
-comment|/** 	 * @since 1.2 	 */
+comment|/**      * @since 1.2      */
 specifier|public
 name|void
 name|setSupportsGeneratedKeys
@@ -2464,7 +2471,7 @@ operator|=
 name|flag
 expr_stmt|;
 block|}
-comment|/** 	 * Returns a translator factory for EJBQL to SQL translation. The factory is 	 * normally initialized in constructor by calling 	 * {@link #createEJBQLTranslatorFactory()}, and can be changed later by 	 * calling {@link #setEjbqlTranslatorFactory(EJBQLTranslatorFactory)}. 	 * 	 * @since 3.0 	 */
+comment|/**      * Returns a translator factory for EJBQL to SQL translation. The factory is      * normally initialized in constructor by calling      * {@link #createEJBQLTranslatorFactory()}, and can be changed later by      * calling {@link #setEjbqlTranslatorFactory(EJBQLTranslatorFactory)}.      *      * @since 3.0      */
 specifier|public
 name|EJBQLTranslatorFactory
 name|getEjbqlTranslatorFactory
@@ -2474,7 +2481,7 @@ return|return
 name|ejbqlTranslatorFactory
 return|;
 block|}
-comment|/** 	 * Sets a translator factory for EJBQL to SQL translation. This property is 	 * normally initialized in constructor by calling 	 * {@link #createEJBQLTranslatorFactory()}, so users would only override it 	 * if they need to customize EJBQL translation. 	 * 	 * @since 3.0 	 */
+comment|/**      * Sets a translator factory for EJBQL to SQL translation. This property is      * normally initialized in constructor by calling      * {@link #createEJBQLTranslatorFactory()}, so users would only override it      * if they need to customize EJBQL translation.      *      * @since 3.0      */
 specifier|public
 name|void
 name|setEjbqlTranslatorFactory
@@ -2490,7 +2497,7 @@ operator|=
 name|ejbqlTranslatorFactory
 expr_stmt|;
 block|}
-comment|/** 	 * @return 	 * @since 4.0 	 */
+comment|/**      * @since 4.0      */
 specifier|protected
 name|QuotingStrategy
 name|createQuotingStrategy
@@ -2506,7 +2513,7 @@ literal|"\""
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @since 4.0 	 */
+comment|/**      * @since 4.0      */
 specifier|public
 name|QuotingStrategy
 name|getQuotingStrategy
@@ -2516,7 +2523,7 @@ return|return
 name|quotingStrategy
 return|;
 block|}
-comment|/** 	 * Simply returns this, as JdbcAdapter is not a wrapper. 	 * 	 * @since 4.0 	 */
+comment|/**      * Simply returns this, as JdbcAdapter is not a wrapper.      *      * @since 4.0      */
 annotation|@
 name|Override
 specifier|public
