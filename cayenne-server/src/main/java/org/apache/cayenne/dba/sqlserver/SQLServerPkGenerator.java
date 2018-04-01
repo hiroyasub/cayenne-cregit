@@ -221,6 +221,14 @@ name|MAX_LENGTH_GUID
 init|=
 literal|36
 decl_stmt|;
+specifier|public
+name|SQLServerPkGenerator
+parameter_list|()
+block|{
+name|super
+argument_list|()
+expr_stmt|;
+block|}
 specifier|protected
 name|SQLServerPkGenerator
 parameter_list|(
