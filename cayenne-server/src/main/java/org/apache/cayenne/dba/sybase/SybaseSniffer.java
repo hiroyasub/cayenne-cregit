@@ -139,6 +139,16 @@ name|SQLException
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Objects
+import|;
+end_import
+
 begin_comment
 comment|/**  * Detects Sybase database from JDBC metadata.  *  * @since 1.2  */
 end_comment
@@ -165,6 +175,11 @@ annotation|@
 name|Inject
 name|AdhocObjectFactory
 name|objectFactory
+parameter_list|,
+annotation|@
+name|Inject
+name|PkGeneratorFactoryProvider
+name|pkGeneratorProvider
 parameter_list|)
 block|{
 name|this
@@ -172,6 +187,19 @@ operator|.
 name|objectFactory
 operator|=
 name|objectFactory
+expr_stmt|;
+name|this
+operator|.
+name|pkGeneratorProvider
+operator|=
+name|Objects
+operator|.
+name|requireNonNull
+argument_list|(
+name|pkGeneratorProvider
+argument_list|,
+literal|"Null pkGeneratorProvider"
+argument_list|)
 expr_stmt|;
 block|}
 annotation|@
@@ -303,6 +331,13 @@ else|:
 literal|null
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|adapter
+operator|!=
+literal|null
+condition|)
+block|{
 name|PkGenerator
 name|pkGenerator
 init|=
@@ -315,10 +350,6 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|adapter
-operator|!=
-literal|null
-operator|&&
 name|pkGenerator
 operator|!=
 literal|null
@@ -335,6 +366,13 @@ block|}
 return|return
 name|adapter
 return|;
+block|}
+else|else
+block|{
+return|return
+literal|null
+return|;
+block|}
 block|}
 block|}
 end_class
