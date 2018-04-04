@@ -1155,6 +1155,14 @@ name|SQLException
 name|ignore
 parameter_list|)
 block|{
+name|reportError
+argument_list|(
+literal|"Connection Error"
+argument_list|,
+name|ignore
+argument_list|)
+expr_stmt|;
+return|return;
 block|}
 block|}
 catch|catch
