@@ -123,6 +123,20 @@ name|cayenne
 operator|.
 name|di
 operator|.
+name|ClassLoaderManager
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|di
+operator|.
 name|DIBootstrap
 import|;
 end_import
@@ -212,6 +226,36 @@ operator|.
 name|util
 operator|.
 name|Util
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|plugins
+operator|.
+name|annotations
+operator|.
+name|ResolutionScope
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|maven
+operator|.
+name|project
+operator|.
+name|MavenProject
 import|;
 end_import
 
@@ -336,7 +380,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Maven mojo to perform class generation from data map. This class is a Maven  * adapter to DefaultClassGenerator class.  *   * @since 3.0  */
+comment|/**  * Maven mojo to perform class generation from data map. This class is a Maven  * adapter to DefaultClassGenerator class.  *  * @since 3.0  */
 end_comment
 
 begin_class
@@ -352,6 +396,12 @@ operator|=
 name|LifecyclePhase
 operator|.
 name|PRE_INTEGRATION_TEST
+argument_list|,
+name|requiresDependencyResolution
+operator|=
+name|ResolutionScope
+operator|.
+name|COMPILE
 argument_list|)
 specifier|public
 class|class
@@ -449,6 +499,17 @@ specifier|private
 name|boolean
 name|createFK
 decl_stmt|;
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"${project}"
+argument_list|)
+specifier|private
+name|MavenProject
+name|project
+decl_stmt|;
 specifier|public
 name|void
 name|execute
@@ -488,6 +549,26 @@ operator|new
 name|ToolsModule
 argument_list|(
 name|logger
+argument_list|)
+argument_list|,
+name|binder
+lambda|->
+name|binder
+operator|.
+name|bind
+argument_list|(
+name|ClassLoaderManager
+operator|.
+name|class
+argument_list|)
+operator|.
+name|toInstance
+argument_list|(
+operator|new
+name|MavenPluginClassLoaderManager
+argument_list|(
+name|project
+argument_list|)
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -757,7 +838,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/** Loads and returns DataMap based on<code>map</code> attribute. */
+comment|/**      * Loads and returns DataMap based on<code>map</code> attribute.      */
 specifier|private
 name|DataMap
 name|loadDataMap
