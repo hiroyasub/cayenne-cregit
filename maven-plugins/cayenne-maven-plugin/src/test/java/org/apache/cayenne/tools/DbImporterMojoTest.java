@@ -1764,7 +1764,6 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-comment|//        MavenProject mavenProject = getMavenProject("src/test/resources/org/apache/cayenne/tools/dbimport/" + name + "-pom.xml");
 name|DbImporterMojo
 name|cdbImport
 init|=

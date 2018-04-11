@@ -344,7 +344,7 @@ name|runner
 init|=
 name|createRunner
 argument_list|(
-literal|"my-test"
+literal|"dbimport-with-project-dependency"
 argument_list|,
 literal|"cdbimport"
 argument_list|,

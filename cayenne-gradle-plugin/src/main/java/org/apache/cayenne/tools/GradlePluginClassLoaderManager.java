@@ -236,12 +236,9 @@ argument_list|)
 operator|.
 name|forEach
 argument_list|(
-name|file
-lambda|->
+name|this
+operator|::
 name|addUrlFromFile
-argument_list|(
-name|file
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -256,20 +253,6 @@ parameter_list|)
 block|{
 try|try
 block|{
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"Add URI to classpath: "
-operator|+
-name|file
-operator|.
-name|toURI
-argument_list|()
-argument_list|)
-expr_stmt|;
 name|urls
 operator|.
 name|add
