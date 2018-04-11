@@ -1173,13 +1173,19 @@ parameter_list|)
 block|{
 name|showNoConnectorDialog
 argument_list|(
-literal|"Driver is not configured!"
-argument_list|,
-literal|"You didn't attach the proper driver."
+literal|"Unable to load driver '"
+operator|+
+name|info
+operator|.
+name|getJdbcDriver
+argument_list|()
+operator|+
+literal|"'"
 argument_list|)
 expr_stmt|;
 return|return;
 block|}
+comment|// Test connection
 try|try
 init|(
 name|Connection
@@ -1190,13 +1196,6 @@ operator|.
 name|getConnection
 argument_list|()
 init|)
-block|{
-block|}
-catch|catch
-parameter_list|(
-name|SQLException
-name|ignore
-parameter_list|)
 block|{
 block|}
 block|}
@@ -1554,11 +1553,6 @@ specifier|protected
 name|void
 name|showNoConnectorDialog
 parameter_list|(
-specifier|final
-name|String
-name|title
-parameter_list|,
-specifier|final
 name|String
 name|message
 parameter_list|)
@@ -1571,7 +1565,7 @@ init|=
 block|{
 literal|"Setup driver"
 block|,
-literal|"OK"
+literal|"Cancel"
 block|}
 decl_stmt|;
 specifier|final
@@ -1587,11 +1581,11 @@ argument_list|()
 argument_list|,
 name|message
 argument_list|,
-name|title
+literal|"Configuration error"
 argument_list|,
 name|JOptionPane
 operator|.
-name|ERROR_MESSAGE
+name|OK_CANCEL_OPTION
 argument_list|,
 name|JOptionPane
 operator|.
@@ -1603,7 +1597,7 @@ name|options
 argument_list|,
 name|options
 index|[
-literal|1
+literal|0
 index|]
 argument_list|)
 decl_stmt|;
