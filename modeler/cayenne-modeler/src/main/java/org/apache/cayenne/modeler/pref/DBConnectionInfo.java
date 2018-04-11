@@ -201,22 +201,6 @@ name|Util
 import|;
 end_import
 
-begin_import
-import|import static
-name|org
-operator|.
-name|apache
-operator|.
-name|commons
-operator|.
-name|lang3
-operator|.
-name|StringUtils
-operator|.
-name|isBlank
-import|;
-end_import
-
 begin_class
 specifier|public
 class|class
@@ -1049,12 +1033,16 @@ block|}
 if|if
 condition|(
 operator|!
+name|Util
+operator|.
 name|isBlank
 argument_list|(
 name|getPassword
 argument_list|()
 argument_list|)
 operator|&&
+name|Util
+operator|.
 name|isBlank
 argument_list|(
 name|getUserName
