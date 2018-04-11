@@ -201,6 +201,22 @@ name|Util
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|apache
+operator|.
+name|commons
+operator|.
+name|lang3
+operator|.
+name|StringUtils
+operator|.
+name|isBlank
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -208,6 +224,14 @@ name|DBConnectionInfo
 extends|extends
 name|CayennePreference
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|String
+name|EMPTY_STRING
+init|=
+literal|""
+decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
@@ -316,9 +340,11 @@ empty_stmt|;
 specifier|public
 name|DBConnectionInfo
 parameter_list|(
+specifier|final
 name|String
 name|nameNode
 parameter_list|,
+specifier|final
 name|boolean
 name|initFromPreferences
 parameter_list|)
@@ -380,6 +406,7 @@ specifier|public
 name|void
 name|setObject
 parameter_list|(
+specifier|final
 name|CayennePreference
 name|object
 parameter_list|)
@@ -677,6 +704,7 @@ specifier|public
 name|void
 name|setNodeName
 parameter_list|(
+specifier|final
 name|String
 name|nodeName
 parameter_list|)
@@ -701,6 +729,7 @@ specifier|public
 name|void
 name|setDbAdapter
 parameter_list|(
+specifier|final
 name|String
 name|dbAdapter
 parameter_list|)
@@ -725,6 +754,7 @@ specifier|public
 name|void
 name|setJdbcDriver
 parameter_list|(
+specifier|final
 name|String
 name|jdbcDriver
 parameter_list|)
@@ -743,12 +773,19 @@ parameter_list|()
 block|{
 return|return
 name|password
+operator|==
+literal|null
+condition|?
+name|EMPTY_STRING
+else|:
+name|password
 return|;
 block|}
 specifier|public
 name|void
 name|setPassword
 parameter_list|(
+specifier|final
 name|String
 name|password
 parameter_list|)
@@ -773,6 +810,7 @@ specifier|public
 name|void
 name|setUrl
 parameter_list|(
+specifier|final
 name|String
 name|url
 parameter_list|)
@@ -791,12 +829,19 @@ parameter_list|()
 block|{
 return|return
 name|userName
+operator|==
+literal|null
+condition|?
+name|EMPTY_STRING
+else|:
+name|userName
 return|;
 block|}
 specifier|public
 name|void
 name|setUserName
 parameter_list|(
+specifier|final
 name|String
 name|userName
 parameter_list|)
@@ -821,6 +866,7 @@ specifier|public
 name|void
 name|setDbConnectionInfoPreferences
 parameter_list|(
+specifier|final
 name|Preferences
 name|dbConnectionInfoPreferences
 parameter_list|)
@@ -837,6 +883,7 @@ specifier|public
 name|DbAdapter
 name|makeAdapter
 parameter_list|(
+specifier|final
 name|ClassLoadingService
 name|classLoader
 parameter_list|)
@@ -959,6 +1006,7 @@ specifier|public
 name|DataSource
 name|makeDataSource
 parameter_list|(
+specifier|final
 name|ClassLoadingService
 name|classLoader
 parameter_list|)
@@ -995,6 +1043,30 @@ operator|new
 name|SQLException
 argument_list|(
 literal|"No DB URL set."
+argument_list|)
+throw|;
+block|}
+if|if
+condition|(
+operator|!
+name|isBlank
+argument_list|(
+name|getPassword
+argument_list|()
+argument_list|)
+operator|&&
+name|isBlank
+argument_list|(
+name|getUserName
+argument_list|()
+argument_list|)
+condition|)
+block|{
+throw|throw
+operator|new
+name|SQLException
+argument_list|(
+literal|"No username when password is set."
 argument_list|)
 throw|;
 block|}
@@ -1072,6 +1144,7 @@ specifier|public
 name|boolean
 name|copyTo
 parameter_list|(
+specifier|final
 name|DBConnectionInfo
 name|dataSourceInfo
 parameter_list|)
@@ -1240,6 +1313,7 @@ specifier|public
 name|boolean
 name|copyTo
 parameter_list|(
+specifier|final
 name|DataSourceInfo
 name|dataSourceInfo
 parameter_list|)
@@ -1377,6 +1451,7 @@ specifier|public
 name|boolean
 name|copyFrom
 parameter_list|(
+specifier|final
 name|DataSourceInfo
 name|dataSourceInfo
 parameter_list|)
