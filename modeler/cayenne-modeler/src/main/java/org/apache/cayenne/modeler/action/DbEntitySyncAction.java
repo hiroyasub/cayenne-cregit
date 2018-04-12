@@ -75,6 +75,20 @@ name|cayenne
 operator|.
 name|map
 operator|.
+name|DbAttribute
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|DbEntity
 import|;
 end_import
@@ -223,7 +237,7 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|*
+name|KeyStroke
 import|;
 end_import
 
@@ -233,7 +247,7 @@ name|java
 operator|.
 name|awt
 operator|.
-name|*
+name|Toolkit
 import|;
 end_import
 
@@ -305,6 +319,7 @@ block|}
 specifier|public
 name|DbEntitySyncAction
 parameter_list|(
+specifier|final
 name|Application
 name|application
 parameter_list|)
@@ -358,6 +373,7 @@ specifier|public
 name|void
 name|performAction
 parameter_list|(
+specifier|final
 name|ActionEvent
 name|e
 parameter_list|)
@@ -371,12 +387,14 @@ name|void
 name|syncDbEntity
 parameter_list|()
 block|{
+specifier|final
 name|ProjectController
 name|mediator
 init|=
 name|getProjectController
 argument_list|()
 decl_stmt|;
+specifier|final
 name|DbEntity
 name|dbEntity
 init|=
@@ -392,6 +410,7 @@ operator|!=
 literal|null
 condition|)
 block|{
+specifier|final
 name|Collection
 argument_list|<
 name|ObjEntity
@@ -418,6 +437,7 @@ condition|)
 block|{
 return|return;
 block|}
+specifier|final
 name|EntityMergeSupport
 name|merger
 init|=
@@ -456,6 +476,7 @@ name|PreserveRelationshipNameGenerator
 argument_list|()
 argument_list|)
 expr_stmt|;
+specifier|final
 name|DbEntitySyncUndoableEdit
 name|undoableEdit
 init|=
@@ -485,14 +506,21 @@ argument_list|(
 name|entities
 argument_list|)
 expr_stmt|;
+name|boolean
+name|hasChanges
+init|=
+literal|false
+decl_stmt|;
 for|for
 control|(
+specifier|final
 name|ObjEntity
 name|entity
 range|:
 name|entities
 control|)
 block|{
+specifier|final
 name|DbEntitySyncUndoableEdit
 operator|.
 name|EntitySyncUndoableListener
@@ -513,6 +541,20 @@ argument_list|(
 name|listener
 argument_list|)
 expr_stmt|;
+specifier|final
+name|Collection
+argument_list|<
+name|DbAttribute
+argument_list|>
+name|meaningfulFKs
+init|=
+name|merger
+operator|.
+name|getMeaningfulFKs
+argument_list|(
+name|entity
+argument_list|)
+decl_stmt|;
 comment|// TODO: addition or removal of model objects should be reflected in listener callbacks...
 comment|// we should not be trying to introspect the merger
 if|if
@@ -520,6 +562,12 @@ condition|(
 name|merger
 operator|.
 name|isRemovingMeaningfulFKs
+argument_list|()
+operator|&&
+operator|!
+name|meaningfulFKs
+operator|.
+name|isEmpty
 argument_list|()
 condition|)
 block|{
@@ -534,14 +582,13 @@ name|MeaningfulFKsUndoableEdit
 argument_list|(
 name|entity
 argument_list|,
-name|merger
-operator|.
-name|getMeaningfulFKs
-argument_list|(
-name|entity
+name|meaningfulFKs
 argument_list|)
 argument_list|)
-argument_list|)
+expr_stmt|;
+name|hasChanges
+operator|=
+literal|true
 expr_stmt|;
 block|}
 if|if
@@ -571,6 +618,10 @@ name|CHANGE
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|hasChanges
+operator|=
+literal|true
+expr_stmt|;
 block|}
 name|merger
 operator|.
@@ -580,6 +631,11 @@ name|listener
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|hasChanges
+condition|)
+block|{
 name|application
 operator|.
 name|getUndoManager
@@ -592,11 +648,13 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+block|}
 comment|/** 	 * This method works only for case when all inherited entities bound to same DbEntity 	 * if this will ever change some additional checks should be performed. 	 */
 specifier|private
 name|void
 name|filterInheritedEntities
 parameter_list|(
+specifier|final
 name|Collection
 argument_list|<
 name|ObjEntity
@@ -605,6 +663,7 @@ name|entities
 parameter_list|)
 block|{
 comment|// entities.removeIf(c -> c.getSuperEntity() != null);
+specifier|final
 name|Iterator
 argument_list|<
 name|ObjEntity
@@ -657,6 +716,7 @@ specifier|public
 name|String
 name|relationshipName
 parameter_list|(
+specifier|final
 name|DbRelationship
 modifier|...
 name|relationshipChain
@@ -680,6 +740,7 @@ name|relationshipChain
 argument_list|)
 return|;
 block|}
+specifier|final
 name|DbRelationship
 name|last
 init|=
