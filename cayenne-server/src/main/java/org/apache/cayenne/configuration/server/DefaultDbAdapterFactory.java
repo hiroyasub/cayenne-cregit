@@ -402,6 +402,13 @@ argument_list|(
 name|dbAdapter
 argument_list|)
 decl_stmt|;
+name|pkGenerator
+operator|.
+name|setAdapter
+argument_list|(
+name|dbAdapter
+argument_list|)
+expr_stmt|;
 name|dbAdapter
 operator|.
 name|setPkGenerator

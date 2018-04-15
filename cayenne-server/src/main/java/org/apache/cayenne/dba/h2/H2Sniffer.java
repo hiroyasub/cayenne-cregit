@@ -225,9 +225,6 @@ block|}
 return|return
 name|objectFactory
 operator|.
-expr|<
-name|JdbcAdapter
-operator|>
 name|newInstance
 argument_list|(
 name|DbAdapter
