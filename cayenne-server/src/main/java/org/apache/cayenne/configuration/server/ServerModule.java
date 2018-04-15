@@ -2606,6 +2606,7 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
+comment|//set PkGenerators for current Adapters
 name|contributePkGenerators
 argument_list|(
 name|binder
