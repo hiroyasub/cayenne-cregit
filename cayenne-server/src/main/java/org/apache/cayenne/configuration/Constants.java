@@ -51,6 +51,12 @@ name|SERVER_ADAPTER_DETECTORS_LIST
 init|=
 literal|"cayenne.server.adapter_detectors"
 decl_stmt|;
+comment|/**      * A DI container key for the Map&lt;Key, PkGenerator.class&gt; that objects      * that can discover the type of current database and install correct PkGenerator in runtime.      */
+name|String
+name|SERVER_PK_GENERATORS_MAP
+init|=
+literal|"cayenne.server.pk_generators"
+decl_stmt|;
 comment|/**      * A DI container key for the List&lt;DataChannelFilter&gt; storing      * DataDomain filters.      *      * @see org.apache.cayenne.configuration.server.ServerModule#contributeDomainFilters(Binder).      */
 name|String
 name|SERVER_DOMAIN_FILTERS_LIST
@@ -202,7 +208,7 @@ name|QUERY_EXECUTION_TIME_LOGGING_THRESHOLD_PROPERTY
 init|=
 literal|"cayenne.server.query_execution_time_logging_threshold"
 decl_stmt|;
-comment|/**      * Snapshot cache max size      * @see org.apache.cayenne.configuration.server.ServerModule#setSnapshotCacheSize(Binder, int)      * @since 4.0      */
+comment|/**      * Snapshot cache max size      *      * @see org.apache.cayenne.configuration.server.ServerModule#setSnapshotCacheSize(Binder, int)      * @since 4.0      */
 name|String
 name|SNAPSHOT_CACHE_SIZE_PROPERTY
 init|=

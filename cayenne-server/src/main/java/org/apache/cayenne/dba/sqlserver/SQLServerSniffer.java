@@ -19,21 +19,17 @@ end_package
 
 begin_import
 import|import
-name|java
+name|org
 operator|.
-name|sql
+name|apache
 operator|.
-name|DatabaseMetaData
-import|;
-end_import
-
-begin_import
-import|import
-name|java
+name|cayenne
 operator|.
-name|sql
+name|configuration
 operator|.
-name|SQLException
+name|server
+operator|.
+name|DbAdapterDetector
 import|;
 end_import
 
@@ -49,7 +45,7 @@ name|configuration
 operator|.
 name|server
 operator|.
-name|DbAdapterDetector
+name|PkGeneratorFactoryProvider
 import|;
 end_import
 
@@ -75,6 +71,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|dba
+operator|.
+name|PkGenerator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|di
 operator|.
 name|AdhocObjectFactory
@@ -95,8 +105,38 @@ name|Inject
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|DatabaseMetaData
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|SQLException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Objects
+import|;
+end_import
+
 begin_comment
-comment|/**  * Detects SQLServer database from JDBC metadata.  *   * @since 1.2  */
+comment|/**  * Detects SQLServer database from JDBC metadata.  *  * @since 1.2  */
 end_comment
 
 begin_class
@@ -117,6 +157,11 @@ annotation|@
 name|Inject
 name|AdhocObjectFactory
 name|objectFactory
+parameter_list|,
+annotation|@
+name|Inject
+name|PkGeneratorFactoryProvider
+name|pkGeneratorProvider
 parameter_list|)
 block|{
 name|this

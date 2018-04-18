@@ -76,7 +76,7 @@ specifier|public
 interface|interface
 name|PkGenerator
 block|{
-comment|/**      * Generates necessary database objects to provide automatic primary key support.      *       * @param node node that provides access to a DataSource.      * @param dbEntities a list of entities that require primary key auto-generation      *            support      */
+comment|/**      * Generates necessary database objects to provide automatic primary key support.      *      * @param node       node that provides access to a DataSource.      * @param dbEntities a list of entities that require primary key auto-generation      *                   support      */
 name|void
 name|createAutoPk
 parameter_list|(
@@ -106,7 +106,7 @@ argument_list|>
 name|dbEntities
 parameter_list|)
 function_decl|;
-comment|/**      * Drops any common database objects associated with automatic primary key generation      * process. This may be lookup tables, special stored procedures or sequences.      *       * @param node node that provides access to a DataSource.      * @param dbEntities a list of entities whose primary key auto-generation support      *            should be dropped.      */
+comment|/**      * Drops any common database objects associated with automatic primary key generation      * process. This may be lookup tables, special stored procedures or sequences.      *      * @param node       node that provides access to a DataSource.      * @param dbEntities a list of entities whose primary key auto-generation support      *                   should be dropped.      */
 name|void
 name|dropAutoPk
 parameter_list|(
@@ -136,7 +136,7 @@ argument_list|>
 name|dbEntities
 parameter_list|)
 function_decl|;
-comment|/**      * Generates a unique and non-repeating primary key for specified PK attribute.      *       * @since 3.0      */
+comment|/**      * Generates a unique and non-repeating primary key for specified PK attribute.      *      * @since 3.0      */
 name|Object
 name|generatePk
 parameter_list|(
@@ -148,6 +148,19 @@ name|pk
 parameter_list|)
 throws|throws
 name|Exception
+function_decl|;
+comment|/**      * Install the adapter associated with current PkGenerator      */
+name|void
+name|setAdapter
+parameter_list|(
+name|DbAdapter
+name|q
+parameter_list|)
+function_decl|;
+comment|/**      * Get an adapter associated with current PkGenerator      */
+name|DbAdapter
+name|getAdapter
+parameter_list|()
 function_decl|;
 comment|/**      * Resets any cached primary keys forcing generator to go to the database next time id      * generation is requested. May not be applicable for all generator implementations.      */
 name|void

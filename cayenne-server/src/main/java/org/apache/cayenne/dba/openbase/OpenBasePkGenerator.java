@@ -228,6 +228,14 @@ name|OpenBasePkGenerator
 extends|extends
 name|JdbcPkGenerator
 block|{
+specifier|public
+name|OpenBasePkGenerator
+parameter_list|()
+block|{
+name|super
+argument_list|()
+expr_stmt|;
+block|}
 specifier|protected
 name|OpenBasePkGenerator
 parameter_list|(
@@ -241,7 +249,7 @@ name|adapter
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Returns a non-repeating primary key for a given PK attribute. Since 	 * OpenBase-specific mechanism is used, key caching is disabled. Instead a 	 * database operation is performed on every call. 	 *  	 * @since 3.0 	 */
+comment|/**      * Returns a non-repeating primary key for a given PK attribute. Since      * OpenBase-specific mechanism is used, key caching is disabled. Instead a      * database operation is performed on every call.      *      * @since 3.0      */
 annotation|@
 name|Override
 specifier|public
@@ -333,7 +341,7 @@ name|value
 return|;
 block|}
 block|}
-comment|/** 	 * Generates new (unique and non-repeating) primary key for specified 	 * DbEntity. Executed SQL looks like this: 	 *  	 *<pre> 	 *  NEWID FOR Table Column 	 *</pre> 	 *  	 * COLUMN must be marked as UNIQUE in order for this to work properly. 	 *  	 * @since 3.0 	 */
+comment|/**      * Generates new (unique and non-repeating) primary key for specified      * DbEntity. Executed SQL looks like this:      *      *<pre>      *  NEWID FOR Table Column      *</pre>      *<p>      * COLUMN must be marked as UNIQUE in order for this to work properly.      *      * @since 3.0      */
 annotation|@
 name|Override
 specifier|protected
@@ -440,7 +448,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/** 	 * Returns SQL string that can generate new (unique and non-repeating) 	 * primary key for specified DbEntity. No actual database operations are 	 * performed. 	 *  	 * @since 1.2 	 */
+comment|/**      * Returns SQL string that can generate new (unique and non-repeating)      * primary key for specified DbEntity. No actual database operations are      * performed.      *      * @since 1.2      */
 specifier|protected
 name|String
 name|newIDString
@@ -578,7 +586,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      *       */
+comment|/**      *      */
 annotation|@
 name|Override
 specifier|public
@@ -679,7 +687,7 @@ operator|>
 literal|0
 return|;
 block|}
-comment|/**      *       */
+comment|/**      *      */
 annotation|@
 name|Override
 specifier|public
@@ -704,7 +712,7 @@ comment|// Good thing is that it doesn't matter, since PK support
 comment|// is attached to the table itself, so if a table is dropped,
 comment|// it will be dropped as well
 block|}
-comment|/** 	 * Returns an empty list, since OpenBase doesn't support this operation. 	 */
+comment|/**      * Returns an empty list, since OpenBase doesn't support this operation.      */
 annotation|@
 name|Override
 specifier|public
@@ -728,7 +736,7 @@ name|emptyList
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Returns a String to create PK support for an entity. 	 */
+comment|/**      * Returns a String to create PK support for an entity.      */
 specifier|protected
 name|String
 name|createPKString
@@ -904,7 +912,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Returns a String to create a unique index on table primary key columns 	 * per OpenBase recommendations. 	 */
+comment|/**      * Returns a String to create a unique index on table primary key columns      * per OpenBase recommendations.      */
 specifier|protected
 name|String
 name|createUniquePKIndexString
@@ -1100,7 +1108,7 @@ parameter_list|()
 block|{
 comment|// noop
 block|}
-comment|/** 	 * Returns zero, since PK caching is not feasible with OpenBase PK 	 * generation mechanism. 	 */
+comment|/**      * Returns zero, since PK caching is not feasible with OpenBase PK      * generation mechanism.      */
 annotation|@
 name|Override
 specifier|public

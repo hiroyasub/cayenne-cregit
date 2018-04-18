@@ -72,6 +72,14 @@ name|PostgresPkGenerator
 extends|extends
 name|OraclePkGenerator
 block|{
+specifier|public
+name|PostgresPkGenerator
+parameter_list|()
+block|{
+name|super
+argument_list|()
+expr_stmt|;
+block|}
 specifier|protected
 name|PostgresPkGenerator
 parameter_list|(

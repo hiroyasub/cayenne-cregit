@@ -62,7 +62,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Default PK generator for H2 that uses sequences for PK generation.  *   * @since 4.0  */
+comment|/**  * Default PK generator for H2 that uses sequences for PK generation.  *  * @since 4.0  */
 end_comment
 
 begin_class
@@ -72,6 +72,14 @@ name|H2PkGenerator
 extends|extends
 name|OraclePkGenerator
 block|{
+specifier|public
+name|H2PkGenerator
+parameter_list|()
+block|{
+name|super
+argument_list|()
+expr_stmt|;
+block|}
 specifier|protected
 name|H2PkGenerator
 parameter_list|(

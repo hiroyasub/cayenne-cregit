@@ -41,9 +41,39 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|configuration
+operator|.
+name|server
+operator|.
+name|PkGeneratorFactoryProvider
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|dba
 operator|.
 name|DbAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dba
+operator|.
+name|PkGenerator
 import|;
 end_import
 
@@ -112,6 +142,16 @@ operator|.
 name|sql
 operator|.
 name|Statement
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Objects
 import|;
 end_import
 
@@ -208,7 +248,6 @@ argument_list|()
 operator|.
 name|createStatement
 argument_list|()
-init|;
 init|)
 block|{
 comment|// http://dev.mysql.com/doc/refman/5.0/en/storage-engines.html
@@ -228,7 +267,6 @@ name|executeQuery
 argument_list|(
 literal|"SHOW VARIABLES LIKE 'table_type'"
 argument_list|)
-init|;
 init|)
 block|{
 if|if

@@ -48,7 +48,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Ingres-specific sequence based PK generator.  *   * @since 1.2  */
+comment|/**  * Ingres-specific sequence based PK generator.  *  * @since 1.2  */
 end_comment
 
 begin_class
@@ -58,6 +58,14 @@ name|IngresPkGenerator
 extends|extends
 name|OraclePkGenerator
 block|{
+specifier|public
+name|IngresPkGenerator
+parameter_list|()
+block|{
+name|super
+argument_list|()
+expr_stmt|;
+block|}
 specifier|protected
 name|IngresPkGenerator
 parameter_list|(

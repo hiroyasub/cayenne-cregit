@@ -59,6 +59,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Objects
+import|;
+end_import
+
+begin_import
+import|import
 name|javax
 operator|.
 name|sql
@@ -157,6 +167,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|dba
+operator|.
+name|PkGenerator
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|di
 operator|.
 name|AdhocObjectFactory
@@ -199,20 +223,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|di
-operator|.
-name|Provider
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|log
 operator|.
 name|JdbcEventLogger
@@ -220,7 +230,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A factory of DbAdapters that either loads user-provided adapter or guesses  * the adapter type from the database metadata.  *   * @since 3.1  */
+comment|/**  * A factory of DbAdapters that either loads user-provided adapter or guesses  * the adapter type from the database metadata.  *  * @since 3.1  */
 end_comment
 
 begin_class
@@ -247,6 +257,12 @@ name|Inject
 specifier|protected
 name|AdhocObjectFactory
 name|objectFactory
+decl_stmt|;
+annotation|@
+name|Inject
+specifier|protected
+name|PkGeneratorFactoryProvider
+name|pkGeneratorProvider
 decl_stmt|;
 specifier|protected
 name|List
@@ -362,7 +378,9 @@ operator|!=
 literal|null
 condition|)
 block|{
-return|return
+name|JdbcAdapter
+name|dbAdapter
+init|=
 name|objectFactory
 operator|.
 name|newInstance
@@ -373,6 +391,33 @@ name|class
 argument_list|,
 name|adapterType
 argument_list|)
+decl_stmt|;
+name|PkGenerator
+name|pkGenerator
+init|=
+name|pkGeneratorProvider
+operator|.
+name|get
+argument_list|(
+name|dbAdapter
+argument_list|)
+decl_stmt|;
+name|pkGenerator
+operator|.
+name|setAdapter
+argument_list|(
+name|dbAdapter
+argument_list|)
+expr_stmt|;
+name|dbAdapter
+operator|.
+name|setPkGenerator
+argument_list|(
+name|pkGenerator
+argument_list|)
+expr_stmt|;
+return|return
+name|dbAdapter
 return|;
 block|}
 else|else
@@ -423,7 +468,6 @@ name|dataSource
 operator|.
 name|getConnection
 argument_list|()
-init|;
 init|)
 block|{
 return|return
