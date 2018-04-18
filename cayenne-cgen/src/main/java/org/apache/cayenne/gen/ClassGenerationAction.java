@@ -623,6 +623,12 @@ return|return
 name|superTemplate
 return|;
 case|case
+name|EMBEDDABLE_SINGLE_CLASS
+case|:
+return|return
+name|embeddableTemplate
+return|;
+case|case
 name|EMBEDDABLE_SUBCLASS
 case|:
 return|return
