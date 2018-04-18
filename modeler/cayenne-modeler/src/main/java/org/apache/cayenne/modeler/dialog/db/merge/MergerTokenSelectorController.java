@@ -155,7 +155,37 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|*
+name|DefaultCellEditor
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|JComboBox
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|JTable
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|SwingConstants
 import|;
 end_import
 
@@ -180,6 +210,18 @@ operator|.
 name|table
 operator|.
 name|DefaultTableCellRenderer
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|table
+operator|.
+name|TableCellEditor
 import|;
 end_import
 
@@ -225,7 +267,7 @@ name|java
 operator|.
 name|awt
 operator|.
-name|*
+name|Component
 import|;
 end_import
 
@@ -327,6 +369,7 @@ decl_stmt|;
 specifier|public
 name|MergerTokenSelectorController
 parameter_list|(
+specifier|final
 name|CayenneController
 name|parent
 parameter_list|)
@@ -370,6 +413,7 @@ specifier|public
 name|void
 name|setMergerTokenFactory
 parameter_list|(
+specifier|final
 name|MergerTokenFactory
 name|mergerTokenFactory
 parameter_list|)
@@ -385,6 +429,7 @@ specifier|public
 name|void
 name|setTokens
 parameter_list|(
+specifier|final
 name|List
 argument_list|<
 name|MergerToken
@@ -420,6 +465,7 @@ argument_list|>
 name|getSelectedTokens
 parameter_list|()
 block|{
+specifier|final
 name|List
 argument_list|<
 name|MergerToken
@@ -470,6 +516,7 @@ specifier|public
 name|void
 name|removeToken
 parameter_list|(
+specifier|final
 name|MergerToken
 name|token
 parameter_list|)
@@ -488,6 +535,7 @@ argument_list|(
 name|token
 argument_list|)
 expr_stmt|;
+specifier|final
 name|AbstractTableModel
 name|model
 init|=
@@ -523,6 +571,7 @@ specifier|public
 name|void
 name|setToken
 parameter_list|(
+specifier|final
 name|MergerToken
 name|token
 parameter_list|)
@@ -566,6 +615,7 @@ specifier|public
 name|void
 name|setIncluded
 parameter_list|(
+specifier|final
 name|boolean
 name|b
 parameter_list|)
@@ -612,6 +662,7 @@ name|void
 name|tableSelectedAction
 parameter_list|()
 block|{
+specifier|final
 name|int
 name|unselectedCount
 init|=
@@ -668,6 +719,7 @@ name|void
 name|initController
 parameter_list|()
 block|{
+specifier|final
 name|BindingBuilder
 name|builder
 init|=
@@ -707,6 +759,7 @@ argument_list|,
 literal|"reverseAllAction()"
 argument_list|)
 expr_stmt|;
+specifier|final
 name|TableModel
 name|model
 init|=
@@ -716,6 +769,7 @@ argument_list|(
 name|this
 argument_list|)
 decl_stmt|;
+specifier|final
 name|MergeDirection
 index|[]
 name|dirs
@@ -743,6 +797,7 @@ argument_list|(
 name|model
 argument_list|)
 expr_stmt|;
+specifier|final
 name|TableColumnModel
 name|columnModel
 init|=
@@ -755,6 +810,7 @@ name|getColumnModel
 argument_list|()
 decl_stmt|;
 comment|// dropdown for direction column
+specifier|final
 name|JComboBox
 name|directionCombo
 init|=
@@ -777,6 +833,7 @@ argument_list|(
 literal|false
 argument_list|)
 expr_stmt|;
+specifier|final
 name|TableColumn
 name|directionColumn
 init|=
@@ -803,21 +860,27 @@ specifier|public
 name|Component
 name|getTableCellRendererComponent
 parameter_list|(
+specifier|final
 name|JTable
 name|table
 parameter_list|,
+specifier|final
 name|Object
 name|value
 parameter_list|,
+specifier|final
 name|boolean
 name|isSelected
 parameter_list|,
+specifier|final
 name|boolean
 name|hasFocus
 parameter_list|,
+specifier|final
 name|int
 name|row
 parameter_list|,
+specifier|final
 name|int
 name|column
 parameter_list|)
@@ -935,6 +998,7 @@ specifier|public
 name|boolean
 name|isSelected
 parameter_list|(
+specifier|final
 name|MergerToken
 name|token
 parameter_list|)
@@ -962,9 +1026,11 @@ specifier|public
 name|void
 name|select
 parameter_list|(
+specifier|final
 name|MergerToken
 name|token
 parameter_list|,
+specifier|final
 name|boolean
 name|select
 parameter_list|)
@@ -997,9 +1063,11 @@ specifier|public
 name|void
 name|setDirection
 parameter_list|(
+specifier|final
 name|MergerToken
 name|token
 parameter_list|,
+specifier|final
 name|MergeDirection
 name|direction
 parameter_list|)
@@ -1019,6 +1087,7 @@ condition|)
 block|{
 return|return;
 block|}
+specifier|final
 name|int
 name|i
 init|=
@@ -1029,6 +1098,7 @@ argument_list|(
 name|token
 argument_list|)
 decl_stmt|;
+specifier|final
 name|MergerToken
 name|reverse
 init|=
@@ -1081,6 +1151,10 @@ name|void
 name|checkAllAction
 parameter_list|()
 block|{
+name|stopEditing
+argument_list|()
+expr_stmt|;
+specifier|final
 name|boolean
 name|isCheckAllSelected
 init|=
@@ -1113,6 +1187,7 @@ name|selectableTokensList
 argument_list|)
 expr_stmt|;
 block|}
+specifier|final
 name|AbstractTableModel
 name|model
 init|=
@@ -1147,6 +1222,9 @@ name|void
 name|reverseAllAction
 parameter_list|()
 block|{
+name|stopEditing
+argument_list|()
+expr_stmt|;
 name|isReverse
 operator|=
 operator|!
@@ -1170,6 +1248,7 @@ name|i
 operator|++
 control|)
 block|{
+specifier|final
 name|MergerToken
 name|token
 init|=
@@ -1180,6 +1259,7 @@ argument_list|(
 name|i
 argument_list|)
 decl_stmt|;
+specifier|final
 name|MergerToken
 name|reverse
 init|=
@@ -1225,6 +1305,7 @@ argument_list|(
 name|selectableTokensList
 argument_list|)
 expr_stmt|;
+specifier|final
 name|AbstractTableModel
 name|model
 init|=
@@ -1244,6 +1325,38 @@ operator|.
 name|fireTableDataChanged
 argument_list|()
 expr_stmt|;
+block|}
+specifier|private
+name|void
+name|stopEditing
+parameter_list|()
+block|{
+comment|// Stop cell editing before any action
+specifier|final
+name|TableCellEditor
+name|cellEditor
+init|=
+name|view
+operator|.
+name|getTokens
+argument_list|()
+operator|.
+name|getCellEditor
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|cellEditor
+operator|!=
+literal|null
+condition|)
+block|{
+name|cellEditor
+operator|.
+name|stopCellEditing
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 block|}
 end_class
