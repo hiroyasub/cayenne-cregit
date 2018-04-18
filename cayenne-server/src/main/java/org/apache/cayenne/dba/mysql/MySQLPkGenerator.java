@@ -197,6 +197,7 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+comment|/**      * Used by DI      * @since 4.1      */
 specifier|public
 name|MySQLPkGenerator
 parameter_list|()

@@ -360,6 +360,7 @@ name|pkStartValue
 init|=
 name|DEFAULT_PK_START_VALUE
 decl_stmt|;
+comment|/**      * @since 4.1      */
 specifier|public
 name|JdbcPkGenerator
 parameter_list|()

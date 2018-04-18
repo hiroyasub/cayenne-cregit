@@ -394,6 +394,14 @@ name|PkGenerator
 name|getPkGenerator
 parameter_list|()
 function_decl|;
+comment|/** 	 * Set custom PK generator  associated with this DbAdapter. 	 * @param pkGenerator to set 	 * @since 4.1 	 */
+name|void
+name|setPkGenerator
+parameter_list|(
+name|PkGenerator
+name|pkGenerator
+parameter_list|)
+function_decl|;
 comment|/** 	 * Creates and returns a DbAttribute based on supplied parameters (usually 	 * obtained from database meta data). 	 * 	 * @param name 	 *            database column name 	 * @param typeName 	 *            database specific type name, may be used as a hint to 	 *            determine the right JDBC type. 	 * @param type 	 *            JDBC column type 	 * @param size 	 *            database column size (ignored if less than zero) 	 * @param scale 	 *            database column scale, i.e. the number of decimal digits 	 *            (ignored if less than zero) 	 * @param allowNulls 	 *            database column nullable parameter 	 */
 name|DbAttribute
 name|buildAttribute

@@ -58,6 +58,7 @@ name|IngresPkGenerator
 extends|extends
 name|OraclePkGenerator
 block|{
+comment|/**      * Used by DI      * @since 4.1      */
 specifier|public
 name|IngresPkGenerator
 parameter_list|()

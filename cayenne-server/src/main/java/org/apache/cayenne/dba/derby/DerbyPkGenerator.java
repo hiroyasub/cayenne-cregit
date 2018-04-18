@@ -72,6 +72,7 @@ name|DerbyPkGenerator
 extends|extends
 name|OraclePkGenerator
 block|{
+comment|/**      * Used by DI      * @since 4.1      */
 specifier|public
 name|DerbyPkGenerator
 parameter_list|()

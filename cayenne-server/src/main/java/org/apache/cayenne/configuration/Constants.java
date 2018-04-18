@@ -51,12 +51,6 @@ name|SERVER_ADAPTER_DETECTORS_LIST
 init|=
 literal|"cayenne.server.adapter_detectors"
 decl_stmt|;
-comment|/**      * A DI container key for the Map&lt;Key, PkGenerator.class&gt; that objects      * that can discover the type of current database and install correct PkGenerator in runtime.      */
-name|String
-name|SERVER_PK_GENERATORS_MAP
-init|=
-literal|"cayenne.server.pk_generators"
-decl_stmt|;
 comment|/**      * A DI container key for the List&lt;DataChannelFilter&gt; storing      * DataDomain filters.      *      * @see org.apache.cayenne.configuration.server.ServerModule#contributeDomainFilters(Binder).      */
 name|String
 name|SERVER_DOMAIN_FILTERS_LIST

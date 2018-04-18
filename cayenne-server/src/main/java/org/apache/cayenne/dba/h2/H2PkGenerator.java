@@ -72,6 +72,7 @@ name|H2PkGenerator
 extends|extends
 name|OraclePkGenerator
 block|{
+comment|/**      * Used by DI      * @since 4.1      */
 specifier|public
 name|H2PkGenerator
 parameter_list|()

@@ -2222,7 +2222,7 @@ name|SERVER_ADAPTER_DETECTORS_LIST
 argument_list|)
 return|;
 block|}
-comment|/**      * Provides access to a DI map builder for {@link PkGenerator}'s that allows downstream modules to      * "contribute" their own pk generators.      *      * @param binder DI binder passed to the module during injector startup.      * @return MapBuilder for properties.      */
+comment|/**      * Provides access to a DI map builder for {@link PkGenerator}'s that allows downstream modules to      * "contribute" their own pk generators.      *      * @param binder DI binder passed to the module during injector startup.      * @return MapBuilder for properties.      * @since 4.1      */
 specifier|public
 specifier|static
 name|MapBuilder
@@ -2243,10 +2243,6 @@ argument_list|(
 name|PkGenerator
 operator|.
 name|class
-argument_list|,
-name|Constants
-operator|.
-name|SERVER_PK_GENERATORS_MAP
 argument_list|)
 return|;
 block|}

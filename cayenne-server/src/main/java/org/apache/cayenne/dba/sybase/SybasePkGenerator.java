@@ -174,6 +174,7 @@ name|SybasePkGenerator
 extends|extends
 name|JdbcPkGenerator
 block|{
+comment|/** 	 * Used by DI 	 * @since 4.1 	 */
 specifier|public
 name|SybasePkGenerator
 parameter_list|()

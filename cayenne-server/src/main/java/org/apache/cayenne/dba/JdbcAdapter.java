@@ -1051,6 +1051,8 @@ name|pkGenerator
 return|;
 block|}
 comment|/**      * Sets new primary key generator.      *      * @since 1.1      */
+annotation|@
+name|Override
 specifier|public
 name|void
 name|setPkGenerator

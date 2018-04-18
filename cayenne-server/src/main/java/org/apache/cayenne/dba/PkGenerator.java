@@ -149,7 +149,7 @@ parameter_list|)
 throws|throws
 name|Exception
 function_decl|;
-comment|/**      * Install the adapter associated with current PkGenerator      */
+comment|/**      * Install the adapter associated with current PkGenerator      *      * @since 4.1      */
 name|void
 name|setAdapter
 parameter_list|(
@@ -157,7 +157,7 @@ name|DbAdapter
 name|q
 parameter_list|)
 function_decl|;
-comment|/**      * Get an adapter associated with current PkGenerator      */
+comment|/**      * Get an adapter associated with current PkGenerator      *      * @since 4.1      */
 name|DbAdapter
 name|getAdapter
 parameter_list|()

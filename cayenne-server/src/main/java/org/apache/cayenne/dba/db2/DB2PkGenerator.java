@@ -72,6 +72,7 @@ name|DB2PkGenerator
 extends|extends
 name|OraclePkGenerator
 block|{
+comment|/**      * Used by DI      * @since 4.1      */
 specifier|public
 name|DB2PkGenerator
 parameter_list|()

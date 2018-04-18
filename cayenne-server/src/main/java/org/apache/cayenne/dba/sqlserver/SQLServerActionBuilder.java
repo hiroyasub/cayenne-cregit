@@ -87,20 +87,6 @@ name|SQLAction
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|SelectQuery
-import|;
-end_import
-
 begin_comment
 comment|/**  * @since 1.2  */
 end_comment
