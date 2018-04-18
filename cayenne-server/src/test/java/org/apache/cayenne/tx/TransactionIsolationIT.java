@@ -380,7 +380,7 @@ name|TransactionDescriptor
 argument_list|(
 name|Connection
 operator|.
-name|TRANSACTION_REPEATABLE_READ
+name|TRANSACTION_SERIALIZABLE
 argument_list|,
 name|TransactionPropagation
 operator|.
