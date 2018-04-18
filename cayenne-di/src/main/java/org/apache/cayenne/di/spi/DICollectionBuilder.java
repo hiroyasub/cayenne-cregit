@@ -340,6 +340,21 @@ name|scope
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @since 4.1      */
+specifier|public
+name|void
+name|withoutScope
+parameter_list|()
+block|{
+name|in
+argument_list|(
+name|injector
+operator|.
+name|getNoScope
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_class
 

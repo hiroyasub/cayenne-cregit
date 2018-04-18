@@ -96,6 +96,11 @@ name|Scope
 name|scope
 parameter_list|)
 function_decl|;
+comment|/**      * @since 4.1      */
+name|void
+name|withoutScope
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
