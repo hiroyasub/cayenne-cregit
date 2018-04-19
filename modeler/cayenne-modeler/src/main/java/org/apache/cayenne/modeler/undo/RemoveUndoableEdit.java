@@ -1216,6 +1216,7 @@ argument_list|,
 name|procedure
 argument_list|)
 expr_stmt|;
+break|break;
 case|case
 name|MAP_FROM_NODE
 case|:
@@ -1263,6 +1264,7 @@ argument_list|,
 name|embeddable
 argument_list|)
 expr_stmt|;
+break|break;
 block|}
 block|}
 annotation|@
