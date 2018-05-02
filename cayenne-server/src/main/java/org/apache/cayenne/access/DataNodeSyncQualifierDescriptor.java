@@ -560,7 +560,7 @@ name|get
 argument_list|(
 name|dbAttrPair
 operator|.
-name|getSourceName
+name|getTargetName
 argument_list|()
 argument_list|)
 return|;
@@ -573,6 +573,11 @@ block|}
 block|}
 if|if
 condition|(
+name|descriptor
+operator|.
+name|isMaster
+argument_list|()
+operator|&&
 name|usingOptimisticLocking
 condition|)
 block|{
@@ -596,6 +601,12 @@ condition|(
 name|attribute
 operator|.
 name|isUsedForLocking
+argument_list|()
+operator|&&
+operator|!
+name|attribute
+operator|.
+name|isFlattened
 argument_list|()
 condition|)
 block|{
