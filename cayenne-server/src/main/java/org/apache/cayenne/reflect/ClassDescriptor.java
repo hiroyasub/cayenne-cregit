@@ -27,6 +27,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -115,6 +125,16 @@ argument_list|<
 name|DbEntity
 argument_list|>
 name|getRootDbEntities
+parameter_list|()
+function_decl|;
+comment|/**      * Returns information about additional db entities that is used for this ObjEntity (i.e. for flattened attributes).      *<p>      * Keys are full paths for corresponding flattened attributes.      *<p>      *      * @since 4.1      * @return information about additional db entities      */
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|DbEntity
+argument_list|>
+name|getAdditionalDbEntities
 parameter_list|()
 function_decl|;
 comment|/**      * @since 3.0      */
