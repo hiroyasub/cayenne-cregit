@@ -230,6 +230,7 @@ name|EXTRA_MODULES_PARAMETER
 init|=
 literal|"extra-modules"
 decl_stmt|;
+comment|/**      * @since 4.1      */
 specifier|static
 specifier|final
 name|String
@@ -400,24 +401,19 @@ return|return
 name|name
 return|;
 block|}
-comment|/**      * If you are using multiple configuration files (cayenne-*.xml) this allows you      * to specify a name for the data domain other than the default name "cayenne"       * (see {@value ServerRuntimeBuilder}).      * A specific data domain name is useful if you are setting database connection info       * using properties via {@link PropertyDataSourceFactory}.      * @return      */
+comment|/**      * If you are using multiple configuration files (cayenne-*.xml) this allows you      * to specify a name for the data domain other than the default name "cayenne"       * (see {@link ServerRuntimeBuilder}).      * A specific data domain name is useful if you are setting database connection info       * using properties via {@link PropertyDataSourceFactory}.      * @since 4.1      */
 specifier|public
 name|String
 name|getDataDomainName
 parameter_list|()
 block|{
-name|String
-name|name
-init|=
+return|return
 name|configuration
 operator|.
 name|getInitParameter
 argument_list|(
 name|DATA_DOMAIN_NAME_PARAMETER
 argument_list|)
-decl_stmt|;
-return|return
-name|name
 return|;
 block|}
 comment|/**      * Creates and returns a collection of modules made of provided standard modules and      * extra custom modules specified via an optional "extra-modules" init parameter. The      * value of the parameter is expected to be a comma or space-separated list of class      * names, with each class implementing {@link Module} interface. Each custom module      * must have a no-arg constructor. If a module of this type is already in the modules      * collection, such module is skipped.      */
