@@ -368,7 +368,7 @@ name|map
 operator|.
 name|getProcedure
 argument_list|(
-name|key
+name|name
 argument_list|)
 decl_stmt|;
 if|if
