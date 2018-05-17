@@ -292,7 +292,7 @@ name|patternFilter
 init|=
 name|tableFilter
 operator|.
-name|getIncludeTableColumnFilter
+name|getIncludeTableRelationshipFilter
 argument_list|(
 name|container
 operator|.
