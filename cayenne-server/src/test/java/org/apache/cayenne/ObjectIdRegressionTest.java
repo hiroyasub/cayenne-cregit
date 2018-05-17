@@ -60,17 +60,6 @@ specifier|public
 class|class
 name|ObjectIdRegressionTest
 block|{
-comment|// public void testX() {
-comment|// for (int i = 0; i< 10000; i++) {
-comment|// byte[] bytes = IDUtil.pseudoUniqueByteSequence8();
-comment|// StringBuffer buffer = new StringBuffer(16);
-comment|// for(int j = 0; j< 8; j++) {
-comment|// IDUtil.appendFormattedByte(buffer, bytes[j]);
-comment|// }
-comment|//
-comment|// System.out.println(buffer);
-comment|// }
-comment|// }
 annotation|@
 name|Test
 specifier|public
@@ -80,8 +69,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-comment|// testing uniqueness of a sequence of ObjectIds generated quickly one after the
-comment|// other...
+comment|// testing uniqueness of a sequence of ObjectIds generated quickly one after the other...
 name|int
 name|size
 init|=
@@ -93,12 +81,12 @@ argument_list|(
 literal|"Artist"
 argument_list|)
 expr_stmt|;
-name|Object
+name|ObjectId
 index|[]
 name|pool
 init|=
 operator|new
-name|Object
+name|ObjectId
 index|[
 name|size
 index|]
@@ -159,10 +147,14 @@ literal|1
 argument_list|)
 expr_stmt|;
 name|Set
+argument_list|<
+name|ObjectId
+argument_list|>
 name|idSet
 init|=
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for

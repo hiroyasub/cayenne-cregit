@@ -1003,35 +1003,6 @@ argument_list|(
 literal|"TABLE_SCHEM"
 argument_list|)
 decl_stmt|;
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"DROP TABLE "
-operator|+
-operator|(
-name|isBlank
-argument_list|(
-name|schema
-argument_list|)
-condition|?
-literal|""
-else|:
-name|schema
-operator|+
-literal|"."
-operator|)
-operator|+
-name|tables
-operator|.
-name|getString
-argument_list|(
-literal|"TABLE_NAME"
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|stmt
 operator|.
 name|execute
@@ -1099,17 +1070,6 @@ literal|"SCHEMA"
 argument_list|)
 condition|)
 block|{
-name|System
-operator|.
-name|out
-operator|.
-name|println
-argument_list|(
-literal|"DROP SCHEMA "
-operator|+
-name|schem
-argument_list|)
-expr_stmt|;
 name|stmt
 operator|.
 name|execute
@@ -1261,20 +1221,7 @@ block|}
 catch|catch
 parameter_list|(
 name|SAXException
-name|e
-parameter_list|)
-block|{
-name|e
-operator|.
-name|printStackTrace
-argument_list|()
-expr_stmt|;
-name|fail
-argument_list|()
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
+decl||
 name|IOException
 name|e
 parameter_list|)
@@ -1353,8 +1300,7 @@ init|;
 init|)
 block|{
 comment|// TODO: move parsing SQL files to a common utility (DBHelper?) .
-comment|// ALso see UnitDbApater.executeDDL - this should use the same
-comment|// utility
+comment|// Also see UnitDbApater.executeDDL - this should use the same utility
 try|try
 init|(
 name|Statement

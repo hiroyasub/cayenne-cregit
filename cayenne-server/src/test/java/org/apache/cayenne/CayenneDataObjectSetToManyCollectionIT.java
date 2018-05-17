@@ -193,31 +193,7 @@ name|junit
 operator|.
 name|Assert
 operator|.
-name|assertEquals
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNotNull
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertTrue
+name|*
 import|;
 end_import
 
@@ -344,8 +320,6 @@ specifier|public
 name|void
 name|testReadToMany
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|CollectionToMany
 name|o1
@@ -475,15 +449,13 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Testing if collection type is Collection, everything should work fine without an 	 * runtimexception 	 *  	 * @throws Exception 	 */
+comment|/** 	 * Testing if collection type is Collection, everything should work fine without a runtime exception 	 */
 annotation|@
 name|Test
 specifier|public
 name|void
 name|testRelationCollectionTypeCollection
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|CollectionToMany
 name|o1
@@ -518,11 +490,6 @@ operator|instanceof
 name|Collection
 argument_list|)
 expr_stmt|;
-name|boolean
-name|catchedSomething
-init|=
-literal|false
-decl_stmt|;
 try|try
 block|{
 name|o1
@@ -555,20 +522,14 @@ name|RuntimeException
 name|e
 parameter_list|)
 block|{
-name|catchedSomething
-operator|=
-literal|true
+name|fail
+argument_list|()
 expr_stmt|;
 block|}
 name|assertEquals
 argument_list|(
-name|catchedSomething
+literal|0
 argument_list|,
-literal|false
-argument_list|)
-expr_stmt|;
-name|assertEquals
-argument_list|(
 name|o1
 operator|.
 name|getTargets
@@ -576,8 +537,6 @@ argument_list|()
 operator|.
 name|size
 argument_list|()
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 block|}

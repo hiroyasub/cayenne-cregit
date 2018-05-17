@@ -177,19 +177,7 @@ name|junit
 operator|.
 name|Assert
 operator|.
-name|assertEquals
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertTrue
+name|*
 import|;
 end_import
 
@@ -318,6 +306,9 @@ argument_list|,
 literal|"MAP_TO_MANY_ID"
 argument_list|)
 expr_stmt|;
+name|createTestDataSet
+argument_list|()
+expr_stmt|;
 block|}
 specifier|protected
 name|void
@@ -385,19 +376,14 @@ literal|"A"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Testing if collection type is map, everything should work fine without an runtimexception 	 * @throws Exception 	 */
+comment|/**      * Testing if collection type is map, everything should work fine without a runtime exception      */
 annotation|@
 name|Test
 specifier|public
 name|void
 name|testRelationCollectionTypeMap
 parameter_list|()
-throws|throws
-name|Exception
 block|{
-name|createTestDataSet
-argument_list|()
-expr_stmt|;
 name|MapToMany
 name|o1
 init|=
@@ -431,11 +417,6 @@ operator|instanceof
 name|Map
 argument_list|)
 expr_stmt|;
-name|boolean
-name|catchedSomething
-init|=
-literal|false
-decl_stmt|;
 try|try
 block|{
 name|o1
@@ -468,20 +449,14 @@ name|RuntimeException
 name|e
 parameter_list|)
 block|{
-name|catchedSomething
-operator|=
-literal|true
+name|fail
+argument_list|()
 expr_stmt|;
 block|}
 name|assertEquals
 argument_list|(
-name|catchedSomething
+literal|0
 argument_list|,
-literal|false
-argument_list|)
-expr_stmt|;
-name|assertEquals
-argument_list|(
 name|o1
 operator|.
 name|getTargets

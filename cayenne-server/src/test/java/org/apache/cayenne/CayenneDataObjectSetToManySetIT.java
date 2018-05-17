@@ -193,19 +193,7 @@ name|junit
 operator|.
 name|Assert
 operator|.
-name|assertEquals
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertTrue
+name|*
 import|;
 end_import
 
@@ -288,6 +276,9 @@ argument_list|,
 literal|"SET_TO_MANY_ID"
 argument_list|)
 expr_stmt|;
+name|createTestDataSet
+argument_list|()
+expr_stmt|;
 block|}
 specifier|protected
 name|void
@@ -347,7 +338,7 @@ literal|2
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Testing if collection type is set, everything should work fine without an 	 * runtimexception 	 *  	 * @throws Exception 	 */
+comment|/** 	 * Testing if collection type is set, everything should work fine without a runtime exception 	 */
 annotation|@
 name|Test
 specifier|public
@@ -357,9 +348,6 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|createTestDataSet
-argument_list|()
-expr_stmt|;
 name|SetToMany
 name|o1
 init|=
@@ -393,11 +381,6 @@ operator|instanceof
 name|Set
 argument_list|)
 expr_stmt|;
-name|boolean
-name|catchedSomething
-init|=
-literal|false
-decl_stmt|;
 try|try
 block|{
 name|o1
@@ -430,18 +413,10 @@ name|RuntimeException
 name|e
 parameter_list|)
 block|{
-name|catchedSomething
-operator|=
-literal|true
+name|fail
+argument_list|()
 expr_stmt|;
 block|}
-name|assertEquals
-argument_list|(
-name|catchedSomething
-argument_list|,
-literal|false
-argument_list|)
-expr_stmt|;
 name|assertEquals
 argument_list|(
 name|o1
