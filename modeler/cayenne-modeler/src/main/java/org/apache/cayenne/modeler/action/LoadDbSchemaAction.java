@@ -428,6 +428,11 @@ argument_list|(
 literal|false
 argument_list|)
 expr_stmt|;
+name|rootParent
+operator|.
+name|lockToolbarButtons
+argument_list|()
+expr_stmt|;
 name|draggableTreePanel
 operator|.
 name|getMoveButton
@@ -448,11 +453,8 @@ argument_list|(
 literal|false
 argument_list|)
 expr_stmt|;
-name|rootParent
-operator|.
-name|lockToolbarButtons
-argument_list|()
-expr_stmt|;
+try|try
+block|{
 name|DBConnectionInfo
 name|connectionInfo
 decl_stmt|;
@@ -516,8 +518,6 @@ name|getConnectionInfoFromPreferences
 argument_list|()
 expr_stmt|;
 block|}
-try|try
-block|{
 name|ReverseEngineering
 name|databaseReverseEngineering
 init|=
