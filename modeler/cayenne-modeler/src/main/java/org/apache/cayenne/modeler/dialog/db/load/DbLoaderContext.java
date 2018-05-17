@@ -1061,15 +1061,8 @@ name|SwingUtilities
 operator|.
 name|invokeLater
 argument_list|(
-operator|new
-name|Runnable
-argument_list|()
-block|{
-specifier|public
-name|void
-name|run
 parameter_list|()
-block|{
+lambda|->
 name|JOptionPane
 operator|.
 name|showMessageDialog
@@ -1090,9 +1083,6 @@ name|JOptionPane
 operator|.
 name|ERROR_MESSAGE
 argument_list|)
-expr_stmt|;
-block|}
-block|}
 argument_list|)
 expr_stmt|;
 block|}
