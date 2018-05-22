@@ -86,6 +86,12 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+name|messageFormat
+operator|==
+literal|null
+condition|?
+literal|null
+else|:
 name|String
 operator|.
 name|format
