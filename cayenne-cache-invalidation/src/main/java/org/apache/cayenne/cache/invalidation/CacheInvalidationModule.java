@@ -176,7 +176,7 @@ expr_stmt|;
 comment|// want the filter to be INSIDE transaction by default
 name|ServerModule
 operator|.
-name|contributeDomainFilters
+name|contributeDomainSyncFilters
 argument_list|(
 name|binder
 argument_list|)

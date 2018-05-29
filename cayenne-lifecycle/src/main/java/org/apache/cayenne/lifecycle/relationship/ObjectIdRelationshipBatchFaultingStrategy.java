@@ -80,12 +80,7 @@ name|batchSources
 operator|=
 operator|new
 name|ThreadLocal
-argument_list|<
-name|List
-argument_list|<
-name|ObjectIdBatchSourceItem
-argument_list|>
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 block|}

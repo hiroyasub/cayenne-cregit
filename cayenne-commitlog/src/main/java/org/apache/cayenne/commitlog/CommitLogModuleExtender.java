@@ -457,7 +457,7 @@ condition|)
 block|{
 name|ServerModule
 operator|.
-name|contributeDomainFilters
+name|contributeDomainSyncFilters
 argument_list|(
 name|binder
 argument_list|)
@@ -478,7 +478,7 @@ else|else
 block|{
 name|ServerModule
 operator|.
-name|contributeDomainFilters
+name|contributeDomainSyncFilters
 argument_list|(
 name|binder
 argument_list|)

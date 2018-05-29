@@ -27,47 +27,15 @@ name|GraphDiff
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|Query
-import|;
-end_import
-
 begin_comment
-comment|/**  * Provides DataChannelFilters with API to pass control to the next filter in the chain or  * the underlying DataChannel for the last chain filter.  *   * @since 3.1  * @deprecated since 4.1 in favor of {@link DataChannelSyncFilterChain} and {@link DataChannelQueryFilterChain}  */
+comment|/**  * @since 4.1  */
 end_comment
 
 begin_interface
 specifier|public
 interface|interface
-name|DataChannelFilterChain
+name|DataChannelSyncFilter
 block|{
-specifier|default
-name|QueryResponse
-name|onQuery
-parameter_list|(
-name|ObjectContext
-name|originatingContext
-parameter_list|,
-name|Query
-name|query
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|()
-throw|;
-block|}
-specifier|default
 name|GraphDiff
 name|onSync
 parameter_list|(
@@ -79,14 +47,11 @@ name|changes
 parameter_list|,
 name|int
 name|syncType
+parameter_list|,
+name|DataChannelSyncFilterChain
+name|filterChain
 parameter_list|)
-block|{
-throw|throw
-operator|new
-name|UnsupportedOperationException
-argument_list|()
-throw|;
-block|}
+function_decl|;
 block|}
 end_interface
 

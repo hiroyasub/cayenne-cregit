@@ -51,7 +51,9 @@ name|SERVER_ADAPTER_DETECTORS_LIST
 init|=
 literal|"cayenne.server.adapter_detectors"
 decl_stmt|;
-comment|/**      * A DI container key for the List&lt;DataChannelFilter&gt; storing      * DataDomain filters.      *      * @see org.apache.cayenne.configuration.server.ServerModule#contributeDomainFilters(Binder).      */
+comment|/**      * A DI container key for the List&lt;DataChannelFilter&gt; storing      * DataDomain filters.      *      * @see org.apache.cayenne.configuration.server.ServerModule#contributeDomainQueryFilters(Binder)      * @see org.apache.cayenne.configuration.server.ServerModule#contributeDomainSyncFilters(Binder)      * @deprecated since 4.1 domain filters replaced with query and sync filters      */
+annotation|@
+name|Deprecated
 name|String
 name|SERVER_DOMAIN_FILTERS_LIST
 init|=

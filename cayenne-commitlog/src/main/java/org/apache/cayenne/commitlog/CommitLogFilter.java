@@ -55,7 +55,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataChannelFilter
+name|DataChannelSyncFilter
 import|;
 end_import
 
@@ -67,7 +67,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataChannelFilterChain
+name|DataChannelSyncFilterChain
 import|;
 end_import
 
@@ -80,18 +80,6 @@ operator|.
 name|cayenne
 operator|.
 name|ObjectContext
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|QueryResponse
 import|;
 end_import
 
@@ -185,22 +173,8 @@ name|CommitLogEntityFactory
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|Query
-import|;
-end_import
-
 begin_comment
-comment|/**  * A {@link DataChannelFilter} that captures commit changes, delegating their  * processing to an underlying collection of listeners.  *   * @since 4.0  */
+comment|/**  * A {@link DataChannelSyncFilter} that captures commit changes, delegating their  * processing to an underlying collection of listeners.  *   * @since 4.0  */
 end_comment
 
 begin_class
@@ -208,7 +182,7 @@ specifier|public
 class|class
 name|CommitLogFilter
 implements|implements
-name|DataChannelFilter
+name|DataChannelSyncFilter
 block|{
 specifier|private
 name|CommitLogEntityFactory
@@ -254,45 +228,6 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|void
-name|init
-parameter_list|(
-name|DataChannel
-name|channel
-parameter_list|)
-block|{
-comment|// do nothing...
-block|}
-annotation|@
-name|Override
-specifier|public
-name|QueryResponse
-name|onQuery
-parameter_list|(
-name|ObjectContext
-name|originatingContext
-parameter_list|,
-name|Query
-name|query
-parameter_list|,
-name|DataChannelFilterChain
-name|filterChain
-parameter_list|)
-block|{
-return|return
-name|filterChain
-operator|.
-name|onQuery
-argument_list|(
-name|originatingContext
-argument_list|,
-name|query
-argument_list|)
-return|;
-block|}
-annotation|@
-name|Override
-specifier|public
 name|GraphDiff
 name|onSync
 parameter_list|(
@@ -305,7 +240,7 @@ parameter_list|,
 name|int
 name|syncType
 parameter_list|,
-name|DataChannelFilterChain
+name|DataChannelSyncFilterChain
 name|filterChain
 parameter_list|)
 block|{

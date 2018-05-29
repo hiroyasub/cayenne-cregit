@@ -201,7 +201,7 @@ name|junit
 operator|.
 name|Assert
 operator|.
-name|assertFalse
+name|assertNotEquals
 import|;
 end_import
 
@@ -271,7 +271,7 @@ operator|.
 name|getDataDomain
 argument_list|()
 operator|.
-name|addFilter
+name|addQueryFilter
 argument_list|(
 name|filter
 argument_list|)
@@ -355,8 +355,6 @@ specifier|public
 name|void
 name|tearDown
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|runtime
 operator|.
@@ -759,10 +757,10 @@ argument_list|(
 name|e1
 argument_list|)
 decl_stmt|;
-name|assertFalse
+name|assertNotEquals
 argument_list|(
 literal|1
-operator|==
+argument_list|,
 name|id
 argument_list|)
 expr_stmt|;
