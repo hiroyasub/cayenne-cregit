@@ -27,6 +27,10 @@ name|GraphDiff
 import|;
 end_import
 
+begin_comment
+comment|/**  * Interface for chain of sync filters  *  * @since 4.1 (it was present, but not used before 4.1)  */
+end_comment
+
 begin_interface
 specifier|public
 interface|interface

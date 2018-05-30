@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 4.1  */
+comment|/**  * An interface of a filter that allows to intercept DataChannel query operations.  * Query filters allow to implement chains of custom processors around a DataChannel.  *<p>  * Example:<pre>{@code  * public class MyQueryFilter implements DataChannelQueryFilter {  *     public QueryResponse onQuery(ObjectContext originatingContext, Query query,  *                                  DataChannelQueryFilterChain filterChain) {  *         System.out.println("Do something before query");  *         // process query or return some custom response  *         QueryResponse response = filterChain.onQuery(originatingContext, query);  *         System.out.println("Do something after query");  *         return response;  *     }  * }}</pre>  *  * @see DataChannelSyncFilter  * @see org.apache.cayenne.configuration.server.ServerModule#contributeDomainQueryFilters(org.apache.cayenne.di.Binder)  *  * @since 4.1  */
 end_comment
 
 begin_interface
@@ -38,6 +38,7 @@ specifier|public
 interface|interface
 name|DataChannelQueryFilter
 block|{
+comment|/**      * @param originatingContext originating context of query      * @param query that is processed      * @param filterChain chain of query filters to invoke after this filter      * @return query response      */
 name|QueryResponse
 name|onQuery
 parameter_list|(

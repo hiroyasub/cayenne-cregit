@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 4.1  */
+comment|/**  * Interface for chain of query filters  *  * @since 4.1  */
 end_comment
 
 begin_interface
