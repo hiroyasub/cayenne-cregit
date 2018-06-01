@@ -265,9 +265,16 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+operator|!
+name|key
+operator|.
+name|getPk
+argument_list|()
+operator|.
+name|validateEntity
+argument_list|(
 name|pkEntity
-operator|==
-literal|null
+argument_list|)
 condition|)
 block|{
 name|LOGGER
@@ -288,7 +295,7 @@ operator|.
 name|getTable
 argument_list|()
 operator|+
-literal|"' is not found"
+literal|"' is not found or in different catalog/schema"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -311,9 +318,16 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+operator|!
+name|key
+operator|.
+name|getFk
+argument_list|()
+operator|.
+name|validateEntity
+argument_list|(
 name|fkEntity
-operator|==
-literal|null
+argument_list|)
 condition|)
 block|{
 name|LOGGER
@@ -334,7 +348,7 @@ operator|.
 name|getTable
 argument_list|()
 operator|+
-literal|"' is not found"
+literal|"' is not found or in different catalog/schema"
 argument_list|)
 expr_stmt|;
 return|return;
