@@ -230,9 +230,10 @@ name|String
 index|[]
 name|versions
 decl_stmt|;
-comment|// Old gradle versions will fail on Java 9
-if|if
-condition|(
+comment|// Old gradle versions will fail on new JDK
+name|int
+name|javaMajorVersion
+init|=
 name|getJavaMajorVersion
 argument_list|(
 name|System
@@ -242,6 +243,27 @@ argument_list|(
 literal|"java.version"
 argument_list|)
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|javaMajorVersion
+operator|>=
+literal|11
+condition|)
+block|{
+name|versions
+operator|=
+operator|new
+name|String
+index|[]
+block|{
+literal|"4.8"
+block|}
+expr_stmt|;
+block|}
+if|else if
+condition|(
+name|javaMajorVersion
 operator|<
 literal|9
 condition|)
