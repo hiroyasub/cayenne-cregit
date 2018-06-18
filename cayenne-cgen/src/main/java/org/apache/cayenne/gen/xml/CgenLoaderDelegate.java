@@ -111,9 +111,28 @@ name|String
 name|tag
 parameter_list|)
 block|{
-comment|//        if(CgenConfigHandler.CONFIG_TAG.equals(tag)) {
-comment|//            return new CgenConfigHandler(parent, metaData);
-comment|//        }
+if|if
+condition|(
+name|CgenConfigHandler
+operator|.
+name|CONFIG_TAG
+operator|.
+name|equals
+argument_list|(
+name|tag
+argument_list|)
+condition|)
+block|{
+return|return
+operator|new
+name|CgenConfigHandler
+argument_list|(
+name|parent
+argument_list|,
+name|metaData
+argument_list|)
+return|;
+block|}
 return|return
 literal|null
 return|;

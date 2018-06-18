@@ -87,16 +87,6 @@ name|*
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
 begin_comment
 comment|/**  */
 end_comment
@@ -219,10 +209,7 @@ name|customModeController
 return|;
 block|}
 specifier|public
-name|Collection
-argument_list|<
 name|ClassGenerationAction
-argument_list|>
 name|getGenerator
 parameter_list|()
 block|{
