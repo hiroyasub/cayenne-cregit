@@ -160,13 +160,7 @@ name|DataMap
 name|dataMap
 parameter_list|)
 block|{
-name|customModeController
-operator|.
-name|startup
-argument_list|(
-name|dataMap
-argument_list|)
-expr_stmt|;
+comment|//        customModeController.startup(dataMap);
 block|}
 specifier|public
 name|Component

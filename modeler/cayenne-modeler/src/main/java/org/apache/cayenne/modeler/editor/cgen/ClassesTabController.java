@@ -476,17 +476,7 @@ operator|.
 name|updateEntities
 argument_list|()
 expr_stmt|;
-name|getParentController
-argument_list|()
-operator|.
-name|getProjectController
-argument_list|()
-operator|.
-name|setDirty
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
+comment|//        getParentController().getProjectController().setDirty(true);
 block|}
 end_function
 
