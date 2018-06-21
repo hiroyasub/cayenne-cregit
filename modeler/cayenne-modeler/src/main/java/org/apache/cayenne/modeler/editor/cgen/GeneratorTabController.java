@@ -41,20 +41,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
-operator|.
-name|DataMap
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|modeler
 operator|.
 name|util
@@ -151,16 +137,6 @@ name|getView
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
-specifier|public
-name|void
-name|startup
-parameter_list|(
-name|DataMap
-name|dataMap
-parameter_list|)
-block|{
-comment|//        customModeController.startup(dataMap);
 block|}
 specifier|public
 name|Component

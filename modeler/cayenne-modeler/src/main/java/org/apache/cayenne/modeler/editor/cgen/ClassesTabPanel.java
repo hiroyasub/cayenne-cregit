@@ -39,30 +39,6 @@ name|*
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|event
-operator|.
-name|ItemEvent
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|event
-operator|.
-name|ItemListener
-import|;
-end_import
-
 begin_comment
 comment|/**  */
 end_comment
@@ -131,17 +107,8 @@ name|checkAll
 operator|.
 name|addItemListener
 argument_list|(
-operator|new
-name|ItemListener
-argument_list|()
-block|{
-specifier|public
-name|void
-name|itemStateChanged
-parameter_list|(
-name|ItemEvent
 name|event
-parameter_list|)
+lambda|->
 block|{
 if|if
 condition|(
@@ -168,7 +135,6 @@ argument_list|(
 literal|"Check All Classes"
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 argument_list|)

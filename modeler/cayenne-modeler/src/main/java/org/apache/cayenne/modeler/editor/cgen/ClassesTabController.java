@@ -417,6 +417,9 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
+name|getParentController
+argument_list|()
+operator|.
 name|updateEntities
 argument_list|()
 expr_stmt|;
@@ -457,28 +460,15 @@ operator|.
 name|updateView
 argument_list|()
 block|;
+name|getParentController
+argument_list|()
+operator|.
 name|updateEntities
 argument_list|()
 empty_stmt|;
 block|}
 block|}
 end_class
-
-begin_function
-specifier|private
-name|void
-name|updateEntities
-parameter_list|()
-block|{
-name|getParentController
-argument_list|()
-operator|.
-name|updateEntities
-argument_list|()
-expr_stmt|;
-comment|//        getParentController().getProjectController().setDirty(true);
-block|}
-end_function
 
 unit|}
 end_unit
