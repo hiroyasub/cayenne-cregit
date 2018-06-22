@@ -564,6 +564,11 @@ try|try
 block|{
 name|generator
 operator|.
+name|prepareArtifacts
+argument_list|()
+expr_stmt|;
+name|generator
+operator|.
 name|execute
 argument_list|()
 expr_stmt|;

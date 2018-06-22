@@ -1008,13 +1008,10 @@ name|context
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Executes class generation once per each artifact. 	 */
 specifier|public
 name|void
-name|execute
+name|prepareArtifacts
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|resetArtifacts
 argument_list|()
@@ -1033,6 +1030,15 @@ name|getQueryDescriptors
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
+comment|/** 	 * Executes class generation once per each artifact. 	 */
+specifier|public
+name|void
+name|execute
+parameter_list|()
+throws|throws
+name|Exception
+block|{
 name|validateAttributes
 argument_list|()
 expr_stmt|;

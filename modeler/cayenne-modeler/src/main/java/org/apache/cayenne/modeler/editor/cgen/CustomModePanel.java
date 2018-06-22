@@ -208,7 +208,7 @@ specifier|private
 name|ComboBoxAdapter
 name|dataMapSuperTemplate
 decl_stmt|;
-specifier|protected
+specifier|private
 name|JCheckBox
 name|pairs
 decl_stmt|;

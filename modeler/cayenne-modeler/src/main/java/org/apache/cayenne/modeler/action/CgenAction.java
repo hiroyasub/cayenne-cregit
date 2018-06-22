@@ -21,64 +21,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
-operator|.
-name|DataChannelDescriptor
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|configuration
-operator|.
-name|xml
-operator|.
-name|DataChannelMetaData
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|gen
-operator|.
-name|ClassGenerationAction
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|DataMap
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|modeler
 operator|.
 name|Application
@@ -95,9 +37,13 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
-name|util
+name|dialog
 operator|.
-name|CayenneAction
+name|codegen
+operator|.
+name|cgen
+operator|.
+name|CgenGlobalController
 import|;
 end_import
 
@@ -109,9 +55,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project
+name|modeler
 operator|.
-name|Project
+name|util
+operator|.
+name|CayenneAction
 import|;
 end_import
 
@@ -137,16 +85,6 @@ end_import
 
 begin_import
 import|import
-name|javax
-operator|.
-name|swing
-operator|.
-name|*
-import|;
-end_import
-
-begin_import
-import|import
 name|java
 operator|.
 name|awt
@@ -154,16 +92,6 @@ operator|.
 name|event
 operator|.
 name|ActionEvent
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
 import|;
 end_import
 
@@ -224,141 +152,41 @@ name|ActionEvent
 name|e
 parameter_list|)
 block|{
-name|Collection
-argument_list|<
-name|DataMap
-argument_list|>
-name|dataMaps
-decl_stmt|;
-name|DataChannelMetaData
-name|metaData
-init|=
-name|getApplication
-argument_list|()
-operator|.
-name|getMetaData
-argument_list|()
-decl_stmt|;
-try|try
-block|{
-name|Project
-name|project
-init|=
-name|getProjectController
-argument_list|()
-operator|.
-name|getProject
-argument_list|()
-decl_stmt|;
-name|dataMaps
-operator|=
-operator|(
-operator|(
-name|DataChannelDescriptor
-operator|)
-name|project
-operator|.
-name|getRootNode
-argument_list|()
-operator|)
-operator|.
-name|getDataMaps
-argument_list|()
-expr_stmt|;
-for|for
-control|(
-name|DataMap
-name|dataMap
-range|:
-name|dataMaps
-control|)
-block|{
-name|ClassGenerationAction
-name|classGenerationAction
-init|=
-name|metaData
-operator|.
-name|get
+operator|new
+name|CgenGlobalController
 argument_list|(
-name|dataMap
-argument_list|,
-name|ClassGenerationAction
-operator|.
-name|class
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|classGenerationAction
-operator|!=
-literal|null
-condition|)
-block|{
-name|classGenerationAction
-operator|.
-name|execute
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-name|JOptionPane
-operator|.
-name|showMessageDialog
-argument_list|(
-name|this
-operator|.
 name|getApplication
 argument_list|()
 operator|.
 name|getFrameController
 argument_list|()
-operator|.
-name|getView
-argument_list|()
-argument_list|,
-literal|"Class generation finished"
 argument_list|)
+operator|.
+name|startup
+argument_list|()
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|Exception
-name|ex
-parameter_list|)
-block|{
-name|logObj
-operator|.
-name|error
-argument_list|(
-literal|"Error generating classes"
-argument_list|,
-name|e
-argument_list|)
-expr_stmt|;
-name|JOptionPane
-operator|.
-name|showMessageDialog
-argument_list|(
-name|this
-operator|.
-name|getApplication
-argument_list|()
-operator|.
-name|getFrameController
-argument_list|()
-operator|.
-name|getView
-argument_list|()
-argument_list|,
-literal|"Error generating classes - "
-operator|+
-name|ex
-operator|.
-name|getMessage
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
+comment|//        Collection<DataMap> dataMaps;
+comment|//        DataChannelMetaData metaData = getApplication().getMetaData();
+comment|//
+comment|//        try {
+comment|//            Project project = getProjectController().getProject();
+comment|//            dataMaps = ((DataChannelDescriptor) project.getRootNode()).getDataMaps();
+comment|//            for (DataMap dataMap : dataMaps) {
+comment|//                ClassGenerationAction classGenerationAction = metaData.get(dataMap, ClassGenerationAction.class);
+comment|//                if (classGenerationAction != null) {
+comment|//                    classGenerationAction.prepareArtifacts();
+comment|//                    classGenerationAction.execute();
+comment|//                }
+comment|//            }
+comment|//            JOptionPane.showMessageDialog(
+comment|//                    this.getApplication().getFrameController().getView(),
+comment|//                    "Class generation finished");
+comment|//        } catch (Exception ex) {
+comment|//            logObj.error("Error generating classes", e);
+comment|//            JOptionPane.showMessageDialog(
+comment|//                    this.getApplication().getFrameController().getView(),
+comment|//                    "Error generating classes - " + ex.getMessage());
+comment|//        }
 block|}
 block|}
 end_class
