@@ -963,6 +963,11 @@ operator|new
 name|ClassGenerationAction
 argument_list|()
 decl_stmt|;
+name|action
+operator|.
+name|setDefaults
+argument_list|()
+expr_stmt|;
 name|getApplication
 argument_list|()
 operator|.
