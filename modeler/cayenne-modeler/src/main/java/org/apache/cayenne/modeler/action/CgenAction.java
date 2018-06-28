@@ -165,28 +165,6 @@ operator|.
 name|startup
 argument_list|()
 expr_stmt|;
-comment|//        Collection<DataMap> dataMaps;
-comment|//        DataChannelMetaData metaData = getApplication().getMetaData();
-comment|//
-comment|//        try {
-comment|//            Project project = getProjectController().getProject();
-comment|//            dataMaps = ((DataChannelDescriptor) project.getRootNode()).getDataMaps();
-comment|//            for (DataMap dataMap : dataMaps) {
-comment|//                ClassGenerationAction classGenerationAction = metaData.get(dataMap, ClassGenerationAction.class);
-comment|//                if (classGenerationAction != null) {
-comment|//                    classGenerationAction.prepareArtifacts();
-comment|//                    classGenerationAction.execute();
-comment|//                }
-comment|//            }
-comment|//            JOptionPane.showMessageDialog(
-comment|//                    this.getApplication().getFrameController().getView(),
-comment|//                    "Class generation finished");
-comment|//        } catch (Exception ex) {
-comment|//            logObj.error("Error generating classes", e);
-comment|//            JOptionPane.showMessageDialog(
-comment|//                    this.getApplication().getFrameController().getView(),
-comment|//                    "Error generating classes - " + ex.getMessage());
-comment|//        }
 block|}
 block|}
 end_class

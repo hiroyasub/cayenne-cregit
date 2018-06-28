@@ -33,6 +33,20 @@ begin_import
 import|import
 name|org
 operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|DataMap
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
 name|junit
 operator|.
 name|Rule
@@ -73,13 +87,13 @@ end_import
 
 begin_import
 import|import static
-name|org
-operator|.
 name|junit
 operator|.
-name|Assert
+name|framework
 operator|.
-name|*
+name|TestCase
+operator|.
+name|assertSame
 import|;
 end_import
 
@@ -112,6 +126,13 @@ name|temp
 init|=
 operator|new
 name|TemporaryFolder
+argument_list|()
+decl_stmt|;
+name|DataMap
+name|dataMap
+init|=
+operator|new
+name|DataMap
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -378,7 +399,9 @@ argument_list|(
 name|mock
 operator|.
 name|createGenerator
-argument_list|()
+argument_list|(
+name|dataMap
+argument_list|)
 argument_list|)
 operator|.
 name|thenCallRealMethod
@@ -517,7 +540,9 @@ init|=
 name|task
 operator|.
 name|createGenerator
-argument_list|()
+argument_list|(
+name|dataMap
+argument_list|)
 decl_stmt|;
 name|assertSame
 argument_list|(

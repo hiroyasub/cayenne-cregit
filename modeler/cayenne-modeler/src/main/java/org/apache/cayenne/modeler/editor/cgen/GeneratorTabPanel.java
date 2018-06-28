@@ -25,7 +25,7 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|*
+name|JPanel
 import|;
 end_import
 
@@ -35,7 +35,17 @@ name|java
 operator|.
 name|awt
 operator|.
-name|*
+name|BorderLayout
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|awt
+operator|.
+name|Component
 import|;
 end_import
 

@@ -97,7 +97,7 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|*
+name|JLabel
 import|;
 end_import
 
@@ -107,7 +107,7 @@ name|java
 operator|.
 name|awt
 operator|.
-name|*
+name|Component
 import|;
 end_import
 

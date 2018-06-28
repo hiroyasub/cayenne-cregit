@@ -53,7 +53,7 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|*
+name|JComboBox
 import|;
 end_import
 
@@ -78,9 +78,15 @@ specifier|public
 specifier|abstract
 class|class
 name|ComboBoxAdapter
+parameter_list|<
+name|T
+parameter_list|>
 block|{
 specifier|private
 name|JComboBox
+argument_list|<
+name|T
+argument_list|>
 name|comboBox
 decl_stmt|;
 specifier|private
@@ -95,6 +101,9 @@ specifier|protected
 name|ComboBoxAdapter
 parameter_list|(
 name|JComboBox
+argument_list|<
+name|T
+argument_list|>
 name|comboBox
 parameter_list|)
 block|{
@@ -184,6 +193,9 @@ block|}
 block|}
 specifier|public
 name|JComboBox
+argument_list|<
+name|T
+argument_list|>
 name|getComboBox
 parameter_list|()
 block|{
@@ -197,7 +209,7 @@ specifier|abstract
 name|void
 name|updateModel
 parameter_list|(
-name|Object
+name|T
 name|item
 parameter_list|)
 throws|throws
@@ -210,6 +222,9 @@ parameter_list|()
 block|{
 name|updateModel
 argument_list|(
+operator|(
+name|T
+operator|)
 name|comboBox
 operator|.
 name|getSelectedItem

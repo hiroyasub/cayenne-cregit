@@ -362,7 +362,7 @@ comment|/** 	 * If set to<code>true</code>, will generate subclass/superclass pa
 annotation|@
 name|Parameter
 specifier|private
-name|String
+name|Boolean
 name|makePairs
 decl_stmt|;
 comment|/** 	 * DataMap XML file to use as a base for class generation. 	 */
@@ -380,11 +380,6 @@ decl_stmt|;
 comment|/** 	 * Specifies generator iteration target.&quot;entity&quot; performs one 	 * iteration for each selected entity.&quot;datamap&quot; performs one 	 * iteration per datamap (This is always one iteration since cgen currently 	 * supports specifying one-and-only-one datamap). (Default is&quot;entity&quot;) 	 */
 annotation|@
 name|Parameter
-argument_list|(
-name|defaultValue
-operator|=
-literal|"entity"
-argument_list|)
 specifier|private
 name|String
 name|mode
@@ -400,7 +395,7 @@ comment|/** 	 * If set to<code>true</code>, will overwrite older versions of gen
 annotation|@
 name|Parameter
 specifier|private
-name|String
+name|Boolean
 name|overwrite
 decl_stmt|;
 comment|/** 	 * Java package name of generated superclasses. Ignored unless 	 *<code>makepairs</code> set to<code>true</code>. If omitted, each 	 * superclass will be assigned the same package as subclass. Note that 	 * having superclass in a different package would only make sense when 	 *<code>usepkgpath</code> is set to<code>true</code>. Otherwise classes 	 * from different packages will end up in the same directory. 	 */
@@ -442,14 +437,14 @@ comment|/** 	 * If set to<code>true</code> (default), a directory tree will be g
 annotation|@
 name|Parameter
 specifier|private
-name|String
+name|Boolean
 name|usePkgPath
 decl_stmt|;
 comment|/**      * If set to<code>true</code>, will generate String Property names.      * Default is<code>false</code>.      */
 annotation|@
 name|Parameter
 specifier|private
-name|String
+name|Boolean
 name|createPropertyNames
 decl_stmt|;
 comment|/** 	 * If set to<code>true</code>, will skip file modification time validation and regenerate all. 	 * Default is<code>false</code>. 	 * 	 * @since 4.1 	 */
@@ -468,7 +463,19 @@ specifier|private
 name|boolean
 name|force
 decl_stmt|;
-comment|/** 	 * If set to<code>true</code>, will generate PK attributes as Properties. 	 * Default is<code>false</code>. 	 * @since 4.1 	 */
+annotation|@
+name|Parameter
+specifier|private
+name|String
+name|queryTemplate
+decl_stmt|;
+annotation|@
+name|Parameter
+specifier|private
+name|String
+name|querySuperTemplate
+decl_stmt|;
+comment|/**      * If set to<code>true</code>, will generate PK attributes as Properties.      * Default is<code>false</code>.      * @since 4.1      */
 annotation|@
 name|Parameter
 argument_list|(
@@ -916,12 +923,7 @@ name|makePairs
 operator|!=
 literal|null
 condition|?
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
 name|makePairs
-argument_list|)
 else|:
 name|action
 operator|.
@@ -934,6 +936,15 @@ operator|.
 name|setArtifactsGenerationMode
 argument_list|(
 name|mode
+operator|!=
+literal|null
+condition|?
+name|mode
+else|:
+name|action
+operator|.
+name|getArtifactsGenerationMode
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|action
@@ -960,12 +971,7 @@ name|overwrite
 operator|!=
 literal|null
 condition|?
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
 name|overwrite
-argument_list|)
 else|:
 name|action
 operator|.
@@ -1061,12 +1067,7 @@ name|usePkgPath
 operator|!=
 literal|null
 condition|?
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
 name|usePkgPath
-argument_list|)
 else|:
 name|action
 operator|.
@@ -1082,16 +1083,43 @@ name|createPropertyNames
 operator|!=
 literal|null
 condition|?
-name|Boolean
-operator|.
-name|valueOf
-argument_list|(
 name|createPropertyNames
-argument_list|)
 else|:
 name|action
 operator|.
 name|isCreatePropertyNames
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|action
+operator|.
+name|setQueryTemplate
+argument_list|(
+name|queryTemplate
+operator|!=
+literal|null
+condition|?
+name|queryTemplate
+else|:
+name|action
+operator|.
+name|getQueryTemplate
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|action
+operator|.
+name|setQuerySuperTemplate
+argument_list|(
+name|querySuperTemplate
+operator|!=
+literal|null
+condition|?
+name|querySuperTemplate
+else|:
+name|action
+operator|.
+name|getQuerySuperTemplate
 argument_list|()
 argument_list|)
 expr_stmt|;
