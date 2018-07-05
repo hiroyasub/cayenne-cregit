@@ -241,6 +241,18 @@ name|junit
 operator|.
 name|Assert
 operator|.
+name|assertFalse
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
 name|assertNotNull
 import|;
 end_import
@@ -263,6 +275,7 @@ class|class
 name|XMPPBridgeProviderTest
 block|{
 specifier|private
+specifier|static
 specifier|final
 name|DataDomain
 name|DOMAIN
@@ -274,6 +287,7 @@ literal|"test"
 argument_list|)
 decl_stmt|;
 specifier|private
+specifier|static
 specifier|final
 name|EventManager
 name|EVENT_MANAGER
@@ -600,10 +614,8 @@ name|getXmppPort
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|assertEquals
+name|assertFalse
 argument_list|(
-literal|false
-argument_list|,
 name|bridge
 operator|.
 name|isSecureConnection
@@ -611,6 +623,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+specifier|static
 class|class
 name|DefaultBindings
 implements|implements

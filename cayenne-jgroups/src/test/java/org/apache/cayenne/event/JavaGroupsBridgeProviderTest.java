@@ -253,6 +253,18 @@ name|junit
 operator|.
 name|Assert
 operator|.
+name|assertNull
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
 name|assertTrue
 import|;
 end_import
@@ -263,6 +275,7 @@ class|class
 name|JavaGroupsBridgeProviderTest
 block|{
 specifier|private
+specifier|static
 specifier|final
 name|DataDomain
 name|DOMAIN
@@ -274,6 +287,7 @@ literal|"test"
 argument_list|)
 decl_stmt|;
 specifier|private
+specifier|static
 specifier|final
 name|EventManager
 name|EVENT_MANAGER
@@ -533,10 +547,8 @@ name|getMulticastPort
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|assertEquals
+name|assertNull
 argument_list|(
-literal|null
-argument_list|,
 name|bridge
 operator|.
 name|getConfigURL
@@ -544,6 +556,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+specifier|static
 class|class
 name|DefaultBindings
 implements|implements

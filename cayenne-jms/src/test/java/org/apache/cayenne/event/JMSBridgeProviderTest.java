@@ -263,6 +263,7 @@ class|class
 name|JMSBridgeProviderTest
 block|{
 specifier|private
+specifier|static
 specifier|final
 name|DataDomain
 name|DOMAIN
@@ -274,6 +275,7 @@ literal|"test"
 argument_list|)
 decl_stmt|;
 specifier|private
+specifier|static
 specifier|final
 name|EventManager
 name|EVENT_MANAGER
@@ -458,6 +460,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+specifier|static
 class|class
 name|DefaultBindings
 implements|implements
