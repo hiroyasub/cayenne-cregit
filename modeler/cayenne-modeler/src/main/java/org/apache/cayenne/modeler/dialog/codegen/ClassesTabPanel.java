@@ -49,7 +49,7 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|JCheckBox
+name|*
 import|;
 end_import
 
@@ -59,57 +59,49 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|JLabel
+name|border
+operator|.
+name|EmptyBorder
 import|;
 end_import
 
 begin_import
 import|import
-name|javax
+name|java
 operator|.
-name|swing
+name|awt
 operator|.
-name|JPanel
+name|*
 import|;
 end_import
 
 begin_import
 import|import
-name|javax
+name|java
 operator|.
-name|swing
+name|util
 operator|.
-name|JScrollPane
+name|Collection
 import|;
 end_import
 
 begin_import
 import|import
-name|javax
+name|java
 operator|.
-name|swing
+name|util
 operator|.
-name|JTable
+name|HashMap
 import|;
 end_import
 
 begin_import
 import|import
-name|javax
+name|java
 operator|.
-name|swing
+name|util
 operator|.
-name|ScrollPaneConstants
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|swing
-operator|.
-name|UIManager
+name|Map
 import|;
 end_import
 

@@ -111,7 +111,7 @@ name|java
 operator|.
 name|awt
 operator|.
-name|Component
+name|*
 import|;
 end_import
 
