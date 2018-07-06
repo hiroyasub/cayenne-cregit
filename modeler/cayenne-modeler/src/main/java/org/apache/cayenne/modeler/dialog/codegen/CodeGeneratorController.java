@@ -221,6 +221,8 @@ operator|new
 name|ClassesTabController
 argument_list|(
 name|this
+argument_list|,
+name|dataMaps
 argument_list|)
 expr_stmt|;
 name|this
@@ -516,6 +518,60 @@ operator|+
 name|sizeEmb
 operator|+
 literal|" embeddables selected"
+expr_stmt|;
+block|}
+name|label
+operator|=
+name|label
+operator|.
+name|concat
+argument_list|(
+literal|"; "
+argument_list|)
+expr_stmt|;
+name|int
+name|sizeDataMap
+init|=
+name|getSelectedDataMapsSize
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|sizeDataMap
+operator|==
+literal|0
+condition|)
+block|{
+name|label
+operator|=
+name|label
+operator|+
+literal|"No datamaps selected"
+expr_stmt|;
+block|}
+if|else if
+condition|(
+name|sizeDataMap
+operator|==
+literal|1
+condition|)
+block|{
+name|label
+operator|=
+name|label
+operator|+
+literal|"One datamap selected"
+expr_stmt|;
+block|}
+else|else
+block|{
+name|label
+operator|=
+name|label
+operator|+
+name|sizeDataMap
+operator|+
+literal|" datamaps selected"
 expr_stmt|;
 block|}
 name|view
