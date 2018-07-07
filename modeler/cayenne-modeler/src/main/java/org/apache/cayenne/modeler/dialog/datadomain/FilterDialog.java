@@ -53,17 +53,7 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|JCheckBox
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|swing
-operator|.
-name|JPopupMenu
+name|*
 import|;
 end_import
 
