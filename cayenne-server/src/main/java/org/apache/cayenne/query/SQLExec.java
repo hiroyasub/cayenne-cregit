@@ -249,6 +249,10 @@ name|Object
 argument_list|>
 name|positionalParams
 decl_stmt|;
+specifier|protected
+name|boolean
+name|returnGeneratedKeys
+decl_stmt|;
 specifier|public
 name|SQLExec
 parameter_list|(
@@ -722,6 +726,35 @@ name|firstBatchUpdateCount
 argument_list|()
 return|;
 block|}
+comment|/**      * @since 4.1      * @return returnGeneratedKeys flag      */
+specifier|public
+name|boolean
+name|isReturnGeneratedKeys
+parameter_list|()
+block|{
+return|return
+name|returnGeneratedKeys
+return|;
+block|}
+comment|/**      * Sets flag to return generated keys.      *      * @since 4.1      * @param returnGeneratedKeys      * @return SQLExec query      */
+specifier|public
+name|SQLExec
+name|setReturnGeneratedKeys
+parameter_list|(
+name|boolean
+name|returnGeneratedKeys
+parameter_list|)
+block|{
+name|this
+operator|.
+name|returnGeneratedKeys
+operator|=
+name|returnGeneratedKeys
+expr_stmt|;
+return|return
+name|this
+return|;
+block|}
 annotation|@
 name|Override
 specifier|protected
@@ -812,6 +845,13 @@ literal|true
 argument_list|)
 expr_stmt|;
 comment|// in case result set will be returned
+name|template
+operator|.
+name|setReturnGeneratedKeys
+argument_list|(
+name|returnGeneratedKeys
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|positionalParams
