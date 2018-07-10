@@ -25,7 +25,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataChannel
+name|DataChannelQueryFilter
 import|;
 end_import
 
@@ -37,19 +37,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataChannelFilter
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|DataChannelFilterChain
+name|DataChannelQueryFilterChain
 import|;
 end_import
 
@@ -139,20 +127,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|graph
-operator|.
-name|GraphDiff
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|query
 operator|.
 name|Query
@@ -160,7 +134,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link DataChannelFilter} that implements ObjectId relationships read functionality.  *   * @since 3.1  */
+comment|/**  * A {@link DataChannelQueryFilter} that implements ObjectId relationships read functionality.  *   * @since 3.1  */
 end_comment
 
 begin_class
@@ -168,19 +142,15 @@ specifier|public
 class|class
 name|ObjectIdRelationshipFilter
 implements|implements
-name|DataChannelFilter
+name|DataChannelQueryFilter
 block|{
 specifier|private
 name|ObjectIdRelationshipFaultingStrategy
 name|faultingStrategy
 decl_stmt|;
 specifier|public
-name|void
-name|init
-parameter_list|(
-name|DataChannel
-name|channel
-parameter_list|)
+name|ObjectIdRelationshipFilter
+parameter_list|()
 block|{
 name|this
 operator|.
@@ -202,37 +172,6 @@ argument_list|()
 return|;
 block|}
 specifier|public
-name|GraphDiff
-name|onSync
-parameter_list|(
-name|ObjectContext
-name|context
-parameter_list|,
-name|GraphDiff
-name|diff
-parameter_list|,
-name|int
-name|syncType
-parameter_list|,
-name|DataChannelFilterChain
-name|chain
-parameter_list|)
-block|{
-comment|// noop ... all work is done via listeners...
-return|return
-name|chain
-operator|.
-name|onSync
-argument_list|(
-name|context
-argument_list|,
-name|diff
-argument_list|,
-name|syncType
-argument_list|)
-return|;
-block|}
-specifier|public
 name|QueryResponse
 name|onQuery
 parameter_list|(
@@ -242,7 +181,7 @@ parameter_list|,
 name|Query
 name|query
 parameter_list|,
-name|DataChannelFilterChain
+name|DataChannelQueryFilterChain
 name|chain
 parameter_list|)
 block|{
