@@ -726,7 +726,7 @@ name|firstBatchUpdateCount
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 4.1      * @return returnGeneratedKeys flag      */
+comment|/**      * @return returnGeneratedKeys flag value      *      * @since 4.1      */
 specifier|public
 name|boolean
 name|isReturnGeneratedKeys
@@ -736,10 +736,10 @@ return|return
 name|returnGeneratedKeys
 return|;
 block|}
-comment|/**      * Sets flag to return generated keys.      *      * @since 4.1      * @param returnGeneratedKeys      * @return SQLExec query      */
+comment|/**      * Flag indicating that generated keys should be returned by this query execution.      * Generated keys could be read via {@link QueryResponse#currentList()} method      *      * @param returnGeneratedKeys flag value      * @see java.sql.Statement#RETURN_GENERATED_KEYS      * @since 4.1      */
 specifier|public
 name|SQLExec
-name|setReturnGeneratedKeys
+name|returnGeneratedKeys
 parameter_list|(
 name|boolean
 name|returnGeneratedKeys

@@ -310,7 +310,7 @@ argument_list|,
 literal|"INSERT INTO GENERATED_COLUMN (NAME) VALUES ('Surikov')"
 argument_list|)
 operator|.
-name|setReturnGeneratedKeys
+name|returnGeneratedKeys
 argument_list|(
 literal|true
 argument_list|)
@@ -342,7 +342,7 @@ argument_list|,
 literal|"INSERT INTO GENERATED_COLUMN (NAME) VALUES ('Sidorov')"
 argument_list|)
 operator|.
-name|setReturnGeneratedKeys
+name|returnGeneratedKeys
 argument_list|(
 literal|false
 argument_list|)

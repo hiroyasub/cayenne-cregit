@@ -1837,7 +1837,7 @@ operator|=
 name|dataNodeName
 expr_stmt|;
 block|}
-comment|/** 	 * 	 * @since 4.1 	 * @return returnGeneratedKeys flag 	 */
+comment|/** 	 * @return returnGeneratedKeys flag 	 * 	 * @since 4.1 	 */
 specifier|public
 name|boolean
 name|isReturnGeneratedKeys
@@ -1847,7 +1847,7 @@ return|return
 name|returnGeneratedKeys
 return|;
 block|}
-comment|/** 	 * Sets flag to return generated keys. 	 * 	 * @since 4.1 	 * @param returnGeneratedKeys 	 */
+comment|/** 	 * Sets flag to return generated keys. 	 * 	 * @since 4.1 	 */
 specifier|public
 name|void
 name|setReturnGeneratedKeys
