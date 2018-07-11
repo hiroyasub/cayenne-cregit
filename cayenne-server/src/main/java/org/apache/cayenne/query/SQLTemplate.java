@@ -323,6 +323,10 @@ specifier|private
 name|String
 name|dataNodeName
 decl_stmt|;
+specifier|protected
+name|boolean
+name|returnGeneratedKeys
+decl_stmt|;
 name|SQLTemplateMetadata
 name|metaData
 init|=
@@ -1831,6 +1835,32 @@ operator|.
 name|dataNodeName
 operator|=
 name|dataNodeName
+expr_stmt|;
+block|}
+comment|/** 	 * 	 * @since 4.1 	 * @return returnGeneratedKeys flag 	 */
+specifier|public
+name|boolean
+name|isReturnGeneratedKeys
+parameter_list|()
+block|{
+return|return
+name|returnGeneratedKeys
+return|;
+block|}
+comment|/** 	 * Sets flag to return generated keys. 	 * 	 * @since 4.1 	 * @param returnGeneratedKeys 	 */
+specifier|public
+name|void
+name|setReturnGeneratedKeys
+parameter_list|(
+name|boolean
+name|returnGeneratedKeys
+parameter_list|)
+block|{
+name|this
+operator|.
+name|returnGeneratedKeys
+operator|=
+name|returnGeneratedKeys
 expr_stmt|;
 block|}
 block|}
