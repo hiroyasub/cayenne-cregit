@@ -404,6 +404,14 @@ name|SCHEMA_XSD
 init|=
 literal|"http://cayenne.apache.org/schema/10/modelMap"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|SCHEMA_XSD_LOCATION
+init|=
+literal|"https://cayenne.apache.org/schema/10/modelMap.xsd"
+decl_stmt|;
 specifier|protected
 name|String
 name|name
@@ -542,11 +550,6 @@ name|mapName
 argument_list|,
 name|Collections
 operator|.
-expr|<
-name|String
-argument_list|,
-name|Object
-operator|>
 name|emptyMap
 argument_list|()
 argument_list|)
@@ -788,11 +791,6 @@ name|properties
 operator|=
 name|Collections
 operator|.
-expr|<
-name|String
-operator|,
-name|Object
-operator|>
 name|emptyMap
 argument_list|()
 expr_stmt|;
@@ -932,7 +930,7 @@ name|quoteSqlIdentifier
 operator|!=
 literal|null
 operator|)
-condition|?
+operator|&&
 literal|"true"
 operator|.
 name|equalsIgnoreCase
@@ -942,8 +940,6 @@ operator|.
 name|toString
 argument_list|()
 argument_list|)
-else|:
-literal|false
 expr_stmt|;
 name|this
 operator|.
@@ -1005,7 +1001,7 @@ name|clientEntities
 operator|!=
 literal|null
 operator|)
-condition|?
+operator|&&
 literal|"true"
 operator|.
 name|equalsIgnoreCase
@@ -1015,8 +1011,6 @@ operator|.
 name|toString
 argument_list|()
 argument_list|)
-else|:
-literal|false
 expr_stmt|;
 name|this
 operator|.
@@ -1178,9 +1172,7 @@ name|SCHEMA_XSD
 operator|+
 literal|" "
 operator|+
-name|SCHEMA_XSD
-operator|+
-literal|".xsd"
+name|SCHEMA_XSD_LOCATION
 argument_list|,
 literal|true
 argument_list|)
@@ -4141,7 +4133,7 @@ name|name
 return|;
 block|}
 block|}
-comment|/**      *      * @param name      * @return package + "." + name when it is possible otherwise just name      *      * @since 4.0      */
+comment|/**      *      * @return package + "." + name when it is possible otherwise just name      *      * @since 4.0      */
 specifier|public
 name|String
 name|getNameWithDefaultClientPackage

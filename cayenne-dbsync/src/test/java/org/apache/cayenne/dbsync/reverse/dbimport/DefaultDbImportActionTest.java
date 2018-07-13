@@ -3056,7 +3056,7 @@ literal|"<domain xmlns=\"http://cayenne.apache.org/schema/10/domain\"\n"
 operator|+
 literal|"\t xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n"
 operator|+
-literal|"\t xsi:schemaLocation=\"http://cayenne.apache.org/schema/10/domain http://cayenne.apache.org/schema/10/domain.xsd\"\n"
+literal|"\t xsi:schemaLocation=\"http://cayenne.apache.org/schema/10/domain https://cayenne.apache.org/schema/10/domain.xsd\"\n"
 operator|+
 literal|"\t project-version=\"10\">\n"
 operator|+
@@ -3353,7 +3353,7 @@ literal|"<domain xmlns=\"http://cayenne.apache.org/schema/10/domain\"\n"
 operator|+
 literal|"\t xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n"
 operator|+
-literal|"\t xsi:schemaLocation=\"http://cayenne.apache.org/schema/10/domain http://cayenne.apache.org/schema/10/domain.xsd\"\n"
+literal|"\t xsi:schemaLocation=\"http://cayenne.apache.org/schema/10/domain https://cayenne.apache.org/schema/10/domain.xsd\"\n"
 operator|+
 literal|"\t project-version=\"10\">\n"
 operator|+
@@ -3462,7 +3462,7 @@ literal|"<data-map xmlns=\"http://cayenne.apache.org/schema/10/modelMap\"\n"
 operator|+
 literal|"\t xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n"
 operator|+
-literal|"\t xsi:schemaLocation=\"http://cayenne.apache.org/schema/10/modelMap http://cayenne.apache.org/schema/10/modelMap.xsd\"\n"
+literal|"\t xsi:schemaLocation=\"http://cayenne.apache.org/schema/10/modelMap https://cayenne.apache.org/schema/10/modelMap.xsd\"\n"
 operator|+
 literal|"\t project-version=\"10\">\n"
 operator|+

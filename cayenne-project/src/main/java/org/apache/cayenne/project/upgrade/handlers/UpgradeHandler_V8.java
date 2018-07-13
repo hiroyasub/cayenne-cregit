@@ -227,7 +227,7 @@ literal|"xsi:schemaLocation"
 argument_list|,
 literal|"http://cayenne.apache.org/schema/8/modelMap "
 operator|+
-literal|"http://cayenne.apache.org/schema/8/modelMap.xsd"
+literal|"https://cayenne.apache.org/schema/8/modelMap.xsd"
 argument_list|)
 expr_stmt|;
 name|dataMap

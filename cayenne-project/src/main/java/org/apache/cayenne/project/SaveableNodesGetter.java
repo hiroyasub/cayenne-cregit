@@ -178,9 +178,6 @@ block|{
 return|return
 name|Collections
 operator|.
-expr|<
-name|ConfigurationNode
-operator|>
 name|singletonList
 argument_list|(
 name|dataMap

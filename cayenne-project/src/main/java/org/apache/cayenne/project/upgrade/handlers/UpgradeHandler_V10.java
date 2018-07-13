@@ -131,7 +131,7 @@ literal|"xsi:schemaLocation"
 argument_list|,
 literal|"http://cayenne.apache.org/schema/10/domain "
 operator|+
-literal|"http://cayenne.apache.org/schema/10/domain.xsd"
+literal|"https://cayenne.apache.org/schema/10/domain.xsd"
 argument_list|)
 expr_stmt|;
 comment|// update version
@@ -185,7 +185,7 @@ literal|"xsi:schemaLocation"
 argument_list|,
 literal|"http://cayenne.apache.org/schema/10/modelMap "
 operator|+
-literal|"http://cayenne.apache.org/schema/10/modelMap.xsd"
+literal|"https://cayenne.apache.org/schema/10/modelMap.xsd"
 argument_list|)
 expr_stmt|;
 comment|// update version
