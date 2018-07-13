@@ -247,6 +247,12 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+name|prepareDerbyDatabase
+argument_list|(
+literal|"empty_db"
+argument_list|)
+expr_stmt|;
+comment|// create empty db to avoid problems on Java 11
 name|GradleRunner
 name|runner
 init|=
@@ -339,6 +345,12 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+name|prepareDerbyDatabase
+argument_list|(
+literal|"empty_db"
+argument_list|)
+expr_stmt|;
+comment|// create empty db to avoid problems on Java 11
 name|GradleRunner
 name|runner
 init|=
