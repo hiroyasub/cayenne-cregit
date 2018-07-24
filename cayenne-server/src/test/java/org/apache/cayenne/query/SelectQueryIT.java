@@ -5401,6 +5401,19 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+comment|// Derby tries to compile SQL into Java bytecode and
+comment|// fails with max code length limit ...
+if|if
+condition|(
+operator|!
+name|accessStackAdapter
+operator|.
+name|supportsLongIn
+argument_list|()
+condition|)
+block|{
+return|return;
+block|}
 name|createArtistsDataSet
 argument_list|()
 expr_stmt|;

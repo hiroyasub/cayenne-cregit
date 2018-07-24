@@ -1501,6 +1501,15 @@ return|return
 literal|false
 return|;
 block|}
+specifier|public
+name|boolean
+name|supportsLongIn
+parameter_list|()
+block|{
+return|return
+literal|true
+return|;
+block|}
 block|}
 end_class
 
