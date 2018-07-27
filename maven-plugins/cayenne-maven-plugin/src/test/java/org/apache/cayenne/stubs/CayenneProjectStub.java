@@ -79,10 +79,14 @@ name|CayenneProjectStub
 parameter_list|()
 block|{
 name|Set
+argument_list|<
+name|Artifact
+argument_list|>
 name|artifacts
 init|=
 operator|new
 name|HashSet
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|artifacts

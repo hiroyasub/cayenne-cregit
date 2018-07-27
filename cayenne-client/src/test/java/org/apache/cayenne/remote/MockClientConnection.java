@@ -61,34 +61,6 @@ name|EventBridge
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|remote
-operator|.
-name|ClientConnection
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|remote
-operator|.
-name|ClientMessage
-import|;
-end_import
-
 begin_comment
 comment|/**  * A noop CayenneConnector used for unit testing. Accumulates commands sent via this  * connector without doing anything with them.  *   */
 end_comment
@@ -102,6 +74,9 @@ name|ClientConnection
 block|{
 specifier|protected
 name|Collection
+argument_list|<
+name|ClientMessage
+argument_list|>
 name|commands
 decl_stmt|;
 specifier|protected
@@ -131,6 +106,7 @@ name|commands
 operator|=
 operator|new
 name|ArrayList
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|this
@@ -183,6 +159,9 @@ expr_stmt|;
 block|}
 specifier|public
 name|Collection
+argument_list|<
+name|ClientMessage
+argument_list|>
 name|getCommands
 parameter_list|()
 block|{

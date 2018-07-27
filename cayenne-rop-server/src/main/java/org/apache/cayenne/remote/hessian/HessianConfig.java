@@ -224,6 +224,9 @@ name|getContextClassLoader
 argument_list|()
 decl_stmt|;
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|factoryClass
 init|=
 name|Class

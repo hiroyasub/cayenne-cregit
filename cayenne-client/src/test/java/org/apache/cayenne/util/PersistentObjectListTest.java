@@ -275,10 +275,14 @@ literal|"a"
 argument_list|)
 expr_stmt|;
 name|PersistentObjectList
+argument_list|<
+name|String
+argument_list|>
 name|list
 init|=
 operator|new
 name|PersistentObjectList
+argument_list|<>
 argument_list|(
 name|owner
 argument_list|,
@@ -287,7 +291,7 @@ argument_list|)
 decl_stmt|;
 name|List
 argument_list|<
-name|Object
+name|String
 argument_list|>
 name|objects
 init|=

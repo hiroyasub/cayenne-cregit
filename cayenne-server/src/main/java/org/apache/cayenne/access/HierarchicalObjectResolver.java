@@ -217,16 +217,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Iterator
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|List
 import|;
 end_import
@@ -351,9 +341,20 @@ name|PrefetchTreeNode
 name|tree
 parameter_list|,
 name|List
+argument_list|<
+name|DataRow
+argument_list|>
 name|mainResultRows
 parameter_list|,
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|List
+argument_list|<
+name|?
+argument_list|>
+argument_list|>
 name|extraResultsByPath
 parameter_list|)
 block|{
@@ -385,9 +386,20 @@ name|PrefetchTreeNode
 name|tree
 parameter_list|,
 name|List
+argument_list|<
+name|DataRow
+argument_list|>
 name|mainResultRows
 parameter_list|,
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|List
+argument_list|<
+name|?
+argument_list|>
+argument_list|>
 name|extraResultsByPath
 parameter_list|)
 block|{
@@ -475,8 +487,7 @@ return|return
 literal|false
 return|;
 block|}
-comment|// ... continue with processing even if the objects list is empty to handle
-comment|// multi-step prefetches.
+comment|// continue with processing even if the objects list is empty to handle multi-step prefetches.
 if|if
 condition|(
 name|processorNode
@@ -699,8 +710,7 @@ argument_list|>
 name|parentDataRows
 decl_stmt|;
 comment|// note that a disjoint prefetch that has adjacent joint prefetches
-comment|// will be a PrefetchProcessorJointNode, so here check for
-comment|// semantics, not node type
+comment|// will be a PrefetchProcessorJointNode, so here check for semantics, not node type
 if|if
 condition|(
 name|parentProcessorNode
@@ -1022,22 +1032,29 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-name|dataRows
-operator|.
-name|addAll
+annotation|@
+name|SuppressWarnings
 argument_list|(
-operator|(
+literal|"unchecked"
+argument_list|)
 name|List
 argument_list|<
 name|DataRow
 argument_list|>
-operator|)
+name|dataRowList
+init|=
 name|context
 operator|.
 name|performQuery
 argument_list|(
 name|query
 argument_list|)
+decl_stmt|;
+name|dataRows
+operator|.
+name|addAll
+argument_list|(
+name|dataRowList
 argument_list|)
 expr_stmt|;
 block|}
@@ -1521,9 +1538,7 @@ name|seen
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|Persistent
-argument_list|>
+argument_list|<>
 argument_list|(
 name|objects
 operator|.
@@ -1531,46 +1546,21 @@ name|size
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|Iterator
-argument_list|<
-name|Persistent
-argument_list|>
-name|it
-init|=
 name|objects
 operator|.
-name|iterator
-argument_list|()
-decl_stmt|;
-while|while
-condition|(
-name|it
-operator|.
-name|hasNext
-argument_list|()
-condition|)
-block|{
-if|if
-condition|(
+name|removeIf
+argument_list|(
+name|persistent
+lambda|->
 operator|!
 name|seen
 operator|.
 name|add
 argument_list|(
-name|it
-operator|.
-name|next
-argument_list|()
+name|persistent
 argument_list|)
-condition|)
-block|{
-name|it
-operator|.
-name|remove
-argument_list|()
+argument_list|)
 expr_stmt|;
-block|}
-block|}
 block|}
 block|}
 block|}
@@ -1670,11 +1660,6 @@ name|PrefetchProcessorJointNode
 operator|)
 name|node
 decl_stmt|;
-name|Persistent
-name|object
-init|=
-literal|null
-decl_stmt|;
 comment|// find existing object, if found skip further processing
 name|Map
 name|id
@@ -1686,15 +1671,16 @@ argument_list|(
 name|currentFlatRow
 argument_list|)
 decl_stmt|;
+name|Persistent
 name|object
-operator|=
+init|=
 name|processorNode
 operator|.
 name|getResolved
 argument_list|(
 name|id
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|DataRow
 name|row
 init|=
@@ -1759,8 +1745,7 @@ name|row
 argument_list|)
 expr_stmt|;
 block|}
-comment|// linking by parent needed even if an object is already there
-comment|// (many-to-many case)
+comment|// linking by parent needed even if an object is already there (many-to-many case)
 name|processorNode
 operator|.
 name|getParentAttachmentStrategy

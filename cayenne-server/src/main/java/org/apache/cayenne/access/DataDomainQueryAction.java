@@ -556,6 +556,9 @@ argument_list|<
 name|String
 argument_list|,
 name|List
+argument_list|<
+name|?
+argument_list|>
 argument_list|>
 name|prefetchResultsByPath
 decl_stmt|;
@@ -1472,6 +1475,11 @@ return|return
 name|DONE
 return|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 name|Collection
 argument_list|<
 name|Persistent

@@ -198,6 +198,11 @@ name|POSITION_BOTTOM
 init|=
 literal|"bottom"
 decl_stmt|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|public
 name|CayennePostProcessor
 parameter_list|()
@@ -206,6 +211,11 @@ name|super
 argument_list|()
 expr_stmt|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
 specifier|public
 name|CayennePostProcessor
 parameter_list|(
@@ -733,7 +743,7 @@ name|String
 operator|)
 name|document
 operator|.
-name|getAttr
+name|getAttribute
 argument_list|(
 literal|"cayenne-header"
 argument_list|,
@@ -748,7 +758,7 @@ name|String
 operator|)
 name|document
 operator|.
-name|getAttr
+name|getAttribute
 argument_list|(
 literal|"cayenne-header-position"
 argument_list|,
@@ -769,8 +779,6 @@ return|;
 block|}
 name|String
 name|header
-init|=
-literal|""
 decl_stmt|;
 comment|// inject empty front matter
 if|if
@@ -896,7 +904,7 @@ name|String
 operator|)
 name|document
 operator|.
-name|getAttr
+name|getAttribute
 argument_list|(
 literal|"cayenne-footer"
 argument_list|,
@@ -911,7 +919,7 @@ name|String
 operator|)
 name|document
 operator|.
-name|getAttr
+name|getAttribute
 argument_list|(
 literal|"cayenne-footer-position"
 argument_list|,
