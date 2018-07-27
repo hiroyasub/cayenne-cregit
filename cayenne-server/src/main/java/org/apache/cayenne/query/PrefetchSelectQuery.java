@@ -95,10 +95,13 @@ begin_class
 specifier|public
 class|class
 name|PrefetchSelectQuery
+parameter_list|<
+name|T
+parameter_list|>
 extends|extends
 name|SelectQuery
 argument_list|<
-name|Object
+name|T
 argument_list|>
 block|{
 comment|/**      * The relationship path from root objects to the objects being prefetched.      */
@@ -303,9 +306,6 @@ argument_list|)
 else|:
 name|Collections
 operator|.
-expr|<
-name|String
-operator|>
 name|emptySet
 argument_list|()
 return|;

@@ -3418,6 +3418,9 @@ range|:
 operator|(
 operator|(
 name|PrefetchSelectQuery
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|query
 operator|)

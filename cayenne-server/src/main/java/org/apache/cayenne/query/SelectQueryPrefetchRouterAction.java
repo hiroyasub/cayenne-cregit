@@ -362,10 +362,14 @@ expr_stmt|;
 block|}
 comment|// create and configure PrefetchSelectQuery
 name|PrefetchSelectQuery
+argument_list|<
+name|?
+argument_list|>
 name|prefetchQuery
 init|=
 operator|new
 name|PrefetchSelectQuery
+argument_list|<>
 argument_list|(
 name|prefetchPath
 argument_list|,
