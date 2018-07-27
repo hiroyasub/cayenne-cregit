@@ -21,7 +21,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Arrays
+name|Collection
 import|;
 end_import
 
@@ -31,7 +31,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collection
+name|Collections
 import|;
 end_import
 
@@ -56,20 +56,6 @@ operator|.
 name|cayenne
 operator|.
 name|Persistent
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|DataMap
 import|;
 end_import
 
@@ -150,9 +136,9 @@ parameter_list|)
 block|{
 name|this
 argument_list|(
-name|Arrays
+name|Collections
 operator|.
-name|asList
+name|singletonList
 argument_list|(
 name|object
 argument_list|)
