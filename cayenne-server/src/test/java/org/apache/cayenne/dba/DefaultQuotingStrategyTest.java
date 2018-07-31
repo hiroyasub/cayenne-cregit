@@ -74,7 +74,7 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|testQuotedIdentifer
+name|testQuotedIdentifier
 parameter_list|()
 block|{
 name|DataMap
@@ -171,7 +171,7 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|testUnQuotedIdentifer
+name|testUnQuotedIdentifier
 parameter_list|()
 block|{
 name|DataMap

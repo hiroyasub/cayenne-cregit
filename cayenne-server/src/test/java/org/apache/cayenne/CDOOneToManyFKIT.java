@@ -190,11 +190,7 @@ import|;
 end_import
 
 begin_comment
-comment|// TODO: this mapping scenario is really unsupported ... this is just an attempt at
-end_comment
-
-begin_comment
-comment|// partial solution
+comment|// TODO: this mapping scenario is really unsupported ... this is just an attempt at partial solution
 end_comment
 
 begin_class
@@ -223,8 +219,6 @@ specifier|public
 name|void
 name|testReadRelationship
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|ToManyRoot2
 name|src2
@@ -255,11 +249,7 @@ name|src
 operator|.
 name|setDepId
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 literal|1
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|ToManyFkDep
@@ -279,11 +269,7 @@ name|target
 operator|.
 name|setDepId
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 literal|1
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|target
@@ -360,10 +346,6 @@ name|assertSame
 argument_list|(
 name|src1
 argument_list|,
-operator|(
-operator|(
-name|ToManyFkDep
-operator|)
 name|src1
 operator|.
 name|getDeps
@@ -373,7 +355,6 @@ name|get
 argument_list|(
 literal|0
 argument_list|)
-operator|)
 operator|.
 name|getRoot
 argument_list|()

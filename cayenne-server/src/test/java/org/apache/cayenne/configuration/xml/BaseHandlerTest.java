@@ -143,7 +143,7 @@ init|(
 name|InputStream
 name|in
 init|=
-name|DbKeyGeneratorHandlerTest
+name|BaseHandlerTest
 operator|.
 name|class
 operator|.

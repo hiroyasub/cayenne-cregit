@@ -81,6 +81,16 @@ name|java
 operator|.
 name|sql
 operator|.
+name|ResultSet
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
 name|Types
 import|;
 end_import
@@ -878,25 +888,22 @@ block|{
 name|createArtistsDataSet
 argument_list|()
 expr_stmt|;
-name|int
+name|long
 name|totalRows
 init|=
-operator|new
-name|SelectQuery
-argument_list|<>
+name|ObjectSelect
+operator|.
+name|query
 argument_list|(
 name|Artist
 operator|.
 name|class
 argument_list|)
 operator|.
-name|select
+name|selectCount
 argument_list|(
 name|context
 argument_list|)
-operator|.
-name|size
-argument_list|()
 decl_stmt|;
 name|SelectQuery
 argument_list|<
@@ -2061,8 +2068,7 @@ block|}
 name|createArtistsWildcardDataSet
 argument_list|()
 expr_stmt|;
-comment|// CAY-1978 - combining LIKE..ESCAPE with another clause generated bad
-comment|// SQL
+comment|// CAY-1978 - combining LIKE..ESCAPE with another clause generated bad SQL
 name|SelectQuery
 argument_list|<
 name|Artist
@@ -3359,9 +3365,6 @@ expr_stmt|;
 name|Artist
 name|artist
 init|=
-operator|(
-name|Artist
-operator|)
 name|query
 operator|.
 name|selectOne

@@ -490,7 +490,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Default implementation of the AccessStack that has a single DataNode per  * DataMap.  */
+comment|/**  * Default implementation of the AccessStack that has a single DataNode per DataMap.  */
 end_comment
 
 begin_class
@@ -500,6 +500,7 @@ name|SchemaBuilder
 block|{
 specifier|private
 specifier|static
+specifier|final
 name|Logger
 name|logger
 init|=
@@ -522,6 +523,7 @@ literal|"cayenneTestSkipSchemaCreation"
 decl_stmt|;
 specifier|private
 specifier|static
+specifier|final
 name|String
 index|[]
 name|MAPS_REQUIRING_SCHEMA_SETUP
@@ -923,8 +925,6 @@ parameter_list|(
 name|DataMap
 name|map
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|DataNode
 name|node
@@ -1086,9 +1086,7 @@ name|entitiesToRemove
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|DbEntity
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -1346,9 +1344,6 @@ name|DbEntity
 argument_list|>
 name|dbEntitiesInInsertOrder
 parameter_list|(
-name|DataNode
-name|node
-parameter_list|,
 name|DataMap
 name|map
 parameter_list|)
@@ -1487,6 +1482,7 @@ return|return
 name|entities
 return|;
 block|}
+comment|// This seems actually unused for some time now (from 2014 to 2018), and caused no trouble
 specifier|private
 name|void
 name|dbEntitiesFilter
@@ -1533,9 +1529,7 @@ name|filtered
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|DbEntity
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -1742,8 +1736,6 @@ name|list
 init|=
 name|dbEntitiesInInsertOrder
 argument_list|(
-name|node
-argument_list|,
 name|map
 argument_list|)
 decl_stmt|;
@@ -1759,7 +1751,6 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-init|;
 init|)
 block|{
 name|DatabaseMetaData
@@ -1808,11 +1799,8 @@ name|next
 argument_list|()
 condition|)
 block|{
-comment|// 'toUpperCase' is needed since most databases
-comment|// are case insensitive, and some will convert names to
-comment|// lower
-comment|// case
-comment|// (PostgreSQL)
+comment|// 'toUpperCase' is needed since most databases are case insensitive,
+comment|// and some will convert names to lower case (e.g. PostgreSQL)
 name|String
 name|name
 init|=
@@ -1829,6 +1817,7 @@ name|name
 operator|!=
 literal|null
 condition|)
+block|{
 name|allTables
 operator|.
 name|add
@@ -1839,6 +1828,7 @@ name|toUpperCase
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 name|unitDbAdapter
@@ -2006,8 +1996,6 @@ name|filteredEntities
 init|=
 name|dbEntitiesInInsertOrder
 argument_list|(
-name|node
-argument_list|,
 name|map
 argument_list|)
 decl_stmt|;
@@ -2048,8 +2036,6 @@ name|filteredEntities
 init|=
 name|dbEntitiesInInsertOrder
 argument_list|(
-name|node
-argument_list|,
 name|map
 argument_list|)
 decl_stmt|;
@@ -2094,7 +2080,6 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-init|;
 init|)
 block|{
 name|unitDbAdapter
@@ -2115,7 +2100,6 @@ name|conn
 operator|.
 name|createStatement
 argument_list|()
-init|;
 init|)
 block|{
 for|for
@@ -2172,8 +2156,6 @@ parameter_list|,
 name|DataMap
 name|map
 parameter_list|)
-throws|throws
-name|Exception
 block|{
 name|DbAdapter
 name|adapter
@@ -2208,8 +2190,6 @@ name|orderedEnts
 init|=
 name|dbEntitiesInInsertOrder
 argument_list|(
-name|node
-argument_list|,
 name|map
 argument_list|)
 decl_stmt|;
@@ -2221,9 +2201,7 @@ name|queries
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 comment|// table definitions

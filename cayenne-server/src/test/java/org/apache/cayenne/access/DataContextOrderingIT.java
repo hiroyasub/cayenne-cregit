@@ -23,18 +23,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneRuntimeException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|di
 operator|.
 name|Inject
@@ -273,8 +261,6 @@ specifier|public
 name|void
 name|testMultipleOrdering
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Calendar
 name|c

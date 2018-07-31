@@ -424,9 +424,7 @@ name|query
 init|=
 operator|new
 name|SelectQuery
-argument_list|<
-name|ClobTestEntity
-argument_list|>
+argument_list|<>
 argument_list|(
 name|ClobTestEntity
 operator|.
@@ -475,11 +473,11 @@ name|ClobTestEntity
 argument_list|>
 name|objects
 init|=
-name|context
-operator|.
-name|performQuery
-argument_list|(
 name|query
+operator|.
+name|select
+argument_list|(
+name|context
 argument_list|)
 decl_stmt|;
 name|assertEquals
@@ -539,9 +537,7 @@ name|query
 init|=
 operator|new
 name|SelectQuery
-argument_list|<
-name|ClobTestEntity
-argument_list|>
+argument_list|<>
 argument_list|(
 name|ClobTestEntity
 operator|.
@@ -617,6 +613,7 @@ name|query
 init|=
 operator|new
 name|SelectQuery
+argument_list|<>
 argument_list|(
 name|ClobTestEntity
 operator|.

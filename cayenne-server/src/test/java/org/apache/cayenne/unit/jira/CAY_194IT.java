@@ -258,11 +258,11 @@ comment|/**  * Testing qualifier translator correctness on reflexive relationshi
 end_comment
 
 begin_comment
-comment|// TODO: this is really a qualifier translator general test... need to
+comment|// TODO: this is really a qualifier translator general test...
 end_comment
 
 begin_comment
-comment|// find an appropriate place in unit tests..
+comment|// need to find an appropriate place in unit tests..
 end_comment
 
 begin_class
@@ -441,12 +441,9 @@ name|?
 argument_list|>
 name|parents
 init|=
-name|context
-operator|.
-name|performQuery
-argument_list|(
-operator|new
 name|SelectQuery
+operator|.
+name|query
 argument_list|(
 name|ReflexiveAndToOne
 operator|.
@@ -454,6 +451,10 @@ name|class
 argument_list|,
 name|qualifier
 argument_list|)
+operator|.
+name|select
+argument_list|(
+name|context
 argument_list|)
 decl_stmt|;
 name|assertEquals
@@ -491,12 +492,9 @@ argument_list|)
 expr_stmt|;
 name|parents
 operator|=
-name|context
-operator|.
-name|performQuery
-argument_list|(
-operator|new
 name|SelectQuery
+operator|.
+name|query
 argument_list|(
 name|ReflexiveAndToOne
 operator|.
@@ -504,6 +502,10 @@ name|class
 argument_list|,
 name|qualifier
 argument_list|)
+operator|.
+name|select
+argument_list|(
+name|context
 argument_list|)
 expr_stmt|;
 name|assertEquals
@@ -607,16 +609,13 @@ argument_list|)
 decl_stmt|;
 name|List
 argument_list|<
-name|?
+name|ReflexiveAndToOne
 argument_list|>
 name|children
 init|=
-name|context
-operator|.
-name|performQuery
-argument_list|(
-operator|new
 name|SelectQuery
+operator|.
+name|query
 argument_list|(
 name|ReflexiveAndToOne
 operator|.
@@ -624,6 +623,10 @@ name|class
 argument_list|,
 name|qualifier
 argument_list|)
+operator|.
+name|select
+argument_list|(
+name|context
 argument_list|)
 decl_stmt|;
 name|assertEquals
