@@ -763,7 +763,6 @@ name|c
 init|=
 name|getConnection
 argument_list|()
-init|;
 init|)
 block|{
 name|String
@@ -797,7 +796,6 @@ name|prepareStatement
 argument_list|(
 name|sqlString
 argument_list|)
-init|;
 init|)
 block|{
 for|for
