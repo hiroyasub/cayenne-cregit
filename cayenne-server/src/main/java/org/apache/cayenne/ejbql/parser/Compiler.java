@@ -1332,12 +1332,6 @@ name|EJBQLExpression
 name|prefetchExpression
 parameter_list|)
 block|{
-specifier|final
-name|EntityResult
-name|result
-init|=
-name|compiledResult
-decl_stmt|;
 name|String
 name|id
 init|=
@@ -1379,7 +1373,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-specifier|final
 name|String
 name|prefix
 init|=
@@ -1403,7 +1396,6 @@ operator|+
 literal|1
 argument_list|)
 decl_stmt|;
-specifier|final
 name|Set
 argument_list|<
 name|String
@@ -1412,9 +1404,7 @@ name|visited
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|PropertyVisitor
@@ -1453,7 +1443,7 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|result
+name|compiledResult
 operator|.
 name|addObjectField
 argument_list|(
@@ -1569,7 +1559,7 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|result
+name|compiledResult
 operator|.
 name|addDbField
 argument_list|(
@@ -1634,7 +1624,7 @@ name|pkName
 argument_list|)
 condition|)
 block|{
-name|result
+name|compiledResult
 operator|.
 name|addDbField
 argument_list|(
@@ -1680,7 +1670,7 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-name|result
+name|compiledResult
 operator|.
 name|addDbField
 argument_list|(
@@ -1708,7 +1698,7 @@ expr_stmt|;
 block|}
 block|}
 return|return
-name|result
+name|compiledResult
 return|;
 block|}
 specifier|private
@@ -1823,9 +1813,7 @@ name|visited
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|PropertyVisitor
