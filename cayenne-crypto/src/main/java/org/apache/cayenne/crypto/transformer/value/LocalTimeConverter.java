@@ -36,7 +36,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 4.1.M3  */
+comment|/**  * @since 4.1  */
 end_comment
 
 begin_class
