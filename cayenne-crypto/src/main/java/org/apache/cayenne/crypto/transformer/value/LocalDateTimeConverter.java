@@ -55,16 +55,6 @@ name|Objects
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|TimeZone
-import|;
-end_import
-
 begin_comment
 comment|/**  * @since 4.1.M3  */
 end_comment
@@ -153,12 +143,9 @@ name|bytes
 argument_list|)
 argument_list|)
 argument_list|,
-name|TimeZone
+name|ZoneId
 operator|.
-name|getDefault
-argument_list|()
-operator|.
-name|toZoneId
+name|systemDefault
 argument_list|()
 argument_list|)
 return|;
