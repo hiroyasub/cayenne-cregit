@@ -1885,9 +1885,6 @@ operator|!=
 literal|null
 operator|)
 condition|?
-operator|(
-name|Expression
-operator|)
 name|transformer
 operator|.
 name|apply
