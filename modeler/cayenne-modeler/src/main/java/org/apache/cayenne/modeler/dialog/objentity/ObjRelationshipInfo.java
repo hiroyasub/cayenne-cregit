@@ -349,7 +349,17 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|*
+name|JOptionPane
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|WindowConstants
 import|;
 end_import
 
@@ -395,7 +405,7 @@ name|java
 operator|.
 name|awt
 operator|.
-name|*
+name|Component
 import|;
 end_import
 
@@ -3299,6 +3309,16 @@ operator|==
 literal|null
 condition|)
 block|{
+name|JOptionPane
+operator|.
+name|showMessageDialog
+argument_list|(
+name|getView
+argument_list|()
+argument_list|,
+literal|"Can't map relationship without source DbEntity. Set source DbEntity."
+argument_list|)
+expr_stmt|;
 throw|throw
 operator|new
 name|CayenneRuntimeException
