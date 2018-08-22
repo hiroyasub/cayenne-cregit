@@ -478,14 +478,6 @@ argument_list|,
 literal|"Load Db Schema"
 argument_list|)
 decl_stmt|;
-name|connectWizard
-operator|.
-name|setProjectController
-argument_list|(
-name|getProjectController
-argument_list|()
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
