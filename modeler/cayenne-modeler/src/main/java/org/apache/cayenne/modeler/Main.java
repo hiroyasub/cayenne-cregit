@@ -195,7 +195,7 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|*
+name|SwingUtilities
 import|;
 end_import
 
