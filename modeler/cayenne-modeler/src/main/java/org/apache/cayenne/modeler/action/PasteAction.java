@@ -600,7 +600,7 @@ specifier|final
 name|String
 name|COPY_PATTERN
 init|=
-literal|"Copy of %s (%d)"
+literal|"copy of %s (%d)"
 decl_stmt|;
 comment|/**      * Constructor for PasteAction      */
 specifier|public
