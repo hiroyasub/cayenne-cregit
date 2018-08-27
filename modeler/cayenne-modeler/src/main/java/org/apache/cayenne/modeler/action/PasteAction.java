@@ -465,7 +465,7 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|*
+name|KeyStroke
 import|;
 end_import
 
@@ -487,7 +487,7 @@ name|java
 operator|.
 name|awt
 operator|.
-name|*
+name|Toolkit
 import|;
 end_import
 
@@ -721,6 +721,25 @@ operator|.
 name|getCurrentObject
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+name|content
+operator|instanceof
+name|DataMap
+condition|)
+block|{
+name|currentObject
+operator|=
+name|getProjectController
+argument_list|()
+operator|.
+name|getProject
+argument_list|()
+operator|.
+name|getRootNode
+argument_list|()
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|content
@@ -2647,6 +2666,16 @@ name|isTreeLeaf
 argument_list|(
 name|content
 argument_list|)
+operator|)
+operator|||
+operator|(
+name|currentObject
+operator|instanceof
+name|DataMap
+operator|&&
+name|content
+operator|instanceof
+name|DataMap
 operator|)
 operator|||
 operator|(
