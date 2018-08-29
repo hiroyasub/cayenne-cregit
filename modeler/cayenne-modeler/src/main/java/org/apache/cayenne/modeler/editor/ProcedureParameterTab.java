@@ -467,7 +467,7 @@ name|swing
 operator|.
 name|components
 operator|.
-name|LimitedJTextField
+name|LimitedTextField
 import|;
 end_import
 
@@ -1871,11 +1871,11 @@ operator|.
 name|PARAMETER_PRECISION
 argument_list|)
 decl_stmt|;
-name|LimitedJTextField
+name|LimitedTextField
 name|limitedPrecisionField
 init|=
 operator|new
-name|LimitedJTextField
+name|LimitedTextField
 argument_list|(
 literal|10
 argument_list|)
@@ -1910,11 +1910,11 @@ operator|.
 name|PARAMETER_LENGTH
 argument_list|)
 decl_stmt|;
-name|LimitedJTextField
+name|LimitedTextField
 name|limitedLengthField
 init|=
 operator|new
-name|LimitedJTextField
+name|LimitedTextField
 argument_list|(
 literal|10
 argument_list|)

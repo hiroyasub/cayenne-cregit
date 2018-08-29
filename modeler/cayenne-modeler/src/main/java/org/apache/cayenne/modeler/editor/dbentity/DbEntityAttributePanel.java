@@ -359,7 +359,7 @@ name|swing
 operator|.
 name|components
 operator|.
-name|LimitedJTextField
+name|LimitedTextField
 import|;
 end_import
 
@@ -1173,11 +1173,11 @@ name|lengthColumnId
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|LimitedJTextField
+name|LimitedTextField
 name|limitedLengthField
 init|=
 operator|new
-name|LimitedJTextField
+name|LimitedTextField
 argument_list|(
 literal|10
 argument_list|)
@@ -1213,11 +1213,11 @@ name|scaleColumnId
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|LimitedJTextField
+name|LimitedTextField
 name|limitedScaleField
 init|=
 operator|new
-name|LimitedJTextField
+name|LimitedTextField
 argument_list|(
 literal|10
 argument_list|)
