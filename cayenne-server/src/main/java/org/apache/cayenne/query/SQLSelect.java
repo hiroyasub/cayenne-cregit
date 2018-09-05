@@ -856,8 +856,7 @@ name|replacementQuery
 operator|=
 literal|null
 expr_stmt|;
-comment|// since named parameters are specified, resetting positional
-comment|// parameters
+comment|// since named parameters are specified, resetting positional parameters
 name|this
 operator|.
 name|positionalParams
@@ -914,19 +913,24 @@ argument_list|>
 name|params
 parameter_list|)
 block|{
-comment|// since named parameters are specified, resetting positional
-comment|// parameters
-name|this
-operator|.
-name|params
-operator|=
-literal|null
-expr_stmt|;
 name|this
 operator|.
 name|positionalParams
 operator|=
 name|params
+expr_stmt|;
+name|this
+operator|.
+name|replacementQuery
+operator|=
+literal|null
+expr_stmt|;
+comment|// since named parameters are specified, resetting positional parameters
+name|this
+operator|.
+name|params
+operator|=
+literal|null
 expr_stmt|;
 return|return
 name|this
