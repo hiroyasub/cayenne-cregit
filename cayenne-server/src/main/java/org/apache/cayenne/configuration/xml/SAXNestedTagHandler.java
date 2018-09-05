@@ -298,9 +298,6 @@ argument_list|)
 else|:
 name|Collections
 operator|.
-expr|<
-name|String
-operator|>
 name|emptyList
 argument_list|()
 decl_stmt|;

@@ -441,7 +441,7 @@ name|passwordSource
 operator|.
 name|replaceAll
 argument_list|(
-literal|"\\{\\}"
+literal|"\\{}"
 argument_list|,
 name|encoderKey
 argument_list|)
@@ -597,13 +597,6 @@ name|DataSourceInfo
 operator|.
 name|PASSWORD_LOCATION_EXECUTABLE
 case|:
-if|if
-condition|(
-name|passwordSource
-operator|!=
-literal|null
-condition|)
-block|{
 try|try
 block|{
 name|Process
@@ -657,7 +650,6 @@ argument_list|,
 name|exception
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 break|break;
 block|}

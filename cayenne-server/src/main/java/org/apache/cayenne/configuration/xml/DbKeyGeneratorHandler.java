@@ -381,8 +381,9 @@ name|pkGenerator
 operator|.
 name|setKeyCacheSize
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 name|size
 operator|.
