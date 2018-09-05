@@ -277,6 +277,16 @@ name|URL
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Arrays
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 3.1  * @since 4.1 moved from org.apache.cayenne.configuration package  */
 end_comment
@@ -303,13 +313,27 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+comment|/** 	 * Versions of project XML files that this loader can read. 	 */
 specifier|static
 specifier|final
 name|String
-name|CURRENT_PROJECT_VERSION
+index|[]
+name|SUPPORTED_PROJECT_VERSIONS
 init|=
+block|{
 literal|"10"
+block|}
 decl_stmt|;
+static|static
+block|{
+name|Arrays
+operator|.
+name|sort
+argument_list|(
+name|SUPPORTED_PROJECT_VERSIONS
+argument_list|)
+expr_stmt|;
+block|}
 comment|/** 	 * @deprecated the caller should use password resolving strategy instead of 	 *             resolving the password on the spot. For one thing this can be 	 *             used in the Modeler and no password may be available. 	 */
 annotation|@
 name|Deprecated
