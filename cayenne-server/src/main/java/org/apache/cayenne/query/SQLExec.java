@@ -403,18 +403,13 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|Map
-name|bareMap
-init|=
-name|parameters
-decl_stmt|;
 name|this
 operator|.
 name|params
 operator|.
 name|putAll
 argument_list|(
-name|bareMap
+name|parameters
 argument_list|)
 expr_stmt|;
 block|}
@@ -424,8 +419,7 @@ name|replacementQuery
 operator|=
 literal|null
 expr_stmt|;
-comment|// since named parameters are specified, resetting positional
-comment|// parameters
+comment|// since named parameters are specified, resetting positional parameters
 name|this
 operator|.
 name|positionalParams
@@ -476,18 +470,24 @@ argument_list|>
 name|params
 parameter_list|)
 block|{
+name|this
+operator|.
+name|positionalParams
+operator|=
+name|params
+expr_stmt|;
+name|this
+operator|.
+name|replacementQuery
+operator|=
+literal|null
+expr_stmt|;
 comment|// since named parameters are specified, resetting positional parameters
 name|this
 operator|.
 name|params
 operator|=
 literal|null
-expr_stmt|;
-name|this
-operator|.
-name|positionalParams
-operator|=
-name|params
 expr_stmt|;
 return|return
 name|this
