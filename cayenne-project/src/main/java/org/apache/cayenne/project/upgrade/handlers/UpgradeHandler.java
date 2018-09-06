@@ -80,15 +80,15 @@ name|upgradeUnit
 parameter_list|)
 function_decl|;
 comment|/**      * This method should be avoided as much as possible, as      * using this method will make upgrade process not future proof and      * will require refactoring if model should change.      */
+specifier|default
 name|void
 name|processModel
 parameter_list|(
 name|DataChannelDescriptor
 name|dataChannelDescriptor
 parameter_list|)
-function_decl|;
-comment|// should be this really, but no Java 8 yet:
-comment|//default void processModel(DataChannelDescriptor dataChannelDescriptor) {}
+block|{
+block|}
 block|}
 end_interface
 
