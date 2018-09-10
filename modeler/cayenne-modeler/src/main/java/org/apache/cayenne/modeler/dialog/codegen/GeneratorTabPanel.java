@@ -97,30 +97,6 @@ name|Component
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|event
-operator|.
-name|ItemEvent
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|event
-operator|.
-name|ItemListener
-import|;
-end_import
-
 begin_comment
 comment|/**  */
 end_comment
@@ -188,18 +164,8 @@ name|generationMode
 operator|.
 name|addItemListener
 argument_list|(
-operator|new
-name|ItemListener
-argument_list|()
-block|{
-specifier|public
-name|void
-name|itemStateChanged
-parameter_list|(
-name|ItemEvent
 name|e
-parameter_list|)
-block|{
+lambda|->
 name|modeLayout
 operator|.
 name|show
@@ -214,9 +180,6 @@ operator|.
 name|toString
 argument_list|()
 argument_list|)
-expr_stmt|;
-block|}
-block|}
 argument_list|)
 expr_stmt|;
 comment|// assemble
