@@ -792,7 +792,7 @@ name|resolve
 operator|.
 name|setToolTipText
 argument_list|(
-literal|"Database Mapping"
+literal|"Edit Relationship"
 argument_list|)
 expr_stmt|;
 name|resolve

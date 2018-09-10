@@ -1030,17 +1030,8 @@ argument_list|)
 expr_stmt|;
 name|resolver
 operator|=
-operator|new
-name|ActionListener
-argument_list|()
-block|{
-specifier|public
-name|void
-name|actionPerformed
-parameter_list|(
-name|ActionEvent
 name|e
-parameter_list|)
+lambda|->
 block|{
 name|int
 name|row
@@ -1102,7 +1093,6 @@ operator|.
 name|dispose
 argument_list|()
 expr_stmt|;
-block|}
 block|}
 expr_stmt|;
 name|resolveMenu

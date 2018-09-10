@@ -1207,7 +1207,7 @@ name|CayenneAction
 operator|.
 name|CayenneMenuItem
 argument_list|(
-literal|"Database Mapping"
+literal|"Edit Attribute"
 argument_list|,
 name|ico
 argument_list|)

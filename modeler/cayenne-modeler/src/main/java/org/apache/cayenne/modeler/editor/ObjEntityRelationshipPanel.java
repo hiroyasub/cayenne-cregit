@@ -459,24 +459,6 @@ begin_import
 import|import
 name|org
 operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|swing
-operator|.
-name|components
-operator|.
-name|image
-operator|.
-name|FilteredIconFactory
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
 name|slf4j
 operator|.
 name|Logger
@@ -688,18 +670,6 @@ operator|.
 name|awt
 operator|.
 name|Component
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|event
-operator|.
-name|ActionEvent
 import|;
 end_import
 
@@ -1120,17 +1090,8 @@ argument_list|)
 expr_stmt|;
 name|resolver
 operator|=
-operator|new
-name|ActionListener
-argument_list|()
-block|{
-specifier|public
-name|void
-name|actionPerformed
-parameter_list|(
-name|ActionEvent
 name|e
-parameter_list|)
+lambda|->
 block|{
 name|int
 name|row
@@ -1176,14 +1137,13 @@ operator|.
 name|startupAction
 argument_list|()
 expr_stmt|;
-comment|/**                  * This is required for a table to be updated properly                  */
+comment|// This is required for a table to be updated properly
 name|table
 operator|.
 name|cancelEditing
 argument_list|()
 expr_stmt|;
-comment|// need to refresh selected row... do this by unselecting/selecting the
-comment|// row
+comment|// need to refresh selected row... do this by unselecting/selecting the row
 name|table
 operator|.
 name|getSelectionModel
@@ -1203,7 +1163,6 @@ name|enabledResolve
 operator|=
 literal|false
 expr_stmt|;
-block|}
 block|}
 expr_stmt|;
 name|resolveMenu
