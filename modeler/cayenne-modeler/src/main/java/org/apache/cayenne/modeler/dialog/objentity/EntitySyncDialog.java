@@ -21,31 +21,43 @@ end_package
 
 begin_import
 import|import
-name|java
+name|com
 operator|.
-name|awt
+name|jgoodies
 operator|.
-name|BorderLayout
+name|forms
+operator|.
+name|builder
+operator|.
+name|PanelBuilder
 import|;
 end_import
 
 begin_import
 import|import
-name|java
+name|com
 operator|.
-name|awt
+name|jgoodies
 operator|.
-name|Container
+name|forms
+operator|.
+name|layout
+operator|.
+name|CellConstraints
 import|;
 end_import
 
 begin_import
 import|import
-name|java
+name|com
 operator|.
-name|awt
+name|jgoodies
 operator|.
-name|FlowLayout
+name|forms
+operator|.
+name|layout
+operator|.
+name|FormLayout
 import|;
 end_import
 
@@ -101,43 +113,31 @@ end_import
 
 begin_import
 import|import
-name|com
+name|java
 operator|.
-name|jgoodies
+name|awt
 operator|.
-name|forms
-operator|.
-name|builder
-operator|.
-name|PanelBuilder
+name|BorderLayout
 import|;
 end_import
 
 begin_import
 import|import
-name|com
+name|java
 operator|.
-name|jgoodies
+name|awt
 operator|.
-name|forms
-operator|.
-name|layout
-operator|.
-name|CellConstraints
+name|Container
 import|;
 end_import
 
 begin_import
 import|import
-name|com
+name|java
 operator|.
-name|jgoodies
+name|awt
 operator|.
-name|forms
-operator|.
-name|layout
-operator|.
-name|FormLayout
+name|FlowLayout
 import|;
 end_import
 
@@ -191,6 +191,14 @@ operator|new
 name|JButton
 argument_list|(
 literal|"Cancel"
+argument_list|)
+expr_stmt|;
+name|getRootPane
+argument_list|()
+operator|.
+name|setDefaultButton
+argument_list|(
+name|updateButton
 argument_list|)
 expr_stmt|;
 comment|// assemble

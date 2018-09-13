@@ -343,6 +343,14 @@ name|void
 name|buildElements
 parameter_list|()
 block|{
+name|getRootPane
+argument_list|()
+operator|.
+name|setDefaultButton
+argument_list|(
+name|okButton
+argument_list|)
+expr_stmt|;
 name|FormLayout
 name|layout
 init|=

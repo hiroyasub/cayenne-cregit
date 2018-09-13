@@ -543,6 +543,14 @@ argument_list|,
 literal|"overrideAttributeTable"
 argument_list|)
 expr_stmt|;
+name|getRootPane
+argument_list|()
+operator|.
+name|setDefaultButton
+argument_list|(
+name|saveButton
+argument_list|)
+expr_stmt|;
 name|saveButton
 operator|.
 name|setEnabled

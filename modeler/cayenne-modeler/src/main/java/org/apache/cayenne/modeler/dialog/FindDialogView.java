@@ -421,6 +421,14 @@ argument_list|(
 literal|"OK"
 argument_list|)
 expr_stmt|;
+name|getRootPane
+argument_list|()
+operator|.
+name|setDefaultButton
+argument_list|(
+name|okButton
+argument_list|)
+expr_stmt|;
 name|okPanel
 operator|.
 name|setBorder
