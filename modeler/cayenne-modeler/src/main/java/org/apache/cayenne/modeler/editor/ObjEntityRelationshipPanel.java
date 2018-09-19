@@ -2588,7 +2588,7 @@ condition|?
 operator|new
 name|Color
 argument_list|(
-literal|0xCECECE
+literal|0xEEEEEE
 argument_list|)
 else|:
 name|Color
