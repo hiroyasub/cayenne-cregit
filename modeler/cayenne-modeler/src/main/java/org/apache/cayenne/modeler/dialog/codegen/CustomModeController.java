@@ -1081,7 +1081,7 @@ argument_list|()
 expr_stmt|;
 name|pairs
 operator|.
-name|addChangeListener
+name|addItemListener
 argument_list|(
 name|e
 lambda|->
