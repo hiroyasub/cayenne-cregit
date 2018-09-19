@@ -467,7 +467,7 @@ name|modeler
 operator|.
 name|util
 operator|.
-name|DbAttributePathComboBoxRenderer
+name|DbAttributePathComboBoxEditor
 import|;
 end_import
 
@@ -483,7 +483,7 @@ name|modeler
 operator|.
 name|util
 operator|.
-name|DbAttributePathComboBoxEditor
+name|DbAttributePathComboBoxRenderer
 import|;
 end_import
 
@@ -571,24 +571,6 @@ end_import
 
 begin_import
 import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|swing
-operator|.
-name|components
-operator|.
-name|image
-operator|.
-name|FilteredIconFactory
-import|;
-end_import
-
-begin_import
-import|import
 name|javax
 operator|.
 name|swing
@@ -604,16 +586,6 @@ operator|.
 name|swing
 operator|.
 name|Icon
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|swing
-operator|.
-name|ImageIcon
 import|;
 end_import
 
@@ -643,7 +615,7 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|JOptionPane
+name|JMenuItem
 import|;
 end_import
 
@@ -653,7 +625,7 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|JMenuItem
+name|JOptionPane
 import|;
 end_import
 
@@ -815,18 +787,6 @@ name|awt
 operator|.
 name|event
 operator|.
-name|ActionEvent
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|event
-operator|.
 name|ActionListener
 import|;
 end_import
@@ -871,6 +831,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Collections
 import|;
 end_import
@@ -882,16 +852,6 @@ operator|.
 name|util
 operator|.
 name|HashMap
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
 import|;
 end_import
 
@@ -2832,6 +2792,14 @@ condition|)
 block|{
 name|setForeground
 argument_list|(
+name|isSelected
+condition|?
+operator|new
+name|Color
+argument_list|(
+literal|0xCECECE
+argument_list|)
+else|:
 name|Color
 operator|.
 name|GRAY
