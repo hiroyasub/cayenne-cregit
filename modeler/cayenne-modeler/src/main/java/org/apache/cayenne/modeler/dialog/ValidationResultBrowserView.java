@@ -342,6 +342,14 @@ literal|5
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|getRootPane
+argument_list|()
+operator|.
+name|setDefaultButton
+argument_list|(
+name|closeButton
+argument_list|)
+expr_stmt|;
 name|JPanel
 name|buttons
 init|=

@@ -762,6 +762,14 @@ argument_list|,
 literal|"dbentity/dbjoinTable"
 argument_list|)
 expr_stmt|;
+name|getRootPane
+argument_list|()
+operator|.
+name|setDefaultButton
+argument_list|(
+name|saveButton
+argument_list|)
+expr_stmt|;
 comment|// assemble
 name|getContentPane
 argument_list|()

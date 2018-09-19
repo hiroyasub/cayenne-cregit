@@ -262,6 +262,14 @@ argument_list|(
 name|controller
 argument_list|)
 expr_stmt|;
+name|getRootPane
+argument_list|()
+operator|.
+name|setDefaultButton
+argument_list|(
+name|okButton
+argument_list|)
+expr_stmt|;
 name|CellConstraints
 name|cc
 init|=
