@@ -606,7 +606,7 @@ decl_stmt|;
 if|if
 condition|(
 name|lastEntity
-operator|==
+operator|!=
 literal|null
 condition|)
 block|{
