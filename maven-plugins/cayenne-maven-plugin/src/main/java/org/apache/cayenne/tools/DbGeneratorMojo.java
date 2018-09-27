@@ -380,7 +380,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Maven mojo to perform class generation from data map. This class is a Maven  * adapter to DefaultClassGenerator class.  *  * @since 3.0  */
+comment|/**  * Maven mojo to drop and/or generate tables in a database on Cayenne DataMap.  * @since 3.0  */
 end_comment
 
 begin_class
