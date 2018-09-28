@@ -192,6 +192,8 @@ specifier|protected
 name|ServletContext
 name|servletContext
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|void
 name|init
@@ -370,6 +372,8 @@ argument_list|)
 throw|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|destroy
@@ -399,6 +403,8 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|doFilter
