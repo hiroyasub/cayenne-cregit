@@ -80,10 +80,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A {@link ResourceLocator} that can locate resources in the filesystem. Instances of  * {@link FilesystemResourceLocator} are explicitly created by the user and then bound to  * a DI registry. E.g.:  *   *<pre>  * class MyModule implements Module {  *   *     public void configure(Binder binder) {  *        File dir1 = ...  *        File dir2 = ...  *        binder.bind(ResourceLocator.class).  *           toInstance(new FilesystemResourceLocator(dir1, dir2);  *     }  *</pre>  *   * @since 3.1  */
+comment|/**  * A {@link ResourceLocator} that can locate resources in the filesystem. Instances of  * {@link FilesystemResourceLocator} are explicitly created by the user and then bound to  * a DI registry. E.g.:  *   *<pre>  * class MyModule implements Module {  *   *     public void configure(Binder binder) {  *        File dir1 = ...  *        File dir2 = ...  *        binder.bind(ResourceLocator.class).  *           toInstance(new FilesystemResourceLocator(dir1, dir2);  *     }  *</pre>  *   * @since 3.1  * @deprecated since 4.1. This can be implemented as a custom strategy outside Cayenne. There's no need for this object  * to be in Cayenne.  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|FilesystemResourceLocator
