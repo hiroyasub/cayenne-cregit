@@ -946,6 +946,24 @@ name|WeakValueMap
 argument_list|<>
 argument_list|()
 decl_stmt|;
+comment|// hold references so gc won't clean them
+name|Integer
+name|val1
+init|=
+name|Integer
+operator|.
+name|valueOf
+argument_list|(
+literal|543
+argument_list|)
+decl_stmt|;
+name|TestSerializable
+name|val2
+init|=
+operator|new
+name|TestSerializable
+argument_list|()
+decl_stmt|;
 name|map
 operator|.
 name|put
@@ -970,7 +988,7 @@ name|put
 argument_list|(
 literal|"key_3"
 argument_list|,
-literal|543
+name|val1
 argument_list|)
 expr_stmt|;
 name|map
@@ -979,9 +997,7 @@ name|put
 argument_list|(
 literal|"key_4"
 argument_list|,
-operator|new
-name|TestSerializable
-argument_list|()
+name|val2
 argument_list|)
 expr_stmt|;
 name|assertEquals
