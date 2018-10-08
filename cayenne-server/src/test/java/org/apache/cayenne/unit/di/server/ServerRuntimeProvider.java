@@ -55,9 +55,39 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
+name|Constants
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
 name|server
 operator|.
 name|DataNodeFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|configuration
+operator|.
+name|server
+operator|.
+name|ServerModule
 import|;
 end_import
 
@@ -423,6 +453,24 @@ operator|.
 name|toInstance
 argument_list|(
 name|unitDbAdapter
+argument_list|)
+expr_stmt|;
+name|ServerModule
+operator|.
+name|contributeProperties
+argument_list|(
+name|binder
+argument_list|)
+comment|// Use soft references instead of default weak.
+comment|// Should remove problems with random-failing tests (those that are GC-sensitive).
+operator|.
+name|put
+argument_list|(
+name|Constants
+operator|.
+name|SERVER_OBJECT_RETAIN_STRATEGY_PROPERTY
+argument_list|,
+literal|"soft"
 argument_list|)
 expr_stmt|;
 comment|// map DataSources for all test DataNode names

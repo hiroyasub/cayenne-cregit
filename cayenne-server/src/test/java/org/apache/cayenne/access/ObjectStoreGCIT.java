@@ -133,7 +133,7 @@ name|di
 operator|.
 name|server
 operator|.
-name|ServerCase
+name|WeakReferenceStrategyServerCase
 import|;
 end_import
 
@@ -189,7 +189,7 @@ specifier|public
 class|class
 name|ObjectStoreGCIT
 extends|extends
-name|ServerCase
+name|WeakReferenceStrategyServerCase
 block|{
 annotation|@
 name|Inject
