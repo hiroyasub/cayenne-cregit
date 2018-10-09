@@ -16,66 +16,6 @@ package|;
 end_package
 
 begin_import
-import|import static
-name|org
-operator|.
-name|hamcrest
-operator|.
-name|CoreMatchers
-operator|.
-name|instanceOf
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertEquals
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNotNull
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNull
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertThat
-import|;
-end_import
-
-begin_import
 import|import
 name|java
 operator|.
@@ -130,18 +70,6 @@ operator|.
 name|cayenne
 operator|.
 name|ResultIterator
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|ResultIteratorCallback
 import|;
 end_import
 
@@ -334,6 +262,66 @@ operator|.
 name|junit
 operator|.
 name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|hamcrest
+operator|.
+name|CoreMatchers
+operator|.
+name|instanceOf
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertEquals
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNotNull
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNull
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertThat
 import|;
 end_import
 
@@ -538,8 +526,6 @@ specifier|public
 name|void
 name|test_SelectObjects
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|List
 argument_list|<
@@ -606,9 +592,15 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|eq
+name|in
 argument_list|(
 literal|"artist14"
+argument_list|,
+literal|"at1"
+argument_list|,
+literal|"12"
+argument_list|,
+literal|"asdas"
 argument_list|)
 argument_list|)
 operator|.
@@ -639,8 +631,6 @@ specifier|public
 name|void
 name|test_Iterate
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 specifier|final
 name|int
@@ -666,22 +656,8 @@ name|iterate
 argument_list|(
 name|context
 argument_list|,
-operator|new
-name|ResultIteratorCallback
-argument_list|<
-name|Artist
-argument_list|>
-argument_list|()
-block|{
-annotation|@
-name|Override
-specifier|public
-name|void
-name|next
-parameter_list|(
-name|Artist
 name|object
-parameter_list|)
+lambda|->
 block|{
 name|assertNotNull
 argument_list|(
@@ -697,7 +673,6 @@ literal|0
 index|]
 operator|++
 expr_stmt|;
-block|}
 block|}
 argument_list|)
 expr_stmt|;
@@ -718,8 +693,6 @@ specifier|public
 name|void
 name|test_Iterator
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 try|try
 init|(
@@ -776,8 +749,6 @@ specifier|public
 name|void
 name|test_BatchIterator
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 try|try
 init|(
@@ -850,8 +821,6 @@ specifier|public
 name|void
 name|test_SelectDataRows
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|List
 argument_list|<
@@ -953,8 +922,6 @@ specifier|public
 name|void
 name|test_SelectOne
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Artist
 name|a
@@ -1007,8 +974,6 @@ specifier|public
 name|void
 name|test_SelectOne_NoMatch
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Artist
 name|a
@@ -1058,8 +1023,6 @@ specifier|public
 name|void
 name|test_SelectOne_MoreThanOneMatch
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|ObjectSelect
 operator|.
@@ -1094,8 +1057,6 @@ specifier|public
 name|void
 name|test_SelectFirst
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Artist
 name|a
@@ -1148,8 +1109,6 @@ specifier|public
 name|void
 name|test_SelectFirstByContext
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|ObjectSelect
 argument_list|<
@@ -1210,8 +1169,6 @@ specifier|public
 name|void
 name|test_SelectFirst_NoMatch
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Artist
 name|a
@@ -1254,8 +1211,6 @@ specifier|public
 name|void
 name|test_SelectFirst_MoreThanOneMatch
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Artist
 name|a
@@ -1313,8 +1268,6 @@ specifier|public
 name|void
 name|test_SelectFirst_TrimInWhere
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Expression
 name|exp
@@ -1404,8 +1357,6 @@ specifier|public
 name|void
 name|test_SelectFirst_SubstringInWhere
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Expression
 name|exp

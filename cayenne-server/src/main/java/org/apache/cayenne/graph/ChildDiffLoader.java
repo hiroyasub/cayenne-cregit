@@ -256,9 +256,7 @@ name|ChildDiffLoader
 implements|implements
 name|GraphChangeHandler
 block|{
-comment|// TODO: andrus 04/05/2009 - replace with PropertyChangeProcessingStrategy
-comment|// enum used
-comment|// in ROP?
+comment|// TODO: andrus 04/05/2009 - replace with PropertyChangeProcessingStrategy enum used in ROP?
 specifier|static
 specifier|final
 name|ThreadLocal
@@ -267,28 +265,14 @@ name|Boolean
 argument_list|>
 name|childDiffProcessing
 init|=
-operator|new
 name|ThreadLocal
-argument_list|<
-name|Boolean
-argument_list|>
-argument_list|()
-block|{
-annotation|@
-name|Override
-specifier|protected
-specifier|synchronized
-name|Boolean
-name|initialValue
-parameter_list|()
-block|{
-return|return
-name|Boolean
 operator|.
-name|FALSE
-return|;
-block|}
-block|}
+name|withInitial
+argument_list|(
+parameter_list|()
+lambda|->
+literal|false
+argument_list|)
 decl_stmt|;
 specifier|protected
 name|ObjectContext
