@@ -463,21 +463,6 @@ literal|0
 decl_stmt|;
 if|if
 condition|(
-name|rsLen
-operator|<
-name|columnLen
-condition|)
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"'ResultSetMetadata' has less elements then 'columns'."
-argument_list|)
-throw|;
-block|}
-if|else if
-condition|(
 name|mergeColumnsWithRsMetadata
 operator|&&
 name|rsLen
@@ -489,7 +474,22 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Size of elements from 'ResultSetMetadata' isn't equals to resultTypesColumns size from query."
+literal|"Size of 'ResultSetMetadata' not equals to size of 'columns'."
+argument_list|)
+throw|;
+block|}
+if|else if
+condition|(
+name|rsLen
+operator|<
+name|columnLen
+condition|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"'ResultSetMetadata' has less elements then 'columns'."
 argument_list|)
 throw|;
 block|}
@@ -1179,28 +1179,19 @@ argument_list|)
 return|;
 block|}
 specifier|public
-name|boolean
-name|isMergeColumnsWithRsMetadata
+name|RowDescriptorBuilder
+name|mergeColumnsWithRsMetadata
 parameter_list|()
-block|{
-return|return
-name|mergeColumnsWithRsMetadata
-return|;
-block|}
-specifier|public
-name|void
-name|setMergeColumnsWithRsMetadata
-parameter_list|(
-name|boolean
-name|mergeColumnsWithRsMetadata
-parameter_list|)
 block|{
 name|this
 operator|.
 name|mergeColumnsWithRsMetadata
 operator|=
-name|mergeColumnsWithRsMetadata
+literal|true
 expr_stmt|;
+return|return
+name|this
+return|;
 block|}
 block|}
 end_class

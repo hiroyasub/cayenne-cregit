@@ -328,7 +328,7 @@ name|boolean
 name|returnGeneratedKeys
 decl_stmt|;
 specifier|private
-name|Collection
+name|List
 argument_list|<
 name|Class
 argument_list|<
@@ -1918,7 +1918,7 @@ name|returnGeneratedKeys
 expr_stmt|;
 block|}
 specifier|public
-name|Collection
+name|List
 argument_list|<
 name|Class
 argument_list|<
@@ -1936,7 +1936,7 @@ specifier|public
 name|void
 name|setResultColumnsTypes
 parameter_list|(
-name|Collection
+name|List
 argument_list|<
 name|Class
 argument_list|<
