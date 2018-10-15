@@ -62,7 +62,7 @@ specifier|public
 interface|interface
 name|DataContextDelegate
 block|{
-comment|/**      * Invoked before a Query is executed via<em>DataContext.performQuery</em>. The      * delegate may subsitute the Query with a different one or may return null to discard      * the query.      *       * @since 1.2      */
+comment|/**      * Invoked before a Query is executed via<em>DataContext.performQuery</em>. The      * delegate may substitute the Query with a different one or may return null to discard      * the query.      *       * @since 1.2      */
 name|Query
 name|willPerformQuery
 parameter_list|(
@@ -73,7 +73,7 @@ name|Query
 name|query
 parameter_list|)
 function_decl|;
-comment|/**      * Invoked before a Query is executed via<em>DataContext.performGenericQuery</em>.      * The delegate may subsitute the Query with a different one or may return null to      * discard the query.      *       * @since 1.2      */
+comment|/**      * Invoked before a Query is executed via<em>DataContext.performGenericQuery</em>.      * The delegate may substitute the Query with a different one or may return null to      * discard the query.      *       * @since 1.2      */
 name|Query
 name|willPerformGenericQuery
 parameter_list|(
