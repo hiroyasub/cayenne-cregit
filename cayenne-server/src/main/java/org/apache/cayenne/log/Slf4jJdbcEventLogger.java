@@ -428,7 +428,7 @@ name|SuppressWarnings
 argument_list|(
 literal|"unchecked"
 argument_list|)
-specifier|private
+specifier|protected
 name|void
 name|appendParameters
 parameter_list|(
