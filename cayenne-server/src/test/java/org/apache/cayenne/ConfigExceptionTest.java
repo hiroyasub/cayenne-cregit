@@ -113,7 +113,7 @@ argument_list|()
 operator|.
 name|startsWith
 argument_list|(
-name|CayenneException
+name|CayenneRuntimeException
 operator|.
 name|getExceptionLabel
 argument_list|()
@@ -149,7 +149,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-name|CayenneException
+name|CayenneRuntimeException
 operator|.
 name|getExceptionLabel
 argument_list|()
@@ -200,7 +200,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-name|CayenneException
+name|CayenneRuntimeException
 operator|.
 name|getExceptionLabel
 argument_list|()
@@ -256,7 +256,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-name|CayenneException
+name|CayenneRuntimeException
 operator|.
 name|getExceptionLabel
 argument_list|()

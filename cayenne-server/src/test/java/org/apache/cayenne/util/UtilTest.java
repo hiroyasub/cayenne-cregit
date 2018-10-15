@@ -23,7 +23,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneException
+name|CayenneRuntimeException
 import|;
 end_import
 
@@ -1306,11 +1306,11 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|CayenneException
+name|CayenneRuntimeException
 name|e
 init|=
 operator|new
-name|CayenneException
+name|CayenneRuntimeException
 argument_list|()
 decl_stmt|;
 name|assertSame
@@ -1342,11 +1342,11 @@ operator|new
 name|Throwable
 argument_list|()
 decl_stmt|;
-name|CayenneException
+name|CayenneRuntimeException
 name|e
 init|=
 operator|new
-name|CayenneException
+name|CayenneRuntimeException
 argument_list|(
 name|root
 argument_list|)

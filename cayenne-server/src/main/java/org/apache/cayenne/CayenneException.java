@@ -28,10 +28,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A generic checked exception that may be thrown by Cayenne framework. All checked  * exceptions in Cayenne inherit from this class.  */
+comment|/**  * @deprecated please @since 4.1 use {@link CayenneRuntimeException}  *  * A generic checked exception that may be thrown by Cayenne framework. All checked  * exceptions in Cayenne inherit from this class.  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|CayenneException
@@ -78,6 +80,9 @@ operator|+
 literal|"] "
 expr_stmt|;
 block|}
+comment|/**      *   @deprecated please @since 4.1 use {@link CayenneRuntimeException#getExceptionLabel()}      */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 name|String
