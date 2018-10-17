@@ -227,7 +227,7 @@ decl_stmt|;
 specifier|protected
 name|JComboBox
 argument_list|<
-name|String
+name|DbEntity
 argument_list|>
 name|targetCombo
 decl_stmt|;
