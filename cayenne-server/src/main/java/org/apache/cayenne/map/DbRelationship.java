@@ -874,6 +874,7 @@ return|;
 block|}
 if|if
 condition|(
+operator|!
 name|target
 operator|.
 name|isPrimaryKey
@@ -881,12 +882,12 @@ argument_list|()
 condition|)
 block|{
 return|return
-literal|true
+literal|false
 return|;
 block|}
 block|}
 return|return
-literal|false
+literal|true
 return|;
 block|}
 comment|/**      * @since 3.0      */
