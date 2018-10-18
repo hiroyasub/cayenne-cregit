@@ -25,7 +25,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneException
+name|CayenneRuntimeException
 import|;
 end_import
 
@@ -131,7 +131,7 @@ name|BatchTranslator
 name|createTranslator
 parameter_list|()
 throws|throws
-name|CayenneException
+name|CayenneRuntimeException
 block|{
 return|return
 name|dataNode

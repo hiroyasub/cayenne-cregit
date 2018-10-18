@@ -13,6 +13,20 @@ name|cayenne
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|LocalizedStringsHandler
+import|;
+end_import
+
 begin_comment
 comment|/**  * A generic unchecked exception that may be thrown by Cayenne framework. All runtime  * exceptions in Cayenne inherit from this class.  */
 end_comment
@@ -24,6 +38,56 @@ name|CayenneRuntimeException
 extends|extends
 name|RuntimeException
 block|{
+specifier|private
+specifier|static
+name|String
+name|exceptionLabel
+decl_stmt|;
+static|static
+block|{
+name|String
+name|version
+init|=
+name|LocalizedStringsHandler
+operator|.
+name|getString
+argument_list|(
+literal|"cayenne.version"
+argument_list|)
+decl_stmt|;
+name|String
+name|date
+init|=
+name|LocalizedStringsHandler
+operator|.
+name|getString
+argument_list|(
+literal|"cayenne.build.date"
+argument_list|)
+decl_stmt|;
+name|exceptionLabel
+operator|=
+literal|"[v."
+operator|+
+name|version
+operator|+
+literal|" "
+operator|+
+name|date
+operator|+
+literal|"] "
+expr_stmt|;
+block|}
+specifier|public
+specifier|static
+name|String
+name|getExceptionLabel
+parameter_list|()
+block|{
+return|return
+name|exceptionLabel
+return|;
+block|}
 comment|/**      * Creates new CayenneRuntimeException without detail message.      */
 specifier|public
 name|CayenneRuntimeException
@@ -147,17 +211,11 @@ operator|!=
 literal|null
 operator|)
 condition|?
-name|CayenneException
-operator|.
-name|getExceptionLabel
-argument_list|()
+name|exceptionLabel
 operator|+
 name|message
 else|:
-name|CayenneException
-operator|.
-name|getExceptionLabel
-argument_list|()
+name|exceptionLabel
 operator|+
 literal|"(no message)"
 return|;
