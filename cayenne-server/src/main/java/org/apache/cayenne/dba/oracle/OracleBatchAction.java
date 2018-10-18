@@ -25,18 +25,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneRuntimeException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|access
 operator|.
 name|DataNode
@@ -130,8 +118,6 @@ specifier|protected
 name|BatchTranslator
 name|createTranslator
 parameter_list|()
-throws|throws
-name|CayenneRuntimeException
 block|{
 return|return
 name|dataNode

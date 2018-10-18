@@ -13,22 +13,8 @@ name|cayenne
 package|;
 end_package
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
-name|LocalizedStringsHandler
-import|;
-end_import
-
 begin_comment
-comment|/**  * @deprecated please @since 4.1 use {@link CayenneRuntimeException}  *  * A generic checked exception that may be thrown by Cayenne framework. All checked  * exceptions in Cayenne inherit from this class.  */
+comment|/**  * A generic checked exception that may be thrown by Cayenne framework. All checked  * exceptions in Cayenne inherit from this class.  *  * @deprecated since 4.1 use {@link CayenneRuntimeException} instead  */
 end_comment
 
 begin_class
@@ -40,47 +26,7 @@ name|CayenneException
 extends|extends
 name|Exception
 block|{
-specifier|private
-specifier|static
-name|String
-name|exceptionLabel
-decl_stmt|;
-static|static
-block|{
-name|String
-name|version
-init|=
-name|LocalizedStringsHandler
-operator|.
-name|getString
-argument_list|(
-literal|"cayenne.version"
-argument_list|)
-decl_stmt|;
-name|String
-name|date
-init|=
-name|LocalizedStringsHandler
-operator|.
-name|getString
-argument_list|(
-literal|"cayenne.build.date"
-argument_list|)
-decl_stmt|;
-name|exceptionLabel
-operator|=
-literal|"[v."
-operator|+
-name|version
-operator|+
-literal|" "
-operator|+
-name|date
-operator|+
-literal|"] "
-expr_stmt|;
-block|}
-comment|/**      *   @deprecated please @since 4.1 use {@link CayenneRuntimeException#getExceptionLabel()}      */
+comment|/**      * @deprecated since 4.1 use {@link CayenneRuntimeException#getExceptionLabel()}      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -90,7 +36,10 @@ name|getExceptionLabel
 parameter_list|()
 block|{
 return|return
-name|exceptionLabel
+name|CayenneRuntimeException
+operator|.
+name|getExceptionLabel
+argument_list|()
 return|;
 block|}
 comment|/**      * Creates new<code>CayenneException</code> without detail message.      */
