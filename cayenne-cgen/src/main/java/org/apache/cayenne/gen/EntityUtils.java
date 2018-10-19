@@ -67,9 +67,37 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|dba
+operator|.
+name|TypesMapping
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|DataMap
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|DbAttribute
 import|;
 end_import
 
@@ -837,7 +865,7 @@ name|getType
 argument_list|()
 return|;
 block|}
-comment|/**      * @since 4.1      * Checks is the db attribute declared for some object attribute.      * @param id - db attribute      */
+comment|/**      * Checks is the db attribute declared for some object attribute.      * @param id - db attribute      *      * @since 4.1      */
 specifier|public
 name|boolean
 name|declaresDbAttribute

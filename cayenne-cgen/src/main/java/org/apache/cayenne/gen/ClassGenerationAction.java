@@ -423,6 +423,11 @@ name|boolean
 name|force
 decl_stmt|;
 comment|// force run generator
+comment|/** 	 * @since 4.1 	 */
+specifier|protected
+name|boolean
+name|createPKProperties
+decl_stmt|;
 comment|// runtime ivars
 specifier|protected
 name|VelocityContext
@@ -889,6 +894,17 @@ operator|.
 name|CREATE_PROPERTY_NAMES
 argument_list|,
 name|createPropertyNames
+argument_list|)
+expr_stmt|;
+name|context
+operator|.
+name|put
+argument_list|(
+name|Artifact
+operator|.
+name|CREATE_PK_PROPERTIES
+argument_list|,
+name|createPKProperties
 argument_list|)
 expr_stmt|;
 block|}
@@ -2264,6 +2280,32 @@ operator|.
 name|force
 operator|=
 name|force
+expr_stmt|;
+block|}
+comment|/** 	 * @since 4.1 	 */
+specifier|public
+name|boolean
+name|isCreatePKProperties
+parameter_list|()
+block|{
+return|return
+name|createPKProperties
+return|;
+block|}
+comment|/** 	 * @since 4.1 	 */
+specifier|public
+name|void
+name|setCreatePKProperties
+parameter_list|(
+name|boolean
+name|createPKProperties
+parameter_list|)
+block|{
+name|this
+operator|.
+name|createPKProperties
+operator|=
+name|createPKProperties
 expr_stmt|;
 block|}
 block|}
