@@ -463,6 +463,18 @@ specifier|private
 name|boolean
 name|force
 decl_stmt|;
+comment|/** 	 * If set to<code>true</code>, will generate PK attributes as Properties. 	 * Default is<code>false</code>. 	 * @since 4.1 	 */
+annotation|@
+name|Parameter
+argument_list|(
+name|defaultValue
+operator|=
+literal|"false"
+argument_list|)
+specifier|private
+name|boolean
+name|createPKProperties
+decl_stmt|;
 specifier|private
 specifier|transient
 name|Injector
@@ -877,6 +889,13 @@ operator|.
 name|setCreatePropertyNames
 argument_list|(
 name|createPropertyNames
+argument_list|)
+expr_stmt|;
+name|action
+operator|.
+name|setCreatePKProperties
+argument_list|(
+name|createPKProperties
 argument_list|)
 expr_stmt|;
 return|return

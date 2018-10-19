@@ -301,6 +301,11 @@ specifier|protected
 name|boolean
 name|createpropertynames
 decl_stmt|;
+comment|/**      * Create PK attributes as Properties      *      * @since 4.1      */
+specifier|protected
+name|boolean
+name|createpkproperties
+decl_stmt|;
 specifier|public
 name|CayenneGeneratorTask
 parameter_list|()
@@ -479,6 +484,13 @@ operator|.
 name|setCreatePropertyNames
 argument_list|(
 name|createpropertynames
+argument_list|)
+expr_stmt|;
+name|action
+operator|.
+name|setCreatePKProperties
+argument_list|(
+name|createpkproperties
 argument_list|)
 expr_stmt|;
 return|return
@@ -1070,6 +1082,22 @@ operator|.
 name|embeddablesupertemplate
 operator|=
 name|embeddablesupertemplate
+expr_stmt|;
+block|}
+comment|/**      * @since 4.1      */
+specifier|public
+name|void
+name|setCreatepkproperties
+parameter_list|(
+name|boolean
+name|createpkproperties
+parameter_list|)
+block|{
+name|this
+operator|.
+name|createpkproperties
+operator|=
+name|createpkproperties
 expr_stmt|;
 block|}
 comment|/**      * Provides a<code>VPPConfig</code> object to configure. (Written with createConfig()      * instead of addConfig() to avoid run-time dependency on VPP).      */
