@@ -364,6 +364,17 @@ argument_list|,
 literal|"icon-stored-procedure.png"
 argument_list|)
 expr_stmt|;
+name|transferableTreeIcons
+operator|.
+name|put
+argument_list|(
+name|IncludeColumn
+operator|.
+name|class
+argument_list|,
+literal|"icon-dbi-column.png"
+argument_list|)
+expr_stmt|;
 block|}
 specifier|private
 name|void
