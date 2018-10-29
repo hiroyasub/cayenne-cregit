@@ -152,7 +152,7 @@ argument_list|)
 expr_stmt|;
 name|addTab
 argument_list|(
-literal|"DbImport"
+literal|"DB Import"
 argument_list|,
 name|dbImportView
 argument_list|)
