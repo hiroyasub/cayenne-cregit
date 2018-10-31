@@ -1,302 +1,263 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*****************************************************************  *   Licensed to the Apache Software Foundation (ASF) under one  *  or more contributor license agreements.  See the NOTICE file  *  distributed with this work for additional information  *  regarding copyright ownership.  The ASF licenses this file  *  to you under the Apache License, Version 2.0 (the  *  "License"); you may not use this file except in compliance  *  with the License.  You may obtain a copy of the License at  *  *    http://www.apache.org/licenses/LICENSE-2.0  *  *  Unless required by applicable law or agreed to in writing,  *  software distributed under the License is distributed on an  *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY  *  KIND, either express or implied.  See the License for the  *  specific language governing permissions and limitations  *  under the License.  ****************************************************************/
+comment|///*****************************************************************
 end_comment
-
-begin_package
-package|package
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|modeler
-operator|.
-name|dialog
-operator|.
-name|codegen
-package|;
-end_package
-
-begin_import
-import|import
-name|com
-operator|.
-name|jgoodies
-operator|.
-name|forms
-operator|.
-name|builder
-operator|.
-name|DefaultFormBuilder
-import|;
-end_import
-
-begin_import
-import|import
-name|com
-operator|.
-name|jgoodies
-operator|.
-name|forms
-operator|.
-name|layout
-operator|.
-name|FormLayout
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|swing
-operator|.
-name|JComboBox
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|swing
-operator|.
-name|JPanel
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|BorderLayout
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|CardLayout
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|Component
-import|;
-end_import
 
 begin_comment
-comment|/**  */
+comment|// *   Licensed to the Apache Software Foundation (ASF) under one
 end_comment
 
-begin_class
-specifier|public
-class|class
-name|GeneratorTabPanel
-extends|extends
-name|JPanel
-block|{
-specifier|protected
-name|JComboBox
-name|generationMode
-decl_stmt|;
-specifier|protected
-name|CardLayout
-name|modeLayout
-decl_stmt|;
-specifier|protected
-name|JPanel
-name|modesPanel
-decl_stmt|;
-specifier|public
-name|GeneratorTabPanel
-parameter_list|(
-name|String
-index|[]
-name|modeNames
-parameter_list|,
-name|Component
-index|[]
-name|modePanels
-parameter_list|)
-block|{
-name|this
-operator|.
-name|generationMode
-operator|=
-operator|new
-name|JComboBox
-argument_list|(
-name|modeNames
-argument_list|)
-expr_stmt|;
-name|this
-operator|.
-name|modeLayout
-operator|=
-operator|new
-name|CardLayout
-argument_list|()
-expr_stmt|;
-name|this
-operator|.
-name|modesPanel
-operator|=
-operator|new
-name|JPanel
-argument_list|(
-name|modeLayout
-argument_list|)
-expr_stmt|;
-name|generationMode
-operator|.
-name|addItemListener
-argument_list|(
-name|e
-lambda|->
-name|modeLayout
-operator|.
-name|show
-argument_list|(
-name|modesPanel
-argument_list|,
-name|generationMode
-operator|.
-name|getSelectedItem
-argument_list|()
-operator|.
-name|toString
-argument_list|()
-argument_list|)
-argument_list|)
-expr_stmt|;
-comment|// assemble
-name|FormLayout
-name|layout
-init|=
-operator|new
-name|FormLayout
-argument_list|(
-literal|"right:70dlu, 3dlu, fill:300, fill:100dlu:grow"
-argument_list|,
-literal|""
-argument_list|)
-decl_stmt|;
-name|DefaultFormBuilder
-name|builder
-init|=
-operator|new
-name|DefaultFormBuilder
-argument_list|(
-name|layout
-argument_list|)
-decl_stmt|;
-name|builder
-operator|.
-name|setDefaultDialogBorder
-argument_list|()
-expr_stmt|;
-name|builder
-operator|.
-name|append
-argument_list|(
-literal|"Type:"
-argument_list|,
-name|generationMode
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|builder
-operator|.
-name|appendSeparator
-argument_list|()
-expr_stmt|;
-for|for
-control|(
-name|int
-name|i
-init|=
-literal|0
-init|;
-name|i
-operator|<
-name|modeNames
-operator|.
-name|length
-condition|;
-name|i
-operator|++
-control|)
-block|{
-name|modesPanel
-operator|.
-name|add
-argument_list|(
-name|modePanels
-index|[
-name|i
-index|]
-argument_list|,
-name|modeNames
-index|[
-name|i
-index|]
-argument_list|)
-expr_stmt|;
-block|}
-name|setLayout
-argument_list|(
-operator|new
-name|BorderLayout
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|add
-argument_list|(
-name|builder
-operator|.
-name|getPanel
-argument_list|()
-argument_list|,
-name|BorderLayout
-operator|.
-name|NORTH
-argument_list|)
-expr_stmt|;
-name|add
-argument_list|(
-name|modesPanel
-argument_list|,
-name|BorderLayout
-operator|.
-name|CENTER
-argument_list|)
-expr_stmt|;
-block|}
-specifier|public
-name|JComboBox
-name|getGenerationMode
-parameter_list|()
-block|{
-return|return
-name|generationMode
-return|;
-block|}
-block|}
-end_class
+begin_comment
+comment|// *  or more contributor license agreements.  See the NOTICE file
+end_comment
+
+begin_comment
+comment|// *  distributed with this work for additional information
+end_comment
+
+begin_comment
+comment|// *  regarding copyright ownership.  The ASF licenses this file
+end_comment
+
+begin_comment
+comment|// *  to you under the Apache License, Version 2.0 (the
+end_comment
+
+begin_comment
+comment|// *  "License"); you may not use this file except in compliance
+end_comment
+
+begin_comment
+comment|// *  with the License.  You may obtain a copy of the License at
+end_comment
+
+begin_comment
+comment|// *
+end_comment
+
+begin_comment
+comment|// *    http://www.apache.org/licenses/LICENSE-2.0
+end_comment
+
+begin_comment
+comment|// *
+end_comment
+
+begin_comment
+comment|// *  Unless required by applicable law or agreed to in writing,
+end_comment
+
+begin_comment
+comment|// *  software distributed under the License is distributed on an
+end_comment
+
+begin_comment
+comment|// *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+end_comment
+
+begin_comment
+comment|// *  KIND, either express or implied.  See the License for the
+end_comment
+
+begin_comment
+comment|// *  specific language governing permissions and limitations
+end_comment
+
+begin_comment
+comment|// *  under the License.
+end_comment
+
+begin_comment
+comment|// ****************************************************************/
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//package org.apache.cayenne.modeler.dialog.codegen;
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//import com.jgoodies.forms.builder.DefaultFormBuilder;
+end_comment
+
+begin_comment
+comment|//import com.jgoodies.forms.layout.FormLayout;
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//import javax.swing.JComboBox;
+end_comment
+
+begin_comment
+comment|//import javax.swing.JPanel;
+end_comment
+
+begin_comment
+comment|//import java.awt.BorderLayout;
+end_comment
+
+begin_comment
+comment|//import java.awt.CardLayout;
+end_comment
+
+begin_comment
+comment|//import java.awt.Component;
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|///**
+end_comment
+
+begin_comment
+comment|// */
+end_comment
+
+begin_comment
+comment|//public class GeneratorTabPanel extends JPanel {
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    protected JComboBox generationMode;
+end_comment
+
+begin_comment
+comment|//    protected CardLayout modeLayout;
+end_comment
+
+begin_comment
+comment|//    protected JPanel modesPanel;
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public GeneratorTabPanel(String[] modeNames, Component[] modePanels) {
+end_comment
+
+begin_comment
+comment|//        this.generationMode = new JComboBox(modeNames);
+end_comment
+
+begin_comment
+comment|//        this.modeLayout = new CardLayout();
+end_comment
+
+begin_comment
+comment|//        this.modesPanel = new JPanel(modeLayout);
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        generationMode.addItemListener(e -> modeLayout.show(modesPanel, generationMode.getSelectedItem().toString()));
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        // assemble
+end_comment
+
+begin_comment
+comment|//        FormLayout layout = new FormLayout("right:70dlu, 3dlu, fill:300, fill:100dlu:grow", "");
+end_comment
+
+begin_comment
+comment|//        DefaultFormBuilder builder = new DefaultFormBuilder(layout);
+end_comment
+
+begin_comment
+comment|//        builder.setDefaultDialogBorder();
+end_comment
+
+begin_comment
+comment|//        builder.append("Type:", generationMode, 1);
+end_comment
+
+begin_comment
+comment|//        builder.appendSeparator();
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        for (int i = 0; i< modeNames.length; i++) {
+end_comment
+
+begin_comment
+comment|//            modesPanel.add(modePanels[i], modeNames[i]);
+end_comment
+
+begin_comment
+comment|//        }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        setLayout(new BorderLayout());
+end_comment
+
+begin_comment
+comment|//        add(builder.getPanel(), BorderLayout.NORTH);
+end_comment
+
+begin_comment
+comment|//        add(modesPanel, BorderLayout.CENTER);
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public JComboBox getGenerationMode() {
+end_comment
+
+begin_comment
+comment|//        return generationMode;
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//}
+end_comment
 
 end_unit
 

@@ -1,695 +1,679 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*****************************************************************  *   Licensed to the Apache Software Foundation (ASF) under one  *  or more contributor license agreements.  See the NOTICE file  *  distributed with this work for additional information  *  regarding copyright ownership.  The ASF licenses this file  *  to you under the Apache License, Version 2.0 (the  *  "License"); you may not use this file except in compliance  *  with the License.  You may obtain a copy of the License at  *  *    http://www.apache.org/licenses/LICENSE-2.0  *  *  Unless required by applicable law or agreed to in writing,  *  software distributed under the License is distributed on an  *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY  *  KIND, either express or implied.  See the License for the  *  specific language governing permissions and limitations  *  under the License.  ****************************************************************/
+comment|///*****************************************************************
 end_comment
-
-begin_package
-package|package
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|modeler
-operator|.
-name|dialog
-operator|.
-name|codegen
-package|;
-end_package
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|gen
-operator|.
-name|ClassGenerationAction
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|DataMap
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|modeler
-operator|.
-name|dialog
-operator|.
-name|ErrorDebugDialog
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|modeler
-operator|.
-name|util
-operator|.
-name|CayenneController
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|swing
-operator|.
-name|BindingBuilder
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|slf4j
-operator|.
-name|Logger
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|slf4j
-operator|.
-name|LoggerFactory
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|swing
-operator|.
-name|JOptionPane
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|Component
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|function
-operator|.
-name|Predicate
-import|;
-end_import
 
 begin_comment
-comment|/**  * A controller for the class generator dialog.  */
+comment|// *   Licensed to the Apache Software Foundation (ASF) under one
 end_comment
 
-begin_class
-specifier|public
-class|class
-name|CodeGeneratorController
-extends|extends
-name|CodeGeneratorControllerBase
-block|{
-comment|/**      * Logger to print stack traces      */
-specifier|private
-specifier|static
-name|Logger
-name|logObj
-init|=
-name|LoggerFactory
-operator|.
-name|getLogger
-argument_list|(
-name|ErrorDebugDialog
-operator|.
-name|class
-argument_list|)
-decl_stmt|;
-specifier|protected
-name|CodeGeneratorDialog
-name|view
-decl_stmt|;
-specifier|protected
-name|ClassesTabController
-name|classesSelector
-decl_stmt|;
-specifier|protected
-name|GeneratorTabController
-name|generatorSelector
-decl_stmt|;
-specifier|public
-name|CodeGeneratorController
-parameter_list|(
-name|CayenneController
-name|parent
-parameter_list|,
-name|Collection
-argument_list|<
-name|DataMap
-argument_list|>
-name|dataMaps
-parameter_list|)
-block|{
-name|super
-argument_list|(
-name|parent
-argument_list|,
-name|dataMaps
-argument_list|)
-expr_stmt|;
-name|this
-operator|.
-name|classesSelector
-operator|=
-operator|new
-name|ClassesTabController
-argument_list|(
-name|this
-argument_list|,
-name|dataMaps
-argument_list|)
-expr_stmt|;
-name|this
-operator|.
-name|generatorSelector
-operator|=
-operator|new
-name|GeneratorTabController
-argument_list|(
-name|this
-argument_list|)
-expr_stmt|;
-block|}
-annotation|@
-name|Override
-specifier|public
-name|Component
-name|getView
-parameter_list|()
-block|{
-return|return
-name|view
-return|;
-block|}
-specifier|public
-name|void
-name|startup
-parameter_list|()
-block|{
-comment|// show dialog even on empty DataMap, as custom generation may still take
-comment|// advantage of it
-name|view
-operator|=
-operator|new
-name|CodeGeneratorDialog
-argument_list|(
-name|generatorSelector
-operator|.
-name|getView
-argument_list|()
-argument_list|,
-name|classesSelector
-operator|.
-name|getView
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|initBindings
-argument_list|()
-expr_stmt|;
-name|view
-operator|.
-name|pack
-argument_list|()
-expr_stmt|;
-name|view
-operator|.
-name|setModal
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
-name|centerView
-argument_list|()
-expr_stmt|;
-name|makeCloseableOnEscape
-argument_list|()
-expr_stmt|;
-name|view
-operator|.
-name|setVisible
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
-block|}
-specifier|protected
-name|void
-name|initBindings
-parameter_list|()
-block|{
-name|BindingBuilder
-name|builder
-init|=
-operator|new
-name|BindingBuilder
-argument_list|(
-name|getApplication
-argument_list|()
-operator|.
-name|getBindingFactory
-argument_list|()
-argument_list|,
-name|this
-argument_list|)
-decl_stmt|;
-name|builder
-operator|.
-name|bindToAction
-argument_list|(
-name|view
-operator|.
-name|getCancelButton
-argument_list|()
-argument_list|,
-literal|"cancelAction()"
-argument_list|)
-expr_stmt|;
-name|builder
-operator|.
-name|bindToAction
-argument_list|(
-name|view
-operator|.
-name|getGenerateButton
-argument_list|()
-argument_list|,
-literal|"generateAction()"
-argument_list|)
-expr_stmt|;
-name|builder
-operator|.
-name|bindToAction
-argument_list|(
-name|this
-argument_list|,
-literal|"classesSelectedAction()"
-argument_list|,
-name|SELECTED_PROPERTY
-argument_list|)
-expr_stmt|;
-name|builder
-operator|.
-name|bindToAction
-argument_list|(
-name|generatorSelector
-argument_list|,
-literal|"generatorSelectedAction()"
-argument_list|,
-name|GeneratorTabController
-operator|.
-name|GENERATOR_PROPERTY
-argument_list|)
-expr_stmt|;
-name|generatorSelectedAction
-argument_list|()
-expr_stmt|;
-block|}
-specifier|public
-name|void
-name|generatorSelectedAction
-parameter_list|()
-block|{
-name|GeneratorController
-name|controller
-init|=
-name|generatorSelector
-operator|.
-name|getGeneratorController
-argument_list|()
-decl_stmt|;
-name|validate
-argument_list|(
-name|controller
-argument_list|)
-expr_stmt|;
-name|Predicate
-argument_list|<
-name|Object
-argument_list|>
-name|predicate
-init|=
-name|controller
-operator|!=
-literal|null
-condition|?
-name|controller
-operator|.
-name|getDefaultClassFilter
-argument_list|()
-else|:
-name|o
-lambda|->
-literal|false
-decl_stmt|;
-name|updateSelection
-argument_list|(
-name|predicate
-argument_list|)
-expr_stmt|;
-name|classesSelector
-operator|.
-name|classSelectedAction
-argument_list|()
-expr_stmt|;
-block|}
-specifier|public
-name|void
-name|classesSelectedAction
-parameter_list|()
-block|{
-name|int
-name|size
-init|=
-name|getSelectedEntitiesSize
-argument_list|()
-decl_stmt|;
-name|String
-name|label
-decl_stmt|;
-if|if
-condition|(
-name|size
-operator|==
-literal|0
-condition|)
-block|{
-name|label
-operator|=
-literal|"No entities selected"
-expr_stmt|;
-block|}
-if|else if
-condition|(
-name|size
-operator|==
-literal|1
-condition|)
-block|{
-name|label
-operator|=
-literal|"One entity selected"
-expr_stmt|;
-block|}
-else|else
-block|{
-name|label
-operator|=
-name|size
-operator|+
-literal|" entities selected"
-expr_stmt|;
-block|}
-name|label
-operator|=
-name|label
-operator|.
-name|concat
-argument_list|(
-literal|"; "
-argument_list|)
-expr_stmt|;
-name|int
-name|sizeEmb
-init|=
-name|getSelectedEmbeddablesSize
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|sizeEmb
-operator|==
-literal|0
-condition|)
-block|{
-name|label
-operator|=
-name|label
-operator|+
-literal|"No embeddables selected"
-expr_stmt|;
-block|}
-if|else if
-condition|(
-name|sizeEmb
-operator|==
-literal|1
-condition|)
-block|{
-name|label
-operator|=
-name|label
-operator|+
-literal|"One embeddable selected"
-expr_stmt|;
-block|}
-else|else
-block|{
-name|label
-operator|=
-name|label
-operator|+
-name|sizeEmb
-operator|+
-literal|" embeddables selected"
-expr_stmt|;
-block|}
-name|label
-operator|=
-name|label
-operator|.
-name|concat
-argument_list|(
-literal|"; "
-argument_list|)
-expr_stmt|;
-name|int
-name|sizeDataMap
-init|=
-name|getSelectedDataMapsSize
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|sizeDataMap
-operator|==
-literal|0
-condition|)
-block|{
-name|label
-operator|=
-name|label
-operator|+
-literal|"No datamaps selected"
-expr_stmt|;
-block|}
-if|else if
-condition|(
-name|sizeDataMap
-operator|==
-literal|1
-condition|)
-block|{
-name|label
-operator|=
-name|label
-operator|+
-literal|"One datamap selected"
-expr_stmt|;
-block|}
-else|else
-block|{
-name|label
-operator|=
-name|label
-operator|+
-name|sizeDataMap
-operator|+
-literal|" datamaps selected"
-expr_stmt|;
-block|}
-name|view
-operator|.
-name|getClassesCount
-argument_list|()
-operator|.
-name|setText
-argument_list|(
-name|label
-argument_list|)
-expr_stmt|;
-block|}
-specifier|public
-name|void
-name|cancelAction
-parameter_list|()
-block|{
-name|view
-operator|.
-name|dispose
-argument_list|()
-expr_stmt|;
-block|}
-specifier|public
-name|void
-name|generateAction
-parameter_list|()
-block|{
-name|Collection
-argument_list|<
-name|ClassGenerationAction
-argument_list|>
-name|generators
-init|=
-name|generatorSelector
-operator|.
-name|getGenerator
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|generators
-operator|!=
-literal|null
-condition|)
-block|{
-try|try
-block|{
-for|for
-control|(
-name|ClassGenerationAction
-name|generator
-range|:
-name|generators
-control|)
-block|{
-name|generator
-operator|.
-name|execute
-argument_list|()
-expr_stmt|;
-block|}
-name|JOptionPane
-operator|.
-name|showMessageDialog
-argument_list|(
-name|this
-operator|.
-name|getView
-argument_list|()
-argument_list|,
-literal|"Class generation finished"
-argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|Exception
-name|e
-parameter_list|)
-block|{
-name|logObj
-operator|.
-name|error
-argument_list|(
-literal|"Error generating classes"
-argument_list|,
-name|e
-argument_list|)
-expr_stmt|;
-name|JOptionPane
-operator|.
-name|showMessageDialog
-argument_list|(
-name|this
-operator|.
-name|getView
-argument_list|()
-argument_list|,
-literal|"Error generating classes - "
-operator|+
-name|e
-operator|.
-name|getMessage
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-name|view
-operator|.
-name|dispose
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-end_class
+begin_comment
+comment|// *  or more contributor license agreements.  See the NOTICE file
+end_comment
+
+begin_comment
+comment|// *  distributed with this work for additional information
+end_comment
+
+begin_comment
+comment|// *  regarding copyright ownership.  The ASF licenses this file
+end_comment
+
+begin_comment
+comment|// *  to you under the Apache License, Version 2.0 (the
+end_comment
+
+begin_comment
+comment|// *  "License"); you may not use this file except in compliance
+end_comment
+
+begin_comment
+comment|// *  with the License.  You may obtain a copy of the License at
+end_comment
+
+begin_comment
+comment|// *
+end_comment
+
+begin_comment
+comment|// *    http://www.apache.org/licenses/LICENSE-2.0
+end_comment
+
+begin_comment
+comment|// *
+end_comment
+
+begin_comment
+comment|// *  Unless required by applicable law or agreed to in writing,
+end_comment
+
+begin_comment
+comment|// *  software distributed under the License is distributed on an
+end_comment
+
+begin_comment
+comment|// *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+end_comment
+
+begin_comment
+comment|// *  KIND, either express or implied.  See the License for the
+end_comment
+
+begin_comment
+comment|// *  specific language governing permissions and limitations
+end_comment
+
+begin_comment
+comment|// *  under the License.
+end_comment
+
+begin_comment
+comment|// ****************************************************************/
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//package org.apache.cayenne.modeler.dialog.codegen;
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//import org.apache.cayenne.gen.ClassGenerationAction;
+end_comment
+
+begin_comment
+comment|//import org.apache.cayenne.map.DataMap;
+end_comment
+
+begin_comment
+comment|//import org.apache.cayenne.modeler.dialog.ErrorDebugDialog;
+end_comment
+
+begin_comment
+comment|//import org.apache.cayenne.modeler.util.CayenneController;
+end_comment
+
+begin_comment
+comment|//import org.apache.cayenne.swing.BindingBuilder;
+end_comment
+
+begin_comment
+comment|//import org.slf4j.Logger;
+end_comment
+
+begin_comment
+comment|//import org.slf4j.LoggerFactory;
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//import javax.swing.JOptionPane;
+end_comment
+
+begin_comment
+comment|//import java.awt.Component;
+end_comment
+
+begin_comment
+comment|//import java.util.Collection;
+end_comment
+
+begin_comment
+comment|//import java.util.function.Predicate;
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|///**
+end_comment
+
+begin_comment
+comment|// * A controller for the class generator dialog.
+end_comment
+
+begin_comment
+comment|// */
+end_comment
+
+begin_comment
+comment|//public class CodeGeneratorController extends CodeGeneratorControllerBase {
+end_comment
+
+begin_comment
+comment|//    /**
+end_comment
+
+begin_comment
+comment|//     * Logger to print stack traces
+end_comment
+
+begin_comment
+comment|//     */
+end_comment
+
+begin_comment
+comment|//    private static Logger logObj = LoggerFactory.getLogger(ErrorDebugDialog.class);
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    protected CodeGeneratorDialog view;
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    protected ClassesTabController classesSelector;
+end_comment
+
+begin_comment
+comment|//    protected GeneratorTabController generatorSelector;
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public CodeGeneratorController(CayenneController parent, Collection<DataMap> dataMaps) {
+end_comment
+
+begin_comment
+comment|//        super(parent, dataMaps);
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        this.classesSelector = new ClassesTabController(this, dataMaps);
+end_comment
+
+begin_comment
+comment|//        this.generatorSelector = new GeneratorTabController(this);
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    @Override
+end_comment
+
+begin_comment
+comment|//    public Component getView() {
+end_comment
+
+begin_comment
+comment|//        return view;
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public void startup() {
+end_comment
+
+begin_comment
+comment|//        // show dialog even on empty DataMap, as custom generation may still take
+end_comment
+
+begin_comment
+comment|//        // advantage of it
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        view = new CodeGeneratorDialog(generatorSelector.getView(), classesSelector.getView());
+end_comment
+
+begin_comment
+comment|//        initBindings();
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        view.pack();
+end_comment
+
+begin_comment
+comment|//        view.setModal(true);
+end_comment
+
+begin_comment
+comment|//        centerView();
+end_comment
+
+begin_comment
+comment|//        makeCloseableOnEscape();
+end_comment
+
+begin_comment
+comment|//        view.setVisible(true);
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    protected void initBindings() {
+end_comment
+
+begin_comment
+comment|//        BindingBuilder builder = new BindingBuilder(
+end_comment
+
+begin_comment
+comment|//                getApplication().getBindingFactory(),
+end_comment
+
+begin_comment
+comment|//                this);
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        builder.bindToAction(view.getCancelButton(), "cancelAction()");
+end_comment
+
+begin_comment
+comment|//        builder.bindToAction(view.getGenerateButton(), "generateAction()");
+end_comment
+
+begin_comment
+comment|//        builder.bindToAction(this, "classesSelectedAction()", SELECTED_PROPERTY);
+end_comment
+
+begin_comment
+comment|//        builder.bindToAction(generatorSelector, "generatorSelectedAction()",
+end_comment
+
+begin_comment
+comment|//                GeneratorTabController.GENERATOR_PROPERTY);
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        generatorSelectedAction();
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public void generatorSelectedAction() {
+end_comment
+
+begin_comment
+comment|//        GeneratorController controller = generatorSelector.getGeneratorController();
+end_comment
+
+begin_comment
+comment|//        validate(controller);
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        Predicate<Object> predicate = controller != null
+end_comment
+
+begin_comment
+comment|//                ? controller.getDefaultClassFilter()
+end_comment
+
+begin_comment
+comment|//                : o -> false;
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        updateSelection(predicate);
+end_comment
+
+begin_comment
+comment|//        classesSelector.classSelectedAction();
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public void classesSelectedAction() {
+end_comment
+
+begin_comment
+comment|//        int size = getSelectedEntitiesSize();
+end_comment
+
+begin_comment
+comment|//        String label;
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        if (size == 0) {
+end_comment
+
+begin_comment
+comment|//            label = "No entities selected";
+end_comment
+
+begin_comment
+comment|//        }
+end_comment
+
+begin_comment
+comment|//        else if (size == 1) {
+end_comment
+
+begin_comment
+comment|//            label = "One entity selected";
+end_comment
+
+begin_comment
+comment|//        }
+end_comment
+
+begin_comment
+comment|//        else {
+end_comment
+
+begin_comment
+comment|//            label = size + " entities selected";
+end_comment
+
+begin_comment
+comment|//        }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        label = label.concat("; ");
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        int sizeEmb = getSelectedEmbeddablesSize();
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        if (sizeEmb == 0) {
+end_comment
+
+begin_comment
+comment|//            label = label + "No embeddables selected";
+end_comment
+
+begin_comment
+comment|//        }
+end_comment
+
+begin_comment
+comment|//        else if (sizeEmb == 1) {
+end_comment
+
+begin_comment
+comment|//            label = label + "One embeddable selected";
+end_comment
+
+begin_comment
+comment|//        }
+end_comment
+
+begin_comment
+comment|//        else {
+end_comment
+
+begin_comment
+comment|//            label = label + sizeEmb + " embeddables selected";
+end_comment
+
+begin_comment
+comment|//        }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        label = label.concat("; ");
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        int sizeDataMap = getSelectedDataMapsSize();
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        if(sizeDataMap == 0) {
+end_comment
+
+begin_comment
+comment|//            label = label + "No datamaps selected";
+end_comment
+
+begin_comment
+comment|//        } else if(sizeDataMap == 1) {
+end_comment
+
+begin_comment
+comment|//            label = label + "One datamap selected";
+end_comment
+
+begin_comment
+comment|//        } else {
+end_comment
+
+begin_comment
+comment|//            label = label + sizeDataMap + " datamaps selected";
+end_comment
+
+begin_comment
+comment|//        }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        view.getClassesCount().setText(label);
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public void cancelAction() {
+end_comment
+
+begin_comment
+comment|//        view.dispose();
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public void generateAction() {
+end_comment
+
+begin_comment
+comment|//        Collection<ClassGenerationAction> generators = generatorSelector.getConfiguration();
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        if (generators != null) {
+end_comment
+
+begin_comment
+comment|//            try {
+end_comment
+
+begin_comment
+comment|//                for (ClassGenerationAction generator : generators) {
+end_comment
+
+begin_comment
+comment|//                    generator.execute();
+end_comment
+
+begin_comment
+comment|//                }
+end_comment
+
+begin_comment
+comment|//                JOptionPane.showMessageDialog(
+end_comment
+
+begin_comment
+comment|//                        this.getView(),
+end_comment
+
+begin_comment
+comment|//                        "Class generation finished");
+end_comment
+
+begin_comment
+comment|//            } catch (Exception e) {
+end_comment
+
+begin_comment
+comment|//                logObj.error("Error generating classes", e);
+end_comment
+
+begin_comment
+comment|//                JOptionPane.showMessageDialog(
+end_comment
+
+begin_comment
+comment|//                        this.getView(),
+end_comment
+
+begin_comment
+comment|//                        "Error generating classes - " + e.getMessage());
+end_comment
+
+begin_comment
+comment|//            }
+end_comment
+
+begin_comment
+comment|//        }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        view.dispose();
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//}
+end_comment
 
 end_unit
 

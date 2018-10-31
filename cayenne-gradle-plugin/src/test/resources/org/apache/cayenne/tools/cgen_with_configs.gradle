@@ -19,9 +19,14 @@
 
 plugins {
     id 'org.apache.cayenne'
-    id 'java'
 }
 
 cgen {
     map dataMap
+    destDir = './customDirectory'
+    makePairs false
+    outputPattern = '*.groovy'
+    excludeEntities = 'ObjEntity1'
+    overwrite = false
+    mode = 'all'
 }

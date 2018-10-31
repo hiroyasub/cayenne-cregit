@@ -1,996 +1,815 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*****************************************************************  *   Licensed to the Apache Software Foundation (ASF) under one  *  or more contributor license agreements.  See the NOTICE file  *  distributed with this work for additional information  *  regarding copyright ownership.  The ASF licenses this file  *  to you under the Apache License, Version 2.0 (the  *  "License"); you may not use this file except in compliance  *  with the License.  You may obtain a copy of the License at  *  *    http://www.apache.org/licenses/LICENSE-2.0  *  *  Unless required by applicable law or agreed to in writing,  *  software distributed under the License is distributed on an  *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY  *  KIND, either express or implied.  See the License for the  *  specific language governing permissions and limitations  *  under the License.  ****************************************************************/
+comment|///*****************************************************************
 end_comment
 
-begin_package
-package|package
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|modeler
-operator|.
-name|dialog
-operator|.
-name|codegen
-package|;
-end_package
+begin_comment
+comment|// *   Licensed to the Apache Software Foundation (ASF) under one
+end_comment
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|DataMap
-import|;
-end_import
+begin_comment
+comment|// *  or more contributor license agreements.  See the NOTICE file
+end_comment
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|modeler
-operator|.
-name|util
-operator|.
-name|CayenneController
-import|;
-end_import
+begin_comment
+comment|// *  distributed with this work for additional information
+end_comment
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|swing
-operator|.
-name|BindingBuilder
-import|;
-end_import
+begin_comment
+comment|// *  regarding copyright ownership.  The ASF licenses this file
+end_comment
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|swing
-operator|.
-name|ImageRendererColumn
-import|;
-end_import
+begin_comment
+comment|// *  to you under the Apache License, Version 2.0 (the
+end_comment
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|swing
-operator|.
-name|ObjectBinding
-import|;
-end_import
+begin_comment
+comment|// *  "License"); you may not use this file except in compliance
+end_comment
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|swing
-operator|.
-name|TableBindingBuilder
-import|;
-end_import
+begin_comment
+comment|// *  with the License.  You may obtain a copy of the License at
+end_comment
 
-begin_import
-import|import
-name|javax
-operator|.
-name|swing
-operator|.
-name|JCheckBox
-import|;
-end_import
+begin_comment
+comment|// *
+end_comment
 
-begin_import
-import|import
-name|javax
-operator|.
-name|swing
-operator|.
-name|JLabel
-import|;
-end_import
+begin_comment
+comment|// *    http://www.apache.org/licenses/LICENSE-2.0
+end_comment
 
-begin_import
-import|import
-name|javax
-operator|.
-name|swing
-operator|.
-name|JTable
-import|;
-end_import
+begin_comment
+comment|// *
+end_comment
 
-begin_import
-import|import
-name|java
-operator|.
-name|awt
-operator|.
-name|Component
-import|;
-end_import
+begin_comment
+comment|// *  Unless required by applicable law or agreed to in writing,
+end_comment
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|ArrayList
-import|;
-end_import
+begin_comment
+comment|// *  software distributed under the License is distributed on an
+end_comment
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
+begin_comment
+comment|// *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+end_comment
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|HashMap
-import|;
-end_import
+begin_comment
+comment|// *  KIND, either express or implied.  See the License for the
+end_comment
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-import|;
-end_import
+begin_comment
+comment|// *  specific language governing permissions and limitations
+end_comment
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
+begin_comment
+comment|// *  under the License.
+end_comment
 
-begin_class
-specifier|public
-class|class
-name|ClassesTabController
-extends|extends
-name|CayenneController
-block|{
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|GENERATE_PROPERTY
-init|=
-literal|"generate"
-decl_stmt|;
-specifier|protected
-name|ClassesTabPanel
-name|view
-decl_stmt|;
-specifier|private
-name|Map
-argument_list|<
-name|DataMap
-argument_list|,
-name|ObjectBinding
-argument_list|>
-name|objectBindings
-decl_stmt|;
-specifier|protected
-name|Collection
-argument_list|<
-name|DataMap
-argument_list|>
-name|dataMaps
-decl_stmt|;
-specifier|protected
-name|Map
-argument_list|<
-name|DataMap
-argument_list|,
-name|List
-argument_list|<
-name|Object
-argument_list|>
-argument_list|>
-name|objectList
-decl_stmt|;
-specifier|private
-name|List
-argument_list|<
-name|Object
-argument_list|>
-name|currentCollection
-decl_stmt|;
-specifier|public
-name|ClassesTabController
-parameter_list|(
-name|CodeGeneratorControllerBase
-name|parent
-parameter_list|,
-name|Collection
-argument_list|<
-name|DataMap
-argument_list|>
-name|dataMaps
-parameter_list|)
-block|{
-name|super
-argument_list|(
-name|parent
-argument_list|)
-expr_stmt|;
-name|currentCollection
-operator|=
-operator|new
-name|ArrayList
-argument_list|<>
-argument_list|()
-expr_stmt|;
-name|this
-operator|.
-name|objectList
-operator|=
-operator|new
-name|HashMap
-argument_list|<>
-argument_list|()
-expr_stmt|;
-for|for
-control|(
-name|DataMap
-name|dataMap
-range|:
-name|dataMaps
-control|)
-block|{
-name|List
-argument_list|<
-name|Object
-argument_list|>
-name|list
-init|=
-operator|new
-name|ArrayList
-argument_list|<>
-argument_list|()
-decl_stmt|;
-name|list
-operator|.
-name|add
-argument_list|(
-name|dataMap
-argument_list|)
-expr_stmt|;
-name|list
-operator|.
-name|addAll
-argument_list|(
-name|dataMap
-operator|.
-name|getObjEntities
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|list
-operator|.
-name|addAll
-argument_list|(
-name|dataMap
-operator|.
-name|getEmbeddables
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|objectList
-operator|.
-name|put
-argument_list|(
-name|dataMap
-argument_list|,
-name|list
-argument_list|)
-expr_stmt|;
-block|}
-name|this
-operator|.
-name|objectBindings
-operator|=
-operator|new
-name|HashMap
-argument_list|<>
-argument_list|()
-expr_stmt|;
-name|this
-operator|.
-name|dataMaps
-operator|=
-name|dataMaps
-expr_stmt|;
-name|this
-operator|.
-name|view
-operator|=
-operator|new
-name|ClassesTabPanel
-argument_list|(
-name|dataMaps
-argument_list|)
-expr_stmt|;
-name|initBindings
-argument_list|()
-expr_stmt|;
-block|}
-specifier|protected
-name|CodeGeneratorControllerBase
-name|getParentController
-parameter_list|()
-block|{
-return|return
-operator|(
-name|CodeGeneratorControllerBase
-operator|)
-name|getParent
-argument_list|()
-return|;
-block|}
-specifier|public
-name|Component
-name|getView
-parameter_list|()
-block|{
-return|return
-name|view
-return|;
-block|}
-specifier|protected
-name|void
-name|initBindings
-parameter_list|()
-block|{
-name|BindingBuilder
-name|builder
-init|=
-operator|new
-name|BindingBuilder
-argument_list|(
-name|getApplication
-argument_list|()
-operator|.
-name|getBindingFactory
-argument_list|()
-argument_list|,
-name|this
-argument_list|)
-decl_stmt|;
-name|builder
-operator|.
-name|bindToAction
-argument_list|(
-name|view
-operator|.
-name|getCheckAll
-argument_list|()
-argument_list|,
-literal|"checkAllAction()"
-argument_list|)
-expr_stmt|;
-name|TableBindingBuilder
-name|tableBuilder
-init|=
-operator|new
-name|TableBindingBuilder
-argument_list|(
-name|builder
-argument_list|)
-decl_stmt|;
-name|tableBuilder
-operator|.
-name|addColumn
-argument_list|(
-literal|""
-argument_list|,
-literal|"parent.setCurrentClass(#item), selected"
-argument_list|,
-name|Boolean
-operator|.
-name|class
-argument_list|,
-literal|true
-argument_list|,
-name|Boolean
-operator|.
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|tableBuilder
-operator|.
-name|addColumn
-argument_list|(
-literal|"Class"
-argument_list|,
-literal|"parent.getItemName(#item)"
-argument_list|,
-name|JLabel
-operator|.
-name|class
-argument_list|,
-literal|false
-argument_list|,
-literal|"XXXXXXXXXXXXXX"
-argument_list|)
-expr_stmt|;
-name|tableBuilder
-operator|.
-name|addColumn
-argument_list|(
-literal|"Comments, Warnings"
-argument_list|,
-literal|"parent.getProblem(#item)"
-argument_list|,
-name|String
-operator|.
-name|class
-argument_list|,
-literal|false
-argument_list|,
-literal|"XXXXXXXXXXXXXXXXXXXXXXXXXXX"
-argument_list|)
-expr_stmt|;
-for|for
-control|(
-name|DataMap
-name|dataMap
-range|:
-name|dataMaps
-control|)
-block|{
-name|JTable
-name|table
-init|=
-name|view
-operator|.
-name|getDataMapTables
-argument_list|()
-operator|.
-name|get
-argument_list|(
-name|dataMap
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|table
-operator|!=
-literal|null
-condition|)
-block|{
-name|currentCollection
-operator|=
-name|objectList
-operator|.
-name|get
-argument_list|(
-name|dataMap
-argument_list|)
-expr_stmt|;
-name|objectBindings
-operator|.
-name|put
-argument_list|(
-name|dataMap
-argument_list|,
-name|tableBuilder
-operator|.
-name|bindToTable
-argument_list|(
-name|table
-argument_list|,
-literal|"currentCollection"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|table
-operator|.
-name|getColumnModel
-argument_list|()
-operator|.
-name|getColumn
-argument_list|(
-literal|1
-argument_list|)
-operator|.
-name|setCellRenderer
-argument_list|(
-operator|new
-name|ImageRendererColumn
-argument_list|()
-argument_list|)
-expr_stmt|;
-block|}
-name|JCheckBox
-name|checkBox
-init|=
-name|view
-operator|.
-name|getDataMapJCheckBoxMap
-argument_list|()
-operator|.
-name|get
-argument_list|(
-name|dataMap
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|checkBox
-operator|!=
-literal|null
-condition|)
-block|{
-name|checkBox
-operator|.
-name|addActionListener
-argument_list|(
-name|val
-lambda|->
-name|checkDataMap
-argument_list|(
-name|dataMap
-argument_list|,
-operator|(
-operator|(
-name|JCheckBox
-operator|)
-name|val
-operator|.
-name|getSource
-argument_list|()
-operator|)
-operator|.
-name|isSelected
-argument_list|()
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-block|}
-specifier|public
-name|List
-argument_list|<
-name|Object
-argument_list|>
-name|getCurrentCollection
-parameter_list|()
-block|{
-return|return
-name|currentCollection
-return|;
-block|}
-specifier|public
-name|boolean
-name|isSelected
-parameter_list|()
-block|{
-return|return
-name|getParentController
-argument_list|()
-operator|.
-name|isSelected
-argument_list|()
-return|;
-block|}
-specifier|public
-name|void
-name|setSelected
-parameter_list|(
-name|boolean
-name|selected
-parameter_list|)
-block|{
-name|getParentController
-argument_list|()
-operator|.
-name|setSelected
-argument_list|(
-name|selected
-argument_list|)
-expr_stmt|;
-name|classSelectedAction
-argument_list|()
-expr_stmt|;
-for|for
-control|(
-name|DataMap
-name|dataMap
-range|:
-name|dataMaps
-control|)
-block|{
-if|if
-condition|(
-name|view
-operator|.
-name|isAllCheckBoxesFromDataMapSelected
-argument_list|(
-name|dataMap
-argument_list|)
-condition|)
-block|{
-name|view
-operator|.
-name|getDataMapJCheckBoxMap
-argument_list|()
-operator|.
-name|get
-argument_list|(
-name|dataMap
-argument_list|)
-operator|.
-name|setSelected
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|view
-operator|.
-name|getDataMapJCheckBoxMap
-argument_list|()
-operator|.
-name|get
-argument_list|(
-name|dataMap
-argument_list|)
-operator|.
-name|setSelected
-argument_list|(
-literal|false
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-block|}
-comment|/**      * A callback action that updates the state of Select All checkbox.      */
-specifier|public
-name|void
-name|classSelectedAction
-parameter_list|()
-block|{
-name|int
-name|selectedCount
-init|=
-name|getParentController
-argument_list|()
-operator|.
-name|getSelectedEntitiesSize
-argument_list|()
-operator|+
-name|getParentController
-argument_list|()
-operator|.
-name|getSelectedEmbeddablesSize
-argument_list|()
-operator|+
-name|getParentController
-argument_list|()
-operator|.
-name|getSelectedDataMapsSize
-argument_list|()
-decl_stmt|;
-if|if
-condition|(
-name|selectedCount
-operator|==
-literal|0
-condition|)
-block|{
-name|view
-operator|.
-name|getCheckAll
-argument_list|()
-operator|.
-name|setSelected
-argument_list|(
-literal|false
-argument_list|)
-expr_stmt|;
-block|}
-if|else if
-condition|(
-name|selectedCount
-operator|==
-name|getParentController
-argument_list|()
-operator|.
-name|getClasses
-argument_list|()
-operator|.
-name|size
-argument_list|()
-condition|)
-block|{
-name|view
-operator|.
-name|getCheckAll
-argument_list|()
-operator|.
-name|setSelected
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-comment|/**      * An action that updates entity check boxes in response to the Select All state      * change.      */
-specifier|public
-name|void
-name|checkAllAction
-parameter_list|()
-block|{
-if|if
-condition|(
-name|getParentController
-argument_list|()
-operator|.
-name|updateSelection
-argument_list|(
-name|view
-operator|.
-name|getCheckAll
-argument_list|()
-operator|.
-name|isSelected
-argument_list|()
-condition|?
-name|o
-lambda|->
-literal|true
-else|:
-name|o
-lambda|->
-literal|false
-argument_list|)
-condition|)
-block|{
-name|dataMaps
-operator|.
-name|forEach
-argument_list|(
-name|dataMap
-lambda|->
-block|{
-name|ObjectBinding
-name|binding
-operator|=
-name|objectBindings
-operator|.
-name|get
-argument_list|(
-name|dataMap
-argument_list|)
-argument_list|;
-if|if
-condition|(
-name|binding
-operator|!=
-literal|null
-condition|)
-block|{
-name|currentCollection
-operator|=
-name|objectList
-operator|.
-name|get
-argument_list|(
-name|dataMap
-argument_list|)
-expr_stmt|;
-name|binding
-operator|.
-name|updateView
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-block|)
-class|;
-end_class
+begin_comment
+comment|// ****************************************************************/
+end_comment
 
-begin_function
-unit|}     }
-specifier|private
-name|void
-name|checkDataMap
-parameter_list|(
-name|DataMap
-name|dataMap
-parameter_list|,
-name|boolean
-name|selected
-parameter_list|)
-block|{
-if|if
-condition|(
-name|getParentController
-argument_list|()
-operator|.
-name|updateDataMapSelection
-argument_list|(
-name|selected
-condition|?
-name|o
-lambda|->
-literal|true
-else|:
-name|o
-lambda|->
-literal|false
-argument_list|,
-name|dataMap
-argument_list|)
-condition|)
-block|{
-name|ObjectBinding
-name|binding
-operator|=
-name|objectBindings
-operator|.
-name|get
-argument_list|(
-name|dataMap
-argument_list|)
-block|;
-if|if
-condition|(
-name|binding
-operator|!=
-literal|null
-condition|)
-block|{
-name|currentCollection
-operator|=
-name|objectList
-operator|.
-name|get
-argument_list|(
-name|dataMap
-argument_list|)
-expr_stmt|;
-name|binding
-operator|.
-name|updateView
-argument_list|()
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|isAllMapsSelected
-argument_list|()
-condition|)
-block|{
-name|view
-operator|.
-name|getCheckAll
-argument_list|()
-operator|.
-name|setSelected
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-end_function
+begin_comment
+comment|//
+end_comment
 
-begin_function
-unit|}      private
-name|boolean
-name|isAllMapsSelected
-parameter_list|()
-block|{
-for|for
-control|(
-name|DataMap
-name|dataMap
-range|:
-name|dataMaps
-control|)
-block|{
-if|if
-condition|(
-name|view
-operator|.
-name|getDataMapJCheckBoxMap
-argument_list|()
-operator|.
-name|get
-argument_list|(
-name|dataMap
-argument_list|)
-operator|!=
-literal|null
-condition|)
-block|{
-if|if
-condition|(
-operator|!
-name|view
-operator|.
-name|getDataMapJCheckBoxMap
-argument_list|()
-operator|.
-name|get
-argument_list|(
-name|dataMap
-argument_list|)
-operator|.
-name|isSelected
-argument_list|()
-condition|)
-block|{
-return|return
-literal|false
-return|;
-block|}
-block|}
-block|}
-return|return
-literal|true
-return|;
-block|}
-end_function
+begin_comment
+comment|//package org.apache.cayenne.modeler.dialog.codegen;
+end_comment
 
-unit|}
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//import org.apache.cayenne.map.DataMap;
+end_comment
+
+begin_comment
+comment|//import org.apache.cayenne.modeler.util.CayenneController;
+end_comment
+
+begin_comment
+comment|//import org.apache.cayenne.swing.BindingBuilder;
+end_comment
+
+begin_comment
+comment|//import org.apache.cayenne.swing.ImageRendererColumn;
+end_comment
+
+begin_comment
+comment|//import org.apache.cayenne.swing.ObjectBinding;
+end_comment
+
+begin_comment
+comment|//import org.apache.cayenne.swing.TableBindingBuilder;
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//import javax.swing.JCheckBox;
+end_comment
+
+begin_comment
+comment|//import javax.swing.JLabel;
+end_comment
+
+begin_comment
+comment|//import javax.swing.JTable;
+end_comment
+
+begin_comment
+comment|//import java.awt.Component;
+end_comment
+
+begin_comment
+comment|//import java.util.ArrayList;
+end_comment
+
+begin_comment
+comment|//import java.util.Collection;
+end_comment
+
+begin_comment
+comment|//import java.util.HashMap;
+end_comment
+
+begin_comment
+comment|//import java.util.Map;
+end_comment
+
+begin_comment
+comment|//import java.util.List;
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//public class ClassesTabController extends CayenneController {
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public static final String GENERATE_PROPERTY = "generate";
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    protected ClassesTabPanel view;
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    private Map<DataMap, ObjectBinding> objectBindings;
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    protected Collection<DataMap> dataMaps;
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    protected Map<DataMap, List<Object>> objectList;
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    private List<Object> currentCollection;
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public ClassesTabController(CodeGeneratorControllerBase parent, Collection<DataMap> dataMaps) {
+end_comment
+
+begin_comment
+comment|//        super(parent);
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        currentCollection = new ArrayList<>();
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        this.objectList = new HashMap<>();
+end_comment
+
+begin_comment
+comment|//        for(DataMap dataMap : dataMaps) {
+end_comment
+
+begin_comment
+comment|//            List<Object> list = new ArrayList<>();
+end_comment
+
+begin_comment
+comment|//            list.add(dataMap);
+end_comment
+
+begin_comment
+comment|//            list.addAll(dataMap.getObjEntities());
+end_comment
+
+begin_comment
+comment|//            list.addAll(dataMap.getEmbeddables());
+end_comment
+
+begin_comment
+comment|//            objectList.put(dataMap, list);
+end_comment
+
+begin_comment
+comment|//        }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        this.objectBindings = new HashMap<>();
+end_comment
+
+begin_comment
+comment|//        this.dataMaps = dataMaps;
+end_comment
+
+begin_comment
+comment|//        this.view = new ClassesTabPanel(dataMaps);
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        initBindings();
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    protected CodeGeneratorControllerBase getParentController() {
+end_comment
+
+begin_comment
+comment|//        return (CodeGeneratorControllerBase) getParent();
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public Component getView() {
+end_comment
+
+begin_comment
+comment|//        return view;
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    protected void initBindings() {
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        BindingBuilder builder = new BindingBuilder(
+end_comment
+
+begin_comment
+comment|//                getApplication().getBindingFactory(),
+end_comment
+
+begin_comment
+comment|//                this);
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        builder.bindToAction(view.getCheckAll(), "checkAllAction()");
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        TableBindingBuilder tableBuilder = new TableBindingBuilder(builder);
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        tableBuilder.addColumn(
+end_comment
+
+begin_comment
+comment|//                "",
+end_comment
+
+begin_comment
+comment|//                "parent.setCurrentClass(#item), selected",
+end_comment
+
+begin_comment
+comment|//                Boolean.class,
+end_comment
+
+begin_comment
+comment|//                true,
+end_comment
+
+begin_comment
+comment|//                Boolean.TRUE);
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        tableBuilder.addColumn(
+end_comment
+
+begin_comment
+comment|//                "Class",
+end_comment
+
+begin_comment
+comment|//                "parent.getItemName(#item)",
+end_comment
+
+begin_comment
+comment|//                JLabel.class,
+end_comment
+
+begin_comment
+comment|//                false,
+end_comment
+
+begin_comment
+comment|//                "XXXXXXXXXXXXXX");
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        tableBuilder.addColumn(
+end_comment
+
+begin_comment
+comment|//                "Comments, Warnings",
+end_comment
+
+begin_comment
+comment|//                "parent.getProblem(#item)",
+end_comment
+
+begin_comment
+comment|//                String.class,
+end_comment
+
+begin_comment
+comment|//                false,
+end_comment
+
+begin_comment
+comment|//                "XXXXXXXXXXXXXXXXXXXXXXXXXXX");
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        for(DataMap dataMap : dataMaps) {
+end_comment
+
+begin_comment
+comment|//            JTable table = view.getDataMapTables().get(dataMap);
+end_comment
+
+begin_comment
+comment|//            if(table != null) {
+end_comment
+
+begin_comment
+comment|//                currentCollection = objectList.get(dataMap);
+end_comment
+
+begin_comment
+comment|//                objectBindings.put(dataMap, tableBuilder.bindToTable(table, "currentCollection"));
+end_comment
+
+begin_comment
+comment|//                table.getColumnModel().getColumn(1).setCellRenderer(new ImageRendererColumn());
+end_comment
+
+begin_comment
+comment|//            }
+end_comment
+
+begin_comment
+comment|//            JCheckBox checkBox = view.getDataMapJCheckBoxMap().get(dataMap);
+end_comment
+
+begin_comment
+comment|//            if(checkBox != null) {
+end_comment
+
+begin_comment
+comment|//                checkBox.addActionListener(val -> checkDataMap(dataMap, ((JCheckBox)val.getSource()).isSelected()));
+end_comment
+
+begin_comment
+comment|//            }
+end_comment
+
+begin_comment
+comment|//        }
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public List<Object> getCurrentCollection() {
+end_comment
+
+begin_comment
+comment|//        return currentCollection;
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public boolean isSelected() {
+end_comment
+
+begin_comment
+comment|//        return getParentController().isSelected();
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public void setSelected(boolean selected) {
+end_comment
+
+begin_comment
+comment|//        getParentController().setSelected(selected);
+end_comment
+
+begin_comment
+comment|//        classSelectedAction();
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        for(DataMap dataMap : dataMaps) {
+end_comment
+
+begin_comment
+comment|//            if(view.isAllCheckBoxesFromDataMapSelected(dataMap)) {
+end_comment
+
+begin_comment
+comment|//                view.getDataMapJCheckBoxMap().get(dataMap).setSelected(true);
+end_comment
+
+begin_comment
+comment|//            } else {
+end_comment
+
+begin_comment
+comment|//                view.getDataMapJCheckBoxMap().get(dataMap).setSelected(false);
+end_comment
+
+begin_comment
+comment|//            }
+end_comment
+
+begin_comment
+comment|//        }
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    /**
+end_comment
+
+begin_comment
+comment|//     * A callback action that updates the state of Select All checkbox.
+end_comment
+
+begin_comment
+comment|//     */
+end_comment
+
+begin_comment
+comment|//    public void classSelectedAction() {
+end_comment
+
+begin_comment
+comment|//        int selectedCount = getParentController().getSelectedEntitiesSize()
+end_comment
+
+begin_comment
+comment|//                + getParentController().getSelectedEmbeddablesSize()
+end_comment
+
+begin_comment
+comment|//                + getParentController().getSelectedDataMapsSize();
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        if (selectedCount == 0) {
+end_comment
+
+begin_comment
+comment|//            view.getCheckAll().setSelected(false);
+end_comment
+
+begin_comment
+comment|//        }
+end_comment
+
+begin_comment
+comment|//        else if (selectedCount == getParentController().getClasses().size()) {
+end_comment
+
+begin_comment
+comment|//            view.getCheckAll().setSelected(true);
+end_comment
+
+begin_comment
+comment|//        }
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    /**
+end_comment
+
+begin_comment
+comment|//     * An action that updates entity check boxes in response to the Select All state
+end_comment
+
+begin_comment
+comment|//     * change.
+end_comment
+
+begin_comment
+comment|//     */
+end_comment
+
+begin_comment
+comment|//    public void checkAllAction() {
+end_comment
+
+begin_comment
+comment|//        if (getParentController().updateSelection(view.getCheckAll().isSelected() ? o -> true : o -> false)) {
+end_comment
+
+begin_comment
+comment|//            dataMaps.forEach(dataMap -> {
+end_comment
+
+begin_comment
+comment|//                ObjectBinding binding = objectBindings.get(dataMap);
+end_comment
+
+begin_comment
+comment|//                if(binding != null) {
+end_comment
+
+begin_comment
+comment|//                    currentCollection = objectList.get(dataMap);
+end_comment
+
+begin_comment
+comment|//                    binding.updateView();
+end_comment
+
+begin_comment
+comment|//                }
+end_comment
+
+begin_comment
+comment|//            });
+end_comment
+
+begin_comment
+comment|//        }
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    private void checkDataMap(DataMap dataMap, boolean selected) {
+end_comment
+
+begin_comment
+comment|//        if (getParentController().updateDataMapSelection(selected ? o -> true : o -> false, dataMap)){
+end_comment
+
+begin_comment
+comment|//            ObjectBinding binding = objectBindings.get(dataMap);
+end_comment
+
+begin_comment
+comment|//            if(binding != null) {
+end_comment
+
+begin_comment
+comment|//                currentCollection = objectList.get(dataMap);
+end_comment
+
+begin_comment
+comment|//                binding.updateView();
+end_comment
+
+begin_comment
+comment|//            }
+end_comment
+
+begin_comment
+comment|//            if(isAllMapsSelected()) {
+end_comment
+
+begin_comment
+comment|//                view.getCheckAll().setSelected(true);
+end_comment
+
+begin_comment
+comment|//            }
+end_comment
+
+begin_comment
+comment|//        }
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    private boolean isAllMapsSelected() {
+end_comment
+
+begin_comment
+comment|//        for(DataMap dataMap : dataMaps) {
+end_comment
+
+begin_comment
+comment|//            if(view.getDataMapJCheckBoxMap().get(dataMap) != null) {
+end_comment
+
+begin_comment
+comment|//                if(!view.getDataMapJCheckBoxMap().get(dataMap).isSelected()) {
+end_comment
+
+begin_comment
+comment|//                    return false;
+end_comment
+
+begin_comment
+comment|//                }
+end_comment
+
+begin_comment
+comment|//            }
+end_comment
+
+begin_comment
+comment|//        }
+end_comment
+
+begin_comment
+comment|//        return true;
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//}
+end_comment
+
 end_unit
 

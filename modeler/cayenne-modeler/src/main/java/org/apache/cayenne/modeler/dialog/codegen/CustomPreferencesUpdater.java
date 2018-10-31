@@ -1,941 +1,839 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
 begin_comment
-comment|/*****************************************************************  *   Licensed to the Apache Software Foundation (ASF) under one  *  or more contributor license agreements.  See the NOTICE file  *  distributed with this work for additional information  *  regarding copyright ownership.  The ASF licenses this file  *  to you under the Apache License, Version 2.0 (the  *  "License"); you may not use this file except in compliance  *  with the License.  You may obtain a copy of the License at  *  *    http://www.apache.org/licenses/LICENSE-2.0  *  *  Unless required by applicable law or agreed to in writing,  *  software distributed under the License is distributed on an  *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY  *  KIND, either express or implied.  See the License for the  *  specific language governing permissions and limitations  *  under the License.  ****************************************************************/
+comment|///*****************************************************************
 end_comment
 
-begin_package
-package|package
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|modeler
-operator|.
-name|dialog
-operator|.
-name|codegen
-package|;
-end_package
+begin_comment
+comment|// *   Licensed to the Apache Software Foundation (ASF) under one
+end_comment
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|DataMap
-import|;
-end_import
+begin_comment
+comment|// *  or more contributor license agreements.  See the NOTICE file
+end_comment
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|modeler
-operator|.
-name|pref
-operator|.
-name|DataMapDefaults
-import|;
-end_import
+begin_comment
+comment|// *  distributed with this work for additional information
+end_comment
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-import|;
-end_import
+begin_comment
+comment|// *  regarding copyright ownership.  The ASF licenses this file
+end_comment
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-operator|.
-name|Entry
-import|;
-end_import
+begin_comment
+comment|// *  to you under the Apache License, Version 2.0 (the
+end_comment
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Set
-import|;
-end_import
+begin_comment
+comment|// *  "License"); you may not use this file except in compliance
+end_comment
 
-begin_class
-specifier|public
-class|class
-name|CustomPreferencesUpdater
-block|{
-enum|enum
-name|Property
-block|{
-name|SUBCLASS_TEMPLATE
-block|,
-name|SUPERCLASS_TEMPLATE
-block|,
-name|OVERWRITE
-block|,
-name|PAIRS
-block|,
-name|USE_PACKAGE_PATH
-block|,
-name|MODE
-block|,
-name|OUTPUT_PATTERN
-block|,
-name|CREATE_PROPERTY_NAMES
-block|,
-name|CREATE_PK_PROPERTIES
-block|}
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|OVERWRITE
-init|=
-literal|"overwrite"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|PAIRS
-init|=
-literal|"pairs"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|USE_PACKAGE_PATH
-init|=
-literal|"usePackagePath"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|MODE
-init|=
-literal|"mode"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|OUTPUT_PATTERN
-init|=
-literal|"outputPattern"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|CREATE_PROPERTY_NAMES
-init|=
-literal|"createPropertyNames"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|CREATE_PK_PROPERTIES
-init|=
-literal|"createPKProperties"
-decl_stmt|;
-specifier|private
-name|Map
-argument_list|<
-name|DataMap
-argument_list|,
-name|DataMapDefaults
-argument_list|>
-name|mapPreferences
-decl_stmt|;
-specifier|public
-name|CustomPreferencesUpdater
-parameter_list|(
-name|Map
-argument_list|<
-name|DataMap
-argument_list|,
-name|DataMapDefaults
-argument_list|>
-name|mapPreferences
-parameter_list|)
-block|{
-name|this
-operator|.
-name|mapPreferences
-operator|=
-name|mapPreferences
-expr_stmt|;
-block|}
-specifier|public
-name|String
-name|getMode
-parameter_list|()
-block|{
-return|return
-operator|(
-name|String
-operator|)
-name|getProperty
-argument_list|(
-name|Property
-operator|.
-name|MODE
-argument_list|)
-return|;
-block|}
-specifier|public
-name|void
-name|setMode
-parameter_list|(
-name|String
-name|mode
-parameter_list|)
-block|{
-name|updatePreferences
-argument_list|(
-name|Property
-operator|.
-name|MODE
-argument_list|,
-name|mode
-argument_list|)
-expr_stmt|;
-block|}
-specifier|public
-name|String
-name|getSubclassTemplate
-parameter_list|()
-block|{
-return|return
-operator|(
-name|String
-operator|)
-name|getProperty
-argument_list|(
-name|Property
-operator|.
-name|SUBCLASS_TEMPLATE
-argument_list|)
-return|;
-block|}
-specifier|public
-name|void
-name|setSubclassTemplate
-parameter_list|(
-name|String
-name|subclassTemplate
-parameter_list|)
-block|{
-name|updatePreferences
-argument_list|(
-name|Property
-operator|.
-name|SUBCLASS_TEMPLATE
-argument_list|,
-name|subclassTemplate
-argument_list|)
-expr_stmt|;
-block|}
-specifier|public
-name|String
-name|getSuperclassTemplate
-parameter_list|()
-block|{
-return|return
-operator|(
-name|String
-operator|)
-name|getProperty
-argument_list|(
-name|Property
-operator|.
-name|SUPERCLASS_TEMPLATE
-argument_list|)
-return|;
-block|}
-specifier|public
-name|void
-name|setSuperclassTemplate
-parameter_list|(
-name|String
-name|superclassTemplate
-parameter_list|)
-block|{
-name|updatePreferences
-argument_list|(
-name|Property
-operator|.
-name|SUPERCLASS_TEMPLATE
-argument_list|,
-name|superclassTemplate
-argument_list|)
-expr_stmt|;
-block|}
-specifier|public
-name|Boolean
-name|getOverwrite
-parameter_list|()
-block|{
-return|return
-operator|(
-name|Boolean
-operator|)
-name|getProperty
-argument_list|(
-name|Property
-operator|.
-name|OVERWRITE
-argument_list|)
-return|;
-block|}
-specifier|public
-name|void
-name|setOverwrite
-parameter_list|(
-name|Boolean
-name|overwrite
-parameter_list|)
-block|{
-name|updatePreferences
-argument_list|(
-name|Property
-operator|.
-name|OVERWRITE
-argument_list|,
-name|overwrite
-argument_list|)
-expr_stmt|;
-block|}
-specifier|public
-name|Boolean
-name|getPairs
-parameter_list|()
-block|{
-return|return
-operator|(
-name|Boolean
-operator|)
-name|getProperty
-argument_list|(
-name|Property
-operator|.
-name|PAIRS
-argument_list|)
-return|;
-block|}
-specifier|public
-name|void
-name|setPairs
-parameter_list|(
-name|Boolean
-name|pairs
-parameter_list|)
-block|{
-name|updatePreferences
-argument_list|(
-name|Property
-operator|.
-name|PAIRS
-argument_list|,
-name|pairs
-argument_list|)
-expr_stmt|;
-block|}
-specifier|public
-name|Boolean
-name|getUsePackagePath
-parameter_list|()
-block|{
-return|return
-operator|(
-name|Boolean
-operator|)
-name|getProperty
-argument_list|(
-name|Property
-operator|.
-name|USE_PACKAGE_PATH
-argument_list|)
-return|;
-block|}
-specifier|public
-name|void
-name|setUsePackagePath
-parameter_list|(
-name|Boolean
-name|usePackagePath
-parameter_list|)
-block|{
-name|updatePreferences
-argument_list|(
-name|Property
-operator|.
-name|USE_PACKAGE_PATH
-argument_list|,
-name|usePackagePath
-argument_list|)
-expr_stmt|;
-block|}
-specifier|public
-name|String
-name|getOutputPattern
-parameter_list|()
-block|{
-return|return
-operator|(
-name|String
-operator|)
-name|getProperty
-argument_list|(
-name|Property
-operator|.
-name|OUTPUT_PATTERN
-argument_list|)
-return|;
-block|}
-specifier|public
-name|void
-name|setOutputPattern
-parameter_list|(
-name|String
-name|outputPattern
-parameter_list|)
-block|{
-name|updatePreferences
-argument_list|(
-name|Property
-operator|.
-name|OUTPUT_PATTERN
-argument_list|,
-name|outputPattern
-argument_list|)
-expr_stmt|;
-block|}
-specifier|public
-name|Boolean
-name|getCreatePropertyNames
-parameter_list|()
-block|{
-return|return
-operator|(
-name|Boolean
-operator|)
-name|getProperty
-argument_list|(
-name|Property
-operator|.
-name|CREATE_PROPERTY_NAMES
-argument_list|)
-return|;
-block|}
-specifier|public
-name|void
-name|setCreatePropertyNames
-parameter_list|(
-name|Boolean
-name|createPropertyNames
-parameter_list|)
-block|{
-name|updatePreferences
-argument_list|(
-name|Property
-operator|.
-name|CREATE_PROPERTY_NAMES
-argument_list|,
-name|createPropertyNames
-argument_list|)
-expr_stmt|;
-block|}
-specifier|public
-name|Boolean
-name|getCreatePKProperties
-parameter_list|()
-block|{
-return|return
-operator|(
-name|Boolean
-operator|)
-name|getProperty
-argument_list|(
-name|Property
-operator|.
-name|CREATE_PK_PROPERTIES
-argument_list|)
-return|;
-block|}
-specifier|public
-name|void
-name|setCreatePKProperties
-parameter_list|(
-name|Boolean
-name|createPKProperties
-parameter_list|)
-block|{
-name|updatePreferences
-argument_list|(
-name|Property
-operator|.
-name|CREATE_PK_PROPERTIES
-argument_list|,
-name|createPKProperties
-argument_list|)
-expr_stmt|;
-block|}
-specifier|private
-name|Object
-name|getProperty
-parameter_list|(
-name|Property
-name|property
-parameter_list|)
-block|{
-name|Object
-name|obj
-init|=
-literal|null
-decl_stmt|;
-name|Set
-argument_list|<
-name|Entry
-argument_list|<
-name|DataMap
-argument_list|,
-name|DataMapDefaults
-argument_list|>
-argument_list|>
-name|entities
-init|=
-name|mapPreferences
-operator|.
-name|entrySet
-argument_list|()
-decl_stmt|;
-for|for
-control|(
-name|Entry
-argument_list|<
-name|DataMap
-argument_list|,
-name|DataMapDefaults
-argument_list|>
-name|entry
-range|:
-name|entities
-control|)
-block|{
-switch|switch
-condition|(
-name|property
-condition|)
-block|{
-case|case
-name|MODE
-case|:
-name|obj
-operator|=
-name|entry
-operator|.
-name|getValue
-argument_list|()
-operator|.
-name|getProperty
-argument_list|(
-name|MODE
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|OUTPUT_PATTERN
-case|:
-name|obj
-operator|=
-name|entry
-operator|.
-name|getValue
-argument_list|()
-operator|.
-name|getProperty
-argument_list|(
-name|OUTPUT_PATTERN
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|SUBCLASS_TEMPLATE
-case|:
-name|obj
-operator|=
-name|entry
-operator|.
-name|getValue
-argument_list|()
-operator|.
-name|getSubclassTemplate
-argument_list|()
-expr_stmt|;
-break|break;
-case|case
-name|SUPERCLASS_TEMPLATE
-case|:
-name|obj
-operator|=
-name|entry
-operator|.
-name|getValue
-argument_list|()
-operator|.
-name|getSuperclassTemplate
-argument_list|()
-expr_stmt|;
-break|break;
-case|case
-name|OVERWRITE
-case|:
-name|obj
-operator|=
-name|entry
-operator|.
-name|getValue
-argument_list|()
-operator|.
-name|getBooleanProperty
-argument_list|(
-name|OVERWRITE
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|PAIRS
-case|:
-name|obj
-operator|=
-name|entry
-operator|.
-name|getValue
-argument_list|()
-operator|.
-name|getBooleanProperty
-argument_list|(
-name|PAIRS
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|USE_PACKAGE_PATH
-case|:
-name|obj
-operator|=
-name|entry
-operator|.
-name|getValue
-argument_list|()
-operator|.
-name|getBooleanProperty
-argument_list|(
-name|USE_PACKAGE_PATH
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|CREATE_PROPERTY_NAMES
-case|:
-name|obj
-operator|=
-name|entry
-operator|.
-name|getValue
-argument_list|()
-operator|.
-name|getBooleanProperty
-argument_list|(
-name|CREATE_PROPERTY_NAMES
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|CREATE_PK_PROPERTIES
-case|:
-name|obj
-operator|=
-name|entry
-operator|.
-name|getValue
-argument_list|()
-operator|.
-name|getBooleanProperty
-argument_list|(
-name|CREATE_PK_PROPERTIES
-argument_list|)
-expr_stmt|;
-break|break;
-default|default:
-throw|throw
-operator|new
-name|IllegalArgumentException
-argument_list|(
-literal|"Bad type property: "
-operator|+
-name|property
-argument_list|)
-throw|;
-block|}
-block|}
-return|return
-name|obj
-return|;
-block|}
-specifier|private
-name|void
-name|updatePreferences
-parameter_list|(
-name|Property
-name|property
-parameter_list|,
-name|Object
-name|value
-parameter_list|)
-block|{
-name|Set
-argument_list|<
-name|Entry
-argument_list|<
-name|DataMap
-argument_list|,
-name|DataMapDefaults
-argument_list|>
-argument_list|>
-name|entities
-init|=
-name|mapPreferences
-operator|.
-name|entrySet
-argument_list|()
-decl_stmt|;
-for|for
-control|(
-name|Entry
-argument_list|<
-name|DataMap
-argument_list|,
-name|DataMapDefaults
-argument_list|>
-name|entry
-range|:
-name|entities
-control|)
-block|{
-switch|switch
-condition|(
-name|property
-condition|)
-block|{
-case|case
-name|MODE
-case|:
-name|entry
-operator|.
-name|getValue
-argument_list|()
-operator|.
-name|setProperty
-argument_list|(
-name|MODE
-argument_list|,
-operator|(
-name|String
-operator|)
-name|value
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|OUTPUT_PATTERN
-case|:
-name|entry
-operator|.
-name|getValue
-argument_list|()
-operator|.
-name|setProperty
-argument_list|(
-name|OUTPUT_PATTERN
-argument_list|,
-operator|(
-name|String
-operator|)
-name|value
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|SUBCLASS_TEMPLATE
-case|:
-name|entry
-operator|.
-name|getValue
-argument_list|()
-operator|.
-name|setSubclassTemplate
-argument_list|(
-operator|(
-name|String
-operator|)
-name|value
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|SUPERCLASS_TEMPLATE
-case|:
-name|entry
-operator|.
-name|getValue
-argument_list|()
-operator|.
-name|setSuperclassTemplate
-argument_list|(
-operator|(
-name|String
-operator|)
-name|value
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|OVERWRITE
-case|:
-name|entry
-operator|.
-name|getValue
-argument_list|()
-operator|.
-name|setBooleanProperty
-argument_list|(
-name|OVERWRITE
-argument_list|,
-operator|(
-name|Boolean
-operator|)
-name|value
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|PAIRS
-case|:
-name|entry
-operator|.
-name|getValue
-argument_list|()
-operator|.
-name|setBooleanProperty
-argument_list|(
-name|PAIRS
-argument_list|,
-operator|(
-name|Boolean
-operator|)
-name|value
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|USE_PACKAGE_PATH
-case|:
-name|entry
-operator|.
-name|getValue
-argument_list|()
-operator|.
-name|setBooleanProperty
-argument_list|(
-name|USE_PACKAGE_PATH
-argument_list|,
-operator|(
-name|Boolean
-operator|)
-name|value
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|CREATE_PROPERTY_NAMES
-case|:
-name|entry
-operator|.
-name|getValue
-argument_list|()
-operator|.
-name|setBooleanProperty
-argument_list|(
-name|CREATE_PROPERTY_NAMES
-argument_list|,
-operator|(
-name|Boolean
-operator|)
-name|value
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|CREATE_PK_PROPERTIES
-case|:
-name|entry
-operator|.
-name|getValue
-argument_list|()
-operator|.
-name|setBooleanProperty
-argument_list|(
-name|CREATE_PK_PROPERTIES
-argument_list|,
-operator|(
-name|Boolean
-operator|)
-name|value
-argument_list|)
-expr_stmt|;
-break|break;
-default|default:
-throw|throw
-operator|new
-name|IllegalArgumentException
-argument_list|(
-literal|"Bad type property: "
-operator|+
-name|property
-argument_list|)
-throw|;
-block|}
-block|}
-block|}
-block|}
-end_class
+begin_comment
+comment|// *  with the License.  You may obtain a copy of the License at
+end_comment
+
+begin_comment
+comment|// *
+end_comment
+
+begin_comment
+comment|// *    http://www.apache.org/licenses/LICENSE-2.0
+end_comment
+
+begin_comment
+comment|// *
+end_comment
+
+begin_comment
+comment|// *  Unless required by applicable law or agreed to in writing,
+end_comment
+
+begin_comment
+comment|// *  software distributed under the License is distributed on an
+end_comment
+
+begin_comment
+comment|// *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+end_comment
+
+begin_comment
+comment|// *  KIND, either express or implied.  See the License for the
+end_comment
+
+begin_comment
+comment|// *  specific language governing permissions and limitations
+end_comment
+
+begin_comment
+comment|// *  under the License.
+end_comment
+
+begin_comment
+comment|// ****************************************************************/
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//package org.apache.cayenne.modeler.dialog.codegen;
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//import org.apache.cayenne.map.DataMap;
+end_comment
+
+begin_comment
+comment|//import org.apache.cayenne.modeler.pref.DataMapDefaults;
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//import java.util.Map;
+end_comment
+
+begin_comment
+comment|//import java.util.Map.Entry;
+end_comment
+
+begin_comment
+comment|//import java.util.Set;
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//public class CustomPreferencesUpdater {
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    enum Property {
+end_comment
+
+begin_comment
+comment|//        SUBCLASS_TEMPLATE,
+end_comment
+
+begin_comment
+comment|//        SUPERCLASS_TEMPLATE,
+end_comment
+
+begin_comment
+comment|//        OVERWRITE,
+end_comment
+
+begin_comment
+comment|//        PAIRS,
+end_comment
+
+begin_comment
+comment|//        USE_PACKAGE_PATH,
+end_comment
+
+begin_comment
+comment|//        MODE,
+end_comment
+
+begin_comment
+comment|//        OUTPUT_PATTERN,
+end_comment
+
+begin_comment
+comment|//        CREATE_PROPERTY_NAMES,
+end_comment
+
+begin_comment
+comment|//        CREATE_PK_PROPERTIES
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    private static final String OVERWRITE = "overwrite";
+end_comment
+
+begin_comment
+comment|//    private static final String PAIRS = "pairs";
+end_comment
+
+begin_comment
+comment|//    private static final String USE_PACKAGE_PATH = "usePackagePath";
+end_comment
+
+begin_comment
+comment|//    private static final String MODE = "mode";
+end_comment
+
+begin_comment
+comment|//    private static final String OUTPUT_PATTERN = "outputPattern";
+end_comment
+
+begin_comment
+comment|//    private static final String CREATE_PROPERTY_NAMES = "createPropertyNames";
+end_comment
+
+begin_comment
+comment|//    private static final String CREATE_PK_PROPERTIES = "createPKProperties";
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    private Map<DataMap, DataMapDefaults> mapPreferences;
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public CustomPreferencesUpdater(Map<DataMap, DataMapDefaults> mapPreferences) {
+end_comment
+
+begin_comment
+comment|//        this.mapPreferences = mapPreferences;
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public String getMode() {
+end_comment
+
+begin_comment
+comment|//        return (String) getProperty(Property.MODE);
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public void setMode(String mode) {
+end_comment
+
+begin_comment
+comment|//        updatePreferences(Property.MODE, mode);
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public String getSubclassTemplate() {
+end_comment
+
+begin_comment
+comment|//        return (String) getProperty(Property.SUBCLASS_TEMPLATE);
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public void setSubclassTemplate(String subclassTemplate) {
+end_comment
+
+begin_comment
+comment|//        updatePreferences(Property.SUBCLASS_TEMPLATE, subclassTemplate);
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public String getSuperclassTemplate() {
+end_comment
+
+begin_comment
+comment|//        return (String) getProperty(Property.SUPERCLASS_TEMPLATE);
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public void setSuperclassTemplate(String superclassTemplate) {
+end_comment
+
+begin_comment
+comment|//        updatePreferences(Property.SUPERCLASS_TEMPLATE, superclassTemplate);
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public Boolean getOverwrite() {
+end_comment
+
+begin_comment
+comment|//        return (Boolean) getProperty(Property.OVERWRITE);
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public void setOverwrite(Boolean overwrite) {
+end_comment
+
+begin_comment
+comment|//        updatePreferences(Property.OVERWRITE, overwrite);
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public Boolean getPairs() {
+end_comment
+
+begin_comment
+comment|//        return (Boolean) getProperty(Property.PAIRS);
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public void setPairs(Boolean pairs) {
+end_comment
+
+begin_comment
+comment|//        updatePreferences(Property.PAIRS, pairs);
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public Boolean getUsePackagePath() {
+end_comment
+
+begin_comment
+comment|//        return (Boolean) getProperty(Property.USE_PACKAGE_PATH);
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public void setUsePackagePath(Boolean usePackagePath) {
+end_comment
+
+begin_comment
+comment|//        updatePreferences(Property.USE_PACKAGE_PATH, usePackagePath);
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public String getOutputPattern() {
+end_comment
+
+begin_comment
+comment|//        return (String) getProperty(Property.OUTPUT_PATTERN);
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public void setOutputPattern(String outputPattern) {
+end_comment
+
+begin_comment
+comment|//        updatePreferences(Property.OUTPUT_PATTERN, outputPattern);
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public Boolean getCreatePropertyNames() {
+end_comment
+
+begin_comment
+comment|//        return (Boolean) getProperty(Property.CREATE_PROPERTY_NAMES);
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public void setCreatePropertyNames(Boolean createPropertyNames) {
+end_comment
+
+begin_comment
+comment|//        updatePreferences(Property.CREATE_PROPERTY_NAMES, createPropertyNames);
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public Boolean getCreatePKProperties() {
+end_comment
+
+begin_comment
+comment|//        return (Boolean) getProperty(Property.CREATE_PK_PROPERTIES);
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    public void setCreatePKProperties(Boolean createPKProperties) {
+end_comment
+
+begin_comment
+comment|//        updatePreferences(Property.CREATE_PK_PROPERTIES, createPKProperties);
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    private Object getProperty(Property property) {
+end_comment
+
+begin_comment
+comment|//        Object obj = null;
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        Set<Entry<DataMap, DataMapDefaults>> entities = mapPreferences.entrySet();
+end_comment
+
+begin_comment
+comment|//        for (Entry<DataMap, DataMapDefaults> entry : entities) {
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//            switch (property) {
+end_comment
+
+begin_comment
+comment|//                case MODE:
+end_comment
+
+begin_comment
+comment|//                    obj = entry.getValue().getProperty(MODE);
+end_comment
+
+begin_comment
+comment|//                    break;
+end_comment
+
+begin_comment
+comment|//                case OUTPUT_PATTERN:
+end_comment
+
+begin_comment
+comment|//                    obj = entry.getValue().getProperty(OUTPUT_PATTERN);
+end_comment
+
+begin_comment
+comment|//                    break;
+end_comment
+
+begin_comment
+comment|//                case SUBCLASS_TEMPLATE:
+end_comment
+
+begin_comment
+comment|//                    obj = entry.getValue().getSubclassTemplate();
+end_comment
+
+begin_comment
+comment|//                    break;
+end_comment
+
+begin_comment
+comment|//                case SUPERCLASS_TEMPLATE:
+end_comment
+
+begin_comment
+comment|//                    obj = entry.getValue().getSuperclassTemplate();
+end_comment
+
+begin_comment
+comment|//                    break;
+end_comment
+
+begin_comment
+comment|//                case OVERWRITE:
+end_comment
+
+begin_comment
+comment|//                    obj = entry.getValue().getBooleanProperty(OVERWRITE);
+end_comment
+
+begin_comment
+comment|//                    break;
+end_comment
+
+begin_comment
+comment|//                case PAIRS:
+end_comment
+
+begin_comment
+comment|//                    obj = entry.getValue().getBooleanProperty(PAIRS);
+end_comment
+
+begin_comment
+comment|//                    break;
+end_comment
+
+begin_comment
+comment|//                case USE_PACKAGE_PATH:
+end_comment
+
+begin_comment
+comment|//                    obj = entry.getValue().getBooleanProperty(USE_PACKAGE_PATH);
+end_comment
+
+begin_comment
+comment|//                    break;
+end_comment
+
+begin_comment
+comment|//                case CREATE_PROPERTY_NAMES:
+end_comment
+
+begin_comment
+comment|//                    obj = entry.getValue().getBooleanProperty(CREATE_PROPERTY_NAMES);
+end_comment
+
+begin_comment
+comment|//                    break;
+end_comment
+
+begin_comment
+comment|//                case CREATE_PK_PROPERTIES:
+end_comment
+
+begin_comment
+comment|//                    obj = entry.getValue().getBooleanProperty(CREATE_PK_PROPERTIES);
+end_comment
+
+begin_comment
+comment|//                    break;
+end_comment
+
+begin_comment
+comment|//                default:
+end_comment
+
+begin_comment
+comment|//                    throw new IllegalArgumentException("Bad type property: " + property);
+end_comment
+
+begin_comment
+comment|//            }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//        }
+end_comment
+
+begin_comment
+comment|//        return obj;
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//    private void updatePreferences(Property property, Object value) {
+end_comment
+
+begin_comment
+comment|//        Set<Entry<DataMap, DataMapDefaults>> entities = mapPreferences.entrySet();
+end_comment
+
+begin_comment
+comment|//        for (Entry<DataMap, DataMapDefaults> entry : entities) {
+end_comment
+
+begin_comment
+comment|//
+end_comment
+
+begin_comment
+comment|//            switch (property) {
+end_comment
+
+begin_comment
+comment|//                case MODE:
+end_comment
+
+begin_comment
+comment|//                    entry.getValue().setProperty(MODE, (String) value);
+end_comment
+
+begin_comment
+comment|//                    break;
+end_comment
+
+begin_comment
+comment|//                case OUTPUT_PATTERN:
+end_comment
+
+begin_comment
+comment|//                    entry.getValue().setProperty(OUTPUT_PATTERN, (String) value);
+end_comment
+
+begin_comment
+comment|//                    break;
+end_comment
+
+begin_comment
+comment|//                case SUBCLASS_TEMPLATE:
+end_comment
+
+begin_comment
+comment|//                    entry.getValue().setSubclassTemplate((String) value);
+end_comment
+
+begin_comment
+comment|//                    break;
+end_comment
+
+begin_comment
+comment|//                case SUPERCLASS_TEMPLATE:
+end_comment
+
+begin_comment
+comment|//                    entry.getValue().setSuperclassTemplate((String) value);
+end_comment
+
+begin_comment
+comment|//                    break;
+end_comment
+
+begin_comment
+comment|//                case OVERWRITE:
+end_comment
+
+begin_comment
+comment|//                    entry.getValue().setBooleanProperty(OVERWRITE, (Boolean) value);
+end_comment
+
+begin_comment
+comment|//                    break;
+end_comment
+
+begin_comment
+comment|//                case PAIRS:
+end_comment
+
+begin_comment
+comment|//                    entry.getValue().setBooleanProperty(PAIRS, (Boolean) value);
+end_comment
+
+begin_comment
+comment|//                    break;
+end_comment
+
+begin_comment
+comment|//                case USE_PACKAGE_PATH:
+end_comment
+
+begin_comment
+comment|//                    entry.getValue().setBooleanProperty(USE_PACKAGE_PATH, (Boolean) value);
+end_comment
+
+begin_comment
+comment|//                    break;
+end_comment
+
+begin_comment
+comment|//                case CREATE_PROPERTY_NAMES:
+end_comment
+
+begin_comment
+comment|//                    entry.getValue().setBooleanProperty(CREATE_PROPERTY_NAMES, (Boolean) value);
+end_comment
+
+begin_comment
+comment|//                    break;
+end_comment
+
+begin_comment
+comment|//                case CREATE_PK_PROPERTIES:
+end_comment
+
+begin_comment
+comment|//                    entry.getValue().setBooleanProperty(CREATE_PK_PROPERTIES, (Boolean) value);
+end_comment
+
+begin_comment
+comment|//                    break;
+end_comment
+
+begin_comment
+comment|//                default:
+end_comment
+
+begin_comment
+comment|//                    throw new IllegalArgumentException("Bad type property: " + property);
+end_comment
+
+begin_comment
+comment|//            }
+end_comment
+
+begin_comment
+comment|//        }
+end_comment
+
+begin_comment
+comment|//    }
+end_comment
+
+begin_comment
+comment|//}
+end_comment
 
 end_unit
 

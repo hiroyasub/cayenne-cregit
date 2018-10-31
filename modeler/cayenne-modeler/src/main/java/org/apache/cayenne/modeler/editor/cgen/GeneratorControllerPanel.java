@@ -29,7 +29,7 @@ name|cayenne
 operator|.
 name|gen
 operator|.
-name|ClassGenerationAction
+name|CgenConfiguration
 import|;
 end_import
 
@@ -245,7 +245,7 @@ name|selectOutputFolder
 return|;
 block|}
 specifier|public
-name|ClassGenerationAction
+name|CgenConfiguration
 name|getCgenByDataMap
 parameter_list|()
 block|{
@@ -270,7 +270,7 @@ name|get
 argument_list|(
 name|dataMap
 argument_list|,
-name|ClassGenerationAction
+name|CgenConfiguration
 operator|.
 name|class
 argument_list|)
