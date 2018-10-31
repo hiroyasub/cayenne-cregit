@@ -17,16 +17,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -62,6 +52,16 @@ operator|.
 name|map
 operator|.
 name|QueryDescriptor
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
 import|;
 end_import
 
@@ -316,12 +316,6 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|artifactsGenerationMode
-operator|==
-name|ArtifactsGenerationMode
-operator|.
-name|DATAMAP
-operator|||
 name|artifactsGenerationMode
 operator|==
 name|ArtifactsGenerationMode

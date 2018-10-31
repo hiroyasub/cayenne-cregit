@@ -484,7 +484,7 @@ operator|=
 literal|"false"
 argument_list|)
 specifier|private
-name|boolean
+name|Boolean
 name|createPKProperties
 decl_stmt|;
 specifier|private
@@ -892,13 +892,7 @@ argument_list|(
 name|action
 argument_list|)
 expr_stmt|;
-name|action
-operator|.
-name|setDestDir
-argument_list|(
-name|destDir
-argument_list|)
-expr_stmt|;
+comment|//		action.setDestDir(destDir.toPath());
 name|action
 operator|.
 name|setEncoding
@@ -1120,6 +1114,22 @@ else|:
 name|action
 operator|.
 name|getQuerySuperTemplate
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|action
+operator|.
+name|setCreatePKProperties
+argument_list|(
+name|createPKProperties
+operator|!=
+literal|null
+condition|?
+name|createPKProperties
+else|:
+name|action
+operator|.
+name|isCreatePropertyNames
 argument_list|()
 argument_list|)
 expr_stmt|;

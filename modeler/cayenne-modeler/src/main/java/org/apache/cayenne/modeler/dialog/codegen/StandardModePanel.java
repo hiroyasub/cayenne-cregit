@@ -53,7 +53,7 @@ name|java
 operator|.
 name|awt
 operator|.
-name|*
+name|BorderLayout
 import|;
 end_import
 

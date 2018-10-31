@@ -97,7 +97,7 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|JLabel
+name|*
 import|;
 end_import
 
@@ -107,7 +107,7 @@ name|java
 operator|.
 name|awt
 operator|.
-name|Component
+name|*
 import|;
 end_import
 
@@ -118,14 +118,6 @@ name|ClassesTabController
 extends|extends
 name|CayenneController
 block|{
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|GENERATE_PROPERTY
-init|=
-literal|"generate"
-decl_stmt|;
 specifier|protected
 name|ClassesTabPanel
 name|view
@@ -191,6 +183,9 @@ name|startup
 parameter_list|()
 block|{
 name|initBindings
+argument_list|()
+expr_stmt|;
+name|classSelectedAction
 argument_list|()
 expr_stmt|;
 block|}
@@ -373,12 +368,31 @@ argument_list|()
 operator|.
 name|getSelectedEmbeddablesSize
 argument_list|()
+operator|+
+operator|(
+name|getParentController
+argument_list|()
+operator|.
+name|isDataMapSelected
+argument_list|()
+condition|?
+literal|1
+else|:
+literal|0
+operator|)
 decl_stmt|;
 if|if
 condition|(
 name|selectedCount
-operator|==
-literal|0
+operator|<
+name|getParentController
+argument_list|()
+operator|.
+name|getClasses
+argument_list|()
+operator|.
+name|size
+argument_list|()
 condition|)
 block|{
 name|view

@@ -69,7 +69,7 @@ name|java
 operator|.
 name|awt
 operator|.
-name|*
+name|Component
 import|;
 end_import
 
@@ -146,11 +146,7 @@ name|treeMap
 init|=
 operator|new
 name|TreeMap
-argument_list|<
-name|DataMap
-argument_list|,
-name|DataMapDefaults
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|ArrayList

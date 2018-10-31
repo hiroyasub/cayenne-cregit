@@ -127,7 +127,17 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|*
+name|Icon
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|JLabel
 import|;
 end_import
 
@@ -137,7 +147,7 @@ name|java
 operator|.
 name|awt
 operator|.
-name|*
+name|Component
 import|;
 end_import
 
@@ -147,7 +157,27 @@ name|java
 operator|.
 name|util
 operator|.
-name|*
+name|ArrayList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|HashSet
 import|;
 end_import
 
@@ -158,6 +188,16 @@ operator|.
 name|util
 operator|.
 name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Set
 import|;
 end_import
 
