@@ -320,7 +320,7 @@ specifier|final
 name|String
 name|PROGRESS_PANEL_LAYOUT
 init|=
-literal|"fill:160dlu, 60dlu, fill:160dlu"
+literal|"fill:160dlu:grow, 60dlu, fill:160dlu:grow"
 decl_stmt|;
 specifier|private
 specifier|static
