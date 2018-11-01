@@ -1127,6 +1127,12 @@ name|loadedDataMap
 operator|=
 literal|null
 expr_stmt|;
+name|this
+operator|.
+name|hasChanges
+operator|=
+literal|false
+expr_stmt|;
 block|}
 block|}
 specifier|protected
