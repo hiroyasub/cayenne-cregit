@@ -1499,7 +1499,7 @@ argument_list|()
 operator|.
 name|isEmpty
 argument_list|()
-operator|||
+operator|&&
 name|includeTable
 operator|.
 name|getExcludeColumns
