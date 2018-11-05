@@ -1503,6 +1503,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|isTransferable
+operator|&&
 name|includeTable
 operator|.
 name|getIncludeColumns
