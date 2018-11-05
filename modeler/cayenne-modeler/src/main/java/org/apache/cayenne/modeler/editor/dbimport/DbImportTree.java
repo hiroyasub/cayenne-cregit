@@ -1865,7 +1865,7 @@ if|if
 condition|(
 name|node
 operator|.
-name|isIncludeColumn
+name|isIncludeTable
 argument_list|()
 operator|&&
 operator|!
