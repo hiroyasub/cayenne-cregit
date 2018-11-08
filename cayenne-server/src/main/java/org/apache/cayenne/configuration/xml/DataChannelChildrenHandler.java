@@ -521,13 +521,6 @@ argument_list|)
 expr_stmt|;
 name|dataMap
 operator|.
-name|setConfigurationSource
-argument_list|(
-name|dataMapResource
-argument_list|)
-expr_stmt|;
-name|dataMap
-operator|.
 name|setDataChannelDescriptor
 argument_list|(
 name|descriptor
