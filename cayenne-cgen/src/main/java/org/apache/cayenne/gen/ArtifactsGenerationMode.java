@@ -25,11 +25,6 @@ enum|enum
 name|ArtifactsGenerationMode
 block|{
 comment|// TODO: andrus 12/9/2007 - label names are old... need to call it something else...
-name|DATAMAP
-argument_list|(
-literal|"datamap"
-argument_list|)
-block|,
 name|ENTITY
 argument_list|(
 literal|"entity"

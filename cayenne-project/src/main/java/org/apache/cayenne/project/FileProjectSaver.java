@@ -543,6 +543,13 @@ name|size
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|delegate
+operator|.
+name|setBaseDirectory
+argument_list|(
+name|baseResource
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|ConfigurationNode
