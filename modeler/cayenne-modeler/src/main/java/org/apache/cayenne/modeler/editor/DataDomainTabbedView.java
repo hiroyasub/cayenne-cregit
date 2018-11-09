@@ -186,9 +186,11 @@ decl_stmt|;
 name|DataDomainGraphTab
 name|graphTab
 decl_stmt|;
+specifier|private
 name|JScrollPane
 name|cgenView
 decl_stmt|;
+specifier|private
 name|CgenTabController
 name|cgenTabController
 decl_stmt|;

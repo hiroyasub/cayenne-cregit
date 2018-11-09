@@ -197,6 +197,13 @@ literal|30
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|generateButton
+operator|.
+name|setEnabled
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
 name|this
 operator|.
 name|classesCount

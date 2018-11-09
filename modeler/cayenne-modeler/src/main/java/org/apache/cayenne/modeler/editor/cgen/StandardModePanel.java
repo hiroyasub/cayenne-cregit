@@ -80,7 +80,10 @@ name|GeneratorControllerPanel
 block|{
 specifier|public
 name|StandardModePanel
-parameter_list|()
+parameter_list|(
+name|CodeGeneratorControllerBase
+name|codeGeneratorControllerBase
+parameter_list|)
 block|{
 name|super
 argument_list|(
@@ -94,6 +97,8 @@ argument_list|()
 operator|.
 name|getProjectController
 argument_list|()
+argument_list|,
+name|codeGeneratorControllerBase
 argument_list|)
 expr_stmt|;
 name|FormLayout

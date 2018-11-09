@@ -238,10 +238,8 @@ annotation|@
 name|Test
 specifier|public
 name|void
-name|testCgen
+name|testCgenWithDmConfig
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|File
 name|mapDir
@@ -363,8 +361,6 @@ specifier|public
 name|void
 name|testCgenWithDmAndPomConfigs
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|File
 name|mapDir

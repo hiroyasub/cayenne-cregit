@@ -429,7 +429,7 @@ expr_stmt|;
 block|}
 specifier|public
 name|void
-name|testDataMapPomCgen
+name|testCgenWithDmAndPomConfigs
 parameter_list|()
 throws|throws
 name|Exception

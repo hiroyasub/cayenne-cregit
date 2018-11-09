@@ -277,6 +277,13 @@ name|getParent
 argument_list|()
 expr_stmt|;
 block|}
+name|cgenConfiguration
+operator|.
+name|setRootPath
+argument_list|(
+name|resourcePath
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|prevPath

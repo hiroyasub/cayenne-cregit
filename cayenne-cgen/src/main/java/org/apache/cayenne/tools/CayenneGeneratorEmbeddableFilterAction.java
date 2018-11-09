@@ -75,6 +75,10 @@ name|Collection
 import|;
 end_import
 
+begin_comment
+comment|/**  *  Performs embeddable filtering to build a collection of embedables that should be used in  *  class generation.  * @since 4.1  */
+end_comment
+
 begin_class
 class|class
 name|CayenneGeneratorEmbeddableFilterAction
