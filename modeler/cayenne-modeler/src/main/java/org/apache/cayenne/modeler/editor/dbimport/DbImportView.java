@@ -1307,6 +1307,13 @@ argument_list|,
 name|reverseEngineering
 argument_list|)
 expr_stmt|;
+name|projectController
+operator|.
+name|setDirty
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
 block|}
 name|configPanel
 operator|.
