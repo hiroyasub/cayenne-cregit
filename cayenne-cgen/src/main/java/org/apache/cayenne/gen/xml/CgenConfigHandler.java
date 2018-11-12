@@ -196,7 +196,7 @@ specifier|final
 name|String
 name|SUPERCLASS_TEMPLATE_TAG
 init|=
-literal|"superclassTemplate"
+literal|"superTemplate"
 decl_stmt|;
 specifier|private
 specifier|static
