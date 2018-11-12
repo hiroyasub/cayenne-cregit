@@ -97,12 +97,32 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|*
+name|JButton
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|JPanel
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|JTextField
 import|;
 end_import
 
 begin_comment
-comment|/**  * A generic panel that is a superclass of generator panels, defining common fields.  *   */
+comment|/**  * @since 4.1  * A generic panel that is a superclass of generator panels, defining common fields.  */
 end_comment
 
 begin_class

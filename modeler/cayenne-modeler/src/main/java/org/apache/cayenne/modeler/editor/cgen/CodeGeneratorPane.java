@@ -25,7 +25,27 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|*
+name|JScrollPane
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|JSplitPane
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|ScrollPaneConstants
 import|;
 end_import
 
@@ -35,12 +55,32 @@ name|java
 operator|.
 name|awt
 operator|.
-name|*
+name|BorderLayout
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|awt
+operator|.
+name|Component
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|awt
+operator|.
+name|Dimension
 import|;
 end_import
 
 begin_comment
-comment|/**  */
+comment|/**  * @since 4.1  */
 end_comment
 
 begin_class

@@ -241,7 +241,7 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|*
+name|JOptionPane
 import|;
 end_import
 
@@ -368,6 +368,10 @@ operator|.
 name|Preferences
 import|;
 end_import
+
+begin_comment
+comment|/**  * @since 4.1  */
+end_comment
 
 begin_class
 specifier|public

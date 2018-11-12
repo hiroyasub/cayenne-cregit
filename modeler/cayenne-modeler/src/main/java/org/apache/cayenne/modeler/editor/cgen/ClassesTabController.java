@@ -97,7 +97,7 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|*
+name|JLabel
 import|;
 end_import
 
@@ -107,9 +107,13 @@ name|java
 operator|.
 name|awt
 operator|.
-name|*
+name|Component
 import|;
 end_import
+
+begin_comment
+comment|/**  * @since 4.1  */
+end_comment
 
 begin_class
 specifier|public
@@ -461,7 +465,7 @@ block|}
 name|getParentController
 argument_list|()
 operator|.
-name|updateEntities
+name|updateSelectedEntities
 argument_list|()
 expr_stmt|;
 block|}
@@ -504,7 +508,7 @@ block|;
 name|getParentController
 argument_list|()
 operator|.
-name|updateEntities
+name|updateSelectedEntities
 argument_list|()
 empty_stmt|;
 if|if

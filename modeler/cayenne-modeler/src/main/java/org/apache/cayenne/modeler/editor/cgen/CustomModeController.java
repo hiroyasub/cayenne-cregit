@@ -99,7 +99,7 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|*
+name|DefaultComboBoxModel
 import|;
 end_import
 
@@ -109,7 +109,7 @@ name|java
 operator|.
 name|awt
 operator|.
-name|*
+name|Component
 import|;
 end_import
 
@@ -144,7 +144,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A controller for the custom generation mode.  */
+comment|/**  * @since 4.1  * A controller for the custom generation mode.  */
 end_comment
 
 begin_class

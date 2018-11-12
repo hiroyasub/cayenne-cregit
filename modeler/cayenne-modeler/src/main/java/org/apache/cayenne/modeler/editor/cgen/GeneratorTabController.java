@@ -69,7 +69,17 @@ name|java
 operator|.
 name|awt
 operator|.
-name|*
+name|Component
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|awt
+operator|.
+name|Dimension
 import|;
 end_import
 
@@ -94,7 +104,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  */
+comment|/**  * @since 4.1  */
 end_comment
 
 begin_class

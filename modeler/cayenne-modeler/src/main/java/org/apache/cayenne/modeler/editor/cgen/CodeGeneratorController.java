@@ -161,7 +161,7 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|*
+name|JOptionPane
 import|;
 end_import
 
@@ -171,7 +171,7 @@ name|java
 operator|.
 name|awt
 operator|.
-name|*
+name|Component
 import|;
 end_import
 
@@ -222,7 +222,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A controller for the class generator dialog.  */
+comment|/**  * @since 4.1  * A controller for the class generator dialog.  */
 end_comment
 
 begin_class

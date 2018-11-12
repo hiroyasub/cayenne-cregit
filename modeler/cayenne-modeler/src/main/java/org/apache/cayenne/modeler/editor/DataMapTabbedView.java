@@ -107,7 +107,17 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|*
+name|JScrollPane
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|JTabbedPane
 import|;
 end_import
 

@@ -129,7 +129,37 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|*
+name|JButton
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|JCheckBox
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|JLabel
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|JPanel
 import|;
 end_import
 
@@ -139,9 +169,13 @@ name|java
 operator|.
 name|awt
 operator|.
-name|*
+name|BorderLayout
 import|;
 end_import
+
+begin_comment
+comment|/**  * @since 4.1  */
+end_comment
 
 begin_class
 specifier|public
