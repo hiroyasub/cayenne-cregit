@@ -1013,6 +1013,9 @@ name|name
 argument_list|)
 argument_list|)
 operator|.
+name|normalize
+argument_list|()
+operator|.
 name|toString
 argument_list|()
 decl_stmt|;

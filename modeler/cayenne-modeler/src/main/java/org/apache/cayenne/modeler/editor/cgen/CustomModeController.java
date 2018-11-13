@@ -606,6 +606,9 @@ argument_list|()
 argument_list|)
 argument_list|)
 operator|.
+name|normalize
+argument_list|()
+operator|.
 name|toString
 argument_list|()
 decl_stmt|;
@@ -629,6 +632,9 @@ name|getSuperTemplate
 argument_list|()
 argument_list|)
 argument_list|)
+operator|.
+name|normalize
+argument_list|()
 operator|.
 name|toString
 argument_list|()
