@@ -27,20 +27,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
-operator|.
-name|Constants
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|di
 operator|.
 name|Binder
@@ -106,7 +92,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * This is HTTP/2 implementation of ROP Client.  *<p>  * This module uses {@link JettyHttpROPConnector} initialized by {@link JettyHttp2ClientConnectionProvider}  * without ALPN by default.  *<p>  * In order to use it with ALPN you have to set {@link Constants#ROP_SERVICE_USE_ALPN_PROPERTY} to true  * and provide the alpn-boot-XXX.jar into the bootstrap classpath.  */
+comment|/**  * This is HTTP/2 implementation of ROP Client.  *<p>  * This module uses {@link JettyHttpROPConnector} initialized by {@link JettyHttp2ClientConnectionProvider}  * without ALPN by default.  *<p>  * In order to use it with ALPN you have to set {@link ClientConstants#ROP_SERVICE_USE_ALPN_PROPERTY} to true  * and provide the alpn-boot-XXX.jar into the bootstrap classpath.  */
 end_comment
 
 begin_class
