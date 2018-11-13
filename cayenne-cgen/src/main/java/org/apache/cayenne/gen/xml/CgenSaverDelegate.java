@@ -289,15 +289,6 @@ condition|(
 name|prevPath
 operator|!=
 literal|null
-operator|&&
-name|resourcePath
-operator|.
-name|compareTo
-argument_list|(
-name|prevPath
-argument_list|)
-operator|!=
-literal|0
 condition|)
 block|{
 name|Path
@@ -309,6 +300,9 @@ name|relativize
 argument_list|(
 name|prevPath
 argument_list|)
+operator|.
+name|normalize
+argument_list|()
 decl_stmt|;
 name|cgenConfiguration
 operator|.
