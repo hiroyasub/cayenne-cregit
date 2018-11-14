@@ -300,7 +300,10 @@ name|item
 argument_list|,
 name|cgenConfiguration
 operator|.
-name|getRootPath
+name|getDataMap
+argument_list|()
+operator|.
+name|getConfigurationSource
 argument_list|()
 argument_list|)
 argument_list|)
@@ -385,7 +388,10 @@ name|item
 argument_list|,
 name|cgenConfiguration
 operator|.
-name|getRootPath
+name|getDataMap
+argument_list|()
+operator|.
+name|getConfigurationSource
 argument_list|()
 argument_list|)
 argument_list|)
