@@ -128,6 +128,15 @@ name|equals
 argument_list|(
 name|tag
 argument_list|)
+operator|||
+name|ConfigHandler
+operator|.
+name|OLD_CONFIG_TAG
+operator|.
+name|equals
+argument_list|(
+name|tag
+argument_list|)
 condition|)
 block|{
 return|return

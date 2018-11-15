@@ -893,7 +893,7 @@ name|encoder
 operator|.
 name|start
 argument_list|(
-literal|"config"
+literal|"dbImport"
 argument_list|)
 operator|.
 name|attribute
