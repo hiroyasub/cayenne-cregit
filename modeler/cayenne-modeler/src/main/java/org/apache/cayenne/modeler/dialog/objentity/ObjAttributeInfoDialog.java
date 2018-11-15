@@ -3773,7 +3773,7 @@ name|setForeground
 argument_list|(
 name|Color
 operator|.
-name|GRAY
+name|DARK_GRAY
 argument_list|)
 expr_stmt|;
 block|}

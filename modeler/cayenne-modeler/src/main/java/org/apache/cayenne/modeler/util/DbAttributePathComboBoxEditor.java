@@ -616,17 +616,6 @@ argument_list|(
 name|dbAttributePath
 argument_list|)
 decl_stmt|;
-name|ObjAttributeTableModel
-name|currentModel
-init|=
-operator|(
-name|ObjAttributeTableModel
-operator|)
-name|table
-operator|.
-name|getModel
-argument_list|()
-decl_stmt|;
 name|String
 index|[]
 name|pathStrings
@@ -705,7 +694,7 @@ condition|)
 block|{
 return|return;
 block|}
-name|currentModel
+name|model
 operator|.
 name|setUpdatedValueAt
 argument_list|(
@@ -716,7 +705,7 @@ argument_list|,
 name|DB_ATTRIBUTE_PATH_COLUMN
 argument_list|)
 expr_stmt|;
-name|currentModel
+name|model
 operator|.
 name|getAttribute
 argument_list|(

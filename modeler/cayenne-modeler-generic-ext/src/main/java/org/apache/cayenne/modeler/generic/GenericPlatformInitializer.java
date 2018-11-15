@@ -400,6 +400,15 @@ name|UIManager
 operator|.
 name|put
 argument_list|(
+literal|"Table.selectionBorderColor"
+argument_list|,
+name|greyHighlight
+argument_list|)
+expr_stmt|;
+name|UIManager
+operator|.
+name|put
+argument_list|(
 literal|"ScrollPane.border"
 argument_list|,
 name|BorderFactory
