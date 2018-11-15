@@ -740,10 +740,7 @@ argument_list|(
 operator|new
 name|Object
 index|[
-name|c
-operator|.
-name|size
-argument_list|()
+literal|0
 index|]
 argument_list|)
 expr_stmt|;
@@ -838,6 +835,15 @@ name|void
 name|convertValues
 parameter_list|()
 block|{
+if|if
+condition|(
+name|values
+operator|==
+literal|null
+condition|)
+block|{
+return|return;
+block|}
 for|for
 control|(
 name|int
