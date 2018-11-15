@@ -400,9 +400,12 @@ name|UIManager
 operator|.
 name|put
 argument_list|(
-literal|"Table.selectionBorderColor"
+literal|"Table.focusCellHighlightBorder"
 argument_list|,
-name|greyHighlight
+name|BorderFactory
+operator|.
+name|createEmptyBorder
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|UIManager
