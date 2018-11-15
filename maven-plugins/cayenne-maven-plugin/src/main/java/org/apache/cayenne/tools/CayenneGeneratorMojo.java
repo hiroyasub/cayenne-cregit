@@ -1037,6 +1037,13 @@ name|hasConfig
 argument_list|()
 condition|)
 block|{
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"Using cgen config from pom.xml"
+argument_list|)
+expr_stmt|;
 return|return
 name|cgenConfigFromPom
 argument_list|(
@@ -1051,6 +1058,21 @@ operator|!=
 literal|null
 condition|)
 block|{
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"Using cgen config from "
+operator|+
+name|cgenConfiguration
+operator|.
+name|getDataMap
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|useConfigFromDataMap
 operator|=
 literal|true
@@ -1061,6 +1083,13 @@ return|;
 block|}
 else|else
 block|{
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"Using default cgen config."
+argument_list|)
+expr_stmt|;
 name|cgenConfiguration
 operator|=
 operator|new
