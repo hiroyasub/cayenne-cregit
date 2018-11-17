@@ -260,6 +260,10 @@ name|CayenneGeneratorTask
 extends|extends
 name|CayenneTask
 block|{
+specifier|private
+name|AntLogger
+name|logger
+decl_stmt|;
 specifier|protected
 name|String
 name|includeEntitiesPattern
@@ -426,15 +430,14 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|AntLogger
 name|logger
-init|=
+operator|=
 operator|new
 name|AntLogger
 argument_list|(
 name|this
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|CayenneGeneratorMapLoaderAction
 name|loadAction
 init|=
@@ -816,6 +819,13 @@ name|hasConfig
 argument_list|()
 condition|)
 block|{
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"Using cgen config from pom.xml"
+argument_list|)
+expr_stmt|;
 return|return
 name|cgenConfigFromPom
 argument_list|(
@@ -830,6 +840,21 @@ operator|!=
 literal|null
 condition|)
 block|{
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"Using cgen config from "
+operator|+
+name|cgenConfiguration
+operator|.
+name|getDataMap
+argument_list|()
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|useConfigFromDataMap
 operator|=
 literal|true
@@ -840,6 +865,13 @@ return|;
 block|}
 else|else
 block|{
+name|logger
+operator|.
+name|info
+argument_list|(
+literal|"Using default cgen config."
+argument_list|)
+expr_stmt|;
 name|cgenConfiguration
 operator|=
 operator|new
