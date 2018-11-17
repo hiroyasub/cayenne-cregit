@@ -262,7 +262,9 @@ specifier|final
 name|int
 name|DB_ATTRIBUTE_PATH_COLUMN
 init|=
-literal|3
+name|ObjAttributeTableModel
+operator|.
+name|DB_ATTRIBUTE
 decl_stmt|;
 specifier|private
 name|String

@@ -107,6 +107,22 @@ name|FormLayout
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
+name|util
+operator|.
+name|CayenneTable
+import|;
+end_import
+
 begin_class
 specifier|public
 class|class
@@ -150,7 +166,7 @@ expr_stmt|;
 name|table
 operator|=
 operator|new
-name|JTable
+name|CayenneTable
 argument_list|()
 expr_stmt|;
 name|table
