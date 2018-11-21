@@ -219,7 +219,7 @@ operator|=
 operator|new
 name|JButton
 argument_list|(
-literal|"Select"
+literal|".."
 argument_list|)
 expr_stmt|;
 block|}

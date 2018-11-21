@@ -284,7 +284,7 @@ argument_list|(
 operator|new
 name|Dimension
 argument_list|(
-literal|300
+literal|450
 argument_list|,
 literal|200
 argument_list|)

@@ -138,7 +138,7 @@ argument_list|(
 operator|new
 name|Dimension
 argument_list|(
-literal|800
+literal|300
 argument_list|,
 literal|400
 argument_list|)
