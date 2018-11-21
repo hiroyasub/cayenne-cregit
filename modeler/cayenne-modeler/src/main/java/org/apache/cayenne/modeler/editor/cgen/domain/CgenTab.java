@@ -47,7 +47,7 @@ name|modeler
 operator|.
 name|editor
 operator|.
-name|AdditionalTab
+name|GeneratorsTab
 import|;
 end_import
 
@@ -63,7 +63,7 @@ name|modeler
 operator|.
 name|editor
 operator|.
-name|AdditionalTabController
+name|GeneratorsTabController
 import|;
 end_import
 
@@ -86,7 +86,7 @@ specifier|public
 class|class
 name|CgenTab
 extends|extends
-name|AdditionalTab
+name|GeneratorsTab
 block|{
 specifier|public
 name|CgenTab
@@ -94,7 +94,7 @@ parameter_list|(
 name|ProjectController
 name|projectController
 parameter_list|,
-name|AdditionalTabController
+name|GeneratorsTabController
 name|additionalTabController
 parameter_list|)
 block|{
@@ -138,20 +138,6 @@ argument_list|,
 literal|"Error generating classes - "
 operator|+
 name|msg
-argument_list|)
-expr_stmt|;
-block|}
-name|void
-name|showEmptyMessage
-parameter_list|()
-block|{
-name|JOptionPane
-operator|.
-name|showMessageDialog
-argument_list|(
-name|this
-argument_list|,
-literal|"Nothing to generate - "
 argument_list|)
 expr_stmt|;
 block|}

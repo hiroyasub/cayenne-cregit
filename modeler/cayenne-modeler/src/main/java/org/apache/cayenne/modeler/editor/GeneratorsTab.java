@@ -1,4 +1,8 @@
 begin_unit|revision:1.0.0;language:Java;cregit-version:0.0.1
+begin_comment
+comment|/*****************************************************************  *   Licensed to the Apache Software Foundation (ASF) under one  *  or more contributor license agreements.  See the NOTICE file  *  distributed with this work for additional information  *  regarding copyright ownership.  The ASF licenses this file  *  to you under the Apache License, Version 2.0 (the  *  "License"); you may not use this file except in compliance  *  with the License.  You may obtain a copy of the License at  *  *    http://www.apache.org/licenses/LICENSE-2.0  *  *  Unless required by applicable law or agreed to in writing,  *  software distributed under the License is distributed on an  *  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY  *  KIND, either express or implied.  See the License for the  *  specific language governing permissions and limitations  *  under the License.  ****************************************************************/
+end_comment
+
 begin_package
 package|package
 name|org
@@ -137,10 +141,14 @@ name|ConcurrentMap
 import|;
 end_import
 
+begin_comment
+comment|/**  * @since 4.1  */
+end_comment
+
 begin_class
 specifier|public
 class|class
-name|AdditionalTab
+name|GeneratorsTab
 extends|extends
 name|JPanel
 block|{
@@ -149,7 +157,7 @@ name|ProjectController
 name|projectController
 decl_stmt|;
 specifier|private
-name|AdditionalTabController
+name|GeneratorsTabController
 name|additionalTabController
 decl_stmt|;
 specifier|private
@@ -161,12 +169,12 @@ name|JButton
 name|generateAll
 decl_stmt|;
 specifier|public
-name|AdditionalTab
+name|GeneratorsTab
 parameter_list|(
 name|ProjectController
 name|projectController
 parameter_list|,
-name|AdditionalTabController
+name|GeneratorsTabController
 name|additionalTabController
 parameter_list|,
 name|String
@@ -300,7 +308,7 @@ name|ConcurrentMap
 argument_list|<
 name|DataMap
 argument_list|,
-name|TabPanel
+name|GeneratorsPanel
 argument_list|>
 name|panels
 init|=
@@ -444,6 +452,21 @@ argument_list|,
 name|BorderLayout
 operator|.
 name|CENTER
+argument_list|)
+expr_stmt|;
+block|}
+specifier|public
+name|void
+name|showEmptyMessage
+parameter_list|()
+block|{
+name|JOptionPane
+operator|.
+name|showMessageDialog
+argument_list|(
+name|this
+argument_list|,
+literal|"Nothing to generate"
 argument_list|)
 expr_stmt|;
 block|}

@@ -68,6 +68,23 @@ argument_list|>
 name|type
 parameter_list|)
 function_decl|;
+comment|/**      * @since 4.1      * @param key object for wich we want meta data      * @param type meta data type class      * @param<T> meta data type      * @return value or {@code null} if no can't remove      */
+parameter_list|<
+name|T
+parameter_list|>
+name|T
+name|remove
+parameter_list|(
+name|ConfigurationNode
+name|key
+parameter_list|,
+name|Class
+argument_list|<
+name|T
+argument_list|>
+name|type
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
