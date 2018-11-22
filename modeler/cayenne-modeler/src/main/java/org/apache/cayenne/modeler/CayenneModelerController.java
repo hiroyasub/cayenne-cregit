@@ -261,7 +261,7 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|*
+name|WindowConstants
 import|;
 end_import
 
@@ -283,7 +283,7 @@ name|java
 operator|.
 name|awt
 operator|.
-name|*
+name|Component
 import|;
 end_import
 

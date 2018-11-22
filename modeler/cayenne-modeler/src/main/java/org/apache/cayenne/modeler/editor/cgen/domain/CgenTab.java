@@ -73,7 +73,7 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|*
+name|JOptionPane
 import|;
 end_import
 

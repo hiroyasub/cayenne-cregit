@@ -126,7 +126,6 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
-specifier|synchronized
 name|DbLoadResultDialog
 name|createDialog
 parameter_list|()
@@ -178,7 +177,6 @@ name|globalImport
 return|;
 block|}
 specifier|public
-specifier|synchronized
 name|void
 name|checkImport
 parameter_list|(
