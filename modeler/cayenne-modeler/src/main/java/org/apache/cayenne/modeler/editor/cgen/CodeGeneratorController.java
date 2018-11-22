@@ -291,7 +291,7 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|*
+name|JOptionPane
 import|;
 end_import
 
@@ -301,7 +301,7 @@ name|java
 operator|.
 name|awt
 operator|.
-name|*
+name|Component
 import|;
 end_import
 
@@ -556,6 +556,11 @@ name|initFromModel
 operator|=
 literal|false
 expr_stmt|;
+name|validate
+argument_list|(
+name|modeController
+argument_list|)
+expr_stmt|;
 block|}
 specifier|private
 name|boolean
@@ -691,15 +696,7 @@ name|builder
 operator|.
 name|bindToAction
 argument_list|(
-operator|(
-operator|(
-name|GeneratorTabPanel
-operator|)
-name|generatorSelector
-operator|.
-name|getView
-argument_list|()
-operator|)
+name|view
 operator|.
 name|getGenerateButton
 argument_list|()
@@ -917,15 +914,7 @@ name|boolean
 name|enable
 parameter_list|)
 block|{
-operator|(
-operator|(
-name|GeneratorTabPanel
-operator|)
-name|generatorSelector
-operator|.
-name|getView
-argument_list|()
-operator|)
+name|view
 operator|.
 name|getGenerateButton
 argument_list|()

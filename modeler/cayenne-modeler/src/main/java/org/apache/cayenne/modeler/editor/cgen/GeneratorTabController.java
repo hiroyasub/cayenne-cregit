@@ -313,7 +313,7 @@ argument_list|(
 operator|new
 name|Dimension
 argument_list|(
-literal|600
+literal|550
 argument_list|,
 literal|480
 argument_list|)

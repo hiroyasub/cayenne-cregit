@@ -572,7 +572,7 @@ init|=
 operator|new
 name|FormLayout
 argument_list|(
-literal|"right:79dlu, 1dlu, fill:300:grow, 1dlu, left:100dlu, 100dlu"
+literal|"right:74dlu, 1dlu, fill:240:grow, 1dlu, left:100dlu, 100dlu"
 argument_list|,
 literal|""
 argument_list|)
@@ -779,18 +779,6 @@ argument_list|,
 name|BorderLayout
 operator|.
 name|SOUTH
-argument_list|)
-expr_stmt|;
-name|add
-argument_list|(
-name|builder
-operator|.
-name|getPanel
-argument_list|()
-argument_list|,
-name|BorderLayout
-operator|.
-name|CENTER
 argument_list|)
 expr_stmt|;
 block|}
