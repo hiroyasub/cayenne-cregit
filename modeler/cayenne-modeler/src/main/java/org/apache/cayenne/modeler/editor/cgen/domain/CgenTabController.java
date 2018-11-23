@@ -724,18 +724,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-annotation|@
-name|Override
-specifier|public
-name|void
-name|deleteConfig
-parameter_list|(
-name|DataMap
-name|dataMap
-parameter_list|)
-block|{
-comment|//NOOP
-block|}
 block|}
 end_class
 
