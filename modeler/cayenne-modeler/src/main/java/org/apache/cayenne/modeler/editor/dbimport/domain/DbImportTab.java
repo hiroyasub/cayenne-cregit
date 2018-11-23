@@ -95,6 +95,8 @@ argument_list|,
 name|additionalTabController
 argument_list|,
 literal|"icon-dbi-runImport.png"
+argument_list|,
+literal|"Run reverse engineering on selected datamaps."
 argument_list|)
 expr_stmt|;
 block|}

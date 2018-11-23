@@ -105,6 +105,8 @@ argument_list|,
 name|additionalTabController
 argument_list|,
 literal|"icon-gen_java.png"
+argument_list|,
+literal|"Run class generation on selected datamaps."
 argument_list|)
 expr_stmt|;
 block|}
