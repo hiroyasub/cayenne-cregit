@@ -93,7 +93,7 @@ name|modeler
 operator|.
 name|editor
 operator|.
-name|GlobalDbImportController
+name|DbImportController
 import|;
 end_import
 
@@ -481,8 +481,8 @@ name|EditorView
 name|editorView
 decl_stmt|;
 specifier|private
-name|GlobalDbImportController
-name|globalDbImportController
+name|DbImportController
+name|dbImportController
 decl_stmt|;
 specifier|public
 name|CayenneModelerController
@@ -543,10 +543,10 @@ argument_list|)
 expr_stmt|;
 name|this
 operator|.
-name|globalDbImportController
+name|dbImportController
 operator|=
 operator|new
-name|GlobalDbImportController
+name|DbImportController
 argument_list|()
 expr_stmt|;
 block|}
@@ -1594,12 +1594,12 @@ expr_stmt|;
 block|}
 block|}
 specifier|public
-name|GlobalDbImportController
-name|getGlobalDbImportController
+name|DbImportController
+name|getDbImportController
 parameter_list|()
 block|{
 return|return
-name|globalDbImportController
+name|dbImportController
 return|;
 block|}
 class|class

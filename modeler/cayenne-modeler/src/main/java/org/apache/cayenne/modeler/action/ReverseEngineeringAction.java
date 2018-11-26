@@ -139,7 +139,7 @@ name|modeler
 operator|.
 name|editor
 operator|.
-name|GlobalDbImportController
+name|DbImportController
 import|;
 end_import
 
@@ -465,7 +465,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|GlobalDbImportController
+name|DbImportController
 name|dbImportController
 init|=
 name|Application
@@ -476,7 +476,7 @@ operator|.
 name|getFrameController
 argument_list|()
 operator|.
-name|getGlobalDbImportController
+name|getDbImportController
 argument_list|()
 decl_stmt|;
 name|DbLoadResultDialog

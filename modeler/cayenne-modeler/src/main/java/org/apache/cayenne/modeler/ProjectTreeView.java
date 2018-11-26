@@ -3948,7 +3948,7 @@ operator|.
 name|getFrameController
 argument_list|()
 operator|.
-name|getGlobalDbImportController
+name|getDbImportController
 argument_list|()
 operator|.
 name|isGlobalImport
