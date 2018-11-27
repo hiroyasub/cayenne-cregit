@@ -225,13 +225,9 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
-name|dialog
+name|editor
 operator|.
-name|db
-operator|.
-name|load
-operator|.
-name|ModelerDbImportAction
+name|DbImportController
 import|;
 end_import
 
@@ -1178,7 +1174,7 @@ operator|.
 name|getSource
 argument_list|()
 operator|instanceof
-name|ModelerDbImportAction
+name|DbImportController
 condition|)
 block|{
 name|CgenConfiguration
@@ -1199,7 +1195,10 @@ control|(
 name|ObjEntity
 name|objEntity
 range|:
-name|dataMap
+name|e
+operator|.
+name|getDataMap
+argument_list|()
 operator|.
 name|getObjEntities
 argument_list|()

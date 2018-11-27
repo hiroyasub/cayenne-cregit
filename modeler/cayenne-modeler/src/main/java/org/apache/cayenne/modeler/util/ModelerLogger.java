@@ -178,7 +178,6 @@ name|LOG_LEVEL_ERROR
 init|=
 literal|4
 decl_stmt|;
-specifier|private
 specifier|static
 specifier|final
 name|String
@@ -2768,7 +2767,6 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Prints common message to the modeler console      */
-specifier|private
 name|void
 name|log
 parameter_list|(
@@ -2819,7 +2817,6 @@ name|style
 argument_list|)
 expr_stmt|;
 block|}
-specifier|private
 name|void
 name|log
 parameter_list|(
