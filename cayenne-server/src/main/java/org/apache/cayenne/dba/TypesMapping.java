@@ -1855,15 +1855,6 @@ argument_list|,
 name|TIME
 argument_list|)
 expr_stmt|;
-name|JAVA_SQL_ENUM
-operator|.
-name|put
-argument_list|(
-name|JAVA_TIMESTAMP
-argument_list|,
-name|TIMESTAMP
-argument_list|)
-expr_stmt|;
 comment|// add primitives
 name|JAVA_SQL_ENUM
 operator|.

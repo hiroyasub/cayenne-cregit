@@ -929,13 +929,6 @@ index|[]
 name|columnArray
 parameter_list|)
 block|{
-name|int
-name|len
-init|=
-name|columnArray
-operator|.
-name|length
-decl_stmt|;
 if|if
 condition|(
 name|caseTransformer

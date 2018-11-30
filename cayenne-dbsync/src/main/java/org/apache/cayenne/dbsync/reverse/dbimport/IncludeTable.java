@@ -520,7 +520,7 @@ operator|!=
 literal|null
 operator|&&
 operator|!
-name|excludeColumns
+name|excludeRelationship
 operator|.
 name|isEmpty
 argument_list|()

@@ -3159,7 +3159,10 @@ name|equals
 argument_list|(
 name|relationship
 operator|.
-name|getTargetEntityName
+name|getSourceEntity
+argument_list|()
+operator|.
+name|getName
 argument_list|()
 argument_list|)
 operator|||

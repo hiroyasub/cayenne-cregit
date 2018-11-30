@@ -121,10 +121,7 @@ argument_list|>
 name|defaultListeners
 decl_stmt|;
 name|LifecycleCallbackEventHandler
-parameter_list|(
-name|EntityResolver
-name|resolver
-parameter_list|)
+parameter_list|()
 block|{
 name|this
 operator|.

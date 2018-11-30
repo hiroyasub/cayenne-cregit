@@ -631,7 +631,11 @@ comment|// eagerly resolve optimistically locked relationships
 name|Object
 name|target
 init|=
+operator|(
+name|lock
+operator|&&
 name|isUsedForLocking
+operator|)
 condition|?
 name|property
 operator|.
@@ -850,15 +854,13 @@ return|return
 name|arcSnapshot
 operator|!=
 literal|null
-condition|?
+operator|&&
 name|arcSnapshot
 operator|.
 name|containsKey
 argument_list|(
 name|propertyName
 argument_list|)
-else|:
-literal|false
 return|;
 block|}
 comment|/**      * Appends individual diffs to collection.      */
@@ -1308,9 +1310,6 @@ decl_stmt|;
 name|DbRelationship
 name|dbRelationship
 init|=
-operator|(
-name|DbRelationship
-operator|)
 name|dbEntity
 operator|.
 name|getRelationship

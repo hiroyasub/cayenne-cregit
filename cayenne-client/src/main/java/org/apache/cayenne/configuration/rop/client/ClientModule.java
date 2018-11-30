@@ -286,19 +286,13 @@ name|binder
 parameter_list|)
 block|{
 comment|// Contribute always to create binding
-name|MapBuilder
-argument_list|<
-name|String
-argument_list|>
-name|propertiesBuilder
-init|=
 name|ServerModule
 operator|.
 name|contributeProperties
 argument_list|(
 name|binder
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|binder
 operator|.
 name|bind

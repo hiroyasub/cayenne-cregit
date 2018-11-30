@@ -3102,17 +3102,11 @@ name|class
 argument_list|)
 expr_stmt|;
 comment|// configure explicit configurations
-name|ListBuilder
-argument_list|<
-name|String
-argument_list|>
-name|locationsListBuilder
-init|=
 name|contributeProjectLocations
 argument_list|(
 name|binder
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|binder
 operator|.
 name|bind

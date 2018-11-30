@@ -413,9 +413,7 @@ index|]
 operator|=
 operator|new
 name|LifecycleCallbackEventHandler
-argument_list|(
-name|resolver
-argument_list|)
+argument_list|()
 expr_stmt|;
 block|}
 comment|// other "static" lookup maps are initialized on-demand

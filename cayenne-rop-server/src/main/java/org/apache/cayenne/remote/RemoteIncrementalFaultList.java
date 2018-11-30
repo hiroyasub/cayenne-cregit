@@ -1051,10 +1051,6 @@ condition|(
 name|pageSize
 operator|<=
 literal|0
-operator|||
-name|elementIndex
-operator|<
-literal|0
 condition|)
 block|{
 return|return

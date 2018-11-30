@@ -440,43 +440,19 @@ name|isInfoEnabled
 argument_list|()
 condition|)
 block|{
-name|StringBuilder
-name|buf
-init|=
-operator|new
-name|StringBuilder
-argument_list|(
-literal|"Connecting to '"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-name|url
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|"' as '"
-argument_list|)
-operator|.
-name|append
-argument_list|(
-name|userName
-argument_list|)
-operator|.
-name|append
-argument_list|(
-literal|"'"
-argument_list|)
-decl_stmt|;
 name|LOGGER
 operator|.
 name|info
 argument_list|(
-name|buf
-operator|.
-name|toString
-argument_list|()
+literal|"Connecting to '"
+operator|+
+name|url
+operator|+
+literal|"' as '"
+operator|+
+name|userName
+operator|+
+literal|"'"
 argument_list|)
 expr_stmt|;
 block|}

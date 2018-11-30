@@ -993,16 +993,10 @@ name|path
 operator|==
 literal|null
 operator|||
-operator|(
-name|path
-operator|!=
-literal|null
-operator|&&
 name|isBlank
 argument_list|(
 name|path
 argument_list|)
-operator|)
 condition|)
 block|{
 comment|// throw??

@@ -812,11 +812,7 @@ name|addParameter
 argument_list|(
 literal|"paintingPrice"
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 literal|3000
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|List
@@ -963,11 +959,7 @@ name|addParameter
 argument_list|(
 literal|"paintingPrice"
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 literal|3000
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|List
