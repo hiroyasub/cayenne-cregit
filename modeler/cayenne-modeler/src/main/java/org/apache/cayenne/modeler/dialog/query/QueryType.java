@@ -223,9 +223,6 @@ name|QueryType
 parameter_list|(
 name|ProjectController
 name|mediator
-parameter_list|,
-name|DataMap
-name|root
 parameter_list|)
 block|{
 name|super

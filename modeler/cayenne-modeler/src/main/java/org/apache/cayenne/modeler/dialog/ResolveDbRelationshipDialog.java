@@ -1315,9 +1315,6 @@ name|ModelerUtil
 operator|.
 name|getDbAttributeNames
 argument_list|(
-name|getMediator
-argument_list|()
-argument_list|,
 name|relationship
 operator|.
 name|getSourceEntity
@@ -1377,9 +1374,6 @@ name|ModelerUtil
 operator|.
 name|getDbAttributeNames
 argument_list|(
-name|getMediator
-argument_list|()
-argument_list|,
 name|relationship
 operator|.
 name|getTargetEntity

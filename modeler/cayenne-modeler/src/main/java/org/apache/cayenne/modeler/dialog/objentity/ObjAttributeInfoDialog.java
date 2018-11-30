@@ -1790,15 +1790,10 @@ block|{
 name|DbEntity
 name|currentEnt
 init|=
-operator|(
-operator|(
-name|ObjEntity
-operator|)
 name|attributeSaved
 operator|.
 name|getEntity
 argument_list|()
-operator|)
 operator|.
 name|getDbEntity
 argument_list|()
@@ -1816,8 +1811,6 @@ name|ModelerUtil
 operator|.
 name|getDbAttributeNames
 argument_list|(
-name|mediator
-argument_list|,
 name|currentEnt
 argument_list|)
 expr_stmt|;

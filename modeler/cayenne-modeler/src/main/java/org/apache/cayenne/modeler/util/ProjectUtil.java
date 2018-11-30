@@ -578,9 +578,6 @@ specifier|static
 name|void
 name|setDataNodeName
 parameter_list|(
-name|DataChannelDescriptor
-name|domain
-parameter_list|,
 name|DataNodeDescriptor
 name|node
 parameter_list|,

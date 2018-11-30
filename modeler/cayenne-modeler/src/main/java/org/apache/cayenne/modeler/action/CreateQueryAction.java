@@ -250,12 +250,6 @@ name|QueryType
 argument_list|(
 name|getProjectController
 argument_list|()
-argument_list|,
-name|getProjectController
-argument_list|()
-operator|.
-name|getCurrentDataMap
-argument_list|()
 argument_list|)
 operator|.
 name|startupAction

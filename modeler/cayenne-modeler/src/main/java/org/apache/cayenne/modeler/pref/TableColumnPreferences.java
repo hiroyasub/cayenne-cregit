@@ -311,8 +311,6 @@ parameter_list|)
 block|{
 name|TableColumn
 name|column
-init|=
-literal|null
 decl_stmt|;
 for|for
 control|(
@@ -427,7 +425,7 @@ name|getCurrentPreference
 argument_list|()
 return|;
 block|}
-comment|/**      * Binds this preference object to synchronize its state with a given table component,      * allowing to specify an initial offset compared to the stored position. Allow to specify      * initial sorting.      *       * @param table      * @param minSizes      * @param maxSizes      * @param defaultSizes      * @param defaultSortColumn      * @param defaultSortOrder      */
+comment|/**      * Binds this preference object to synchronize its state with a given table component,      * allowing to specify an initial offset compared to the stored position. Allow to specify      * initial sorting.      */
 specifier|public
 name|void
 name|bind
@@ -510,7 +508,7 @@ name|defaultSortOrder
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Binds this preference object to synchronize its state with a given table component,      * allowing to specify an initial offset compared to the stored position.       *       * @param table      * @param minSizes      * @param maxSizes      * @param defaultSizes      */
+comment|/**      * Binds this preference object to synchronize its state with a given table component,      * allowing to specify an initial offset compared to the stored position.      */
 specifier|public
 name|void
 name|bind
@@ -672,8 +670,6 @@ parameter_list|)
 block|{
 name|TableColumn
 name|column
-init|=
-literal|null
 decl_stmt|;
 name|TableColumnModel
 name|columnModel
@@ -862,8 +858,6 @@ argument_list|()
 decl_stmt|;
 name|String
 name|columnName
-init|=
-literal|""
 decl_stmt|;
 for|for
 control|(
@@ -962,15 +956,11 @@ name|sort
 argument_list|(
 name|getSortColumn
 argument_list|(
-name|SORT_COLUMN_KEY
-argument_list|,
 name|defaultSortColumn
 argument_list|)
 argument_list|,
 name|getSortOrder
 argument_list|(
-name|SORT_ORDER_KEY
-argument_list|,
 name|defaultSortOrder
 argument_list|)
 argument_list|)
@@ -1009,12 +999,7 @@ name|getInt
 argument_list|(
 name|WIDTH_KEY
 operator|+
-name|Integer
-operator|.
-name|toString
-argument_list|(
 name|index
-argument_list|)
 argument_list|,
 name|defaultWidth
 argument_list|)
@@ -1055,12 +1040,7 @@ name|putInt
 argument_list|(
 name|WIDTH_KEY
 operator|+
-name|Integer
-operator|.
-name|toString
-argument_list|(
 name|index
-argument_list|)
 argument_list|,
 name|width
 argument_list|)
@@ -1093,12 +1073,7 @@ name|getInt
 argument_list|(
 name|ORDER_KEY
 operator|+
-name|Integer
-operator|.
-name|toString
-argument_list|(
 name|columnIndex
-argument_list|)
 argument_list|,
 name|defaultOrderIndex
 argument_list|)
@@ -1122,12 +1097,7 @@ name|putInt
 argument_list|(
 name|ORDER_KEY
 operator|+
-name|Integer
-operator|.
-name|toString
-argument_list|(
 name|columnIndex
-argument_list|)
 argument_list|,
 name|defaultOrderIndex
 argument_list|)
@@ -1137,9 +1107,6 @@ specifier|private
 name|boolean
 name|getSortOrder
 parameter_list|(
-name|String
-name|sortOrderKey
-parameter_list|,
 name|boolean
 name|defaultSortOrder
 parameter_list|)
@@ -1179,9 +1146,6 @@ specifier|private
 name|int
 name|getSortColumn
 parameter_list|(
-name|String
-name|sortColumnKey
-parameter_list|,
 name|int
 name|defaultSortColumn
 parameter_list|)

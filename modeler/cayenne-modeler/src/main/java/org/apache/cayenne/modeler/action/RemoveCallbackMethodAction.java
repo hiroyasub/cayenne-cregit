@@ -196,7 +196,7 @@ name|ACTION_NAME_MULTIPLE
 init|=
 literal|"Remove Callback Methods"
 decl_stmt|;
-comment|/**      * Constructor.      *      * @param actionName unique action name      * @param application Application instance      */
+comment|/**      * Constructor.      *      * @param application Application instance      */
 specifier|public
 name|RemoveCallbackMethodAction
 parameter_list|(
@@ -297,20 +297,15 @@ operator|)
 condition|)
 block|{
 name|removeCallbackMethods
-argument_list|(
-name|e
-argument_list|)
+argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * base logic for callback method removing      * @param actionEvent event      */
+comment|/**      * base logic for callback method removing      */
 specifier|private
 name|void
 name|removeCallbackMethods
-parameter_list|(
-name|ActionEvent
-name|actionEvent
-parameter_list|)
+parameter_list|()
 block|{
 name|ProjectController
 name|mediator

@@ -451,10 +451,7 @@ name|JOptionPane
 operator|.
 name|showMessageDialog
 argument_list|(
-name|Application
-operator|.
-name|getFrame
-argument_list|()
+name|editor
 argument_list|,
 literal|"Cayenne project is valid."
 argument_list|)
