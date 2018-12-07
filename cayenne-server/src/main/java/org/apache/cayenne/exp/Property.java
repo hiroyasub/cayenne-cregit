@@ -1914,6 +1914,32 @@ name|class
 argument_list|)
 return|;
 block|}
+comment|/**      * @see FunctionExpressionFactory#countDistinctExp(Expression)      */
+specifier|public
+name|Property
+argument_list|<
+name|Long
+argument_list|>
+name|countDistinct
+parameter_list|()
+block|{
+return|return
+name|create
+argument_list|(
+name|FunctionExpressionFactory
+operator|.
+name|countDistinctExp
+argument_list|(
+name|getExpression
+argument_list|()
+argument_list|)
+argument_list|,
+name|Long
+operator|.
+name|class
+argument_list|)
+return|;
+block|}
 comment|/**      * @see FunctionExpressionFactory#maxExp(Expression)      */
 specifier|public
 name|Property
