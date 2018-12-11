@@ -326,9 +326,9 @@ decl_stmt|;
 if|if
 condition|(
 name|reverseRelationship
-operator|==
+operator|!=
 literal|null
-operator|||
+operator|&&
 operator|!
 name|reverseRelationship
 operator|.
@@ -342,7 +342,7 @@ name|validationResult
 argument_list|,
 name|relationship
 argument_list|,
-literal|"DbRelationship '%s' has join not to PK. Cayenne doesn't allow this type of relashionships"
+literal|"DbRelationship '%s' has join not to PK. Cayenne doesn't allow this type of relationship"
 argument_list|,
 name|toString
 argument_list|(
