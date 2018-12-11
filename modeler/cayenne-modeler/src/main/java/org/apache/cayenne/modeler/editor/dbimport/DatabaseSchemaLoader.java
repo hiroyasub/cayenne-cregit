@@ -561,7 +561,7 @@ name|schemaName
 argument_list|,
 name|tableName
 argument_list|,
-literal|""
+literal|null
 argument_list|)
 init|)
 block|{
