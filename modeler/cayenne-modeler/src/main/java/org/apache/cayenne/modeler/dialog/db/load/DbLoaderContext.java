@@ -331,6 +331,7 @@ name|String
 name|loadStatusNote
 decl_stmt|;
 specifier|private
+specifier|volatile
 name|boolean
 name|isInterrupted
 decl_stmt|;
