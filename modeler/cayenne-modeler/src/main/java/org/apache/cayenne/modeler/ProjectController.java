@@ -4854,6 +4854,15 @@ name|embeddable
 operator|!=
 literal|null
 expr_stmt|;
+name|currentState
+operator|.
+name|node
+operator|=
+name|e
+operator|.
+name|getDataNode
+argument_list|()
+expr_stmt|;
 block|}
 if|if
 condition|(
