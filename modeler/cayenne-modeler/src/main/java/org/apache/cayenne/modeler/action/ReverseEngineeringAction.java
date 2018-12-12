@@ -661,16 +661,11 @@ operator|.
 name|close
 argument_list|()
 expr_stmt|;
-name|dataMapCount
-operator|.
-name|getAndDecrement
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 name|dataMapCount
 operator|.
-name|get
+name|decrementAndGet
 argument_list|()
 operator|<=
 literal|0
