@@ -1914,7 +1914,7 @@ name|class
 argument_list|)
 return|;
 block|}
-comment|/**      * @see FunctionExpressionFactory#countDistinctExp(Expression)      */
+comment|/**      * @see FunctionExpressionFactory#countDistinctExp(Expression)      * @since 4.1      */
 specifier|public
 name|Property
 argument_list|<

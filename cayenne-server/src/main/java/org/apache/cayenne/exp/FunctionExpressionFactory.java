@@ -1039,7 +1039,7 @@ name|exp
 argument_list|)
 return|;
 block|}
-comment|/**      * @return Expression COUNT(DISTINCT(exp))      */
+comment|/**      * @return Expression COUNT(DISTINCT(exp))      * @since 4.1      */
 specifier|public
 specifier|static
 name|Expression

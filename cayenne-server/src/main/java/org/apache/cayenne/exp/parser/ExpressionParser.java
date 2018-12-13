@@ -9615,6 +9615,13 @@ name|pathExpression
 argument_list|()
 expr_stmt|;
 break|break;
+case|case
+name|DISTINCT
+case|:
+name|distinct
+argument_list|()
+expr_stmt|;
+break|break;
 default|default:
 name|jj_la1
 index|[
@@ -11791,7 +11798,7 @@ literal|0x0
 block|,
 literal|0x1f0
 block|,
-literal|0x0
+literal|0x200
 block|,
 literal|0x700000
 block|,
