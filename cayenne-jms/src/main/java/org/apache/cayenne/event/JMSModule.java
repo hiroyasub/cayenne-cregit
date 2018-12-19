@@ -164,6 +164,9 @@ name|JMSBridgeProvider
 operator|.
 name|class
 argument_list|)
+operator|.
+name|withoutScope
+argument_list|()
 expr_stmt|;
 block|}
 block|}

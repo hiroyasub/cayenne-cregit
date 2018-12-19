@@ -373,6 +373,18 @@ name|assertNotNull
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNull
+import|;
+end_import
+
 begin_class
 annotation|@
 name|UseServerRuntime
@@ -393,8 +405,6 @@ specifier|public
 name|void
 name|testGetDataRowStore
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|ServerRuntime
 name|runtime
@@ -647,6 +657,14 @@ name|maximumSize
 argument_list|()
 argument_list|,
 name|CACHE_SIZE
+argument_list|)
+expr_stmt|;
+name|assertNull
+argument_list|(
+name|dataStore
+operator|.
+name|getEventBridge
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
