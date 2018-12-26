@@ -705,7 +705,7 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|"not (x.artistName is null)"
+literal|"x.artistName is not null"
 argument_list|,
 name|ejbql
 argument_list|)

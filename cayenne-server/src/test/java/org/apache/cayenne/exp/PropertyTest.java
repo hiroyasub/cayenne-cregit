@@ -395,6 +395,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|exp
+operator|.
+name|property
+operator|.
+name|NumericProperty
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|reflect
 operator|.
 name|TstJavaBean
@@ -412,6 +428,8 @@ import|;
 end_import
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|PropertyTest
@@ -2546,7 +2564,7 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-name|Property
+name|NumericProperty
 argument_list|<
 name|Long
 argument_list|>
@@ -2610,7 +2628,7 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-name|Property
+name|NumericProperty
 argument_list|<
 name|Long
 argument_list|>

@@ -133,7 +133,7 @@ specifier|public
 name|ASTMultiply
 parameter_list|(
 name|Object
-index|[]
+modifier|...
 name|nodes
 parameter_list|)
 block|{

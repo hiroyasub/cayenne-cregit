@@ -2506,6 +2506,7 @@ argument_list|)
 return|;
 block|}
 comment|/** 	 * @since 4.0 	 * @see ExpressionFactory#matchExp(String, Object) 	 */
+specifier|public
 specifier|static
 name|Expression
 name|matchExp
@@ -2575,6 +2576,7 @@ argument_list|)
 return|;
 block|}
 comment|/** 	 * @since 4.0 	 * @see ExpressionFactory#noMatchExp(String, Object) 	 */
+specifier|public
 specifier|static
 name|Expression
 name|noMatchExp
@@ -2644,6 +2646,7 @@ argument_list|)
 return|;
 block|}
 comment|/** 	 * @since 4.0 	 * @see ExpressionFactory#lessExp(String, Object) 	 */
+specifier|public
 specifier|static
 name|Expression
 name|lessExp
@@ -2740,6 +2743,7 @@ argument_list|)
 return|;
 block|}
 comment|/** 	 * @since 4.0 	 * @see ExpressionFactory#lessOrEqualExp(String, Object) 	 */
+specifier|public
 specifier|static
 name|Expression
 name|lessOrEqualExp
@@ -2836,6 +2840,7 @@ argument_list|)
 return|;
 block|}
 comment|/** 	 * @since 4.0 	 * @see ExpressionFactory#greaterExp(String, Object) 	 */
+specifier|public
 specifier|static
 name|Expression
 name|greaterExp
@@ -2932,6 +2937,7 @@ argument_list|)
 return|;
 block|}
 comment|/** 	 * @since 4.0 	 * @see ExpressionFactory#greaterOrEqualExp(String, Object) 	 */
+specifier|public
 specifier|static
 name|Expression
 name|greaterOrEqualExp
@@ -3029,6 +3035,7 @@ argument_list|)
 return|;
 block|}
 comment|/** 	 * @since 4.0 	 * @see ExpressionFactory#inExp(String, Object[]) 	 */
+specifier|public
 specifier|static
 name|Expression
 name|inExp
@@ -3168,6 +3175,7 @@ argument_list|)
 return|;
 block|}
 comment|/** 	 * @since 4.0 	 * @see ExpressionFactory#inExp(String, Collection) 	 */
+specifier|public
 specifier|static
 name|Expression
 name|inExp
@@ -3309,6 +3317,7 @@ argument_list|)
 return|;
 block|}
 comment|/** 	 * @since 4.0 	 * @see ExpressionFactory#notInExp(String, Collection) 	 */
+specifier|public
 specifier|static
 name|Expression
 name|notInExp
@@ -3448,6 +3457,7 @@ argument_list|)
 return|;
 block|}
 comment|/** 	 * @since 4.0 	 * @see ExpressionFactory#notInExp(String, Object[]) 	 */
+specifier|public
 specifier|static
 name|Expression
 name|notInExp
@@ -3589,6 +3599,7 @@ argument_list|)
 return|;
 block|}
 comment|/** 	 * @since 4.0 	 * @see ExpressionFactory#betweenExp(String, Object, Object) 	 */
+specifier|public
 specifier|static
 name|Expression
 name|betweenExp
@@ -3700,6 +3711,7 @@ argument_list|)
 return|;
 block|}
 comment|/** 	 * @since 4.0 	 * @see ExpressionFactory#notBetweenExp(String, Object, Object) 	 */
+specifier|public
 specifier|static
 name|Expression
 name|notBetweenExp
@@ -3807,6 +3819,7 @@ argument_list|)
 return|;
 block|}
 comment|/** 	 * @since 4.0 	 * @see ExpressionFactory#likeExp(String, Object) 	 */
+specifier|public
 specifier|static
 name|Expression
 name|likeExp
@@ -3860,6 +3873,7 @@ argument_list|)
 return|;
 block|}
 comment|/** 	 * @since 4.0 	 * @see ExpressionFactory#likeExp(String, Object) 	 */
+specifier|public
 specifier|static
 name|Expression
 name|likeExp
@@ -4047,6 +4061,7 @@ argument_list|)
 return|;
 block|}
 comment|/** 	 * @since 4.0 	 * @see ExpressionFactory#notLikeExp(String, Object) 	 */
+specifier|public
 specifier|static
 name|Expression
 name|notLikeExp
@@ -4121,6 +4136,7 @@ argument_list|)
 return|;
 block|}
 comment|/** 	 * @since 4.0 	 * @see ExpressionFactory#notLikeExp(String, Object) 	 */
+specifier|public
 specifier|static
 name|Expression
 name|notLikeExp
@@ -4255,6 +4271,7 @@ argument_list|)
 return|;
 block|}
 comment|/** 	 * @since 4.0 	 * @see ExpressionFactory#likeIgnoreCaseExp(String, Object) 	 */
+specifier|public
 specifier|static
 name|Expression
 name|likeIgnoreCaseExp
@@ -4469,6 +4486,7 @@ argument_list|)
 return|;
 block|}
 comment|/** 	 * @since 4.0 	 * @see ExpressionFactory#notLikeIgnoreCaseExp(String, Object) 	 */
+specifier|public
 specifier|static
 name|Expression
 name|notLikeIgnoreCaseExp
@@ -4543,6 +4561,7 @@ argument_list|)
 return|;
 block|}
 comment|/** 	 * @since 4.0 	 * @see ExpressionFactory#notLikeIgnoreCaseExp(String, Object, char) 	 */
+specifier|public
 specifier|static
 name|Expression
 name|notLikeIgnoreCaseExp
@@ -4689,6 +4708,7 @@ name|like
 return|;
 block|}
 comment|/** 	 * @since 4.0 	 * @see ExpressionFactory#containsExp(String, String) 	 */
+specifier|public
 specifier|static
 name|Expression
 name|containsExp
@@ -4766,6 +4786,7 @@ name|like
 return|;
 block|}
 comment|/** 	 * @since 4.0 	 * @see ExpressionFactory#startsWithExp(String, String) 	 */
+specifier|public
 specifier|static
 name|Expression
 name|startsWithExp
@@ -4843,6 +4864,7 @@ name|like
 return|;
 block|}
 comment|/** 	 * @since 4.0 	 * @see ExpressionFactory#endsWithExp(String, String) 	 */
+specifier|public
 specifier|static
 name|Expression
 name|endsWithExp
@@ -4920,6 +4942,7 @@ name|like
 return|;
 block|}
 comment|/** 	 * @since 4.0 	 * @see ExpressionFactory#containsIgnoreCaseExp(String, String) 	 */
+specifier|public
 specifier|static
 name|Expression
 name|containsIgnoreCaseExp
@@ -4997,6 +5020,7 @@ name|like
 return|;
 block|}
 comment|/** 	 * @since 4.0 	 * @see ExpressionFactory#startsWithIgnoreCaseExp(String, String) 	 */
+specifier|public
 specifier|static
 name|Expression
 name|startsWithIgnoreCaseExp
@@ -5074,6 +5098,7 @@ name|like
 return|;
 block|}
 comment|/** 	 * @since 4.0 	 * @see ExpressionFactory#endsWithIgnoreCaseExp(String, String) 	 */
+specifier|public
 specifier|static
 name|Expression
 name|endsWithIgnoreCaseExp
@@ -5648,6 +5673,7 @@ name|e
 return|;
 block|}
 comment|/** 	 * Wrap value into ASTScalar 	 * @since 4.0 	 */
+specifier|public
 specifier|static
 name|Expression
 name|wrapScalarValue

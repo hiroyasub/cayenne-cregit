@@ -414,7 +414,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|,
 literal|10
@@ -452,7 +452,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|,
 operator|new
@@ -491,7 +491,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|,
 name|exp1
@@ -561,7 +561,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -603,7 +603,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|,
 name|exp1
@@ -642,7 +642,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -684,7 +684,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|,
 name|exp1
@@ -723,7 +723,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -765,7 +765,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|,
 name|exp1
@@ -804,7 +804,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -846,7 +846,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|,
 name|exp1
@@ -887,7 +887,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -925,7 +925,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -964,7 +964,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|,
 name|exp1
@@ -1010,7 +1010,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -1052,7 +1052,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|,
 name|exp1
@@ -1091,7 +1091,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -1133,7 +1133,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|,
 name|exp1
@@ -1172,7 +1172,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|,
 literal|10
@@ -1206,7 +1206,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|,
 operator|new
@@ -1239,7 +1239,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|,
 name|exp1
@@ -1297,7 +1297,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|,
 operator|new
@@ -1310,7 +1310,7 @@ name|Artist
 operator|.
 name|DATE_OF_BIRTH
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -1337,7 +1337,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|,
 name|exp1
@@ -1366,7 +1366,7 @@ name|Artist
 operator|.
 name|DATE_OF_BIRTH
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|,
 name|exp1
@@ -1429,7 +1429,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|,
 name|exp2
@@ -1446,7 +1446,7 @@ name|Artist
 operator|.
 name|DATE_OF_BIRTH
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|,
 name|exp2
@@ -1463,7 +1463,7 @@ name|Artist
 operator|.
 name|PAINTING_ARRAY
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|,
 name|exp2
@@ -1534,7 +1534,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -1561,7 +1561,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|,
 name|exp2
@@ -1593,7 +1593,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -1620,7 +1620,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|,
 name|exp1
@@ -1652,7 +1652,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -1679,7 +1679,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|,
 name|exp1
@@ -1711,7 +1711,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -1738,7 +1738,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|,
 name|exp1
@@ -1770,7 +1770,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -1797,7 +1797,7 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
-name|path
+name|getExpression
 argument_list|()
 argument_list|,
 name|exp1

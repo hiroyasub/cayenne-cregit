@@ -139,8 +139,7 @@ argument_list|)
 expr_stmt|;
 name|jjtAddChild
 argument_list|(
-operator|new
-name|ASTScalar
+name|wrap
 argument_list|(
 name|pattern
 argument_list|)
@@ -185,8 +184,7 @@ argument_list|)
 expr_stmt|;
 name|jjtAddChild
 argument_list|(
-operator|new
-name|ASTScalar
+name|wrap
 argument_list|(
 name|pattern
 argument_list|)

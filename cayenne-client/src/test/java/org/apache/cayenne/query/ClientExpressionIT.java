@@ -529,6 +529,9 @@ name|ExpressionFactory
 operator|.
 name|matchExp
 argument_list|(
+operator|(
+name|String
+operator|)
 literal|null
 argument_list|,
 name|t1
