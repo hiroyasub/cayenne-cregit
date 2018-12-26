@@ -65,6 +65,22 @@ name|cayenne
 operator|.
 name|exp
 operator|.
+name|property
+operator|.
+name|BaseProperty
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|exp
+operator|.
 name|Expression
 import|;
 end_import
@@ -93,7 +109,9 @@ name|cayenne
 operator|.
 name|exp
 operator|.
-name|Property
+name|property
+operator|.
+name|PropertyFactory
 import|;
 end_import
 
@@ -166,8 +184,6 @@ specifier|public
 name|void
 name|query
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|ColumnSelect
 argument_list|<
@@ -211,8 +227,6 @@ specifier|public
 name|void
 name|queryWithOneColumn
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|ColumnSelect
 argument_list|<
@@ -280,8 +294,6 @@ specifier|public
 name|void
 name|queryWithOneColumn2
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|ColumnSelect
 argument_list|<
@@ -352,8 +364,6 @@ specifier|public
 name|void
 name|queryWithOneColumn3
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|ColumnSelect
 argument_list|<
@@ -425,8 +435,6 @@ specifier|public
 name|void
 name|queryWithMultipleColumns
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|ColumnSelect
 argument_list|<
@@ -503,8 +511,6 @@ specifier|public
 name|void
 name|queryCount
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|ColumnSelect
 argument_list|<
@@ -530,7 +536,7 @@ name|Collections
 operator|.
 name|singletonList
 argument_list|(
-name|Property
+name|PropertyFactory
 operator|.
 name|COUNT
 argument_list|)
@@ -564,8 +570,6 @@ specifier|public
 name|void
 name|queryCountWithProperty
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|ColumnSelect
 argument_list|<
@@ -632,8 +636,6 @@ specifier|public
 name|void
 name|queryMinWithProperty
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|ColumnSelect
 argument_list|<
@@ -719,8 +721,6 @@ specifier|public
 name|void
 name|columns
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|ColumnSelect
 name|q
@@ -852,8 +852,6 @@ specifier|public
 name|void
 name|havingExpression
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|ColumnSelect
 name|q
@@ -953,8 +951,6 @@ specifier|public
 name|void
 name|havingString
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|ColumnSelect
 name|q
@@ -1054,8 +1050,6 @@ specifier|public
 name|void
 name|and
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|ColumnSelect
 name|q
@@ -1184,8 +1178,6 @@ specifier|public
 name|void
 name|or
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|ColumnSelect
 name|q
@@ -1326,10 +1318,8 @@ name|ColumnSelect
 argument_list|<>
 argument_list|()
 decl_stmt|;
-name|assertEquals
+name|assertNull
 argument_list|(
-literal|null
-argument_list|,
 name|q
 operator|.
 name|getColumns
@@ -1365,7 +1355,7 @@ argument_list|)
 expr_stmt|;
 name|Collection
 argument_list|<
-name|Property
+name|BaseProperty
 argument_list|<
 name|?
 argument_list|>
@@ -1418,10 +1408,8 @@ name|ColumnSelect
 argument_list|<>
 argument_list|()
 decl_stmt|;
-name|assertEquals
+name|assertNull
 argument_list|(
-literal|null
-argument_list|,
 name|q
 operator|.
 name|getColumns
@@ -1464,7 +1452,7 @@ argument_list|)
 expr_stmt|;
 name|Collection
 argument_list|<
-name|Property
+name|BaseProperty
 argument_list|<
 name|?
 argument_list|>
@@ -1530,10 +1518,8 @@ name|ColumnSelect
 argument_list|<>
 argument_list|()
 decl_stmt|;
-name|assertEquals
+name|assertNull
 argument_list|(
-literal|null
-argument_list|,
 name|q
 operator|.
 name|getColumns
@@ -1569,7 +1555,7 @@ argument_list|)
 expr_stmt|;
 name|Collection
 argument_list|<
-name|Property
+name|BaseProperty
 argument_list|<
 name|?
 argument_list|>
@@ -1578,12 +1564,6 @@ name|properties
 init|=
 name|Collections
 operator|.
-expr|<
-name|Property
-argument_list|<
-name|?
-argument_list|>
-operator|>
 name|singletonList
 argument_list|(
 name|Artist

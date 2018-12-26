@@ -113,7 +113,9 @@ name|cayenne
 operator|.
 name|exp
 operator|.
-name|Property
+name|property
+operator|.
+name|PropertyFactory
 import|;
 end_import
 
@@ -585,6 +587,11 @@ name|class
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 specifier|private
 parameter_list|<
 name|T
@@ -666,9 +673,9 @@ argument_list|)
 operator|.
 name|column
 argument_list|(
-name|Property
+name|PropertyFactory
 operator|.
-name|create
+name|createBase
 argument_list|(
 name|exp
 argument_list|,
@@ -692,6 +699,9 @@ name|sort
 argument_list|(
 operator|(
 name|List
+argument_list|<
+name|T
+argument_list|>
 operator|)
 name|res
 argument_list|)

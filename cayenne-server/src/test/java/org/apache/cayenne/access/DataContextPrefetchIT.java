@@ -115,7 +115,9 @@ name|cayenne
 operator|.
 name|exp
 operator|.
-name|Property
+name|property
+operator|.
+name|PropertyFactory
 import|;
 end_import
 
@@ -3324,9 +3326,9 @@ comment|// OUTER join part intentionally doesn't match anything
 name|Expression
 name|exp
 init|=
-name|Property
+name|PropertyFactory
 operator|.
-name|create
+name|createBase
 argument_list|(
 literal|"groupArray+.name"
 argument_list|,

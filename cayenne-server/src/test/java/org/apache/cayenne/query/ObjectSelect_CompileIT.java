@@ -95,7 +95,9 @@ name|cayenne
 operator|.
 name|exp
 operator|.
-name|Property
+name|property
+operator|.
+name|BaseProperty
 import|;
 end_import
 
@@ -1251,7 +1253,7 @@ argument_list|)
 expr_stmt|;
 name|Collection
 argument_list|<
-name|Property
+name|BaseProperty
 argument_list|<
 name|?
 argument_list|>
@@ -1260,12 +1262,6 @@ name|properties
 init|=
 name|Arrays
 operator|.
-expr|<
-name|Property
-argument_list|<
-name|?
-argument_list|>
-operator|>
 name|asList
 argument_list|(
 name|Artist

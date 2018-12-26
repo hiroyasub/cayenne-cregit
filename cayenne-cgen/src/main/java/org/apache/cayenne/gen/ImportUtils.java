@@ -780,6 +780,30 @@ name|type
 argument_list|)
 return|;
 block|}
+comment|/** 	 * @since 4.2 	 */
+specifier|public
+name|boolean
+name|isNumericPrimitive
+parameter_list|(
+name|String
+name|type
+parameter_list|)
+block|{
+return|return
+name|isNonBooleanPrimitive
+argument_list|(
+name|type
+argument_list|)
+operator|&&
+operator|!
+literal|"char"
+operator|.
+name|equals
+argument_list|(
+name|type
+argument_list|)
+return|;
+block|}
 comment|/** 	 * @since 3.0 	 */
 specifier|public
 name|boolean

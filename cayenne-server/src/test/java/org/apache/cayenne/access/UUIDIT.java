@@ -77,7 +77,9 @@ name|cayenne
 operator|.
 name|exp
 operator|.
-name|Property
+name|property
+operator|.
+name|PropertyFactory
 import|;
 end_import
 
@@ -665,9 +667,9 @@ argument_list|)
 operator|.
 name|column
 argument_list|(
-name|Property
+name|PropertyFactory
 operator|.
-name|create
+name|createBase
 argument_list|(
 name|ExpressionFactory
 operator|.

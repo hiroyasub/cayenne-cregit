@@ -722,19 +722,31 @@ name|ObjRelationship
 name|relationship
 parameter_list|)
 block|{
+return|return
+name|getMapKeyTypeInternal
+argument_list|(
+name|relationship
+argument_list|)
+return|;
+block|}
+specifier|static
+name|String
+name|getMapKeyTypeInternal
+parameter_list|(
+specifier|final
+name|ObjRelationship
+name|relationship
+parameter_list|)
+block|{
 name|ObjEntity
 name|targetEntity
 init|=
-operator|(
-name|ObjEntity
-operator|)
 name|relationship
 operator|.
 name|getTargetEntity
 argument_list|()
 decl_stmt|;
-comment|// If the map key is null, then we're doing look-ups by actual object
-comment|// key.
+comment|// If the map key is null, then we're doing look-ups by actual object key.
 if|if
 condition|(
 name|relationship
@@ -745,8 +757,7 @@ operator|==
 literal|null
 condition|)
 block|{
-comment|// If it's a multi-column key, then the return type is always
-comment|// ObjectId.
+comment|// If it's a multi-column key, then the return type is always ObjectId.
 name|DbEntity
 name|dbEntity
 init|=
@@ -785,9 +796,7 @@ name|getName
 argument_list|()
 return|;
 block|}
-comment|// If it's a single column key or no key exists at all, then we
-comment|// really don't
-comment|// know what the key type is,
+comment|// If it's a single column key or no key exists at all, then we really don't know what the key type is,
 comment|// so default to Object.
 return|return
 name|Object
@@ -798,9 +807,7 @@ name|getName
 argument_list|()
 return|;
 block|}
-comment|// If the map key is a non-default attribute, then fetch the attribute
-comment|// and return
-comment|// its type.
+comment|// If the map key is a non-default attribute, then fetch the attribute and return its type.
 name|ObjAttribute
 name|attribute
 init|=

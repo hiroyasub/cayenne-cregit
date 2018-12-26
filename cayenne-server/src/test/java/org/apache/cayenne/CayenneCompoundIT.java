@@ -37,7 +37,9 @@ name|cayenne
 operator|.
 name|exp
 operator|.
-name|Property
+name|property
+operator|.
+name|PropertyFactory
 import|;
 end_import
 
@@ -617,6 +619,7 @@ name|performQuery
 argument_list|(
 operator|new
 name|SelectQuery
+argument_list|<>
 argument_list|(
 name|CompoundPkTestEntity
 operator|.
@@ -730,6 +733,7 @@ name|performQuery
 argument_list|(
 operator|new
 name|SelectQuery
+argument_list|<>
 argument_list|(
 name|CompoundPkTestEntity
 operator|.
@@ -808,6 +812,7 @@ name|performQuery
 argument_list|(
 operator|new
 name|SelectQuery
+argument_list|<>
 argument_list|(
 name|CharPkTestEntity
 operator|.
@@ -885,6 +890,7 @@ name|performQuery
 argument_list|(
 operator|new
 name|SelectQuery
+argument_list|<>
 argument_list|(
 name|CompoundPkTestEntity
 operator|.
@@ -962,6 +968,7 @@ name|performQuery
 argument_list|(
 operator|new
 name|SelectQuery
+argument_list|<>
 argument_list|(
 name|CharPkTestEntity
 operator|.
@@ -1041,7 +1048,7 @@ name|CompoundPkTestEntity
 operator|.
 name|NAME
 argument_list|,
-name|Property
+name|PropertyFactory
 operator|.
 name|createSelf
 argument_list|(

@@ -92,6 +92,11 @@ name|CREATE_PK_PROPERTIES
 init|=
 literal|"createPKProperties"
 decl_stmt|;
+name|String
+name|PROPERTY_UTILS_KEY
+init|=
+literal|"propertyUtils"
+decl_stmt|;
 name|TemplateType
 index|[]
 name|getTemplateTypes
