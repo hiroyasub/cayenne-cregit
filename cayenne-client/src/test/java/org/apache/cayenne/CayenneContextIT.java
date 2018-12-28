@@ -1814,7 +1814,10 @@ name|hollow
 argument_list|,
 name|ClientMtTable1
 operator|.
-name|GLOBAL_ATTRIBUTE1_PROPERTY
+name|GLOBAL_ATTRIBUTE1
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 literal|false
 argument_list|)

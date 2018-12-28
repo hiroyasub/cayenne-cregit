@@ -580,9 +580,7 @@ name|diffs
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|GenericDiff
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|final
@@ -823,7 +821,10 @@ name|assertEquals
 argument_list|(
 name|ClientMtTable1
 operator|.
-name|GLOBAL_ATTRIBUTE1_PROPERTY
+name|GLOBAL_ATTRIBUTE1
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 name|diffs
 operator|.

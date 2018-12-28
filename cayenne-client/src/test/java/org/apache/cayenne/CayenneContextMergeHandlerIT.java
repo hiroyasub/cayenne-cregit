@@ -423,7 +423,10 @@ argument_list|()
 argument_list|,
 name|ClientMtTable1
 operator|.
-name|GLOBAL_ATTRIBUTE1_PROPERTY
+name|GLOBAL_ATTRIBUTE1
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 literal|null
 argument_list|,
@@ -451,7 +454,10 @@ argument_list|()
 argument_list|,
 name|ClientMtTable1
 operator|.
-name|GLOBAL_ATTRIBUTE1_PROPERTY
+name|GLOBAL_ATTRIBUTE1
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 literal|"abc"
 argument_list|,
@@ -480,7 +486,10 @@ argument_list|()
 argument_list|,
 name|ClientMtTable1
 operator|.
-name|GLOBAL_ATTRIBUTE1_PROPERTY
+name|GLOBAL_ATTRIBUTE1
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 literal|"123"
 argument_list|,
@@ -508,7 +517,10 @@ argument_list|()
 argument_list|,
 name|ClientMtTable1
 operator|.
-name|GLOBAL_ATTRIBUTE1_PROPERTY
+name|GLOBAL_ATTRIBUTE1
+operator|.
+name|getName
+argument_list|()
 argument_list|,
 literal|"xyz"
 argument_list|,
