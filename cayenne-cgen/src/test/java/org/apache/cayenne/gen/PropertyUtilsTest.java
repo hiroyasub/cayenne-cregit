@@ -316,6 +316,8 @@ specifier|public
 name|void
 name|testImportAttribute
 parameter_list|()
+throws|throws
+name|Exception
 block|{
 name|ObjAttribute
 name|attribute
@@ -674,6 +676,8 @@ specifier|public
 name|void
 name|simpleNumericDefinition
 parameter_list|()
+throws|throws
+name|Exception
 block|{
 name|importUtils
 operator|.
@@ -732,6 +736,8 @@ specifier|public
 name|void
 name|simpleStringDefinition
 parameter_list|()
+throws|throws
+name|Exception
 block|{
 name|importUtils
 operator|.

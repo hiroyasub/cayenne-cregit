@@ -461,7 +461,7 @@ literal|"_Embeddable1"
 argument_list|,
 literal|"org.apache.cayenne.testdo.embeddable.auto"
 argument_list|,
-literal|"Object"
+literal|null
 argument_list|)
 expr_stmt|;
 block|}
@@ -769,6 +769,13 @@ operator|>
 literal|0
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|extendsName
+operator|!=
+literal|null
+condition|)
+block|{
 name|assertTrue
 argument_list|(
 name|s
@@ -798,6 +805,7 @@ name|extendsName
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 return|return;
 block|}
 block|}
