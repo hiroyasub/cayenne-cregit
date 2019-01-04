@@ -23,26 +23,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|math
-operator|.
-name|BigDecimal
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|math
-operator|.
-name|BigInteger
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -56,7 +36,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**   * Parser of Cayenne Expressions.    *   * @since 1.1   */
+comment|/**  * Parser of Cayenne Expressions.  *  * @since 1.1  */
 end_comment
 
 begin_class
@@ -11254,10 +11234,12 @@ name|jjtc001
 operator|=
 literal|false
 expr_stmt|;
-name|jjtn001
+name|ExpressionUtils
 operator|.
-name|setPath
+name|parsePath
 argument_list|(
+name|jjtn001
+argument_list|,
 name|t
 operator|.
 name|image
@@ -11334,10 +11316,12 @@ name|jjtc002
 operator|=
 literal|false
 expr_stmt|;
-name|jjtn002
+name|ExpressionUtils
 operator|.
-name|setPath
+name|parsePath
 argument_list|(
+name|jjtn002
+argument_list|,
 name|t
 operator|.
 name|image
@@ -11414,10 +11398,12 @@ name|jjtc003
 operator|=
 literal|false
 expr_stmt|;
-name|jjtn003
+name|ExpressionUtils
 operator|.
-name|setPath
+name|parsePath
 argument_list|(
+name|jjtn003
+argument_list|,
 name|t
 operator|.
 name|image
