@@ -19,6 +19,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|time
+operator|.
+name|LocalDateTime
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -80,16 +90,6 @@ operator|.
 name|exp
 operator|.
 name|FunctionExpressionFactory
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|time
-operator|.
-name|LocalDateTime
 import|;
 end_import
 
