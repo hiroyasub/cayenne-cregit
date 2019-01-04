@@ -901,6 +901,13 @@ name|path
 operator|=
 name|path
 expr_stmt|;
+name|copy
+operator|.
+name|setPathAliases
+argument_list|(
+name|pathAliases
+argument_list|)
+expr_stmt|;
 return|return
 name|copy
 return|;

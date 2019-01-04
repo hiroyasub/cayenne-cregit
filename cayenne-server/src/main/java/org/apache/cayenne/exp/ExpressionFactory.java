@@ -2228,8 +2228,6 @@ literal|0
 argument_list|,
 name|split
 argument_list|)
-operator|+
-literal|"."
 else|:
 literal|""
 decl_stmt|;

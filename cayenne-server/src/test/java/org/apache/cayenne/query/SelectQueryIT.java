@@ -81,16 +81,6 @@ name|java
 operator|.
 name|sql
 operator|.
-name|ResultSet
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|sql
-operator|.
 name|Types
 import|;
 end_import
