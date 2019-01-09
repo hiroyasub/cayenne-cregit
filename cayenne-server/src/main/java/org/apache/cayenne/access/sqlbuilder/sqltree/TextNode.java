@@ -99,6 +99,15 @@ name|text
 argument_list|)
 return|;
 block|}
+specifier|public
+name|CharSequence
+name|getText
+parameter_list|()
+block|{
+return|return
+name|text
+return|;
+block|}
 block|}
 end_class
 

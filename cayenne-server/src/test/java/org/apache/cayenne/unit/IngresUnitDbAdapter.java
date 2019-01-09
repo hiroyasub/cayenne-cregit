@@ -29,6 +29,10 @@ name|DbAdapter
 import|;
 end_import
 
+begin_comment
+comment|/**  * Ingress doesn't support sorting by an aggregate expression (ORDER BY COUNT(some_field))  */
+end_comment
+
 begin_class
 specifier|public
 class|class
@@ -96,6 +100,17 @@ parameter_list|()
 block|{
 return|return
 literal|false
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|isLowerCaseNames
+parameter_list|()
+block|{
+return|return
+literal|true
 return|;
 block|}
 block|}

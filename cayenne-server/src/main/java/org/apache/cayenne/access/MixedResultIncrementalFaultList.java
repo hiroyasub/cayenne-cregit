@@ -230,7 +230,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * FaultList that is used for paginated {@link ColumnSelect} queries.  * It expects data as Object[] where ids are stored instead of Persistent objects (as raw value for single PK  * or Map for compound PKs).  * Scalar values that were fetched from ColumnSelect not processed in any way,  * if there is no Persistent objects in the result Collection it will be iterated as is, without faulting anything.  *  * @see QueryMetadata#getPageSize()  * @see org.apache.cayenne.access.translator.select.DefaultSelectTranslator  * @see org.apache.cayenne.query.SelectQueryMetadata  *  * @since 4.0  */
+comment|/**  * FaultList that is used for paginated {@link ColumnSelect} queries.  * It expects data as Object[] where ids are stored instead of Persistent objects (as raw value for single PK  * or Map for compound PKs).  * Scalar values that were fetched from ColumnSelect not processed in any way,  * if there is no Persistent objects in the result Collection it will be iterated as is, without faulting anything.  *  * @see QueryMetadata#getPageSize()  * @see org.apache.cayenne.query.SelectQueryMetadata  *  * @since 4.0  */
 end_comment
 
 begin_class
@@ -631,18 +631,31 @@ index|]
 argument_list|)
 condition|)
 block|{
-name|quals
-operator|.
-name|add
-argument_list|(
+name|Expression
+name|nextQualifier
+init|=
 name|buildIdQualifier
 argument_list|(
 name|dataIdx
 argument_list|,
 name|object
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|nextQualifier
+operator|!=
+literal|null
+condition|)
+block|{
+name|quals
+operator|.
+name|add
+argument_list|(
+name|nextQualifier
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 name|int
@@ -929,6 +942,20 @@ name|index
 index|]
 expr_stmt|;
 block|}
+if|else if
+condition|(
+name|data
+index|[
+name|index
+index|]
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+literal|null
+return|;
+block|}
 else|else
 block|{
 name|map
@@ -1205,6 +1232,20 @@ literal|false
 return|;
 block|}
 block|}
+block|}
+if|else if
+condition|(
+name|dataInTheList
+index|[
+name|dataIdx
+index|]
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+literal|false
+return|;
 block|}
 else|else
 block|{

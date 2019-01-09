@@ -1450,11 +1450,6 @@ name|pathSplitAliases
 else|:
 name|Collections
 operator|.
-expr|<
-name|String
-operator|,
-name|String
-operator|>
 name|emptyMap
 argument_list|()
 return|;
@@ -1892,7 +1887,7 @@ return|return
 name|r
 return|;
 block|}
-comment|/** 	 * Collect metadata for column that will be unwrapped to full entity in the final SQL 	 * (possibly including joint prefetch). 	 * This information will be used to correctly create Persistent object back from raw result. 	 * 	 * This method is actually repeating logic of 	 * {@link org.apache.cayenne.access.translator.select.DefaultSelectTranslator#appendQueryColumns}. 	 * Here we don't care about intermediate joins and few other things so it's shorter. 	 * Logic of these methods should be unified and simplified, possibly to a single source of metadata, 	 * generated only once and used everywhere. 	 * 	 * @param query original query 	 * @param column full object column 	 * @param resolver entity resolver to get ObjEntity and ClassDescriptor 	 * @return Entity result 	 */
+comment|/** 	 * Collect metadata for column that will be unwrapped to full entity in the final SQL 	 * (possibly including joint prefetch). 	 * This information will be used to correctly create Persistent object back from raw result. 	 * 	 * @param query original query 	 * @param column full object column 	 * @param resolver entity resolver to get ObjEntity and ClassDescriptor 	 * @return Entity result 	 */
 specifier|private
 name|EntityResult
 name|buildEntityResultForColumn
@@ -1913,6 +1908,10 @@ name|EntityResolver
 name|resolver
 parameter_list|)
 block|{
+comment|// This method is actually repeating logic of DescriptorColumnExtractor.
+comment|// Here we don't care about intermediate joins and few other things so it's shorter.
+comment|// Logic of these methods should be unified and simplified, possibly to a single source of metadata,
+comment|// generated only once and used everywhere.
 specifier|final
 name|EntityResult
 name|result

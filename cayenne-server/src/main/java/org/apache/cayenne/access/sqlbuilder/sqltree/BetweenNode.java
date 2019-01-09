@@ -132,6 +132,15 @@ name|not
 argument_list|)
 return|;
 block|}
+specifier|public
+name|boolean
+name|isNot
+parameter_list|()
+block|{
+return|return
+name|not
+return|;
+block|}
 block|}
 end_class
 

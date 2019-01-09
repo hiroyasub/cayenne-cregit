@@ -2239,6 +2239,16 @@ return|return
 name|having
 return|;
 block|}
+comment|/**      * @since 4.2      */
+specifier|public
+name|boolean
+name|isDistinct
+parameter_list|()
+block|{
+return|return
+name|distinct
+return|;
+block|}
 annotation|@
 name|Override
 specifier|public

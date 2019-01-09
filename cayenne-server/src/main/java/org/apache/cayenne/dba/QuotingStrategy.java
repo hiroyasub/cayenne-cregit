@@ -94,7 +94,7 @@ specifier|public
 interface|interface
 name|QuotingStrategy
 block|{
-comment|/**      * Builds a fully qualified name from catalog, schema, name parts of      * DbEntity, inclosing them in quotations according to this strategy      * algorithm. Analog of "quotedIdentifier(entity.getCatalog(),      * entity.getSchema(), entity.getName())".      *       * @since 4.0      */
+comment|/**      * Builds a fully qualified name from catalog, schema, name parts of      * DbEntity, enclosing them in quotations according to this strategy      * algorithm. Analog of "quotedIdentifier(entity.getCatalog(),      * entity.getSchema(), entity.getName())".      *       * @since 4.0      */
 name|String
 name|quotedFullyQualifiedName
 parameter_list|(
@@ -127,6 +127,7 @@ name|join
 parameter_list|)
 function_decl|;
 comment|/**      * @since 4.0      */
+specifier|default
 name|String
 name|quotedIdentifier
 parameter_list|(
@@ -137,7 +138,19 @@ name|String
 modifier|...
 name|identifierParts
 parameter_list|)
-function_decl|;
+block|{
+return|return
+name|quotedIdentifier
+argument_list|(
+name|entity
+operator|.
+name|getDataMap
+argument_list|()
+argument_list|,
+name|identifierParts
+argument_list|)
+return|;
+block|}
 comment|/**      * @since 4.0      */
 name|String
 name|quotedIdentifier
@@ -148,6 +161,48 @@ parameter_list|,
 name|String
 modifier|...
 name|identifierParts
+parameter_list|)
+function_decl|;
+comment|/**      * Append quoted identifier to provided appender      * @since 4.2      */
+specifier|default
+name|void
+name|quotedIdentifier
+parameter_list|(
+name|Entity
+name|entity
+parameter_list|,
+name|CharSequence
+name|identifier
+parameter_list|,
+name|Appendable
+name|appender
+parameter_list|)
+block|{
+name|quotedIdentifier
+argument_list|(
+name|entity
+operator|.
+name|getDataMap
+argument_list|()
+argument_list|,
+name|identifier
+argument_list|,
+name|appender
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * Append quoted identifier to provided appender      * @since 4.2      */
+name|void
+name|quotedIdentifier
+parameter_list|(
+name|DataMap
+name|dataMap
+parameter_list|,
+name|CharSequence
+name|identifier
+parameter_list|,
+name|Appendable
+name|appender
 parameter_list|)
 function_decl|;
 block|}

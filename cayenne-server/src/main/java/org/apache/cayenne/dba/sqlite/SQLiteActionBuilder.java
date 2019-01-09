@@ -73,6 +73,20 @@ name|SQLTemplate
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|SelectQuery
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 3.0  */
 end_comment
@@ -108,6 +122,33 @@ block|{
 return|return
 operator|new
 name|SQLiteSQLTemplateAction
+argument_list|(
+name|query
+argument_list|,
+name|dataNode
+argument_list|)
+return|;
+block|}
+comment|/**      * @since 4.1      */
+annotation|@
+name|Override
+specifier|public
+parameter_list|<
+name|T
+parameter_list|>
+name|SQLAction
+name|objectSelectAction
+parameter_list|(
+name|SelectQuery
+argument_list|<
+name|T
+argument_list|>
+name|query
+parameter_list|)
+block|{
+return|return
+operator|new
+name|SQLiteSelectAction
 argument_list|(
 name|query
 argument_list|,

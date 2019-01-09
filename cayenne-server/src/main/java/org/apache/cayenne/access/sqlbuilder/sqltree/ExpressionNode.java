@@ -91,6 +91,10 @@ block|{
 if|if
 condition|(
 name|parent
+operator|!=
+literal|null
+operator|&&
+name|parent
 operator|.
 name|type
 operator|!=
@@ -128,6 +132,10 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|parent
+operator|!=
+literal|null
+operator|&&
 name|parent
 operator|.
 name|type

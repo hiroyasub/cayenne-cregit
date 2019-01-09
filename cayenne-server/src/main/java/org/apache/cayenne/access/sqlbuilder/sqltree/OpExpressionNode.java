@@ -106,6 +106,15 @@ name|op
 argument_list|)
 return|;
 block|}
+specifier|public
+name|String
+name|getOp
+parameter_list|()
+block|{
+return|return
+name|op
+return|;
+block|}
 block|}
 end_class
 

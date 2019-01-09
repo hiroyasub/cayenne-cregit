@@ -539,6 +539,22 @@ return|return
 name|attribute
 return|;
 block|}
+comment|/**      * @since 4.2      */
+specifier|public
+name|void
+name|setAttribute
+parameter_list|(
+name|DbAttribute
+name|attribute
+parameter_list|)
+block|{
+name|this
+operator|.
+name|attribute
+operator|=
+name|attribute
+expr_stmt|;
+block|}
 comment|/**      * Returns true if another object is a ColumnDescriptor with the same name,      * name prefix, table and procedure names. Other fields are ignored in the      * equality test.      *       * @since 1.2      */
 annotation|@
 name|Override

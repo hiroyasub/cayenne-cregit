@@ -31,7 +31,7 @@ name|sqlbuilder
 operator|.
 name|sqltree
 operator|.
-name|EmptyNode
+name|AliasedNode
 import|;
 end_import
 
@@ -50,24 +50,6 @@ operator|.
 name|sqltree
 operator|.
 name|Node
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|access
-operator|.
-name|sqlbuilder
-operator|.
-name|sqltree
-operator|.
-name|TextNode
 import|;
 end_import
 
@@ -124,8 +106,10 @@ name|Node
 name|root
 init|=
 operator|new
-name|EmptyNode
-argument_list|()
+name|AliasedNode
+argument_list|(
+name|alias
+argument_list|)
 decl_stmt|;
 name|root
 operator|.
@@ -135,19 +119,6 @@ name|nodeBuilder
 operator|.
 name|build
 argument_list|()
-argument_list|)
-expr_stmt|;
-name|root
-operator|.
-name|addChild
-argument_list|(
-operator|new
-name|TextNode
-argument_list|(
-literal|" "
-operator|+
-name|alias
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
