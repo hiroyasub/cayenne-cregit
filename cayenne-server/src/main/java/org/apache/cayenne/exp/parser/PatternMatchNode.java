@@ -221,6 +221,16 @@ operator|=
 name|value
 expr_stmt|;
 block|}
+comment|/**      * @since 4.2      */
+specifier|public
+name|boolean
+name|isIgnoringCase
+parameter_list|()
+block|{
+return|return
+name|ignoringCase
+return|;
+block|}
 specifier|protected
 name|boolean
 name|matchPattern

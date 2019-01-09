@@ -896,6 +896,33 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+comment|/**      * @return property that will be translated relative to parent query      */
+specifier|public
+name|StringProperty
+argument_list|<
+name|E
+argument_list|>
+name|enclosing
+parameter_list|()
+block|{
+return|return
+name|PropertyFactory
+operator|.
+name|createString
+argument_list|(
+name|ExpressionFactory
+operator|.
+name|enclosingObjectExp
+argument_list|(
+name|getExpression
+argument_list|()
+argument_list|)
+argument_list|,
+name|getType
+argument_list|()
+argument_list|)
+return|;
+block|}
 block|}
 end_class
 

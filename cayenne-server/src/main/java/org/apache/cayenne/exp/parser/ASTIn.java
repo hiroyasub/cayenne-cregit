@@ -94,8 +94,8 @@ parameter_list|(
 name|SimpleNode
 name|path
 parameter_list|,
-name|ASTList
-name|list
+name|SimpleNode
+name|node
 parameter_list|)
 block|{
 name|super
@@ -114,7 +114,7 @@ argument_list|)
 expr_stmt|;
 name|jjtAddChild
 argument_list|(
-name|list
+name|node
 argument_list|,
 literal|1
 argument_list|)

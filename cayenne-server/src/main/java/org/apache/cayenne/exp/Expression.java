@@ -16,38 +16,12 @@ package|;
 end_package
 
 begin_import
-import|import static
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|exp
-operator|.
-name|ExpressionFactory
-operator|.
-name|exp
-import|;
-end_import
-
-begin_import
 import|import
 name|java
 operator|.
 name|io
 operator|.
 name|IOException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|io
-operator|.
-name|PrintWriter
 import|;
 end_import
 
@@ -567,6 +541,33 @@ name|int
 name|FULL_OBJECT
 init|=
 literal|47
+decl_stmt|;
+comment|/** 	 * @since 4.2 	 */
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|ENCLOSING_OBJECT
+init|=
+literal|48
+decl_stmt|;
+comment|/** 	 * @since 4.2 	 */
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|EXISTS
+init|=
+literal|49
+decl_stmt|;
+comment|/** 	 * @since 4.2 	 */
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|SUBQUERY
+init|=
+literal|50
 decl_stmt|;
 specifier|protected
 name|int

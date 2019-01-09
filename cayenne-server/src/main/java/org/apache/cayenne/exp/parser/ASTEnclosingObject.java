@@ -42,18 +42,18 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 4.0  */
+comment|/**  * @since 4.2  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|ASTFullObject
+name|ASTEnclosingObject
 extends|extends
 name|SimpleNode
 block|{
 specifier|public
-name|ASTFullObject
+name|ASTEnclosingObject
 parameter_list|(
 name|Expression
 name|expression
@@ -86,7 +86,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|public
-name|ASTFullObject
+name|ASTEnclosingObject
 parameter_list|()
 block|{
 name|this
@@ -96,7 +96,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|protected
-name|ASTFullObject
+name|ASTEnclosingObject
 parameter_list|(
 name|int
 name|i
@@ -156,7 +156,7 @@ name|out
 operator|.
 name|append
 argument_list|(
-literal|":FULL_OBJECT:"
+literal|"SUPER:"
 argument_list|)
 expr_stmt|;
 name|super
@@ -176,7 +176,7 @@ parameter_list|()
 block|{
 return|return
 operator|new
-name|ASTFullObject
+name|ASTEnclosingObject
 argument_list|(
 name|id
 argument_list|)
@@ -192,7 +192,7 @@ block|{
 return|return
 name|Expression
 operator|.
-name|FULL_OBJECT
+name|ENCLOSING_OBJECT
 return|;
 block|}
 block|}
