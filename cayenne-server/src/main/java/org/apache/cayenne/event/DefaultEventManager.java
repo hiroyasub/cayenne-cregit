@@ -136,6 +136,7 @@ name|DefaultEventManager
 implements|implements
 name|EventManager
 block|{
+specifier|private
 specifier|static
 specifier|final
 name|int
@@ -145,6 +146,7 @@ literal|5
 decl_stmt|;
 comment|// keeps weak references to subjects
 specifier|protected
+specifier|final
 name|Map
 argument_list|<
 name|EventSubject
@@ -154,6 +156,7 @@ argument_list|>
 name|subjects
 decl_stmt|;
 specifier|protected
+specifier|final
 name|List
 argument_list|<
 name|Dispatch
@@ -161,19 +164,22 @@ argument_list|>
 name|eventQueue
 decl_stmt|;
 specifier|protected
+specifier|final
 name|boolean
 name|singleThread
 decl_stmt|;
 specifier|protected
-specifier|volatile
-name|boolean
-name|stopped
-decl_stmt|;
+specifier|final
 name|List
 argument_list|<
 name|DispatchThread
 argument_list|>
 name|dispatchThreads
+decl_stmt|;
+specifier|protected
+specifier|volatile
+name|boolean
+name|stopped
 decl_stmt|;
 comment|/**      * Creates a multithreaded EventManager using default thread count.      */
 specifier|public
@@ -204,11 +210,7 @@ name|synchronizedMap
 argument_list|(
 operator|new
 name|WeakHashMap
-argument_list|<
-name|EventSubject
-argument_list|,
-name|DispatchQueue
-argument_list|>
+argument_list|<>
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -222,9 +224,7 @@ name|synchronizedList
 argument_list|(
 operator|new
 name|LinkedList
-argument_list|<
-name|Dispatch
-argument_list|>
+argument_list|<>
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -627,9 +627,7 @@ block|{
 name|Invocation
 name|invocation
 init|=
-operator|(
 name|blocking
-operator|)
 condition|?
 operator|new
 name|Invocation
@@ -676,11 +674,11 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Error adding listener, method name: "
-operator|+
-name|methodName
+literal|"Error adding listener, method name: %s"
 argument_list|,
 name|nsm
+argument_list|,
+name|methodName
 argument_list|)
 throw|;
 block|}
@@ -1265,7 +1263,6 @@ name|NonBlockingInvocation
 extends|extends
 name|Invocation
 block|{
-specifier|public
 name|NonBlockingInvocation
 parameter_list|(
 name|Object
@@ -1330,8 +1327,7 @@ operator|!
 name|stopped
 condition|)
 block|{
-comment|// get event from the queue, if the queue
-comment|// is empty, just wait
+comment|// get event from the queue, if the queue is empty, just wait
 name|Dispatch
 name|dispatch
 init|=

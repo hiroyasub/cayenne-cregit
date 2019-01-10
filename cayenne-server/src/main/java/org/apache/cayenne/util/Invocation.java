@@ -74,16 +74,22 @@ name|Invocation
 block|{
 specifier|private
 name|WeakReference
-name|_target
+argument_list|<
+name|?
+argument_list|>
+name|target
 decl_stmt|;
 specifier|private
 name|Method
-name|_method
+name|method
 decl_stmt|;
 specifier|private
 name|Class
+argument_list|<
+name|?
+argument_list|>
 index|[]
-name|_parameterTypes
+name|parameterTypes
 decl_stmt|;
 comment|/**      * Prevent use of empty default constructor      */
 specifier|private
@@ -149,7 +155,7 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Constructor for an Invocation with arbitrary arguments in the target's method.      *       * @param target      * @param methodName      * @param parameterTypes      * @throws NoSuchMethodException if<code>methodName</code> could not be found in      *             the target      * @throws IllegalArgumentException if target or methodName are<code>null</code>,      *             or parameterTypes is empty or contains<code>null</code> elements      */
+comment|/**      * Constructor for an Invocation with arbitrary arguments in the target's method.      *       * @throws NoSuchMethodException if<code>methodName</code> could not be found in the target      * @throws IllegalArgumentException if target or methodName are<code>null</code>,      *             or parameterTypes is empty or contains<code>null</code> elements      */
 specifier|public
 name|Invocation
 parameter_list|(
@@ -166,9 +172,6 @@ parameter_list|)
 throws|throws
 name|NoSuchMethodException
 block|{
-name|super
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 name|target
@@ -269,7 +272,7 @@ block|}
 block|}
 comment|// allow access to public methods of inaccessible classes, if such methods were
 comment|// declared in a public interface
-name|_method
+name|method
 operator|=
 name|lookupMethodInHierarchy
 argument_list|(
@@ -285,7 +288,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|_method
+name|method
 operator|==
 literal|null
 condition|)
@@ -317,11 +320,11 @@ name|Util
 operator|.
 name|isAccessible
 argument_list|(
-name|_method
+name|method
 argument_list|)
 condition|)
 block|{
-name|_method
+name|method
 operator|.
 name|setAccessible
 argument_list|(
@@ -329,14 +332,19 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-name|_parameterTypes
+name|this
+operator|.
+name|parameterTypes
 operator|=
 name|parameterTypes
 expr_stmt|;
-name|_target
+name|this
+operator|.
+name|target
 operator|=
 operator|new
 name|WeakReference
+argument_list|<>
 argument_list|(
 name|target
 argument_list|)
@@ -346,6 +354,9 @@ name|Method
 name|lookupMethodInHierarchy
 parameter_list|(
 name|Class
+argument_list|<
+name|?
+argument_list|>
 name|objectClass
 parameter_list|,
 name|String
@@ -475,7 +486,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|_parameterTypes
+name|parameterTypes
 operator|==
 literal|null
 condition|)
@@ -513,7 +524,7 @@ throw|;
 block|}
 if|else if
 condition|(
-name|_parameterTypes
+name|parameterTypes
 operator|.
 name|length
 operator|!=
@@ -528,7 +539,7 @@ name|IllegalArgumentException
 argument_list|(
 literal|"inconsistent number of arguments: expected"
 operator|+
-name|_parameterTypes
+name|parameterTypes
 operator|.
 name|length
 operator|+
@@ -543,7 +554,7 @@ block|}
 name|Object
 name|currentTarget
 init|=
-name|_target
+name|target
 operator|.
 name|get
 argument_list|()
@@ -561,7 +572,7 @@ return|;
 block|}
 try|try
 block|{
-name|_method
+name|method
 operator|.
 name|invoke
 argument_list|(
@@ -642,13 +653,11 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|(
 name|obj
-operator|!=
+operator|==
 literal|null
-operator|)
-operator|&&
-operator|(
+operator|||
+operator|!
 name|obj
 operator|.
 name|getClass
@@ -661,9 +670,12 @@ operator|.
 name|getClass
 argument_list|()
 argument_list|)
-operator|)
 condition|)
 block|{
+return|return
+literal|false
+return|;
+block|}
 name|Invocation
 name|otherInvocation
 init|=
@@ -674,7 +686,8 @@ name|obj
 decl_stmt|;
 if|if
 condition|(
-name|_method
+operator|!
+name|method
 operator|.
 name|equals
 argument_list|(
@@ -685,6 +698,10 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
+return|return
+literal|false
+return|;
+block|}
 name|Object
 name|otherTarget
 init|=
@@ -696,24 +713,16 @@ decl_stmt|;
 name|Object
 name|target
 init|=
-name|_target
+name|this
 operator|.
-name|get
+name|getTarget
 argument_list|()
 decl_stmt|;
 if|if
 condition|(
-operator|(
 name|target
 operator|==
-literal|null
-operator|)
-operator|&&
-operator|(
 name|otherTarget
-operator|==
-literal|null
-operator|)
 condition|)
 block|{
 return|return
@@ -722,30 +731,15 @@ return|;
 block|}
 if|if
 condition|(
-operator|(
 name|target
 operator|==
 literal|null
-operator|)
-operator|&&
-operator|(
-name|otherTarget
-operator|!=
-literal|null
-operator|)
 condition|)
 block|{
 return|return
 literal|false
 return|;
 block|}
-if|if
-condition|(
-name|target
-operator|!=
-literal|null
-condition|)
-block|{
 return|return
 name|target
 operator|.
@@ -754,23 +748,6 @@ argument_list|(
 name|otherTarget
 argument_list|)
 return|;
-block|}
-block|}
-return|return
-literal|false
-return|;
-block|}
-else|else
-block|{
-return|return
-name|super
-operator|.
-name|equals
-argument_list|(
-name|obj
-argument_list|)
-return|;
-block|}
 block|}
 comment|/**      * @see Object#hashCode()      */
 annotation|@
@@ -785,22 +762,8 @@ comment|// algorithm is used to compute hashCode, since it is using a
 comment|// WeakReference and can be released at a later time, altering
 comment|// hashCode, and breaking collections using Invocation as a key
 comment|// (e.g. event DispatchQueue)
-comment|// TODO: use Jakarta commons HashBuilder
-name|int
-name|hash
-init|=
-literal|42
-decl_stmt|,
-name|hashMultiplier
-init|=
-literal|59
-decl_stmt|;
 return|return
-name|hash
-operator|*
-name|hashMultiplier
-operator|+
-name|_method
+name|method
 operator|.
 name|hashCode
 argument_list|()
@@ -813,7 +776,7 @@ name|getMethod
 parameter_list|()
 block|{
 return|return
-name|_method
+name|method
 return|;
 block|}
 comment|/**      * @return the target object of this Invocation      */
@@ -823,7 +786,7 @@ name|getTarget
 parameter_list|()
 block|{
 return|return
-name|_target
+name|target
 operator|.
 name|get
 argument_list|()
@@ -837,7 +800,7 @@ name|getParameterTypes
 parameter_list|()
 block|{
 return|return
-name|_parameterTypes
+name|parameterTypes
 return|;
 block|}
 block|}
