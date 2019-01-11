@@ -1454,7 +1454,7 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|19
+literal|4
 argument_list|,
 name|artistAndPaintingCount
 operator|.
@@ -2564,7 +2564,7 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|19
+literal|4
 argument_list|,
 name|artistAndPaintingCount
 operator|.

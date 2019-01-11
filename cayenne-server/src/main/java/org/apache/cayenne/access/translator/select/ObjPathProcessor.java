@@ -380,6 +380,11 @@ name|currentDbPath
 operator|.
 name|toString
 argument_list|()
+argument_list|,
+name|attribute
+operator|.
+name|isFlattened
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|attributes
@@ -514,6 +519,16 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|boolean
+name|leftJoin
+init|=
+name|isOuterJoin
+argument_list|()
+operator|||
+name|count
+operator|>
+literal|1
+decl_stmt|;
 name|context
 operator|.
 name|getTableTree
@@ -528,7 +543,7 @@ argument_list|()
 argument_list|,
 name|dbRel
 argument_list|,
-name|isOuterJoin
+name|leftJoin
 condition|?
 name|JoinType
 operator|.
@@ -547,7 +562,7 @@ name|void
 name|processRelTermination
 parameter_list|(
 name|ObjRelationship
-name|rel
+name|relationship
 parameter_list|)
 block|{
 name|String
@@ -559,7 +574,7 @@ literal|null
 condition|?
 name|currentAlias
 else|:
-name|rel
+name|relationship
 operator|.
 name|getDbRelationshipPath
 argument_list|()
@@ -567,6 +582,7 @@ decl_stmt|;
 if|if
 condition|(
 name|isOuterJoin
+argument_list|()
 condition|)
 block|{
 name|path
@@ -595,6 +611,11 @@ name|currentDbPath
 operator|.
 name|toString
 argument_list|()
+argument_list|,
+name|relationship
+operator|.
+name|isFlattened
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|attributes
@@ -617,6 +638,8 @@ name|getAttributePaths
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|relationship
 operator|=
 name|result
@@ -626,6 +649,8 @@ argument_list|()
 operator|.
 name|orElse
 argument_list|(
+name|this
+operator|.
 name|relationship
 argument_list|)
 expr_stmt|;

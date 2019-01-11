@@ -183,7 +183,7 @@ specifier|protected
 name|boolean
 name|lastComponent
 decl_stmt|;
-specifier|protected
+specifier|private
 name|boolean
 name|isOuterJoin
 decl_stmt|;
@@ -611,6 +611,15 @@ name|OUTER_JOIN_INDICATOR
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+specifier|public
+name|boolean
+name|isOuterJoin
+parameter_list|()
+block|{
+return|return
+name|isOuterJoin
+return|;
 block|}
 block|}
 end_class

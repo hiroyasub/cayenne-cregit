@@ -583,6 +583,7 @@ operator|.
 name|getRelationship
 argument_list|()
 decl_stmt|;
+comment|// outer join should be used for to-one relationships
 name|PathTranslationResult
 name|result
 init|=
@@ -599,6 +600,8 @@ name|property
 operator|.
 name|getName
 argument_list|()
+operator|+
+literal|'+'
 argument_list|,
 name|prefix
 argument_list|)

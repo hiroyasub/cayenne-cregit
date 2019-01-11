@@ -3894,7 +3894,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|20
+literal|5
 argument_list|,
 name|a
 operator|.
@@ -4222,7 +4222,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|20
+literal|5
 argument_list|,
 name|a
 operator|.
@@ -4382,7 +4382,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|36
+literal|21
 argument_list|,
 name|a
 operator|.
@@ -5089,7 +5089,7 @@ parameter_list|)
 block|{
 name|assertEquals
 argument_list|(
-literal|20
+literal|5
 argument_list|,
 name|result
 operator|.
@@ -5565,7 +5565,7 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|20
+literal|5
 argument_list|,
 name|result
 operator|.
@@ -5970,7 +5970,7 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|36
+literal|21
 argument_list|,
 name|result
 operator|.
