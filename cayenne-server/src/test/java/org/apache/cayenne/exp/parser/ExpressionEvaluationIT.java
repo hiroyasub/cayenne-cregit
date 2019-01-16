@@ -1133,9 +1133,6 @@ name|in
 argument_list|(
 name|Collections
 operator|.
-expr|<
-name|BigDecimal
-operator|>
 name|emptyList
 argument_list|()
 argument_list|)
@@ -1235,9 +1232,6 @@ name|nin
 argument_list|(
 name|Collections
 operator|.
-expr|<
-name|BigDecimal
-operator|>
 name|emptyList
 argument_list|()
 argument_list|)
