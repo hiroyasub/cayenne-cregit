@@ -55,22 +55,6 @@ name|Expression
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|exp
-operator|.
-name|parser
-operator|.
-name|ExpressionUtils
-import|;
-end_import
-
 begin_comment
 comment|/** Token Manager. */
 end_comment
@@ -541,7 +525,7 @@ condition|(
 operator|(
 name|active0
 operator|&
-literal|0xff1fd5e00004e006L
+literal|0xff1fd2f00004e006L
 operator|)
 operator|!=
 literal|0L
@@ -568,7 +552,7 @@ condition|(
 operator|(
 name|active0
 operator|&
-literal|0x600a0000000000L
+literal|0x60090000000000L
 operator|)
 operator|!=
 literal|0L
@@ -625,7 +609,7 @@ condition|(
 operator|(
 name|active0
 operator|&
-literal|0x1000000000L
+literal|0x40000000000L
 operator|)
 operator|!=
 literal|0L
@@ -651,7 +635,7 @@ condition|(
 operator|(
 name|active0
 operator|&
-literal|0x8002L
+literal|0x40000008002L
 operator|)
 operator|!=
 literal|0L
@@ -664,7 +648,7 @@ condition|(
 operator|(
 name|active0
 operator|&
-literal|0xff1fdff000046004L
+literal|0xff1fdbf000046004L
 operator|)
 operator|!=
 literal|0L
@@ -771,7 +755,7 @@ condition|(
 operator|(
 name|active0
 operator|&
-literal|0x781401e00000000cL
+literal|0x781400f00000000cL
 operator|)
 operator|!=
 literal|0L
@@ -823,7 +807,7 @@ condition|(
 operator|(
 name|active0
 operator|&
-literal|0x870bfe1000046000L
+literal|0x870bfb0000046000L
 operator|)
 operator|!=
 literal|0L
@@ -882,7 +866,7 @@ condition|(
 operator|(
 name|active0
 operator|&
-literal|0x6a03de1000040000L
+literal|0x6a03db0000040000L
 operator|)
 operator|!=
 literal|0L
@@ -959,7 +943,7 @@ condition|(
 operator|(
 name|active0
 operator|&
-literal|0x200c20000000000L
+literal|0x200c10000000000L
 operator|)
 operator|!=
 literal|0L
@@ -995,7 +979,7 @@ condition|(
 operator|(
 name|active0
 operator|&
-literal|0x68031c1000044000L
+literal|0x68031a0000044000L
 operator|)
 operator|!=
 literal|0L
@@ -1077,7 +1061,7 @@ condition|(
 operator|(
 name|active0
 operator|&
-literal|0x6800141000044000L
+literal|0x6800120000044000L
 operator|)
 operator|!=
 literal|0L
@@ -1120,7 +1104,7 @@ condition|(
 operator|(
 name|active0
 operator|&
-literal|0x6800141000004000L
+literal|0x6800120000004000L
 operator|)
 operator|!=
 literal|0L
@@ -1173,7 +1157,7 @@ condition|(
 operator|(
 name|active0
 operator|&
-literal|0x41000000000L
+literal|0x20000000000L
 operator|)
 operator|!=
 literal|0L
@@ -1752,7 +1736,7 @@ case|:
 return|return
 name|jjMoveStringLiteralDfa1_0
 argument_list|(
-literal|0x4002000000004L
+literal|0x4001000000004L
 argument_list|,
 literal|0x0L
 argument_list|)
@@ -1774,7 +1758,7 @@ case|:
 return|return
 name|jjMoveStringLiteralDfa1_0
 argument_list|(
-literal|0x600a0000000000L
+literal|0x60090000000000L
 argument_list|,
 literal|0x0L
 argument_list|)
@@ -1785,7 +1769,7 @@ case|:
 return|return
 name|jjMoveStringLiteralDfa1_0
 argument_list|(
-literal|0x7800040000000000L
+literal|0x7800020000000000L
 argument_list|,
 literal|0x10L
 argument_list|)
@@ -1807,7 +1791,7 @@ case|:
 return|return
 name|jjMoveStringLiteralDfa1_0
 argument_list|(
-literal|0x1000000000L
+literal|0x40000000000L
 argument_list|,
 literal|0x0L
 argument_list|)
@@ -1851,7 +1835,7 @@ case|:
 return|return
 name|jjMoveStringLiteralDfa1_0
 argument_list|(
-literal|0x21000c000000000L
+literal|0x210006000000000L
 argument_list|,
 literal|0x1L
 argument_list|)
@@ -1884,7 +1868,7 @@ case|:
 return|return
 name|jjMoveStringLiteralDfa1_0
 argument_list|(
-literal|0x8110000000000L
+literal|0x8108000000000L
 argument_list|,
 literal|0x2L
 argument_list|)
@@ -2161,7 +2145,7 @@ name|jjMoveStringLiteralDfa2_0
 argument_list|(
 name|active0
 argument_list|,
-literal|0x7800008000000000L
+literal|0x7800004000000000L
 argument_list|,
 name|active1
 argument_list|,
@@ -2206,7 +2190,7 @@ name|jjMoveStringLiteralDfa2_0
 argument_list|(
 name|active0
 argument_list|,
-literal|0x44000006000L
+literal|0x22000006000L
 argument_list|,
 name|active1
 argument_list|,
@@ -2236,6 +2220,26 @@ argument_list|,
 literal|83
 argument_list|)
 return|;
+if|else if
+condition|(
+operator|(
+name|active0
+operator|&
+literal|0x40000000000L
+operator|)
+operator|!=
+literal|0L
+condition|)
+return|return
+name|jjStartNfaWithStates_0
+argument_list|(
+literal|1
+argument_list|,
+literal|42
+argument_list|,
+literal|83
+argument_list|)
+return|;
 return|return
 name|jjMoveStringLiteralDfa2_0
 argument_list|(
@@ -2256,7 +2260,7 @@ name|jjMoveStringLiteralDfa2_0
 argument_list|(
 name|active0
 argument_list|,
-literal|0x82124a0000000008L
+literal|0x8212490000000008L
 argument_list|,
 name|active1
 argument_list|,
@@ -2336,7 +2340,7 @@ name|jjMoveStringLiteralDfa2_0
 argument_list|(
 name|active0
 argument_list|,
-literal|0x60111000000000L
+literal|0x60108000000000L
 argument_list|,
 name|active1
 argument_list|,
@@ -2351,7 +2355,7 @@ name|jjMoveStringLiteralDfa2_0
 argument_list|(
 name|active0
 argument_list|,
-literal|0x2000000000L
+literal|0x1000000000L
 argument_list|,
 name|active1
 argument_list|,
@@ -2589,7 +2593,7 @@ condition|(
 operator|(
 name|active0
 operator|&
-literal|0x2000000000L
+literal|0x1000000000L
 operator|)
 operator|!=
 literal|0L
@@ -2599,7 +2603,7 @@ name|jjStartNfaWithStates_0
 argument_list|(
 literal|2
 argument_list|,
-literal|37
+literal|36
 argument_list|,
 literal|83
 argument_list|)
@@ -2658,7 +2662,7 @@ condition|(
 operator|(
 name|active0
 operator|&
-literal|0x10000000000L
+literal|0x8000000000L
 operator|)
 operator|!=
 literal|0L
@@ -2668,7 +2672,7 @@ name|jjStartNfaWithStates_0
 argument_list|(
 literal|2
 argument_list|,
-literal|40
+literal|39
 argument_list|,
 literal|83
 argument_list|)
@@ -2682,7 +2686,7 @@ condition|(
 operator|(
 name|active0
 operator|&
-literal|0x4000000000L
+literal|0x2000000000L
 operator|)
 operator|!=
 literal|0L
@@ -2690,7 +2694,7 @@ condition|)
 block|{
 name|jjmatchedKind
 operator|=
-literal|38
+literal|37
 expr_stmt|;
 name|jjmatchedPos
 operator|=
@@ -2702,7 +2706,7 @@ name|jjMoveStringLiteralDfa3_0
 argument_list|(
 name|active0
 argument_list|,
-literal|0x201081000000000L
+literal|0x201080000000000L
 argument_list|,
 name|active1
 argument_list|,
@@ -2767,7 +2771,7 @@ name|jjMoveStringLiteralDfa3_0
 argument_list|(
 name|active0
 argument_list|,
-literal|0x40000000000L
+literal|0x20000000000L
 argument_list|,
 name|active1
 argument_list|,
@@ -2817,7 +2821,7 @@ name|jjMoveStringLiteralDfa3_0
 argument_list|(
 name|active0
 argument_list|,
-literal|0x8000020000000000L
+literal|0x8000010000000000L
 argument_list|,
 name|active1
 argument_list|,
@@ -2847,7 +2851,7 @@ condition|(
 operator|(
 name|active0
 operator|&
-literal|0x8000000000L
+literal|0x4000000000L
 operator|)
 operator|!=
 literal|0L
@@ -2857,7 +2861,7 @@ name|jjStartNfaWithStates_0
 argument_list|(
 literal|2
 argument_list|,
-literal|39
+literal|38
 argument_list|,
 literal|83
 argument_list|)
@@ -3055,7 +3059,7 @@ name|jjMoveStringLiteralDfa4_0
 argument_list|(
 name|active0
 argument_list|,
-literal|0x81000000000L
+literal|0x80000000000L
 argument_list|,
 name|active1
 argument_list|,
@@ -3179,7 +3183,7 @@ name|jjMoveStringLiteralDfa4_0
 argument_list|(
 name|active0
 argument_list|,
-literal|0x20000000000L
+literal|0x10000000000L
 argument_list|,
 name|active1
 argument_list|,
@@ -3299,7 +3303,7 @@ name|jjMoveStringLiteralDfa4_0
 argument_list|(
 name|active0
 argument_list|,
-literal|0x200040000000000L
+literal|0x200020000000000L
 argument_list|,
 name|active1
 argument_list|,
@@ -3547,7 +3551,7 @@ name|jjMoveStringLiteralDfa5_0
 argument_list|(
 name|active0
 argument_list|,
-literal|0x40000000000L
+literal|0x20000000000L
 argument_list|,
 name|active1
 argument_list|,
@@ -3621,7 +3625,7 @@ condition|(
 operator|(
 name|active0
 operator|&
-literal|0x20000000000L
+literal|0x10000000000L
 operator|)
 operator|!=
 literal|0L
@@ -3631,7 +3635,7 @@ name|jjStartNfaWithStates_0
 argument_list|(
 literal|4
 argument_list|,
-literal|41
+literal|40
 argument_list|,
 literal|83
 argument_list|)
@@ -3641,7 +3645,7 @@ name|jjMoveStringLiteralDfa5_0
 argument_list|(
 name|active0
 argument_list|,
-literal|0x3101000000000L
+literal|0x3100000000000L
 argument_list|,
 name|active1
 argument_list|,
@@ -3909,21 +3913,6 @@ argument_list|)
 return|;
 break|break;
 case|case
-literal|105
-case|:
-return|return
-name|jjMoveStringLiteralDfa6_0
-argument_list|(
-name|active0
-argument_list|,
-literal|0x1000000000L
-argument_list|,
-name|active1
-argument_list|,
-literal|0L
-argument_list|)
-return|;
-case|case
 literal|110
 case|:
 return|return
@@ -3931,7 +3920,7 @@ name|jjMoveStringLiteralDfa6_0
 argument_list|(
 name|active0
 argument_list|,
-literal|0x60040000000000L
+literal|0x60020000000000L
 argument_list|,
 name|active1
 argument_list|,
@@ -4082,7 +4071,7 @@ name|jjMoveStringLiteralDfa7_0
 argument_list|(
 name|active0
 argument_list|,
-literal|0x40000000000L
+literal|0x20000000000L
 argument_list|)
 return|;
 case|case
@@ -4146,7 +4135,7 @@ name|jjMoveStringLiteralDfa7_0
 argument_list|(
 name|active0
 argument_list|,
-literal|0x2000001000000000L
+literal|0x2000000000000000L
 argument_list|)
 return|;
 case|case
@@ -4292,26 +4281,6 @@ return|;
 case|case
 literal|110
 case|:
-if|if
-condition|(
-operator|(
-name|active0
-operator|&
-literal|0x1000000000L
-operator|)
-operator|!=
-literal|0L
-condition|)
-return|return
-name|jjStartNfaWithStates_0
-argument_list|(
-literal|7
-argument_list|,
-literal|36
-argument_list|,
-literal|83
-argument_list|)
-return|;
 return|return
 name|jjMoveStringLiteralDfa8_0
 argument_list|(
@@ -4339,7 +4308,7 @@ condition|(
 operator|(
 name|active0
 operator|&
-literal|0x40000000000L
+literal|0x20000000000L
 operator|)
 operator|!=
 literal|0L
@@ -4349,7 +4318,7 @@ name|jjStartNfaWithStates_0
 argument_list|(
 literal|7
 argument_list|,
-literal|42
+literal|41
 argument_list|,
 literal|83
 argument_list|)
@@ -12569,8 +12538,6 @@ literal|null
 block|,
 literal|null
 block|,
-literal|"\146\165\156\143\164\151\157\156"
-block|,
 literal|"\141\166\147"
 block|,
 literal|"\155\151\156"
@@ -12582,6 +12549,8 @@ block|,
 literal|"\143\157\165\156\164"
 block|,
 literal|"\144\151\163\164\151\156\143\164"
+block|,
+literal|"\146\156"
 block|,
 literal|"\143\157\156\143\141\164"
 block|,

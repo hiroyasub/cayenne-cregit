@@ -56,43 +56,43 @@ literal|35
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|FUNCTION
+name|AVG
 init|=
 literal|36
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|AVG
+name|MIN
 init|=
 literal|37
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|MIN
+name|MAX
 init|=
 literal|38
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|MAX
+name|SUM
 init|=
 literal|39
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|SUM
+name|COUNT
 init|=
 literal|40
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|COUNT
+name|DISTINCT
 init|=
 literal|41
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|DISTINCT
+name|FUNCTION
 init|=
 literal|42
 decl_stmt|;
@@ -420,8 +420,6 @@ literal|"<TRUE>"
 block|,
 literal|"<FALSE>"
 block|,
-literal|"\"function\""
-block|,
 literal|"\"avg\""
 block|,
 literal|"\"min\""
@@ -433,6 +431,8 @@ block|,
 literal|"\"count\""
 block|,
 literal|"\"distinct\""
+block|,
+literal|"\"fn\""
 block|,
 literal|"\"concat\""
 block|,

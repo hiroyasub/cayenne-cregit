@@ -270,7 +270,7 @@ name|out
 operator|.
 name|append
 argument_list|(
-literal|"function"
+literal|"fn"
 argument_list|)
 operator|.
 name|append

@@ -104,7 +104,7 @@ name|ExpressionFactory
 operator|.
 name|exp
 argument_list|(
-literal|"function('MY_FUNCTION', 1, 'abc')"
+literal|"fn('MY_FUNCTION', 1, 'abc')"
 argument_list|)
 decl_stmt|;
 name|assertTrue
@@ -116,7 +116,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"function(\"MY_FUNCTION\", 1, \"abc\")"
+literal|"fn(\"MY_FUNCTION\", 1, \"abc\")"
 argument_list|,
 name|exp
 operator|.
