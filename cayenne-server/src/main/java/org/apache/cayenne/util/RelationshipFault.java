@@ -329,6 +329,7 @@ argument_list|<>
 argument_list|()
 return|;
 block|}
+comment|/**          * Doing that to refresh query (see CAY-2509) while resolving RelationshipFault.          * Refreshing query is used only for parent contexts.          */
 name|boolean
 name|refresh
 init|=
