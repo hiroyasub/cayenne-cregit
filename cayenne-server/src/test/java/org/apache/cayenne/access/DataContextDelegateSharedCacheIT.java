@@ -17,6 +17,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Date
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -129,7 +139,7 @@ name|di
 operator|.
 name|server
 operator|.
-name|ServerCase
+name|ServerCaseContextsSync
 import|;
 end_import
 
@@ -168,16 +178,6 @@ operator|.
 name|junit
 operator|.
 name|Test
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Date
 import|;
 end_import
 
@@ -253,7 +253,7 @@ specifier|public
 class|class
 name|DataContextDelegateSharedCacheIT
 extends|extends
-name|ServerCase
+name|ServerCaseContextsSync
 block|{
 annotation|@
 name|Inject

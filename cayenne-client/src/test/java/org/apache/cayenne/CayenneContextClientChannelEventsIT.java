@@ -187,7 +187,7 @@ name|di
 operator|.
 name|client
 operator|.
-name|ClientCase
+name|ClientCaseContextsSync
 import|;
 end_import
 
@@ -304,7 +304,7 @@ specifier|public
 class|class
 name|CayenneContextClientChannelEventsIT
 extends|extends
-name|ClientCase
+name|ClientCaseContextsSync
 block|{
 annotation|@
 name|Inject

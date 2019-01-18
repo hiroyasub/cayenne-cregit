@@ -17,6 +17,26 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -209,7 +229,7 @@ name|di
 operator|.
 name|server
 operator|.
-name|ServerCase
+name|ServerCaseContextsSync
 import|;
 end_import
 
@@ -262,26 +282,6 @@ import|;
 end_import
 
 begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collections
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
 import|import static
 name|org
 operator|.
@@ -329,7 +329,7 @@ specifier|public
 class|class
 name|DataContextSharedCacheEmpiricIT
 extends|extends
-name|ServerCase
+name|ServerCaseContextsSync
 block|{
 specifier|private
 specifier|static

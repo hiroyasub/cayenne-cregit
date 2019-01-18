@@ -149,7 +149,7 @@ name|di
 operator|.
 name|server
 operator|.
-name|ServerCase
+name|ServerCaseContextsSync
 import|;
 end_import
 
@@ -241,7 +241,7 @@ specifier|public
 class|class
 name|NestedDataContextPeerEventsIT
 extends|extends
-name|ServerCase
+name|ServerCaseContextsSync
 block|{
 annotation|@
 name|Inject
