@@ -91,6 +91,10 @@ argument_list|>
 index|[]
 name|parameterTypes
 decl_stmt|;
+specifier|private
+name|int
+name|hashCode
+decl_stmt|;
 comment|/**      * Prevent use of empty default constructor      */
 specifier|private
 name|Invocation
@@ -332,6 +336,23 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**          * IMPORTANT: include Invocation target object(not a WeakReference) into          * algorithm is used to compute hashCode.          */
+name|this
+operator|.
+name|hashCode
+operator|=
+literal|31
+operator|*
+name|target
+operator|.
+name|hashCode
+argument_list|()
+operator|+
+name|method
+operator|.
+name|hashCode
+argument_list|()
+expr_stmt|;
 name|this
 operator|.
 name|parameterTypes
@@ -757,16 +778,8 @@ name|int
 name|hashCode
 parameter_list|()
 block|{
-comment|// IMPORTANT: DO NOT include Invocation target into whatever
-comment|// algorithm is used to compute hashCode, since it is using a
-comment|// WeakReference and can be released at a later time, altering
-comment|// hashCode, and breaking collections using Invocation as a key
-comment|// (e.g. event DispatchQueue)
 return|return
-name|method
-operator|.
 name|hashCode
-argument_list|()
 return|;
 block|}
 comment|/**      * @return the method to be invoked on the target      */
