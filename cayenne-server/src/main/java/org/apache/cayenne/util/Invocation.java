@@ -336,7 +336,8 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**          * IMPORTANT: include Invocation target object(not a WeakReference) into          * algorithm is used to compute hashCode.          */
+comment|// IMPORTANT: include Invocation target object(not a WeakReference) into
+comment|// algorithm is used to compute hashCode.
 name|this
 operator|.
 name|hashCode
