@@ -31,6 +31,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Objects
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|concurrent
 operator|.
 name|ConcurrentHashMap
@@ -123,6 +133,16 @@ operator|new
 name|ConcurrentHashMap
 argument_list|<>
 argument_list|()
+decl_stmt|;
+comment|/**      * Factory for accessor, can be customized by {@link #installAccessorFactory(AccessorFactory)}      */
+specifier|private
+specifier|static
+name|AccessorFactory
+name|accessorFactory
+init|=
+name|BeanAccessor
+operator|::
+operator|new
 decl_stmt|;
 comment|/** 	 * Compiles an accessor that can be used for fast access for the nested 	 * property of the objects of a given class. 	 *  	 * @since 4.0 	 */
 specifier|public
@@ -491,8 +511,9 @@ block|}
 else|else
 block|{
 return|return
-operator|new
-name|BeanAccessor
+name|accessorFactory
+operator|.
+name|createAccessor
 argument_list|(
 name|objectClass
 argument_list|,
@@ -884,6 +905,28 @@ block|}
 return|return
 literal|null
 return|;
+block|}
+comment|/**      * This method installs custom accessor factory to be used by property utils.      *<p>      * A factory that produces {@link BeanAccessor} is used by default.      *      * @param accessorFactory new factory to use      * @since 4.1      */
+specifier|public
+specifier|static
+name|void
+name|installAccessorFactory
+parameter_list|(
+name|AccessorFactory
+name|accessorFactory
+parameter_list|)
+block|{
+name|PropertyUtils
+operator|.
+name|accessorFactory
+operator|=
+name|Objects
+operator|.
+name|requireNonNull
+argument_list|(
+name|accessorFactory
+argument_list|)
+expr_stmt|;
 block|}
 specifier|private
 name|PropertyUtils
