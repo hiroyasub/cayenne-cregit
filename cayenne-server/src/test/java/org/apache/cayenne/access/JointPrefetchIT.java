@@ -2172,8 +2172,9 @@ argument_list|()
 operator|.
 name|getNode
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Gallery"
 argument_list|,
@@ -2269,8 +2270,9 @@ argument_list|()
 operator|.
 name|getNode
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Gallery"
 argument_list|,
@@ -2312,8 +2314,9 @@ argument_list|()
 operator|.
 name|getNode
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Gallery"
 argument_list|,
@@ -2558,8 +2561,9 @@ argument_list|()
 operator|.
 name|getNode
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Gallery"
 argument_list|,

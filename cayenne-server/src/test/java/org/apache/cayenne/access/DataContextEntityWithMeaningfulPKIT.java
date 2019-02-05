@@ -332,8 +332,9 @@ expr_stmt|;
 name|ObjectId
 name|objId
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"MeaningfulPKTest1"
 argument_list|,

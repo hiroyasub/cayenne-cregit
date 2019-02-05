@@ -1755,8 +1755,9 @@ expr_stmt|;
 name|ObjectId
 name|syntheticId
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"DecimalPKTestEntity"
 argument_list|,
@@ -1841,8 +1842,9 @@ expr_stmt|;
 name|ObjectId
 name|syntheticId
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"DecimalPKTest1"
 argument_list|,

@@ -2081,23 +2081,17 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|ObjectId
-name|id
-init|=
-operator|new
-name|ObjectId
-argument_list|(
-name|entityName
-argument_list|)
-decl_stmt|;
-comment|// note that the order of initialization of persistence artifacts below
-comment|// is
-comment|// important - do not change it lightly
+comment|// NOTE: the order of initialization of persistence artifacts below is important - do not change it lightly
 name|object
 operator|.
 name|setObjectId
 argument_list|(
-name|id
+name|ObjectId
+operator|.
+name|of
+argument_list|(
+name|entityName
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|injectInitialValue
@@ -2234,8 +2228,9 @@ name|persistent
 operator|.
 name|setObjectId
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 name|entity
 operator|.

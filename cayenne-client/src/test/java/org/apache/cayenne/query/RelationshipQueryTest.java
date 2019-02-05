@@ -110,8 +110,9 @@ block|{
 name|ObjectId
 name|oid
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"test"
 argument_list|,

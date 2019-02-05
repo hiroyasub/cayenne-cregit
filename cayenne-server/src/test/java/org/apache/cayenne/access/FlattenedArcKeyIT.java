@@ -231,8 +231,9 @@ block|{
 name|ObjectId
 name|src
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"X"
 argument_list|)
@@ -240,8 +241,9 @@ decl_stmt|;
 name|ObjectId
 name|target
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Y"
 argument_list|)
@@ -325,8 +327,9 @@ block|{
 name|ObjectId
 name|src
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"X"
 argument_list|)
@@ -334,8 +337,9 @@ decl_stmt|;
 name|ObjectId
 name|target
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Y"
 argument_list|)
@@ -485,8 +489,9 @@ block|{
 name|ObjectId
 name|src
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"X"
 argument_list|)
@@ -494,8 +499,9 @@ decl_stmt|;
 name|ObjectId
 name|target
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Y"
 argument_list|)

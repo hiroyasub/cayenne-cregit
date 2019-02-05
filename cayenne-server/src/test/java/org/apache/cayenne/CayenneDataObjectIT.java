@@ -254,8 +254,9 @@ decl_stmt|;
 name|ObjectId
 name|oid
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"T"
 argument_list|)

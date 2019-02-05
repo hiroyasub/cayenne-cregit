@@ -741,8 +741,9 @@ argument_list|()
 operator|.
 name|nodePropertyChanged
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"MtTable1"
 argument_list|)
@@ -814,8 +815,9 @@ specifier|final
 name|Object
 name|newObjectId
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"test"
 argument_list|,
@@ -1394,8 +1396,9 @@ name|committed
 operator|.
 name|setObjectId
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"test_entity"
 argument_list|,
@@ -1452,8 +1455,9 @@ name|modified
 operator|.
 name|setObjectId
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"test_entity"
 argument_list|,
@@ -1510,8 +1514,9 @@ name|deleted
 operator|.
 name|setObjectId
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"test_entity"
 argument_list|,
@@ -1558,8 +1563,9 @@ block|{
 name|ObjectId
 name|gid
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"MtTable1"
 argument_list|,
@@ -1881,8 +1887,9 @@ block|{
 name|ObjectId
 name|gid
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"MtTable1"
 argument_list|,

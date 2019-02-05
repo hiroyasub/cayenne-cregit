@@ -1211,8 +1211,9 @@ return|;
 block|}
 comment|// PUT without a prefix
 return|return
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 name|name
 argument_list|,
@@ -1334,8 +1335,9 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 name|name
 argument_list|,

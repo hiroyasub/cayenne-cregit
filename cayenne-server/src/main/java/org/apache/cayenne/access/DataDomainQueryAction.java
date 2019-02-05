@@ -994,9 +994,6 @@ argument_list|(
 name|inheritanceTree
 argument_list|,
 name|superOid
-operator|.
-name|getIdSnapshot
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -1011,13 +1008,8 @@ parameter_list|(
 name|EntityInheritanceTree
 name|superNode
 parameter_list|,
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|?
-argument_list|>
-name|idSnapshot
+name|ObjectId
+name|superOid
 parameter_list|)
 block|{
 for|for
@@ -1034,8 +1026,9 @@ block|{
 name|ObjectId
 name|id
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 name|child
 operator|.
@@ -1045,7 +1038,7 @@ operator|.
 name|getName
 argument_list|()
 argument_list|,
-name|idSnapshot
+name|superOid
 argument_list|)
 decl_stmt|;
 name|DataRow
@@ -1075,7 +1068,7 @@ name|polymorphicRowFromCache
 argument_list|(
 name|child
 argument_list|,
-name|idSnapshot
+name|superOid
 argument_list|)
 expr_stmt|;
 if|if

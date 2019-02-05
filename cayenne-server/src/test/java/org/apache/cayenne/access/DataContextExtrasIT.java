@@ -762,8 +762,9 @@ comment|// do a manual ID substitution
 name|ObjectId
 name|manualId
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Artist"
 argument_list|,
@@ -957,8 +958,9 @@ name|context
 operator|.
 name|findOrCreateObject
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Artist"
 argument_list|,

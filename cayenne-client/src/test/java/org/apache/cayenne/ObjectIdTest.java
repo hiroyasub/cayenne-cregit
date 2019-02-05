@@ -140,8 +140,9 @@ block|{
 name|ObjectId
 name|temp1
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"e"
 argument_list|)
@@ -162,6 +163,7 @@ argument_list|,
 name|temp1
 operator|.
 name|hashCode
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|assertTrue
@@ -169,6 +171,7 @@ argument_list|(
 name|temp1
 operator|.
 name|hashCode
+argument_list|()
 operator|!=
 literal|0
 argument_list|)
@@ -191,13 +194,14 @@ argument_list|()
 argument_list|)
 decl_stmt|;
 comment|// make sure hashCode is reset to 0
-name|assertTrue
+name|assertEquals
 argument_list|(
+name|h
+argument_list|,
 name|temp2
 operator|.
 name|hashCode
-operator|==
-literal|0
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|assertTrue
@@ -235,8 +239,9 @@ block|{
 name|ObjectId
 name|perm1
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"e"
 argument_list|,
@@ -261,6 +266,7 @@ argument_list|,
 name|perm1
 operator|.
 name|hashCode
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|assertTrue
@@ -268,6 +274,7 @@ argument_list|(
 name|perm1
 operator|.
 name|hashCode
+argument_list|()
 operator|!=
 literal|0
 argument_list|)
@@ -289,14 +296,14 @@ name|EntityResolver
 argument_list|()
 argument_list|)
 decl_stmt|;
-comment|// make sure hashCode is reset to 0
-name|assertTrue
+name|assertEquals
 argument_list|(
+name|h
+argument_list|,
 name|perm2
 operator|.
 name|hashCode
-operator|==
-literal|0
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|assertFalse
@@ -333,6 +340,11 @@ name|Exception
 block|{
 comment|// test serializing an id created with unmodifiable map
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|id
 init|=
 name|Collections
@@ -352,8 +364,9 @@ decl_stmt|;
 name|ObjectId
 name|perm1
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"e"
 argument_list|,

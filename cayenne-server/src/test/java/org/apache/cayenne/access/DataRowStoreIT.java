@@ -426,8 +426,9 @@ expr_stmt|;
 name|ObjectId
 name|key1
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Artist"
 argument_list|,
@@ -467,8 +468,9 @@ expr_stmt|;
 name|ObjectId
 name|key2
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Artist"
 argument_list|,
@@ -508,8 +510,9 @@ expr_stmt|;
 name|ObjectId
 name|key3
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Artist"
 argument_list|,

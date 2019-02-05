@@ -418,8 +418,9 @@ operator|!=
 literal|null
 operator|)
 condition|?
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 name|entityName
 argument_list|,

@@ -1148,12 +1148,7 @@ name|context
 argument_list|,
 name|dataObjectClass
 argument_list|,
-name|Integer
-operator|.
-name|valueOf
-argument_list|(
 name|pk
-argument_list|)
 argument_list|)
 argument_list|)
 return|;
@@ -1274,8 +1269,9 @@ name|objectForPK
 argument_list|(
 name|context
 argument_list|,
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 name|entity
 operator|.
@@ -1392,8 +1388,9 @@ name|objectForPK
 argument_list|(
 name|context
 argument_list|,
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 name|objEntityName
 argument_list|,
@@ -1626,8 +1623,9 @@ name|next
 argument_list|()
 decl_stmt|;
 return|return
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 name|objEntityName
 argument_list|,
@@ -1763,8 +1761,9 @@ name|next
 argument_list|()
 decl_stmt|;
 return|return
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 name|entity
 operator|.

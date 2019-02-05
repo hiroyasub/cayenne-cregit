@@ -724,8 +724,9 @@ expr_stmt|;
 name|ObjectId
 name|oid3
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Artist"
 argument_list|,
@@ -773,8 +774,9 @@ expr_stmt|;
 name|ObjectId
 name|oid2
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Artist"
 argument_list|,
@@ -1148,8 +1150,9 @@ name|Painting
 operator|.
 name|class
 argument_list|,
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Painting"
 argument_list|,

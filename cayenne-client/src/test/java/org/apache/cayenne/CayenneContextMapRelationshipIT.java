@@ -412,8 +412,9 @@ expr_stmt|;
 name|ObjectId
 name|id
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"IdMapToMany"
 argument_list|,
@@ -530,8 +531,9 @@ expr_stmt|;
 name|ObjectId
 name|id
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"IdMapToMany"
 argument_list|,

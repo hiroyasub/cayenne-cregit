@@ -746,8 +746,9 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Auditable2"
 argument_list|,
@@ -1024,8 +1025,9 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Auditable2"
 argument_list|,
@@ -1383,8 +1385,9 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Auditable1"
 argument_list|,
@@ -1711,8 +1714,9 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Auditable3"
 argument_list|,
@@ -1959,8 +1963,9 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Auditable3"
 argument_list|,
@@ -2185,8 +2190,9 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Auditable4"
 argument_list|,

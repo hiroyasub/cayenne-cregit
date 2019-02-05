@@ -786,8 +786,9 @@ name|TEMP_PREFIX_LENGTH
 argument_list|)
 decl_stmt|;
 return|return
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 name|entityName
 argument_list|,
@@ -880,8 +881,9 @@ argument_list|)
 throw|;
 block|}
 return|return
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 name|entityName
 argument_list|,
@@ -1038,8 +1040,9 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 name|entityName
 argument_list|,

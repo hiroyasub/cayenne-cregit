@@ -517,8 +517,9 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"E3"
 argument_list|,
@@ -664,8 +665,9 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"E4"
 argument_list|,
@@ -795,8 +797,9 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"E4"
 argument_list|,

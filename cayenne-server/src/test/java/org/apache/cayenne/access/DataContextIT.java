@@ -1488,8 +1488,9 @@ comment|// CAY-96 bug report)
 name|ObjectId
 name|eId
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Exhibit"
 argument_list|,
@@ -4225,8 +4226,9 @@ argument_list|()
 operator|.
 name|getNode
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Artist"
 argument_list|,

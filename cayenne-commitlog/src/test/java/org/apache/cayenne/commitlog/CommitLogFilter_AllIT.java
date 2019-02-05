@@ -778,8 +778,9 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Auditable1"
 argument_list|,
@@ -1045,8 +1046,9 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Auditable1"
 argument_list|,
@@ -1451,8 +1453,9 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"AuditableChild1"
 argument_list|,
@@ -1512,10 +1515,8 @@ name|getOldValue
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|assertEquals
+name|assertNull
 argument_list|(
-literal|null
-argument_list|,
 name|ac1c1
 operator|.
 name|getNewValue
@@ -1532,8 +1533,9 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"AuditableChild1"
 argument_list|,
@@ -1616,8 +1618,9 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"AuditableChild1"
 argument_list|,
@@ -1972,8 +1975,9 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Auditable1"
 argument_list|,

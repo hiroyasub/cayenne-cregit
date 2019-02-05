@@ -185,8 +185,9 @@ name|e1
 operator|.
 name|setObjectId
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"E1"
 argument_list|,
@@ -239,8 +240,9 @@ name|handler
 operator|.
 name|getStringId
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"E1"
 argument_list|,
@@ -302,8 +304,9 @@ name|e1
 operator|.
 name|setObjectId
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"E1"
 argument_list|,
@@ -378,8 +381,9 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"E1"
 argument_list|,
@@ -432,8 +436,9 @@ decl_stmt|;
 name|ObjectId
 name|id
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"E1"
 argument_list|,

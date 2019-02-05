@@ -830,8 +830,9 @@ argument_list|,
 operator|new
 name|NodeCreateOperation
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"MtTable1"
 argument_list|)
@@ -965,8 +966,9 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"MtTable1"
 argument_list|,

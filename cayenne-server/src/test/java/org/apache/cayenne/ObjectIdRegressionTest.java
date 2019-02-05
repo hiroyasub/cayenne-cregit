@@ -75,8 +75,9 @@ name|size
 init|=
 literal|100000
 decl_stmt|;
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Artist"
 argument_list|)
@@ -120,8 +121,9 @@ index|[
 name|i
 index|]
 operator|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Artist"
 argument_list|)

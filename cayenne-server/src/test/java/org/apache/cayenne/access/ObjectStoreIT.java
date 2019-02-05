@@ -322,8 +322,9 @@ name|o1
 operator|.
 name|setObjectId
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"T"
 argument_list|,
@@ -373,8 +374,9 @@ name|o2
 operator|.
 name|setObjectId
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"T"
 argument_list|,
@@ -424,8 +426,9 @@ name|o3
 operator|.
 name|setObjectId
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"T"
 argument_list|,

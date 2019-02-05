@@ -189,8 +189,9 @@ block|{
 name|ObjectId
 name|id
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"E1"
 argument_list|,
@@ -241,8 +242,9 @@ block|{
 name|ObjectId
 name|id
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"E1"
 argument_list|,

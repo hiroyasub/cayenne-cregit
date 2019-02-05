@@ -926,8 +926,9 @@ expr_stmt|;
 name|ObjectId
 name|id
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Artist"
 argument_list|,
@@ -935,11 +936,7 @@ name|Artist
 operator|.
 name|ARTIST_ID_PK_COLUMN
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 literal|33002
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|assertNull
@@ -1085,8 +1082,9 @@ block|{
 name|ObjectId
 name|id
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Artist"
 argument_list|,
@@ -1094,11 +1092,7 @@ name|Artist
 operator|.
 name|ARTIST_ID_PK_COLUMN
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 literal|44001
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|Object
@@ -1233,8 +1227,9 @@ name|objectForPK
 argument_list|(
 name|context
 argument_list|,
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Artist"
 argument_list|,
@@ -1274,8 +1269,9 @@ name|objectForPK
 argument_list|(
 name|context
 argument_list|,
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Artist"
 argument_list|,

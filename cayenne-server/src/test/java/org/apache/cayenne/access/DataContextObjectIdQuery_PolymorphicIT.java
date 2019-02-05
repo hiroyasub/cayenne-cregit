@@ -331,8 +331,9 @@ init|=
 operator|new
 name|ObjectIdQuery
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"AbstractPerson"
 argument_list|,
@@ -462,8 +463,9 @@ init|=
 operator|new
 name|ObjectIdQuery
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"AbstractPerson"
 argument_list|,
@@ -554,8 +556,9 @@ init|=
 operator|new
 name|ObjectIdQuery
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"AbstractPerson"
 argument_list|,

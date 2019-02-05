@@ -59,55 +59,7 @@ name|junit
 operator|.
 name|Assert
 operator|.
-name|assertEquals
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertFalse
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNotNull
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertSame
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertTrue
+name|*
 import|;
 end_import
 
@@ -126,8 +78,9 @@ block|{
 name|ObjectId
 name|oid
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"MockDataObject"
 argument_list|,
@@ -168,8 +121,9 @@ block|{
 name|ObjectId
 name|oid
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"test"
 argument_list|,
@@ -241,8 +195,9 @@ init|=
 operator|new
 name|ObjectIdQuery
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"abc"
 argument_list|,
@@ -258,8 +213,9 @@ init|=
 operator|new
 name|ObjectIdQuery
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"abc"
 argument_list|,
@@ -275,8 +231,9 @@ init|=
 operator|new
 name|ObjectIdQuery
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"abc"
 argument_list|,
@@ -292,8 +249,9 @@ init|=
 operator|new
 name|ObjectIdQuery
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"123"
 argument_list|,
@@ -386,8 +344,9 @@ init|=
 operator|new
 name|ObjectIdQuery
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"abc"
 argument_list|,
@@ -443,8 +402,9 @@ init|=
 operator|new
 name|ObjectIdQuery
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"abc"
 argument_list|,
@@ -500,8 +460,9 @@ init|=
 operator|new
 name|ObjectIdQuery
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"abc"
 argument_list|,

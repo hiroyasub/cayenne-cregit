@@ -328,8 +328,9 @@ decl_stmt|;
 name|ObjectId
 name|encoded
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"E1"
 argument_list|,
@@ -482,8 +483,9 @@ expr_stmt|;
 name|ObjectId
 name|id
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"x"
 argument_list|,
@@ -634,8 +636,9 @@ expr_stmt|;
 name|ObjectId
 name|id
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"x"
 argument_list|,
@@ -795,8 +798,9 @@ decl_stmt|;
 name|ObjectId
 name|id
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"x"
 argument_list|,
@@ -947,8 +951,9 @@ decl_stmt|;
 name|ObjectId
 name|id
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"x"
 argument_list|,
@@ -1203,8 +1208,9 @@ expr_stmt|;
 name|ObjectId
 name|id
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"x"
 argument_list|,

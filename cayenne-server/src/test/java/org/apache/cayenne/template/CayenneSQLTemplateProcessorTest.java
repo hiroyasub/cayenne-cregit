@@ -858,8 +858,9 @@ name|dataObject
 operator|.
 name|setObjectId
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"T"
 argument_list|,
@@ -986,8 +987,9 @@ expr_stmt|;
 name|ObjectId
 name|id
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"T"
 argument_list|,

@@ -330,8 +330,9 @@ name|modified
 operator|.
 name|setObjectId
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"MockPersistentObject"
 argument_list|,
@@ -487,8 +488,9 @@ name|deleted
 operator|.
 name|setObjectId
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"MockPersistentObject"
 argument_list|,
@@ -668,8 +670,9 @@ name|object
 operator|.
 name|setObjectId
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"MockPersistentObject"
 argument_list|,
@@ -788,8 +791,9 @@ name|object
 operator|.
 name|setObjectId
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"MockPersistentObject"
 argument_list|,

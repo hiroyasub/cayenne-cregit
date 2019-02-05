@@ -1476,8 +1476,9 @@ expr_stmt|;
 name|ObjectId
 name|id
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"MtTable1"
 argument_list|,
@@ -1603,8 +1604,9 @@ expr_stmt|;
 name|ObjectId
 name|id
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"MtTable1"
 argument_list|,
@@ -1679,8 +1681,9 @@ specifier|final
 name|ObjectId
 name|prefetchedId
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"MtTable1"
 argument_list|,

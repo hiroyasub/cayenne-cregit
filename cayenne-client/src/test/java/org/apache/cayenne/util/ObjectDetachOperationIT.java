@@ -375,8 +375,9 @@ decl_stmt|;
 name|ObjectId
 name|oid
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"MtTable1"
 argument_list|,
@@ -571,8 +572,9 @@ decl_stmt|;
 name|ObjectId
 name|oid
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"MtTable1"
 argument_list|,

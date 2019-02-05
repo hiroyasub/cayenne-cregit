@@ -489,8 +489,9 @@ decl_stmt|;
 name|ObjectId
 name|oid1
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"test_entity"
 argument_list|)
@@ -859,8 +860,9 @@ expr_stmt|;
 name|ObjectId
 name|oid
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"test_entity"
 argument_list|,
@@ -1118,8 +1120,9 @@ expr_stmt|;
 name|ObjectId
 name|oid
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"test_entity"
 argument_list|,

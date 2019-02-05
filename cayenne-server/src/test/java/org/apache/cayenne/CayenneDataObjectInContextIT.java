@@ -1476,8 +1476,9 @@ name|object
 operator|.
 name|setObjectId
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Artist"
 argument_list|,
@@ -1485,11 +1486,7 @@ name|Artist
 operator|.
 name|ARTIST_ID_PK_COLUMN
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 literal|3
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

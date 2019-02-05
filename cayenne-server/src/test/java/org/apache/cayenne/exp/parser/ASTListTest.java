@@ -156,8 +156,9 @@ block|{
 name|ObjectId
 name|objectId
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Artist"
 argument_list|,
@@ -262,8 +263,9 @@ block|{
 name|ObjectId
 name|objectId
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Artist"
 argument_list|,
@@ -375,8 +377,9 @@ block|{
 name|ObjectId
 name|objectId
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Artist"
 argument_list|,

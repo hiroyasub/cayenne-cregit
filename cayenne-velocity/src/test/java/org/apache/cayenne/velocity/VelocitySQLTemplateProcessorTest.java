@@ -912,8 +912,9 @@ name|dataObject
 operator|.
 name|setObjectId
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"T"
 argument_list|,
@@ -1034,11 +1035,7 @@ name|put
 argument_list|(
 literal|"ID_COLUMN1"
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 literal|3
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|idMap
@@ -1053,8 +1050,9 @@ expr_stmt|;
 name|ObjectId
 name|id
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"T"
 argument_list|,

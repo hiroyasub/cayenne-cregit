@@ -1107,8 +1107,9 @@ init|=
 operator|new
 name|ObjectIdQuery
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"QuoteAdress"
 argument_list|,
@@ -1149,8 +1150,9 @@ init|=
 operator|new
 name|ObjectIdQuery
 argument_list|(
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"Quote_Person"
 argument_list|,
