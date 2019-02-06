@@ -294,7 +294,10 @@ name|getHavingQualifier
 parameter_list|()
 block|{
 return|return
-literal|null
+name|selectQuery
+operator|.
+name|getHaving
+argument_list|()
 return|;
 block|}
 annotation|@
