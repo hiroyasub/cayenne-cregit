@@ -27,7 +27,7 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|*
+name|JOptionPane
 import|;
 end_import
 
@@ -302,13 +302,9 @@ argument_list|(
 name|CgenConfiguration
 operator|.
 name|class
+argument_list|,
+name|projectController
 argument_list|)
-expr_stmt|;
-name|this
-operator|.
-name|projectController
-operator|=
-name|projectController
 expr_stmt|;
 name|this
 operator|.

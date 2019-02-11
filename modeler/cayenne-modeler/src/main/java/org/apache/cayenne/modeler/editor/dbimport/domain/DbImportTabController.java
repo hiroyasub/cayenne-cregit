@@ -23,6 +23,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Set
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -129,16 +139,6 @@ name|DataMapDisplayEvent
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Set
-import|;
-end_import
-
 begin_comment
 comment|/**  * @since 4.1  */
 end_comment
@@ -162,13 +162,9 @@ argument_list|(
 name|ReverseEngineering
 operator|.
 name|class
+argument_list|,
+name|projectController
 argument_list|)
-expr_stmt|;
-name|this
-operator|.
-name|projectController
-operator|=
-name|projectController
 expr_stmt|;
 name|this
 operator|.
