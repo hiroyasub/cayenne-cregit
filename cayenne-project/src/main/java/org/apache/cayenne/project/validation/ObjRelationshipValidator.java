@@ -575,6 +575,15 @@ condition|(
 operator|!
 name|relationship
 operator|.
+name|getDbRelationships
+argument_list|()
+operator|.
+name|isEmpty
+argument_list|()
+operator|&&
+operator|!
+name|relationship
+operator|.
 name|isToPK
 argument_list|()
 condition|)
@@ -594,6 +603,15 @@ operator|!=
 literal|null
 operator|&&
 operator|!
+name|relationship
+operator|.
+name|getDbRelationships
+argument_list|()
+operator|.
+name|isEmpty
+argument_list|()
+operator|&&
+operator|!
 name|reverseRelationship
 operator|.
 name|isToPK
@@ -606,7 +624,7 @@ name|validationResult
 argument_list|,
 name|relationship
 argument_list|,
-literal|"ObjRelationship '%s' has join not to PK. Cayenne doesn't allow this type of relationship"
+literal|"ObjRelationship '%s' has join not to PK. This is not fully supported by Cayenne."
 argument_list|,
 name|toString
 argument_list|(
