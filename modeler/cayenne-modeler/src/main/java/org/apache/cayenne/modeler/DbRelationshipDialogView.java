@@ -482,7 +482,7 @@ name|FormLayout
 argument_list|(
 literal|"right:max(50dlu;pref), 3dlu, fill:min(150dlu;pref), 3dlu, fill:min(50dlu;pref)"
 argument_list|,
-literal|"p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, "
+literal|"p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, p, 3dlu, "
 operator|+
 literal|"p, 3dlu, p, 9dlu, p, 3dlu, top:14dlu, 3dlu, top:p:grow"
 argument_list|)
@@ -553,7 +553,7 @@ name|builder
 operator|.
 name|addLabel
 argument_list|(
-literal|"Target Entity:"
+literal|"Source Entity:"
 argument_list|,
 name|cc
 operator|.
@@ -569,7 +569,7 @@ name|builder
 operator|.
 name|add
 argument_list|(
-name|targetEntities
+name|sourceName
 argument_list|,
 name|cc
 operator|.
@@ -589,7 +589,7 @@ name|builder
 operator|.
 name|addLabel
 argument_list|(
-literal|"To Dep PK:"
+literal|"Target Entity:"
 argument_list|,
 name|cc
 operator|.
@@ -605,7 +605,7 @@ name|builder
 operator|.
 name|add
 argument_list|(
-name|toDepPk
+name|targetEntities
 argument_list|,
 name|cc
 operator|.
@@ -614,6 +614,42 @@ argument_list|(
 literal|3
 argument_list|,
 literal|7
+argument_list|,
+literal|1
+argument_list|,
+literal|1
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|builder
+operator|.
+name|addLabel
+argument_list|(
+literal|"To Dep PK:"
+argument_list|,
+name|cc
+operator|.
+name|xy
+argument_list|(
+literal|1
+argument_list|,
+literal|9
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|builder
+operator|.
+name|add
+argument_list|(
+name|toDepPk
+argument_list|,
+name|cc
+operator|.
+name|xywh
+argument_list|(
+literal|3
+argument_list|,
+literal|9
 argument_list|,
 literal|1
 argument_list|,
@@ -717,42 +753,6 @@ name|builder
 operator|.
 name|addLabel
 argument_list|(
-literal|"Source Entity:"
-argument_list|,
-name|cc
-operator|.
-name|xy
-argument_list|(
-literal|1
-argument_list|,
-literal|17
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|builder
-operator|.
-name|add
-argument_list|(
-name|sourceName
-argument_list|,
-name|cc
-operator|.
-name|xywh
-argument_list|(
-literal|3
-argument_list|,
-literal|17
-argument_list|,
-literal|1
-argument_list|,
-literal|1
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|builder
-operator|.
-name|addLabel
-argument_list|(
 literal|"Reverse Relationship Name:"
 argument_list|,
 name|cc
@@ -761,7 +761,7 @@ name|xy
 argument_list|(
 literal|1
 argument_list|,
-literal|19
+literal|17
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -777,7 +777,7 @@ name|xywh
 argument_list|(
 literal|3
 argument_list|,
-literal|19
+literal|17
 argument_list|,
 literal|1
 argument_list|,
@@ -797,7 +797,7 @@ name|xywh
 argument_list|(
 literal|1
 argument_list|,
-literal|21
+literal|19
 argument_list|,
 literal|5
 argument_list|,
@@ -821,7 +821,7 @@ name|xywh
 argument_list|(
 literal|1
 argument_list|,
-literal|23
+literal|21
 argument_list|,
 literal|3
 argument_list|,
@@ -872,7 +872,7 @@ name|xywh
 argument_list|(
 literal|5
 argument_list|,
-literal|23
+literal|21
 argument_list|,
 literal|1
 argument_list|,

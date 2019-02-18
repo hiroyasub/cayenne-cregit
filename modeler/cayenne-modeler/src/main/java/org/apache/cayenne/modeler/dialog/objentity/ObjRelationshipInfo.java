@@ -25,7 +25,17 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|*
+name|JOptionPane
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|WindowConstants
 import|;
 end_import
 
@@ -71,7 +81,7 @@ name|java
 operator|.
 name|awt
 operator|.
-name|*
+name|Component
 import|;
 end_import
 

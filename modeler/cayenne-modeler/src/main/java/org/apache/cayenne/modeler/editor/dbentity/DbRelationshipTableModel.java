@@ -655,18 +655,6 @@ name|column
 argument_list|)
 expr_stmt|;
 block|}
-comment|//        else if (column == TARGET) {
-comment|//            // If target column
-comment|//            DbEntity target = (DbEntity) aValue;
-comment|//
-comment|//            if (WarningDialogByDbTargetChange.showWarningDialog(mediator, rel)) {
-comment|//                // clear joins...
-comment|//                rel.removeAllJoins();
-comment|//                rel.setTargetEntityName(target);
-comment|//            }
-comment|//
-comment|//            mediator.fireDbRelationshipEvent(new RelationshipEvent(eventSource, rel, entity));
-comment|//        }
 if|else if
 condition|(
 name|column
