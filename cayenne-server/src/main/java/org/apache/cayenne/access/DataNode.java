@@ -349,7 +349,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|Select
 import|;
 end_import
 
@@ -1341,7 +1341,7 @@ specifier|public
 name|SelectTranslator
 name|selectTranslator
 parameter_list|(
-name|SelectQuery
+name|Select
 argument_list|<
 name|?
 argument_list|>

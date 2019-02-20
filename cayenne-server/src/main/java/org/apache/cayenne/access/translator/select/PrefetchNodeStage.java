@@ -299,7 +299,7 @@ if|if
 condition|(
 name|context
 operator|.
-name|getQuery
+name|getMetadata
 argument_list|()
 operator|.
 name|getPrefetchTree
@@ -320,7 +320,7 @@ name|prefetch
 range|:
 name|context
 operator|.
-name|getQuery
+name|getMetadata
 argument_list|()
 operator|.
 name|getPrefetchTree
@@ -361,7 +361,7 @@ name|prefetch
 init|=
 name|context
 operator|.
-name|getQuery
+name|getMetadata
 argument_list|()
 operator|.
 name|getPrefetchTree

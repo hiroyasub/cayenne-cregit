@@ -388,17 +388,6 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|PrefetchTreeNode
-name|getPrefetchTree
-parameter_list|()
-block|{
-return|return
-name|prefetchTreeNode
-return|;
-block|}
-annotation|@
-name|Override
-specifier|public
 name|Expression
 name|getQualifier
 parameter_list|()

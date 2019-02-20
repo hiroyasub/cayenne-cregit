@@ -57,21 +57,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SQLAction
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|SelectQuery
+name|Select
 import|;
 end_import
 
@@ -89,7 +75,7 @@ block|{
 specifier|public
 name|FirebirdSelectAction
 parameter_list|(
-name|SelectQuery
+name|Select
 argument_list|<
 name|?
 argument_list|>

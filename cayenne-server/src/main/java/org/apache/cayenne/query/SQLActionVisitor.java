@@ -46,6 +46,20 @@ argument_list|>
 name|query
 parameter_list|)
 function_decl|;
+comment|/**      * Creates an action to execute a FluentSelect.      * @since 4.2      */
+parameter_list|<
+name|T
+parameter_list|>
+name|SQLAction
+name|objectSelectAction
+parameter_list|(
+name|FluentSelect
+argument_list|<
+name|T
+argument_list|>
+name|query
+parameter_list|)
+function_decl|;
 comment|/**      * Creates an action to execute a SQLTemplate.      */
 name|SQLAction
 name|sqlAction

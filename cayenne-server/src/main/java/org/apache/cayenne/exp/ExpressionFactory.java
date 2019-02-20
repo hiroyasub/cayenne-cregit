@@ -753,7 +753,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|ObjectSelect
+name|FluentSelect
 import|;
 end_import
 
@@ -5958,32 +5958,7 @@ specifier|static
 name|Expression
 name|exists
 parameter_list|(
-name|ObjectSelect
-argument_list|<
-name|?
-argument_list|>
-name|subQuery
-parameter_list|)
-block|{
-return|return
-operator|new
-name|ASTExists
-argument_list|(
-operator|new
-name|ASTSubquery
-argument_list|(
-name|subQuery
-argument_list|)
-argument_list|)
-return|;
-block|}
-comment|/** 	 * @since 4.2 	 */
-specifier|public
-specifier|static
-name|Expression
-name|exists
-parameter_list|(
-name|ColumnSelect
+name|FluentSelect
 argument_list|<
 name|?
 argument_list|>

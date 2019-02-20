@@ -57,7 +57,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|Select
 import|;
 end_import
 
@@ -74,7 +74,7 @@ comment|/** 	 * Creates a proper translator for a BatchQuery 	 */
 name|SelectTranslator
 name|translator
 parameter_list|(
-name|SelectQuery
+name|Select
 argument_list|<
 name|?
 argument_list|>

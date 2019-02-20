@@ -1913,8 +1913,6 @@ parameter_list|()
 block|{
 return|return
 operator|new
-name|SelectQueryMetadata
-operator|.
 name|ToCacheKeyTraversalHandler
 argument_list|(
 name|registry
@@ -1934,8 +1932,6 @@ parameter_list|()
 block|{
 return|return
 operator|new
-name|SelectQueryMetadata
-operator|.
 name|ToCacheKeyPrefetchProcessor
 argument_list|(
 name|cacheKey

@@ -57,7 +57,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|Select
 import|;
 end_import
 
@@ -75,7 +75,7 @@ block|{
 specifier|public
 name|DerbySelectAction
 parameter_list|(
-name|SelectQuery
+name|Select
 argument_list|<
 name|?
 argument_list|>

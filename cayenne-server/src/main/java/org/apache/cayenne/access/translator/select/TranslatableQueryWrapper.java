@@ -163,10 +163,6 @@ name|EntityResolver
 name|resolver
 parameter_list|)
 function_decl|;
-name|PrefetchTreeNode
-name|getPrefetchTree
-parameter_list|()
-function_decl|;
 name|Expression
 name|getQualifier
 parameter_list|()

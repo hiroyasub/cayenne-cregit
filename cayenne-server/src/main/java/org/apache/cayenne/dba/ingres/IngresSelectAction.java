@@ -57,7 +57,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|Select
 import|;
 end_import
 
@@ -74,7 +74,7 @@ name|T
 parameter_list|>
 name|IngresSelectAction
 parameter_list|(
-name|SelectQuery
+name|Select
 argument_list|<
 name|T
 argument_list|>

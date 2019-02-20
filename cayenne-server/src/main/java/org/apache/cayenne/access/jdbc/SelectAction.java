@@ -189,7 +189,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|Select
 import|;
 end_import
 
@@ -325,7 +325,7 @@ block|}
 block|}
 block|}
 specifier|protected
-name|SelectQuery
+name|Select
 argument_list|<
 name|?
 argument_list|>
@@ -339,7 +339,7 @@ comment|/** 	 * @since 4.0 	 */
 specifier|public
 name|SelectAction
 parameter_list|(
-name|SelectQuery
+name|Select
 argument_list|<
 name|?
 argument_list|>
@@ -832,7 +832,7 @@ comment|// number of objects returned from Cayenne.
 name|int
 name|fetchLimit
 init|=
-name|query
+name|queryMetadata
 operator|.
 name|getFetchLimit
 argument_list|()
@@ -845,14 +845,14 @@ operator|.
 name|isSuppressingDistinct
 argument_list|()
 condition|?
-name|query
+name|queryMetadata
 operator|.
 name|getFetchOffset
 argument_list|()
 else|:
 name|getInMemoryOffset
 argument_list|(
-name|query
+name|queryMetadata
 operator|.
 name|getFetchOffset
 argument_list|()

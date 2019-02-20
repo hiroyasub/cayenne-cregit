@@ -1611,7 +1611,10 @@ name|assertFalse
 argument_list|(
 name|q
 operator|.
-name|suppressDistinct
+name|metaData
+operator|.
+name|isSuppressingDistinct
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|q
@@ -1630,7 +1633,10 @@ name|assertFalse
 argument_list|(
 name|q
 operator|.
-name|suppressDistinct
+name|metaData
+operator|.
+name|isSuppressingDistinct
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|q
@@ -1649,7 +1655,10 @@ name|assertTrue
 argument_list|(
 name|q
 operator|.
-name|suppressDistinct
+name|metaData
+operator|.
+name|isSuppressingDistinct
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
