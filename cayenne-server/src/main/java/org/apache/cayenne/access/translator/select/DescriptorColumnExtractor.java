@@ -583,7 +583,20 @@ operator|.
 name|getRelationship
 argument_list|()
 decl_stmt|;
-comment|// outer join should be used for to-one relationships
+if|if
+condition|(
+operator|!
+name|rel
+operator|.
+name|isToPK
+argument_list|()
+condition|)
+block|{
+comment|// should ignore toOne not on PK relationship as it doesn't have any column to add to result
+return|return
+literal|true
+return|;
+block|}
 name|PathTranslationResult
 name|result
 init|=
@@ -600,8 +613,6 @@ name|property
 operator|.
 name|getName
 argument_list|()
-operator|+
-literal|'+'
 argument_list|,
 name|prefix
 argument_list|)
