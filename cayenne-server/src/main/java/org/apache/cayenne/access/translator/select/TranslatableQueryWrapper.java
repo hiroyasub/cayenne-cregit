@@ -195,6 +195,25 @@ argument_list|>
 name|unwrap
 parameter_list|()
 function_decl|;
+specifier|default
+name|boolean
+name|needsResultSetMapping
+parameter_list|()
+block|{
+return|return
+name|getColumns
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+operator|!
+name|getColumns
+argument_list|()
+operator|.
+name|isEmpty
+argument_list|()
+return|;
+block|}
 block|}
 end_interface
 

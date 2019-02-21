@@ -277,6 +277,19 @@ argument_list|>
 name|getResultSetMapping
 parameter_list|()
 function_decl|;
+comment|/**      * @since 4.2      */
+specifier|default
+name|void
+name|setResultSetMapping
+parameter_list|(
+name|List
+argument_list|<
+name|Object
+argument_list|>
+name|resultSetMapping
+parameter_list|)
+block|{
+block|}
 comment|/**      * @return should the result be mapped to single object (scalar or entity)      * @see QueryMetadata#getResultSetMapping()      * @since 4.0      */
 name|boolean
 name|isSingleResultSetMapping

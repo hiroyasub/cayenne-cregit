@@ -58,6 +58,7 @@ comment|/**  * @since 3.0  */
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|DefaultEntityResultSegment
 implements|implements
@@ -80,6 +81,7 @@ specifier|private
 name|int
 name|offset
 decl_stmt|;
+specifier|public
 name|DefaultEntityResultSegment
 parameter_list|(
 name|ClassDescriptor

@@ -211,6 +211,10 @@ name|TableTreeStage
 argument_list|()
 block|,
 operator|new
+name|SQLResultStage
+argument_list|()
+block|,
+operator|new
 name|SQLGenerationStage
 argument_list|()
 block|}

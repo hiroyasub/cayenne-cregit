@@ -620,7 +620,8 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|helper
+name|getHelper
+argument_list|()
 operator|.
 name|unresolvedSuspect
 argument_list|(
@@ -809,9 +810,8 @@ init|=
 operator|(
 name|MixedArrayListHelper
 operator|)
-name|this
-operator|.
-name|helper
+name|getHelper
+argument_list|()
 decl_stmt|;
 for|for
 control|(

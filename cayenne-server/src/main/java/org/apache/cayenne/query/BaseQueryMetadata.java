@@ -1198,6 +1198,27 @@ return|return
 name|resultSetMapping
 return|;
 block|}
+comment|/** 	 * used by select translator 	 * @since 4.2 	 */
+annotation|@
+name|Override
+specifier|public
+name|void
+name|setResultSetMapping
+parameter_list|(
+name|List
+argument_list|<
+name|Object
+argument_list|>
+name|resultSetMapping
+parameter_list|)
+block|{
+name|this
+operator|.
+name|resultSetMapping
+operator|=
+name|resultSetMapping
+expr_stmt|;
+block|}
 comment|/** 	 * @since 4.0 	 */
 annotation|@
 name|Override

@@ -250,6 +250,11 @@ operator|new
 name|MockQueryWrapperBuilder
 argument_list|()
 operator|.
+name|withNeedsResultSetMapping
+argument_list|(
+literal|true
+argument_list|)
+operator|.
 name|withMetaData
 argument_list|(
 operator|new
