@@ -690,8 +690,9 @@ block|{
 name|ObjectId
 name|objectId
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"test"
 argument_list|,
@@ -807,8 +808,9 @@ block|{
 name|ObjectId
 name|objectId
 init|=
-operator|new
 name|ObjectId
+operator|.
+name|of
 argument_list|(
 literal|"test"
 argument_list|,
