@@ -17,6 +17,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -148,16 +158,6 @@ operator|.
 name|junit
 operator|.
 name|Test
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
 import|;
 end_import
 
@@ -1569,7 +1569,7 @@ name|ExpressionFactory
 operator|.
 name|exp
 argument_list|(
-literal|"db:ARTIST_NAME = 'aa'"
+literal|"db:paintingArray.toArtist.ARTIST_NAME = 'aa'"
 argument_list|)
 argument_list|,
 name|translated
