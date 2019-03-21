@@ -324,6 +324,8 @@ operator|=
 name|context
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodeIdChanged
@@ -343,6 +345,8 @@ literal|"Not supported"
 argument_list|)
 throw|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodeCreated
@@ -482,6 +486,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodeRemoved
@@ -544,6 +550,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodePropertyChanged
@@ -648,6 +656,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|arcCreated
@@ -658,7 +668,7 @@ parameter_list|,
 name|Object
 name|targetNodeId
 parameter_list|,
-name|Object
+name|ArcId
 name|arcId
 parameter_list|)
 block|{
@@ -844,6 +854,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|arcDeleted
@@ -855,7 +867,7 @@ specifier|final
 name|Object
 name|targetNodeId
 parameter_list|,
-name|Object
+name|ArcId
 name|arcId
 parameter_list|)
 block|{

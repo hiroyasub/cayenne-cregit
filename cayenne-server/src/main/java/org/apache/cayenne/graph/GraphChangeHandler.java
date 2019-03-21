@@ -78,7 +78,7 @@ parameter_list|,
 name|Object
 name|targetNodeId
 parameter_list|,
-name|Object
+name|ArcId
 name|arcId
 parameter_list|)
 function_decl|;
@@ -92,7 +92,7 @@ parameter_list|,
 name|Object
 name|targetNodeId
 parameter_list|,
-name|Object
+name|ArcId
 name|arcId
 parameter_list|)
 function_decl|;

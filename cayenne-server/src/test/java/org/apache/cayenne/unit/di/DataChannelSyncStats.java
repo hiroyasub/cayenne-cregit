@@ -27,6 +27,20 @@ name|cayenne
 operator|.
 name|graph
 operator|.
+name|ArcId
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|graph
+operator|.
 name|GraphChangeHandler
 import|;
 end_import
@@ -62,6 +76,8 @@ specifier|public
 name|int
 name|nodesRemoved
 decl_stmt|;
+annotation|@
+name|Override
 specifier|public
 name|void
 name|arcCreated
@@ -72,7 +88,7 @@ parameter_list|,
 name|Object
 name|targetNodeId
 parameter_list|,
-name|Object
+name|ArcId
 name|arcId
 parameter_list|)
 block|{
@@ -80,6 +96,8 @@ name|arcsCreated
 operator|++
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|arcDeleted
@@ -90,7 +108,7 @@ parameter_list|,
 name|Object
 name|targetNodeId
 parameter_list|,
-name|Object
+name|ArcId
 name|arcId
 parameter_list|)
 block|{
@@ -98,6 +116,8 @@ name|arcsDeleted
 operator|++
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodeCreated
@@ -110,6 +130,8 @@ name|nodesCreated
 operator|++
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodeIdChanged
@@ -125,6 +147,8 @@ name|nodeIdsChanged
 operator|++
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodePropertyChanged
@@ -146,6 +170,8 @@ name|nodePropertiesChanged
 operator|++
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodeRemoved

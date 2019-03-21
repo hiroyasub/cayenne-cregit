@@ -55,6 +55,20 @@ name|cayenne
 operator|.
 name|graph
 operator|.
+name|ArcId
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|graph
+operator|.
 name|GraphChangeHandler
 import|;
 end_import
@@ -1588,6 +1602,8 @@ operator|new
 name|GraphChangeHandler
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|arcCreated
@@ -1598,7 +1614,7 @@ parameter_list|,
 name|Object
 name|targetNodeId
 parameter_list|,
-name|Object
+name|ArcId
 name|arcId
 parameter_list|)
 block|{
@@ -1609,6 +1625,8 @@ index|]
 operator|++
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|arcDeleted
@@ -1619,7 +1637,7 @@ parameter_list|,
 name|Object
 name|targetNodeId
 parameter_list|,
-name|Object
+name|ArcId
 name|arcId
 parameter_list|)
 block|{
@@ -1630,6 +1648,8 @@ index|]
 operator|--
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodeCreated
@@ -1639,6 +1659,8 @@ name|nodeId
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodeIdChanged
@@ -1651,6 +1673,8 @@ name|newId
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodePropertyChanged
@@ -1669,6 +1693,8 @@ name|newValue
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodeRemoved
@@ -2119,7 +2145,7 @@ parameter_list|,
 name|Object
 name|targetNodeId
 parameter_list|,
-name|Object
+name|ArcId
 name|arcId
 parameter_list|)
 block|{
@@ -2136,7 +2162,7 @@ parameter_list|,
 name|Object
 name|targetNodeId
 parameter_list|,
-name|Object
+name|ArcId
 name|arcId
 parameter_list|)
 block|{
@@ -3727,6 +3753,8 @@ operator|new
 name|GraphChangeHandler
 argument_list|()
 block|{
+annotation|@
+name|Override
 specifier|public
 name|void
 name|arcCreated
@@ -3737,7 +3765,7 @@ parameter_list|,
 name|Object
 name|targetNodeId
 parameter_list|,
-name|Object
+name|ArcId
 name|arcId
 parameter_list|)
 block|{
@@ -3748,6 +3776,8 @@ index|]
 operator|++
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|arcDeleted
@@ -3758,7 +3788,7 @@ parameter_list|,
 name|Object
 name|targetNodeId
 parameter_list|,
-name|Object
+name|ArcId
 name|arcId
 parameter_list|)
 block|{
@@ -3769,6 +3799,8 @@ index|]
 operator|--
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodeCreated
@@ -3784,6 +3816,8 @@ index|]
 operator|++
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodeIdChanged
@@ -3796,6 +3830,8 @@ name|newId
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodePropertyChanged
@@ -3814,6 +3850,8 @@ name|newValue
 parameter_list|)
 block|{
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodeRemoved

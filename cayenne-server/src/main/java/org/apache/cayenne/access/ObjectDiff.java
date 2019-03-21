@@ -101,6 +101,20 @@ name|cayenne
 operator|.
 name|graph
 operator|.
+name|ArcId
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|graph
+operator|.
 name|GraphChangeHandler
 import|;
 end_import
@@ -975,15 +989,12 @@ operator|.
 name|getTargetNodeId
 argument_list|()
 decl_stmt|;
-name|String
+name|ArcId
 name|arcId
 init|=
 name|arcDiff
 operator|.
 name|getArcId
-argument_list|()
-operator|.
-name|toString
 argument_list|()
 decl_stmt|;
 name|ArcProperty
@@ -998,6 +1009,9 @@ operator|.
 name|getProperty
 argument_list|(
 name|arcId
+operator|.
+name|getForwardArc
+argument_list|()
 argument_list|)
 decl_stmt|;
 comment|// note that some collection properties implement
@@ -1011,6 +1025,9 @@ operator|==
 literal|null
 operator|&&
 name|arcId
+operator|.
+name|getForwardArc
+argument_list|()
 operator|.
 name|startsWith
 argument_list|(
@@ -1138,20 +1155,17 @@ literal|null
 condition|)
 block|{
 comment|// register complimentary arc diff
-name|String
+name|ArcId
 name|arc
 init|=
-name|ASTDbPath
+name|arcId
 operator|.
-name|DB_PREFIX
-operator|+
-name|property
-operator|.
-name|getComplimentaryReverseDbRelationshipPath
+name|getReverseId
 argument_list|()
 decl_stmt|;
+comment|//new ArcId(ASTDbPath.DB_PREFIX + property.getComplimentaryReverseDbRelationshipPath(), property.getName());
 name|ArcOperation
-name|complimentartyOp
+name|complimentaryOp
 init|=
 operator|new
 name|ArcOperation
@@ -1177,7 +1191,7 @@ name|registerDiff
 argument_list|(
 name|targetId
 argument_list|,
-name|complimentartyOp
+name|complimentaryOp
 argument_list|)
 expr_stmt|;
 block|}
@@ -1209,6 +1223,9 @@ operator|.
 name|put
 argument_list|(
 name|arcId
+operator|.
+name|getForwardArc
+argument_list|()
 argument_list|,
 name|targetId
 argument_list|)
@@ -2018,14 +2035,13 @@ name|Object
 name|targetNodeId
 decl_stmt|;
 specifier|private
-name|Object
+name|ArcId
 name|arcId
 decl_stmt|;
 specifier|private
 name|boolean
 name|delete
 decl_stmt|;
-specifier|public
 name|ArcOperation
 parameter_list|(
 name|Object
@@ -2034,7 +2050,7 @@ parameter_list|,
 name|Object
 name|targetNodeId
 parameter_list|,
-name|Object
+name|ArcId
 name|arcId
 parameter_list|,
 name|boolean
@@ -2231,7 +2247,7 @@ argument_list|()
 throw|;
 block|}
 specifier|public
-name|Object
+name|ArcId
 name|getArcId
 parameter_list|()
 block|{

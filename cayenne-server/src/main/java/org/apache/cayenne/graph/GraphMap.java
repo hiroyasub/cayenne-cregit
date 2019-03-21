@@ -92,6 +92,8 @@ expr_stmt|;
 block|}
 comment|// *** GraphMap methods
 comment|/**      * Returns an immutable collection of registered nodes.      */
+annotation|@
+name|Override
 specifier|public
 name|Collection
 argument_list|<
@@ -112,6 +114,8 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|synchronized
 name|Object
@@ -130,6 +134,8 @@ name|nodeId
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|synchronized
 name|void
@@ -152,6 +158,8 @@ name|nodeObject
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Override
 specifier|public
 specifier|synchronized
 name|Object
@@ -171,6 +179,8 @@ argument_list|)
 return|;
 block|}
 comment|// *** methods for tracking local changes declared in GraphChangeHandler interface
+annotation|@
+name|Override
 specifier|public
 name|void
 name|arcCreated
@@ -181,12 +191,14 @@ parameter_list|,
 name|Object
 name|targetNodeId
 parameter_list|,
-name|Object
+name|ArcId
 name|arcId
 parameter_list|)
 block|{
 comment|// noop
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|arcDeleted
@@ -197,12 +209,14 @@ parameter_list|,
 name|Object
 name|targetNodeId
 parameter_list|,
-name|Object
+name|ArcId
 name|arcId
 parameter_list|)
 block|{
 comment|// noop
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodeCreated
@@ -213,6 +227,8 @@ parameter_list|)
 block|{
 comment|// noop
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodeRemoved
@@ -223,6 +239,8 @@ parameter_list|)
 block|{
 comment|// noop
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodeIdChanged
@@ -236,6 +254,8 @@ parameter_list|)
 block|{
 comment|// noop
 block|}
+annotation|@
+name|Override
 specifier|public
 name|void
 name|nodePropertyChanged

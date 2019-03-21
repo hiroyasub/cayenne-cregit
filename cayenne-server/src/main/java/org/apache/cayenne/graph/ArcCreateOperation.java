@@ -39,7 +39,7 @@ name|Object
 name|targetNodeId
 decl_stmt|;
 specifier|protected
-name|Object
+name|ArcId
 name|arcId
 decl_stmt|;
 specifier|public
@@ -51,7 +51,7 @@ parameter_list|,
 name|Object
 name|targetNodeId
 parameter_list|,
-name|Object
+name|ArcId
 name|arcId
 parameter_list|)
 block|{
@@ -82,7 +82,7 @@ parameter_list|,
 name|Object
 name|targetNodeId
 parameter_list|,
-name|Object
+name|ArcId
 name|arcId
 parameter_list|,
 name|int

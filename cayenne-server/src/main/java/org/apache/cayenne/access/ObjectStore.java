@@ -157,6 +157,20 @@ name|cayenne
 operator|.
 name|graph
 operator|.
+name|ArcId
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|graph
+operator|.
 name|ChildDiffLoader
 import|;
 end_import
@@ -1597,7 +1611,7 @@ parameter_list|,
 name|Object
 name|targetNodeId
 parameter_list|,
-name|Object
+name|ArcId
 name|arcId
 parameter_list|)
 block|{
@@ -1614,7 +1628,7 @@ parameter_list|,
 name|Object
 name|targetNodeId
 parameter_list|,
-name|Object
+name|ArcId
 name|arcId
 parameter_list|)
 block|{
@@ -3373,7 +3387,7 @@ parameter_list|,
 name|Object
 name|targetNodeId
 parameter_list|,
-name|Object
+name|ArcId
 name|arcId
 parameter_list|)
 block|{
@@ -3388,9 +3402,6 @@ argument_list|,
 name|targetNodeId
 argument_list|,
 name|arcId
-operator|.
-name|toString
-argument_list|()
 argument_list|,
 literal|false
 argument_list|)
@@ -3429,7 +3440,7 @@ parameter_list|,
 name|Object
 name|targetNodeId
 parameter_list|,
-name|Object
+name|ArcId
 name|arcId
 parameter_list|)
 block|{
@@ -3444,9 +3455,6 @@ argument_list|,
 name|targetNodeId
 argument_list|,
 name|arcId
-operator|.
-name|toString
-argument_list|()
 argument_list|,
 literal|true
 argument_list|)
