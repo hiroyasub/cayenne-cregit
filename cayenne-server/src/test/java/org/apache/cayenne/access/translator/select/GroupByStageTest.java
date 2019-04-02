@@ -101,7 +101,9 @@ name|cayenne
 operator|.
 name|exp
 operator|.
-name|Property
+name|property
+operator|.
+name|PropertyFactory
 import|;
 end_import
 
@@ -328,7 +330,7 @@ argument_list|()
 argument_list|,
 literal|true
 argument_list|,
-name|Property
+name|PropertyFactory
 operator|.
 name|COUNT
 argument_list|,

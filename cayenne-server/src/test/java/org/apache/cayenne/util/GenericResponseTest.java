@@ -262,10 +262,14 @@ throws|throws
 name|Exception
 block|{
 name|List
+argument_list|<
+name|Object
+argument_list|>
 name|list
 init|=
 operator|new
 name|ArrayList
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|list
@@ -274,6 +278,7 @@ name|add
 argument_list|(
 operator|new
 name|HashMap
+argument_list|<>
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -310,9 +315,6 @@ expr_stmt|;
 name|GenericResponse
 name|sr
 init|=
-operator|(
-name|GenericResponse
-operator|)
 name|Util
 operator|.
 name|cloneViaSerialization

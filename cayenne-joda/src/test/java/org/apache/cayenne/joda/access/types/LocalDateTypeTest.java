@@ -17,24 +17,6 @@ end_package
 
 begin_import
 import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|joda
-operator|.
-name|access
-operator|.
-name|types
-operator|.
-name|LocalDateType
-import|;
-end_import
-
-begin_import
-import|import
 name|com
 operator|.
 name|mockrunner

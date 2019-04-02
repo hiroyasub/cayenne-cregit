@@ -331,7 +331,9 @@ name|cayenne
 operator|.
 name|exp
 operator|.
-name|Property
+name|parser
+operator|.
+name|ASTAsterisk
 import|;
 end_import
 
@@ -345,9 +347,9 @@ name|cayenne
 operator|.
 name|exp
 operator|.
-name|parser
+name|property
 operator|.
-name|ASTAsterisk
+name|BaseProperty
 import|;
 end_import
 
@@ -737,7 +739,7 @@ operator|.
 name|translate
 argument_list|(
 operator|(
-name|Property
+name|BaseProperty
 argument_list|<
 name|?
 argument_list|>
