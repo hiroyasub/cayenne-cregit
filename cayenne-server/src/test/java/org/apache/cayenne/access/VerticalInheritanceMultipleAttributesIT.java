@@ -289,7 +289,7 @@ name|INHERITANCE_VERTICAL_PROJECT
 argument_list|)
 specifier|public
 class|class
-name|VerticalInheritanceMultipleAttributes
+name|VerticalInheritanceMultipleAttributesIT
 extends|extends
 name|ServerCase
 block|{
