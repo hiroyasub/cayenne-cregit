@@ -33,6 +33,20 @@ name|CgenConfiguration
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|gen
+operator|.
+name|ClientClassGenerationAction
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 4.1  */
 end_comment
@@ -92,6 +106,24 @@ operator|.
 name|setClient
 argument_list|(
 literal|true
+argument_list|)
+expr_stmt|;
+name|cgenConfiguration
+operator|.
+name|setTemplate
+argument_list|(
+name|ClientClassGenerationAction
+operator|.
+name|SUBCLASS_TEMPLATE
+argument_list|)
+expr_stmt|;
+name|cgenConfiguration
+operator|.
+name|setSuperTemplate
+argument_list|(
+name|ClientClassGenerationAction
+operator|.
+name|SUPERCLASS_TEMPLATE
 argument_list|)
 expr_stmt|;
 block|}
