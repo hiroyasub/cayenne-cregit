@@ -19,6 +19,26 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|DatabaseMetaData
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|SQLException
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -75,31 +95,13 @@ name|Inject
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|DatabaseMetaData
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|SQLException
-import|;
-end_import
-
 begin_comment
-comment|/**  * Detects OpenBase DB from JDBC metadata.  *   * @since 1.2  */
+comment|/**  * Detects OpenBase DB from JDBC metadata.  *   * @since 1.2  * @deprecated since 4.2  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|OpenBaseSniffer

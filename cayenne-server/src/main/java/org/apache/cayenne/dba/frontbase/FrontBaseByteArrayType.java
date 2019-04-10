@@ -54,10 +54,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 1.2  */
+comment|/**  * @since 1.2  * @deprecated since 4.2  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 class|class
 name|FrontBaseByteArrayType
 extends|extends
