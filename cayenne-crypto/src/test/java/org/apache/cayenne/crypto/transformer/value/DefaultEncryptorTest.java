@@ -20,62 +20,32 @@ package|;
 end_package
 
 begin_import
-import|import static
-name|org
+import|import
+name|javax
 operator|.
-name|junit
+name|crypto
 operator|.
-name|Assert
-operator|.
-name|assertArrayEquals
+name|BadPaddingException
 import|;
 end_import
 
 begin_import
-import|import static
-name|org
+import|import
+name|javax
 operator|.
-name|junit
+name|crypto
 operator|.
-name|Assert
-operator|.
-name|assertEquals
+name|IllegalBlockSizeException
 import|;
 end_import
 
 begin_import
-import|import static
-name|org
+import|import
+name|javax
 operator|.
-name|junit
+name|crypto
 operator|.
-name|Assert
-operator|.
-name|assertNotEquals
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNotNull
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNull
+name|NoSuchPaddingException
 import|;
 end_import
 
@@ -116,36 +86,6 @@ operator|.
 name|util
 operator|.
 name|Base64
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|crypto
-operator|.
-name|BadPaddingException
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|crypto
-operator|.
-name|IllegalBlockSizeException
-import|;
-end_import
-
-begin_import
-import|import
-name|javax
-operator|.
-name|crypto
-operator|.
-name|NoSuchPaddingException
 import|;
 end_import
 
@@ -218,6 +158,18 @@ operator|.
 name|junit
 operator|.
 name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|*
 import|;
 end_import
 
@@ -514,7 +466,10 @@ argument_list|)
 argument_list|,
 name|Utf8StringConverter
 operator|.
-name|DEFAULT_CHARSET
+name|utf8
+operator|.
+name|name
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -560,7 +515,10 @@ argument_list|)
 argument_list|,
 name|Utf8StringConverter
 operator|.
-name|DEFAULT_CHARSET
+name|utf8
+operator|.
+name|name
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -673,7 +631,10 @@ argument_list|)
 argument_list|,
 name|Utf8StringConverter
 operator|.
-name|DEFAULT_CHARSET
+name|utf8
+operator|.
+name|name
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -738,7 +699,10 @@ argument_list|)
 argument_list|,
 name|Utf8StringConverter
 operator|.
-name|DEFAULT_CHARSET
+name|utf8
+operator|.
+name|name
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
