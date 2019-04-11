@@ -370,7 +370,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for<a href="http://www.openbase.com">OpenBase</a>.  * Sample connection settings to use with OpenBase are shown below:  *<p>  *<pre>  * openbase.jdbc.username = test  * openbase.jdbc.password = secret  * openbase.jdbc.url = jdbc:openbase://serverhostname/cayenne  * openbase.jdbc.driver = com.openbase.jdbc.ObDriver  *</pre>  *  * @since 1.1  * @deprecated since 4.2  */
+comment|/**  * DbAdapter implementation for<a href="http://www.openbase.com">OpenBase</a>.  * Sample connection settings to use with OpenBase are shown below:  *<p>  *<pre>  * openbase.jdbc.username = test  * openbase.jdbc.password = secret  * openbase.jdbc.url = jdbc:openbase://serverhostname/cayenne  * openbase.jdbc.driver = com.openbase.jdbc.ObDriver  *</pre>  *  * @since 1.1  * @deprecated since 4.2, OpenBase is pretty much obsolete and not tested  */
 end_comment
 
 begin_class
