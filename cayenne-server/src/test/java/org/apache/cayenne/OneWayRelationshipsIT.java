@@ -15,6 +15,36 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|SQLException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -208,36 +238,6 @@ operator|.
 name|junit
 operator|.
 name|Test
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|SQLException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|Types
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
 import|;
 end_import
 
@@ -955,13 +955,13 @@ name|SQLSelect
 operator|.
 name|scalarQuery
 argument_list|(
-name|Integer
-operator|.
-name|class
+literal|"SELECT TABLE3_ID FROM oneway_table4"
 argument_list|,
 literal|"oneway-rels"
 argument_list|,
-literal|"SELECT TABLE3_ID FROM oneway_table4"
+name|Integer
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 name|List
@@ -1150,13 +1150,13 @@ name|SQLSelect
 operator|.
 name|scalarQuery
 argument_list|(
-name|Integer
-operator|.
-name|class
+literal|"SELECT TABLE3_ID FROM oneway_table4"
 argument_list|,
 literal|"oneway-rels"
 argument_list|,
-literal|"SELECT TABLE3_ID FROM oneway_table4"
+name|Integer
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 name|List
@@ -1358,13 +1358,13 @@ name|SQLSelect
 operator|.
 name|scalarQuery
 argument_list|(
-name|Integer
-operator|.
-name|class
+literal|"SELECT TABLE3_ID FROM oneway_table4"
 argument_list|,
 literal|"oneway-rels"
 argument_list|,
-literal|"SELECT TABLE3_ID FROM oneway_table4"
+name|Integer
+operator|.
+name|class
 argument_list|)
 decl_stmt|;
 name|List
