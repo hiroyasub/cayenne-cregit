@@ -232,10 +232,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Processes object diffs, generating DB diffs. Can be used for both UPDATE and  * INSERT.  *   * @since 1.2  */
+comment|/**  * Processes object diffs, generating DB diffs. Can be used for both UPDATE and  * INSERT.  *   * @since 1.2  * @deprecated since 4.2 as part of deprecated {@link LegacyDataDomainFlushAction}  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 class|class
 name|DataDomainDBDiffBuilder
 implements|implements

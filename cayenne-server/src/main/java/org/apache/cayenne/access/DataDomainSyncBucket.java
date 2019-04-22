@@ -302,10 +302,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A superclass of batch query wrappers.  *   * @since 1.2  */
+comment|/**  * A superclass of batch query wrappers.  *   * @since 1.2  * @deprecated since 4.2 as part of deprecated {@link LegacyDataDomainFlushAction}  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|abstract
 class|class
 name|DataDomainSyncBucket
@@ -323,7 +325,7 @@ argument_list|>
 name|objectsByDescriptor
 decl_stmt|;
 specifier|final
-name|DataDomainFlushAction
+name|LegacyDataDomainFlushAction
 name|parent
 decl_stmt|;
 name|List
@@ -345,7 +347,7 @@ name|descriptorsByDbEntity
 decl_stmt|;
 name|DataDomainSyncBucket
 parameter_list|(
-name|DataDomainFlushAction
+name|LegacyDataDomainFlushAction
 name|parent
 parameter_list|)
 block|{

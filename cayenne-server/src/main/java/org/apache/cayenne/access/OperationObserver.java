@@ -143,7 +143,6 @@ name|idToUpdate
 parameter_list|)
 function_decl|;
 comment|/**      * Callback method invoked on exceptions that happen during an execution of a specific      * query.      */
-specifier|public
 name|void
 name|nextQueryException
 parameter_list|(
@@ -155,7 +154,6 @@ name|ex
 parameter_list|)
 function_decl|;
 comment|/**      * Callback method invoked on exceptions that are not tied to a specific query      * execution, such as JDBC connection exceptions, etc.      */
-specifier|public
 name|void
 name|nextGlobalException
 parameter_list|(
