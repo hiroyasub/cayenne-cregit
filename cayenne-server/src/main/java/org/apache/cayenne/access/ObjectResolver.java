@@ -948,6 +948,8 @@ name|createObjectId
 argument_list|(
 name|row
 argument_list|,
+literal|"db:"
+operator|+
 name|dbEntity
 operator|.
 name|getName
@@ -985,6 +987,8 @@ name|getObjectId
 argument_list|()
 argument_list|,
 name|path
+argument_list|,
+name|objectId
 argument_list|)
 expr_stmt|;
 block|}
