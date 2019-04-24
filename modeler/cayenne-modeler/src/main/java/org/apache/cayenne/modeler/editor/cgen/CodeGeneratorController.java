@@ -25,7 +25,7 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|*
+name|JOptionPane
 import|;
 end_import
 
@@ -35,7 +35,7 @@ name|java
 operator|.
 name|awt
 operator|.
-name|*
+name|Component
 import|;
 end_import
 
@@ -642,6 +642,23 @@ name|ClassGenerationAction
 operator|.
 name|SUPERCLASS_TEMPLATE
 argument_list|)
+operator|&&
+operator|(
+name|cgenConfiguration
+operator|.
+name|getSuperPkg
+argument_list|()
+operator|==
+literal|null
+operator|||
+name|cgenConfiguration
+operator|.
+name|getSuperPkg
+argument_list|()
+operator|.
+name|isEmpty
+argument_list|()
+operator|)
 return|;
 block|}
 specifier|private
