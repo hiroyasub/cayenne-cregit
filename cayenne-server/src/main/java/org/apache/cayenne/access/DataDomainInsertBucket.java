@@ -242,10 +242,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 1.2  */
+comment|/**  * @since 1.2  * @deprecated since 4.2 as part of deprecated {@link LegacyDataDomainFlushAction}  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 class|class
 name|DataDomainInsertBucket
 extends|extends
@@ -259,7 +261,7 @@ name|flattenedInserts
 decl_stmt|;
 name|DataDomainInsertBucket
 parameter_list|(
-name|DataDomainFlushAction
+name|LegacyDataDomainFlushAction
 name|parent
 parameter_list|)
 block|{
@@ -1104,6 +1106,13 @@ name|getObjectId
 argument_list|()
 argument_list|,
 name|path
+argument_list|,
+name|ObjectId
+operator|.
+name|of
+argument_list|(
+literal|"tmp"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

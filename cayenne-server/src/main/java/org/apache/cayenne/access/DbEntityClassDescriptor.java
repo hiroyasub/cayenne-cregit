@@ -156,10 +156,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A descriptor of a primary or secondary DbEntity for a given persistent class during  * commit.  *   * @since 3.0  */
+comment|/**  * A descriptor of a primary or secondary DbEntity for a given persistent class during  * commit.  *   * @since 3.0  * @deprecated since 4.2 as part of deprecated {@link LegacyDataDomainFlushAction}  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 class|class
 name|DbEntityClassDescriptor
 block|{

@@ -21,6 +21,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Comparator
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|List
 import|;
 end_import
@@ -85,6 +95,30 @@ name|objects
 parameter_list|,
 name|boolean
 name|deleteOrder
+parameter_list|)
+function_decl|;
+comment|/**      * @return comparator for {@link DbEntity}      * @since 4.2      */
+name|Comparator
+argument_list|<
+name|DbEntity
+argument_list|>
+name|getDbEntityComparator
+parameter_list|()
+function_decl|;
+comment|/**      * @return comparator for {@link ObjEntity}      * @since 4.2      */
+name|Comparator
+argument_list|<
+name|ObjEntity
+argument_list|>
+name|getObjEntityComparator
+parameter_list|()
+function_decl|;
+comment|/**      * @param entity to check      * @return is entity has reflexive relationships      *      * @since 4.2      */
+name|boolean
+name|isReflexive
+parameter_list|(
+name|DbEntity
+name|entity
 parameter_list|)
 function_decl|;
 block|}

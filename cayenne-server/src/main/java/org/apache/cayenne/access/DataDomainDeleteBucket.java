@@ -166,10 +166,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 1.2  */
+comment|/**  * @since 1.2  * @deprecated since 4.2 as part of deprecated {@link LegacyDataDomainFlushAction}  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 class|class
 name|DataDomainDeleteBucket
 extends|extends
@@ -177,7 +179,7 @@ name|DataDomainSyncBucket
 block|{
 name|DataDomainDeleteBucket
 parameter_list|(
-name|DataDomainFlushAction
+name|LegacyDataDomainFlushAction
 name|parent
 parameter_list|)
 block|{

@@ -83,6 +83,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|access
+operator|.
+name|flush
+operator|.
+name|DefaultDataDomainFlushAction
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|graph
 operator|.
 name|CompoundDiff
@@ -258,11 +274,26 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A stateful commit handler used by DataContext to perform commit operation.  * DataContextCommitAction resolves primary key dependencies, referential integrity  * dependencies (including multi-reflexive entities), generates primary keys, creates  * batches for massive data modifications, assigns operations to data nodes.  *   * @since 1.2  */
+comment|/**  * A stateful commit handler used by DataContext to perform commit operation.  * DataContextCommitAction resolves primary key dependencies, referential integrity  * dependencies (including multi-reflexive entities), generates primary keys, creates  * batches for massive data modifications, assigns operations to data nodes.  *  * @since 1.2  * @deprecated this implementation is deprecated since 4.2, {@link DefaultDataDomainFlushAction} is used  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
+specifier|public
 class|class
+name|LegacyDataDomainFlushAction
+implements|implements
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|flush
+operator|.
 name|DataDomainFlushAction
 block|{
 specifier|private
@@ -337,7 +368,8 @@ specifier|private
 name|JdbcEventLogger
 name|logger
 decl_stmt|;
-name|DataDomainFlushAction
+specifier|public
+name|LegacyDataDomainFlushAction
 parameter_list|(
 name|DataDomain
 name|domain
@@ -491,6 +523,7 @@ name|flattenedDeleteInfo
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
 name|GraphDiff
 name|flush
 parameter_list|(

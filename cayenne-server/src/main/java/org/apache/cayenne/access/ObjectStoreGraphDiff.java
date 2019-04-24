@@ -214,6 +214,7 @@ comment|/**  * A GraphDiff facade for the ObjectStore changes. Provides a way fo
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|ObjectStoreGraphDiff
 implements|implements
@@ -249,6 +250,7 @@ name|objectStore
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
 name|Map
 argument_list|<
 name|Object

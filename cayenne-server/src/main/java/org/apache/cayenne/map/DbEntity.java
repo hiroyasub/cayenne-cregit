@@ -81,6 +81,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Map
 import|;
 end_import
@@ -383,7 +393,7 @@ name|String
 name|schema
 decl_stmt|;
 specifier|protected
-name|Collection
+name|List
 argument_list|<
 name|DbAttribute
 argument_list|>
@@ -803,7 +813,7 @@ expr_stmt|;
 block|}
 comment|/**      * Returns an unmodifiable collection of DbAttributes representing the      * primary key of the table described by this DbEntity.      *      * @since 3.0      */
 specifier|public
-name|Collection
+name|List
 argument_list|<
 name|DbAttribute
 argument_list|>
@@ -813,7 +823,7 @@ block|{
 return|return
 name|Collections
 operator|.
-name|unmodifiableCollection
+name|unmodifiableList
 argument_list|(
 name|primaryKey
 argument_list|)
