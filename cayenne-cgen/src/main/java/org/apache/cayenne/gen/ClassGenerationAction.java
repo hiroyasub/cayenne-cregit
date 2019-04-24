@@ -706,6 +706,11 @@ condition|(
 name|superPackageName
 operator|==
 literal|null
+operator|||
+name|superPackageName
+operator|.
+name|isEmpty
+argument_list|()
 condition|)
 block|{
 name|superPackageName
