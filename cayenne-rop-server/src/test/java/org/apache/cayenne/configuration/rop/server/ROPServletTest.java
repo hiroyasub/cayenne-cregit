@@ -21,6 +21,36 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Arrays
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
 name|com
 operator|.
 name|mockrunner
@@ -202,32 +232,14 @@ import|;
 end_import
 
 begin_import
-import|import
-name|java
+import|import static
+name|org
 operator|.
-name|util
+name|junit
 operator|.
-name|Arrays
-import|;
-end_import
-
-begin_import
-import|import
-name|java
+name|Assert
 operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
+name|assertEquals
 import|;
 end_import
 
@@ -239,7 +251,31 @@ name|junit
 operator|.
 name|Assert
 operator|.
-name|*
+name|assertNotNull
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertNull
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertTrue
 import|;
 end_import
 
@@ -631,7 +667,7 @@ argument_list|()
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|4
+literal|5
 argument_list|,
 name|modules
 operator|.
@@ -799,7 +835,7 @@ argument_list|()
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|6
+literal|7
 argument_list|,
 name|modules
 operator|.
@@ -990,7 +1026,7 @@ argument_list|()
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|5
+literal|6
 argument_list|,
 name|modules
 operator|.
