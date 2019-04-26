@@ -194,7 +194,7 @@ name|ROPServerModule
 parameter_list|()
 block|{
 block|}
-comment|/**      * @deprecated since 4.2 ROPServerModule became autoloaded.      * You need to contribute eventBridgeProperties yourself.      */
+comment|/**      * @deprecated since 4.2 ROPServerModule became autoloaded.      * You need to contribute eventBridgeProperties yourself.      * Use {@link #contributeROPBridgeProperties(Binder)} to      * contribute properties.      */
 annotation|@
 name|Deprecated
 specifier|public
