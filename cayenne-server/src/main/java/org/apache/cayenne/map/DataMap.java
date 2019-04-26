@@ -1317,8 +1317,13 @@ name|encoder
 operator|.
 name|nested
 argument_list|(
-name|getQueryDescriptors
+operator|new
+name|TreeMap
+argument_list|<>
+argument_list|(
+name|getQueryDescriptorMap
 argument_list|()
+argument_list|)
 argument_list|,
 name|delegate
 argument_list|)
