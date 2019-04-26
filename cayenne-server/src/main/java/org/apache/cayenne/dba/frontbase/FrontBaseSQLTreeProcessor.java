@@ -136,12 +136,10 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 4.2  * @deprecated since 4.2  */
+comment|/**  * @since 4.2  */
 end_comment
 
 begin_class
-annotation|@
-name|Deprecated
 specifier|public
 class|class
 name|FrontBaseSQLTreeProcessor

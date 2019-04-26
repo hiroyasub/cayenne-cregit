@@ -78,7 +78,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A char type that uses a real clob for insertion.  *   * @since 1.2  * @deprecated since 4.2  */
+comment|/**  * A char type that uses a real clob for insertion.  *   * @since 1.2  */
 end_comment
 
 begin_comment
@@ -90,8 +90,6 @@ comment|// issues with other adapters, so we can't move this to a superclass yet
 end_comment
 
 begin_class
-annotation|@
-name|Deprecated
 class|class
 name|FrontBaseCharType
 extends|extends
