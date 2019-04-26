@@ -31,16 +31,16 @@ name|cay_2032
 operator|.
 name|auto
 operator|.
-name|_User
+name|_Users
 import|;
 end_import
 
 begin_class
 specifier|public
 class|class
-name|User
+name|Users
 extends|extends
-name|_User
+name|_Users
 block|{
 specifier|private
 specifier|static

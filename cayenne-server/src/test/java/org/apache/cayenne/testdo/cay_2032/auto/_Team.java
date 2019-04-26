@@ -141,7 +141,7 @@ name|testdo
 operator|.
 name|cay_2032
 operator|.
-name|User
+name|Users
 import|;
 end_import
 
@@ -203,7 +203,7 @@ specifier|static
 specifier|final
 name|ListProperty
 argument_list|<
-name|User
+name|Users
 argument_list|>
 name|TEAM_USERS
 init|=
@@ -213,7 +213,7 @@ name|createList
 argument_list|(
 literal|"teamUsers"
 argument_list|,
-name|User
+name|Users
 operator|.
 name|class
 argument_list|)
@@ -226,7 +226,7 @@ specifier|public
 name|void
 name|addToTeamUsers
 parameter_list|(
-name|User
+name|Users
 name|obj
 parameter_list|)
 block|{
@@ -244,7 +244,7 @@ specifier|public
 name|void
 name|removeFromTeamUsers
 parameter_list|(
-name|User
+name|Users
 name|obj
 parameter_list|)
 block|{
@@ -266,7 +266,7 @@ argument_list|)
 specifier|public
 name|List
 argument_list|<
-name|User
+name|Users
 argument_list|>
 name|getTeamUsers
 parameter_list|()
@@ -275,7 +275,7 @@ return|return
 operator|(
 name|List
 argument_list|<
-name|User
+name|Users
 argument_list|>
 operator|)
 name|readProperty
