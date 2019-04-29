@@ -17,6 +17,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|io
+operator|.
+name|Serializable
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -36,6 +46,8 @@ specifier|public
 specifier|abstract
 class|class
 name|_Embeddable1
+implements|implements
+name|Serializable
 block|{
 comment|// special properties injected by Cayenne
 specifier|private
