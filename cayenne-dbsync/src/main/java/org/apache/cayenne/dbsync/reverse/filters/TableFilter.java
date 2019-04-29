@@ -21,20 +21,6 @@ end_package
 
 begin_import
 import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
-name|Util
-import|;
-end_import
-
-begin_import
-import|import
 name|java
 operator|.
 name|util
@@ -62,6 +48,20 @@ operator|.
 name|regex
 operator|.
 name|Pattern
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Util
 import|;
 end_import
 
@@ -107,24 +107,6 @@ argument_list|>
 name|excludes
 parameter_list|)
 block|{
-if|if
-condition|(
-name|includes
-operator|.
-name|isEmpty
-argument_list|()
-condition|)
-block|{
-throw|throw
-operator|new
-name|IllegalArgumentException
-argument_list|(
-literal|"TableFilter should contain at least one IncludeTableFilter always "
-operator|+
-literal|"and it is builder responsibility. If you need table filter without includes, use EmptyTableFilter"
-argument_list|)
-throw|;
-block|}
 name|this
 operator|.
 name|includes
