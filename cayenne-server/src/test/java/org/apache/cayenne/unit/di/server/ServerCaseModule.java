@@ -313,7 +313,7 @@ name|access
 operator|.
 name|types
 operator|.
-name|DurationValueType
+name|DurationType
 import|;
 end_import
 
@@ -2457,6 +2457,13 @@ operator|.
 name|class
 argument_list|)
 argument_list|)
+operator|.
+name|add
+argument_list|(
+operator|new
+name|DurationType
+argument_list|()
+argument_list|)
 expr_stmt|;
 name|ServerModule
 operator|.
@@ -2510,13 +2517,6 @@ operator|.
 name|add
 argument_list|(
 name|LocalDateTimeValueType
-operator|.
-name|class
-argument_list|)
-operator|.
-name|add
-argument_list|(
-name|DurationValueType
 operator|.
 name|class
 argument_list|)

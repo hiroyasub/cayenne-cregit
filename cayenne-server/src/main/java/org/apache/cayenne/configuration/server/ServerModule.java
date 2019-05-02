@@ -499,7 +499,7 @@ name|access
 operator|.
 name|types
 operator|.
-name|DurationValueType
+name|DurationType
 import|;
 end_import
 
@@ -3045,6 +3045,13 @@ operator|new
 name|TimestampType
 argument_list|()
 argument_list|)
+operator|.
+name|add
+argument_list|(
+operator|new
+name|DurationType
+argument_list|()
+argument_list|)
 comment|// should be converted from ExtendedType to ValueType
 operator|.
 name|add
@@ -3125,13 +3132,6 @@ operator|.
 name|add
 argument_list|(
 name|LocalDateTimeValueType
-operator|.
-name|class
-argument_list|)
-operator|.
-name|add
-argument_list|(
-name|DurationValueType
 operator|.
 name|class
 argument_list|)
