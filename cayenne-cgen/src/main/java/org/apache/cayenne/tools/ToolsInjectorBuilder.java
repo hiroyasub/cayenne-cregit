@@ -186,6 +186,12 @@ argument_list|(
 name|CayenneToolsModuleProvider
 operator|.
 name|class
+argument_list|,
+name|getClass
+argument_list|()
+operator|.
+name|getClassLoader
+argument_list|()
 argument_list|)
 return|;
 block|}
