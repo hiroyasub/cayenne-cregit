@@ -362,6 +362,11 @@ name|ResultNodeDescriptor
 argument_list|>
 name|resultNodeList
 decl_stmt|;
+comment|// resulting qualifier for this query ('where' qualifier and qualifiers from entities)
+specifier|private
+name|Node
+name|qualifierNode
+decl_stmt|;
 comment|// if true SQL generation stage will be skipped, needed for nested queries translation
 specifier|private
 name|boolean
@@ -960,6 +965,28 @@ parameter_list|()
 block|{
 return|return
 name|rootEntityResult
+return|;
+block|}
+name|void
+name|setQualifierNode
+parameter_list|(
+name|Node
+name|qualifierNode
+parameter_list|)
+block|{
+name|this
+operator|.
+name|qualifierNode
+operator|=
+name|qualifierNode
+expr_stmt|;
+block|}
+name|Node
+name|getQualifierNode
+parameter_list|()
+block|{
+return|return
+name|qualifierNode
 return|;
 block|}
 enum|enum

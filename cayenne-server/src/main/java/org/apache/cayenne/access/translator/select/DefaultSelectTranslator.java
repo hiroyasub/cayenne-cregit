@@ -207,6 +207,10 @@ name|ColumnDescriptorStage
 argument_list|()
 block|,
 operator|new
+name|TableTreeQualifierStage
+argument_list|()
+block|,
+operator|new
 name|TableTreeStage
 argument_list|()
 block|,

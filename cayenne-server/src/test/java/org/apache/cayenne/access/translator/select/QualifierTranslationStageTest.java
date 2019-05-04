@@ -317,65 +317,26 @@ argument_list|(
 name|context
 argument_list|)
 expr_stmt|;
-name|Node
-name|select
-init|=
+name|assertNotNull
+argument_list|(
 name|context
 operator|.
-name|getSelectBuilder
+name|getQualifierNode
 argument_list|()
-operator|.
-name|build
-argument_list|()
-decl_stmt|;
-comment|// Content of "select" node:
+argument_list|)
+expr_stmt|;
+comment|// Content of "Qualifier" node:
 comment|//
-comment|//      Where
-comment|//        |
 comment|//   OpExpression
 comment|//    /        \
 comment|// Column     Value
-name|assertEquals
-argument_list|(
-literal|1
-argument_list|,
-name|select
-operator|.
-name|getChildrenCount
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|assertThat
-argument_list|(
-name|select
-operator|.
-name|getChild
-argument_list|(
-literal|0
-argument_list|)
-argument_list|,
-name|instanceOf
-argument_list|(
-name|WhereNode
-operator|.
-name|class
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|Node
 name|op
 init|=
-name|select
+name|context
 operator|.
-name|getChild
-argument_list|(
-literal|0
-argument_list|)
-operator|.
-name|getChild
-argument_list|(
-literal|0
-argument_list|)
+name|getQualifierNode
+argument_list|()
 decl_stmt|;
 name|assertThat
 argument_list|(
