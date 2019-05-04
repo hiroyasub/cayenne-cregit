@@ -537,6 +537,9 @@ name|Artist
 operator|.
 name|ARTIST_NAME
 operator|.
+name|trim
+argument_list|()
+operator|.
 name|concat
 argument_list|(
 literal|" "
