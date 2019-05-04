@@ -33,16 +33,6 @@ name|java
 operator|.
 name|sql
 operator|.
-name|SQLException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|sql
-operator|.
 name|Types
 import|;
 end_import
@@ -341,22 +331,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|dba
-operator|.
-name|sqlserver
-operator|.
-name|SQLServerTreeProcessor
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|di
 operator|.
 name|Inject
@@ -534,7 +508,7 @@ parameter_list|()
 block|{
 return|return
 operator|new
-name|SQLServerTreeProcessor
+name|SybaseSQLTreeProcessor
 argument_list|()
 return|;
 block|}
@@ -650,8 +624,6 @@ name|ParameterBinding
 name|binding
 parameter_list|)
 throws|throws
-name|SQLException
-throws|,
 name|Exception
 block|{
 comment|// Sybase driver doesn't like CLOBs and BLOBs as parameters

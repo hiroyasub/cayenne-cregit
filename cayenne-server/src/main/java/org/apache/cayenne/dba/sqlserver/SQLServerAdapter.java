@@ -230,6 +230,9 @@ name|SQLServerAdapter
 extends|extends
 name|SybaseAdapter
 block|{
+comment|/** 	 * @deprecated since 4.2 unused 	 */
+annotation|@
+name|Deprecated
 specifier|public
 specifier|static
 specifier|final
