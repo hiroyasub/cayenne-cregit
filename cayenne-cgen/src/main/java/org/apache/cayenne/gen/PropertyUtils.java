@@ -2311,6 +2311,19 @@ name|DIRuntimeException
 name|ex
 parameter_list|)
 block|{
+name|System
+operator|.
+name|out
+operator|.
+name|println
+argument_list|(
+literal|"WARN: Class not found: "
+operator|+
+name|attrType
+operator|+
+literal|". Will use default PropertyDescriptor."
+argument_list|)
+expr_stmt|;
 return|return
 name|PropertyDescriptor
 operator|.
