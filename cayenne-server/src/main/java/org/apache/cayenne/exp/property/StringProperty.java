@@ -77,6 +77,11 @@ name|BaseProperty
 argument_list|<
 name|E
 argument_list|>
+implements|implements
+name|ComparableProperty
+argument_list|<
+name|E
+argument_list|>
 block|{
 comment|/**      * Constructs a new property with the given name and expression      *      * @param name       of the property (will be used as alias for the expression)      * @param expression expression for property      * @param type       of the property      * @see PropertyFactory#createString(String, Expression, Class)      */
 specifier|protected

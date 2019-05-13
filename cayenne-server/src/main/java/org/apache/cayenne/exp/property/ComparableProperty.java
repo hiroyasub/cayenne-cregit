@@ -63,10 +63,6 @@ begin_comment
 comment|/**  * Interface (or "Trait") that provides basic functionality for comparable properties.  *  * @see org.apache.cayenne.exp.property  * @since 4.2  */
 end_comment
 
-begin_comment
-comment|// TODO: bound<E> to<E extends Comparable> once deprecated Property class is removed
-end_comment
-
 begin_interface
 specifier|public
 interface|interface
