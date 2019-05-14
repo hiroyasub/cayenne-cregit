@@ -107,7 +107,7 @@ name|buffer
 operator|.
 name|append
 argument_list|(
-literal|" IS NULL"
+literal|" IS"
 argument_list|)
 expr_stmt|;
 block|}

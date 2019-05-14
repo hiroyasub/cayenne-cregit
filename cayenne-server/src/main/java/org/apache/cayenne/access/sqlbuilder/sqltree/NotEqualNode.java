@@ -110,7 +110,7 @@ condition|)
 block|{
 name|expStr
 operator|=
-literal|" IS NOT NULL"
+literal|" IS NOT"
 expr_stmt|;
 block|}
 name|buffer

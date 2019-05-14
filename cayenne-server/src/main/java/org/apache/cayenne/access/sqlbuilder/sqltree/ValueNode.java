@@ -247,6 +247,22 @@ return|return
 name|buffer
 return|;
 block|}
+specifier|protected
+name|void
+name|appendNullValue
+parameter_list|(
+name|QuotingAppendable
+name|buffer
+parameter_list|)
+block|{
+name|buffer
+operator|.
+name|append
+argument_list|(
+literal|" NULL"
+argument_list|)
+expr_stmt|;
+block|}
 specifier|private
 name|void
 name|appendValue
@@ -265,6 +281,11 @@ operator|==
 literal|null
 condition|)
 block|{
+name|appendNullValue
+argument_list|(
+name|buffer
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 if|if
