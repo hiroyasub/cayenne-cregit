@@ -1510,6 +1510,15 @@ return|return
 literal|true
 return|;
 block|}
+specifier|public
+name|boolean
+name|supportsNullComparision
+parameter_list|()
+block|{
+return|return
+literal|true
+return|;
+block|}
 block|}
 end_class
 
