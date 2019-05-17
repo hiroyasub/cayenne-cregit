@@ -403,7 +403,7 @@ expr_stmt|;
 block|}
 specifier|private
 name|void
-name|udpateDiff
+name|updateDiff
 parameter_list|(
 name|ObjectDiff
 name|diff
@@ -474,7 +474,7 @@ name|ObjectDiff
 name|diff
 parameter_list|)
 block|{
-name|udpateDiff
+name|updateDiff
 argument_list|(
 name|diff
 argument_list|)

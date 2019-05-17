@@ -478,6 +478,16 @@ block|{
 if|if
 condition|(
 name|id
+operator|==
+name|dbRow
+operator|.
+name|getObject
+argument_list|()
+operator|.
+name|getObjectId
+argument_list|()
+operator|&&
+name|id
 operator|.
 name|isTemporary
 argument_list|()
