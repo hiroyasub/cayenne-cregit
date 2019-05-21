@@ -581,6 +581,8 @@ literal|"relationships-clob.map.xml"
 block|,
 literal|"relationships-flattened.map.xml"
 block|,
+literal|"relationships-many-to-many-join.map.xml"
+block|,
 literal|"relationships-set-to-many.map.xml"
 block|,
 literal|"relationships-to-many-fk.map.xml"

@@ -313,6 +313,14 @@ specifier|public
 specifier|static
 specifier|final
 name|String
+name|RELATIONSHIPS_MANY_TO_MANY_JOIN_PROJECT
+init|=
+literal|"cayenne-relationships-many-to-many-join.xml"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
 name|RELATIONSHIPS_CHILD_MASTER_PROJECT
 init|=
 literal|"cayenne-relationships-child-master.xml"
