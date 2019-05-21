@@ -39,20 +39,6 @@ name|Persistent
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
-name|PersistentObjectSet
-import|;
-end_import
-
 begin_comment
 comment|/**  * @since 3.0  */
 end_comment
@@ -79,7 +65,8 @@ parameter_list|)
 block|{
 return|return
 operator|new
-name|PersistentObjectSet
+name|ToManySet
+argument_list|<>
 argument_list|(
 name|sourceObject
 argument_list|,

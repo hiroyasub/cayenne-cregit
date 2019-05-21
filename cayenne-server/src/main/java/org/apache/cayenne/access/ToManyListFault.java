@@ -67,6 +67,7 @@ block|{
 return|return
 operator|new
 name|ToManyList
+argument_list|<>
 argument_list|(
 name|sourceObject
 argument_list|,

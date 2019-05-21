@@ -933,7 +933,12 @@ comment|// need a smarter approach
 name|postprocessRemove
 argument_list|(
 operator|(
+name|Collection
+argument_list|<
+name|?
+extends|extends
 name|E
+argument_list|>
 operator|)
 name|c
 argument_list|)
@@ -953,6 +958,9 @@ name|boolean
 name|retainAll
 parameter_list|(
 name|Collection
+argument_list|<
+name|?
+argument_list|>
 name|c
 parameter_list|)
 block|{
@@ -1386,7 +1394,7 @@ specifier|protected
 name|boolean
 name|shouldAddToRemovedFromUnresolvedList
 parameter_list|(
-name|Object
+name|E
 name|object
 parameter_list|)
 block|{
