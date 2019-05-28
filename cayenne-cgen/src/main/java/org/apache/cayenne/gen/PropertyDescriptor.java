@@ -92,6 +92,7 @@ literal|"PropertyFactory.createBase"
 argument_list|)
 return|;
 block|}
+specifier|public
 name|String
 name|getPropertyType
 parameter_list|()
@@ -100,6 +101,7 @@ return|return
 name|propertyType
 return|;
 block|}
+specifier|public
 name|String
 name|getPropertyFactoryMethod
 parameter_list|()

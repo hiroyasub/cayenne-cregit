@@ -2244,7 +2244,7 @@ name|getName
 argument_list|()
 return|;
 block|}
-specifier|private
+specifier|public
 name|PropertyDescriptor
 name|getPropertyDescriptor
 parameter_list|(
