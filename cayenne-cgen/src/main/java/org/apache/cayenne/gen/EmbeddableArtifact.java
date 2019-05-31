@@ -37,7 +37,9 @@ name|apache
 operator|.
 name|velocity
 operator|.
-name|VelocityContext
+name|context
+operator|.
+name|Context
 import|;
 end_import
 
@@ -163,7 +165,7 @@ specifier|public
 name|void
 name|postInitContext
 parameter_list|(
-name|VelocityContext
+name|Context
 name|context
 parameter_list|)
 block|{

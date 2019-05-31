@@ -23,7 +23,9 @@ name|apache
 operator|.
 name|velocity
 operator|.
-name|VelocityContext
+name|context
+operator|.
+name|Context
 import|;
 end_import
 
@@ -122,7 +124,7 @@ comment|/**      * A callback method that allows each artifact to add its own sp
 name|void
 name|postInitContext
 parameter_list|(
-name|VelocityContext
+name|Context
 name|context
 parameter_list|)
 function_decl|;
