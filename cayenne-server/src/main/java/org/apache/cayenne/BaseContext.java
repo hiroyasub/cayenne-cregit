@@ -509,6 +509,11 @@ name|queryCache
 decl_stmt|;
 specifier|protected
 specifier|transient
+name|QueryCache
+name|localQueryCache
+decl_stmt|;
+specifier|protected
+specifier|transient
 name|EntityResolver
 name|entityResolver
 decl_stmt|;
@@ -1748,6 +1753,7 @@ argument_list|>
 name|uncommittedObjects
 parameter_list|()
 function_decl|;
+comment|/** 	 * Used for storing cached query results available to all ObjectContexts. 	 */
 specifier|public
 name|QueryCache
 name|getQueryCache
@@ -1760,7 +1766,7 @@ return|return
 name|queryCache
 return|;
 block|}
-comment|/** 	 * Sets a QueryCache to be used for storing cached query results. 	 */
+comment|/** 	 * Sets a QueryCache to be used for storing cached query results available to all ObjectContexts. 	 */
 specifier|public
 name|void
 name|setQueryCache
@@ -1772,6 +1778,42 @@ block|{
 name|this
 operator|.
 name|queryCache
+operator|=
+name|queryCache
+expr_stmt|;
+block|}
+comment|/** 	 * Used for storing cached query results available only to this ObjectContext. 	 * By default the local query cache and the shared query cache will use the same underlying storage. 	 *  	 * @since 4.2 	 */
+specifier|public
+name|QueryCache
+name|getLocalQueryCache
+parameter_list|()
+block|{
+name|attachToRuntimeIfNeeded
+argument_list|()
+expr_stmt|;
+return|return
+name|localQueryCache
+operator|!=
+literal|null
+condition|?
+name|localQueryCache
+else|:
+name|getQueryCache
+argument_list|()
+return|;
+block|}
+comment|/** 	 * Sets a QueryCache to be used for storing cached query results available only to this ObjectContext. 	 * By default the local query cache and the shared query cache will use the same underlying storage. 	 *  	 * @since 4.2 	 */
+specifier|public
+name|void
+name|setLocalQueryCache
+parameter_list|(
+name|QueryCache
+name|queryCache
+parameter_list|)
+block|{
+name|this
+operator|.
+name|localQueryCache
 operator|=
 name|queryCache
 expr_stmt|;
