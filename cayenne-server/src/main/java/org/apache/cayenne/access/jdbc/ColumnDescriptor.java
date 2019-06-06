@@ -529,6 +529,21 @@ return|return
 name|name
 return|;
 block|}
+specifier|public
+name|void
+name|setAttribute
+parameter_list|(
+name|DbAttribute
+name|attribute
+parameter_list|)
+block|{
+name|this
+operator|.
+name|attribute
+operator|=
+name|attribute
+expr_stmt|;
+block|}
 comment|/**      * Returns a DbAttribute for this column. Since columns descriptors can be      * initialized in a context where a DbAttribite is unknown, this method may      * return null.      *       * @since 4.0      */
 specifier|public
 name|DbAttribute
