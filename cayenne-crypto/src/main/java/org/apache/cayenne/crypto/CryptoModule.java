@@ -1223,14 +1223,14 @@ argument_list|)
 expr_stmt|;
 name|binder
 operator|.
-name|decorate
+name|bind
 argument_list|(
 name|RowReaderFactory
 operator|.
 name|class
 argument_list|)
 operator|.
-name|before
+name|to
 argument_list|(
 name|CryptoRowReaderFactoryDecorator
 operator|.
