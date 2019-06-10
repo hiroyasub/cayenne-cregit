@@ -755,6 +755,10 @@ block|,
 literal|"java.time.LocalTime"
 block|,
 literal|"java.time.LocalDateTime"
+block|,
+literal|"java.time.Duration"
+block|,
+literal|"java.time.Period"
 block|}
 decl_stmt|;
 name|Arrays
