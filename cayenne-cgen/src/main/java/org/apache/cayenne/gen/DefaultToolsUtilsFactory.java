@@ -83,6 +83,16 @@ name|ToolsConstants
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|Logger
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 4.2  */
 end_comment
@@ -132,6 +142,9 @@ specifier|public
 name|PropertyUtils
 name|createPropertyUtils
 parameter_list|(
+name|Logger
+name|logger
+parameter_list|,
 name|ImportUtils
 name|importUtils
 parameter_list|)
@@ -145,6 +158,8 @@ argument_list|,
 name|objectFactory
 argument_list|,
 name|propertyList
+argument_list|,
+name|logger
 argument_list|)
 return|;
 block|}

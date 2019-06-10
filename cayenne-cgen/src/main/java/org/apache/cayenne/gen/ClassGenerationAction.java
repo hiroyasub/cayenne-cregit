@@ -846,9 +846,6 @@ name|resetContextForArtifactTemplate
 parameter_list|(
 name|Artifact
 name|artifact
-parameter_list|,
-name|TemplateType
-name|templateType
 parameter_list|)
 block|{
 name|ImportUtils
@@ -882,6 +879,8 @@ name|utilsFactory
 operator|.
 name|createPropertyUtils
 argument_list|(
+name|logger
+argument_list|,
 name|importUtils
 argument_list|)
 argument_list|)
@@ -1261,8 +1260,6 @@ block|{
 name|resetContextForArtifactTemplate
 argument_list|(
 name|artifact
-argument_list|,
-name|type
 argument_list|)
 expr_stmt|;
 name|getTemplate

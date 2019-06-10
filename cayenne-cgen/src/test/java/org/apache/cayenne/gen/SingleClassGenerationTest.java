@@ -80,6 +80,26 @@ import|;
 end_import
 
 begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|Logger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|LoggerFactory
+import|;
+end_import
+
+begin_import
 import|import static
 name|org
 operator|.
@@ -110,6 +130,18 @@ name|SingleClassGenerationTest
 extends|extends
 name|ClassGenerationCase
 block|{
+name|Logger
+name|logger
+init|=
+name|LoggerFactory
+operator|.
+name|getLogger
+argument_list|(
+name|SingleClassGenerationTest
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 annotation|@
 name|Test
 specifier|public
@@ -198,6 +230,8 @@ argument_list|)
 operator|.
 name|createPropertyUtils
 argument_list|(
+name|logger
+argument_list|,
 name|importUtils
 argument_list|)
 argument_list|)
@@ -346,6 +380,8 @@ argument_list|)
 operator|.
 name|createPropertyUtils
 argument_list|(
+name|logger
+argument_list|,
 name|importUtils
 argument_list|)
 argument_list|)
@@ -487,6 +523,8 @@ argument_list|)
 operator|.
 name|createPropertyUtils
 argument_list|(
+name|logger
+argument_list|,
 name|importUtils
 argument_list|)
 argument_list|)
@@ -651,6 +689,8 @@ argument_list|)
 operator|.
 name|createPropertyUtils
 argument_list|(
+name|logger
+argument_list|,
 name|importUtils
 argument_list|)
 argument_list|)

@@ -118,7 +118,7 @@ name|Object
 name|getObject
 parameter_list|()
 function_decl|;
-comment|/**      * A callback method that allows each artifact to add its own special keys to the      * context. Invoked from      * {@link ClassGenerationAction#resetContextForArtifactTemplate(Artifact, TemplateType)},      * after the context is initialized by code generator, so this method can use      * predefined keys from the context.      */
+comment|/**      * A callback method that allows each artifact to add its own special keys to the      * context. Invoked from      * {@link ClassGenerationAction#resetContextForArtifactTemplate(Artifact)},      * after the context is initialized by code generator, so this method can use      * predefined keys from the context.      */
 name|void
 name|postInitContext
 parameter_list|(

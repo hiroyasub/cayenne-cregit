@@ -425,6 +425,16 @@ name|ObjRelationship
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|Logger
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 4.2  */
 end_comment
@@ -656,6 +666,10 @@ specifier|private
 name|AdhocObjectFactory
 name|adhocObjectFactory
 decl_stmt|;
+specifier|private
+name|Logger
+name|logger
+decl_stmt|;
 specifier|public
 name|PropertyUtils
 parameter_list|(
@@ -693,6 +707,9 @@ argument_list|<
 name|PropertyDescriptorCreator
 argument_list|>
 name|propertyList
+parameter_list|,
+name|Logger
+name|logger
 parameter_list|)
 block|{
 name|this
@@ -712,6 +729,12 @@ operator|.
 name|propertyList
 operator|=
 name|propertyList
+expr_stmt|;
+name|this
+operator|.
+name|logger
+operator|=
+name|logger
 expr_stmt|;
 block|}
 specifier|public
@@ -2311,11 +2334,16 @@ name|DIRuntimeException
 name|ex
 parameter_list|)
 block|{
-name|System
+if|if
+condition|(
+name|logger
+operator|!=
+literal|null
+condition|)
+block|{
+name|logger
 operator|.
-name|out
-operator|.
-name|println
+name|warn
 argument_list|(
 literal|"WARN: Class not found: "
 operator|+
@@ -2324,6 +2352,7 @@ operator|+
 literal|". Will use default PropertyDescriptor."
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|PropertyDescriptor
 operator|.

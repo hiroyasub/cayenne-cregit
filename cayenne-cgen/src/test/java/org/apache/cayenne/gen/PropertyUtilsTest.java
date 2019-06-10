@@ -360,6 +360,26 @@ import|;
 end_import
 
 begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|Logger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|LoggerFactory
+import|;
+end_import
+
+begin_import
 import|import static
 name|org
 operator|.
@@ -421,6 +441,18 @@ name|propertyUtils
 decl_stmt|;
 name|ImportUtils
 name|importUtils
+decl_stmt|;
+name|Logger
+name|logger
+init|=
+name|LoggerFactory
+operator|.
+name|getLogger
+argument_list|(
+name|PropertyUtilsTest
+operator|.
+name|class
+argument_list|)
 decl_stmt|;
 annotation|@
 name|Before
@@ -484,6 +516,8 @@ argument_list|)
 operator|.
 name|createPropertyUtils
 argument_list|(
+name|logger
+argument_list|,
 name|importUtils
 argument_list|)
 expr_stmt|;

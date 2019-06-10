@@ -15,6 +15,16 @@ name|gen
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|Logger
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 4.2  */
 end_comment
@@ -31,6 +41,9 @@ function_decl|;
 name|PropertyUtils
 name|createPropertyUtils
 parameter_list|(
+name|Logger
+name|logger
+parameter_list|,
 name|ImportUtils
 name|importUtils
 parameter_list|)
