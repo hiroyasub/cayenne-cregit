@@ -271,6 +271,10 @@ name|JCheckBox
 name|pkProperties
 decl_stmt|;
 specifier|private
+name|JCheckBox
+name|clientMode
+decl_stmt|;
+specifier|private
 name|TextAdapter
 name|superPkg
 decl_stmt|;
@@ -622,6 +626,14 @@ argument_list|()
 expr_stmt|;
 name|this
 operator|.
+name|clientMode
+operator|=
+operator|new
+name|JCayenneCheckBox
+argument_list|()
+expr_stmt|;
+name|this
+operator|.
 name|manageTemplatesLink
 operator|=
 operator|new
@@ -846,6 +858,20 @@ name|builder
 operator|.
 name|append
 argument_list|(
+literal|"Client mode: "
+argument_list|,
+name|clientMode
+argument_list|)
+expr_stmt|;
+name|builder
+operator|.
+name|nextLine
+argument_list|()
+expr_stmt|;
+name|builder
+operator|.
+name|append
+argument_list|(
 literal|"Superclass package:"
 argument_list|,
 name|superPkg
@@ -1009,6 +1035,15 @@ parameter_list|()
 block|{
 return|return
 name|pkProperties
+return|;
+block|}
+specifier|public
+name|JCheckBox
+name|getClientMode
+parameter_list|()
+block|{
+return|return
+name|clientMode
 return|;
 block|}
 specifier|public
