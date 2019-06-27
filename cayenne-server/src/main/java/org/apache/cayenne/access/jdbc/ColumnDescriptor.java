@@ -539,7 +539,6 @@ return|return
 name|attribute
 return|;
 block|}
-comment|/**      * @since 4.2      */
 specifier|public
 name|void
 name|setAttribute
