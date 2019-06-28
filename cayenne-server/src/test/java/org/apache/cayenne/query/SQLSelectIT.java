@@ -141,18 +141,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|ResultIteratorCallback
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|access
 operator|.
 name|DataContext
@@ -954,7 +942,7 @@ name|result
 init|=
 name|SQLSelect
 operator|.
-name|scalarQuery
+name|arrayQuery
 argument_list|(
 literal|"SELECT #result('ARTIST_ID' 'java.lang.Long'), #result('ARTIST_NAME' 'java.lang.String') FROM ARTIST_CT"
 argument_list|)
@@ -1053,7 +1041,7 @@ argument_list|()
 expr_stmt|;
 name|SQLSelect
 operator|.
-name|scalarQuery
+name|arrayQuery
 argument_list|(
 literal|"SELECT #result('ARTIST_ID' 'java.lang.Long'), #result('ARTIST_NAME' 'java.lang.String') FROM ARTIST_CT"
 argument_list|,
@@ -1093,7 +1081,7 @@ name|result
 init|=
 name|SQLSelect
 operator|.
-name|scalarQuery
+name|arrayQuery
 argument_list|(
 literal|"SELECT #result('ARTIST_ID' 'java.lang.Long') FROM ARTIST_CT"
 argument_list|)
@@ -1177,7 +1165,7 @@ name|result
 init|=
 name|SQLSelect
 operator|.
-name|scalarQuery
+name|arrayQuery
 argument_list|(
 literal|"SELECT PAINTING_ID, PAINTING_TITLE, ESTIMATED_PRICE FROM PAINTING"
 argument_list|)
@@ -1233,7 +1221,7 @@ name|result
 init|=
 name|SQLSelect
 operator|.
-name|scalarQuery
+name|arrayQuery
 argument_list|(
 literal|"SELECT PAINTING_ID FROM PAINTING"
 argument_list|)
@@ -1310,7 +1298,7 @@ name|query
 init|=
 name|SQLSelect
 operator|.
-name|scalarQuery
+name|arrayQuery
 argument_list|(
 literal|"SELECT PAINTING_ID, PAINTING_TITLE, ESTIMATED_PRICE FROM PAINTING"
 argument_list|,
@@ -1409,7 +1397,7 @@ name|results
 init|=
 name|SQLSelect
 operator|.
-name|scalarQuery
+name|arrayQuery
 argument_list|(
 literal|"SELECT * FROM ARTIST_CT"
 argument_list|,
@@ -1515,7 +1503,7 @@ argument_list|)
 decl_stmt|;
 name|q1
 operator|.
-name|params
+name|param
 argument_list|(
 literal|"a"
 argument_list|,
@@ -1596,14 +1584,14 @@ argument_list|)
 decl_stmt|;
 name|q1
 operator|.
-name|params
+name|param
 argument_list|(
 literal|"a"
 argument_list|,
 literal|"painting3"
 argument_list|)
 operator|.
-name|params
+name|param
 argument_list|(
 literal|"b"
 argument_list|,
@@ -1853,7 +1841,7 @@ argument_list|(
 literal|" WHERE PAINTING_TITLE = #bind($a)"
 argument_list|)
 operator|.
-name|params
+name|param
 argument_list|(
 literal|"a"
 argument_list|,
@@ -1920,7 +1908,7 @@ argument_list|,
 literal|"SELECT * FROM PAINTING WHERE PAINTING_TITLE = #bind($a)"
 argument_list|)
 operator|.
-name|params
+name|param
 argument_list|(
 literal|"a"
 argument_list|,
@@ -1976,7 +1964,7 @@ argument_list|,
 literal|"SELECT * FROM PAINTING WHERE PAINTING_TITLE = #bind($a)"
 argument_list|)
 operator|.
-name|params
+name|param
 argument_list|(
 literal|"a"
 argument_list|,
@@ -2167,22 +2155,8 @@ name|iterate
 argument_list|(
 name|context
 argument_list|,
-operator|new
-name|ResultIteratorCallback
-argument_list|<
-name|Painting
-argument_list|>
-argument_list|()
-block|{
-annotation|@
-name|Override
-specifier|public
-name|void
-name|next
-parameter_list|(
-name|Painting
 name|object
-parameter_list|)
+lambda|->
 block|{
 name|assertNotNull
 argument_list|(
@@ -2198,7 +2172,6 @@ literal|0
 index|]
 operator|++
 expr_stmt|;
-block|}
 block|}
 argument_list|)
 expr_stmt|;
@@ -2396,7 +2369,7 @@ operator|.
 name|class
 argument_list|)
 operator|.
-name|params
+name|param
 argument_list|(
 literal|"a"
 argument_list|,
