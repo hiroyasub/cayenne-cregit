@@ -202,10 +202,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 3.0  */
+comment|/**  * @since 3.0  * @deprecated since 4.2  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 class|class
 name|SelectQueryMetadata
 extends|extends
