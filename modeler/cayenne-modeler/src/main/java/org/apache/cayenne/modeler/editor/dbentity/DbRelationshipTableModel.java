@@ -894,11 +894,6 @@ operator|.
 name|recalculateToManyValue
 argument_list|()
 expr_stmt|;
-name|objRelationship
-operator|.
-name|recalculateReadOnlyValue
-argument_list|()
-expr_stmt|;
 block|}
 block|}
 specifier|public
