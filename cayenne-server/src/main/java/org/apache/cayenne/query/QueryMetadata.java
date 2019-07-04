@@ -138,6 +138,12 @@ name|FETCH_OFFSET_DEFAULT
 init|=
 literal|0
 decl_stmt|;
+name|int
+name|QUERY_TIMEOUT_DEFAULT
+init|=
+operator|-
+literal|1
+decl_stmt|;
 comment|/**      * Defines the name of the property for the query {@link #getPageSize() page size}.      */
 name|String
 name|PAGE_SIZE_PROPERTY
@@ -298,6 +304,11 @@ function_decl|;
 comment|/**      * @return statement's fetch size      * @since 3.0      */
 name|int
 name|getStatementFetchSize
+parameter_list|()
+function_decl|;
+comment|/**      * @return query timeout      * @since 4.2      */
+name|int
+name|getQueryTimeout
 parameter_list|()
 function_decl|;
 comment|/**      * @since 4.0      */

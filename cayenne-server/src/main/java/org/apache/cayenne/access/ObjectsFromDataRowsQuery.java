@@ -527,6 +527,17 @@ block|}
 annotation|@
 name|Override
 specifier|public
+name|int
+name|getQueryTimeout
+parameter_list|()
+block|{
+return|return
+name|QUERY_TIMEOUT_DEFAULT
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
 name|boolean
 name|isSuppressingDistinct
 parameter_list|()
