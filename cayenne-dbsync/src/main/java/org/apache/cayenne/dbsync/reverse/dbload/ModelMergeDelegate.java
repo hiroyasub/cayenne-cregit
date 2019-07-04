@@ -139,6 +139,20 @@ name|ObjRelationship
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|Procedure
+import|;
+end_import
+
 begin_comment
 comment|/**  * A interface used to tell about modifications performed on the model by  * {@link MergerToken} with {@link MergeDirection#TO_MODEL}  */
 end_comment
@@ -244,6 +258,20 @@ name|objRelationshipRemoved
 parameter_list|(
 name|ObjRelationship
 name|rel
+parameter_list|)
+function_decl|;
+name|void
+name|procedureAdded
+parameter_list|(
+name|Procedure
+name|procedure
+parameter_list|)
+function_decl|;
+name|void
+name|procedureRemoved
+parameter_list|(
+name|Procedure
+name|procedure
 parameter_list|)
 function_decl|;
 block|}

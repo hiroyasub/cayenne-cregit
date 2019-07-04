@@ -103,7 +103,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|Entity
+name|Procedure
 import|;
 end_import
 
