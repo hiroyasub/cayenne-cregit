@@ -356,6 +356,20 @@ name|getStatementFetchSize
 argument_list|()
 return|;
 block|}
+comment|/**      * @since 4.2      */
+specifier|public
+name|int
+name|getQueryTimeout
+parameter_list|()
+block|{
+return|return
+name|getBaseMetaData
+argument_list|()
+operator|.
+name|getQueryTimeout
+argument_list|()
+return|;
+block|}
 specifier|public
 name|int
 name|getPageSize

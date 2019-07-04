@@ -386,6 +386,19 @@ operator|.
 name|STATEMENT_FETCH_SIZE_DEFAULT
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|int
+name|getQueryTimeout
+parameter_list|()
+block|{
+return|return
+name|QueryMetadata
+operator|.
+name|QUERY_TIMEOUT_DEFAULT
+return|;
+block|}
 comment|/**      * @since 4.0      */
 annotation|@
 name|Override
