@@ -348,9 +348,11 @@ specifier|private
 name|DataMap
 name|targetMap
 decl_stmt|;
+specifier|private
 name|DataMap
 name|sourceDataMap
 decl_stmt|;
+specifier|private
 name|DbImportConfiguration
 name|config
 decl_stmt|;
