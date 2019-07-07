@@ -737,8 +737,12 @@ name|encoder
 operator|.
 name|nested
 argument_list|(
-name|getDeclaredAttributes
-argument_list|()
+operator|new
+name|TreeMap
+argument_list|<>
+argument_list|(
+name|attributes
+argument_list|)
 argument_list|,
 name|delegate
 argument_list|)
