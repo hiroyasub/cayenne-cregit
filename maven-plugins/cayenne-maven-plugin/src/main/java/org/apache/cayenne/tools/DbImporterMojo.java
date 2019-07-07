@@ -564,6 +564,8 @@ argument_list|,
 name|injector
 argument_list|)
 decl_stmt|;
+comment|// TODO: "validator.validate()" creates an AutoAdapter (which checks for DB type), then  "DbImportAction.execute()"
+comment|//   does it again. We need to make AutoAdapter a DI singleton to avoid this extra operation
 try|try
 block|{
 name|validator
