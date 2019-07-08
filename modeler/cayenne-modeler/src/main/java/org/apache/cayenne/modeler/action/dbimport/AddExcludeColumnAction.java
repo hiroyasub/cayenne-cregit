@@ -68,7 +68,7 @@ specifier|final
 name|String
 name|ACTION_NAME
 init|=
-literal|"Add Exclude Column"
+literal|"Exclude Column"
 decl_stmt|;
 specifier|private
 specifier|static

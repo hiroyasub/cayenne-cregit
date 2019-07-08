@@ -68,7 +68,7 @@ specifier|final
 name|String
 name|ACTION_NAME
 init|=
-literal|"Add Include Procedure"
+literal|"Include Procedure"
 decl_stmt|;
 specifier|private
 specifier|static

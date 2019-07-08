@@ -68,7 +68,7 @@ specifier|final
 name|String
 name|ACTION_NAME
 init|=
-literal|"Add Exclude Table"
+literal|"Exclude Table"
 decl_stmt|;
 specifier|private
 specifier|static

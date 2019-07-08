@@ -68,7 +68,7 @@ specifier|final
 name|String
 name|ACTION_NAME
 init|=
-literal|"Add Include Column"
+literal|"Include Column"
 decl_stmt|;
 specifier|private
 specifier|static

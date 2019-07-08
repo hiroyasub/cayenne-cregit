@@ -109,18 +109,6 @@ end_import
 
 begin_import
 import|import
-name|javax
-operator|.
-name|swing
-operator|.
-name|tree
-operator|.
-name|TreePath
-import|;
-end_import
-
-begin_import
-import|import
 name|java
 operator|.
 name|awt
@@ -148,7 +136,7 @@ specifier|final
 name|String
 name|ACTION_NAME
 init|=
-literal|"Add Include Table"
+literal|"Include Table"
 decl_stmt|;
 specifier|private
 specifier|static
