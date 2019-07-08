@@ -410,14 +410,8 @@ name|SwingUtilities
 operator|.
 name|invokeLater
 argument_list|(
-operator|new
-name|Runnable
-argument_list|()
-block|{
-specifier|public
-name|void
-name|run
 parameter_list|()
+lambda|->
 block|{
 name|Application
 name|application
@@ -482,7 +476,6 @@ argument_list|(
 name|project
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 argument_list|)
