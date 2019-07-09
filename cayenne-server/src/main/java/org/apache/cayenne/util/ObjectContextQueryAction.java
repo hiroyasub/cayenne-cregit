@@ -1481,7 +1481,7 @@ block|}
 name|QueryCache
 name|queryCache
 init|=
-name|getLocalQueryCache
+name|getQueryCache
 argument_list|()
 decl_stmt|;
 name|QueryCacheEntryFactory
@@ -1561,24 +1561,6 @@ name|actingContext
 operator|)
 operator|.
 name|getQueryCache
-argument_list|()
-return|;
-block|}
-comment|/**      * @since 4.2      */
-specifier|protected
-name|QueryCache
-name|getLocalQueryCache
-parameter_list|()
-block|{
-return|return
-operator|(
-operator|(
-name|BaseContext
-operator|)
-name|actingContext
-operator|)
-operator|.
-name|getLocalQueryCache
 argument_list|()
 return|;
 block|}
