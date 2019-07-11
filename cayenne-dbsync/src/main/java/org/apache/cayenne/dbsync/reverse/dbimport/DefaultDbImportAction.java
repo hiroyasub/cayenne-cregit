@@ -1250,7 +1250,9 @@ name|logger
 operator|.
 name|warn
 argument_list|(
-literal|"Found several dbimport configs. Configuration selected from 'build.gradle' file."
+literal|"Found several dbimport configs. DataMap dbimport config was skipped. "
+operator|+
+literal|"Configuration selected from build file"
 argument_list|)
 expr_stmt|;
 block|}
