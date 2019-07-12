@@ -1101,6 +1101,21 @@ literal|"testConfigFromDataMap"
 argument_list|)
 expr_stmt|;
 block|}
+annotation|@
+name|Test
+specifier|public
+name|void
+name|testTableTypesFromDataMapConfig
+parameter_list|()
+throws|throws
+name|Exception
+block|{
+name|test
+argument_list|(
+literal|"testTableTypesMap"
+argument_list|)
+expr_stmt|;
+block|}
 comment|/**      * CREATE TABLE APP.A (      * id INTEGER NOT NULL,      *<p>      * PRIMARY KEY (id)      * );      *<p>      * CREATE TABLE APP.A_A (      * A1_ID INTEGER NOT NULL,      * A2_ID INTEGER NOT NULL,      *<p>      * PRIMARY KEY (A1_ID, A2_ID),      * CONSTRAINT A_A1 FOREIGN KEY (A1_ID) REFERENCES APP.A (ID),      * CONSTRAINT A_A2 FOREIGN KEY (A2_ID) REFERENCES APP.A (ID)      * );      *<p>      * If one table has many-to-many relationship with it self ObjEntity should have two      * collection attributes in both directions      *      * @throws Exception      */
 annotation|@
 name|Test
