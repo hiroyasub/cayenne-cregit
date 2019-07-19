@@ -1750,6 +1750,22 @@ return|return
 name|initFromModel
 return|;
 block|}
+specifier|public
+name|String
+index|[]
+name|getTableTypes
+parameter_list|()
+block|{
+return|return
+name|configPanel
+operator|.
+name|getReverseEngineeringBySelectedMap
+argument_list|()
+operator|.
+name|getTableTypes
+argument_list|()
+return|;
+block|}
 block|}
 end_class
 

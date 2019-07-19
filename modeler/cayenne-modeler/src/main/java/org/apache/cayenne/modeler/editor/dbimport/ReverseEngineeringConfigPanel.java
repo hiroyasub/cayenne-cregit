@@ -574,7 +574,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-specifier|private
 name|ReverseEngineering
 name|getReverseEngineeringBySelectedMap
 parameter_list|()
