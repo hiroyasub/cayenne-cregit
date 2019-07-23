@@ -340,7 +340,7 @@ specifier|final
 name|String
 name|DIALOG_TITLE
 init|=
-literal|"Reverse Engineering Result"
+literal|"Db Import Result"
 decl_stmt|;
 annotation|@
 name|Inject

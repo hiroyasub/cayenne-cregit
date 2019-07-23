@@ -130,7 +130,7 @@ specifier|final
 name|String
 name|DIALOG_TITLE
 init|=
-literal|"Reverse Engineering Result"
+literal|"Db Import Result"
 decl_stmt|;
 specifier|private
 name|DbLoadResultDialog
@@ -144,8 +144,19 @@ specifier|public
 name|DbImportController
 parameter_list|()
 block|{
-name|this
-operator|.
+block|}
+specifier|public
+name|DbLoadResultDialog
+name|createDialog
+parameter_list|()
+block|{
+if|if
+condition|(
+name|dbLoadResultDialog
+operator|==
+literal|null
+condition|)
+block|{
 name|dbLoadResultDialog
 operator|=
 operator|new
@@ -155,11 +166,6 @@ name|DIALOG_TITLE
 argument_list|)
 expr_stmt|;
 block|}
-specifier|public
-name|DbLoadResultDialog
-name|createDialog
-parameter_list|()
-block|{
 return|return
 name|dbLoadResultDialog
 return|;
