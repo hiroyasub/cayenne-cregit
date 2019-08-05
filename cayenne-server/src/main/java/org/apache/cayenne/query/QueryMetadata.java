@@ -37,6 +37,18 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|function
+operator|.
+name|Function
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -316,6 +328,21 @@ name|boolean
 name|isSuppressingDistinct
 parameter_list|()
 function_decl|;
+comment|/**      * @since 4.2      */
+specifier|default
+name|Function
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|>
+name|getResultMapper
+parameter_list|()
+block|{
+return|return
+literal|null
+return|;
+block|}
 block|}
 end_interface
 
