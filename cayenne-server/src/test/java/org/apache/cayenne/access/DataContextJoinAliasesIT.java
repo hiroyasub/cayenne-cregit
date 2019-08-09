@@ -77,7 +77,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|ObjectSelect
 import|;
 end_import
 
@@ -628,13 +628,13 @@ argument_list|,
 literal|2
 argument_list|)
 decl_stmt|;
-name|SelectQuery
+name|List
 argument_list|<
 name|Gallery
 argument_list|>
-name|query
+name|galleries
 init|=
-name|SelectQuery
+name|ObjectSelect
 operator|.
 name|query
 argument_list|(
@@ -642,10 +642,8 @@ name|Gallery
 operator|.
 name|class
 argument_list|)
-decl_stmt|;
-name|query
 operator|.
-name|andQualifier
+name|where
 argument_list|(
 name|ExpressionFactory
 operator|.
@@ -658,14 +656,6 @@ argument_list|,
 name|dali
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|List
-argument_list|<
-name|Gallery
-argument_list|>
-name|galleries
-init|=
-name|query
 operator|.
 name|select
 argument_list|(

@@ -98,6 +98,8 @@ comment|/**  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|SelectQueryDescriptorTest
@@ -198,15 +200,10 @@ name|assertSame
 argument_list|(
 name|entity
 argument_list|,
-operator|(
-operator|(
-name|SelectQuery
-operator|)
 name|builder
 operator|.
 name|buildQuery
 argument_list|()
-operator|)
 operator|.
 name|getRoot
 argument_list|()
@@ -252,9 +249,6 @@ expr_stmt|;
 name|SelectQuery
 name|query
 init|=
-operator|(
-name|SelectQuery
-operator|)
 name|builder
 operator|.
 name|buildQuery
@@ -322,7 +316,10 @@ argument_list|,
 literal|"6"
 argument_list|)
 expr_stmt|;
-name|Query
+name|SelectQuery
+argument_list|<
+name|?
+argument_list|>
 name|query
 init|=
 name|builder
@@ -341,12 +338,7 @@ name|assertEquals
 argument_list|(
 literal|5
 argument_list|,
-operator|(
-operator|(
-name|SelectQuery
-operator|)
 name|query
-operator|)
 operator|.
 name|getFetchLimit
 argument_list|()
@@ -356,12 +348,7 @@ name|assertEquals
 argument_list|(
 literal|6
 argument_list|,
-operator|(
-operator|(
-name|SelectQuery
-operator|)
 name|query
-operator|)
 operator|.
 name|getStatementFetchSize
 argument_list|()

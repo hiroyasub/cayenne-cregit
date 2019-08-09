@@ -63,7 +63,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|ObjectSelect
 import|;
 end_import
 
@@ -727,13 +727,13 @@ block|{
 name|createArtistWithTwoPaintingsDataSet
 argument_list|()
 expr_stmt|;
-name|SelectQuery
+name|List
 argument_list|<
 name|Artist
 argument_list|>
-name|query
+name|result
 init|=
-name|SelectQuery
+name|ObjectSelect
 operator|.
 name|query
 argument_list|(
@@ -741,10 +741,8 @@ name|Artist
 operator|.
 name|class
 argument_list|)
-decl_stmt|;
-name|query
 operator|.
-name|addPrefetch
+name|prefetch
 argument_list|(
 name|Artist
 operator|.
@@ -753,14 +751,6 @@ operator|.
 name|disjointById
 argument_list|()
 argument_list|)
-expr_stmt|;
-name|List
-argument_list|<
-name|Artist
-argument_list|>
-name|result
-init|=
-name|query
 operator|.
 name|select
 argument_list|(
@@ -927,13 +917,14 @@ block|{
 name|createArtistWithTwoPaintingsDataSet
 argument_list|()
 expr_stmt|;
-name|SelectQuery
+specifier|final
+name|List
 argument_list|<
 name|Painting
 argument_list|>
-name|query
+name|result
 init|=
-name|SelectQuery
+name|ObjectSelect
 operator|.
 name|query
 argument_list|(
@@ -941,10 +932,8 @@ name|Painting
 operator|.
 name|class
 argument_list|)
-decl_stmt|;
-name|query
 operator|.
-name|addPrefetch
+name|prefetch
 argument_list|(
 name|Painting
 operator|.
@@ -953,15 +942,6 @@ operator|.
 name|disjointById
 argument_list|()
 argument_list|)
-expr_stmt|;
-specifier|final
-name|List
-argument_list|<
-name|Painting
-argument_list|>
-name|result
-init|=
-name|query
 operator|.
 name|select
 argument_list|(
@@ -1045,13 +1025,17 @@ block|{
 name|createThreeArtistsWithPlentyOfPaintingsDataSet
 argument_list|()
 expr_stmt|;
-name|SelectQuery
+comment|// There will be only 2 bags in a result. The first bag has 5 boxes and
+comment|// the second has 2. So we are expecting exactly 9 snapshots in the data
+comment|// row store after performing the query.
+specifier|final
+name|List
 argument_list|<
 name|Artist
 argument_list|>
-name|query
+name|bags
 init|=
-name|SelectQuery
+name|ObjectSelect
 operator|.
 name|query
 argument_list|(
@@ -1059,10 +1043,8 @@ name|Artist
 operator|.
 name|class
 argument_list|)
-decl_stmt|;
-name|query
 operator|.
-name|addPrefetch
+name|prefetch
 argument_list|(
 name|Artist
 operator|.
@@ -1071,10 +1053,8 @@ operator|.
 name|disjointById
 argument_list|()
 argument_list|)
-expr_stmt|;
-name|query
 operator|.
-name|addOrdering
+name|orderBy
 argument_list|(
 literal|"db:"
 operator|+
@@ -1086,25 +1066,11 @@ name|SortOrder
 operator|.
 name|ASCENDING
 argument_list|)
-expr_stmt|;
-name|query
 operator|.
-name|setFetchLimit
+name|limit
 argument_list|(
 literal|2
 argument_list|)
-expr_stmt|;
-comment|// There will be only 2 bags in a result. The first bag has 5 boxes and
-comment|// the second has 2. So we are expecting exactly 9 snapshots in the data
-comment|// row store after performing the query.
-specifier|final
-name|List
-argument_list|<
-name|Artist
-argument_list|>
-name|bags
-init|=
-name|query
 operator|.
 name|select
 argument_list|(
@@ -1211,13 +1177,14 @@ block|{
 name|createTwoPaintingsWithInfosDataSet
 argument_list|()
 expr_stmt|;
-name|SelectQuery
+specifier|final
+name|List
 argument_list|<
 name|Painting
 argument_list|>
-name|query
+name|result
 init|=
-name|SelectQuery
+name|ObjectSelect
 operator|.
 name|query
 argument_list|(
@@ -1225,10 +1192,8 @@ name|Painting
 operator|.
 name|class
 argument_list|)
-decl_stmt|;
-name|query
 operator|.
-name|addPrefetch
+name|prefetch
 argument_list|(
 name|Painting
 operator|.
@@ -1237,15 +1202,6 @@ operator|.
 name|disjointById
 argument_list|()
 argument_list|)
-expr_stmt|;
-specifier|final
-name|List
-argument_list|<
-name|Painting
-argument_list|>
-name|result
-init|=
-name|query
 operator|.
 name|select
 argument_list|(

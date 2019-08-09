@@ -201,7 +201,13 @@ name|assertEquals
 import|;
 end_import
 
+begin_comment
+comment|/**  * @deprecated as part of deprecation of SelectQuery  */
+end_comment
+
 begin_class
+annotation|@
+name|Deprecated
 annotation|@
 name|UseServerRuntime
 argument_list|(

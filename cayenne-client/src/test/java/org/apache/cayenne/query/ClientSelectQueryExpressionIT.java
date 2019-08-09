@@ -321,7 +321,7 @@ name|context
 operator|.
 name|select
 argument_list|(
-name|SelectQuery
+name|ObjectSelect
 operator|.
 name|query
 argument_list|(
@@ -360,7 +360,7 @@ name|context
 operator|.
 name|select
 argument_list|(
-name|SelectQuery
+name|ObjectSelect
 operator|.
 name|query
 argument_list|(
