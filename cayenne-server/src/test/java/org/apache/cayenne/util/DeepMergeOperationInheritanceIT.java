@@ -65,7 +65,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|ObjectSelect
 import|;
 end_import
 
@@ -324,18 +324,18 @@ name|size
 argument_list|()
 expr_stmt|;
 comment|// resolve Employees
-name|context1
+name|ObjectSelect
 operator|.
-name|performQuery
-argument_list|(
-operator|new
-name|SelectQuery
-argument_list|<>
+name|query
 argument_list|(
 name|Employee
 operator|.
 name|class
 argument_list|)
+operator|.
+name|select
+argument_list|(
+name|context1
 argument_list|)
 expr_stmt|;
 specifier|final
