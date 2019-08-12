@@ -201,7 +201,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|ObjectSelect
 import|;
 end_import
 
@@ -438,7 +438,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|SelectQuery
+name|ObjectSelect
 argument_list|<
 name|DataObject
 argument_list|>
@@ -499,7 +499,7 @@ argument_list|(
 name|entityName
 argument_list|)
 decl_stmt|;
-name|SelectQuery
+name|ObjectSelect
 argument_list|<
 name|DataObject
 argument_list|>
@@ -536,10 +536,14 @@ argument_list|)
 expr_stmt|;
 name|query
 operator|=
-operator|new
-name|SelectQuery
-argument_list|<>
+name|ObjectSelect
+operator|.
+name|query
 argument_list|(
+name|DataObject
+operator|.
+name|class
+argument_list|,
 name|entityName
 argument_list|)
 expr_stmt|;
@@ -594,7 +598,7 @@ argument_list|)
 decl_stmt|;
 name|query
 operator|.
-name|orQualifier
+name|or
 argument_list|(
 name|idExp
 argument_list|)
@@ -635,7 +639,7 @@ argument_list|)
 decl_stmt|;
 for|for
 control|(
-name|SelectQuery
+name|ObjectSelect
 argument_list|<
 name|DataObject
 argument_list|>
