@@ -83,7 +83,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|ObjectSelect
 import|;
 end_import
 
@@ -225,12 +225,16 @@ operator|new
 name|TranslatorContext
 argument_list|(
 operator|new
-name|SelectQueryWrapper
+name|FluentSelectWrapper
 argument_list|(
-operator|new
-name|SelectQuery
-argument_list|<>
-argument_list|()
+name|ObjectSelect
+operator|.
+name|query
+argument_list|(
+name|Object
+operator|.
+name|class
+argument_list|)
 argument_list|)
 argument_list|,
 name|Mockito
