@@ -215,6 +215,8 @@ name|CayenneProjects
 operator|.
 name|TESTMAP_PROJECT
 argument_list|)
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|SelectQueryPrefetchRouterActionIT

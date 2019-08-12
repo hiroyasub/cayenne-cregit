@@ -108,10 +108,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Preprocessor and router of SelectQuery prefetches.  *   * @since 1.2  */
+comment|/**  * Preprocessor and router of SelectQuery prefetches.  *   * @since 1.2  * @deprecated since 4.2 as part of deprecation of SelectQuery  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 class|class
 name|SelectQueryPrefetchRouterAction
 implements|implements
