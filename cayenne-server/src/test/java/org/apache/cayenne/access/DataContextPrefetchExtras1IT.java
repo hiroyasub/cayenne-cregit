@@ -17,6 +17,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -63,7 +73,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|ObjectSelect
 import|;
 end_import
 
@@ -196,16 +206,6 @@ import|;
 end_import
 
 begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
 import|import static
 name|org
 operator|.
@@ -225,7 +225,7 @@ name|junit
 operator|.
 name|Assert
 operator|.
-name|assertTrue
+name|assertFalse
 import|;
 end_import
 
@@ -357,20 +357,22 @@ block|{
 name|createDataSet
 argument_list|()
 expr_stmt|;
-name|SelectQuery
+name|ObjectSelect
+argument_list|<
+name|Painting
+argument_list|>
 name|query
 init|=
-operator|new
-name|SelectQuery
+name|ObjectSelect
+operator|.
+name|query
 argument_list|(
 name|Painting
 operator|.
 name|class
 argument_list|)
-decl_stmt|;
-name|query
 operator|.
-name|addPrefetch
+name|prefetch
 argument_list|(
 name|Painting
 operator|.
@@ -379,23 +381,22 @@ operator|.
 name|disjoint
 argument_list|()
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|List
 argument_list|<
 name|Painting
 argument_list|>
 name|objects
 init|=
-name|context
-operator|.
-name|performQuery
-argument_list|(
 name|query
+operator|.
+name|select
+argument_list|(
+name|context
 argument_list|)
 decl_stmt|;
-name|assertTrue
+name|assertFalse
 argument_list|(
-operator|!
 name|objects
 operator|.
 name|isEmpty

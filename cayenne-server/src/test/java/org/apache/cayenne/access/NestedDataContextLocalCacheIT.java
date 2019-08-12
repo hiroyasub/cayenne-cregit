@@ -17,6 +17,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -79,7 +89,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|QueryCacheStrategy
+name|ObjectSelect
 import|;
 end_import
 
@@ -93,7 +103,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|QueryCacheStrategy
 import|;
 end_import
 
@@ -178,16 +188,6 @@ import|;
 end_import
 
 begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
 import|import static
 name|org
 operator|.
@@ -244,26 +244,28 @@ name|void
 name|testLocalCacheStaysLocal
 parameter_list|()
 block|{
-name|SelectQuery
+name|ObjectSelect
+argument_list|<
+name|Artist
+argument_list|>
 name|query
 init|=
-operator|new
-name|SelectQuery
+name|ObjectSelect
+operator|.
+name|query
 argument_list|(
 name|Artist
 operator|.
 name|class
 argument_list|)
-decl_stmt|;
-name|query
 operator|.
-name|setCacheStrategy
+name|cacheStrategy
 argument_list|(
 name|QueryCacheStrategy
 operator|.
 name|LOCAL_CACHE
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|ObjectContext
 name|child1
 init|=
