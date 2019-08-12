@@ -759,20 +759,6 @@ end_import
 
 begin_import
 import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|SelectQuery
-import|;
-end_import
-
-begin_import
-import|import
 name|java
 operator|.
 name|io
@@ -5927,32 +5913,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/** 	 * @since 4.2 	 */
-specifier|public
-specifier|static
-name|Expression
-name|exists
-parameter_list|(
-name|SelectQuery
-argument_list|<
-name|?
-argument_list|>
-name|subQuery
-parameter_list|)
-block|{
-return|return
-operator|new
-name|ASTExists
-argument_list|(
-operator|new
-name|ASTSubquery
-argument_list|(
-name|subQuery
-argument_list|)
-argument_list|)
-return|;
-block|}
-comment|/** 	 * @since 4.2 	 */
+comment|/** 	 * @param subQuery {@link org.apache.cayenne.query.ObjectSelect} or {@link ColumnSelect} 	 * @since 4.2 	 */
 specifier|public
 specifier|static
 name|Expression
