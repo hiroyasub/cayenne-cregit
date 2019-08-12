@@ -95,7 +95,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|ObjectSelect
 import|;
 end_import
 
@@ -487,15 +487,13 @@ name|context
 operator|.
 name|select
 argument_list|(
-name|SelectQuery
+name|ObjectSelect
 operator|.
 name|query
 argument_list|(
 name|Qualified1
 operator|.
 name|class
-argument_list|,
-literal|null
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -686,15 +684,13 @@ name|context
 operator|.
 name|select
 argument_list|(
-name|SelectQuery
+name|ObjectSelect
 operator|.
 name|query
 argument_list|(
 name|Qualified1
 operator|.
 name|class
-argument_list|,
-literal|null
 argument_list|)
 argument_list|)
 expr_stmt|;

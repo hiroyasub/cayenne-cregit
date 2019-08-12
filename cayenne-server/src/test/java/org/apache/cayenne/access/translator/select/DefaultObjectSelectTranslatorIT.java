@@ -71,7 +71,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|ObjectSelect
 import|;
 end_import
 
@@ -218,13 +218,13 @@ name|void
 name|simpleSql
 parameter_list|()
 block|{
-name|SelectQuery
+name|ObjectSelect
 argument_list|<
 name|Artist
 argument_list|>
 name|select
 init|=
-name|SelectQuery
+name|ObjectSelect
 operator|.
 name|query
 argument_list|(
@@ -410,13 +410,13 @@ name|void
 name|selectWithComplexWhere
 parameter_list|()
 block|{
-name|SelectQuery
+name|ObjectSelect
 argument_list|<
 name|Artist
 argument_list|>
 name|select
 init|=
-name|SelectQuery
+name|ObjectSelect
 operator|.
 name|query
 argument_list|(
@@ -702,13 +702,13 @@ name|void
 name|selectWithJointPrefetch
 parameter_list|()
 block|{
-name|SelectQuery
+name|ObjectSelect
 argument_list|<
 name|Painting
 argument_list|>
 name|select
 init|=
-name|SelectQuery
+name|ObjectSelect
 operator|.
 name|query
 argument_list|(
@@ -716,10 +716,8 @@ name|Painting
 operator|.
 name|class
 argument_list|)
-decl_stmt|;
-name|select
 operator|.
-name|addPrefetch
+name|prefetch
 argument_list|(
 name|Painting
 operator|.
@@ -728,7 +726,7 @@ operator|.
 name|joint
 argument_list|()
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|DefaultSelectTranslator
 name|translator
 init|=

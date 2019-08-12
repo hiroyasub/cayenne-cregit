@@ -51,7 +51,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|RefreshQuery
+name|ObjectSelect
 import|;
 end_import
 
@@ -65,7 +65,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|RefreshQuery
 import|;
 end_import
 
@@ -552,16 +552,20 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|SelectQuery
-name|query
+name|CollectionToMany
+name|o1
 init|=
-operator|new
-name|SelectQuery
+name|ObjectSelect
+operator|.
+name|query
 argument_list|(
 name|CollectionToMany
 operator|.
 name|class
-argument_list|,
+argument_list|)
+operator|.
+name|where
+argument_list|(
 name|ExpressionFactory
 operator|.
 name|matchDbExp
@@ -573,10 +577,8 @@ argument_list|,
 literal|1
 argument_list|)
 argument_list|)
-decl_stmt|;
-name|query
 operator|.
-name|addPrefetch
+name|prefetch
 argument_list|(
 name|CollectionToMany
 operator|.
@@ -585,20 +587,10 @@ operator|.
 name|disjoint
 argument_list|()
 argument_list|)
-expr_stmt|;
-name|CollectionToMany
-name|o1
-init|=
-operator|(
-name|CollectionToMany
-operator|)
-name|Cayenne
 operator|.
-name|objectForQuery
+name|selectOne
 argument_list|(
 name|context
-argument_list|,
-name|query
 argument_list|)
 decl_stmt|;
 name|Collection
