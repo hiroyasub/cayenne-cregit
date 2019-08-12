@@ -115,7 +115,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|ObjectSelect
 import|;
 end_import
 
@@ -398,9 +398,9 @@ name|objectForQuery
 argument_list|(
 name|context
 argument_list|,
-operator|new
-name|SelectQuery
-argument_list|<>
+name|ObjectSelect
+operator|.
+name|query
 argument_list|(
 name|E1
 operator|.
