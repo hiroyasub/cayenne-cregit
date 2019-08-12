@@ -51,7 +51,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|ObjectSelect
 import|;
 end_import
 
@@ -373,23 +373,18 @@ expr_stmt|;
 name|BinaryPKTest2
 name|fetchedDetail
 init|=
-operator|new
-name|SelectQuery
-argument_list|<>
+name|ObjectSelect
+operator|.
+name|query
 argument_list|(
 name|BinaryPKTest2
 operator|.
 name|class
 argument_list|)
 operator|.
-name|select
+name|selectFirst
 argument_list|(
-name|context1
-argument_list|)
-operator|.
-name|get
-argument_list|(
-literal|0
+name|context
 argument_list|)
 decl_stmt|;
 name|assertNotNull

@@ -17,6 +17,16 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -39,7 +49,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|ObjectSelect
 import|;
 end_import
 
@@ -120,16 +130,6 @@ operator|.
 name|junit
 operator|.
 name|Test
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
 import|;
 end_import
 
@@ -226,17 +226,18 @@ name|ArrayTestEntity
 argument_list|>
 name|res
 init|=
-name|context
+name|ObjectSelect
 operator|.
-name|performQuery
-argument_list|(
-operator|new
-name|SelectQuery
+name|query
 argument_list|(
 name|ArrayTestEntity
 operator|.
 name|class
 argument_list|)
+operator|.
+name|select
+argument_list|(
+name|context
 argument_list|)
 decl_stmt|;
 name|ArrayTestEntity

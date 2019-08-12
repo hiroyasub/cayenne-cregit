@@ -51,7 +51,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SQLTemplate
+name|ObjectSelect
 import|;
 end_import
 
@@ -65,7 +65,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|SQLTemplate
 import|;
 end_import
 
@@ -133,7 +133,7 @@ name|di
 operator|.
 name|server
 operator|.
-name|WeakReferenceStrategyServerCase
+name|UseServerRuntime
 import|;
 end_import
 
@@ -151,7 +151,7 @@ name|di
 operator|.
 name|server
 operator|.
-name|UseServerRuntime
+name|WeakReferenceStrategyServerCase
 import|;
 end_import
 
@@ -234,17 +234,18 @@ name|registeredObjectsCount
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|context
+name|ObjectSelect
 operator|.
-name|performQuery
-argument_list|(
-operator|new
-name|SelectQuery
+name|query
 argument_list|(
 name|Artist
 operator|.
 name|class
 argument_list|)
+operator|.
+name|select
+argument_list|(
+name|context
 argument_list|)
 expr_stmt|;
 name|assertEquals

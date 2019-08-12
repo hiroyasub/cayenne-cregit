@@ -16,18 +16,6 @@ package|;
 end_package
 
 begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertFalse
-import|;
-end_import
-
-begin_import
 import|import
 name|java
 operator|.
@@ -99,7 +87,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|ObjectSelect
 import|;
 end_import
 
@@ -238,6 +226,18 @@ operator|.
 name|junit
 operator|.
 name|Test
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assert
+operator|.
+name|assertFalse
 import|;
 end_import
 
@@ -542,11 +542,9 @@ name|nestedContext
 operator|.
 name|select
 argument_list|(
-operator|new
-name|SelectQuery
-argument_list|<
-name|Artist
-argument_list|>
+name|ObjectSelect
+operator|.
+name|query
 argument_list|(
 name|Artist
 operator|.
