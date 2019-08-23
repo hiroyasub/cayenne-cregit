@@ -53,16 +53,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|SQLException
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -659,7 +649,7 @@ block|}
 block|}
 catch|catch
 parameter_list|(
-name|SQLException
+name|Exception
 name|exception
 parameter_list|)
 block|{
