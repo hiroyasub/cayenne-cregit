@@ -1124,7 +1124,7 @@ name|result
 init|=
 name|SQLSelect
 operator|.
-name|arrayQuery
+name|columnQuery
 argument_list|(
 literal|"SELECT #result('ARTIST_ID' 'java.lang.Long'), #result('ARTIST_NAME' 'java.lang.String') FROM ARTIST_CT"
 argument_list|)
