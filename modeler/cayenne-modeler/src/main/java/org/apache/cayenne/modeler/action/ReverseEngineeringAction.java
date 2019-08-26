@@ -789,6 +789,15 @@ name|dbLoadResultDialog
 operator|.
 name|isVisible
 argument_list|()
+operator|&&
+operator|!
+name|dbLoadResultDialog
+operator|.
+name|getTableForMap
+argument_list|()
+operator|.
+name|isEmpty
+argument_list|()
 condition|)
 block|{
 name|dbImportController
