@@ -2009,6 +2009,30 @@ return|return
 name|useScalar
 return|;
 block|}
+comment|/** 	 * @since 4.2 	 */
+specifier|public
+name|void
+name|setResultMapper
+parameter_list|(
+name|Function
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|>
+name|resultMapper
+parameter_list|)
+block|{
+name|this
+operator|.
+name|metaData
+operator|.
+name|setResultMapper
+argument_list|(
+name|resultMapper
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_class
 
