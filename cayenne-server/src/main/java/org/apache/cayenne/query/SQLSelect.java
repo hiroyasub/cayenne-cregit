@@ -589,7 +589,7 @@ name|useScalar
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Creates query that selects scalar value and uses default routing 	 * 	 * @since 4.1 	 * @deprecated since 4.2. Use {@link #arrayQuery(String)} 	 */
+comment|/** 	 * Creates query that selects scalar value and uses default routing 	 * 	 * @since 4.1 	 * @deprecated since 4.2. Use {@link #columnQuery(String)} 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -626,7 +626,7 @@ name|useScalar
 argument_list|()
 return|;
 block|}
-comment|/** 	 *  Creates query that selects scalar value and uses default routing 	 * 	 *  @since 4.2 	 */
+comment|/** 	 *  Creates query that selects scalar values (as Object[]) and uses default routing 	 * 	 *  @since 4.2 	 */
 specifier|public
 specifier|static
 name|SQLSelect
@@ -634,7 +634,7 @@ argument_list|<
 name|Object
 index|[]
 argument_list|>
-name|arrayQuery
+name|columnQuery
 parameter_list|(
 name|String
 name|sql
@@ -661,7 +661,7 @@ name|useScalar
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Creates query that selects scalar values (as Object[]) and uses routing based on the 	 * provided DataMap name. 	 * @since 4.1 	 * @deprecated since 4.2. Use {@link #arrayQuery(String, String)} 	 */
+comment|/** 	 * Creates query that selects scalar values (as Object[]) and uses routing based on the 	 * provided DataMap name. 	 * @since 4.1 	 * @deprecated since 4.2. Use {@link #columnQuery(String, String)} 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -715,7 +715,7 @@ argument_list|<
 name|Object
 index|[]
 argument_list|>
-name|arrayQuery
+name|columnQuery
 parameter_list|(
 name|String
 name|sql
@@ -751,7 +751,7 @@ name|useScalar
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Creates query that selects scalar values (as Object[]) and uses default routing 	 * 	 * @since 4.1 	 * @deprecated since 4.2. Use {@link #arrayQuery(String, Class, Class...)} 	 */
+comment|/** 	 * Creates query that selects scalar values (as Object[]) and uses default routing 	 * 	 * @since 4.1 	 * @deprecated since 4.2. Use {@link #columnQuery(String, Class...)} 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -765,12 +765,6 @@ name|scalarQuery
 parameter_list|(
 name|String
 name|sql
-parameter_list|,
-name|Class
-argument_list|<
-name|?
-argument_list|>
-name|firstType
 parameter_list|,
 name|Class
 argument_list|<
@@ -796,11 +790,6 @@ argument_list|)
 decl_stmt|;
 return|return
 name|query
-operator|.
-name|resultColumnsTypes
-argument_list|(
-name|firstType
-argument_list|)
 operator|.
 name|resultColumnsTypes
 argument_list|(
@@ -819,16 +808,10 @@ argument_list|<
 name|Object
 index|[]
 argument_list|>
-name|arrayQuery
+name|columnQuery
 parameter_list|(
 name|String
 name|sql
-parameter_list|,
-name|Class
-argument_list|<
-name|?
-argument_list|>
-name|firstType
 parameter_list|,
 name|Class
 argument_list|<
@@ -857,11 +840,6 @@ name|query
 operator|.
 name|resultColumnsTypes
 argument_list|(
-name|firstType
-argument_list|)
-operator|.
-name|resultColumnsTypes
-argument_list|(
 name|types
 argument_list|)
 operator|.
@@ -869,7 +847,7 @@ name|useScalar
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Creates query that selects scalar values (as Object[]) and uses routing based on the 	 * provided DataMap name. 	 * 	 * @since 4.1 	 * @deprecated since 4.2. Use {@link #arrayQuery(String, String, Class, Class...)} 	 */
+comment|/** 	 * Creates query that selects scalar values (as Object[]) and uses routing based on the 	 * provided DataMap name. 	 * 	 * @since 4.1 	 * @deprecated since 4.2. Use {@link #columnQuery(String, String, Class...)} 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -891,12 +869,6 @@ name|Class
 argument_list|<
 name|?
 argument_list|>
-name|firstType
-parameter_list|,
-name|Class
-argument_list|<
-name|?
-argument_list|>
 modifier|...
 name|types
 parameter_list|)
@@ -923,11 +895,6 @@ name|dataMapName
 expr_stmt|;
 return|return
 name|query
-operator|.
-name|resultColumnsTypes
-argument_list|(
-name|firstType
-argument_list|)
 operator|.
 name|resultColumnsTypes
 argument_list|(
@@ -946,19 +913,13 @@ argument_list|<
 name|Object
 index|[]
 argument_list|>
-name|arrayQuery
+name|columnQuery
 parameter_list|(
 name|String
 name|sql
 parameter_list|,
 name|String
 name|dataMapName
-parameter_list|,
-name|Class
-argument_list|<
-name|?
-argument_list|>
-name|firstType
 parameter_list|,
 name|Class
 argument_list|<
@@ -990,11 +951,6 @@ name|dataMapName
 expr_stmt|;
 return|return
 name|query
-operator|.
-name|resultColumnsTypes
-argument_list|(
-name|firstType
-argument_list|)
 operator|.
 name|resultColumnsTypes
 argument_list|(
@@ -1028,6 +984,23 @@ modifier|...
 name|types
 parameter_list|)
 block|{
+if|if
+condition|(
+name|types
+operator|.
+name|length
+operator|==
+literal|0
+condition|)
+block|{
+throw|throw
+operator|new
+name|IllegalArgumentException
+argument_list|(
+literal|"Empty types"
+argument_list|)
+throw|;
+block|}
 if|if
 condition|(
 name|resultColumnsTypes

@@ -942,7 +942,7 @@ name|result
 init|=
 name|SQLSelect
 operator|.
-name|arrayQuery
+name|columnQuery
 argument_list|(
 literal|"SELECT #result('ARTIST_ID' 'java.lang.Long'), #result('ARTIST_NAME' 'java.lang.String') FROM ARTIST_CT"
 argument_list|)
@@ -1041,7 +1041,7 @@ argument_list|()
 expr_stmt|;
 name|SQLSelect
 operator|.
-name|arrayQuery
+name|columnQuery
 argument_list|(
 literal|"SELECT #result('ARTIST_ID' 'java.lang.Long'), #result('ARTIST_NAME' 'java.lang.String') FROM ARTIST_CT"
 argument_list|,
@@ -1081,7 +1081,7 @@ name|result
 init|=
 name|SQLSelect
 operator|.
-name|arrayQuery
+name|columnQuery
 argument_list|(
 literal|"SELECT #result('ARTIST_ID' 'java.lang.Long') FROM ARTIST_CT"
 argument_list|)
@@ -1165,7 +1165,7 @@ name|result
 init|=
 name|SQLSelect
 operator|.
-name|arrayQuery
+name|columnQuery
 argument_list|(
 literal|"SELECT PAINTING_ID, PAINTING_TITLE, ESTIMATED_PRICE FROM PAINTING"
 argument_list|)
@@ -1221,7 +1221,7 @@ name|result
 init|=
 name|SQLSelect
 operator|.
-name|arrayQuery
+name|columnQuery
 argument_list|(
 literal|"SELECT PAINTING_ID FROM PAINTING"
 argument_list|)
@@ -1298,7 +1298,7 @@ name|query
 init|=
 name|SQLSelect
 operator|.
-name|arrayQuery
+name|columnQuery
 argument_list|(
 literal|"SELECT PAINTING_ID, PAINTING_TITLE, ESTIMATED_PRICE FROM PAINTING"
 argument_list|,
@@ -1397,7 +1397,7 @@ name|results
 init|=
 name|SQLSelect
 operator|.
-name|arrayQuery
+name|columnQuery
 argument_list|(
 literal|"SELECT * FROM ARTIST_CT"
 argument_list|,

@@ -613,7 +613,7 @@ name|column
 argument_list|)
 return|;
 block|}
-comment|/**      * Creates a ColumnSelect that will fetch multiple columns of a given {@link ObjEntity}      *      * @param entityType base persistent class that will be used as a root for this query      * @param firstColumn column to select      * @param otherColumns columns to select      */
+comment|/**      * Creates a ColumnSelect that will fetch multiple columns of a given {@link ObjEntity}      *      * @param entityType base persistent class that will be used as a root for this query      * @param columns columns to select      */
 specifier|public
 specifier|static
 name|ColumnSelect
@@ -633,14 +633,8 @@ name|BaseProperty
 argument_list|<
 name|?
 argument_list|>
-name|firstColumn
-parameter_list|,
-name|BaseProperty
-argument_list|<
-name|?
-argument_list|>
 modifier|...
-name|otherColumns
+name|columns
 parameter_list|)
 block|{
 return|return
@@ -659,9 +653,7 @@ argument_list|)
 operator|.
 name|columns
 argument_list|(
-name|firstColumn
-argument_list|,
-name|otherColumns
+name|columns
 argument_list|)
 return|;
 block|}
@@ -1734,12 +1726,6 @@ name|BaseProperty
 argument_list|<
 name|?
 argument_list|>
-name|firstProperty
-parameter_list|,
-name|BaseProperty
-argument_list|<
-name|?
-argument_list|>
 modifier|...
 name|properties
 parameter_list|)
@@ -1754,13 +1740,11 @@ argument_list|)
 operator|.
 name|columns
 argument_list|(
-name|firstProperty
-argument_list|,
 name|properties
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>Select one specific property.</p>      *<p>Can be any property that can be resolved against root entity type      * (root entity's property, function call expression, property of relationships, etc)</p>      *<p>If you need several columns use {@link ObjectSelect#columns(BaseProperty, BaseProperty[])} method.</p>      *<p>      *<pre>      * {@code      * List<String> names = ObjectSelect.query(Artist.class)      *                                  .column(Artist.ARTIST_NAME)      *                                  .select(context);      * }      *</pre>      *</p>      * @param property single property to select      * @see ObjectSelect#columns(BaseProperty, BaseProperty[])      */
+comment|/**      *<p>Select one specific property.</p>      *<p>Can be any property that can be resolved against root entity type      * (root entity's property, function call expression, property of relationships, etc)</p>      *<p>If you need several columns use {@link ObjectSelect#columns(BaseProperty[])} method.</p>      *<p>      *<pre>      * {@code      * List<String> names = ObjectSelect.query(Artist.class)      *                                  .column(Artist.ARTIST_NAME)      *                                  .select(context);      * }      *</pre>      *</p>      * @param property single property to select      * @see ObjectSelect#columns(BaseProperty[])      */
 specifier|public
 parameter_list|<
 name|E
