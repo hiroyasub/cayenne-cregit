@@ -73,6 +73,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|sql
+operator|.
+name|SQLException
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|util
 operator|.
 name|Collection
@@ -496,6 +506,24 @@ operator|.
 name|filters
 operator|.
 name|FiltersConfigBuilder
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dbsync
+operator|.
+name|reverse
+operator|.
+name|filters
+operator|.
+name|SchemaFilter
 import|;
 end_import
 
@@ -1226,6 +1254,10 @@ argument_list|(
 name|dataMapReverseEngineering
 argument_list|,
 name|config
+argument_list|,
+name|dataSource
+argument_list|,
+name|adapter
 argument_list|)
 expr_stmt|;
 block|}
@@ -1482,7 +1514,15 @@ name|reverseEngineering
 parameter_list|,
 name|DbImportConfiguration
 name|config
+parameter_list|,
+name|DataSource
+name|dataSource
+parameter_list|,
+name|DbAdapter
+name|dbAdapter
 parameter_list|)
+throws|throws
+name|SQLException
 block|{
 name|config
 operator|.
@@ -1556,6 +1596,16 @@ name|ReverseEngineering
 argument_list|(
 name|reverseEngineering
 argument_list|)
+argument_list|)
+operator|.
+name|dataSource
+argument_list|(
+name|dataSource
+argument_list|)
+operator|.
+name|dbAdapter
+argument_list|(
+name|dbAdapter
 argument_list|)
 operator|.
 name|build
@@ -2208,8 +2258,8 @@ condition|(
 name|catalogs
 operator|.
 name|length
-operator|>
-literal|0
+operator|==
+literal|1
 condition|)
 block|{
 comment|// do not override default catalog of existing DataMap unless it is
@@ -2259,14 +2309,29 @@ block|}
 comment|// do not override default schema of existing DataMap unless it is
 comment|// explicitly requested by the plugin caller, and the provided schema is
 comment|// not a pattern
-name|String
-name|schema
+name|SchemaFilter
+index|[]
+name|schemas
 init|=
 name|catalogs
 index|[
 literal|0
 index|]
 operator|.
+name|schemas
+decl_stmt|;
+if|if
+condition|(
+name|schemas
+operator|.
+name|length
+operator|==
+literal|1
+condition|)
+block|{
+name|String
+name|schema
+init|=
 name|schemas
 index|[
 literal|0
@@ -2304,6 +2369,7 @@ argument_list|(
 name|schema
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 return|return
