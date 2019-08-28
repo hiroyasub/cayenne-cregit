@@ -377,6 +377,12 @@ init|=
 literal|58
 decl_stmt|;
 specifier|public
+name|int
+name|JJTDBIDPATH
+init|=
+literal|59
+decl_stmt|;
+specifier|public
 name|String
 index|[]
 name|jjtNodeName
@@ -499,13 +505,15 @@ block|,
 literal|"DbPath"
 block|,
 literal|"Enum"
+block|,
+literal|"DbIdPath"
 block|,   }
 decl_stmt|;
 block|}
 end_interface
 
 begin_comment
-comment|/* JavaCC - OriginalChecksum=a6d7ef3729cf32ee51d4115c98944e5e (do not edit this line) */
+comment|/* JavaCC - OriginalChecksum=d21da7d665d0ef7c43630d13a09f2c1d (do not edit this line) */
 end_comment
 
 end_unit

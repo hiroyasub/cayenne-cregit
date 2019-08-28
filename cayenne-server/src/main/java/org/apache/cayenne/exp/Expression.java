@@ -569,6 +569,15 @@ name|SUBQUERY
 init|=
 literal|50
 decl_stmt|;
+comment|/** 	 * @since 4.2 	 */
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|DBID_PATH
+init|=
+literal|51
+decl_stmt|;
 specifier|protected
 name|int
 name|type

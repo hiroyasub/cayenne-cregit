@@ -77,7 +77,9 @@ name|cayenne
 operator|.
 name|exp
 operator|.
-name|ExpressionFactory
+name|property
+operator|.
+name|EntityProperty
 import|;
 end_import
 
@@ -93,7 +95,7 @@ name|exp
 operator|.
 name|property
 operator|.
-name|EntityProperty
+name|NumericIdProperty
 import|;
 end_import
 
@@ -184,7 +186,7 @@ decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
-name|NumericProperty
+name|NumericIdProperty
 argument_list|<
 name|Integer
 argument_list|>
@@ -192,14 +194,11 @@ name|PAINTING_ID_PK_PROPERTY
 init|=
 name|PropertyFactory
 operator|.
-name|createNumeric
-argument_list|(
-name|ExpressionFactory
-operator|.
-name|dbPathExp
+name|createNumericId
 argument_list|(
 literal|"PAINTING_ID"
-argument_list|)
+argument_list|,
+literal|"Painting1"
 argument_list|,
 name|Integer
 operator|.
