@@ -628,6 +628,27 @@ name|hasTokenToMerge
 operator|=
 literal|false
 expr_stmt|;
+name|String
+name|logString
+init|=
+name|String
+operator|.
+name|format
+argument_list|(
+literal|"    %-20s"
+argument_list|,
+literal|"Nothing to import"
+argument_list|)
+decl_stmt|;
+name|resultDialog
+operator|.
+name|addRowToOutput
+argument_list|(
+name|logString
+argument_list|,
+name|targetMap
+argument_list|)
+expr_stmt|;
 return|return
 name|tokens
 return|;
