@@ -377,8 +377,6 @@ operator|new
 name|ExportedKey
 argument_list|(
 name|rs1
-argument_list|,
-literal|"cat"
 argument_list|)
 decl_stmt|;
 name|ResultSet
@@ -566,8 +564,6 @@ operator|new
 name|ExportedKey
 argument_list|(
 name|rs2
-argument_list|,
-literal|"cat"
 argument_list|)
 decl_stmt|;
 name|Assert

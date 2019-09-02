@@ -135,14 +135,11 @@ specifier|final
 name|short
 name|keySeq
 decl_stmt|;
-comment|/**      * Extracts data from a resultset pointing to a exported key to      * ExportedKey class instance      *      * @param rs ResultSet pointing to a exported key, fetched using      *           DataBaseMetaData.getExportedKeys(...)      * @param catalogName use only like workaround for postgres. Postgres metadata      *        returns null for getting catalogs.      */
+comment|/**      * Extracts data from a resultset pointing to a exported key to      * ExportedKey class instance      *      * @param rs ResultSet pointing to a exported key, fetched using      *           DataBaseMetaData.getExportedKeys(...)      */
 name|ExportedKey
 parameter_list|(
 name|ResultSet
 name|rs
-parameter_list|,
-name|String
-name|catalogName
 parameter_list|)
 throws|throws
 name|SQLException
@@ -203,12 +200,6 @@ operator|new
 name|KeyData
 argument_list|(
 name|pkCatalog
-operator|!=
-literal|null
-condition|?
-name|pkCatalog
-else|:
-name|catalogName
 argument_list|,
 name|pkSchema
 argument_list|,
@@ -275,12 +266,6 @@ operator|new
 name|KeyData
 argument_list|(
 name|fkCatalog
-operator|!=
-literal|null
-condition|?
-name|fkCatalog
-else|:
-name|catalogName
 argument_list|,
 name|fkSchema
 argument_list|,

@@ -409,6 +409,11 @@ name|rsCatalog
 operator|.
 name|next
 argument_list|()
+operator|&&
+name|dbAdapter
+operator|.
+name|supportsCatalogsOnReverseEngineering
+argument_list|()
 condition|)
 block|{
 name|hasCatalogs

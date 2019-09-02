@@ -238,8 +238,6 @@ parameter_list|)
 throws|throws
 name|SQLException
 block|{
-comment|// dbEntity.getCatalog() is workaround for postrgres.
-comment|// Postgres metadata returns null for getCatalog method.
 name|ExportedKey
 name|key
 init|=
@@ -247,11 +245,6 @@ operator|new
 name|ExportedKey
 argument_list|(
 name|rs
-argument_list|,
-name|dbEntity
-operator|.
-name|getCatalog
-argument_list|()
 argument_list|)
 decl_stmt|;
 name|DbEntity

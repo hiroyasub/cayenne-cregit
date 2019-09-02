@@ -339,8 +339,6 @@ condition|)
 block|{
 return|return;
 block|}
-comment|// check catalogName for null was added because postgres
-comment|// for some reasons returns null for table's catalog
 if|if
 condition|(
 operator|!
@@ -348,10 +346,6 @@ operator|(
 name|catalog
 operator|.
 name|name
-operator|==
-literal|null
-operator|||
-name|catalogName
 operator|==
 literal|null
 operator|||
@@ -427,14 +421,6 @@ operator|.
 name|setCatalog
 argument_list|(
 name|catalogName
-operator|!=
-literal|null
-condition|?
-name|catalogName
-else|:
-name|catalog
-operator|.
-name|name
 argument_list|)
 expr_stmt|;
 name|table
