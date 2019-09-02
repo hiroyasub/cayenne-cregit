@@ -427,6 +427,14 @@ operator|.
 name|setCatalog
 argument_list|(
 name|catalogName
+operator|!=
+literal|null
+condition|?
+name|catalogName
+else|:
+name|catalog
+operator|.
+name|name
 argument_list|)
 expr_stmt|;
 name|table

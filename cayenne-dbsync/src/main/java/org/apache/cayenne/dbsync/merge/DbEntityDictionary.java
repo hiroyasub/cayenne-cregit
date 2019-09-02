@@ -19,6 +19,26 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|LinkedList
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -81,26 +101,6 @@ name|DbEntity
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|LinkedList
-import|;
-end_import
-
 begin_class
 class|class
 name|DbEntityDictionary
@@ -151,7 +151,6 @@ name|DbEntity
 name|entity
 parameter_list|)
 block|{
-comment|//        return entity.getFullyQualifiedName();
 return|return
 name|entity
 operator|.
