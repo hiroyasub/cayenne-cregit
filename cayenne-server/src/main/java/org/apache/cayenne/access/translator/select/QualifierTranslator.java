@@ -1931,7 +1931,7 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Embeddable attribute ObjPath isn't matched with valid value."
+literal|"Embeddable attribute ObjPath isn't matched with a valid value."
 argument_list|)
 throw|;
 block|}

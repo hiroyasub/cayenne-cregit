@@ -455,7 +455,7 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Exception materializing id column."
+literal|"Exception materializing column."
 argument_list|,
 name|Util
 operator|.

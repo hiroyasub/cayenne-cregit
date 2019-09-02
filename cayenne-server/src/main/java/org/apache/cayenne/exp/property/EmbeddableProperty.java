@@ -17,6 +17,20 @@ name|property
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|exp
+operator|.
+name|Expression
+import|;
+end_import
+
 begin_comment
 comment|/**  * Property that represents object attribute mapped on {@link org.apache.cayenne.map.Embeddable} object.  * @since 4.2  */
 end_comment
@@ -46,6 +60,9 @@ parameter_list|(
 name|String
 name|name
 parameter_list|,
+name|Expression
+name|exp
+parameter_list|,
 name|Class
 argument_list|<
 name|?
@@ -59,7 +76,7 @@ name|super
 argument_list|(
 name|name
 argument_list|,
-literal|null
+name|exp
 argument_list|,
 name|type
 argument_list|)
