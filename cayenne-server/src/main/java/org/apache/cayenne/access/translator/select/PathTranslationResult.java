@@ -67,6 +67,20 @@ name|DbRelationship
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|Embeddable
+import|;
+end_import
+
 begin_comment
 comment|/**  * Interface that describes result of path translation  *  * @since 4.2  */
 end_comment
@@ -84,6 +98,13 @@ argument_list|<
 name|DbRelationship
 argument_list|>
 name|getDbRelationship
+parameter_list|()
+function_decl|;
+name|Optional
+argument_list|<
+name|Embeddable
+argument_list|>
+name|getEmbeddable
 parameter_list|()
 function_decl|;
 name|List

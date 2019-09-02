@@ -125,6 +125,22 @@ name|exp
 operator|.
 name|property
 operator|.
+name|EmbeddableProperty
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|exp
+operator|.
+name|property
+operator|.
 name|EntityProperty
 import|;
 end_import
@@ -1333,12 +1349,12 @@ name|propertyUtils
 operator|.
 name|propertyDefinition
 argument_list|(
-name|embeddedAttribute
+name|attribute
 argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|"public static final StringProperty<String> A_TEST_EMB_ATTR = PropertyFactory.createString(ExpressionFactory.dbPathExp(\"testPath\"), String.class);"
+literal|"public static final StringProperty<String> TEST_EMB_ATTR = PropertyFactory.createString(\"testEmbAttr\", String.class);"
 argument_list|,
 name|definition
 argument_list|)
@@ -1357,7 +1373,7 @@ name|importUtils
 operator|.
 name|addType
 argument_list|(
-name|NumericProperty
+name|EmbeddableProperty
 operator|.
 name|class
 operator|.
@@ -1484,7 +1500,7 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|"public static final NumericProperty<Integer> A_TEST_EMB_ATTR = PropertyFactory.createNumeric(ExpressionFactory.dbPathExp(\"testPath\"), Integer.class);"
+literal|"public static final EmbeddableProperty<test> A = PropertyFactory.createEmbeddable(\"a\", test.class);"
 argument_list|,
 name|definition
 argument_list|)
@@ -1637,12 +1653,12 @@ name|propertyUtils
 operator|.
 name|propertyDefinition
 argument_list|(
-name|embeddedAttribute
+name|attribute
 argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|"public static final CustomProperty<TimestampType> A_TEST_EMB_ATTR = new CustomProperty(ExpressionFactory.dbPathExp(\"testPath\"), TimestampType.class);"
+literal|"public static final CustomProperty<TimestampType> TEST_EMB_ATTR = new CustomProperty(\"testEmbAttr\", TimestampType.class);"
 argument_list|,
 name|definition
 argument_list|)
