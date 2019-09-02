@@ -77,20 +77,6 @@ name|cayenne
 operator|.
 name|exp
 operator|.
-name|ExpressionFactory
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|exp
-operator|.
 name|property
 operator|.
 name|EntityProperty
@@ -125,7 +111,7 @@ name|exp
 operator|.
 name|property
 operator|.
-name|NumericProperty
+name|NumericIdProperty
 import|;
 end_import
 
@@ -216,7 +202,7 @@ decl_stmt|;
 specifier|public
 specifier|static
 specifier|final
-name|NumericProperty
+name|NumericIdProperty
 argument_list|<
 name|Integer
 argument_list|>
@@ -224,14 +210,11 @@ name|GROUP_ID_PK_PROPERTY
 init|=
 name|PropertyFactory
 operator|.
-name|createNumeric
-argument_list|(
-name|ExpressionFactory
-operator|.
-name|dbPathExp
+name|createNumericId
 argument_list|(
 literal|"GROUP_ID"
-argument_list|)
+argument_list|,
+literal|"ArtGroup"
 argument_list|,
 name|Integer
 operator|.

@@ -238,91 +238,91 @@ comment|/** RegularExpression Id. */
 name|int
 name|ASTERISK
 init|=
-literal|70
+literal|71
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|PROPERTY_PATH
 init|=
-literal|71
+literal|72
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|IDENTIFIER
 init|=
-literal|72
+literal|73
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|LETTER
 init|=
-literal|73
+literal|74
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|DIGIT
 init|=
-literal|74
+literal|75
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|ESC
 init|=
-literal|77
+literal|78
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|SINGLE_QUOTED_STRING
 init|=
-literal|79
+literal|80
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|STRING_ESC
 init|=
-literal|80
+literal|81
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|DOUBLE_QUOTED_STRING
 init|=
-literal|82
+literal|83
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|INT_LITERAL
 init|=
-literal|83
+literal|84
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|FLOAT_LITERAL
 init|=
-literal|84
+literal|85
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|DEC_FLT
 init|=
-literal|85
+literal|86
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|DEC_DIGITS
 init|=
-literal|86
+literal|87
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|EXPONENT
 init|=
-literal|87
+literal|88
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
 name|FLT_SUFF
 init|=
-literal|88
+literal|89
 decl_stmt|;
 comment|/** Lexical state. */
 name|int
@@ -488,6 +488,8 @@ literal|"\"db:\""
 block|,
 literal|"\"enum:\""
 block|,
+literal|"\"dbid:\""
+block|,
 literal|"\"*\""
 block|,
 literal|"<PROPERTY_PATH>"
@@ -504,13 +506,13 @@ literal|"\"\\\"\""
 block|,
 literal|"<ESC>"
 block|,
-literal|"<token of kind 78>"
+literal|"<token of kind 79>"
 block|,
 literal|"\"\\\'\""
 block|,
 literal|"<STRING_ESC>"
 block|,
-literal|"<token of kind 81>"
+literal|"<token of kind 82>"
 block|,
 literal|"\"\\\"\""
 block|,
