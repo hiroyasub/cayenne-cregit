@@ -565,7 +565,7 @@ specifier|public
 specifier|static
 specifier|final
 name|int
-name|SUBQUERY
+name|NOT_EXISTS
 init|=
 literal|50
 decl_stmt|;
@@ -574,9 +574,18 @@ specifier|public
 specifier|static
 specifier|final
 name|int
-name|DBID_PATH
+name|SUBQUERY
 init|=
 literal|51
+decl_stmt|;
+comment|/** 	 * @since 4.2 	 */
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|DBID_PATH
+init|=
+literal|52
 decl_stmt|;
 specifier|protected
 name|int

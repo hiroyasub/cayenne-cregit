@@ -1427,6 +1427,20 @@ literal|false
 argument_list|)
 return|;
 case|case
+name|NOT_EXISTS
+case|:
+return|return
+operator|new
+name|FunctionNode
+argument_list|(
+literal|"NOT EXISTS"
+argument_list|,
+literal|null
+argument_list|,
+literal|false
+argument_list|)
+return|;
+case|case
 name|SUBQUERY
 case|:
 name|ASTSubquery
@@ -2516,6 +2530,9 @@ name|ASTERISK
 case|:
 case|case
 name|EXISTS
+case|:
+case|case
+name|NOT_EXISTS
 case|:
 case|case
 name|SUBQUERY
