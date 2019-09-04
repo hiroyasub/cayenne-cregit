@@ -42,7 +42,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 4.2  */
+comment|/**  * Property that represents non-numeric PK  *  * @since 4.2  */
 end_comment
 
 begin_class

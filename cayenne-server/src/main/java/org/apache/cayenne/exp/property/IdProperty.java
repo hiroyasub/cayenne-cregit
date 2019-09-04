@@ -80,7 +80,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 4.2  */
+comment|/**  * Base class for properties mapped to PK  * @since 4.2  */
 end_comment
 
 begin_interface
