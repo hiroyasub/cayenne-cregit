@@ -34,7 +34,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  *<p>  * A portable global identifier for persistent objects. ObjectId can be  * temporary (used for transient or new uncommitted objects) or permanent (used  * for objects that have been already stored in DB).  *<p>  * A temporary ObjectId stores object entity name and a pseudo-unique binary key;  * permanent id stores a map of values from an external persistent store (aka "primary key").  */
+comment|/**  *<p>  * A portable global identifier for persistent objects. ObjectId can be temporary (used for transient or new  * uncommitted objects) or permanent (used for objects that have been already stored in DB).  *<p>  * A temporary ObjectId stores object entity name and a pseudo-unique binary key; permanent id stores a map of values  * from an external persistent store (aka "primary key").  */
 end_comment
 
 begin_interface
@@ -44,6 +44,7 @@ name|ObjectId
 extends|extends
 name|Serializable
 block|{
+comment|/**      * Creates a temporary ObjectId for a given entity.      *      * @since 4.2      */
 specifier|static
 name|ObjectId
 name|of
@@ -60,6 +61,7 @@ name|entityName
 argument_list|)
 return|;
 block|}
+comment|/**      * Creates a temporary ObjectId for a given entity, using provided unique id key.      *      * @since 4.2      */
 specifier|static
 name|ObjectId
 name|of
@@ -82,6 +84,7 @@ name|tmpKey
 argument_list|)
 return|;
 block|}
+comment|/**      * Creates a single key/value permanent ObjectId.      *      * @since 4.2      */
 specifier|static
 name|ObjectId
 name|of
@@ -130,6 +133,7 @@ name|value
 argument_list|)
 return|;
 block|}
+comment|/**      * Creates an ObjectId using another id as a template, but for a different entity. Useful inside the Cayenne stack      * when resolving inheritance hierarchies.      *      * @since 4.2      */
 specifier|static
 name|ObjectId
 name|of
@@ -238,6 +242,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+comment|/**      * Creates an ObjectId, potentially mapped to multiple columns.      *      * @since 4.2      */
 specifier|static
 name|ObjectId
 name|of
