@@ -319,6 +319,9 @@ class|class
 name|CgenTabController
 extends|extends
 name|GeneratorsTabController
+argument_list|<
+name|CgenConfiguration
+argument_list|>
 block|{
 specifier|public
 name|CgenTabController
@@ -329,11 +332,13 @@ parameter_list|)
 block|{
 name|super
 argument_list|(
+name|projectController
+argument_list|,
 name|CgenConfiguration
 operator|.
 name|class
 argument_list|,
-name|projectController
+literal|true
 argument_list|)
 expr_stmt|;
 name|this
@@ -478,7 +483,7 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|logObj
+name|LOGGER
 operator|.
 name|error
 argument_list|(
@@ -576,30 +581,6 @@ name|initOutputFolder
 argument_list|()
 argument_list|)
 decl_stmt|;
-comment|// no destination folder
-if|if
-condition|(
-name|basePath
-operator|==
-literal|null
-condition|)
-block|{
-name|JOptionPane
-operator|.
-name|showMessageDialog
-argument_list|(
-name|this
-operator|.
-name|getView
-argument_list|()
-argument_list|,
-literal|"Select directory for source files."
-argument_list|)
-expr_stmt|;
-return|return
-literal|null
-return|;
-block|}
 comment|// no such folder
 if|if
 condition|(
@@ -632,14 +613,10 @@ name|JOptionPane
 operator|.
 name|showMessageDialog
 argument_list|(
-name|this
-operator|.
 name|getView
 argument_list|()
 argument_list|,
-literal|"Can't create directory. "
-operator|+
-literal|". Select a different one."
+literal|"Can't create directory. Select a different one."
 argument_list|)
 expr_stmt|;
 return|return
@@ -663,8 +640,6 @@ name|JOptionPane
 operator|.
 name|showMessageDialog
 argument_list|(
-name|this
-operator|.
 name|getView
 argument_list|()
 argument_list|,
@@ -754,15 +729,12 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|projectController
-operator|.
-name|fireDataMapDisplayEvent
-argument_list|(
+name|DataMapDisplayEvent
+name|event
+init|=
 operator|new
 name|DataMapDisplayEvent
 argument_list|(
-name|this
-operator|.
 name|getView
 argument_list|()
 argument_list|,
@@ -773,6 +745,13 @@ operator|.
 name|getDataChannelDescriptor
 argument_list|()
 argument_list|)
+decl_stmt|;
+name|getProjectController
+argument_list|()
+operator|.
+name|fireDataMapDisplayEvent
+argument_list|(
+name|event
 argument_list|)
 expr_stmt|;
 block|}

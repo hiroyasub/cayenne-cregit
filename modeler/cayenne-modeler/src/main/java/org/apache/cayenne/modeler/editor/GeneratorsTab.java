@@ -198,6 +198,9 @@ name|projectController
 decl_stmt|;
 specifier|private
 name|GeneratorsTabController
+argument_list|<
+name|?
+argument_list|>
 name|additionalTabController
 decl_stmt|;
 specifier|private
@@ -211,6 +214,9 @@ name|ProjectController
 name|projectController
 parameter_list|,
 name|GeneratorsTabController
+argument_list|<
+name|?
+argument_list|>
 name|additionalTabController
 parameter_list|,
 name|String
