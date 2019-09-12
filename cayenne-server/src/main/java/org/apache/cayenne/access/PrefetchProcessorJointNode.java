@@ -681,8 +681,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|// since JDBC row reader won't inject JOINED entity name, we have to
-comment|// detect it here...
+comment|// since JDBC row reader won't inject JOINED entity name, we have to detect it here...
 name|ClassDescriptor
 name|descriptor
 init|=
@@ -708,6 +707,12 @@ name|row
 operator|.
 name|setEntityName
 argument_list|(
+name|entity
+operator|==
+literal|null
+condition|?
+literal|null
+else|:
 name|entity
 operator|.
 name|getName

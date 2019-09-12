@@ -1421,8 +1421,8 @@ name|LOGGER
 operator|.
 name|warn
 argument_list|(
-literal|"** Null entity name for DataRow, can't resolve sub descriptor for "
-operator|+
+literal|"** Null entity name for DataRow, can't resolve sub descriptor for {}"
+argument_list|,
 name|descriptor
 operator|.
 name|getEntity
@@ -1432,10 +1432,10 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|descriptor
 return|;
-block|}
 block|}
 return|return
 name|context
