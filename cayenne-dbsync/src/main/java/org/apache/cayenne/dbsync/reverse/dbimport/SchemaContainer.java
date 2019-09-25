@@ -25,7 +25,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collection
+name|ArrayList
 import|;
 end_import
 
@@ -35,7 +35,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|LinkedList
+name|List
 import|;
 end_import
 
@@ -53,19 +53,19 @@ name|FilterContainer
 block|{
 specifier|private
 specifier|final
-name|Collection
+name|List
 argument_list|<
 name|Schema
 argument_list|>
 name|schemaCollection
 init|=
 operator|new
-name|LinkedList
+name|ArrayList
 argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|public
-name|Collection
+name|List
 argument_list|<
 name|Schema
 argument_list|>

@@ -35,6 +35,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|ArrayList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|Arrays
 import|;
 end_import
@@ -55,7 +65,7 @@ name|java
 operator|.
 name|util
 operator|.
-name|LinkedList
+name|List
 import|;
 end_import
 
@@ -191,27 +201,27 @@ decl_stmt|;
 comment|/**      * Typical types are:<ul>      *<li> "TABLE"      *<li> "VIEW"      *<li> "SYSTEM TABLE"      *<li> "GLOBAL TEMPORARY",      *<li> "LOCAL TEMPORARY"      *<li> "ALIAS"      *<li> "SYNONYM"      *</ul>      */
 specifier|private
 specifier|final
-name|Collection
+name|List
 argument_list|<
 name|String
 argument_list|>
 name|tableTypes
 init|=
 operator|new
-name|LinkedList
+name|ArrayList
 argument_list|<>
 argument_list|()
 decl_stmt|;
 specifier|private
 specifier|final
-name|Collection
+name|List
 argument_list|<
 name|Catalog
 argument_list|>
 name|catalogCollection
 init|=
 operator|new
-name|LinkedList
+name|ArrayList
 argument_list|<>
 argument_list|()
 decl_stmt|;
@@ -430,7 +440,7 @@ name|skipPrimaryKeyLoading
 expr_stmt|;
 block|}
 specifier|public
-name|Collection
+name|List
 argument_list|<
 name|Catalog
 argument_list|>
