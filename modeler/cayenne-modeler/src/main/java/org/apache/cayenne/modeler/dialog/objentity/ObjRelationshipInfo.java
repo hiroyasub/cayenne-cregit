@@ -1980,7 +1980,7 @@ argument_list|(
 name|mediator
 argument_list|)
 operator|.
-name|createNewRaltionship
+name|createNewRelationship
 argument_list|(
 name|dbEntity
 argument_list|)

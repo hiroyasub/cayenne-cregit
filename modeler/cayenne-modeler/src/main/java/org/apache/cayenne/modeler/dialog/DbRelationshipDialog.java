@@ -574,7 +574,7 @@ return|;
 block|}
 specifier|public
 name|DbRelationshipDialog
-name|createNewRaltionship
+name|createNewRelationship
 parameter_list|(
 name|DbEntity
 name|dbEntity

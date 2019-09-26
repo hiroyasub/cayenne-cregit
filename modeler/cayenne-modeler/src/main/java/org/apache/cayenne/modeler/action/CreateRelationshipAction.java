@@ -542,7 +542,7 @@ name|getProjectController
 argument_list|()
 argument_list|)
 operator|.
-name|createNewRaltionship
+name|createNewRelationship
 argument_list|(
 name|dbEnt
 argument_list|)
