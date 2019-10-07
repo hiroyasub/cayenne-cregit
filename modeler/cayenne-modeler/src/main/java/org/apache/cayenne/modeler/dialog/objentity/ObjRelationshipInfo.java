@@ -2896,6 +2896,18 @@ operator|.
 name|isToMany
 argument_list|()
 decl_stmt|;
+name|boolean
+name|oldPathNotEmpty
+init|=
+operator|!
+name|relationship
+operator|.
+name|getDbRelationships
+argument_list|()
+operator|.
+name|isEmpty
+argument_list|()
+decl_stmt|;
 name|String
 name|relationshipName
 init|=
@@ -3242,6 +3254,8 @@ block|}
 comment|/*          * As of CAY-436 here we check if to-many property has changed during          * the editing, and if so, delete rule must be reset to default value          */
 if|if
 condition|(
+name|oldPathNotEmpty
+operator|&&
 name|hasChanges
 operator|&&
 name|relationship
