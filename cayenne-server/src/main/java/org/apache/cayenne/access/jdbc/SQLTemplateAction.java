@@ -1761,7 +1761,7 @@ argument_list|(
 name|i
 argument_list|)
 operator|.
-name|getName
+name|getCanonicalName
 argument_list|()
 argument_list|)
 expr_stmt|;
