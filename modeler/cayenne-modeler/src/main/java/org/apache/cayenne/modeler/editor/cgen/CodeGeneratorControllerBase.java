@@ -810,8 +810,6 @@ return|return
 name|cgenConfiguration
 return|;
 block|}
-try|try
-block|{
 name|cgenConfiguration
 operator|=
 operator|new
@@ -847,30 +845,6 @@ name|initOutputFolder
 argument_list|()
 argument_list|)
 decl_stmt|;
-comment|// no destination folder
-if|if
-condition|(
-name|basePath
-operator|==
-literal|null
-condition|)
-block|{
-name|JOptionPane
-operator|.
-name|showMessageDialog
-argument_list|(
-name|this
-operator|.
-name|getView
-argument_list|()
-argument_list|,
-literal|"Select directory for source files."
-argument_list|)
-expr_stmt|;
-return|return
-literal|null
-return|;
-block|}
 comment|// no such folder
 if|if
 condition|(
@@ -883,6 +857,8 @@ name|basePath
 argument_list|)
 condition|)
 block|{
+try|try
+block|{
 name|Files
 operator|.
 name|createDirectories
@@ -890,6 +866,27 @@ argument_list|(
 name|basePath
 argument_list|)
 expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|IOException
+name|e
+parameter_list|)
+block|{
+name|JOptionPane
+operator|.
+name|showMessageDialog
+argument_list|(
+name|getView
+argument_list|()
+argument_list|,
+literal|"Can't create directory. Select a different one."
+argument_list|)
+expr_stmt|;
+return|return
+literal|null
+return|;
+block|}
 block|}
 comment|// not a directory
 if|if
@@ -1038,31 +1035,6 @@ argument_list|(
 literal|true
 argument_list|)
 expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|IOException
-name|exception
-parameter_list|)
-block|{
-name|JOptionPane
-operator|.
-name|showMessageDialog
-argument_list|(
-name|this
-operator|.
-name|getView
-argument_list|()
-argument_list|,
-literal|"Can't create directory. "
-operator|+
-literal|". Select a different one."
-argument_list|)
-expr_stmt|;
-return|return
-literal|null
-return|;
-block|}
 return|return
 name|cgenConfiguration
 return|;
