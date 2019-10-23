@@ -696,6 +696,8 @@ argument_list|(
 name|connectionInfo
 argument_list|,
 name|view
+argument_list|,
+literal|true
 argument_list|)
 condition|)
 block|{

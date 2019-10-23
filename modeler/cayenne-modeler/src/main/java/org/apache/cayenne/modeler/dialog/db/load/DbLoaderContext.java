@@ -627,6 +627,9 @@ name|connectionInfo
 parameter_list|,
 name|DbImportView
 name|view
+parameter_list|,
+name|boolean
+name|headless
 parameter_list|)
 block|{
 if|if
@@ -659,6 +662,24 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|metaReverseEngineering
+operator|==
+literal|null
+condition|)
+block|{
+return|return
+literal|false
+return|;
+block|}
+comment|// skip this step for batch run from domain tab
+if|if
+condition|(
+operator|!
+name|headless
+condition|)
+block|{
 name|fillReverseEngineeringFromView
 argument_list|(
 name|metaReverseEngineering
@@ -666,6 +687,7 @@ argument_list|,
 name|view
 argument_list|)
 expr_stmt|;
+block|}
 comment|// Create copy of metaReverseEngineering
 name|ReverseEngineering
 name|reverseEngineering
