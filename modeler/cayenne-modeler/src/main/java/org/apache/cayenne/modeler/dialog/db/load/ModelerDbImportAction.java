@@ -49,16 +49,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|io
-operator|.
-name|IOException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|Collection
@@ -324,14 +314,6 @@ name|ModelerDbImportAction
 extends|extends
 name|DefaultDbImportAction
 block|{
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|DIALOG_TITLE
-init|=
-literal|"Db Import Result"
-decl_stmt|;
 annotation|@
 name|Inject
 specifier|private
@@ -349,10 +331,6 @@ decl_stmt|;
 specifier|private
 name|DbLoadResultDialog
 name|resultDialog
-decl_stmt|;
-specifier|private
-name|boolean
-name|hasTokenToMerge
 decl_stmt|;
 specifier|private
 name|DbImportController
@@ -560,11 +538,8 @@ name|addActionListener
 argument_list|(
 name|e
 lambda|->
-block|{
 name|resetDialog
 argument_list|()
-expr_stmt|;
-block|}
 argument_list|)
 expr_stmt|;
 name|resultDialog
@@ -613,10 +588,6 @@ name|info
 argument_list|(
 literal|"Detected changes: No changes to import."
 argument_list|)
-expr_stmt|;
-name|hasTokenToMerge
-operator|=
-literal|false
 expr_stmt|;
 name|String
 name|logString
@@ -693,10 +664,6 @@ name|logString
 argument_list|,
 name|targetMap
 argument_list|)
-expr_stmt|;
-name|hasTokenToMerge
-operator|=
-literal|true
 expr_stmt|;
 block|}
 name|logger
