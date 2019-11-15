@@ -227,20 +227,6 @@ name|ProjectModule
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|tools
-operator|.
-name|ToolsConstants
-import|;
-end_import
-
 begin_comment
 comment|/**  * @since 4.1  */
 end_comment
@@ -394,10 +380,6 @@ argument_list|(
 name|PropertyDescriptorCreator
 operator|.
 name|class
-argument_list|,
-name|ToolsConstants
-operator|.
-name|CUSTOM_PROPERTIES
 argument_list|)
 return|;
 block|}
