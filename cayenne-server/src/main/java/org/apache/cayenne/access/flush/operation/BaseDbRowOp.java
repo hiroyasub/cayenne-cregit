@@ -91,7 +91,6 @@ name|entity
 decl_stmt|;
 comment|// Can be ObjEntity id or a DB row id for flattened rows
 specifier|protected
-specifier|final
 name|ObjectId
 name|changeId
 decl_stmt|;
