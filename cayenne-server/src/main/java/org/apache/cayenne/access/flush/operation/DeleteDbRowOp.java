@@ -145,6 +145,15 @@ name|changeId
 operator|=
 name|changeId
 expr_stmt|;
+name|this
+operator|.
+name|hashCode
+operator|=
+name|changeId
+operator|.
+name|hashCode
+argument_list|()
+expr_stmt|;
 block|}
 annotation|@
 name|Override
