@@ -506,6 +506,9 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
+comment|/**      * @deprecated since 4.0 . Note that this method should not be relied upon to clear caches consistently. It only      * operates on a subset of caches that were created by this object, and ignores any preconfigured caches.      */
+annotation|@
+name|Deprecated
 annotation|@
 name|Override
 specifier|public
