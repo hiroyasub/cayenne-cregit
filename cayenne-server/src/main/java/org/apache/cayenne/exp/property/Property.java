@@ -48,6 +48,11 @@ name|String
 name|getName
 parameter_list|()
 function_decl|;
+comment|/**      * @return alias of this property, can be null      */
+name|String
+name|getAlias
+parameter_list|()
+function_decl|;
 comment|/**      * @return expression that defines this property, not null      */
 name|Expression
 name|getExpression

@@ -67,7 +67,7 @@ name|exp
 operator|.
 name|property
 operator|.
-name|BaseProperty
+name|Property
 import|;
 end_import
 
@@ -374,7 +374,7 @@ argument_list|)
 expr_stmt|;
 for|for
 control|(
-name|BaseProperty
+name|Property
 argument_list|<
 name|?
 argument_list|>

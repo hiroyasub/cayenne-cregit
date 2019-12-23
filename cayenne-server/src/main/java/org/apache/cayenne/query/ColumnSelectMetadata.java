@@ -93,7 +93,7 @@ name|exp
 operator|.
 name|property
 operator|.
-name|BaseProperty
+name|Property
 import|;
 end_import
 
@@ -339,7 +339,7 @@ parameter_list|)
 block|{
 name|Collection
 argument_list|<
-name|BaseProperty
+name|Property
 argument_list|<
 name|?
 argument_list|>
@@ -360,7 +360,7 @@ condition|)
 block|{
 for|for
 control|(
-name|BaseProperty
+name|Property
 argument_list|<
 name|?
 argument_list|>
@@ -467,7 +467,7 @@ argument_list|)
 expr_stmt|;
 for|for
 control|(
-name|BaseProperty
+name|Property
 argument_list|<
 name|?
 argument_list|>

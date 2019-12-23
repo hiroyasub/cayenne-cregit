@@ -197,7 +197,7 @@ name|exp
 operator|.
 name|property
 operator|.
-name|BaseProperty
+name|Property
 import|;
 end_import
 
@@ -561,7 +561,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/**      * Mark start of a new class descriptor, to be able to process result columns properly.      * @param type of a descriptor      * @see #addResultNode(Node, boolean, BaseProperty, String)      */
+comment|/**      * Mark start of a new class descriptor, to be able to process result columns properly.      * @param type of a descriptor      * @see #addResultNode(Node, boolean, Property, String)      */
 name|void
 name|markDescriptorStart
 parameter_list|(
@@ -851,7 +851,7 @@ parameter_list|,
 name|boolean
 name|inDataRow
 parameter_list|,
-name|BaseProperty
+name|Property
 argument_list|<
 name|?
 argument_list|>

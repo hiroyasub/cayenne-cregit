@@ -133,7 +133,7 @@ name|exp
 operator|.
 name|property
 operator|.
-name|BaseProperty
+name|Property
 import|;
 end_import
 
@@ -176,7 +176,7 @@ name|isAggregate
 decl_stmt|;
 specifier|private
 specifier|final
-name|BaseProperty
+name|Property
 argument_list|<
 name|?
 argument_list|>
@@ -202,7 +202,7 @@ parameter_list|,
 name|boolean
 name|inDataRow
 parameter_list|,
-name|BaseProperty
+name|Property
 argument_list|<
 name|?
 argument_list|>
@@ -271,7 +271,7 @@ name|inDataRow
 return|;
 block|}
 specifier|public
-name|BaseProperty
+name|Property
 argument_list|<
 name|?
 argument_list|>

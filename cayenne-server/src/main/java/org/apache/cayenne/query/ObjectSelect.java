@@ -137,20 +137,6 @@ name|cayenne
 operator|.
 name|exp
 operator|.
-name|Property
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|exp
-operator|.
 name|property
 operator|.
 name|BaseProperty
@@ -186,6 +172,22 @@ operator|.
 name|property
 operator|.
 name|NumericProperty
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|exp
+operator|.
+name|property
+operator|.
+name|Property
 import|;
 end_import
 
@@ -589,7 +591,7 @@ name|?
 argument_list|>
 name|entityType
 parameter_list|,
-name|BaseProperty
+name|Property
 argument_list|<
 name|E
 argument_list|>
@@ -629,7 +631,7 @@ name|?
 argument_list|>
 name|entityType
 parameter_list|,
-name|BaseProperty
+name|Property
 argument_list|<
 name|?
 argument_list|>
@@ -1713,7 +1715,7 @@ operator|)
 name|this
 return|;
 block|}
-comment|/**      *<p>Select only specific properties.</p>      *<p>Can be any properties that can be resolved against root entity type      * (root entity's properties, function call expressions, properties of relationships, etc).</p>      *<p>      *<pre>      * {@code      * List<Object[]> columns = ObjectSelect.query(Artist.class)      *                                    .columns(Artist.ARTIST_NAME, Artist.DATE_OF_BIRTH)      *                                    .select(context);      * }      *</pre>      *      * @param properties array of properties to select      * @see ObjectSelect#column(BaseProperty)      */
+comment|/**      *<p>Select only specific properties.</p>      *<p>Can be any properties that can be resolved against root entity type      * (root entity's properties, function call expressions, properties of relationships, etc).</p>      *<p>      *<pre>      * {@code      * List<Object[]> columns = ObjectSelect.query(Artist.class)      *                                    .columns(Artist.ARTIST_NAME, Artist.DATE_OF_BIRTH)      *                                    .select(context);      * }      *</pre>      *      * @param properties array of properties to select      * @see ObjectSelect#column(Property)      */
 specifier|public
 name|ColumnSelect
 argument_list|<
@@ -1722,7 +1724,7 @@ index|[]
 argument_list|>
 name|columns
 parameter_list|(
-name|BaseProperty
+name|Property
 argument_list|<
 name|?
 argument_list|>
@@ -1744,7 +1746,7 @@ name|properties
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>Select one specific property.</p>      *<p>Can be any property that can be resolved against root entity type      * (root entity's property, function call expression, property of relationships, etc)</p>      *<p>If you need several columns use {@link ObjectSelect#columns(BaseProperty[])} method.</p>      *<p>      *<pre>      * {@code      * List<String> names = ObjectSelect.query(Artist.class)      *                                  .column(Artist.ARTIST_NAME)      *                                  .select(context);      * }      *</pre>      *</p>      * @param property single property to select      * @see ObjectSelect#columns(BaseProperty[])      */
+comment|/**      *<p>Select one specific property.</p>      *<p>Can be any property that can be resolved against root entity type      * (root entity's property, function call expression, property of relationships, etc)</p>      *<p>If you need several columns use {@link ObjectSelect#columns(Property[])} method.</p>      *<p>      *<pre>      * {@code      * List<String> names = ObjectSelect.query(Artist.class)      *                                  .column(Artist.ARTIST_NAME)      *                                  .select(context);      * }      *</pre>      *</p>      * @param property single property to select      * @see ObjectSelect#columns(Property[])      */
 specifier|public
 parameter_list|<
 name|E
@@ -1755,7 +1757,7 @@ name|E
 argument_list|>
 name|column
 parameter_list|(
-name|BaseProperty
+name|Property
 argument_list|<
 name|E
 argument_list|>
@@ -1776,7 +1778,7 @@ name|property
 argument_list|)
 return|;
 block|}
-comment|/**      * Select COUNT(*)      * @see ObjectSelect#column(BaseProperty)      */
+comment|/**      * Select COUNT(*)      * @see ObjectSelect#column(Property)      */
 specifier|public
 name|ColumnSelect
 argument_list|<
@@ -1794,7 +1796,7 @@ name|COUNT
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>Select COUNT(property)</p>      *<p>Can return different result than COUNT(*) as it will count only non null values</p>      * @see ObjectSelect#count()      * @see ObjectSelect#column(BaseProperty)      */
+comment|/**      *<p>Select COUNT(property)</p>      *<p>Can return different result than COUNT(*) as it will count only non null values</p>      * @see ObjectSelect#count()      * @see ObjectSelect#column(Property)      */
 specifier|public
 name|ColumnSelect
 argument_list|<
@@ -1819,7 +1821,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>Select minimum value of property</p>      * @see ObjectSelect#column(BaseProperty)      */
+comment|/**      *<p>Select minimum value of property</p>      * @see ObjectSelect#column(Property)      */
 specifier|public
 parameter_list|<
 name|E
@@ -1847,7 +1849,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>Select minimum value of property</p>      * @see ObjectSelect#column(BaseProperty)      */
+comment|/**      *<p>Select minimum value of property</p>      * @see ObjectSelect#column(Property)      */
 specifier|public
 parameter_list|<
 name|E
@@ -1877,7 +1879,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>Select maximum value of property</p>      * @see ObjectSelect#column(BaseProperty)      */
+comment|/**      *<p>Select maximum value of property</p>      * @see ObjectSelect#column(Property)      */
 specifier|public
 parameter_list|<
 name|E
@@ -1905,7 +1907,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>Select maximum value of property</p>      * @see ObjectSelect#column(BaseProperty)      */
+comment|/**      *<p>Select maximum value of property</p>      * @see ObjectSelect#column(Property)      */
 specifier|public
 parameter_list|<
 name|E
@@ -1935,7 +1937,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>Select average value of property</p>      * @see ObjectSelect#column(BaseProperty)      * @deprecated since 4.2 use {@link #avg(NumericProperty)}      */
+comment|/**      *<p>Select average value of property</p>      * @see ObjectSelect#column(Property)      * @deprecated since 4.2 use {@link #avg(NumericProperty)}      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -1948,6 +1950,14 @@ name|E
 argument_list|>
 name|avg
 parameter_list|(
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|exp
+operator|.
 name|Property
 argument_list|<
 name|E
@@ -1965,7 +1975,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>Select average value of property</p>      * @see ObjectSelect#column(BaseProperty)      */
+comment|/**      *<p>Select average value of property</p>      * @see ObjectSelect#column(Property)      */
 specifier|public
 parameter_list|<
 name|E
@@ -1995,7 +2005,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>Select sum of values</p>      * @see ObjectSelect#column(BaseProperty)      * @deprecated since 4.2 use {@link #sum(NumericProperty)}      */
+comment|/**      *<p>Select sum of values</p>      * @see ObjectSelect#column(Property)      * @deprecated since 4.2 use {@link #sum(NumericProperty)}      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -2010,6 +2020,14 @@ name|E
 argument_list|>
 name|sum
 parameter_list|(
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|exp
+operator|.
 name|Property
 argument_list|<
 name|E
@@ -2027,7 +2045,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      *<p>Select sum of values</p>      * @see ObjectSelect#column(BaseProperty)      */
+comment|/**      *<p>Select sum of values</p>      * @see ObjectSelect#column(Property)      */
 specifier|public
 parameter_list|<
 name|E
