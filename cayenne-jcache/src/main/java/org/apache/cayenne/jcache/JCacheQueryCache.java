@@ -87,6 +87,26 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|Logger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|LoggerFactory
+import|;
+end_import
+
+begin_import
+import|import
 name|javax
 operator|.
 name|cache
@@ -178,6 +198,21 @@ name|JCacheQueryCache
 implements|implements
 name|QueryCache
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|Logger
+name|LOGGER
+init|=
+name|LoggerFactory
+operator|.
+name|getLogger
+argument_list|(
+name|QueryCache
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 annotation|@
 name|Inject
 specifier|protected
@@ -652,6 +687,18 @@ name|String
 name|cacheName
 parameter_list|)
 block|{
+comment|// Cache creation here can lead to a memory leak, see CAY-2642 for details.
+name|LOGGER
+operator|.
+name|warn
+argument_list|(
+literal|"Creating a new JCache entry '{}'. It will be unlimited by default, and that can lead to greater memory usage or even leak. "
+operator|+
+literal|"This entry could be configured by JCache provider-specific configuration."
+argument_list|,
+name|cacheName
+argument_list|)
+expr_stmt|;
 return|return
 name|cacheManager
 operator|.
