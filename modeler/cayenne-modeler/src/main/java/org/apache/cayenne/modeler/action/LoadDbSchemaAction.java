@@ -354,6 +354,26 @@ import|;
 end_import
 
 begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|Logger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|LoggerFactory
+import|;
+end_import
+
+begin_import
 import|import static
 name|org
 operator|.
@@ -454,6 +474,21 @@ name|LoadDbSchemaAction
 extends|extends
 name|CayenneAction
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|Logger
+name|LOGGER
+init|=
+name|LoggerFactory
+operator|.
+name|getLogger
+argument_list|(
+name|LoadDbSchemaAction
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 specifier|private
 specifier|static
 specifier|final
@@ -767,7 +802,7 @@ block|}
 catch|catch
 parameter_list|(
 name|Exception
-name|exception
+name|ex
 parameter_list|)
 block|{
 name|JOptionPane
@@ -779,16 +814,25 @@ operator|.
 name|getFrame
 argument_list|()
 argument_list|,
-name|exception
+name|ex
 operator|.
 name|getMessage
 argument_list|()
 argument_list|,
-literal|"Error db schema loading"
+literal|"Error loading db schema"
 argument_list|,
 name|JOptionPane
 operator|.
 name|ERROR_MESSAGE
+argument_list|)
+expr_stmt|;
+name|LOGGER
+operator|.
+name|warn
+argument_list|(
+literal|"Error loading db schema"
+argument_list|,
+name|ex
 argument_list|)
 expr_stmt|;
 block|}
