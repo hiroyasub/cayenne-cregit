@@ -55,7 +55,7 @@ name|exp
 operator|.
 name|property
 operator|.
-name|BaseProperty
+name|Property
 import|;
 end_import
 
@@ -148,7 +148,7 @@ parameter_list|()
 function_decl|;
 name|Collection
 argument_list|<
-name|BaseProperty
+name|Property
 argument_list|<
 name|?
 argument_list|>

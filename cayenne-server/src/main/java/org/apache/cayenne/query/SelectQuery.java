@@ -175,7 +175,7 @@ name|exp
 operator|.
 name|property
 operator|.
-name|BaseProperty
+name|Property
 import|;
 end_import
 
@@ -222,7 +222,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A query that selects persistent objects of a certain type or "raw data" (aka  * DataRows). Supports expression qualifier, multiple orderings and a number of  * other parameters that serve as runtime hints to Cayenne on how to optimize  * the fetch and result processing.  * @deprecated since 4.2  * use {@link org.apache.cayenne.query.ObjectSelect}  */
+comment|/**  * A query that selects persistent objects of a certain type or "raw data" (aka  * DataRows). Supports expression qualifier, multiple orderings and a number of  * other parameters that serve as runtime hints to Cayenne on how to optimize  * the fetch and result processing.  *  * @deprecated since 4.2, use {@link org.apache.cayenne.query.ObjectSelect}  */
 end_comment
 
 begin_class
@@ -287,7 +287,7 @@ comment|/** 	 * @since 4.0 	 */
 specifier|protected
 name|Collection
 argument_list|<
-name|BaseProperty
+name|Property
 argument_list|<
 name|?
 argument_list|>
@@ -1977,7 +1977,7 @@ name|setColumns
 parameter_list|(
 name|Collection
 argument_list|<
-name|BaseProperty
+name|Property
 argument_list|<
 name|?
 argument_list|>
@@ -1997,7 +1997,7 @@ specifier|public
 name|void
 name|setColumns
 parameter_list|(
-name|BaseProperty
+name|Property
 argument_list|<
 name|?
 argument_list|>
@@ -2061,7 +2061,7 @@ comment|/** 	 * @since 4.0 	 */
 specifier|public
 name|Collection
 argument_list|<
-name|BaseProperty
+name|Property
 argument_list|<
 name|?
 argument_list|>

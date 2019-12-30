@@ -149,7 +149,7 @@ name|exp
 operator|.
 name|property
 operator|.
-name|BaseProperty
+name|Property
 import|;
 end_import
 
@@ -256,7 +256,7 @@ specifier|private
 specifier|final
 name|Collection
 argument_list|<
-name|BaseProperty
+name|Property
 argument_list|<
 name|?
 argument_list|>
@@ -270,7 +270,7 @@ name|context
 parameter_list|,
 name|Collection
 argument_list|<
-name|BaseProperty
+name|Property
 argument_list|<
 name|?
 argument_list|>
@@ -303,7 +303,7 @@ parameter_list|)
 block|{
 for|for
 control|(
-name|BaseProperty
+name|Property
 argument_list|<
 name|?
 argument_list|>
@@ -358,7 +358,7 @@ specifier|private
 name|void
 name|extractSimpleProperty
 parameter_list|(
-name|BaseProperty
+name|Property
 argument_list|<
 name|?
 argument_list|>
@@ -432,7 +432,7 @@ specifier|private
 name|boolean
 name|isFullObjectProp
 parameter_list|(
-name|BaseProperty
+name|Property
 argument_list|<
 name|?
 argument_list|>
@@ -551,7 +551,7 @@ specifier|private
 name|boolean
 name|isEmbeddedProp
 parameter_list|(
-name|BaseProperty
+name|Property
 argument_list|<
 name|?
 argument_list|>
@@ -579,7 +579,7 @@ parameter_list|(
 name|String
 name|prefix
 parameter_list|,
-name|BaseProperty
+name|Property
 argument_list|<
 name|?
 argument_list|>
@@ -725,7 +725,7 @@ parameter_list|(
 name|String
 name|prefix
 parameter_list|,
-name|BaseProperty
+name|Property
 argument_list|<
 name|?
 argument_list|>
@@ -885,7 +885,7 @@ parameter_list|(
 name|String
 name|prefix
 parameter_list|,
-name|BaseProperty
+name|Property
 argument_list|<
 name|?
 argument_list|>
