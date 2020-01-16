@@ -1380,13 +1380,31 @@ operator|==
 literal|null
 condition|)
 block|{
-comment|// create config with default values, but not store it into metadata
-comment|// config will be stored on change only, this is for not making project dirty on just selecting dbimport tab
+comment|// create config with default values
 name|reverseEngineering
 operator|=
 operator|new
 name|ReverseEngineering
 argument_list|()
+expr_stmt|;
+name|DbImportView
+operator|.
+name|this
+operator|.
+name|projectController
+operator|.
+name|getApplication
+argument_list|()
+operator|.
+name|getMetaData
+argument_list|()
+operator|.
+name|add
+argument_list|(
+name|map
+argument_list|,
+name|reverseEngineering
+argument_list|)
 expr_stmt|;
 block|}
 name|configPanel
