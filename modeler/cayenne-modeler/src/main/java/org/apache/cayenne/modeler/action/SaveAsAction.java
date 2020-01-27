@@ -47,6 +47,18 @@ name|awt
 operator|.
 name|event
 operator|.
+name|InputEvent
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|awt
+operator|.
+name|event
+operator|.
 name|KeyEvent
 import|;
 end_import
@@ -360,7 +372,7 @@ operator|.
 name|getMenuShortcutKeyMask
 argument_list|()
 operator||
-name|ActionEvent
+name|InputEvent
 operator|.
 name|SHIFT_MASK
 argument_list|)
@@ -471,7 +483,7 @@ literal|"Can't Save Project"
 argument_list|,
 name|JOptionPane
 operator|.
-name|OK_OPTION
+name|ERROR_MESSAGE
 argument_list|)
 expr_stmt|;
 return|return
