@@ -450,6 +450,13 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|cgenConfiguration
+operator|.
+name|setRootPath
+argument_list|(
+name|resourcePath
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_class
