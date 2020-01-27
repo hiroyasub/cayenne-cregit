@@ -145,7 +145,7 @@ name|Paths
 operator|.
 name|get
 argument_list|(
-literal|"/tmp/src/main/java"
+literal|"/tmp/src/main/resources"
 argument_list|)
 argument_list|,
 name|config
@@ -243,7 +243,7 @@ name|Paths
 operator|.
 name|get
 argument_list|(
-literal|"/tmp/src/main/java"
+literal|"/tmp/src/main/resources"
 argument_list|)
 argument_list|,
 name|config
