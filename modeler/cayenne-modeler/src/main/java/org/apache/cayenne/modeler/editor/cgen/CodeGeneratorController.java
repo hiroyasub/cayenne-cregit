@@ -485,6 +485,8 @@ argument_list|(
 name|this
 argument_list|)
 expr_stmt|;
+name|this
+operator|.
 name|view
 operator|=
 operator|new
@@ -763,7 +765,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|Component
+name|CodeGeneratorPane
 name|getView
 parameter_list|()
 block|{
