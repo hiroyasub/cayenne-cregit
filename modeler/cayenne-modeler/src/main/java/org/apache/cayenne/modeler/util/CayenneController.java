@@ -359,7 +359,7 @@ return|return
 name|parent
 return|;
 block|}
-comment|/**      * Returns the vie wassociated with this Controller.      */
+comment|/**      * Returns the view associated with this Controller.      */
 specifier|public
 specifier|abstract
 name|Component

@@ -75,10 +75,6 @@ begin_comment
 comment|/**  */
 end_comment
 
-begin_comment
-comment|// TODO: extend BindingExpression, unless we decide to make it a composition...
-end_comment
-
 begin_class
 specifier|public
 specifier|abstract
