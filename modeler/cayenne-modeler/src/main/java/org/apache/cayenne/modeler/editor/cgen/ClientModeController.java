@@ -72,7 +72,7 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|protected
-name|GeneratorControllerPanel
+name|void
 name|createView
 parameter_list|()
 block|{
@@ -87,6 +87,14 @@ name|getParentController
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|StandardModePanel
+name|getView
+parameter_list|()
+block|{
 return|return
 name|view
 return|;
