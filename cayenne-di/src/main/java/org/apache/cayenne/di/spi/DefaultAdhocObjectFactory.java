@@ -631,7 +631,7 @@ throw|throw
 operator|new
 name|DIRuntimeException
 argument_list|(
-literal|"Invalid class: %s"
+literal|"Invalid class: '%s'"
 argument_list|,
 name|e
 argument_list|,
@@ -653,9 +653,11 @@ throw|throw
 operator|new
 name|IllegalArgumentException
 argument_list|(
-literal|"Invalid class name: "
+literal|"Invalid class name: '"
 operator|+
 name|className
+operator|+
+literal|"'"
 argument_list|)
 throw|;
 block|}
@@ -841,7 +843,7 @@ throw|throw
 operator|new
 name|DIRuntimeException
 argument_list|(
-literal|"Invalid class: %s"
+literal|"Invalid class: '%s'"
 argument_list|,
 name|e1
 argument_list|,
