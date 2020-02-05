@@ -1419,7 +1419,7 @@ name|props
 operator|.
 name|put
 argument_list|(
-literal|"resource.loader"
+literal|"resource.loaders"
 argument_list|,
 literal|"cayenne"
 argument_list|)
@@ -1428,7 +1428,7 @@ name|props
 operator|.
 name|put
 argument_list|(
-literal|"cayenne.resource.loader.class"
+literal|"resource.loader.cayenne.class"
 argument_list|,
 name|ClassGeneratorResourceLoader
 operator|.
@@ -1442,7 +1442,7 @@ name|props
 operator|.
 name|put
 argument_list|(
-literal|"cayenne.resource.loader.cache"
+literal|"resource.loader.cayenne.cache"
 argument_list|,
 literal|"false"
 argument_list|)
