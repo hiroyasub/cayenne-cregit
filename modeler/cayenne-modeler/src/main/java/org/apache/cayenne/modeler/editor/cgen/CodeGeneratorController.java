@@ -716,16 +716,13 @@ decl_stmt|;
 specifier|public
 name|CodeGeneratorController
 parameter_list|(
-name|CayenneController
-name|parent
-parameter_list|,
 name|ProjectController
 name|projectController
 parameter_list|)
 block|{
 name|super
 argument_list|(
-name|parent
+name|projectController
 argument_list|)
 expr_stmt|;
 name|this

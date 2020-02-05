@@ -239,14 +239,6 @@ operator|=
 operator|new
 name|CodeGeneratorController
 argument_list|(
-name|Application
-operator|.
-name|getInstance
-argument_list|()
-operator|.
-name|getFrameController
-argument_list|()
-argument_list|,
 name|mediator
 argument_list|)
 expr_stmt|;
