@@ -2015,6 +2015,8 @@ name|LOG_LEVEL_TRACE
 argument_list|,
 name|message
 argument_list|,
+name|object
+argument_list|,
 name|secondObject
 argument_list|)
 expr_stmt|;
@@ -2473,6 +2475,8 @@ argument_list|(
 name|LOG_LEVEL_WARNING
 argument_list|,
 name|message
+argument_list|,
+name|object
 argument_list|,
 name|secondObject
 argument_list|)
