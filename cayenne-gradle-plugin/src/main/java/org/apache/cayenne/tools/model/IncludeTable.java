@@ -216,7 +216,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @since 4.1      */
+comment|/**      * @param pattern RegExp pattern to use for relationship exclusion      * @since 4.1      */
 specifier|public
 name|void
 name|excludeRelationship
@@ -237,7 +237,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @since 4.1      */
+comment|/**      * @param patterns collection of RegExp patterns to use for relationship exclusion      * @since 4.1      */
 specifier|public
 name|void
 name|excludeRelationships

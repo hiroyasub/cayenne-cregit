@@ -480,8 +480,6 @@ specifier|private
 name|ReverseEngineering
 name|reverseEngineering
 decl_stmt|;
-annotation|@
-name|Internal
 specifier|private
 name|File
 name|cayenneProject

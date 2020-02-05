@@ -2042,7 +2042,7 @@ operator|=
 name|excludeEmbeddables
 expr_stmt|;
 block|}
-comment|/**      * @since 4.1      * @param excludeEmbeddables      */
+comment|/**      * @param excludeEmbeddables pattern to use for embeddable exclusion      * @since 4.1      */
 specifier|public
 name|void
 name|excludeEmbeddables
