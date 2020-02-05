@@ -631,8 +631,9 @@ block|{
 comment|/**      * Logger to print stack traces      */
 specifier|private
 specifier|static
+specifier|final
 name|Logger
-name|logObj
+name|LOGGER
 init|=
 name|LoggerFactory
 operator|.
@@ -643,10 +644,11 @@ operator|.
 name|class
 argument_list|)
 decl_stmt|;
-specifier|protected
+specifier|private
 specifier|static
+specifier|final
 name|Icon
-name|errorIcon
+name|ERROR_ICON
 init|=
 name|ModelerUtil
 operator|.
@@ -1270,7 +1272,7 @@ name|Exception
 name|e
 parameter_list|)
 block|{
-name|logObj
+name|LOGGER
 operator|.
 name|error
 argument_list|(
@@ -2093,7 +2095,7 @@ name|labelIcon
 operator|.
 name|setIcon
 argument_list|(
-name|errorIcon
+name|ERROR_ICON
 argument_list|)
 expr_stmt|;
 name|labelIcon
