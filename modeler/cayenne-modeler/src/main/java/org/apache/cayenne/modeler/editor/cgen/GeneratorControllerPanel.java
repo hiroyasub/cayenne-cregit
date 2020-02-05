@@ -150,7 +150,7 @@ parameter_list|(
 name|ProjectController
 name|projectController
 parameter_list|,
-name|CodeGeneratorControllerBase
+name|CodeGeneratorController
 name|codeGeneratorControllerBase
 parameter_list|)
 block|{

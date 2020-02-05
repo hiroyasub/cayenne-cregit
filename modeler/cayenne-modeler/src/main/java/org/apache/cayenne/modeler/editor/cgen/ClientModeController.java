@@ -61,7 +61,7 @@ block|{
 specifier|public
 name|ClientModeController
 parameter_list|(
-name|CodeGeneratorControllerBase
+name|CodeGeneratorController
 name|parent
 parameter_list|)
 block|{

@@ -295,13 +295,8 @@ condition|)
 block|{
 name|codeGeneratorController
 operator|.
-name|startup
-argument_list|(
-name|mediator
-operator|.
-name|getCurrentDataMap
+name|initFromModel
 argument_list|()
-argument_list|)
 expr_stmt|;
 block|}
 if|else if

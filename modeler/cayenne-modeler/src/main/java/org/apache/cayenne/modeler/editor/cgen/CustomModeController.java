@@ -195,7 +195,7 @@ decl_stmt|;
 specifier|public
 name|CustomModeController
 parameter_list|(
-name|CodeGeneratorControllerBase
+name|CodeGeneratorController
 name|parent
 parameter_list|)
 block|{

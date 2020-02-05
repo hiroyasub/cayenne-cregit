@@ -85,7 +85,7 @@ decl_stmt|;
 specifier|public
 name|StandardModeController
 parameter_list|(
-name|CodeGeneratorControllerBase
+name|CodeGeneratorController
 name|parent
 parameter_list|)
 block|{
