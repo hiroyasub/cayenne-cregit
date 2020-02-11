@@ -195,8 +195,11 @@ name|?
 argument_list|>
 name|keys
 parameter_list|,
+name|List
+argument_list|<
 name|ObjectId
-name|idToUpdate
+argument_list|>
+name|idsToUpdate
 parameter_list|)
 block|{
 comment|// do

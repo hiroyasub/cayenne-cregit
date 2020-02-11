@@ -138,8 +138,11 @@ name|?
 argument_list|>
 name|keys
 parameter_list|,
+name|List
+argument_list|<
 name|ObjectId
-name|idToUpdate
+argument_list|>
+name|idsToUpdate
 parameter_list|)
 function_decl|;
 comment|/**      * Callback method invoked on exceptions that happen during an execution of a specific      * query.      */
