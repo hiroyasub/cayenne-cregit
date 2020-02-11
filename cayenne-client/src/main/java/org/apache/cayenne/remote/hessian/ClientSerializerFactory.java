@@ -19,6 +19,20 @@ end_package
 
 begin_import
 import|import
+name|com
+operator|.
+name|caucho
+operator|.
+name|hessian
+operator|.
+name|io
+operator|.
+name|FieldDeserializer2Factory
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -95,20 +109,6 @@ name|hessian
 operator|.
 name|io
 operator|.
-name|HessianProtocolException
-import|;
-end_import
-
-begin_import
-import|import
-name|com
-operator|.
-name|caucho
-operator|.
-name|hessian
-operator|.
-name|io
-operator|.
 name|JavaDeserializer
 import|;
 end_import
@@ -159,8 +159,6 @@ parameter_list|(
 name|Class
 name|cl
 parameter_list|)
-throws|throws
-name|HessianProtocolException
 block|{
 return|return
 literal|null
@@ -175,8 +173,6 @@ parameter_list|(
 name|Class
 name|cl
 parameter_list|)
-throws|throws
-name|HessianProtocolException
 block|{
 comment|//turns out Hessian uses its own (incorrect) serialization mechanism for maps
 if|if
@@ -204,6 +200,11 @@ operator|new
 name|JavaDeserializer
 argument_list|(
 name|cl
+argument_list|,
+name|FieldDeserializer2Factory
+operator|.
+name|create
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -236,6 +237,11 @@ operator|new
 name|JavaDeserializer
 argument_list|(
 name|cl
+argument_list|,
+name|FieldDeserializer2Factory
+operator|.
+name|create
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

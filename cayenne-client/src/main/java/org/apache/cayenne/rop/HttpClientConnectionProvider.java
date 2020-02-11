@@ -150,8 +150,11 @@ decl_stmt|;
 annotation|@
 name|Inject
 specifier|protected
+name|Provider
+argument_list|<
 name|ROPSerializationService
-name|serializationService
+argument_list|>
+name|serializationServiceProvider
 decl_stmt|;
 annotation|@
 name|Override
@@ -186,7 +189,10 @@ init|=
 operator|new
 name|ProxyRemoteService
 argument_list|(
-name|serializationService
+name|serializationServiceProvider
+operator|.
+name|get
+argument_list|()
 argument_list|,
 name|ropConnector
 argument_list|)

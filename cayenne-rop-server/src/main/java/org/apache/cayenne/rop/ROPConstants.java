@@ -52,6 +52,15 @@ name|ESTABLISH_SHARED_SESSION_OPERATION
 init|=
 literal|"establish_shared_session"
 decl_stmt|;
+comment|/**      * @since 4.2      */
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|SERIALIZATION_WHITELIST
+init|=
+literal|"serialization_whitelist"
+decl_stmt|;
 block|}
 end_class
 
