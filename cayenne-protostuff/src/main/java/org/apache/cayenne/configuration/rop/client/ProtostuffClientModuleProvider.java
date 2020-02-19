@@ -96,11 +96,6 @@ name|class
 return|;
 block|}
 annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
-annotation|@
 name|Override
 specifier|public
 name|Collection
@@ -115,9 +110,7 @@ argument_list|>
 name|overrides
 parameter_list|()
 block|{
-name|Collection
-name|modules
-init|=
+return|return
 name|Collections
 operator|.
 name|singletonList
@@ -126,9 +119,6 @@ name|ClientModule
 operator|.
 name|class
 argument_list|)
-decl_stmt|;
-return|return
-name|modules
 return|;
 block|}
 block|}
