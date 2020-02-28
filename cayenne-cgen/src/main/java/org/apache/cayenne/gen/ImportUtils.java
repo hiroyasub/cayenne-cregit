@@ -864,6 +864,12 @@ name|attribute
 parameter_list|)
 block|{
 return|return
+operator|!
+name|attribute
+operator|.
+name|isLazy
+argument_list|()
+operator|&&
 name|attribute
 operator|.
 name|isMandatory
