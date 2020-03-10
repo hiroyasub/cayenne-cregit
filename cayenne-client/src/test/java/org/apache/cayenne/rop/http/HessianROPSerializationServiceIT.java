@@ -188,6 +188,16 @@ import|;
 end_import
 
 begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
 import|import static
 name|org
 operator|.
@@ -602,7 +612,19 @@ block|{
 return|return
 operator|new
 name|ServerHessianSerializationServiceProvider
+argument_list|(
+parameter_list|()
+lambda|->
+name|context
+operator|.
+name|getChannel
 argument_list|()
+argument_list|,
+name|Collections
+operator|.
+name|emptyList
+argument_list|()
+argument_list|)
 operator|.
 name|get
 argument_list|()
