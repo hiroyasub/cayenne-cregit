@@ -21,6 +21,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|List
 import|;
 end_import
@@ -125,7 +135,10 @@ argument_list|>
 name|it
 parameter_list|)
 function_decl|;
-comment|/**      * Callback method invoked after each batch of generated values is read during an      * update.      *       * @since 4.0      */
+comment|/**      * Callback method invoked after each batch of generated values is read during an update.      *       * @since 4.0      * @deprecated since 4.2, use {@link #nextGeneratedRows(Query, ResultIterator, List)}      */
+annotation|@
+name|Deprecated
+specifier|default
 name|void
 name|nextGeneratedRows
 parameter_list|(
@@ -140,6 +153,41 @@ name|keys
 parameter_list|,
 name|ObjectId
 name|idToUpdate
+parameter_list|)
+block|{
+name|nextGeneratedRows
+argument_list|(
+name|query
+argument_list|,
+name|keys
+argument_list|,
+name|Collections
+operator|.
+name|singletonList
+argument_list|(
+name|idToUpdate
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * Callback method invoked after each batch of generated values is read during an update.      * @since 4.2      */
+name|void
+name|nextGeneratedRows
+parameter_list|(
+name|Query
+name|query
+parameter_list|,
+name|ResultIterator
+argument_list|<
+name|?
+argument_list|>
+name|keys
+parameter_list|,
+name|List
+argument_list|<
+name|ObjectId
+argument_list|>
+name|idsToUpdate
 parameter_list|)
 function_decl|;
 comment|/**      * Callback method invoked on exceptions that happen during an execution of a specific      * query.      */

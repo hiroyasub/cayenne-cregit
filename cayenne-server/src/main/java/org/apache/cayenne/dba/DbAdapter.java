@@ -357,6 +357,17 @@ name|boolean
 name|supportsGeneratedKeys
 parameter_list|()
 function_decl|;
+comment|/**      * @since 4.2      */
+specifier|default
+name|boolean
+name|supportsGeneratedKeysForBatchInserts
+parameter_list|()
+block|{
+return|return
+name|supportsGeneratedKeys
+argument_list|()
+return|;
+block|}
 comment|/** 	 * Returns<code>true</code> if the target database supports batch updates. 	 */
 name|boolean
 name|supportsBatchUpdates

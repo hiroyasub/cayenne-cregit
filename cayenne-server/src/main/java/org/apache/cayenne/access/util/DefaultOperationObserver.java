@@ -419,8 +419,13 @@ name|Query
 name|query
 parameter_list|,
 name|ResultIterator
+argument_list|<
+name|?
+argument_list|>
 name|keys
 parameter_list|,
+name|List
+argument_list|<
 name|org
 operator|.
 name|apache
@@ -428,7 +433,8 @@ operator|.
 name|cayenne
 operator|.
 name|ObjectId
-name|idToUpdate
+argument_list|>
+name|idsToUpdate
 parameter_list|)
 block|{
 if|if

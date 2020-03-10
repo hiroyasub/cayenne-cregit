@@ -373,6 +373,18 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Not supported, see:<a href="http://microsoft/mssql-jdbc#245">mssql-jdbc #245</a>      */
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|supportsGeneratedKeysForBatchInserts
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
 comment|/** 	 * @since 4.2 	 */
 annotation|@
 name|Override

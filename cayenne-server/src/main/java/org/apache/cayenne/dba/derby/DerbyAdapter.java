@@ -510,6 +510,18 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Not supported, see:<a href="https://issues.apache.org/jira/browse/DERBY-3609">DERBY-3609</a>      */
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|supportsGeneratedKeysForBatchInserts
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
 annotation|@
 name|Override
 specifier|protected
