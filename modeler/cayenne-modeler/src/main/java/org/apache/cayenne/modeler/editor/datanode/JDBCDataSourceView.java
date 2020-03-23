@@ -81,7 +81,7 @@ name|modeler
 operator|.
 name|util
 operator|.
-name|JTextFieldWhitespacesValidator
+name|JTextFieldValidator
 import|;
 end_import
 
@@ -237,26 +237,52 @@ argument_list|(
 literal|"Update from local DataSource"
 argument_list|)
 expr_stmt|;
-name|driver
+name|JTextFieldValidator
 operator|.
-name|addFocusListener
-argument_list|(
-operator|new
-name|JTextFieldWhitespacesValidator
+name|addValidation
 argument_list|(
 name|driver
-argument_list|)
+argument_list|,
+name|text
+lambda|->
+name|text
+operator|.
+name|length
+argument_list|()
+operator|!=
+name|text
+operator|.
+name|trim
+argument_list|()
+operator|.
+name|length
+argument_list|()
+argument_list|,
+literal|"There are some whitespaces in this field"
 argument_list|)
 expr_stmt|;
-name|url
+name|JTextFieldValidator
 operator|.
-name|addFocusListener
-argument_list|(
-operator|new
-name|JTextFieldWhitespacesValidator
+name|addValidation
 argument_list|(
 name|url
-argument_list|)
+argument_list|,
+name|text
+lambda|->
+name|text
+operator|.
+name|length
+argument_list|()
+operator|!=
+name|text
+operator|.
+name|trim
+argument_list|()
+operator|.
+name|length
+argument_list|()
+argument_list|,
+literal|"There are some whitespaces in this field"
 argument_list|)
 expr_stmt|;
 comment|// assemble
