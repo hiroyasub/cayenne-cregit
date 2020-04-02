@@ -109,6 +109,26 @@ name|Set
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|Logger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|LoggerFactory
+import|;
+end_import
+
 begin_comment
 comment|/**  * Graph sorting, copy of DIGraph implementation from cayenne-di.  */
 end_comment
@@ -117,6 +137,21 @@ begin_class
 class|class
 name|DbRowOpGraph
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|Logger
+name|LOGGER
+init|=
+name|LoggerFactory
+operator|.
+name|getLogger
+argument_list|(
+name|DbRowOpSorter
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 comment|/** 	 * {@link LinkedHashMap} is used for supporting insertion order. 	 */
 specifier|private
 specifier|final
@@ -148,6 +183,10 @@ name|DbRowOp
 name|vertex
 parameter_list|)
 block|{
+if|if
+condition|(
+literal|null
+operator|==
 name|neighbors
 operator|.
 name|putIfAbsent
@@ -161,7 +200,18 @@ argument_list|(
 literal|0
 argument_list|)
 argument_list|)
+condition|)
+block|{
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"Add graph vertex: {}"
+argument_list|,
+name|vertex
+argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/** 	 * Add an edge to the graph; if either vertex does not exist, it's added. 	 * This implementation allows the creation of multi-edges and self-loops. 	 */
 name|void
@@ -192,6 +242,17 @@ argument_list|)
 operator|.
 name|add
 argument_list|(
+name|to
+argument_list|)
+expr_stmt|;
+name|LOGGER
+operator|.
+name|info
+argument_list|(
+literal|"Add graph edge: {} -> {}"
+argument_list|,
+name|from
+argument_list|,
 name|to
 argument_list|)
 expr_stmt|;

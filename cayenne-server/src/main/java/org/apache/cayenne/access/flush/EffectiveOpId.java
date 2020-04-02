@@ -487,6 +487,25 @@ return|return
 name|result
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+literal|"EffectiveOpId{"
+operator|+
+name|entityName
+operator|+
+literal|": "
+operator|+
+name|snapshot
+operator|+
+literal|'}'
+return|;
+block|}
 block|}
 end_class
 
