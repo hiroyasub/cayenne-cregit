@@ -398,6 +398,8 @@ argument_list|(
 name|attr1
 argument_list|,
 literal|32
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 name|assertEquals

@@ -506,6 +506,8 @@ argument_list|(
 name|attr1
 argument_list|,
 literal|1
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 name|InsertDbRowOp
@@ -535,6 +537,8 @@ argument_list|(
 name|attr2
 argument_list|,
 literal|2
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 block|{
@@ -766,6 +770,8 @@ argument_list|(
 name|attr1
 argument_list|,
 literal|1
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 name|UpdateDbRowOp
@@ -795,6 +801,8 @@ argument_list|(
 name|attr2
 argument_list|,
 literal|2
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 block|{

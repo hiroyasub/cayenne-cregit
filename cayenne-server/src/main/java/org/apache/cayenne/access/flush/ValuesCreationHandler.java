@@ -371,6 +371,8 @@ argument_list|(
 name|dbAttribute
 argument_list|,
 name|newValue
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 block|}
