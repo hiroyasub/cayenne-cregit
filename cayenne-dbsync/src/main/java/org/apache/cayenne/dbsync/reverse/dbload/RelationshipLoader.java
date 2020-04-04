@@ -669,6 +669,10 @@ decl_stmt|;
 comment|// check that relationship can be included
 if|if
 condition|(
+name|sourceTableFilter
+operator|!=
+literal|null
+operator|&&
 operator|!
 name|sourceTableFilter
 operator|.
@@ -706,6 +710,17 @@ condition|)
 block|{
 return|return;
 block|}
+if|if
+condition|(
+name|sourceTableFilter
+operator|!=
+literal|null
+operator|&&
+name|targetTableFilter
+operator|!=
+literal|null
+condition|)
+block|{
 comment|// check that all join attributes are included
 for|for
 control|(
@@ -760,6 +775,7 @@ argument_list|)
 condition|)
 block|{
 return|return;
+block|}
 block|}
 block|}
 comment|// add relationship if delegate permit it
