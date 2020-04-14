@@ -357,7 +357,7 @@ name|boolean
 name|supportsGeneratedKeys
 parameter_list|()
 function_decl|;
-comment|/**      * @since 4.2      */
+comment|/** 	 * Returns true if a target database supports key autogeneration in a batch insert. 	 * @see #supportsGeneratedKeys()      * @since 4.2      */
 specifier|default
 name|boolean
 name|supportsGeneratedKeysForBatchInserts

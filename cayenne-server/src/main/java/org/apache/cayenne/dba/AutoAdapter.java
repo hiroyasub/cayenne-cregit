@@ -607,6 +607,22 @@ name|supportsGeneratedKeys
 argument_list|()
 return|;
 block|}
+comment|/** 	 * @since 4.2 	 */
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|supportsGeneratedKeysForBatchInserts
+parameter_list|()
+block|{
+return|return
+name|getAdapter
+argument_list|()
+operator|.
+name|supportsGeneratedKeysForBatchInserts
+argument_list|()
+return|;
+block|}
 annotation|@
 name|Override
 specifier|public
