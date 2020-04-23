@@ -21,6 +21,18 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|function
+operator|.
+name|Supplier
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -543,6 +555,32 @@ if|else if
 condition|(
 name|val
 operator|instanceof
+name|Supplier
+condition|)
+block|{
+name|appendValue
+argument_list|(
+operator|(
+operator|(
+name|Supplier
+argument_list|<
+name|?
+argument_list|>
+operator|)
+name|val
+operator|)
+operator|.
+name|get
+argument_list|()
+argument_list|,
+name|buffer
+argument_list|)
+expr_stmt|;
+block|}
+if|else if
+condition|(
+name|val
+operator|instanceof
 name|CharSequence
 condition|)
 block|{
@@ -713,6 +751,9 @@ argument_list|()
 decl_stmt|;
 comment|// allow translation in out-of-context scope, to be able to use as a standalone SQL generator
 name|ExtendedType
+argument_list|<
+name|?
+argument_list|>
 name|extendedType
 init|=
 name|context
