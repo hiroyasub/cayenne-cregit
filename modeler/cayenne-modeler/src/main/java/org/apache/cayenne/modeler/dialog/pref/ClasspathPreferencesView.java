@@ -144,6 +144,10 @@ name|addDirButton
 decl_stmt|;
 specifier|protected
 name|JButton
+name|addMvnButton
+decl_stmt|;
+specifier|protected
+name|JButton
 name|removeEntryButton
 decl_stmt|;
 specifier|protected
@@ -169,6 +173,14 @@ operator|new
 name|JButton
 argument_list|(
 literal|"Add Class Folder"
+argument_list|)
+expr_stmt|;
+name|addMvnButton
+operator|=
+operator|new
+name|JButton
+argument_list|(
+literal|"Get From Maven Central"
 argument_list|)
 expr_stmt|;
 name|removeEntryButton
@@ -243,6 +255,13 @@ name|builder
 operator|.
 name|append
 argument_list|(
+name|addMvnButton
+argument_list|)
+expr_stmt|;
+name|builder
+operator|.
+name|append
+argument_list|(
 name|removeEntryButton
 argument_list|)
 expr_stmt|;
@@ -310,6 +329,15 @@ parameter_list|()
 block|{
 return|return
 name|addJarButton
+return|;
+block|}
+specifier|public
+name|JButton
+name|getAddMvnButton
+parameter_list|()
+block|{
+return|return
+name|addMvnButton
 return|;
 block|}
 specifier|public
