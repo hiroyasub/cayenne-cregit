@@ -138,8 +138,8 @@ specifier|public
 specifier|static
 specifier|final
 name|String
-name|importOrdering
 index|[]
+name|importOrdering
 init|=
 block|{
 literal|"java."
@@ -154,8 +154,8 @@ decl_stmt|;
 specifier|static
 specifier|final
 name|String
-name|primitives
 index|[]
+name|primitives
 init|=
 block|{
 literal|"long"
@@ -178,8 +178,8 @@ decl_stmt|;
 specifier|static
 specifier|final
 name|String
-name|primitiveClasses
 index|[]
+name|primitiveClasses
 init|=
 operator|new
 name|String

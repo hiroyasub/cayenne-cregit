@@ -47,6 +47,12 @@ name|ToolsUtilsFactory
 name|utilsFactory
 decl_stmt|;
 annotation|@
+name|Inject
+specifier|private
+name|MetadataUtils
+name|metadataUtils
+decl_stmt|;
+annotation|@
 name|Override
 specifier|public
 name|ClassGenerationAction
@@ -84,6 +90,13 @@ operator|.
 name|setUtilsFactory
 argument_list|(
 name|utilsFactory
+argument_list|)
+expr_stmt|;
+name|classGenerationAction
+operator|.
+name|setMetadataUtils
+argument_list|(
+name|metadataUtils
 argument_list|)
 expr_stmt|;
 return|return
