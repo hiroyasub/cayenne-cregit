@@ -359,6 +359,11 @@ specifier|protected
 name|Boolean
 name|createpkproperties
 decl_stmt|;
+comment|/**      * Optional path (classpath or filesystem) to external velocity tool configuration file      * @since 4.2       */
+specifier|protected
+name|String
+name|externaltoolconfig
+decl_stmt|;
 specifier|public
 name|CayenneGeneratorTask
 parameter_list|()
@@ -793,6 +798,10 @@ operator|!=
 literal|null
 operator|||
 name|force
+operator|||
+name|externaltoolconfig
+operator|!=
+literal|null
 return|;
 block|}
 specifier|private
@@ -1207,6 +1216,22 @@ else|:
 name|cgenConfiguration
 operator|.
 name|isCreatePKProperties
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|cgenConfiguration
+operator|.
+name|setExternalToolConfig
+argument_list|(
+name|externaltoolconfig
+operator|!=
+literal|null
+condition|?
+name|externaltoolconfig
+else|:
+name|cgenConfiguration
+operator|.
+name|getExternalToolConfig
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1769,6 +1794,22 @@ operator|.
 name|force
 operator|=
 name|force
+expr_stmt|;
+block|}
+comment|/**      * @since 4.2      */
+specifier|public
+name|void
+name|setExternaltoolconfig
+parameter_list|(
+name|String
+name|externaltoolconfig
+parameter_list|)
+block|{
+name|this
+operator|.
+name|externaltoolconfig
+operator|=
+name|externaltoolconfig
 expr_stmt|;
 block|}
 comment|/**      * Provides a<code>VPPConfig</code> object to configure. (Written with createConfig()      * instead of addConfig() to avoid run-time dependency on VPP).      */

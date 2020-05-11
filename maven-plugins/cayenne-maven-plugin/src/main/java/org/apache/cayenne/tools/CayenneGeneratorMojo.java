@@ -27,16 +27,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Map
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -337,18 +327,6 @@ specifier|private
 name|File
 name|additionalMaps
 decl_stmt|;
-comment|/** 	 * Additional system properties that can be added before execution. 	 */
-annotation|@
-name|Parameter
-specifier|private
-name|Map
-argument_list|<
-name|String
-argument_list|,
-name|String
-argument_list|>
-name|systemProperties
-decl_stmt|;
 comment|/** 	 * Whether we are generating classes for the client tier in a Remote Object 	 * Persistence application. Default is<code>false</code>. 	 */
 annotation|@
 name|Parameter
@@ -527,6 +505,13 @@ specifier|private
 name|Boolean
 name|createPKProperties
 decl_stmt|;
+comment|/**      * Optional path (classpath or filesystem) to external velocity tool configuration file      * @since 4.2       */
+annotation|@
+name|Parameter
+specifier|private
+name|String
+name|externalToolConfig
+decl_stmt|;
 specifier|private
 specifier|transient
 name|Injector
@@ -588,42 +573,6 @@ operator|.
 name|create
 argument_list|()
 expr_stmt|;
-comment|// load additional system properties early for downstream access
-if|if
-condition|(
-name|systemProperties
-operator|!=
-literal|null
-condition|)
-block|{
-name|logger
-operator|.
-name|info
-argument_list|(
-literal|"Setting system properties from pom.xml"
-argument_list|)
-expr_stmt|;
-name|systemProperties
-operator|.
-name|forEach
-argument_list|(
-parameter_list|(
-name|key
-parameter_list|,
-name|value
-parameter_list|)
-lambda|->
-name|System
-operator|.
-name|setProperty
-argument_list|(
-name|key
-argument_list|,
-name|value
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
 name|Logger
 name|logger
 init|=
@@ -995,6 +944,10 @@ operator|!=
 literal|null
 operator|||
 name|createPKProperties
+operator|!=
+literal|null
+operator|||
+name|externalToolConfig
 operator|!=
 literal|null
 return|;
@@ -1454,6 +1407,22 @@ else|:
 name|cgenConfiguration
 operator|.
 name|isCreatePKProperties
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|cgenConfiguration
+operator|.
+name|setExternalToolConfig
+argument_list|(
+name|externalToolConfig
+operator|!=
+literal|null
+condition|?
+name|externalToolConfig
+else|:
+name|cgenConfiguration
+operator|.
+name|getExternalToolConfig
 argument_list|()
 argument_list|)
 expr_stmt|;

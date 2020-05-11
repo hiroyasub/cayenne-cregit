@@ -154,10 +154,15 @@ literal|"_Client"
 decl_stmt|;
 specifier|public
 name|ClientClassGenerationAction
-parameter_list|()
+parameter_list|(
+name|CgenConfiguration
+name|config
+parameter_list|)
 block|{
 name|super
-argument_list|()
+argument_list|(
+name|config
+argument_list|)
 expr_stmt|;
 block|}
 annotation|@
