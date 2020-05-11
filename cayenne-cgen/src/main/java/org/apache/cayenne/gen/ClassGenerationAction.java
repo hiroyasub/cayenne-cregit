@@ -515,13 +515,6 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|logger
-operator|.
-name|info
-argument_list|(
-literal|"Adding external tool configuration."
-argument_list|)
-expr_stmt|;
 name|FactoryConfiguration
 name|config
 init|=
