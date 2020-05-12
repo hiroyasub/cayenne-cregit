@@ -594,15 +594,10 @@ name|createdAction
 init|=
 operator|new
 name|ClassGenerationAction
-argument_list|()
-decl_stmt|;
-name|createdAction
-operator|.
-name|setCgenConfiguration
 argument_list|(
 name|configuration
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|CgenConfiguration
 name|cgenConfiguration
 init|=

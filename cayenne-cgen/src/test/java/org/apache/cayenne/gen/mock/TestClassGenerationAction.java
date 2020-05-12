@@ -107,9 +107,6 @@ name|writers
 parameter_list|)
 block|{
 name|super
-argument_list|()
-expr_stmt|;
-name|setCgenConfiguration
 argument_list|(
 name|classGenerationAction
 operator|.
