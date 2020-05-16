@@ -346,6 +346,9 @@ literal|null
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @deprecated since 4.2 as {@link SelectQuery} is deprecated.      */
+annotation|@
+name|Deprecated
 specifier|public
 name|DefaultSelectTranslator
 parameter_list|(
