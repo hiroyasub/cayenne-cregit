@@ -293,7 +293,9 @@ name|String
 name|getBatchTerminator
 parameter_list|()
 function_decl|;
-comment|/** 	 * Returns a SelectTranslator that works with the adapter target database. 	 * 	 * @since 4.0 	 */
+comment|/**      * Returns a SelectTranslator that works with the adapter target database.      *      * @since 4.0      * @deprecated since 4.2 as {@link SelectQuery} is deprecated.      * {@link #getSelectTranslator(FluentSelect, EntityResolver)} replaces this method.      */
+annotation|@
+name|Deprecated
 name|SelectTranslator
 name|getSelectTranslator
 parameter_list|(
