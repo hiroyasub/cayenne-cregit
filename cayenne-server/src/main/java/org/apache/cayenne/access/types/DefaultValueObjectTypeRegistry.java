@@ -80,11 +80,6 @@ argument_list|<
 name|String
 argument_list|,
 name|ValueObjectType
-argument_list|<
-name|?
-argument_list|,
-name|?
-argument_list|>
 argument_list|>
 name|typeCache
 decl_stmt|;
@@ -164,7 +159,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/**      * @inheritDoc      */
 annotation|@
 name|SuppressWarnings
 argument_list|(
@@ -193,9 +187,7 @@ argument_list|>
 name|valueClass
 parameter_list|)
 block|{
-name|ValueObjectType
-name|type
-init|=
+return|return
 name|typeCache
 operator|.
 name|get
@@ -205,20 +197,6 @@ operator|.
 name|getName
 argument_list|()
 argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|type
-operator|==
-literal|null
-condition|)
-block|{
-return|return
-literal|null
-return|;
-block|}
-return|return
-name|type
 return|;
 block|}
 block|}
