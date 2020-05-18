@@ -813,11 +813,12 @@ argument_list|)
 operator|.
 name|orderBy
 argument_list|(
-literal|"db:ARTIST_ID"
-argument_list|,
-name|SortOrder
+name|Artist
 operator|.
-name|ASCENDING
+name|ARTIST_ID_PK_PROPERTY
+operator|.
+name|asc
+argument_list|()
 argument_list|)
 operator|.
 name|prefetch
