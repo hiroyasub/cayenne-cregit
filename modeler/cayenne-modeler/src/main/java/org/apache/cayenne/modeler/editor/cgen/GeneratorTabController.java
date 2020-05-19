@@ -392,7 +392,7 @@ init|=
 name|getParentController
 argument_list|()
 operator|.
-name|createConfiguration
+name|getCgenConfiguration
 argument_list|()
 decl_stmt|;
 name|modeController
