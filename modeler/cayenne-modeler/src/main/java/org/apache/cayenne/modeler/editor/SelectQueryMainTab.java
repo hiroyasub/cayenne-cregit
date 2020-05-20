@@ -215,20 +215,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
-operator|.
-name|SelectQuery
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|swing
 operator|.
 name|components
@@ -874,7 +860,7 @@ name|query
 operator|.
 name|setProperty
 argument_list|(
-name|SelectQuery
+name|SelectQueryDescriptor
 operator|.
 name|DISTINCT_PROPERTY
 argument_list|,
@@ -971,7 +957,7 @@ name|setSelected
 argument_list|(
 name|Boolean
 operator|.
-name|valueOf
+name|parseBoolean
 argument_list|(
 name|query
 operator|.
@@ -980,7 +966,7 @@ argument_list|()
 operator|.
 name|get
 argument_list|(
-name|SelectQuery
+name|SelectQueryDescriptor
 operator|.
 name|DISTINCT_PROPERTY
 argument_list|)

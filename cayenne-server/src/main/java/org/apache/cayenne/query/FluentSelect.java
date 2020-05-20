@@ -37,6 +37,16 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Map
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -768,6 +778,29 @@ block|{
 return|return
 literal|false
 return|;
+block|}
+comment|/**      * @since 4.2      */
+specifier|public
+name|void
+name|initWithProperties
+parameter_list|(
+name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
+name|properties
+parameter_list|)
+block|{
+name|getBaseMetaData
+argument_list|()
+operator|.
+name|initWithProperties
+argument_list|(
+name|properties
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_class

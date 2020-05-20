@@ -1177,14 +1177,8 @@ name|queryInterceptor
 operator|.
 name|runWithQueriesBlocked
 argument_list|(
-operator|new
-name|UnitTestClosure
-argument_list|()
-block|{
-specifier|public
-name|void
-name|execute
 parameter_list|()
+lambda|->
 block|{
 name|List
 argument_list|<
@@ -1211,7 +1205,6 @@ name|size
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 argument_list|)
 expr_stmt|;
@@ -1257,14 +1250,8 @@ name|queryInterceptor
 operator|.
 name|runWithQueriesBlocked
 argument_list|(
-operator|new
-name|UnitTestClosure
-argument_list|()
-block|{
-specifier|public
-name|void
-name|execute
 parameter_list|()
+lambda|->
 block|{
 name|List
 argument_list|<
@@ -1291,7 +1278,6 @@ name|size
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 argument_list|)
 expr_stmt|;

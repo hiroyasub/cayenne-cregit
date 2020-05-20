@@ -39,7 +39,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|Query
+name|ObjectSelect
 import|;
 end_import
 
@@ -54,20 +54,6 @@ operator|.
 name|query
 operator|.
 name|QueryMetadata
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|SelectQuery
 import|;
 end_import
 
@@ -98,8 +84,6 @@ comment|/**  */
 end_comment
 
 begin_class
-annotation|@
-name|Deprecated
 specifier|public
 class|class
 name|SelectQueryDescriptorTest
@@ -110,8 +94,6 @@ specifier|public
 name|void
 name|testGetQueryType
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|SelectQueryDescriptor
 name|builder
@@ -135,7 +117,7 @@ operator|.
 name|buildQuery
 argument_list|()
 operator|instanceof
-name|SelectQuery
+name|ObjectSelect
 argument_list|)
 expr_stmt|;
 block|}
@@ -145,8 +127,6 @@ specifier|public
 name|void
 name|testGetQueryRoot
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|DataMap
 name|map
@@ -193,7 +173,7 @@ operator|.
 name|buildQuery
 argument_list|()
 operator|instanceof
-name|SelectQuery
+name|ObjectSelect
 argument_list|)
 expr_stmt|;
 name|assertSame
@@ -216,8 +196,6 @@ specifier|public
 name|void
 name|testGetQueryQualifier
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|SelectQueryDescriptor
 name|builder
@@ -246,7 +224,10 @@ literal|"abc = 5"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|SelectQuery
+name|ObjectSelect
+argument_list|<
+name|?
+argument_list|>
 name|query
 init|=
 name|builder
@@ -265,7 +246,7 @@ argument_list|)
 argument_list|,
 name|query
 operator|.
-name|getQualifier
+name|getWhere
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -276,8 +257,6 @@ specifier|public
 name|void
 name|testGetQueryProperties
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|SelectQueryDescriptor
 name|builder
@@ -316,7 +295,7 @@ argument_list|,
 literal|"6"
 argument_list|)
 expr_stmt|;
-name|SelectQuery
+name|ObjectSelect
 argument_list|<
 name|?
 argument_list|>
@@ -331,7 +310,7 @@ name|assertTrue
 argument_list|(
 name|query
 operator|instanceof
-name|SelectQuery
+name|ObjectSelect
 argument_list|)
 expr_stmt|;
 name|assertEquals
@@ -340,7 +319,7 @@ literal|5
 argument_list|,
 name|query
 operator|.
-name|getFetchLimit
+name|getLimit
 argument_list|()
 argument_list|)
 expr_stmt|;
