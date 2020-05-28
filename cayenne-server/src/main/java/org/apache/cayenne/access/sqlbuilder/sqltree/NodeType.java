@@ -53,6 +53,10 @@ block|,
 name|JOIN
 block|,
 name|FROM
+block|,
+name|UPDATE_SET
+block|,
+name|INSERT_COLUMNS
 block|}
 end_enum
 
