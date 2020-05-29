@@ -85,7 +85,7 @@ name|sqlbuilder
 operator|.
 name|sqltree
 operator|.
-name|ValuesNode
+name|InsertValuesNode
 import|;
 end_import
 
@@ -200,7 +200,7 @@ name|node
 argument_list|(
 name|VALUES_NODE
 argument_list|,
-name|ValuesNode
+name|InsertValuesNode
 operator|::
 operator|new
 argument_list|)

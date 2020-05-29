@@ -31,7 +31,7 @@ name|sqlbuilder
 operator|.
 name|sqltree
 operator|.
-name|SetNode
+name|UpdateSetNode
 import|;
 end_import
 
@@ -170,7 +170,7 @@ name|node
 argument_list|(
 name|SET_NODE
 argument_list|,
-name|SetNode
+name|UpdateSetNode
 operator|::
 operator|new
 argument_list|)
