@@ -21,6 +21,46 @@ end_package
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Arrays
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collection
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Collections
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -228,46 +268,6 @@ import|;
 end_import
 
 begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Arrays
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Collections
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|List
-import|;
-end_import
-
-begin_import
 import|import static
 name|org
 operator|.
@@ -359,8 +359,6 @@ specifier|public
 name|void
 name|testConstructor
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|DbAdapter
 name|adapter
@@ -381,22 +379,25 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|DeleteBatchTranslator
-name|builder
+name|DeleteBatchQuery
+name|query
 init|=
-operator|new
-name|DeleteBatchTranslator
-argument_list|(
 name|mock
 argument_list|(
 name|DeleteBatchQuery
 operator|.
 name|class
 argument_list|)
+decl_stmt|;
+name|DeleteBatchTranslator
+name|builder
+init|=
+operator|new
+name|DeleteBatchTranslator
+argument_list|(
+name|query
 argument_list|,
 name|adapter
-argument_list|,
-literal|null
 argument_list|)
 decl_stmt|;
 name|assertSame
@@ -405,7 +406,22 @@ name|adapter
 argument_list|,
 name|builder
 operator|.
-name|adapter
+name|context
+operator|.
+name|getAdapter
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertSame
+argument_list|(
+name|query
+argument_list|,
+name|builder
+operator|.
+name|context
+operator|.
+name|getQuery
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -415,8 +431,6 @@ specifier|public
 name|void
 name|testCreateSqlString
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|DbEntity
 name|entity
@@ -469,9 +483,6 @@ name|idAttributes
 argument_list|,
 name|Collections
 operator|.
-expr|<
-name|String
-operator|>
 name|emptySet
 argument_list|()
 argument_list|,
@@ -506,8 +517,6 @@ argument_list|(
 name|deleteQuery
 argument_list|,
 name|adapter
-argument_list|,
-literal|null
 argument_list|)
 decl_stmt|;
 name|String
@@ -544,8 +553,6 @@ specifier|public
 name|void
 name|testCreateSqlStringWithNulls
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|DbEntity
 name|entity
@@ -649,8 +656,6 @@ argument_list|(
 name|deleteQuery
 argument_list|,
 name|adapter
-argument_list|,
-literal|null
 argument_list|)
 decl_stmt|;
 name|String
@@ -675,7 +680,7 @@ operator|.
 name|getName
 argument_list|()
 operator|+
-literal|" WHERE LOCKING_TEST_ID = ? AND NAME IS NULL"
+literal|" WHERE ( LOCKING_TEST_ID = ? ) AND ( NAME IS NULL )"
 argument_list|,
 name|generatedSql
 argument_list|)
@@ -687,8 +692,6 @@ specifier|public
 name|void
 name|testCreateSqlStringWithIdentifiersQuote
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|DbEntity
 name|entity
@@ -753,9 +756,6 @@ name|idAttributes
 argument_list|,
 name|Collections
 operator|.
-expr|<
-name|String
-operator|>
 name|emptySet
 argument_list|()
 argument_list|,
@@ -781,8 +781,6 @@ argument_list|(
 name|deleteQuery
 argument_list|,
 name|adapter
-argument_list|,
-literal|null
 argument_list|)
 decl_stmt|;
 name|String
@@ -861,8 +859,6 @@ specifier|public
 name|void
 name|testCreateSqlStringWithNullsWithIdentifiersQuote
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|DbEntity
 name|entity
@@ -969,8 +965,6 @@ argument_list|(
 name|deleteQuery
 argument_list|,
 name|adapter
-argument_list|,
-literal|null
 argument_list|)
 decl_stmt|;
 name|String
@@ -1015,7 +1009,7 @@ argument_list|()
 operator|+
 name|charEnd
 operator|+
-literal|" WHERE "
+literal|" WHERE ( "
 operator|+
 name|charStart
 operator|+
@@ -1023,7 +1017,7 @@ literal|"LOCKING_TEST_ID"
 operator|+
 name|charEnd
 operator|+
-literal|" = ? AND "
+literal|" = ? ) AND ( "
 operator|+
 name|charStart
 operator|+
@@ -1031,7 +1025,7 @@ literal|"NAME"
 operator|+
 name|charEnd
 operator|+
-literal|" IS NULL"
+literal|" IS NULL )"
 argument_list|,
 name|generatedSql
 argument_list|)

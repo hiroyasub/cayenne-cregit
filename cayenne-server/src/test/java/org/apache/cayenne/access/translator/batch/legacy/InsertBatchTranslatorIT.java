@@ -16,6 +16,8 @@ operator|.
 name|translator
 operator|.
 name|batch
+operator|.
+name|legacy
 package|;
 end_package
 
@@ -263,6 +265,8 @@ end_import
 
 begin_class
 annotation|@
+name|Deprecated
+annotation|@
 name|UseServerRuntime
 argument_list|(
 name|CayenneProjects
@@ -305,6 +309,8 @@ specifier|public
 name|void
 name|testConstructor
 parameter_list|()
+throws|throws
+name|Exception
 block|{
 name|DbAdapter
 name|adapter
@@ -325,23 +331,18 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
-name|InsertBatchQuery
-name|query
-init|=
-name|mock
-argument_list|(
-name|InsertBatchQuery
-operator|.
-name|class
-argument_list|)
-decl_stmt|;
 name|InsertBatchTranslator
 name|builder
 init|=
 operator|new
 name|InsertBatchTranslator
 argument_list|(
-name|query
+name|mock
+argument_list|(
+name|InsertBatchQuery
+operator|.
+name|class
+argument_list|)
 argument_list|,
 name|adapter
 argument_list|)
@@ -352,22 +353,7 @@ name|adapter
 argument_list|,
 name|builder
 operator|.
-name|context
-operator|.
-name|getAdapter
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|assertSame
-argument_list|(
-name|query
-argument_list|,
-name|builder
-operator|.
-name|context
-operator|.
-name|getQuery
-argument_list|()
+name|adapter
 argument_list|)
 expr_stmt|;
 block|}
@@ -377,6 +363,8 @@ specifier|public
 name|void
 name|testCreateSqlString
 parameter_list|()
+throws|throws
+name|Exception
 block|{
 name|DbEntity
 name|entity
@@ -462,9 +450,7 @@ operator|.
 name|getName
 argument_list|()
 operator|+
-literal|"( DESCRIPTION, INT_COLUMN_NOTNULL, INT_COLUMN_NULL, LOCKING_TEST_ID, NAME) "
-operator|+
-literal|"VALUES( ?, ?, ?, ?, ?)"
+literal|" (DESCRIPTION, INT_COLUMN_NOTNULL, INT_COLUMN_NULL, LOCKING_TEST_ID, NAME) VALUES (?, ?, ?, ?, ?)"
 argument_list|,
 name|generatedSql
 argument_list|)
@@ -476,6 +462,8 @@ specifier|public
 name|void
 name|testCreateSqlStringWithIdentifiersQuote
 parameter_list|()
+throws|throws
+name|Exception
 block|{
 name|DbEntity
 name|entity
@@ -584,7 +572,7 @@ argument_list|()
 operator|+
 name|charEnd
 operator|+
-literal|"( "
+literal|" ("
 operator|+
 name|charStart
 operator|+
@@ -624,7 +612,7 @@ literal|"NAME"
 operator|+
 name|charEnd
 operator|+
-literal|") VALUES( ?, ?, ?, ?, ?)"
+literal|") VALUES (?, ?, ?, ?, ?)"
 argument_list|,
 name|generatedSql
 argument_list|)

@@ -16,6 +16,8 @@ operator|.
 name|translator
 operator|.
 name|batch
+operator|.
+name|legacy
 package|;
 end_package
 
@@ -26,6 +28,34 @@ operator|.
 name|sql
 operator|.
 name|Types
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Objects
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|translator
+operator|.
+name|batch
+operator|.
+name|BatchTranslator
 import|;
 end_import
 
@@ -72,10 +102,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Implementation of {link #BatchTranslator}, which uses 'soft' delete  * (runs UPDATE and sets 'deleted' field to true instead-of running SQL DELETE)  *   * @since 4.2  */
+comment|/**  * Implementation of {link #BatchTranslator}, which uses 'soft' delete  * (runs UPDATE and sets 'deleted' field to true instead-of running SQL DELETE)  *   * @since 4.0  * @deprecated since 4.2  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|SoftDeleteTranslatorFactory
@@ -117,7 +149,12 @@ name|this
 operator|.
 name|deletedFieldName
 operator|=
+name|Objects
+operator|.
+name|requireNonNull
+argument_list|(
 name|deletedFieldName
+argument_list|)
 expr_stmt|;
 block|}
 annotation|@
@@ -131,6 +168,9 @@ name|query
 parameter_list|,
 name|DbAdapter
 name|adapter
+parameter_list|,
+name|String
+name|trimFunction
 parameter_list|)
 block|{
 name|DbAttribute
@@ -172,6 +212,8 @@ name|query
 argument_list|,
 name|adapter
 argument_list|,
+name|trimFunction
+argument_list|,
 name|deletedFieldName
 argument_list|)
 else|:
@@ -182,6 +224,8 @@ argument_list|(
 name|query
 argument_list|,
 name|adapter
+argument_list|,
+name|trimFunction
 argument_list|)
 return|;
 block|}

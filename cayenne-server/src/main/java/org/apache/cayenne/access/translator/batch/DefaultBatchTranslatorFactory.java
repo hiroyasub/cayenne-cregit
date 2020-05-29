@@ -102,7 +102,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Default implementation of {@link BatchTranslatorFactory}.  *   * @since 4.0  */
+comment|/**  * Default implementation of {@link BatchTranslatorFactory}.  *   * @since 4.2  */
 end_comment
 
 begin_class
@@ -163,8 +163,6 @@ operator|)
 name|query
 argument_list|,
 name|adapter
-argument_list|,
-name|trimFunction
 argument_list|)
 return|;
 block|}
@@ -184,8 +182,6 @@ operator|)
 name|query
 argument_list|,
 name|adapter
-argument_list|,
-name|trimFunction
 argument_list|)
 return|;
 block|}
@@ -211,9 +207,6 @@ name|query
 parameter_list|,
 name|DbAdapter
 name|adapter
-parameter_list|,
-name|String
-name|trimFunction
 parameter_list|)
 block|{
 return|return
@@ -223,8 +216,6 @@ argument_list|(
 name|query
 argument_list|,
 name|adapter
-argument_list|,
-name|trimFunction
 argument_list|)
 return|;
 block|}
@@ -258,9 +249,6 @@ name|query
 parameter_list|,
 name|DbAdapter
 name|adapter
-parameter_list|,
-name|String
-name|trimFunction
 parameter_list|)
 block|{
 return|return
@@ -270,8 +258,6 @@ argument_list|(
 name|query
 argument_list|,
 name|adapter
-argument_list|,
-name|trimFunction
 argument_list|)
 return|;
 block|}
