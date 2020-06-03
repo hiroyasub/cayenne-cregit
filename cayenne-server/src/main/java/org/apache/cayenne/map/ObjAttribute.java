@@ -138,6 +138,11 @@ specifier|protected
 name|boolean
 name|usedForLocking
 decl_stmt|;
+comment|/**      * @since 4.2      */
+specifier|protected
+name|boolean
+name|lazy
+decl_stmt|;
 specifier|protected
 name|String
 name|dbAttributePath
@@ -234,6 +239,14 @@ argument_list|(
 name|attribute
 operator|.
 name|isUsedForLocking
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|setLazy
+argument_list|(
+name|attribute
+operator|.
+name|isLazy
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -390,6 +403,14 @@ argument_list|)
 operator|.
 name|attribute
 argument_list|(
+literal|"lazy"
+argument_list|,
+name|isLazy
+argument_list|()
+argument_list|)
+operator|.
+name|attribute
+argument_list|(
 literal|"db-attribute-path"
 argument_list|,
 name|getDbAttributePath
@@ -493,6 +514,32 @@ operator|.
 name|usedForLocking
 operator|=
 name|usedForLocking
+expr_stmt|;
+block|}
+comment|/**      * @return whether this attribute should be loaded lazily.      * @since 4.2      */
+specifier|public
+name|boolean
+name|isLazy
+parameter_list|()
+block|{
+return|return
+name|lazy
+return|;
+block|}
+comment|/**      * Sets whether this attribute should be loaded lazily.      * @since 4.2      */
+specifier|public
+name|void
+name|setLazy
+parameter_list|(
+name|boolean
+name|lazy
+parameter_list|)
+block|{
+name|this
+operator|.
+name|lazy
+operator|=
+name|lazy
 expr_stmt|;
 block|}
 comment|/**      * Returns a DbAttribute mapped by this ObjAttribute.      */
