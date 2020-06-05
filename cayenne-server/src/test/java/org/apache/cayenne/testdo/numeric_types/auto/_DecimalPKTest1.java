@@ -47,16 +47,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|math
-operator|.
-name|BigDecimal
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -64,20 +54,6 @@ operator|.
 name|cayenne
 operator|.
 name|BaseDataObject
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|exp
-operator|.
-name|ExpressionFactory
 import|;
 end_import
 
