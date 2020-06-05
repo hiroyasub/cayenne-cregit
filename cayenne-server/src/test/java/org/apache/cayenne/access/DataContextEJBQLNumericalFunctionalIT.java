@@ -379,7 +379,7 @@ argument_list|)
 decl_stmt|;
 name|o1
 operator|.
-name|setBigDecimalField
+name|setBigDecimalNumeric
 argument_list|(
 operator|new
 name|BigDecimal
@@ -402,7 +402,7 @@ argument_list|)
 decl_stmt|;
 name|o2
 operator|.
-name|setBigDecimalField
+name|setBigDecimalNumeric
 argument_list|(
 operator|new
 name|BigDecimal
@@ -422,7 +422,7 @@ init|=
 operator|new
 name|EJBQLQuery
 argument_list|(
-literal|"SELECT d FROM BigDecimalEntity d WHERE ABS(d.bigDecimalField)< 5.0"
+literal|"SELECT d FROM BigDecimalEntity d WHERE ABS(d.bigDecimalNumeric)< 5.0"
 argument_list|)
 decl_stmt|;
 name|List
@@ -480,7 +480,7 @@ argument_list|)
 decl_stmt|;
 name|o1
 operator|.
-name|setBigDecimalField
+name|setBigDecimalNumeric
 argument_list|(
 operator|new
 name|BigDecimal
@@ -503,7 +503,7 @@ argument_list|)
 decl_stmt|;
 name|o2
 operator|.
-name|setBigDecimalField
+name|setBigDecimalNumeric
 argument_list|(
 operator|new
 name|BigDecimal
@@ -523,7 +523,7 @@ init|=
 operator|new
 name|EJBQLQuery
 argument_list|(
-literal|"SELECT d FROM BigDecimalEntity d WHERE SQRT(d.bigDecimalField)> 3.1"
+literal|"SELECT d FROM BigDecimalEntity d WHERE SQRT(d.bigDecimalNumeric)> 3.1"
 argument_list|)
 decl_stmt|;
 name|List
