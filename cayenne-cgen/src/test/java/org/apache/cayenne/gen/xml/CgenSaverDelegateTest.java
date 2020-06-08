@@ -112,6 +112,9 @@ name|get
 argument_list|(
 literal|"/tmp/src/main/java"
 argument_list|)
+operator|.
+name|toAbsolutePath
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|URL
@@ -147,6 +150,9 @@ name|get
 argument_list|(
 literal|"/tmp/src/main/resources"
 argument_list|)
+operator|.
+name|toAbsolutePath
+argument_list|()
 argument_list|,
 name|config
 operator|.
@@ -198,6 +204,9 @@ name|get
 argument_list|(
 literal|"/tmp/src/main/java"
 argument_list|)
+operator|.
+name|toAbsolutePath
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|config
@@ -245,6 +254,9 @@ name|get
 argument_list|(
 literal|"/tmp/src/main/resources"
 argument_list|)
+operator|.
+name|toAbsolutePath
+argument_list|()
 argument_list|,
 name|config
 operator|.
@@ -319,6 +331,9 @@ name|get
 argument_list|(
 literal|"/tmp/src/main/resources"
 argument_list|)
+operator|.
+name|toAbsolutePath
+argument_list|()
 argument_list|,
 name|config
 operator|.
