@@ -57,7 +57,7 @@ name|sqlbuilder
 operator|.
 name|sqltree
 operator|.
-name|Node
+name|SQLTreeProcessor
 import|;
 end_import
 
@@ -321,18 +321,6 @@ name|List
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|function
-operator|.
-name|Function
-import|;
-end_import
-
 begin_comment
 comment|/**  * DbAdapter implementation for<a  * href="http://opensource.ca.com/projects/ingres/">Ingres</a>. Sample  * connection settings to use with Ingres are shown below:  *  *<pre>  *  ingres.jdbc.username = test  *  ingres.jdbc.password = secret  *  ingres.jdbc.url = jdbc:ingres://serverhostname:II7/cayenne  *  ingres.jdbc.driver = ca.ingres.jdbc.IngresDriver  *</pre>  */
 end_comment
@@ -445,12 +433,7 @@ comment|/**      * @since 4.2      */
 annotation|@
 name|Override
 specifier|public
-name|Function
-argument_list|<
-name|Node
-argument_list|,
-name|Node
-argument_list|>
+name|SQLTreeProcessor
 name|getSqlTreeProcessor
 parameter_list|()
 block|{

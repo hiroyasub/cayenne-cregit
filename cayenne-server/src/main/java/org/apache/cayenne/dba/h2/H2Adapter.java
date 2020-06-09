@@ -45,7 +45,7 @@ name|sqlbuilder
 operator|.
 name|sqltree
 operator|.
-name|Node
+name|SQLTreeProcessor
 import|;
 end_import
 
@@ -233,18 +233,6 @@ name|List
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|function
-operator|.
-name|Function
-import|;
-end_import
-
 begin_comment
 comment|/**  * DbAdapter implementation for<a href="http://www.h2database.com/">H2  * RDBMS</a>. Sample connection settings to use with H2 are shown  * below:  *   *<pre>  *      postgres.jdbc.username = sa  *      postgres.jdbc.password =   *      postgres.jdbc.url = jdbc:h2:cayenne  *      postgres.jdbc.driver = org.h2.Driver  *</pre>  *   * @since 3.0  */
 end_comment
@@ -383,12 +371,7 @@ comment|/**      * @since 4.2      */
 annotation|@
 name|Override
 specifier|public
-name|Function
-argument_list|<
-name|Node
-argument_list|,
-name|Node
-argument_list|>
+name|SQLTreeProcessor
 name|getSqlTreeProcessor
 parameter_list|()
 block|{

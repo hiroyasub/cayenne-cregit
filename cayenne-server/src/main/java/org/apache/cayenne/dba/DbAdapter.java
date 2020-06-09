@@ -57,18 +57,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|function
-operator|.
-name|Function
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -95,7 +83,7 @@ name|sqlbuilder
 operator|.
 name|sqltree
 operator|.
-name|Node
+name|SQLTreeProcessor
 import|;
 end_import
 
@@ -323,13 +311,8 @@ name|EntityResolver
 name|entityResolver
 parameter_list|)
 function_decl|;
-comment|/** 	 * @since 4.2 	 * @return {@link Function} that can adjust SQL tree to specific database flavour 	 */
-name|Function
-argument_list|<
-name|Node
-argument_list|,
-name|Node
-argument_list|>
+comment|/** 	 * @since 4.2 	 * @return {@link SQLTreeProcessor} that can adjust SQL tree to specific database flavour 	 */
+name|SQLTreeProcessor
 name|getSqlTreeProcessor
 parameter_list|()
 function_decl|;

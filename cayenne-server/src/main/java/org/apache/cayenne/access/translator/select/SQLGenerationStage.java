@@ -106,7 +106,7 @@ operator|.
 name|getSqlTreeProcessor
 argument_list|()
 operator|.
-name|apply
+name|process
 argument_list|(
 name|node
 argument_list|)

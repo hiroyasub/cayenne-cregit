@@ -1643,7 +1643,7 @@ annotation|@
 name|Override
 specifier|public
 name|Node
-name|apply
+name|process
 parameter_list|(
 name|Node
 name|node
@@ -1655,7 +1655,7 @@ name|node
 expr_stmt|;
 name|super
 operator|.
-name|apply
+name|process
 argument_list|(
 name|node
 argument_list|)
