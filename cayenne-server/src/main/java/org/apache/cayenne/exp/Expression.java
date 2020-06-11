@@ -587,6 +587,15 @@ name|DBID_PATH
 init|=
 literal|52
 decl_stmt|;
+comment|/** 	 * @since 4.2 	 */
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|CUSTOM_OP
+init|=
+literal|53
+decl_stmt|;
 specifier|protected
 name|int
 name|type
