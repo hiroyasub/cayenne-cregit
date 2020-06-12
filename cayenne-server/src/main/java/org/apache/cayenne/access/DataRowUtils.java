@@ -666,9 +666,9 @@ comment|// if value not modified, update it from snapshot,
 comment|// otherwise leave it alone
 if|if
 condition|(
-name|Util
+name|property
 operator|.
-name|nullSafeEquals
+name|isEqual
 argument_list|(
 name|curValue
 argument_list|,
@@ -676,9 +676,9 @@ name|oldValue
 argument_list|)
 operator|&&
 operator|!
-name|Util
+name|property
 operator|.
-name|nullSafeEquals
+name|isEqual
 argument_list|(
 name|newValue
 argument_list|,

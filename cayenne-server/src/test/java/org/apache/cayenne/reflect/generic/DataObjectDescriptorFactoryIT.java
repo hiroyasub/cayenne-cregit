@@ -300,6 +300,10 @@ argument_list|,
 operator|new
 name|SingletonFaultFactory
 argument_list|()
+argument_list|,
+operator|new
+name|DefaultComparisionStrategyFactory
+argument_list|()
 argument_list|)
 decl_stmt|;
 for|for
@@ -462,6 +466,10 @@ argument_list|()
 argument_list|,
 operator|new
 name|SingletonFaultFactory
+argument_list|()
+argument_list|,
+operator|new
+name|DefaultComparisionStrategyFactory
 argument_list|()
 argument_list|)
 decl_stmt|;

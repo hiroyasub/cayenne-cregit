@@ -136,8 +136,11 @@ operator|new
 name|DataObjectAttributeProperty
 argument_list|(
 name|a1
+argument_list|,
+literal|null
 argument_list|)
 decl_stmt|;
+comment|// TODO:
 name|DataObjectAttributeProperty
 name|p2
 init|=

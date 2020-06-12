@@ -15,6 +15,20 @@ name|reflect
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|util
+operator|.
+name|Util
+import|;
+end_import
+
 begin_comment
 comment|/**  * Defines bean property API used by Cayenne to access object data, do faulting  * and graph maintenance tasks.  *   * @since 4.0  */
 end_comment
@@ -99,6 +113,29 @@ parameter_list|)
 throws|throws
 name|PropertyException
 function_decl|;
+comment|/**      * This methods allows to use special logic to compare values for equality      * as in rare cases it is not suffice to use default equals() method.      * Deafult implementation uses {@link Util#nullSafeEquals(Object, Object)} method.      *      * @param value1 to compare      * @param value2 to compare      * @return true if given values are equal      *      * @since 4.2      */
+specifier|default
+name|boolean
+name|isEqual
+parameter_list|(
+name|Object
+name|value1
+parameter_list|,
+name|Object
+name|value2
+parameter_list|)
+block|{
+return|return
+name|Util
+operator|.
+name|nullSafeEquals
+argument_list|(
+name|value1
+argument_list|,
+name|value2
+argument_list|)
+return|;
+block|}
 block|}
 end_interface
 
