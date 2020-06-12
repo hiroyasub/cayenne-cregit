@@ -199,7 +199,7 @@ name|reflect
 operator|.
 name|generic
 operator|.
-name|ComparisionStrategyFactory
+name|ValueComparisionStrategyFactory
 import|;
 end_import
 
@@ -330,8 +330,8 @@ decl_stmt|;
 comment|/**      * @since 4.2      */
 specifier|protected
 specifier|transient
-name|ComparisionStrategyFactory
-name|comparisionStrategyFactory
+name|ValueComparisionStrategyFactory
+name|valueComparisionStrategyFactory
 decl_stmt|;
 comment|/**      * Creates new empty EntityResolver.      */
 specifier|public
@@ -1921,7 +1921,7 @@ name|classDescriptorMap
 argument_list|,
 name|faultFactory
 argument_list|,
-name|comparisionStrategyFactory
+name|valueComparisionStrategyFactory
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2019,17 +2019,17 @@ block|}
 comment|/**      * @since 4.2      */
 specifier|public
 name|void
-name|setComparisionStrategyFactory
+name|setValueComparisionStrategyFactory
 parameter_list|(
-name|ComparisionStrategyFactory
-name|comparisionStrategyFactory
+name|ValueComparisionStrategyFactory
+name|valueComparisionStrategyFactory
 parameter_list|)
 block|{
 name|this
 operator|.
-name|comparisionStrategyFactory
+name|valueComparisionStrategyFactory
 operator|=
-name|comparisionStrategyFactory
+name|valueComparisionStrategyFactory
 expr_stmt|;
 block|}
 block|}

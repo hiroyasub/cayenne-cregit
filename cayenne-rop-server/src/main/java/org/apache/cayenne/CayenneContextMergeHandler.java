@@ -125,20 +125,6 @@ name|ToManyProperty
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
-name|Util
-import|;
-end_import
-
 begin_comment
 comment|/**  * An object that merges "backdoor" modifications of the object graph coming from the  * underlying DataChannel. When doing an update, CayenneContextMergeHandler blocks  * broadcasting of GraphManager events.  *   * @since 1.2  */
 end_comment
@@ -567,9 +553,9 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|Util
+name|p
 operator|.
-name|nullSafeEquals
+name|equals
 argument_list|(
 name|p
 operator|.

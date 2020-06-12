@@ -137,10 +137,13 @@ name|DataObjectAttributeProperty
 argument_list|(
 name|a1
 argument_list|,
-literal|null
+operator|new
+name|DefaultValueComparisionStrategyFactory
+operator|.
+name|DefaultValueComparisionStrategy
+argument_list|()
 argument_list|)
 decl_stmt|;
-comment|// TODO:
 name|DataObjectAttributeProperty
 name|p2
 init|=

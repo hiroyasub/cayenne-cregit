@@ -199,8 +199,8 @@ name|FaultFactory
 name|faultFactory
 decl_stmt|;
 specifier|protected
-name|ComparisionStrategyFactory
-name|comparisionStrategyFactory
+name|ValueComparisionStrategyFactory
+name|valueComparisionStrategyFactory
 decl_stmt|;
 specifier|public
 name|DataObjectDescriptorFactory
@@ -211,8 +211,8 @@ parameter_list|,
 name|FaultFactory
 name|faultFactory
 parameter_list|,
-name|ComparisionStrategyFactory
-name|comparisionStrategyFactory
+name|ValueComparisionStrategyFactory
+name|valueComparisionStrategyFactory
 parameter_list|)
 block|{
 name|super
@@ -228,9 +228,9 @@ name|faultFactory
 expr_stmt|;
 name|this
 operator|.
-name|comparisionStrategyFactory
+name|valueComparisionStrategyFactory
 operator|=
-name|comparisionStrategyFactory
+name|valueComparisionStrategyFactory
 expr_stmt|;
 block|}
 annotation|@
@@ -311,7 +311,7 @@ name|DataObjectAttributeProperty
 argument_list|(
 name|attribute
 argument_list|,
-name|comparisionStrategyFactory
+name|valueComparisionStrategyFactory
 operator|.
 name|getStrategy
 argument_list|(

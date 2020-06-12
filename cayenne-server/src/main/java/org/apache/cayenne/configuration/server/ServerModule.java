@@ -407,6 +407,22 @@ name|access
 operator|.
 name|types
 operator|.
+name|BigDecimalValueType
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|types
+operator|.
 name|BigIntegerValueType
 import|;
 end_import
@@ -2025,7 +2041,7 @@ name|reflect
 operator|.
 name|generic
 operator|.
-name|ComparisionStrategyFactory
+name|ValueComparisionStrategyFactory
 import|;
 end_import
 
@@ -2041,7 +2057,7 @@ name|reflect
 operator|.
 name|generic
 operator|.
-name|DefaultComparisionStrategyFactory
+name|DefaultValueComparisionStrategyFactory
 import|;
 end_import
 
@@ -3233,6 +3249,13 @@ argument_list|)
 operator|.
 name|add
 argument_list|(
+name|BigDecimalValueType
+operator|.
+name|class
+argument_list|)
+operator|.
+name|add
+argument_list|(
 name|UUIDValueType
 operator|.
 name|class
@@ -3293,14 +3316,14 @@ name|binder
 operator|.
 name|bind
 argument_list|(
-name|ComparisionStrategyFactory
+name|ValueComparisionStrategyFactory
 operator|.
 name|class
 argument_list|)
 operator|.
 name|to
 argument_list|(
-name|DefaultComparisionStrategyFactory
+name|DefaultValueComparisionStrategyFactory
 operator|.
 name|class
 argument_list|)

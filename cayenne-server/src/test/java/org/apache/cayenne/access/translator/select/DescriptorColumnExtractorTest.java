@@ -55,6 +55,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|access
+operator|.
+name|types
+operator|.
+name|ValueObjectTypeRegistry
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|DataMap
@@ -129,7 +145,7 @@ name|reflect
 operator|.
 name|generic
 operator|.
-name|DefaultComparisionStrategyFactory
+name|DefaultValueComparisionStrategyFactory
 import|;
 end_import
 
@@ -164,6 +180,18 @@ operator|.
 name|Assert
 operator|.
 name|*
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|mockito
+operator|.
+name|Mockito
+operator|.
+name|mock
 import|;
 end_import
 
@@ -327,11 +355,18 @@ argument_list|)
 expr_stmt|;
 name|resolver
 operator|.
-name|setComparisionStrategyFactory
+name|setValueComparisionStrategyFactory
 argument_list|(
 operator|new
-name|DefaultComparisionStrategyFactory
-argument_list|()
+name|DefaultValueComparisionStrategyFactory
+argument_list|(
+name|mock
+argument_list|(
+name|ValueObjectTypeRegistry
+operator|.
+name|class
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|DescriptorColumnExtractor

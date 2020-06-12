@@ -357,7 +357,7 @@ name|reflect
 operator|.
 name|generic
 operator|.
-name|ComparisionStrategyFactory
+name|ValueComparisionStrategyFactory
 import|;
 end_import
 
@@ -575,8 +575,8 @@ comment|/** 	 * @since 4.2 	 */
 annotation|@
 name|Inject
 specifier|protected
-name|ComparisionStrategyFactory
-name|comparisionStrategyFactory
+name|ValueComparisionStrategyFactory
+name|valueComparisionStrategyFactory
 decl_stmt|;
 annotation|@
 name|Override
@@ -822,9 +822,9 @@ operator|.
 name|getEntityResolver
 argument_list|()
 operator|.
-name|setComparisionStrategyFactory
+name|setValueComparisionStrategyFactory
 argument_list|(
-name|comparisionStrategyFactory
+name|valueComparisionStrategyFactory
 argument_list|)
 expr_stmt|;
 for|for

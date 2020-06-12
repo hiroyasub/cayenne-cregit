@@ -19,18 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|function
-operator|.
-name|BiFunction
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -99,20 +87,13 @@ name|ObjAttribute
 name|attribute
 decl_stmt|;
 comment|/**      * @since 4.2      */
-comment|// TODO: solve serialization of this object
-comment|//      according to DataObjectAttributePropertyTest, DataObjectAttributeProperty class should be serializable
-comment|//      while this function is a lambda and can't be serialized
 specifier|protected
 specifier|final
-name|BiFunction
+name|ValueComparisionStrategy
 argument_list|<
 name|Object
-argument_list|,
-name|Object
-argument_list|,
-name|Boolean
 argument_list|>
-name|isEquals
+name|valueComparisionStrategy
 decl_stmt|;
 specifier|public
 name|DataObjectAttributeProperty
@@ -120,15 +101,11 @@ parameter_list|(
 name|ObjAttribute
 name|attribute
 parameter_list|,
-name|BiFunction
+name|ValueComparisionStrategy
 argument_list|<
 name|Object
-argument_list|,
-name|Object
-argument_list|,
-name|Boolean
 argument_list|>
-name|isEquals
+name|valueComparisionStrategy
 parameter_list|)
 block|{
 name|this
@@ -139,9 +116,9 @@ name|attribute
 expr_stmt|;
 name|this
 operator|.
-name|isEquals
+name|valueComparisionStrategy
 operator|=
-name|isEquals
+name|valueComparisionStrategy
 expr_stmt|;
 block|}
 annotation|@
@@ -203,7 +180,7 @@ annotation|@
 name|Override
 specifier|public
 name|boolean
-name|isEqual
+name|equals
 parameter_list|(
 name|Object
 name|value1
@@ -213,9 +190,9 @@ name|value2
 parameter_list|)
 block|{
 return|return
-name|isEquals
+name|valueComparisionStrategy
 operator|.
-name|apply
+name|equals
 argument_list|(
 name|value1
 argument_list|,
