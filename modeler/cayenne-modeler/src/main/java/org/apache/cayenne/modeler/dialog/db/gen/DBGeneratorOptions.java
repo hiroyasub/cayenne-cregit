@@ -1187,6 +1187,9 @@ init|=
 operator|new
 name|DataSourceWizard
 argument_list|(
+operator|(
+name|ProjectController
+operator|)
 name|this
 operator|.
 name|getParent
