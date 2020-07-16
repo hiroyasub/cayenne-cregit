@@ -127,7 +127,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|dbsync
+operator|.
+name|model
 operator|.
 name|DetectedDbEntity
 import|;
@@ -558,20 +560,6 @@ operator|.
 name|map
 operator|.
 name|QueryDescriptor
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|SQLTemplate
 import|;
 end_import
 
