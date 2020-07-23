@@ -35,6 +35,8 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|event
+operator|.
 name|util
 operator|.
 name|Base64Codec

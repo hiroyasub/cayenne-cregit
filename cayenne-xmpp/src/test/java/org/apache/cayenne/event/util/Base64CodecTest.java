@@ -11,6 +11,8 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|event
+operator|.
 name|util
 package|;
 end_package

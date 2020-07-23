@@ -11,20 +11,24 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|event
+operator|.
 name|util
 package|;
 end_package
 
 begin_comment
-comment|/**  * Provides Base64 encoding and decoding as defined by RFC 2045.  *<p>  *<i>This codec is based on Apache commons.codec implementation, copyright The Apache  * Software Foundation.</i>  *</p>  *   * @since 1.2  */
+comment|/**  * Provides Base64 encoding and decoding as defined by RFC 2045.  *<p>  *<i>This codec is based on Apache commons.codec implementation, copyright The Apache  * Software Foundation.</i>  *</p>  *  * @since 1.2  * @deprecated since 4.2. Java 8 has a built-in Base64 class.  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|Base64Codec
 block|{
-comment|/**      * Chunk size per RFC 2045 section 6.8.      *<p>      * The {@value} character limit does not count the trailing CRLF, but counts all other      * characters, including any equal signs.      *</p>      *       * @see<a href="http://www.ietf.org/rfc/rfc2045.txt">RFC 2045 section 6.8</a>      */
+comment|/**      * Chunk size per RFC 2045 section 6.8.      *<p>      * The {@value} character limit does not count the trailing CRLF, but counts all other      * characters, including any equal signs.      *</p>      *      * @see<a href="http://www.ietf.org/rfc/rfc2045.txt">RFC 2045 section 6.8</a>      */
 specifier|static
 specifier|final
 name|int
@@ -32,7 +36,7 @@ name|CHUNK_SIZE
 init|=
 literal|76
 decl_stmt|;
-comment|/**      * Chunk separator per RFC 2045 section 2.1.      *       * @see<a href="http://www.ietf.org/rfc/rfc2045.txt">RFC 2045 section 2.1</a>      */
+comment|/**      * Chunk separator per RFC 2045 section 2.1.      *      * @see<a href="http://www.ietf.org/rfc/rfc2045.txt">RFC 2045 section 2.1</a>      */
 specifier|static
 specifier|final
 name|byte
@@ -443,7 +447,7 @@ literal|true
 return|;
 block|}
 block|}
-comment|/**      * Tests a given byte array to see if it contains only valid characters within the      * Base64 alphabet.      *       * @param arrayOctect byte array to test      * @return true if all bytes are valid characters in the Base64 alphabet or if the      *         byte array is empty; false, otherwise      */
+comment|/**      * Tests a given byte array to see if it contains only valid characters within the      * Base64 alphabet.      *      * @param arrayOctect byte array to test      * @return true if all bytes are valid characters in the Base64 alphabet or if the      * byte array is empty; false, otherwise      */
 specifier|public
 specifier|static
 name|boolean
@@ -517,7 +521,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**      * Encodes binary data using the base64 algorithm but does not chunk the output.      *       * @param binaryData binary data to encode      * @return Base64 characters      */
+comment|/**      * Encodes binary data using the base64 algorithm but does not chunk the output.      *      * @param binaryData binary data to encode      * @return Base64 characters      */
 specifier|public
 specifier|static
 name|byte
@@ -538,7 +542,7 @@ literal|false
 argument_list|)
 return|;
 block|}
-comment|/**      * Encodes binary data using the base64 algorithm and chunks the encoded output into      * 76 character blocks      *       * @param binaryData binary data to encode      * @return Base64 characters chunked in 76 character blocks      */
+comment|/**      * Encodes binary data using the base64 algorithm and chunks the encoded output into      * 76 character blocks      *      * @param binaryData binary data to encode      * @return Base64 characters chunked in 76 character blocks      */
 specifier|public
 specifier|static
 name|byte
@@ -559,7 +563,7 @@ literal|true
 argument_list|)
 return|;
 block|}
-comment|/**      * Encodes binary data using the base64 algorithm, optionally chunking the output into      * 76 character blocks.      *       * @param binaryData Array containing binary data to encode.      * @param isChunked if isChunked is true this encoder will chunk the base64 output      *            into 76 character blocks      * @return Base64-encoded data.      */
+comment|/**      * Encodes binary data using the base64 algorithm, optionally chunking the output into      * 76 character blocks.      *      * @param binaryData Array containing binary data to encode.      * @param isChunked  if isChunked is true this encoder will chunk the base64 output      *                   into 76 character blocks      * @return Base64-encoded data.      */
 specifier|public
 specifier|static
 name|byte
@@ -1363,7 +1367,7 @@ return|return
 name|encodedData
 return|;
 block|}
-comment|/**      * Decodes Base64 data into octects      *       * @param base64Data Byte array containing Base64 data      * @return Array containing decoded data.      */
+comment|/**      * Decodes Base64 data into octects      *      * @param base64Data Byte array containing Base64 data      * @return Array containing decoded data.      */
 specifier|public
 specifier|static
 name|byte
@@ -1760,7 +1764,7 @@ return|return
 name|decodedData
 return|;
 block|}
-comment|/**      * Discards any whitespace from a base-64 encoded block.      *       * @param data The base-64 encoded data to discard the whitespace from.      * @return The data, less whitespace (see RFC 2045).      */
+comment|/**      * Discards any whitespace from a base-64 encoded block.      *      * @param data The base-64 encoded data to discard the whitespace from.      * @return The data, less whitespace (see RFC 2045).      */
 specifier|static
 name|byte
 index|[]
@@ -1866,7 +1870,7 @@ return|return
 name|packedData
 return|;
 block|}
-comment|/**      * Discards any characters outside of the base64 alphabet, per the requirements on      * page 25 of RFC 2045 - "Any characters outside of the base64 alphabet are to be      * ignored in base64 encoded data."      *       * @param data The base-64 encoded data to groom      * @return The data, less non-base64 characters (see RFC 2045).      */
+comment|/**      * Discards any characters outside of the base64 alphabet, per the requirements on      * page 25 of RFC 2045 - "Any characters outside of the base64 alphabet are to be      * ignored in base64 encoded data."      *      * @param data The base-64 encoded data to groom      * @return The data, less non-base64 characters (see RFC 2045).      */
 specifier|static
 name|byte
 index|[]
