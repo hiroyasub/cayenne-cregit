@@ -2249,12 +2249,6 @@ block|{
 name|createJointPrefetchDataSet
 argument_list|()
 expr_stmt|;
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
-specifier|final
 name|List
 argument_list|<
 name|Artist
@@ -2270,6 +2264,12 @@ operator|.
 name|class
 argument_list|,
 literal|"SELECT "
+operator|+
+literal|"#result('ESTIMATED_PRICE' 'BigDecimal' '' 'paintingArray.ESTIMATED_PRICE'), "
+operator|+
+literal|"#result('PAINTING_TITLE' 'String' '' 'paintingArray.PAINTING_TITLE'), "
+operator|+
+literal|"#result('GALLERY_ID' 'int' '' 'paintingArray.GALLERY_ID'), "
 operator|+
 literal|"#result('PAINTING_ID' 'int' '' 'paintingArray.PAINTING_ID'), "
 operator|+
@@ -2306,11 +2306,6 @@ argument_list|(
 parameter_list|()
 lambda|->
 block|{
-name|assertNotNull
-argument_list|(
-name|objects
-argument_list|)
-expr_stmt|;
 name|assertEquals
 argument_list|(
 literal|2
@@ -2367,6 +2362,14 @@ argument_list|,
 name|painting
 operator|.
 name|getPersistenceState
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|assertNotNull
+argument_list|(
+name|painting
+operator|.
+name|getPaintingTitle
 argument_list|()
 argument_list|)
 expr_stmt|;
