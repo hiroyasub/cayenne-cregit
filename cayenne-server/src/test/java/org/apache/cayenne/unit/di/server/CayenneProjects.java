@@ -501,6 +501,14 @@ name|LAZY_ATTRIBUTES_PROJECT
 init|=
 literal|"cayenne-lazy-attributes.xml"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|CAY_2666
+init|=
+literal|"cay2666/cayenne-cay-2666.xml"
+decl_stmt|;
 block|}
 end_class
 

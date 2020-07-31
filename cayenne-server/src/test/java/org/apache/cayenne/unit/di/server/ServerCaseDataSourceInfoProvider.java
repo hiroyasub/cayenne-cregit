@@ -446,7 +446,7 @@ name|hsqldb
 operator|.
 name|setDataSourceUrl
 argument_list|(
-literal|"jdbc:hsqldb:mem:aname"
+literal|"jdbc:hsqldb:mem:aname;sql.regular_names=false"
 argument_list|)
 expr_stmt|;
 name|hsqldb
@@ -520,7 +520,7 @@ name|h2
 operator|.
 name|setDataSourceUrl
 argument_list|(
-literal|"jdbc:h2:mem:aname;MVCC=TRUE;DB_CLOSE_DELAY=-1"
+literal|"jdbc:h2:mem:aname;DB_CLOSE_DELAY=-1"
 argument_list|)
 expr_stmt|;
 name|h2

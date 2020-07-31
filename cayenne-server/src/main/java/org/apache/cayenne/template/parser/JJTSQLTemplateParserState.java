@@ -101,7 +101,7 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
-comment|/* Determines whether the current node was actually closed and        pushed.  This should only be called in the final user action of a        node scope.  */
+comment|/* Determines whether the current node was actually closed and      pushed.  This should only be called in the final user action of a      node scope.  */
 specifier|public
 name|boolean
 name|nodeCreated
@@ -111,7 +111,7 @@ return|return
 name|node_created
 return|;
 block|}
-comment|/* Call this to reinitialize the node stack.  It is called        automatically by the parser's ReInit() method. */
+comment|/* Call this to reinitialize the node stack.  It is called      automatically by the parser's ReInit() method. */
 specifier|public
 name|void
 name|reset
@@ -136,7 +136,7 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
-comment|/* Returns the root node of the AST.  It only makes sense to call        this after a successful parse. */
+comment|/* Returns the root node of the AST.  It only makes sense to call      this after a successful parse. */
 specifier|public
 name|Node
 name|rootNode
@@ -171,7 +171,7 @@ operator|++
 name|sp
 expr_stmt|;
 block|}
-comment|/* Returns the node on the top of the stack, and remove it from the        stack.  */
+comment|/* Returns the node on the top of the stack, and remove it from the      stack.  */
 specifier|public
 name|Node
 name|popNode
@@ -234,7 +234,7 @@ literal|1
 argument_list|)
 return|;
 block|}
-comment|/* Returns the number of children on the stack in the current node        scope. */
+comment|/* Returns the number of children on the stack in the current node      scope. */
 specifier|public
 name|int
 name|nodeArity
@@ -300,7 +300,7 @@ operator|=
 name|sp
 expr_stmt|;
 block|}
-comment|/* A definite node is constructed from a specified number of        children.  That number of nodes are popped from the stack and        made the children of the definite node.  Then the definite node        is pushed on to the stack. */
+comment|/* A definite node is constructed from a specified number of      children.  That number of nodes are popped from the stack and      made the children of the definite node.  Then the definite node      is pushed on to the stack. */
 specifier|public
 name|void
 name|closeNodeScope
@@ -367,7 +367,7 @@ operator|=
 literal|true
 expr_stmt|;
 block|}
-comment|/* A conditional node is constructed if its condition is true.  All        the nodes that have been pushed since the node was opened are        made children of the conditional node, which is then pushed        on to the stack.  If the condition is false the node is not        constructed and they are left on the stack. */
+comment|/* A conditional node is constructed if its condition is true.  All      the nodes that have been pushed since the node was opened are      made children of the conditional node, which is then pushed      on to the stack.  If the condition is false the node is not      constructed and they are left on the stack. */
 specifier|public
 name|void
 name|closeNodeScope
@@ -469,6 +469,10 @@ block|}
 block|}
 block|}
 end_class
+
+begin_comment
+comment|/* JavaCC - OriginalChecksum=ab07603ac74783740fe93ab7d678d910 (do not edit this line) */
+end_comment
 
 end_unit
 
