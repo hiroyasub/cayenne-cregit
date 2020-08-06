@@ -369,7 +369,6 @@ argument_list|,
 literal|11
 argument_list|)
 expr_stmt|;
-specifier|final
 name|E3
 name|e3
 init|=
@@ -389,7 +388,6 @@ argument_list|(
 name|context
 argument_list|)
 decl_stmt|;
-specifier|final
 name|E4
 name|e4_1
 init|=
@@ -409,7 +407,6 @@ argument_list|(
 name|context
 argument_list|)
 decl_stmt|;
-specifier|final
 name|E4
 name|e4_2
 init|=

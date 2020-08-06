@@ -381,7 +381,6 @@ name|void
 name|testPostCommit_Insert
 parameter_list|()
 block|{
-specifier|final
 name|Auditable1
 name|a1
 init|=
@@ -401,7 +400,6 @@ argument_list|(
 literal|"yy"
 argument_list|)
 expr_stmt|;
-specifier|final
 name|ObjectId
 name|preCommitId
 init|=
