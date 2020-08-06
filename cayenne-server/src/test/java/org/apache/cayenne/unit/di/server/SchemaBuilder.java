@@ -644,6 +644,8 @@ block|,
 literal|"inheritance-with-enum.map.xml"
 block|,
 literal|"lazy-attributes.map.xml"
+block|,
+literal|"cay2666/datamap.map.xml"
 block|}
 decl_stmt|;
 comment|// hardcoded dependent entities that should be excluded

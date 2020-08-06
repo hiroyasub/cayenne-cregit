@@ -983,16 +983,6 @@ operator|.
 name|COUNT
 argument_list|)
 operator|.
-name|orderBy
-argument_list|(
-name|Artist
-operator|.
-name|DATE_OF_BIRTH
-operator|.
-name|asc
-argument_list|()
-argument_list|)
-operator|.
 name|having
 argument_list|(
 name|Artist
