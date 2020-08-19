@@ -111,14 +111,14 @@ block|{
 specifier|private
 specifier|static
 specifier|final
-name|ValueComparisionStrategy
+name|ValueComparisonStrategy
 argument_list|<
 name|Object
 argument_list|>
 name|DEFAULT_STRATEGY
 init|=
 operator|new
-name|DefaultValueComparisionStrategy
+name|DefaultValueComparisonStrategy
 argument_list|()
 decl_stmt|;
 specifier|private
@@ -145,7 +145,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|ValueComparisionStrategy
+name|ValueComparisonStrategy
 argument_list|<
 name|Object
 argument_list|>
@@ -207,7 +207,7 @@ specifier|static
 class|class
 name|ValueObjectTypeComparisonStrategy
 implements|implements
-name|ValueComparisionStrategy
+name|ValueComparisonStrategy
 argument_list|<
 name|Object
 argument_list|>
@@ -270,9 +270,9 @@ block|}
 block|}
 specifier|static
 class|class
-name|DefaultValueComparisionStrategy
+name|DefaultValueComparisonStrategy
 implements|implements
-name|ValueComparisionStrategy
+name|ValueComparisonStrategy
 argument_list|<
 name|Object
 argument_list|>

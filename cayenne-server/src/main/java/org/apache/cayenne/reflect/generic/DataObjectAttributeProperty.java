@@ -89,11 +89,11 @@ decl_stmt|;
 comment|/**      * @since 4.2      */
 specifier|protected
 specifier|final
-name|ValueComparisionStrategy
+name|ValueComparisonStrategy
 argument_list|<
 name|Object
 argument_list|>
-name|valueComparisionStrategy
+name|valueComparisonStrategy
 decl_stmt|;
 specifier|public
 name|DataObjectAttributeProperty
@@ -101,11 +101,11 @@ parameter_list|(
 name|ObjAttribute
 name|attribute
 parameter_list|,
-name|ValueComparisionStrategy
+name|ValueComparisonStrategy
 argument_list|<
 name|Object
 argument_list|>
-name|valueComparisionStrategy
+name|valueComparisonStrategy
 parameter_list|)
 block|{
 name|this
@@ -116,9 +116,9 @@ name|attribute
 expr_stmt|;
 name|this
 operator|.
-name|valueComparisionStrategy
+name|valueComparisonStrategy
 operator|=
-name|valueComparisionStrategy
+name|valueComparisonStrategy
 expr_stmt|;
 block|}
 annotation|@
@@ -190,7 +190,7 @@ name|value2
 parameter_list|)
 block|{
 return|return
-name|valueComparisionStrategy
+name|valueComparisonStrategy
 operator|.
 name|equals
 argument_list|(

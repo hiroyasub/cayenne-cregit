@@ -24,7 +24,7 @@ end_comment
 begin_interface
 specifier|public
 interface|interface
-name|ValueComparisionStrategy
+name|ValueComparisonStrategy
 parameter_list|<
 name|V
 parameter_list|>

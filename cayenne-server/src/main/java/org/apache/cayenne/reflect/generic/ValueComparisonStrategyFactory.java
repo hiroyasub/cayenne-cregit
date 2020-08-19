@@ -40,7 +40,7 @@ specifier|public
 interface|interface
 name|ValueComparisonStrategyFactory
 block|{
-name|ValueComparisionStrategy
+name|ValueComparisonStrategy
 argument_list|<
 name|Object
 argument_list|>

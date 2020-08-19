@@ -140,7 +140,7 @@ argument_list|,
 operator|new
 name|DefaultValueComparisonStrategyFactory
 operator|.
-name|DefaultValueComparisionStrategy
+name|DefaultValueComparisonStrategy
 argument_list|()
 argument_list|)
 decl_stmt|;
