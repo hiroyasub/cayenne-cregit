@@ -801,7 +801,7 @@ if|if
 condition|(
 name|adapter
 operator|.
-name|supportsNullComparision
+name|supportsNullComparison
 argument_list|()
 condition|)
 block|{
@@ -905,7 +905,7 @@ if|if
 condition|(
 name|adapter
 operator|.
-name|supportsNullComparision
+name|supportsNullComparison
 argument_list|()
 condition|)
 block|{

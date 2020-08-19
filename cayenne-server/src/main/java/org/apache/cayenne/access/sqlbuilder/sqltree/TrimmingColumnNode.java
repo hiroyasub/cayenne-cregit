@@ -21,16 +21,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|sql
-operator|.
-name|Types
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -42,6 +32,16 @@ operator|.
 name|sqlbuilder
 operator|.
 name|QuotingAppendable
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|sql
+operator|.
+name|Types
 import|;
 end_import
 
@@ -127,7 +127,7 @@ expr_stmt|;
 block|}
 if|else if
 condition|(
-name|isComparisionWithClob
+name|isComparisonWithClob
 argument_list|()
 condition|)
 block|{
@@ -171,7 +171,7 @@ return|;
 block|}
 specifier|private
 name|boolean
-name|isComparisionWithClob
+name|isComparisonWithClob
 parameter_list|()
 block|{
 if|if
