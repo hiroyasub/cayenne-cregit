@@ -138,7 +138,7 @@ argument_list|(
 name|a1
 argument_list|,
 operator|new
-name|DefaultValueComparisionStrategyFactory
+name|DefaultValueComparisonStrategyFactory
 operator|.
 name|DefaultValueComparisionStrategy
 argument_list|()

@@ -81,7 +81,7 @@ name|V
 name|object
 parameter_list|)
 function_decl|;
-comment|/**      * This methods allows to use special logic to compare values for equality      * as in rare cases it is not suffice to use default equals() method.      * Deafult implementation uses {@link Objects#equals(Object, Object)} method.      *      * @param value1 to compare      * @param value2 to compare      * @return true if given values are equal      */
+comment|/**      * Allows to use special logic to compare values for equality      * as in rare cases it is not suffice to use default equals() method.      * Default implementation uses {@link Objects#equals(Object, Object)} method.      *      * @param value1 to compare      * @param value2 to compare      * @return true if given values are equal      */
 specifier|default
 name|boolean
 name|equals

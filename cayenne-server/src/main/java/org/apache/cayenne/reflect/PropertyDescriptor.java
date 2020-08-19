@@ -113,7 +113,7 @@ parameter_list|)
 throws|throws
 name|PropertyException
 function_decl|;
-comment|/**      * This methods allows to use special logic to compare values for equality      * as in rare cases it is not suffice to use default equals() method.      * Deafult implementation uses {@link Util#nullSafeEquals(Object, Object)} method.      *      * @param value1 to compare      * @param value2 to compare      * @return true if given values are equal      *      * @since 4.2      */
+comment|/**      * Allows to use special logic to compare values for equality      * as in rare cases it is not sufficient to use the default equals() method.      * Default implementation uses {@link Util#nullSafeEquals(Object, Object)} method.      *      * @param value1 to compare      * @param value2 to compare      * @return true if given values are equal      *      * @since 4.2      */
 specifier|default
 name|boolean
 name|equals

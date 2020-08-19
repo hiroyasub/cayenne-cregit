@@ -19,26 +19,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|io
-operator|.
-name|Serializable
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Objects
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -97,6 +77,26 @@ name|ObjAttribute
 import|;
 end_import
 
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
+name|Serializable
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Objects
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 4.2  */
 end_comment
@@ -104,9 +104,9 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|DefaultValueComparisionStrategyFactory
+name|DefaultValueComparisonStrategyFactory
 implements|implements
-name|ValueComparisionStrategyFactory
+name|ValueComparisonStrategyFactory
 block|{
 specifier|private
 specifier|static
@@ -127,7 +127,7 @@ name|ValueObjectTypeRegistry
 name|valueObjectTypeRegistry
 decl_stmt|;
 specifier|public
-name|DefaultValueComparisionStrategyFactory
+name|DefaultValueComparisonStrategyFactory
 parameter_list|(
 annotation|@
 name|Inject
@@ -188,7 +188,7 @@ else|else
 block|{
 return|return
 operator|new
-name|ValueObjectTypeComparisionStrategy
+name|ValueObjectTypeComparisonStrategy
 argument_list|(
 name|valueObjectType
 argument_list|)
@@ -205,7 +205,7 @@ block|}
 argument_list|)
 specifier|static
 class|class
-name|ValueObjectTypeComparisionStrategy
+name|ValueObjectTypeComparisonStrategy
 implements|implements
 name|ValueComparisionStrategy
 argument_list|<
@@ -220,7 +220,7 @@ name|ValueObjectType
 name|valueObjectType
 decl_stmt|;
 specifier|public
-name|ValueObjectTypeComparisionStrategy
+name|ValueObjectTypeComparisonStrategy
 parameter_list|(
 name|ValueObjectType
 argument_list|<

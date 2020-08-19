@@ -145,7 +145,7 @@ name|reflect
 operator|.
 name|generic
 operator|.
-name|DefaultValueComparisionStrategyFactory
+name|DefaultValueComparisonStrategyFactory
 import|;
 end_import
 
@@ -358,7 +358,7 @@ operator|.
 name|setValueComparisionStrategyFactory
 argument_list|(
 operator|new
-name|DefaultValueComparisionStrategyFactory
+name|DefaultValueComparisonStrategyFactory
 argument_list|(
 name|mock
 argument_list|(

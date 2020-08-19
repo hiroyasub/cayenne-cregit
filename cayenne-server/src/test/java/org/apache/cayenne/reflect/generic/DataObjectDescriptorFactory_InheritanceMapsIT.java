@@ -292,7 +292,7 @@ name|SingletonFaultFactory
 argument_list|()
 argument_list|,
 operator|new
-name|DefaultValueComparisionStrategyFactory
+name|DefaultValueComparisonStrategyFactory
 argument_list|(
 name|mock
 argument_list|(

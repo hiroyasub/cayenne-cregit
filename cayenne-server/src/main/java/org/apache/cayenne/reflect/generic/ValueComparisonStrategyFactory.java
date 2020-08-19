@@ -38,7 +38,7 @@ end_comment
 begin_interface
 specifier|public
 interface|interface
-name|ValueComparisionStrategyFactory
+name|ValueComparisonStrategyFactory
 block|{
 name|ValueComparisionStrategy
 argument_list|<

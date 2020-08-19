@@ -1443,7 +1443,7 @@ name|reflect
 operator|.
 name|generic
 operator|.
-name|ValueComparisionStrategyFactory
+name|ValueComparisonStrategyFactory
 import|;
 end_import
 
@@ -1459,7 +1459,7 @@ name|reflect
 operator|.
 name|generic
 operator|.
-name|DefaultValueComparisionStrategyFactory
+name|DefaultValueComparisonStrategyFactory
 import|;
 end_import
 
@@ -2661,14 +2661,14 @@ name|binder
 operator|.
 name|bind
 argument_list|(
-name|ValueComparisionStrategyFactory
+name|ValueComparisonStrategyFactory
 operator|.
 name|class
 argument_list|)
 operator|.
 name|to
 argument_list|(
-name|DefaultValueComparisionStrategyFactory
+name|DefaultValueComparisonStrategyFactory
 operator|.
 name|class
 argument_list|)
