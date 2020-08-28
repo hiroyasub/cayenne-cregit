@@ -215,9 +215,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|dba
-operator|.
-name|types
+name|value
 operator|.
 name|GeoJson
 import|;
@@ -231,9 +229,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|dba
-operator|.
-name|types
+name|value
 operator|.
 name|Json
 import|;
@@ -247,9 +243,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|dba
-operator|.
-name|types
+name|value
 operator|.
 name|Wkt
 import|;

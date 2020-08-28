@@ -11,9 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|dba
-operator|.
-name|types
+name|value
 package|;
 end_package
 

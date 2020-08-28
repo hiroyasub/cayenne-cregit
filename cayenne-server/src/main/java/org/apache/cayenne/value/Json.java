@@ -11,9 +11,7 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|dba
-operator|.
-name|types
+name|value
 package|;
 end_package
 
@@ -28,40 +26,40 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A Cayenne-supported values object that holds GeoJson string.  *  * @since 4.2  */
+comment|/**  * A Cayenne-supported values object that holds Json string.  *  * @since 4.2  */
 end_comment
 
 begin_class
 specifier|public
 class|class
-name|GeoJson
+name|Json
 block|{
 specifier|private
 specifier|final
 name|String
-name|geometry
+name|json
 decl_stmt|;
 specifier|public
-name|GeoJson
+name|Json
 parameter_list|(
 name|String
-name|geometry
+name|json
 parameter_list|)
 block|{
 name|this
 operator|.
-name|geometry
+name|json
 operator|=
-name|geometry
+name|json
 expr_stmt|;
 block|}
 specifier|public
 name|String
-name|getGeometry
+name|getRawJson
 parameter_list|()
 block|{
 return|return
-name|geometry
+name|json
 return|;
 block|}
 annotation|@
@@ -100,25 +98,24 @@ condition|)
 return|return
 literal|false
 return|;
-name|GeoJson
+name|Json
 name|other
 init|=
 operator|(
-name|GeoJson
+name|Json
 operator|)
 name|o
 decl_stmt|;
-comment|// TODO: and ideal comparison would ignore spaces around JSON tokens, but that may be too expensive
 return|return
 name|Objects
 operator|.
 name|equals
 argument_list|(
-name|geometry
+name|json
 argument_list|,
 name|other
 operator|.
-name|geometry
+name|json
 argument_list|)
 return|;
 block|}
@@ -134,7 +131,7 @@ name|Objects
 operator|.
 name|hash
 argument_list|(
-name|geometry
+name|json
 argument_list|)
 return|;
 block|}
