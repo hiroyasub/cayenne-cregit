@@ -11,12 +11,28 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|dbsync
+operator|.
+name|model
 package|;
 end_package
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|DbEntity
+import|;
+end_import
+
 begin_comment
-comment|/**  * A {@link DbEntity} subclass used to hold extra JDBC metadata.  */
+comment|/**  * A {@link DbEntity} subclass used to hold extra JDBC metadata.  * @since 4.2 moved from org.apache.cayenne.map package  */
 end_comment
 
 begin_class
