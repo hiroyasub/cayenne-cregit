@@ -509,6 +509,14 @@ name|CAY_2666
 init|=
 literal|"cay2666/cayenne-cay-2666.xml"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|CAY_2641
+init|=
+literal|"cay2641/cayenne-cay-2641.xml"
+decl_stmt|;
 block|}
 end_class
 

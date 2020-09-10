@@ -392,6 +392,25 @@ operator|.
 name|getDbAttributePath
 argument_list|()
 decl_stmt|;
+comment|// note that a check "snaphsot.get(..) == null" would be incorrect in this
+comment|// case, as NULL value is entirely valid; still save a map lookup by
+comment|// checking for the null value first
+if|if
+condition|(
+name|snapshot
+operator|.
+name|containsKey
+argument_list|(
+name|dbAttrPath
+argument_list|)
+operator|&&
+operator|!
+name|attr
+operator|.
+name|isLazy
+argument_list|()
+condition|)
+block|{
 name|Object
 name|value
 init|=
@@ -413,25 +432,8 @@ argument_list|,
 name|value
 argument_list|)
 expr_stmt|;
-comment|// note that a check "snaphsot.get(..) == null" would be incorrect in this
-comment|// case, as NULL value is entirely valid; still save a map lookup by
-comment|// checking for the null value first
-if|if
-condition|(
-name|value
-operator|==
-literal|null
-operator|&&
-operator|!
-name|snapshot
-operator|.
-name|containsKey
-argument_list|(
-name|dbAttrPath
-argument_list|)
-condition|)
-block|{
-if|if
+block|}
+if|else if
 condition|(
 name|attr
 operator|.
@@ -464,7 +466,6 @@ index|]
 operator|=
 literal|true
 expr_stmt|;
-block|}
 block|}
 return|return
 literal|true
