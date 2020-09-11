@@ -199,6 +199,22 @@ name|reflect
 operator|.
 name|generic
 operator|.
+name|ValueComparisonStrategyFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|reflect
+operator|.
+name|generic
+operator|.
 name|DataObjectDescriptorFactory
 import|;
 end_import
@@ -311,6 +327,12 @@ specifier|transient
 name|ValueObjectTypeRegistry
 name|valueObjectTypeRegistry
 decl_stmt|;
+comment|/**      * @since 4.2      */
+specifier|protected
+specifier|transient
+name|ValueComparisonStrategyFactory
+name|valueComparisonStrategyFactory
+decl_stmt|;
 comment|/**      * Creates new empty EntityResolver.      */
 specifier|public
 name|EntityResolver
@@ -320,9 +342,6 @@ name|this
 argument_list|(
 name|Collections
 operator|.
-expr|<
-name|DataMap
-operator|>
 name|emptyList
 argument_list|()
 argument_list|)
@@ -381,8 +400,7 @@ name|getDbEntities
 argument_list|()
 control|)
 block|{
-comment|// iterate by copy to avoid concurrency modification errors on
-comment|// reflexive relationships
+comment|// iterate by copy to avoid concurrency modification errors on reflexive relationships
 name|DbRelationship
 index|[]
 name|relationships
@@ -397,13 +415,7 @@ argument_list|(
 operator|new
 name|DbRelationship
 index|[
-name|entity
-operator|.
-name|getRelationships
-argument_list|()
-operator|.
-name|size
-argument_list|()
+literal|0
 index|]
 argument_list|)
 decl_stmt|;
@@ -1908,12 +1920,12 @@ argument_list|(
 name|classDescriptorMap
 argument_list|,
 name|faultFactory
+argument_list|,
+name|valueComparisonStrategyFactory
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|// since ClassDescriptorMap is not synchronized, we need to
-comment|// prefill
-comment|// it with entity proxies here.
+comment|// since ClassDescriptorMap is not synchronized, we need to prefill it with entity proxies here.
 for|for
 control|(
 name|DataMap
@@ -2002,6 +2014,22 @@ operator|.
 name|valueObjectTypeRegistry
 operator|=
 name|valueObjectTypeRegistry
+expr_stmt|;
+block|}
+comment|/**      * @since 4.2      */
+specifier|public
+name|void
+name|setValueComparisionStrategyFactory
+parameter_list|(
+name|ValueComparisonStrategyFactory
+name|valueComparisonStrategyFactory
+parameter_list|)
+block|{
+name|this
+operator|.
+name|valueComparisonStrategyFactory
+operator|=
+name|valueComparisonStrategyFactory
 expr_stmt|;
 block|}
 block|}

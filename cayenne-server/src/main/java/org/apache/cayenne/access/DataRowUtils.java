@@ -213,20 +213,6 @@ name|ToOneProperty
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
-name|Util
-import|;
-end_import
-
 begin_comment
 comment|/**  * DataRowUtils contains a number of static methods to work with DataRows. This is a  * helper class for DataContext and ObjectStore.  *   * @since 1.1  */
 end_comment
@@ -666,9 +652,9 @@ comment|// if value not modified, update it from snapshot,
 comment|// otherwise leave it alone
 if|if
 condition|(
-name|Util
+name|property
 operator|.
-name|nullSafeEquals
+name|equals
 argument_list|(
 name|curValue
 argument_list|,
@@ -676,9 +662,9 @@ name|oldValue
 argument_list|)
 operator|&&
 operator|!
-name|Util
+name|property
 operator|.
-name|nullSafeEquals
+name|equals
 argument_list|(
 name|newValue
 argument_list|,
@@ -815,9 +801,9 @@ argument_list|()
 argument_list|)
 operator|||
 operator|!
-name|Util
+name|property
 operator|.
-name|nullSafeEquals
+name|equals
 argument_list|(
 name|id
 argument_list|,
@@ -1091,9 +1077,9 @@ argument_list|)
 decl_stmt|;
 return|return
 operator|!
-name|Util
+name|property
 operator|.
-name|nullSafeEquals
+name|equals
 argument_list|(
 name|currentId
 argument_list|,

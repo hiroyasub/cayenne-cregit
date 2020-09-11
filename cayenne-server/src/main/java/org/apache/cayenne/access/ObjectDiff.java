@@ -1673,9 +1673,9 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|Util
+name|property
 operator|.
-name|nullSafeEquals
+name|equals
 argument_list|(
 name|oldValue
 argument_list|,
@@ -1772,9 +1772,9 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|Util
+name|property
 operator|.
-name|nullSafeEquals
+name|equals
 argument_list|(
 name|oldValue
 argument_list|,
@@ -1999,9 +1999,9 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|Util
+name|property
 operator|.
-name|nullSafeEquals
+name|equals
 argument_list|(
 name|oldValue
 argument_list|,

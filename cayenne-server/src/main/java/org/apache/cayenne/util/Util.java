@@ -417,6 +417,16 @@ begin_import
 import|import
 name|java
 operator|.
+name|math
+operator|.
+name|BigDecimal
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
 name|net
 operator|.
 name|URI

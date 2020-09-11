@@ -136,6 +136,12 @@ operator|new
 name|DataObjectAttributeProperty
 argument_list|(
 name|a1
+argument_list|,
+operator|new
+name|DefaultValueComparisonStrategyFactory
+operator|.
+name|DefaultValueComparisonStrategy
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|DataObjectAttributeProperty
