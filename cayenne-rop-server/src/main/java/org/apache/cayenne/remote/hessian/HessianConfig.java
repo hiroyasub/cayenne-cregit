@@ -227,6 +227,13 @@ operator|new
 name|CayenneSerializerFactory
 argument_list|()
 decl_stmt|;
+name|factory
+operator|.
+name|setAllowNonSerializable
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
 name|List
 argument_list|<
 name|String
