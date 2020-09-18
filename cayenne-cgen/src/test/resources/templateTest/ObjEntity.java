@@ -11,16 +11,16 @@ name|test
 operator|.
 name|auto
 operator|.
-name|_EntityTest
+name|_ObjEntity
 import|;
 end_import
 
 begin_class
 specifier|public
 class|class
-name|EntityTest
+name|ObjEntity
 extends|extends
-name|_EntityTest
+name|_ObjEntity
 block|{
 specifier|private
 specifier|static

@@ -50,7 +50,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|_DataMapTest
+name|_SelectQuery
 block|{
 specifier|public
 specifier|static
