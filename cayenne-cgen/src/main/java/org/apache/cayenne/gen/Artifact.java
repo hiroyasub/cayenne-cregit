@@ -99,6 +99,11 @@ name|PROPERTY_UTILS_KEY
 init|=
 literal|"propertyUtils"
 decl_stmt|;
+name|String
+name|METADATA_UTILS_KEY
+init|=
+literal|"metadataUtils"
+decl_stmt|;
 name|TemplateType
 index|[]
 name|getTemplateTypes

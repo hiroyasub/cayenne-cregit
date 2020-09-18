@@ -16,6 +16,8 @@ operator|.
 name|translator
 operator|.
 name|batch
+operator|.
+name|legacy
 package|;
 end_package
 
@@ -258,6 +260,8 @@ import|;
 end_import
 
 begin_class
+annotation|@
+name|Deprecated
 annotation|@
 name|UseServerRuntime
 argument_list|(

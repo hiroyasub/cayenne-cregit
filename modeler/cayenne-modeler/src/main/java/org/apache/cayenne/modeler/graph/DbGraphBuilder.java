@@ -59,7 +59,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|map
+name|dbsync
+operator|.
+name|model
 operator|.
 name|DetectedDbEntity
 import|;

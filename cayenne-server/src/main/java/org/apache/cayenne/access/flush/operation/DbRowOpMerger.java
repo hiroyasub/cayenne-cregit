@@ -68,7 +68,6 @@ specifier|private
 name|DbRowOp
 name|dbRow
 decl_stmt|;
-specifier|public
 name|DbRowOpMerger
 parameter_list|()
 block|{

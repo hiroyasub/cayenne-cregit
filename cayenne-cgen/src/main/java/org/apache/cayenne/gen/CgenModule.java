@@ -227,6 +227,24 @@ name|ProjectModule
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|project
+operator|.
+name|extension
+operator|.
+name|info
+operator|.
+name|InfoExtension
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 4.1  */
 end_comment
@@ -312,6 +330,22 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
+name|binder
+operator|.
+name|bind
+argument_list|(
+name|MetadataUtils
+operator|.
+name|class
+argument_list|)
+operator|.
+name|to
+argument_list|(
+name|MetadataUtils
+operator|.
+name|class
+argument_list|)
+expr_stmt|;
 name|ProjectModule
 operator|.
 name|contributeExtensions
@@ -325,7 +359,15 @@ name|CgenExtension
 operator|.
 name|class
 argument_list|)
+operator|.
+name|add
+argument_list|(
+name|InfoExtension
+operator|.
+name|class
+argument_list|)
 expr_stmt|;
+comment|// info extension needed to get comments and other metadata
 name|contributeUserProperties
 argument_list|(
 name|binder

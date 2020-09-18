@@ -752,11 +752,17 @@ name|QueryDescriptor
 operator|.
 name|SELECT_QUERY
 case|:
-name|SelectQuery
+name|ObjectSelect
+argument_list|<
+name|?
+argument_list|>
 name|selectQuery
 init|=
 operator|(
-name|SelectQuery
+name|ObjectSelect
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|query
 decl_stmt|;
@@ -769,7 +775,7 @@ condition|)
 block|{
 name|selectQuery
 operator|.
-name|setFetchLimit
+name|limit
 argument_list|(
 name|fetchLimit
 argument_list|)
@@ -784,7 +790,7 @@ condition|)
 block|{
 name|selectQuery
 operator|.
-name|setFetchOffset
+name|offset
 argument_list|(
 name|fetchOffset
 argument_list|)
@@ -799,7 +805,7 @@ condition|)
 block|{
 name|selectQuery
 operator|.
-name|setStatementFetchSize
+name|statementFetchSize
 argument_list|(
 name|statementFetchSize
 argument_list|)
@@ -814,7 +820,7 @@ condition|)
 block|{
 name|selectQuery
 operator|.
-name|setPageSize
+name|pageSize
 argument_list|(
 name|pageSize
 argument_list|)

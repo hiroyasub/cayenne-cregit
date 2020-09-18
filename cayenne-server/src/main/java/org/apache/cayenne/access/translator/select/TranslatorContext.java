@@ -724,6 +724,7 @@ return|return
 name|adapter
 return|;
 block|}
+specifier|public
 name|DbEntity
 name|getRootDbEntity
 parameter_list|()

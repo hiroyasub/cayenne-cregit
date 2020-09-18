@@ -89,6 +89,8 @@ name|translator
 operator|.
 name|batch
 operator|.
+name|legacy
+operator|.
 name|DefaultBatchTranslator
 import|;
 end_import
@@ -194,7 +196,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Superclass of query builders for the DML operations involving LOBs.  *   */
+comment|/**  * Superclass of query builders for the DML operations involving LOBs.  * TODO: update to the new batch translation logic  */
 end_comment
 
 begin_class

@@ -371,6 +371,12 @@ name|o
 decl_stmt|;
 if|if
 condition|(
+name|id
+operator|!=
+name|that
+operator|.
+name|id
+operator|&&
 operator|!
 name|Arrays
 operator|.

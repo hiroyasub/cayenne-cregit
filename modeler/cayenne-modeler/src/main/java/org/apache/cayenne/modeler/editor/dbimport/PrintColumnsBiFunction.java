@@ -84,6 +84,7 @@ name|Void
 argument_list|>
 block|{
 specifier|private
+specifier|final
 name|DbImportTree
 name|dbImportTree
 decl_stmt|;

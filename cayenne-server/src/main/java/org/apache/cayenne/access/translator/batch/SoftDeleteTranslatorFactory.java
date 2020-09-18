@@ -37,24 +37,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
-operator|.
-name|translator
-operator|.
-name|batch
-operator|.
-name|BatchTranslator
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|dba
 operator|.
 name|DbAdapter
@@ -90,7 +72,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Implementation of {link #BatchTranslator}, which uses 'soft' delete  * (runs UPDATE and sets 'deleted' field to true instead-of running SQL DELETE)  *   * @since 4.0  */
+comment|/**  * Implementation of {link #BatchTranslator}, which uses 'soft' delete  * (runs UPDATE and sets 'deleted' field to true instead-of running SQL DELETE)  *   * @since 4.2  */
 end_comment
 
 begin_class
@@ -149,9 +131,6 @@ name|query
 parameter_list|,
 name|DbAdapter
 name|adapter
-parameter_list|,
-name|String
-name|trimFunction
 parameter_list|)
 block|{
 name|DbAttribute
@@ -193,8 +172,6 @@ name|query
 argument_list|,
 name|adapter
 argument_list|,
-name|trimFunction
-argument_list|,
 name|deletedFieldName
 argument_list|)
 else|:
@@ -205,8 +182,6 @@ argument_list|(
 name|query
 argument_list|,
 name|adapter
-argument_list|,
-name|trimFunction
 argument_list|)
 return|;
 block|}

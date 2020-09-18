@@ -505,6 +505,13 @@ specifier|private
 name|Boolean
 name|createPKProperties
 decl_stmt|;
+comment|/**      * Optional path (classpath or filesystem) to external velocity tool configuration file      * @since 4.2       */
+annotation|@
+name|Parameter
+specifier|private
+name|String
+name|externalToolConfig
+decl_stmt|;
 specifier|private
 specifier|transient
 name|Injector
@@ -937,6 +944,10 @@ operator|!=
 literal|null
 operator|||
 name|createPKProperties
+operator|!=
+literal|null
+operator|||
+name|externalToolConfig
 operator|!=
 literal|null
 return|;
@@ -1396,6 +1407,22 @@ else|:
 name|cgenConfiguration
 operator|.
 name|isCreatePKProperties
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|cgenConfiguration
+operator|.
+name|setExternalToolConfig
+argument_list|(
+name|externalToolConfig
+operator|!=
+literal|null
+condition|?
+name|externalToolConfig
+else|:
+name|cgenConfiguration
+operator|.
+name|getExternalToolConfig
 argument_list|()
 argument_list|)
 expr_stmt|;

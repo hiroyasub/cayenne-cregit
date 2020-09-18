@@ -91,9 +91,12 @@ name|entity
 decl_stmt|;
 comment|// Can be ObjEntity id or a DB row id for flattened rows
 specifier|protected
-specifier|final
 name|ObjectId
 name|changeId
+decl_stmt|;
+specifier|protected
+name|int
+name|hashCode
 decl_stmt|;
 specifier|protected
 name|BaseDbRowOp
@@ -140,6 +143,15 @@ name|requireNonNull
 argument_list|(
 name|id
 argument_list|)
+expr_stmt|;
+name|this
+operator|.
+name|hashCode
+operator|=
+name|changeId
+operator|.
+name|hashCode
+argument_list|()
 expr_stmt|;
 block|}
 annotation|@
@@ -234,10 +246,7 @@ name|hashCode
 parameter_list|()
 block|{
 return|return
-name|changeId
-operator|.
 name|hashCode
-argument_list|()
 return|;
 block|}
 annotation|@

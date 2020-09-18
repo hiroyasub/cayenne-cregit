@@ -1512,7 +1512,7 @@ return|;
 block|}
 specifier|public
 name|boolean
-name|supportsNullComparision
+name|supportsNullComparison
 parameter_list|()
 block|{
 return|return

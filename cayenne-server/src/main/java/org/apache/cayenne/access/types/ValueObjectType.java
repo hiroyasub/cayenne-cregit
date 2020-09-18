@@ -17,6 +17,16 @@ name|types
 package|;
 end_package
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Objects
+import|;
+end_import
+
 begin_comment
 comment|/**  * Descriptor and serialization helper for custom value objects that can be safely stored in the DB.  * Lightweight alternative for the {@link ExtendedType}.  *  * @param<V> type of user's custom object.  * @param<T> type that custom object will be serialized to/from  *            should be backed by appropriate {@link ExtendedType}.  *  * @since 4.0  */
 end_comment
@@ -71,6 +81,29 @@ name|V
 name|object
 parameter_list|)
 function_decl|;
+comment|/**      * Allows to use special logic to compare values for equality      * as in rare cases it is not suffice to use default equals() method.      * Default implementation uses {@link Objects#equals(Object, Object)} method.      *      * @param value1 to compare      * @param value2 to compare      * @return true if given values are equal      */
+specifier|default
+name|boolean
+name|equals
+parameter_list|(
+name|V
+name|value1
+parameter_list|,
+name|V
+name|value2
+parameter_list|)
+block|{
+return|return
+name|Objects
+operator|.
+name|equals
+argument_list|(
+name|value1
+argument_list|,
+name|value2
+argument_list|)
+return|;
+block|}
 block|}
 end_interface
 

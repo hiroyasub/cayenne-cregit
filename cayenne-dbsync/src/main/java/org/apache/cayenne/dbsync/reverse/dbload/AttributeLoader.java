@@ -97,6 +97,22 @@ name|cayenne
 operator|.
 name|dbsync
 operator|.
+name|model
+operator|.
+name|DetectedDbAttribute
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|dbsync
+operator|.
 name|reverse
 operator|.
 name|filters
@@ -623,9 +639,12 @@ expr_stmt|;
 block|}
 block|}
 comment|// create attribute delegating this task to adapter
-name|DbAttribute
-name|attr
+name|DetectedDbAttribute
+name|detectedDbAttribute
 init|=
+operator|new
+name|DetectedDbAttribute
+argument_list|(
 name|adapter
 operator|.
 name|buildAttribute
@@ -662,7 +681,21 @@ argument_list|(
 literal|"NULLABLE"
 argument_list|)
 argument_list|)
+argument_list|)
 decl_stmt|;
+comment|// store raw type name
+name|detectedDbAttribute
+operator|.
+name|setJdbcTypeName
+argument_list|(
+name|rs
+operator|.
+name|getString
+argument_list|(
+literal|"TYPE_NAME"
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|supportAutoIncrement
@@ -683,7 +716,7 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|attr
+name|detectedDbAttribute
 operator|.
 name|setGenerated
 argument_list|(
@@ -693,7 +726,7 @@ expr_stmt|;
 block|}
 block|}
 return|return
-name|attr
+name|detectedDbAttribute
 return|;
 block|}
 block|}

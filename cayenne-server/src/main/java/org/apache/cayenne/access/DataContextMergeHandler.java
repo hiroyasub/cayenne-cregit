@@ -235,20 +235,6 @@ name|ToOneProperty
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|util
-operator|.
-name|Util
-import|;
-end_import
-
 begin_comment
 comment|/**  * A listener of GraphEvents sent by the DataChannel that merges changes to the DataContext.  *   * @since 1.2  */
 end_comment
@@ -722,9 +708,9 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|Util
+name|p
 operator|.
-name|nullSafeEquals
+name|equals
 argument_list|(
 name|p
 operator|.

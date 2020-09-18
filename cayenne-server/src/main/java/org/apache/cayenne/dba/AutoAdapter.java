@@ -57,18 +57,6 @@ end_import
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|function
-operator|.
-name|Function
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -107,7 +95,7 @@ name|sqlbuilder
 operator|.
 name|sqltree
 operator|.
-name|Node
+name|SQLTreeProcessor
 import|;
 end_import
 
@@ -520,12 +508,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|Function
-argument_list|<
-name|Node
-argument_list|,
-name|Node
-argument_list|>
+name|SQLTreeProcessor
 name|getSqlTreeProcessor
 parameter_list|()
 block|{
@@ -604,6 +587,22 @@ name|getAdapter
 argument_list|()
 operator|.
 name|supportsGeneratedKeys
+argument_list|()
+return|;
+block|}
+comment|/** 	 * @since 4.2 	 */
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|supportsGeneratedKeysForBatchInserts
+parameter_list|()
+block|{
+return|return
+name|getAdapter
+argument_list|()
+operator|.
+name|supportsGeneratedKeysForBatchInserts
 argument_list|()
 return|;
 block|}

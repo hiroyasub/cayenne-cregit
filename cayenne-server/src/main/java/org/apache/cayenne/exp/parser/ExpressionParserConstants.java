@@ -92,237 +92,249 @@ literal|41
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|FUNCTION
+name|CONCAT
 init|=
 literal|42
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|CONCAT
+name|SUBSTRING
 init|=
 literal|43
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|SUBSTRING
+name|TRIM
 init|=
 literal|44
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|TRIM
+name|LOWER
 init|=
 literal|45
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|LOWER
+name|UPPER
 init|=
 literal|46
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|UPPER
+name|LENGTH
 init|=
 literal|47
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|LENGTH
+name|LOCATE
 init|=
 literal|48
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|LOCATE
+name|ABS
 init|=
 literal|49
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|ABS
+name|SQRT
 init|=
 literal|50
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|SQRT
+name|MOD
 init|=
 literal|51
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|MOD
+name|CURRENT_DATE
 init|=
 literal|52
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|CURRENT_DATE
+name|CURRENT_TIME
 init|=
 literal|53
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|CURRENT_TIME
+name|CURRENT_TIMESTAMP
 init|=
 literal|54
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|CURRENT_TIMESTAMP
+name|YEAR
 init|=
 literal|55
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|YEAR
+name|MONTH
 init|=
 literal|56
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|MONTH
+name|WEEK
 init|=
 literal|57
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|WEEK
+name|DAY_OF_YEAR
 init|=
 literal|58
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|DAY_OF_YEAR
+name|DAY
 init|=
 literal|59
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|DAY
+name|DAY_OF_MONTH
 init|=
 literal|60
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|DAY_OF_MONTH
+name|DAY_OF_WEEK
 init|=
 literal|61
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|DAY_OF_WEEK
+name|HOUR
 init|=
 literal|62
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|HOUR
+name|MINUTE
 init|=
 literal|63
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|MINUTE
+name|SECOND
 init|=
 literal|64
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|SECOND
+name|FUNCTION
 init|=
 literal|65
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|ASTERISK
+name|OPERATOR
 init|=
-literal|71
+literal|66
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|PROPERTY_PATH
+name|ASTERISK
 init|=
 literal|72
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|IDENTIFIER
+name|PROPERTY_PATH
 init|=
 literal|73
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|LETTER
+name|IDENTIFIER
 init|=
 literal|74
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|DIGIT
+name|LETTER
 init|=
 literal|75
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|ESC
+name|DIGIT
 init|=
-literal|78
+literal|76
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|SINGLE_QUOTED_STRING
+name|DOLLAR_SIGN
+init|=
+literal|77
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|ESC
 init|=
 literal|80
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|STRING_ESC
+name|SINGLE_QUOTED_STRING
 init|=
-literal|81
+literal|82
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|DOUBLE_QUOTED_STRING
+name|STRING_ESC
 init|=
 literal|83
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|INT_LITERAL
-init|=
-literal|84
-decl_stmt|;
-comment|/** RegularExpression Id. */
-name|int
-name|FLOAT_LITERAL
+name|DOUBLE_QUOTED_STRING
 init|=
 literal|85
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|DEC_FLT
+name|INT_LITERAL
 init|=
 literal|86
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|DEC_DIGITS
+name|FLOAT_LITERAL
 init|=
 literal|87
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|EXPONENT
+name|DEC_FLT
 init|=
 literal|88
 decl_stmt|;
 comment|/** RegularExpression Id. */
 name|int
-name|FLT_SUFF
+name|DEC_DIGITS
 init|=
 literal|89
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|EXPONENT
+init|=
+literal|90
+decl_stmt|;
+comment|/** RegularExpression Id. */
+name|int
+name|FLT_SUFF
+init|=
+literal|91
 decl_stmt|;
 comment|/** Lexical state. */
 name|int
@@ -432,8 +444,6 @@ literal|"\"count\""
 block|,
 literal|"\"distinct\""
 block|,
-literal|"\"fn\""
-block|,
 literal|"\"concat\""
 block|,
 literal|"\"substring\""
@@ -480,6 +490,10 @@ literal|"\"minute\""
 block|,
 literal|"\"second\""
 block|,
+literal|"\"fn\""
+block|,
+literal|"\"op\""
+block|,
 literal|"\"$\""
 block|,
 literal|"\"obj:\""
@@ -500,19 +514,21 @@ literal|"<LETTER>"
 block|,
 literal|"<DIGIT>"
 block|,
+literal|"<DOLLAR_SIGN>"
+block|,
 literal|"\"\\\'\""
 block|,
 literal|"\"\\\"\""
 block|,
 literal|"<ESC>"
 block|,
-literal|"<token of kind 79>"
+literal|"<token of kind 81>"
 block|,
 literal|"\"\\\'\""
 block|,
 literal|"<STRING_ESC>"
 block|,
-literal|"<token of kind 82>"
+literal|"<token of kind 84>"
 block|,
 literal|"\"\\\"\""
 block|,

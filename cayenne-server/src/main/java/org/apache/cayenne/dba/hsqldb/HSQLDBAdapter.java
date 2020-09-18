@@ -57,7 +57,7 @@ name|sqlbuilder
 operator|.
 name|sqltree
 operator|.
-name|Node
+name|SQLTreeProcessor
 import|;
 end_import
 
@@ -371,18 +371,6 @@ name|List
 import|;
 end_import
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|function
-operator|.
-name|Function
-import|;
-end_import
-
 begin_comment
 comment|/**  * DbAdapter implementation for the<a href="http://hsqldb.sourceforge.net/">  * HSQLDB RDBMS</a>. Sample connection settings to use with HSQLDB are shown  * below:  *   *<pre>  *        test-hsqldb.jdbc.username = test  *        test-hsqldb.jdbc.password = secret  *        test-hsqldb.jdbc.url = jdbc:hsqldb:hsql://serverhostname  *        test-hsqldb.jdbc.driver = org.hsqldb.jdbcDriver  *</pre>  */
 end_comment
@@ -523,12 +511,7 @@ comment|/** 	 * @since 4.2 	 */
 annotation|@
 name|Override
 specifier|public
-name|Function
-argument_list|<
-name|Node
-argument_list|,
-name|Node
-argument_list|>
+name|SQLTreeProcessor
 name|getSqlTreeProcessor
 parameter_list|()
 block|{

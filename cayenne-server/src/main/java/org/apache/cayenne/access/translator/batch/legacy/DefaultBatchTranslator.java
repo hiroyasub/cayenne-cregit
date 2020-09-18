@@ -16,6 +16,8 @@ operator|.
 name|translator
 operator|.
 name|batch
+operator|.
+name|legacy
 package|;
 end_package
 
@@ -42,6 +44,24 @@ operator|.
 name|translator
 operator|.
 name|DbAttributeBinding
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|translator
+operator|.
+name|batch
+operator|.
+name|BatchTranslator
 import|;
 end_import
 
@@ -116,10 +136,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Superclass of batch query translators.  *   * @since 4.0  */
+comment|/**  * Superclass of batch query translators.  *   * @since 4.0  * @deprecated since 4.2  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 specifier|abstract
 class|class

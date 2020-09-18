@@ -85,6 +85,14 @@ specifier|abstract
 class|class
 name|BatchQueryRow
 block|{
+specifier|private
+specifier|static
+specifier|final
+name|int
+name|MAX_NESTED_SUPPLIER_LEVEL
+init|=
+literal|1000
+decl_stmt|;
 specifier|protected
 name|ObjectId
 name|objectId
@@ -188,13 +196,26 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
-comment|// if a value is a Factory, resolve it here...
-comment|// slight chance that a normal value will implement Factory interface???
-if|if
+name|boolean
+name|isSupplier
+init|=
+literal|false
+decl_stmt|;
+name|int
+name|safeguard
+init|=
+literal|0
+decl_stmt|;
+comment|// Supplier can be nested, resolve all the way down
+while|while
 condition|(
 name|value
 operator|instanceof
 name|Supplier
+operator|&&
+name|safeguard
+operator|<
+name|MAX_NESTED_SUPPLIER_LEVEL
 condition|)
 block|{
 name|value
@@ -209,6 +230,43 @@ operator|.
 name|get
 argument_list|()
 expr_stmt|;
+name|isSupplier
+operator|=
+literal|true
+expr_stmt|;
+name|safeguard
+operator|++
+expr_stmt|;
+block|}
+comment|// simple guard from recursive Suppliers
+if|if
+condition|(
+name|safeguard
+operator|==
+name|MAX_NESTED_SUPPLIER_LEVEL
+condition|)
+block|{
+throw|throw
+operator|new
+name|CayenneRuntimeException
+argument_list|(
+literal|"Possible recursive supplier chain for batch row value, object %s, attribute %s"
+argument_list|,
+name|objectId
+argument_list|,
+name|attribute
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+throw|;
+block|}
+comment|// if a value is a Supplier, resolve it here...
+if|if
+condition|(
+name|isSupplier
+condition|)
+block|{
 name|valueMap
 operator|.
 name|put
@@ -286,8 +344,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-comment|// always override with fresh value as this is what's in the
-comment|// DB
+comment|// always override with fresh value as this is what's in the DB
 name|id
 operator|.
 name|getReplacementIdMap

@@ -689,6 +689,8 @@ argument_list|,
 name|processedArcs
 argument_list|)
 decl_stmt|;
+comment|// ops.addAll() method is slower in this case as it will allocate new array for all values
+comment|//noinspection UseBulkOperation
 name|changesByObjectId
 operator|.
 name|forEach
@@ -699,16 +701,18 @@ parameter_list|,
 name|diff
 parameter_list|)
 lambda|->
-name|ops
-operator|.
-name|addAll
-argument_list|(
 name|factory
 operator|.
 name|createRows
 argument_list|(
 name|diff
 argument_list|)
+operator|.
+name|forEach
+argument_list|(
+name|ops
+operator|::
+name|add
 argument_list|)
 argument_list|)
 expr_stmt|;

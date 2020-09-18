@@ -558,11 +558,7 @@ name|put
 argument_list|(
 literal|"LOCKING_TEST_ID"
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 literal|1
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|DeleteBatchQuery
@@ -603,8 +599,6 @@ argument_list|(
 name|batchQuery
 argument_list|,
 name|adapter
-argument_list|,
-literal|null
 argument_list|)
 decl_stmt|;
 name|MockConnection
@@ -874,8 +868,6 @@ argument_list|(
 name|batchQuery
 argument_list|,
 name|adapter
-argument_list|,
-literal|null
 argument_list|)
 decl_stmt|;
 name|MockConnection
@@ -993,7 +985,7 @@ block|}
 catch|catch
 parameter_list|(
 name|OptimisticLockException
-name|e
+name|ignore
 parameter_list|)
 block|{
 block|}
