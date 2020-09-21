@@ -2087,6 +2087,25 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+comment|/**      * @since 4.2      * @return this      */
+specifier|public
+name|ObjectSelect
+argument_list|<
+name|T
+argument_list|>
+name|distinct
+parameter_list|()
+block|{
+name|this
+operator|.
+name|distinct
+operator|=
+literal|true
+expr_stmt|;
+return|return
+name|this
+return|;
+block|}
 comment|/**      *<p>Quick way to select count of records</p>      *<p>Usage:      *<pre>      * {@code      *     long count = ObjectSelect.query(Artist.class)      *                      .where(Artist.ARTIST_NAME.like("a%"))      *                      .selectCount(context);      * }      *</pre>      *</p>      * @param context to perform query      * @return count of rows      */
 specifier|public
 name|long

@@ -233,6 +233,9 @@ name|Ordering
 argument_list|>
 name|orderings
 decl_stmt|;
+name|boolean
+name|distinct
+decl_stmt|;
 specifier|protected
 name|FluentSelect
 parameter_list|()
@@ -776,7 +779,7 @@ name|isDistinct
 parameter_list|()
 block|{
 return|return
-literal|false
+name|distinct
 return|;
 block|}
 comment|/**      * @since 4.2      */

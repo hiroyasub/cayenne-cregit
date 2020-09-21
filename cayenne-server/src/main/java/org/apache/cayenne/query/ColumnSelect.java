@@ -272,9 +272,6 @@ name|singleColumn
 init|=
 literal|true
 decl_stmt|;
-name|boolean
-name|distinct
-decl_stmt|;
 name|ColumnSelectMetadata
 name|metaData
 init|=
@@ -1932,18 +1929,6 @@ parameter_list|()
 block|{
 return|return
 name|columns
-return|;
-block|}
-comment|/**      * @since 4.2      */
-annotation|@
-name|Override
-specifier|public
-name|boolean
-name|isDistinct
-parameter_list|()
-block|{
-return|return
-name|distinct
 return|;
 block|}
 annotation|@

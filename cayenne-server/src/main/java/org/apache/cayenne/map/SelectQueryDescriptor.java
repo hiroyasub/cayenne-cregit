@@ -684,7 +684,6 @@ name|prefetch
 argument_list|)
 expr_stmt|;
 block|}
-comment|// TODO: apply DISTINCT property
 name|query
 operator|.
 name|initWithProperties
@@ -695,6 +694,20 @@ name|getProperties
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|this
+operator|.
+name|isDistinct
+argument_list|()
+condition|)
+block|{
+name|query
+operator|.
+name|distinct
+argument_list|()
+expr_stmt|;
+block|}
 return|return
 name|query
 return|;
