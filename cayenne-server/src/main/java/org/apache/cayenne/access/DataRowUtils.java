@@ -299,8 +299,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|// do not invalidate to-many relationships, since they might have
-comment|// just been prefetched...
+comment|// do not invalidate to-many relationships, since they might have just been prefetched...
 name|refreshObjectWithSnapshot
 argument_list|(
 name|descriptor
@@ -648,8 +647,7 @@ argument_list|)
 else|:
 literal|null
 decl_stmt|;
-comment|// if value not modified, update it from snapshot,
-comment|// otherwise leave it alone
+comment|// if value not modified, update it from snapshot, otherwise leave it alone
 if|if
 condition|(
 name|property
@@ -726,10 +724,8 @@ name|isToPK
 argument_list|()
 condition|)
 block|{
-comment|// TODO: will this work for flattened, how do we save snapshots for
-comment|// them?
-comment|// if value not modified, update it from snapshot,
-comment|// otherwise leave it alone
+comment|// TODO: will this work for flattened, how do we save snapshots for them?
+comment|// if value not modified, update it from snapshot, otherwise leave it alone
 if|if
 condition|(
 operator|!
@@ -756,8 +752,7 @@ argument_list|(
 literal|0
 argument_list|)
 decl_stmt|;
-comment|// must check before creating ObjectId because of partial
-comment|// snapshots
+comment|// must check before creating ObjectId because of partial snapshots
 if|if
 condition|(
 name|hasFK
@@ -840,8 +835,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|// we can't use 'localObject' if relationship is
-comment|// optional or inheritance is involved
+comment|// we can't use 'localObject' if relationship is optional or inheritance is involved
 comment|// .. must turn to fault instead
 if|if
 condition|(
@@ -927,16 +921,17 @@ control|)
 block|{
 if|if
 condition|(
-operator|!
 name|snapshot
 operator|.
-name|containsKey
+name|get
 argument_list|(
 name|join
 operator|.
 name|getSourceName
 argument_list|()
 argument_list|)
+operator|==
+literal|null
 condition|)
 block|{
 return|return

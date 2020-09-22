@@ -314,11 +314,10 @@ name|orderBy
 argument_list|(
 name|ClientMeaningfulPk
 operator|.
-name|PK_PROPERTY
-argument_list|,
-name|SortOrder
+name|PK
 operator|.
-name|DESCENDING
+name|desc
+argument_list|()
 argument_list|)
 operator|.
 name|select
