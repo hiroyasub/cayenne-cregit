@@ -2347,6 +2347,8 @@ return|;
 block|}
 annotation|@
 name|Override
+annotation|@
+name|Deprecated
 specifier|public
 name|SelectTranslator
 name|getSelectTranslator

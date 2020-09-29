@@ -380,7 +380,7 @@ argument_list|)
 decl_stmt|;
 name|prefetchQuery
 operator|.
-name|setStatementFetchSize
+name|statementFetchSize
 argument_list|(
 name|query
 operator|.
@@ -390,7 +390,7 @@ argument_list|)
 expr_stmt|;
 name|prefetchQuery
 operator|.
-name|setQualifier
+name|where
 argument_list|(
 name|classDescriptor
 operator|.

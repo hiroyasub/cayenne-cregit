@@ -88,7 +88,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A SelectQuery to perform a prefetch based on another query. Used internally by Cayenne  * and is normally never used directly.  */
+comment|/**  * A SelectQuery to perform a prefetch based on another query. Used internally by Cayenne  * and is normally never used directly.  *  * @since 4.2 this query extends {@link ObjectSelect} as part of the deprecation of the {@link SelectQuery}  */
 end_comment
 
 begin_class
@@ -99,7 +99,7 @@ parameter_list|<
 name|T
 parameter_list|>
 extends|extends
-name|SelectQuery
+name|ObjectSelect
 argument_list|<
 name|T
 argument_list|>
@@ -134,11 +134,11 @@ name|ObjRelationship
 name|lastPrefetchHint
 parameter_list|)
 block|{
-name|setRoot
+name|entityName
 argument_list|(
 name|lastPrefetchHint
 operator|.
-name|getTargetEntity
+name|getTargetEntityName
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -155,9 +155,9 @@ operator|=
 name|lastPrefetchHint
 expr_stmt|;
 block|}
-comment|/**      * Overrides super implementation to suppress disjoint prefetch routing, as the parent      * query should take care of that.      *       * @since 1.2      */
 annotation|@
 name|Override
+specifier|protected
 name|void
 name|routePrefetches
 parameter_list|(
@@ -194,6 +194,24 @@ operator|.
 name|prefetchPath
 operator|=
 name|prefetchPath
+expr_stmt|;
+block|}
+comment|/**      * Clean set of the prefetch tree without any merge with existing nodes.      *      * @param prefetch prefetch tree      * @since 4.2      */
+specifier|public
+name|void
+name|setPrefetchTree
+parameter_list|(
+name|PrefetchTreeNode
+name|prefetch
+parameter_list|)
+block|{
+name|getBaseMetaData
+argument_list|()
+operator|.
+name|setPrefetchTree
+argument_list|(
+name|prefetch
+argument_list|)
 expr_stmt|;
 block|}
 comment|/**      * Returns last incoming ObjRelationship in the prefetch relationship chain.      *       * @since 1.1      */

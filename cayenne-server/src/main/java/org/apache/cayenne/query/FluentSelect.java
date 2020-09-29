@@ -731,7 +731,7 @@ return|return
 literal|false
 return|;
 block|}
-specifier|private
+specifier|protected
 name|void
 name|routePrefetches
 parameter_list|(

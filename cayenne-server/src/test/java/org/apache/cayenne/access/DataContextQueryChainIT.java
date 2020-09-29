@@ -73,7 +73,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|QueryChain
+name|ObjectSelect
 import|;
 end_import
 
@@ -87,7 +87,7 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|QueryChain
 import|;
 end_import
 
@@ -259,8 +259,9 @@ name|chain
 operator|.
 name|addQuery
 argument_list|(
-operator|new
-name|SelectQuery
+name|ObjectSelect
+operator|.
+name|query
 argument_list|(
 name|Artist
 operator|.
@@ -272,8 +273,9 @@ name|chain
 operator|.
 name|addQuery
 argument_list|(
-operator|new
-name|SelectQuery
+name|ObjectSelect
+operator|.
+name|query
 argument_list|(
 name|Artist
 operator|.

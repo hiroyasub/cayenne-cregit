@@ -798,10 +798,8 @@ argument_list|)
 expr_stmt|;
 name|currentQuery
 operator|.
-name|setFetchingDataRows
-argument_list|(
-literal|true
-argument_list|)
+name|fetchDataRows
+argument_list|()
 expr_stmt|;
 name|queries
 operator|.
@@ -1016,6 +1014,9 @@ name|String
 name|pathPrefix
 parameter_list|,
 name|PrefetchSelectQuery
+argument_list|<
+name|?
+argument_list|>
 name|currentQuery
 parameter_list|,
 name|List
@@ -1158,7 +1159,7 @@ expr_stmt|;
 block|}
 name|currentQuery
 operator|.
-name|orQualifier
+name|or
 argument_list|(
 name|ExpressionFactory
 operator|.

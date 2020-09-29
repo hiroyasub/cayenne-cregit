@@ -65,22 +65,6 @@ name|exp
 operator|.
 name|property
 operator|.
-name|BaseProperty
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|exp
-operator|.
-name|property
-operator|.
 name|Property
 import|;
 end_import
@@ -142,7 +126,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 4.2  */
+comment|/**  * @since 4.2  * @deprecated this class should gone with the {@link SelectQuery}  */
 end_comment
 
 begin_class

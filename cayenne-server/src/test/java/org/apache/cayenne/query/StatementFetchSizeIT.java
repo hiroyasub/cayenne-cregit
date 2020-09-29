@@ -230,6 +230,9 @@ name|testObjectSelect
 parameter_list|()
 block|{
 name|ObjectSelect
+argument_list|<
+name|Artist
+argument_list|>
 name|query
 init|=
 name|ObjectSelect
