@@ -2263,9 +2263,9 @@ name|String
 operator|.
 name|format
 argument_list|(
-literal|"'%s' and '%s' can't have attribute '%s' together. "
+literal|"'%s' and '%s' can't both have attribute '%s'. "
 operator|+
-literal|"Would you like to delete this attribute from the '%s' class?"
+literal|"Would you like to delete this attribute from the '%s'?"
 argument_list|,
 name|objEntity
 operator|.
