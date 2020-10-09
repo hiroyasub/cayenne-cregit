@@ -757,7 +757,7 @@ name|sql
 operator|.
 name|startsWith
 argument_list|(
-literal|"SELECT DISTINCT"
+literal|"SELECT "
 argument_list|)
 argument_list|)
 expr_stmt|;
