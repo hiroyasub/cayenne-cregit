@@ -162,9 +162,6 @@ name|node
 operator|.
 name|getEntity
 argument_list|()
-operator|.
-name|getFullyQualifiedName
-argument_list|()
 argument_list|)
 operator|.
 name|as

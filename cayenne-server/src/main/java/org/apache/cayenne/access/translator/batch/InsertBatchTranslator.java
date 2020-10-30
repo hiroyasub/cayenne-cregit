@@ -199,9 +199,6 @@ name|context
 operator|.
 name|getRootDbEntity
 argument_list|()
-operator|.
-name|getFullyQualifiedName
-argument_list|()
 argument_list|)
 decl_stmt|;
 for|for
