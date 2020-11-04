@@ -1639,6 +1639,9 @@ name|OBJ_ATTRIBUTE_TYPE
 argument_list|)
 decl_stmt|;
 name|JComboBox
+argument_list|<
+name|String
+argument_list|>
 name|javaTypesCombo
 init|=
 name|Application
@@ -1651,7 +1654,13 @@ argument_list|(
 name|typeNames
 operator|.
 name|toArray
-argument_list|()
+argument_list|(
+operator|new
+name|String
+index|[
+literal|0
+index|]
+argument_list|)
 argument_list|,
 literal|false
 argument_list|)
