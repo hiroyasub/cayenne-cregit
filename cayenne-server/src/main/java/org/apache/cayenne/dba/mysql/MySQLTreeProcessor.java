@@ -280,7 +280,7 @@ return|return
 name|INSTANCE
 return|;
 block|}
-specifier|private
+specifier|protected
 name|MySQLTreeProcessor
 parameter_list|()
 block|{
