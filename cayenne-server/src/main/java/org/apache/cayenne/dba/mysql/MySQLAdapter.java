@@ -283,6 +283,22 @@ name|access
 operator|.
 name|types
 operator|.
+name|JsonType
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|types
+operator|.
 name|ValueObjectTypeRegistry
 import|;
 end_import
@@ -756,10 +772,9 @@ comment|// must handle CLOBs as strings, otherwise there
 comment|// are problems with NULL clobs that are treated
 comment|// as empty strings... somehow this doesn't happen
 comment|// for BLOBs (ConnectorJ v. 3.0.9)
-name|map
-operator|.
-name|registerType
-argument_list|(
+name|CharType
+name|charType
+init|=
 operator|new
 name|CharType
 argument_list|(
@@ -767,6 +782,12 @@ literal|false
 argument_list|,
 literal|false
 argument_list|)
+decl_stmt|;
+name|map
+operator|.
+name|registerType
+argument_list|(
+name|charType
 argument_list|)
 expr_stmt|;
 name|map
@@ -779,6 +800,19 @@ argument_list|(
 literal|false
 argument_list|,
 literal|false
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|map
+operator|.
+name|registerType
+argument_list|(
+operator|new
+name|JsonType
+argument_list|(
+name|charType
+argument_list|,
+literal|true
 argument_list|)
 argument_list|)
 expr_stmt|;

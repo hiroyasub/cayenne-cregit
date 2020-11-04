@@ -3286,13 +3286,6 @@ name|WktType
 operator|.
 name|class
 argument_list|)
-operator|.
-name|add
-argument_list|(
-name|JsonType
-operator|.
-name|class
-argument_list|)
 expr_stmt|;
 name|contributeUserTypes
 argument_list|(
