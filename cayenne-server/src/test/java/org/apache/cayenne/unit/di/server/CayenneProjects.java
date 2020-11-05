@@ -517,6 +517,14 @@ name|CAY_2641
 init|=
 literal|"cay2641/cayenne-cay-2641.xml"
 decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
+name|ANNOTATION
+init|=
+literal|"annotation/cayenne-project.xml"
+decl_stmt|;
 block|}
 end_class
 
