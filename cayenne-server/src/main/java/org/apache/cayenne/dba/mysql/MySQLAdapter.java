@@ -1058,6 +1058,30 @@ comment|// BIGINT UNSIGNED maps to BigInteger according to MySQL docs, but
 comment|// there is no
 comment|// JDBC mapping for BigInteger
 block|}
+comment|// This is a special case for the Json type and older MySQL drivers (5.x)
+if|if
+condition|(
+name|type
+operator|==
+name|Types
+operator|.
+name|CHAR
+operator|&&
+literal|"json"
+operator|.
+name|equals
+argument_list|(
+name|typeName
+argument_list|)
+condition|)
+block|{
+name|type
+operator|=
+name|Types
+operator|.
+name|LONGVARCHAR
+expr_stmt|;
+block|}
 return|return
 name|super
 operator|.
