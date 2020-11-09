@@ -178,36 +178,6 @@ name|T
 name|value
 parameter_list|)
 function_decl|;
-comment|/**      * @since 4.2      * @return      */
-specifier|default
-name|ChildProcessor
-argument_list|<
-name|?
-argument_list|>
-name|readProcessor
-parameter_list|()
-block|{
-return|return
-name|ChildProcessor
-operator|.
-name|EMPTY
-return|;
-block|}
-comment|/**      * @since 4.2      * @return      */
-specifier|default
-name|ChildProcessor
-argument_list|<
-name|?
-argument_list|>
-name|writeProcessor
-parameter_list|()
-block|{
-return|return
-name|ChildProcessor
-operator|.
-name|EMPTY
-return|;
-block|}
 block|}
 end_interface
 
