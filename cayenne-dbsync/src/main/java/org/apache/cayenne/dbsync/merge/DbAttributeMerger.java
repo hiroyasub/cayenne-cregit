@@ -740,6 +740,14 @@ block|,
 name|Types
 operator|.
 name|VARCHAR
+block|,
+name|Types
+operator|.
+name|BINARY
+block|,
+name|Types
+operator|.
+name|VARBINARY
 block|}
 decl_stmt|;
 for|for
