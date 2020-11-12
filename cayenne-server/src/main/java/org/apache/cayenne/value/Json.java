@@ -135,6 +135,19 @@ name|json
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|toString
+parameter_list|()
+block|{
+return|return
+literal|"JSON value: "
+operator|+
+name|json
+return|;
+block|}
 block|}
 end_class
 
