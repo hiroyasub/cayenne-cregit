@@ -261,8 +261,6 @@ specifier|public
 name|void
 name|testCalendar
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|CalendarEntity
 name|test
@@ -295,7 +293,9 @@ name|set
 argument_list|(
 literal|2002
 argument_list|,
-literal|1
+name|Calendar
+operator|.
+name|FEBRUARY
 argument_list|,
 literal|1
 argument_list|)
@@ -366,8 +366,6 @@ specifier|public
 name|void
 name|testDate
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|DateTestEntity
 name|test
@@ -400,7 +398,9 @@ name|set
 argument_list|(
 literal|2002
 argument_list|,
-literal|1
+name|Calendar
+operator|.
+name|FEBRUARY
 argument_list|,
 literal|1
 argument_list|)
@@ -482,8 +482,6 @@ specifier|public
 name|void
 name|testTime
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|DateTestEntity
 name|test
@@ -516,7 +514,9 @@ name|set
 argument_list|(
 literal|1970
 argument_list|,
-literal|0
+name|Calendar
+operator|.
+name|JANUARY
 argument_list|,
 literal|1
 argument_list|,
@@ -634,8 +634,6 @@ specifier|public
 name|void
 name|testTimestamp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|DateTestEntity
 name|test
@@ -668,7 +666,9 @@ name|set
 argument_list|(
 literal|2003
 argument_list|,
-literal|1
+name|Calendar
+operator|.
+name|FEBRUARY
 argument_list|,
 literal|1
 argument_list|,
@@ -743,8 +743,6 @@ specifier|public
 name|void
 name|testSQLTemplateTimestamp
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|DateTestEntity
 name|test
@@ -777,7 +775,9 @@ name|set
 argument_list|(
 literal|2003
 argument_list|,
-literal|1
+name|Calendar
+operator|.
+name|FEBRUARY
 argument_list|,
 literal|1
 argument_list|,
@@ -865,8 +865,6 @@ specifier|public
 name|void
 name|testSQLTemplateDate
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|DateTestEntity
 name|test
@@ -900,7 +898,9 @@ name|set
 argument_list|(
 literal|2003
 argument_list|,
-literal|1
+name|Calendar
+operator|.
+name|FEBRUARY
 argument_list|,
 literal|1
 argument_list|,
@@ -1020,8 +1020,6 @@ specifier|public
 name|void
 name|testSQLTemplateTime
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|DateTestEntity
 name|test
@@ -1055,7 +1053,9 @@ name|set
 argument_list|(
 literal|2003
 argument_list|,
-literal|1
+name|Calendar
+operator|.
+name|FEBRUARY
 argument_list|,
 literal|1
 argument_list|,
