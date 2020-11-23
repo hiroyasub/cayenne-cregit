@@ -962,6 +962,18 @@ operator|.
 name|getDbAttributePath
 argument_list|()
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|property
+operator|.
+name|getAttribute
+argument_list|()
+operator|.
+name|isLazy
+argument_list|()
+condition|)
+block|{
 name|appendColumn
 argument_list|(
 name|targetSource
@@ -973,6 +985,7 @@ operator|+
 name|target
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 literal|true
 return|;
