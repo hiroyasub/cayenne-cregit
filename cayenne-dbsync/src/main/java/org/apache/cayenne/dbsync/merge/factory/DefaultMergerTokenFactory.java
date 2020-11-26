@@ -1310,6 +1310,23 @@ name|isGenerated
 argument_list|)
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|boolean
+name|needUpdateSpecificType
+parameter_list|(
+name|DbAttribute
+name|columnOriginal
+parameter_list|,
+name|DbAttribute
+name|columnNew
+parameter_list|)
+block|{
+return|return
+literal|true
+return|;
+block|}
 block|}
 end_class
 
