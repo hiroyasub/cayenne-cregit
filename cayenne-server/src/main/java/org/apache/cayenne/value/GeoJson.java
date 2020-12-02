@@ -25,6 +25,22 @@ name|Objects
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|value
+operator|.
+name|json
+operator|.
+name|JsonUtils
+import|;
+end_import
+
 begin_comment
 comment|/**  * A Cayenne-supported values object that holds GeoJson string.  *  * @since 4.2  */
 end_comment
@@ -106,11 +122,10 @@ name|GeoJson
 operator|)
 name|o
 decl_stmt|;
-comment|// TODO: and ideal comparison would ignore spaces around JSON tokens, but that may be too expensive
 return|return
-name|Objects
+name|JsonUtils
 operator|.
-name|equals
+name|compare
 argument_list|(
 name|geometry
 argument_list|,
