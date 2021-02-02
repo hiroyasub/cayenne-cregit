@@ -704,7 +704,15 @@ literal|false
 return|;
 block|}
 return|return
-literal|true
+name|getTokenFactory
+argument_list|()
+operator|.
+name|needUpdateSpecificType
+argument_list|(
+name|original
+argument_list|,
+name|imported
+argument_list|)
 return|;
 block|}
 if|if

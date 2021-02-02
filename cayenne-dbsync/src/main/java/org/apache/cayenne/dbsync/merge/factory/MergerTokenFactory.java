@@ -411,6 +411,16 @@ name|boolean
 name|isGenerated
 parameter_list|)
 function_decl|;
+name|boolean
+name|needUpdateSpecificType
+parameter_list|(
+name|DbAttribute
+name|columnOriginal
+parameter_list|,
+name|DbAttribute
+name|columnNew
+parameter_list|)
+function_decl|;
 block|}
 end_interface
 
