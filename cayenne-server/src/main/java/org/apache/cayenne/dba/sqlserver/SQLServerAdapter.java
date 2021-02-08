@@ -383,10 +383,25 @@ name|SQLTreeProcessor
 name|getSqlTreeProcessor
 parameter_list|()
 block|{
-return|return
+name|SQLServerTreeProcessor
+name|sqlServerTreeProcessor
+init|=
 operator|new
 name|SQLServerTreeProcessor
 argument_list|()
+decl_stmt|;
+name|sqlServerTreeProcessor
+operator|.
+name|setVersion
+argument_list|(
+name|this
+operator|.
+name|getVersion
+argument_list|()
+argument_list|)
+expr_stmt|;
+return|return
+name|sqlServerTreeProcessor
 return|;
 block|}
 comment|/** 	 * Uses SQLServerActionBuilder to create the right action. 	 * 	 * @since 1.2 	 */
