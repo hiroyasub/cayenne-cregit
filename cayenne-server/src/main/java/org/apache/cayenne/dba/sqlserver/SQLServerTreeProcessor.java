@@ -151,9 +151,9 @@ block|{
 if|if
 condition|(
 name|version
-operator|==
+operator|!=
 literal|null
-operator|||
+operator|&&
 name|version
 operator|>=
 literal|12
