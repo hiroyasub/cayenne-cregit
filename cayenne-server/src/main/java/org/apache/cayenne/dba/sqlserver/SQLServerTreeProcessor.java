@@ -151,6 +151,10 @@ block|{
 if|if
 condition|(
 name|version
+operator|==
+literal|null
+operator|||
+name|version
 operator|>=
 literal|12
 condition|)
@@ -204,6 +208,8 @@ operator|.
 name|getOffset
 argument_list|()
 argument_list|)
+argument_list|,
+literal|false
 argument_list|)
 expr_stmt|;
 return|return;

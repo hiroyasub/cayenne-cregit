@@ -228,6 +228,11 @@ name|SQLServerAdapter
 extends|extends
 name|SybaseAdapter
 block|{
+comment|/** 	 * Stores the major version of the database. 	 * Database versions 12 and higher support the use of LIMIT, 	 * lower versions use TOP N 	 * 	 * @since 4.2 	 */
+specifier|protected
+name|Integer
+name|version
+decl_stmt|;
 comment|/** 	 * @deprecated since 4.2 unused 	 */
 annotation|@
 name|Deprecated
@@ -394,8 +399,6 @@ name|sqlServerTreeProcessor
 operator|.
 name|setVersion
 argument_list|(
-name|this
-operator|.
 name|getVersion
 argument_list|()
 argument_list|)
@@ -444,6 +447,30 @@ block|{
 return|return
 name|SYSTEM_SCHEMAS
 return|;
+block|}
+specifier|public
+name|Integer
+name|getVersion
+parameter_list|()
+block|{
+return|return
+name|version
+return|;
+block|}
+specifier|public
+name|void
+name|setVersion
+parameter_list|(
+name|Integer
+name|version
+parameter_list|)
+block|{
+name|this
+operator|.
+name|version
+operator|=
+name|version
+expr_stmt|;
 block|}
 block|}
 end_class

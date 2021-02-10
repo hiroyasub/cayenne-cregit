@@ -338,10 +338,6 @@ specifier|volatile
 name|DbAdapter
 name|adapter
 decl_stmt|;
-specifier|protected
-name|Integer
-name|version
-decl_stmt|;
 comment|/** 	 * Creates an {@link AutoAdapter} based on a delegate adapter obtained via 	 * "adapterProvider". 	 * 	 * @since 3.1 	 */
 specifier|public
 name|AutoAdapter
@@ -1020,17 +1016,6 @@ argument_list|()
 operator|.
 name|getSystemSchemas
 argument_list|()
-return|;
-block|}
-annotation|@
-name|Override
-specifier|public
-name|Integer
-name|getVersion
-parameter_list|()
-block|{
-return|return
-name|version
 return|;
 block|}
 block|}

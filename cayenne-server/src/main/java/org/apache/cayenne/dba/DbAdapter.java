@@ -523,10 +523,6 @@ argument_list|>
 name|getSystemSchemas
 parameter_list|()
 function_decl|;
-name|Integer
-name|getVersion
-parameter_list|()
-function_decl|;
 block|}
 end_interface
 
