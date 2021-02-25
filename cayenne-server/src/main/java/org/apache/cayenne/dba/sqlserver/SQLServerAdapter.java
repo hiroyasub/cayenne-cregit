@@ -228,7 +228,7 @@ name|SQLServerAdapter
 extends|extends
 name|SybaseAdapter
 block|{
-comment|/** 	 * Stores the major version of the database. 	 * Database versions 12 and higher support the use of LIMIT, 	 * lower versions use TOP N 	 * 	 * @since 4.2 	 */
+comment|/** 	 * Stores the major version of the database. 	 * Database versions 12 and higher supports the use of LIMIT,lower versions use TOP N. 	 * 	 * @since 4.2 	 */
 specifier|private
 name|Integer
 name|version
@@ -245,6 +245,7 @@ init|=
 literal|"RTRIM"
 decl_stmt|;
 specifier|private
+specifier|final
 name|List
 argument_list|<
 name|String
@@ -368,7 +369,7 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Not supported, see:<a href="http://microsoft/mssql-jdbc#245">mssql-jdbc #245</a>      */
+comment|/**      * Not supported, see:<a href="https://github.com/microsoft/mssql-jdbc/issues/245">mssql-jdbc #245</a>      */
 annotation|@
 name|Override
 specifier|public
@@ -388,23 +389,29 @@ name|SQLTreeProcessor
 name|getSqlTreeProcessor
 parameter_list|()
 block|{
-name|SQLServerTreeProcessor
-name|sqlServerTreeProcessor
-init|=
+if|if
+condition|(
+name|getVersion
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|getVersion
+argument_list|()
+operator|>=
+literal|12
+condition|)
+block|{
+return|return
+operator|new
+name|SQLServerTreeProcessorV12
+argument_list|()
+return|;
+block|}
+return|return
 operator|new
 name|SQLServerTreeProcessor
 argument_list|()
-decl_stmt|;
-name|sqlServerTreeProcessor
-operator|.
-name|setVersion
-argument_list|(
-name|getVersion
-argument_list|()
-argument_list|)
-expr_stmt|;
-return|return
-name|sqlServerTreeProcessor
 return|;
 block|}
 comment|/** 	 * Uses SQLServerActionBuilder to create the right action. 	 * 	 * @since 1.2 	 */
@@ -421,30 +428,19 @@ name|DataNode
 name|node
 parameter_list|)
 block|{
-name|SQLServerActionBuilder
-name|sqlServerActionBuilder
-init|=
-operator|new
-name|SQLServerActionBuilder
-argument_list|(
-name|node
-argument_list|)
-decl_stmt|;
-name|sqlServerActionBuilder
-operator|.
-name|setVersion
-argument_list|(
-name|this
-operator|.
-name|version
-argument_list|)
-expr_stmt|;
 return|return
 name|query
 operator|.
 name|createSQLAction
 argument_list|(
-name|sqlServerActionBuilder
+operator|new
+name|SQLServerActionBuilder
+argument_list|(
+name|node
+argument_list|,
+name|getVersion
+argument_list|()
+argument_list|)
 argument_list|)
 return|;
 block|}
@@ -471,6 +467,7 @@ return|return
 name|version
 return|;
 block|}
+comment|/** 	 * @since 4.2 	 * @param version of the server as provided by the JDBC driver 	 */
 specifier|public
 name|void
 name|setVersion

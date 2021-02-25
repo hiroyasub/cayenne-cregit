@@ -59,6 +59,8 @@ block|,
 name|INSERT_COLUMNS
 block|,
 name|INSERT_VALUES
+block|,
+name|ORDER_BY
 block|}
 end_enum
 

@@ -72,10 +72,11 @@ name|SQLServerSelectAction
 extends|extends
 name|SelectAction
 block|{
-comment|/**      * When using TOP N instead of LIMIT. The offset will be manual.      *      */
+comment|/**      * When using TOP N instead of LIMIT the offset will be processed in-memory.      */
 specifier|private
-name|Boolean
-name|isManualOffset
+specifier|final
+name|boolean
+name|needsInMemoryOffset
 decl_stmt|;
 specifier|public
 name|SQLServerSelectAction
@@ -89,8 +90,8 @@ parameter_list|,
 name|DataNode
 name|dataNode
 parameter_list|,
-name|Boolean
-name|isManualOffset
+name|boolean
+name|needsInMemoryOffset
 parameter_list|)
 block|{
 name|super
@@ -102,9 +103,9 @@ argument_list|)
 expr_stmt|;
 name|this
 operator|.
-name|isManualOffset
+name|needsInMemoryOffset
 operator|=
-name|isManualOffset
+name|needsInMemoryOffset
 expr_stmt|;
 block|}
 annotation|@
@@ -117,21 +118,16 @@ name|int
 name|queryOffset
 parameter_list|)
 block|{
-if|if
-condition|(
-name|isManualOffset
-condition|)
-block|{
 return|return
+name|needsInMemoryOffset
+condition|?
 name|super
 operator|.
 name|getInMemoryOffset
 argument_list|(
 name|queryOffset
 argument_list|)
-return|;
-block|}
-return|return
+else|:
 literal|0
 return|;
 block|}

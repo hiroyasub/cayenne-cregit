@@ -99,6 +99,19 @@ name|OrderByNode
 argument_list|()
 return|;
 block|}
+annotation|@
+name|Override
+specifier|public
+name|NodeType
+name|getType
+parameter_list|()
+block|{
+return|return
+name|NodeType
+operator|.
+name|ORDER_BY
+return|;
+block|}
 block|}
 end_class
 
