@@ -187,6 +187,16 @@ name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
+name|adapter
+operator|.
+name|setVersion
+argument_list|(
+name|md
+operator|.
+name|getDatabaseMajorVersion
+argument_list|()
+argument_list|)
+expr_stmt|;
 comment|// detect whether generated keys are supported
 name|boolean
 name|generatedKeys
