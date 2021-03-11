@@ -81,8 +81,13 @@ class|class
 name|EntityInheritanceTree
 block|{
 specifier|protected
+specifier|final
 name|ObjEntity
 name|entity
+decl_stmt|;
+specifier|protected
+name|EntityInheritanceTree
+name|parent
 decl_stmt|;
 specifier|protected
 name|Collection
@@ -109,7 +114,7 @@ operator|=
 name|entity
 expr_stmt|;
 block|}
-comment|/**      * Returns a qualifier Expression that matches root entity of this tree and all its      * subentities.      */
+comment|/**      * Returns a qualifier Expression that matches root entity of this tree and all its subentities.      */
 specifier|public
 name|Expression
 name|qualifierForEntityAndSubclasses
@@ -126,6 +131,10 @@ decl_stmt|;
 if|if
 condition|(
 name|qualifier
+operator|==
+literal|null
+operator|&&
+name|parent
 operator|==
 literal|null
 condition|)
@@ -158,8 +167,7 @@ operator|.
 name|qualifierForEntityAndSubclasses
 argument_list|()
 decl_stmt|;
-comment|// if any child qualifier is null, just return null, since no filtering is
-comment|// possible
+comment|// if any child qualifier is null, just return null, since no filtering is possible
 if|if
 condition|(
 name|childQualifier
@@ -171,6 +179,20 @@ return|return
 literal|null
 return|;
 block|}
+if|if
+condition|(
+name|qualifier
+operator|==
+literal|null
+condition|)
+block|{
+name|qualifier
+operator|=
+name|childQualifier
+expr_stmt|;
+block|}
+else|else
+block|{
 name|qualifier
 operator|=
 name|qualifier
@@ -180,6 +202,7 @@ argument_list|(
 name|childQualifier
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 return|return
@@ -262,7 +285,13 @@ return|;
 block|}
 comment|// no qualifier ... matches all rows
 return|return
+name|parent
+operator|==
+literal|null
+condition|?
 name|entity
+else|:
+literal|null
 return|;
 block|}
 comment|/**      * Returns entity qualifier expressed as DB path qualifier or null if entity has no      * qualifier.      *       * @since 3.0      */
@@ -341,6 +370,12 @@ argument_list|(
 name|node
 argument_list|)
 expr_stmt|;
+name|node
+operator|.
+name|parent
+operator|=
+name|this
+expr_stmt|;
 block|}
 specifier|public
 name|int
@@ -381,9 +416,6 @@ name|subentities
 else|:
 name|Collections
 operator|.
-expr|<
-name|EntityInheritanceTree
-operator|>
 name|emptyList
 argument_list|()
 return|;
