@@ -178,17 +178,8 @@ name|mediator
 operator|.
 name|addObjEntityDisplayListener
 argument_list|(
-operator|new
-name|ObjEntityDisplayListener
-argument_list|()
-block|{
-specifier|public
-name|void
-name|currentObjEntityChanged
-parameter_list|(
-name|EntityDisplayEvent
 name|e
-parameter_list|)
+lambda|->
 block|{
 if|if
 condition|(
@@ -203,7 +194,6 @@ block|{
 name|rebuildTables
 argument_list|()
 expr_stmt|;
-block|}
 block|}
 block|}
 argument_list|)
