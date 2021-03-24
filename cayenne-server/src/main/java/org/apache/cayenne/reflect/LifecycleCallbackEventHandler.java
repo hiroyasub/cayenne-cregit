@@ -269,6 +269,32 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Registers a callback method to be invoked on an entity class instances when a      * lifecycle event occurs.      * @since 4.2      */
+name|void
+name|addListener
+parameter_list|(
+name|Class
+argument_list|<
+name|?
+argument_list|>
+name|entityClass
+parameter_list|,
+name|Method
+name|method
+parameter_list|)
+block|{
+name|addCallback
+argument_list|(
+name|entityClass
+argument_list|,
+operator|new
+name|CallbackOnEntity
+argument_list|(
+name|method
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 comment|/**      * Registers callback method to be invoked on a provided non-entity object when a      * lifecycle event occurs.      */
 name|void
 name|addListener

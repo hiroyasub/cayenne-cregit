@@ -371,9 +371,7 @@ name|entityResolver
 operator|=
 name|resolver
 expr_stmt|;
-comment|// initialize callbacks map in constructor to avoid synchronization
-comment|// issues
-comment|// downstream.
+comment|// initialize callbacks map in constructor to avoid synchronization issues downstream.
 name|this
 operator|.
 name|eventCallbacks
@@ -807,6 +805,40 @@ argument_list|(
 name|entityClass
 argument_list|,
 name|methodName
+argument_list|)
+expr_stmt|;
+block|}
+comment|/** 	 * Registers a callback method to be invoked on an entity class instances 	 * when a lifecycle event occurs. 	 * 	 * @param type of the lifecycle event 	 * @param entityClass type of the entity 	 * @param method callback method reference 	 * 	 * @since 4.2 	 */
+specifier|public
+name|void
+name|addCallback
+parameter_list|(
+name|LifecycleEvent
+name|type
+parameter_list|,
+name|Class
+argument_list|<
+name|?
+argument_list|>
+name|entityClass
+parameter_list|,
+name|Method
+name|method
+parameter_list|)
+block|{
+name|eventCallbacks
+index|[
+name|type
+operator|.
+name|ordinal
+argument_list|()
+index|]
+operator|.
+name|addListener
+argument_list|(
+name|entityClass
+argument_list|,
+name|method
 argument_list|)
 expr_stmt|;
 block|}

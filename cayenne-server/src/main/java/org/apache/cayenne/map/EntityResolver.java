@@ -917,9 +917,6 @@ argument_list|,
 name|entityClass
 argument_list|,
 name|m
-operator|.
-name|getName
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
