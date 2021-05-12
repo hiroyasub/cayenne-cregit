@@ -1141,6 +1141,15 @@ name|adapter
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
+name|ReverseEngineering
+name|getReverseEngineering
+parameter_list|()
+block|{
+return|return
+name|reverseEngineering
+return|;
+block|}
 annotation|@
 name|OutputFile
 annotation|@

@@ -151,6 +151,15 @@ name|mapFile
 argument_list|)
 expr_stmt|;
 block|}
+specifier|public
+name|String
+name|getMapFileName
+parameter_list|()
+block|{
+return|return
+name|mapFileName
+return|;
+block|}
 annotation|@
 name|Internal
 specifier|public
