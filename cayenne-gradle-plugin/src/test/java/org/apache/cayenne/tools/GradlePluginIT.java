@@ -278,14 +278,6 @@ block|,
 literal|"4.0"
 block|,
 literal|"3.5"
-block|,
-literal|"3.3"
-block|,
-literal|"3.0"
-block|,
-literal|"2.12"
-block|,
-literal|"2.8"
 block|}
 expr_stmt|;
 block|}
