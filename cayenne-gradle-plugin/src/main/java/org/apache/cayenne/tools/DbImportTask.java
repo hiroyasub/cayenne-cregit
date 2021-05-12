@@ -435,6 +435,22 @@ name|TaskExecutionException
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|di
+operator|.
+name|spi
+operator|.
+name|DefaultClassLoaderManager
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 4.0  */
 end_comment
@@ -549,11 +565,8 @@ operator|.
 name|toInstance
 argument_list|(
 operator|new
-name|GradlePluginClassLoaderManager
-argument_list|(
-name|getProject
+name|DefaultClassLoaderManager
 argument_list|()
-argument_list|)
 argument_list|)
 argument_list|)
 decl_stmt|;
