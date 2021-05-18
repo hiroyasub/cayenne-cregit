@@ -268,6 +268,16 @@ name|cgenConfiguration
 operator|=
 name|cgenConfiguration
 expr_stmt|;
+if|if
+condition|(
+name|cgenConfiguration
+operator|.
+name|getRootPath
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
 name|getView
 argument_list|()
 operator|.
@@ -285,6 +295,7 @@ name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|cgenConfiguration
