@@ -1415,6 +1415,16 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
+if|if
+condition|(
+name|map
+operator|.
+name|getLocation
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
 name|cgenConfiguration
 operator|.
 name|setRootPath
@@ -1422,6 +1432,7 @@ argument_list|(
 name|basePath
 argument_list|)
 expr_stmt|;
+block|}
 name|Preferences
 name|preferences
 init|=
