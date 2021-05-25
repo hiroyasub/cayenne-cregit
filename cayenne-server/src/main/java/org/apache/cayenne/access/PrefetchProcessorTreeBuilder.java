@@ -970,7 +970,7 @@ operator|.
 name|setParentAttachmentStrategy
 argument_list|(
 operator|new
-name|JoinedIdParentAttachementStrategy
+name|JoinedIdParentAttachmentStrategy
 argument_list|(
 name|context
 operator|.

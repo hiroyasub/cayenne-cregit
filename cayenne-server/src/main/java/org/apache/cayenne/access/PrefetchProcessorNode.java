@@ -63,7 +63,67 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|*
+name|CayenneRuntimeException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|DataRow
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|Fault
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|PersistenceState
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|Persistent
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|ValueHolder
 import|;
 end_import
 
@@ -237,13 +297,59 @@ operator|.
 name|HOLLOW
 condition|)
 block|{
-comment|// if a relationship is to-one (i.e. flattened to-one), can connect right
-comment|// away.... write directly to prevent changing persistence state.
+comment|// if a relationship is to-one (i.e. flattened to-one), can connect right away....
+comment|// write directly to prevent changing persistence state.
 if|if
 condition|(
 name|incoming
 operator|instanceof
 name|ToOneProperty
+condition|)
+block|{
+name|ObjectDiff
+name|diff
+init|=
+operator|(
+operator|(
+name|DataContext
+operator|)
+name|parent
+operator|.
+name|getObjectContext
+argument_list|()
+operator|)
+operator|.
+name|getObjectStore
+argument_list|()
+operator|.
+name|getChangesByObjectId
+argument_list|()
+operator|.
+name|get
+argument_list|(
+name|parent
+operator|.
+name|getObjectId
+argument_list|()
+argument_list|)
+decl_stmt|;
+comment|// check that there are no pending changes for that property
+if|if
+condition|(
+name|diff
+operator|==
+literal|null
+operator|||
+operator|!
+name|diff
+operator|.
+name|containsArcSnapshot
+argument_list|(
+name|incoming
+operator|.
+name|getName
+argument_list|()
+argument_list|)
 condition|)
 block|{
 name|incoming
@@ -258,6 +364,7 @@ name|object
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 else|else
 block|{
 name|List
@@ -268,38 +375,19 @@ name|peers
 init|=
 name|partitionByParent
 operator|.
-name|get
+name|computeIfAbsent
 argument_list|(
 name|parent
-argument_list|)
-decl_stmt|;
-comment|// wrap in a list even if relationship is to-one... will unwrap at the end
-comment|// of the processing cycle.
-if|if
-condition|(
-name|peers
-operator|==
-literal|null
-condition|)
-block|{
-name|peers
-operator|=
+argument_list|,
+name|p
+lambda|->
 operator|new
 name|ArrayList
 argument_list|<>
 argument_list|()
-expr_stmt|;
-name|partitionByParent
-operator|.
-name|put
-argument_list|(
-name|parent
-argument_list|,
-name|peers
 argument_list|)
-expr_stmt|;
-block|}
-if|else if
+decl_stmt|;
+if|if
 condition|(
 name|peers
 operator|.
@@ -400,8 +488,8 @@ block|}
 block|}
 else|else
 block|{
-comment|// optional to-one ... need to fill in unresolved relationships with
-comment|// null...
+comment|// optional to-one ...
+comment|// need to fill in unresolved relationships with null...
 if|if
 condition|(
 name|parentObjectsExist
@@ -593,8 +681,8 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-comment|// TODO, Andrus 11/15/2005 - if list is modified, shouldn't we attempt to
-comment|// merge the changes instead of overwriting?
+comment|// TODO, Andrus 11/15/2005 -
+comment|//       if list is modified, shouldn't we attempt to merge the changes instead of overwriting?
 name|toManyList
 operator|.
 name|setValueDirectly

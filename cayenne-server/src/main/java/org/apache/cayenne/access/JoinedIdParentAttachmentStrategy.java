@@ -121,15 +121,17 @@ end_comment
 
 begin_class
 class|class
-name|JoinedIdParentAttachementStrategy
+name|JoinedIdParentAttachmentStrategy
 implements|implements
 name|ParentAttachmentStrategy
 block|{
 specifier|private
+specifier|final
 name|String
 name|relatedIdPrefix
 decl_stmt|;
 specifier|private
+specifier|final
 name|Collection
 argument_list|<
 name|ObjEntity
@@ -137,14 +139,16 @@ argument_list|>
 name|sourceEntities
 decl_stmt|;
 specifier|private
+specifier|final
 name|PrefetchProcessorNode
 name|node
 decl_stmt|;
 specifier|private
+specifier|final
 name|GraphManager
 name|graphManager
 decl_stmt|;
-name|JoinedIdParentAttachementStrategy
+name|JoinedIdParentAttachmentStrategy
 parameter_list|(
 name|GraphManager
 name|graphManager
