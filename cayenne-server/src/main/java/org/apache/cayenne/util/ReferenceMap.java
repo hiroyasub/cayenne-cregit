@@ -1021,6 +1021,7 @@ name|void
 name|resetReferenceQueue
 parameter_list|()
 block|{
+comment|//noinspection StatementWithEmptyBody
 while|while
 condition|(
 name|referenceQueue
@@ -1528,6 +1529,13 @@ argument_list|(
 name|newRef
 argument_list|)
 decl_stmt|;
+name|super
+operator|.
+name|setValue
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|oldRef
@@ -1536,7 +1544,9 @@ literal|null
 condition|)
 block|{
 return|return
-name|getValue
+name|oldRef
+operator|.
+name|get
 argument_list|()
 return|;
 block|}
