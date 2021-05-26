@@ -775,12 +775,16 @@ operator|.
 name|isEmpty
 argument_list|()
 condition|)
+block|{
 name|container
 operator|=
 name|root
 expr_stmt|;
+block|}
 else|else
+block|{
 return|return;
+block|}
 block|}
 name|processor
 operator|.
