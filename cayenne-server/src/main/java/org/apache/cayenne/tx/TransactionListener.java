@@ -61,6 +61,21 @@ name|Connection
 name|connection
 parameter_list|)
 function_decl|;
+specifier|default
+name|Connection
+name|decorateConnection
+parameter_list|(
+name|Transaction
+name|tx
+parameter_list|,
+name|Connection
+name|connection
+parameter_list|)
+block|{
+return|return
+name|connection
+return|;
+block|}
 block|}
 end_interface
 

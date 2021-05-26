@@ -299,17 +299,26 @@ name|descriptor
 init|=
 operator|new
 name|TransactionDescriptor
+operator|.
+name|Builder
+argument_list|()
+operator|.
+name|propagation
+argument_list|(
+name|TransactionPropagation
+operator|.
+name|REQUIRES_NEW
+argument_list|)
+operator|.
+name|isolation
 argument_list|(
 name|Connection
 operator|.
 name|TRANSACTION_SERIALIZABLE
-argument_list|,
-comment|// ensure that transaction not visible to each other
-name|TransactionPropagation
-operator|.
-name|REQUIRES_NEW
-comment|// require new transaction for every operation
 argument_list|)
+operator|.
+name|build
+argument_list|()
 decl_stmt|;
 name|performInTransaction
 argument_list|(
@@ -370,17 +379,26 @@ name|descriptor
 init|=
 operator|new
 name|TransactionDescriptor
+operator|.
+name|Builder
+argument_list|()
+operator|.
+name|isolation
 argument_list|(
 name|Connection
 operator|.
 name|TRANSACTION_SERIALIZABLE
-argument_list|,
-comment|// ensure that transaction not visible to each other
+argument_list|)
+operator|.
+name|propagation
+argument_list|(
 name|TransactionPropagation
 operator|.
 name|NESTED
-comment|// allow joining to existing transaction
 argument_list|)
+operator|.
+name|build
+argument_list|()
 decl_stmt|;
 name|performInTransaction
 argument_list|(
@@ -441,17 +459,26 @@ name|descriptor
 init|=
 operator|new
 name|TransactionDescriptor
+operator|.
+name|Builder
+argument_list|()
+operator|.
+name|isolation
 argument_list|(
 name|Connection
 operator|.
 name|TRANSACTION_SERIALIZABLE
-argument_list|,
-comment|// ensure that transaction not visible to each other
+argument_list|)
+operator|.
+name|propagation
+argument_list|(
 name|TransactionPropagation
 operator|.
 name|MANDATORY
-comment|// requires existing transaction to join
 argument_list|)
+operator|.
+name|build
+argument_list|()
 decl_stmt|;
 name|performInTransaction
 argument_list|(
