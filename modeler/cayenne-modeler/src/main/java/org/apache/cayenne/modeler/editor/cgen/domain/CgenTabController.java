@@ -405,6 +405,14 @@ name|dataMap
 argument_list|)
 expr_stmt|;
 block|}
+comment|// should always run here
+name|cgenConfiguration
+operator|.
+name|setForce
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
 name|ClassGenerationAction
 name|classGenerationAction
 init|=
