@@ -76,7 +76,7 @@ name|TransactionDescriptor
 parameter_list|()
 block|{
 block|}
-comment|/**      * @param isolation   one of the following<code>Connection</code> constants:      *<code>Connection.TRANSACTION_READ_UNCOMMITTED</code>,      *<code>Connection.TRANSACTION_READ_COMMITTED</code>,      *<code>Connection.TRANSACTION_REPEATABLE_READ</code>,      *<code>Connection.TRANSACTION_SERIALIZABLE</code>, or      *<code>TransactionDescriptor.ISOLATION_DEFAULT</code>      * @param propagation transaction propagation behaviour      * @see TransactionPropagation      * @deprecated since 4.2.M4. Use builder instead      */
+comment|/**      * @param isolation   one of the following<code>Connection</code> constants:      *<code>Connection.TRANSACTION_READ_UNCOMMITTED</code>,      *<code>Connection.TRANSACTION_READ_COMMITTED</code>,      *<code>Connection.TRANSACTION_REPEATABLE_READ</code>,      *<code>Connection.TRANSACTION_SERIALIZABLE</code>, or      *<code>TransactionDescriptor.ISOLATION_DEFAULT</code>      * @param propagation transaction propagation behaviour      * @see TransactionPropagation      * @deprecated since 4.2. Use builder instead      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -122,7 +122,7 @@ name|NESTED
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * @param propagation transaction propagation behaviour      * @see TransactionPropagation      * @deprecated since 4.2.M4. Use builder instead      */
+comment|/**      * @param propagation transaction propagation behaviour      * @see TransactionPropagation      * @deprecated since 4.2. Use builder instead      */
 annotation|@
 name|Deprecated
 specifier|public
@@ -173,7 +173,19 @@ return|return
 name|customConnectionSupplier
 return|;
 block|}
-comment|/**      * Builder class for TransactionDescriptor.      *      * @since 4.2.M4      */
+specifier|public
+specifier|static
+name|Builder
+name|builder
+parameter_list|()
+block|{
+return|return
+operator|new
+name|Builder
+argument_list|()
+return|;
+block|}
+comment|/**      * Builder class for TransactionDescriptor.      * @since 4.2      */
 specifier|public
 specifier|static
 class|class
@@ -188,6 +200,11 @@ operator|new
 name|TransactionDescriptor
 argument_list|()
 decl_stmt|;
+specifier|private
+name|Builder
+parameter_list|()
+block|{
+block|}
 comment|/**          * @param isolation one of the following<code>Connection</code> constants:          *<code>Connection.TRANSACTION_READ_UNCOMMITTED</code>,          *<code>Connection.TRANSACTION_READ_COMMITTED</code>,          *<code>Connection.TRANSACTION_REPEATABLE_READ</code>,          *<code>Connection.TRANSACTION_SERIALIZABLE</code>, or          *<code>TransactionDescriptor.ISOLATION_DEFAULT</code>          */
 specifier|public
 name|Builder

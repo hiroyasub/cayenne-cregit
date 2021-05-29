@@ -375,10 +375,9 @@ block|}
 name|TransactionDescriptor
 name|descriptor
 init|=
-operator|new
 name|TransactionDescriptor
 operator|.
-name|Builder
+name|builder
 argument_list|()
 operator|.
 name|propagation
