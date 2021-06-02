@@ -61,6 +61,22 @@ name|Connection
 name|connection
 parameter_list|)
 function_decl|;
+comment|/**      * This method could be used to decorate or substitute      * new connection initiated inside a Cayenne transaction.      *<br/>      * The default implementation returns the same connection.      *      * @param tx transaction that initiated connection      * @param connection connection (it could be decorated by other listeners)      * @return connection      *      * @since 4.2      */
+specifier|default
+name|Connection
+name|decorateConnection
+parameter_list|(
+name|Transaction
+name|tx
+parameter_list|,
+name|Connection
+name|connection
+parameter_list|)
+block|{
+return|return
+name|connection
+return|;
+block|}
 block|}
 end_interface
 
