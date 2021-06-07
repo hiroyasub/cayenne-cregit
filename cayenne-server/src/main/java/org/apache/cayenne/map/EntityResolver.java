@@ -623,6 +623,12 @@ specifier|transient
 name|ValueComparisonStrategyFactory
 name|valueComparisonStrategyFactory
 decl_stmt|;
+comment|/**      * @since 4.2      */
+specifier|protected
+specifier|transient
+name|EntitySorter
+name|entitySorter
+decl_stmt|;
 comment|/**      * Creates new empty EntityResolver.      */
 specifier|public
 name|EntityResolver
@@ -2117,6 +2123,32 @@ name|valueComparisonStrategyFactory
 operator|=
 name|valueComparisonStrategyFactory
 expr_stmt|;
+block|}
+comment|/**      * @since 4.2      */
+specifier|public
+name|void
+name|setEntitySorter
+parameter_list|(
+name|EntitySorter
+name|entitySorter
+parameter_list|)
+block|{
+name|this
+operator|.
+name|entitySorter
+operator|=
+name|entitySorter
+expr_stmt|;
+block|}
+comment|/**      * @since 4.2      */
+specifier|public
+name|EntitySorter
+name|getEntitySorter
+parameter_list|()
+block|{
+return|return
+name|entitySorter
+return|;
 block|}
 block|}
 end_class

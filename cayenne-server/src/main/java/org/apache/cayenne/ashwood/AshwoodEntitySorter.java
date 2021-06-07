@@ -927,6 +927,15 @@ name|entityResolver
 expr_stmt|;
 name|this
 operator|.
+name|entityResolver
+operator|.
+name|setEntitySorter
+argument_list|(
+name|this
+argument_list|)
+expr_stmt|;
+name|this
+operator|.
 name|dirty
 operator|=
 literal|true
