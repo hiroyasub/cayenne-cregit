@@ -172,7 +172,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Default mutable implementation of {@link QueryMetadata}.  *   * @since 1.1  */
+comment|/**  * Default mutable implementation of {@link QueryMetadata}.  *  * @since 1.1  */
 end_comment
 
 begin_class
@@ -332,6 +332,15 @@ operator|=
 name|info
 operator|.
 name|getFetchLimit
+argument_list|()
+expr_stmt|;
+name|this
+operator|.
+name|fetchOffset
+operator|=
+name|info
+operator|.
+name|getFetchOffset
 argument_list|()
 expr_stmt|;
 name|this
@@ -1499,7 +1508,7 @@ operator|=
 name|i
 expr_stmt|;
 block|}
-comment|/** 	 * Sets statement's fetch size (0 for no default size) 	 *  	 * @since 3.0 	 */
+comment|/** 	 * Sets statement's fetch size (0 for no default size) 	 * 	 * @since 3.0 	 */
 name|void
 name|setStatementFetchSize
 parameter_list|(
@@ -1549,7 +1558,7 @@ return|return
 name|queryTimeout
 return|;
 block|}
-comment|/** 	 * Adds a joint prefetch. 	 *  	 * @since 1.2 	 */
+comment|/** 	 * Adds a joint prefetch. 	 * 	 * @since 1.2 	 */
 name|PrefetchTreeNode
 name|addPrefetch
 parameter_list|(
@@ -1602,7 +1611,7 @@ return|return
 name|node
 return|;
 block|}
-comment|/** 	 * Adds a joint prefetch. 	 *  	 * @since 4.0 	 */
+comment|/** 	 * Adds a joint prefetch. 	 * 	 * @since 4.0 	 */
 name|void
 name|mergePrefetch
 parameter_list|(
@@ -1632,7 +1641,7 @@ name|node
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Adds all prefetches from a provided collection. 	 *  	 * @since 1.2 	 */
+comment|/** 	 * Adds all prefetches from a provided collection. 	 * 	 * @since 1.2 	 */
 name|void
 name|addPrefetches
 parameter_list|(
@@ -1671,7 +1680,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/** 	 * Clears all joint prefetches. 	 *  	 * @since 1.2 	 */
+comment|/** 	 * Clears all joint prefetches. 	 * 	 * @since 1.2 	 */
 name|void
 name|clearPrefetches
 parameter_list|()
@@ -1681,7 +1690,7 @@ operator|=
 literal|null
 expr_stmt|;
 block|}
-comment|/** 	 * Removes joint prefetch. 	 *  	 * @since 1.2 	 */
+comment|/** 	 * Removes joint prefetch. 	 * 	 * @since 1.2 	 */
 name|void
 name|removePrefetch
 parameter_list|(
