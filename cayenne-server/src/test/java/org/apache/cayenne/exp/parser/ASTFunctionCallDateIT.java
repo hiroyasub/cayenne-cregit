@@ -314,6 +314,17 @@ operator|.
 name|getInstance
 argument_list|()
 decl_stmt|;
+name|cal
+operator|.
+name|set
+argument_list|(
+name|Calendar
+operator|.
+name|MILLISECOND
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 name|int
 name|year
 init|=
