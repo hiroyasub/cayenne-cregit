@@ -481,6 +481,11 @@ argument_list|()
 expr_stmt|;
 name|resultDialog
 operator|.
+name|refreshElements
+argument_list|()
+expr_stmt|;
+name|resultDialog
+operator|.
 name|getOkButton
 argument_list|()
 operator|.
@@ -601,6 +606,16 @@ argument_list|,
 literal|"Nothing to import"
 argument_list|)
 decl_stmt|;
+name|resultDialog
+operator|.
+name|getRevertButton
+argument_list|()
+operator|.
+name|setVisible
+argument_list|(
+literal|false
+argument_list|)
+expr_stmt|;
 name|resultDialog
 operator|.
 name|addRowToOutput
