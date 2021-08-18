@@ -115,7 +115,7 @@ specifier|final
 name|int
 name|MAX_CONNECTIONS
 init|=
-literal|2
+literal|3
 decl_stmt|;
 specifier|private
 specifier|static
