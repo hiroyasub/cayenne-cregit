@@ -256,7 +256,7 @@ name|DataNode
 name|dataNode
 init|=
 operator|new
-name|DataNode
+name|ServerCaseDataNode
 argument_list|(
 name|nodeDescriptor
 operator|.
