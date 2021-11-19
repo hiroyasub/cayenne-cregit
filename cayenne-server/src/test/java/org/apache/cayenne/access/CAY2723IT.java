@@ -137,6 +137,16 @@ name|org
 operator|.
 name|junit
 operator|.
+name|Before
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|junit
+operator|.
 name|Test
 import|;
 end_import
@@ -179,6 +189,39 @@ specifier|private
 name|DataChannelInterceptor
 name|queryInterceptor
 decl_stmt|;
+comment|/**      * need to run this to ensure that PK generation doesn't affect main test      */
+annotation|@
+name|Before
+specifier|public
+name|void
+name|warmup
+parameter_list|()
+block|{
+name|Painting
+name|painting
+init|=
+name|context
+operator|.
+name|newObject
+argument_list|(
+name|Painting
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
+name|painting
+operator|.
+name|setPaintingTitle
+argument_list|(
+literal|"test_warmup"
+argument_list|)
+expr_stmt|;
+name|context
+operator|.
+name|commitChanges
+argument_list|()
+expr_stmt|;
+block|}
 annotation|@
 name|Test
 specifier|public
@@ -245,8 +288,7 @@ argument_list|(
 name|paintingInfo
 argument_list|)
 expr_stmt|;
-comment|// here should be only single insert of the painting object, but there will be 3 queries in total
-comment|// (2 for the PK generation + insert)
+comment|// here should be only single insert of the painting object
 name|int
 name|queryCounter
 init|=
@@ -264,7 +306,7 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|3
+literal|1
 argument_list|,
 name|queryCounter
 argument_list|)
