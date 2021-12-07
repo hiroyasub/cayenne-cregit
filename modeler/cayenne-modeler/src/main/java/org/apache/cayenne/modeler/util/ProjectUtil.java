@@ -1062,7 +1062,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/** Changes the name of the attribute in all places in DataMap. */
+comment|/**      * Adds or changes the name of the attribute in all places in DataMap.      */
 specifier|public
 specifier|static
 name|void
@@ -1078,27 +1078,49 @@ name|String
 name|newName
 parameter_list|)
 block|{
-if|if
-condition|(
-name|rel
-operator|==
-literal|null
-operator|||
-name|rel
-operator|!=
+name|Relationship
+name|existingRelationship
+init|=
 name|entity
 operator|.
 name|getRelationship
 argument_list|(
+name|newName
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|existingRelationship
+operator|!=
+literal|null
+operator|&&
+name|existingRelationship
+operator|!=
+name|rel
+condition|)
+block|{
+throw|throw
+operator|new
+name|IllegalArgumentException
+argument_list|(
+literal|"An attempt to override relationship '"
+operator|+
 name|rel
 operator|.
 name|getName
 argument_list|()
+operator|+
+literal|"'"
 argument_list|)
+throw|;
+block|}
+if|if
+condition|(
+name|rel
+operator|!=
+literal|null
 condition|)
 block|{
-return|return;
-block|}
 name|entity
 operator|.
 name|removeRelationship
@@ -1123,6 +1145,7 @@ argument_list|(
 name|rel
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/**      * Cleans any mappings of ObjEntities, ObjAttributes, ObjRelationship to the      * corresponding Db* objects that not longer exist.      */
 specifier|public
@@ -1394,7 +1417,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * check if path is correct. path is correct when he consist from<code>DbRelationship</code>      * objects, each<code>DbRelationship</code> object have  following<code>DbRelationship</code>      * object as a target, last component is<code>DbAttribute</code>      *      * @param currentEnt current db entity      * @param dbAttributePath path to check      * @return if path is correct return true      */
+comment|/**      * check if path is correct. path is correct when he consist from<code>DbRelationship</code>      * objects, each<code>DbRelationship</code> object have  following<code>DbRelationship</code>      * object as a target, last component is<code>DbAttribute</code>      *      * @param currentEnt      current db entity      * @param dbAttributePath path to check      * @return if path is correct return true      */
 specifier|public
 specifier|static
 name|boolean
