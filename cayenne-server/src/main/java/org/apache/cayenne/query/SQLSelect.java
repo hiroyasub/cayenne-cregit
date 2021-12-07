@@ -416,7 +416,7 @@ name|sql
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Creates a query that selects scalar values and uses default routing. 	 * @deprecated since 4.2. Use {@link #scalarQuery(String, Class<T>)} method. 	 */
+comment|/** 	 * Creates a query that selects scalar values and uses default routing. 	 * @deprecated since 4.2. Use {@link #scalarQuery(String, Class)} method. 	 */
 annotation|@
 name|Deprecated
 specifier|public
@@ -449,7 +449,7 @@ name|type
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Creates a query that selects scalar values and uses routing based on the 	 * provided DataMap name. 	 * @deprecated since 4.2. Use {@link #scalarQuery(String, String, Class<T>)} method. 	 */
+comment|/** 	 * Creates a query that selects scalar values and uses routing based on the 	 * provided DataMap name. 	 * @deprecated since 4.2. Use {@link #scalarQuery(String, String, Class)} method. 	 */
 annotation|@
 name|Deprecated
 specifier|public
