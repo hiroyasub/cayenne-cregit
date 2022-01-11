@@ -39,6 +39,22 @@ name|ObjectId
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|types
+operator|.
+name|InternalUnsupportedTypeFactory
+import|;
+end_import
+
 begin_comment
 comment|/**  * Special value that denotes generated id attribute  *  * @since 4.2  */
 end_comment
@@ -48,6 +64,10 @@ class|class
 name|IdGenerationMarker
 implements|implements
 name|Serializable
+implements|,
+name|InternalUnsupportedTypeFactory
+operator|.
+name|Marker
 block|{
 specifier|private
 specifier|static
@@ -140,6 +160,17 @@ parameter_list|()
 block|{
 return|return
 name|id
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|errorMessage
+parameter_list|()
+block|{
+return|return
+literal|"PK is not generated. Check your PK generation strategy or presence of the mutually dependent entities."
 return|;
 block|}
 block|}

@@ -679,7 +679,7 @@ name|access
 operator|.
 name|types
 operator|.
-name|JsonType
+name|InternalUnsupportedTypeFactory
 import|;
 end_import
 
@@ -3295,6 +3295,13 @@ expr_stmt|;
 name|contributeTypeFactories
 argument_list|(
 name|binder
+argument_list|)
+operator|.
+name|add
+argument_list|(
+operator|new
+name|InternalUnsupportedTypeFactory
+argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// Custom ValueObjects types contribution

@@ -51,6 +51,22 @@ name|ObjectId
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|types
+operator|.
+name|InternalUnsupportedTypeFactory
+import|;
+end_import
+
 begin_comment
 comment|/**  * Deferred value extracted from ObjectId  *  * @since 4.2  */
 end_comment
@@ -63,6 +79,10 @@ name|Supplier
 argument_list|<
 name|Object
 argument_list|>
+implements|,
+name|InternalUnsupportedTypeFactory
+operator|.
+name|Marker
 block|{
 specifier|private
 specifier|final
@@ -287,6 +307,17 @@ operator|+
 name|attribute
 operator|+
 literal|'}'
+return|;
+block|}
+annotation|@
+name|Override
+specifier|public
+name|String
+name|errorMessage
+parameter_list|()
+block|{
+return|return
+literal|"Value supplier is not resolved before usage."
 return|;
 block|}
 block|}
