@@ -1443,7 +1443,6 @@ block|}
 block|}
 block|}
 block|}
-specifier|private
 name|Template
 name|getTemplate
 parameter_list|(
