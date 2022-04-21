@@ -1578,9 +1578,6 @@ operator|.
 name|getJavaBySqlType
 argument_list|(
 name|dbAttribute
-operator|.
-name|getType
-argument_list|()
 argument_list|)
 decl_stmt|;
 name|String

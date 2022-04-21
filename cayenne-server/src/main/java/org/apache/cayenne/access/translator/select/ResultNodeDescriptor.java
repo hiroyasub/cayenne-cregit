@@ -452,9 +452,6 @@ name|getJavaBySqlType
 argument_list|(
 name|getDbAttribute
 argument_list|()
-operator|.
-name|getType
-argument_list|()
 argument_list|)
 return|;
 block|}

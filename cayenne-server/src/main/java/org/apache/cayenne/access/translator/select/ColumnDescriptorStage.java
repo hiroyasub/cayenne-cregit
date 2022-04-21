@@ -139,7 +139,7 @@ block|{
 comment|// generated name
 name|name
 operator|=
-literal|"c"
+literal|"__c"
 operator|+
 name|i
 operator|++

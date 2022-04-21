@@ -341,9 +341,6 @@ operator|.
 name|getJavaBySqlType
 argument_list|(
 name|deleteAttribute
-operator|.
-name|getType
-argument_list|()
 argument_list|)
 decl_stmt|;
 name|ExtendedType

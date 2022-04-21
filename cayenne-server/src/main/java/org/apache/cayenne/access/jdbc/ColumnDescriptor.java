@@ -200,6 +200,7 @@ name|int
 name|jdbcType
 parameter_list|)
 block|{
+comment|// TODO: check this
 name|this
 argument_list|(
 name|columnName
@@ -289,6 +290,17 @@ operator|.
 name|namePrefix
 operator|=
 name|tableAlias
+expr_stmt|;
+name|this
+operator|.
+name|javaClass
+operator|=
+name|TypesMapping
+operator|.
+name|getJavaBySqlType
+argument_list|(
+name|attribute
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
