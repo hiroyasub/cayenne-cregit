@@ -200,7 +200,6 @@ name|int
 name|jdbcType
 parameter_list|)
 block|{
-comment|// TODO: check this
 name|this
 argument_list|(
 name|columnName

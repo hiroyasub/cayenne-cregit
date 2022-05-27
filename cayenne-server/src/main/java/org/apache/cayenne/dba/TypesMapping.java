@@ -847,6 +847,14 @@ specifier|public
 specifier|static
 specifier|final
 name|String
+name|JAVA_BIGINTEGER
+init|=
+literal|"java.math.BigInteger"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
 name|JAVA_DOUBLE
 init|=
 literal|"java.lang.Double"
@@ -2808,7 +2816,7 @@ return|return
 name|NOT_DEFINED
 return|;
 block|}
-comment|/** 	 * Get the corresponding Java type by its java.sql.Types counterpart. Note 	 * that this method should be used as a last resort, with explicit mapping 	 * provided by user used as a first choice, as it can only guess how to map 	 * certain types, such as NUMERIC, etc. 	 *  	 * @return Fully qualified Java type name or null if not found. 	 */
+comment|/** 	 * Get the corresponding Java type by its {@link java.sql.Types} counterpart. Note 	 * that this method should be used as a last resort, with explicit mapping 	 * provided by user used as a first choice, as it can only guess how to map 	 * certain types, such as NUMERIC, etc. 	 * 	 * @param type as defined in {@link java.sql.Types} 	 * @return Fully qualified Java type name or null if not found. 	 */
 specifier|public
 specifier|static
 name|String
@@ -2827,6 +2835,7 @@ name|type
 argument_list|)
 return|;
 block|}
+comment|/** 	 * @param attribute to get java type for 	 * @return Fully qualified Java type name or null if not found. 	 * @see #getJavaBySqlType(int) 	 * 	 * @since 4.2 	 */
 specifier|public
 specifier|static
 name|String
@@ -2836,6 +2845,70 @@ name|DbAttribute
 name|attribute
 parameter_list|)
 block|{
+if|if
+condition|(
+name|attribute
+operator|.
+name|getType
+argument_list|()
+operator|==
+name|DECIMAL
+condition|)
+block|{
+if|if
+condition|(
+name|attribute
+operator|.
+name|getScale
+argument_list|()
+operator|==
+literal|0
+condition|)
+block|{
+comment|// integer value, could fold into a smaller type
+if|if
+condition|(
+name|attribute
+operator|.
+name|getMaxLength
+argument_list|()
+operator|<
+literal|10
+condition|)
+block|{
+return|return
+name|JAVA_INTEGER
+return|;
+block|}
+if|else if
+condition|(
+name|attribute
+operator|.
+name|getMaxLength
+argument_list|()
+operator|<
+literal|19
+condition|)
+block|{
+return|return
+name|JAVA_LONG
+return|;
+block|}
+else|else
+block|{
+return|return
+name|JAVA_BIGINTEGER
+return|;
+block|}
+block|}
+else|else
+block|{
+comment|// decimal, no optimizations here
+return|return
+name|JAVA_BIGDECIMAL
+return|;
+block|}
+block|}
 return|return
 name|SQL_ENUM_JAVA
 operator|.
