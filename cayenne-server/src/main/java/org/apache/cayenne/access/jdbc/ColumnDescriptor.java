@@ -290,6 +290,17 @@ name|namePrefix
 operator|=
 name|tableAlias
 expr_stmt|;
+name|this
+operator|.
+name|javaClass
+operator|=
+name|TypesMapping
+operator|.
+name|getJavaBySqlType
+argument_list|(
+name|attribute
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|attribute

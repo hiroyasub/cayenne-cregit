@@ -917,9 +917,6 @@ operator|.
 name|getJavaBySqlType
 argument_list|(
 name|a
-operator|.
-name|getType
-argument_list|()
 argument_list|)
 decl_stmt|;
 name|String

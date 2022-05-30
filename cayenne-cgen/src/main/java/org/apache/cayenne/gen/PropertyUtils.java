@@ -41,16 +41,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Collection
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|HashMap
 import|;
 end_import
@@ -160,20 +150,6 @@ operator|.
 name|di
 operator|.
 name|DIRuntimeException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|exp
-operator|.
-name|ExpressionFactory
 import|;
 end_import
 
@@ -906,9 +882,6 @@ operator|.
 name|getJavaBySqlType
 argument_list|(
 name|attribute
-operator|.
-name|getType
-argument_list|()
 argument_list|)
 decl_stmt|;
 name|importUtils
@@ -1270,9 +1243,6 @@ operator|.
 name|getJavaBySqlType
 argument_list|(
 name|attribute
-operator|.
-name|getType
-argument_list|()
 argument_list|)
 decl_stmt|;
 name|String
@@ -1285,9 +1255,6 @@ operator|.
 name|getJavaBySqlType
 argument_list|(
 name|attribute
-operator|.
-name|getType
-argument_list|()
 argument_list|)
 argument_list|)
 decl_stmt|;
