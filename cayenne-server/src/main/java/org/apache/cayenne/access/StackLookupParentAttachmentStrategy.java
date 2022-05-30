@@ -46,6 +46,7 @@ implements|implements
 name|ParentAttachmentStrategy
 block|{
 specifier|private
+specifier|final
 name|PrefetchProcessorNode
 name|node
 decl_stmt|;

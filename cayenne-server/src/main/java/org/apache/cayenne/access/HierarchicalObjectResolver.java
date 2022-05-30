@@ -1369,10 +1369,9 @@ name|node
 operator|.
 name|getParent
 argument_list|()
-operator|!=
+operator|==
 literal|null
-operator|&&
-operator|!
+operator|||
 name|node
 operator|.
 name|getParent
@@ -1382,6 +1381,10 @@ name|isJointPrefetch
 argument_list|()
 condition|)
 block|{
+return|return
+literal|true
+return|;
+block|}
 name|PrefetchProcessorJointNode
 name|processorNode
 init|=
@@ -1445,6 +1448,9 @@ literal|false
 return|;
 block|}
 name|List
+argument_list|<
+name|DataRow
+argument_list|>
 name|parentRows
 init|=
 name|parent
@@ -1509,9 +1515,6 @@ name|subprocessor
 operator|.
 name|setCurrentFlatRow
 argument_list|(
-operator|(
-name|DataRow
-operator|)
 name|parentRows
 operator|.
 name|get
@@ -1568,7 +1571,6 @@ name|isRefreshingObjects
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 literal|true
 return|;
@@ -1811,6 +1813,11 @@ name|node
 decl_stmt|;
 comment|// find existing object, if found skip further processing
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|Object
+argument_list|>
 name|id
 init|=
 name|processorNode
