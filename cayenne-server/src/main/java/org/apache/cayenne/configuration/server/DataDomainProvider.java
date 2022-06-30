@@ -49,18 +49,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|DataChannelFilter
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|DataChannelQueryFilter
 import|;
 end_import
@@ -475,23 +463,6 @@ name|Inject
 specifier|protected
 name|DataChannelDescriptorLoader
 name|loader
-decl_stmt|;
-comment|/** 	 * @deprecated since 4.1, use query and sync filters instead 	 */
-annotation|@
-name|Deprecated
-annotation|@
-name|Inject
-argument_list|(
-name|Constants
-operator|.
-name|SERVER_DOMAIN_FILTERS_LIST
-argument_list|)
-specifier|protected
-name|List
-argument_list|<
-name|DataChannelFilter
-argument_list|>
-name|filters
 decl_stmt|;
 comment|/** 	 * @since 4.1 	 */
 annotation|@
@@ -941,23 +912,6 @@ operator|.
 name|setDefaultNode
 argument_list|(
 name|defaultNode
-argument_list|)
-expr_stmt|;
-block|}
-comment|// filters are deprecated, used here for backward compatibility
-for|for
-control|(
-name|DataChannelFilter
-name|filter
-range|:
-name|filters
-control|)
-block|{
-name|dataDomain
-operator|.
-name|addFilter
-argument_list|(
-name|filter
 argument_list|)
 expr_stmt|;
 block|}
