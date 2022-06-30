@@ -610,19 +610,6 @@ argument_list|)
 operator|)
 return|;
 block|}
-comment|/**      * Converts this property to a path expression.      * This method is equivalent of getExpression() which is preferred as more generic.      *      * @return a newly created expression.      * @see BaseProperty#getExpression()      * @deprecated since 4.2, use {@link #getExpression()} method instead      */
-annotation|@
-name|Deprecated
-specifier|public
-name|Expression
-name|path
-parameter_list|()
-block|{
-return|return
-name|getExpression
-argument_list|()
-return|;
-block|}
 comment|/**      * @return An expression representing null.      */
 specifier|public
 name|Expression
