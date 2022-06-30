@@ -631,18 +631,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/** 	 * Since 4.1 is unused. 	 */
-annotation|@
-name|Deprecated
-specifier|public
-name|String
-name|getEOName
-parameter_list|()
-block|{
-return|return
-literal|null
-return|;
-block|}
 specifier|public
 name|Collection
 name|getBindingNames

@@ -1680,7 +1680,7 @@ name|result
 init|=
 name|SQLSelect
 operator|.
-name|scalarQuery
+name|columnQuery
 argument_list|(
 literal|"SELECT * FROM ARTIST_CT"
 argument_list|,

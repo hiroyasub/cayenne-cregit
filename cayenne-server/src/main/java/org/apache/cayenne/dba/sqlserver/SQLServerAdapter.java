@@ -233,17 +233,6 @@ specifier|private
 name|Integer
 name|version
 decl_stmt|;
-comment|/** 	 * @deprecated since 4.2 unused 	 */
-annotation|@
-name|Deprecated
-specifier|public
-specifier|static
-specifier|final
-name|String
-name|TRIM_FUNCTION
-init|=
-literal|"RTRIM"
-decl_stmt|;
 specifier|private
 specifier|final
 name|List

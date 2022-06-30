@@ -78,7 +78,7 @@ operator|+
 literal|"] "
 expr_stmt|;
 block|}
-comment|/**      * @since 4.1 moved from deprecated {@link CayenneException}      */
+comment|/**      * @since 4.1      */
 specifier|public
 specifier|static
 name|String
