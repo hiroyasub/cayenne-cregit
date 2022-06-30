@@ -105,9 +105,9 @@ name|cayenne
 operator|.
 name|dba
 operator|.
-name|openbase
+name|mysql
 operator|.
-name|OpenBaseAdapter
+name|MySQLAdapter
 import|;
 end_import
 
@@ -440,7 +440,7 @@ name|query
 operator|.
 name|setTemplate
 argument_list|(
-name|OpenBaseAdapter
+name|MySQLAdapter
 operator|.
 name|class
 operator|.
