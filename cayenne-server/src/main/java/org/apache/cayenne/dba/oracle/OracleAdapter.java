@@ -1049,22 +1049,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Creates and returns a primary key generator. Overrides superclass 	 * implementation to return an instance of OraclePkGenerator. 	 */
-annotation|@
-name|Override
-specifier|protected
-name|PkGenerator
-name|createPkGenerator
-parameter_list|()
-block|{
-return|return
-operator|new
-name|OraclePkGenerator
-argument_list|(
-name|this
-argument_list|)
-return|;
-block|}
 comment|/** 	 * Returns a query string to drop a table corresponding to<code>ent</code> 	 * DbEntity. Changes superclass behavior to drop all related foreign key 	 * constraints. 	 * 	 * @since 3.0 	 */
 annotation|@
 name|Override

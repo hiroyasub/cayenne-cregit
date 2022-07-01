@@ -452,21 +452,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Override
-specifier|protected
-name|PkGenerator
-name|createPkGenerator
-parameter_list|()
-block|{
-return|return
-operator|new
-name|H2PkGenerator
-argument_list|(
-name|this
-argument_list|)
-return|;
-block|}
 block|}
 end_class
 

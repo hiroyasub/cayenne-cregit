@@ -701,13 +701,6 @@ name|resourceLocator
 expr_stmt|;
 name|this
 operator|.
-name|pkGenerator
-operator|=
-name|createPkGenerator
-argument_list|()
-expr_stmt|;
-name|this
-operator|.
 name|quotingStrategy
 operator|=
 name|createQuotingStrategy
@@ -979,22 +972,6 @@ name|valueObjectTypeRegistry
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
-comment|/**      * Creates and returns a primary key generator. This factory method should      * be overriden by JdbcAdapter subclasses to provide custom implementations      * of PKGenerator.      */
-annotation|@
-name|Deprecated
-specifier|protected
-name|PkGenerator
-name|createPkGenerator
-parameter_list|()
-block|{
-return|return
-operator|new
-name|JdbcPkGenerator
-argument_list|(
-name|this
-argument_list|)
-return|;
 block|}
 comment|/**      * Creates and returns an {@link EJBQLTranslatorFactory} used to generate      * visitors for EJBQL to SQL translations. This method should be overriden      * by subclasses that need to customize EJBQL generation.      *      * @since 3.0      */
 specifier|protected

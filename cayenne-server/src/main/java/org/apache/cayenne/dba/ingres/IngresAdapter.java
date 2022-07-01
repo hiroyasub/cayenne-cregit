@@ -506,22 +506,6 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * @see JdbcAdapter#createPkGenerator() 	 */
-annotation|@
-name|Override
-specifier|protected
-name|PkGenerator
-name|createPkGenerator
-parameter_list|()
-block|{
-return|return
-operator|new
-name|IngresPkGenerator
-argument_list|(
-name|this
-argument_list|)
-return|;
-block|}
 annotation|@
 name|Override
 specifier|public

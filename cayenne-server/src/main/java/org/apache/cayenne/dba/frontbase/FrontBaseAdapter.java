@@ -1147,21 +1147,6 @@ literal|" CASCADE"
 argument_list|)
 return|;
 block|}
-annotation|@
-name|Override
-specifier|protected
-name|PkGenerator
-name|createPkGenerator
-parameter_list|()
-block|{
-return|return
-operator|new
-name|FrontBasePkGenerator
-argument_list|(
-name|this
-argument_list|)
-return|;
-block|}
 comment|/** 	 * Uses FrontBaseActionBuilder to create the right action. 	 * 	 * @since 4.2 	 */
 annotation|@
 name|Override

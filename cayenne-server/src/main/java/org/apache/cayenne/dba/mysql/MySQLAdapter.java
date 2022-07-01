@@ -1367,22 +1367,6 @@ name|sqlType
 return|;
 block|}
 block|}
-comment|/** 	 * Creates and returns a primary key generator. Overrides superclass 	 * implementation to return an instance of MySQLPkGenerator that does the 	 * correct table locking. 	 */
-annotation|@
-name|Override
-specifier|protected
-name|PkGenerator
-name|createPkGenerator
-parameter_list|()
-block|{
-return|return
-operator|new
-name|MySQLPkGenerator
-argument_list|(
-name|this
-argument_list|)
-return|;
-block|}
 comment|/** 	 * @since 3.0 	 */
 annotation|@
 name|Override

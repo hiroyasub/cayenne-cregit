@@ -578,22 +578,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates and returns a primary key generator. Overrides superclass      * implementation to return an instance of SybasePkGenerator.      */
-annotation|@
-name|Override
-specifier|protected
-name|PkGenerator
-name|createPkGenerator
-parameter_list|()
-block|{
-return|return
-operator|new
-name|SybasePkGenerator
-argument_list|(
-name|this
-argument_list|)
-return|;
-block|}
 annotation|@
 name|Override
 specifier|public

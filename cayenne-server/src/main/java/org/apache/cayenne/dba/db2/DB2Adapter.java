@@ -492,22 +492,6 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Creates a DB2 specific PK Generator.      */
-annotation|@
-name|Override
-specifier|protected
-name|PkGenerator
-name|createPkGenerator
-parameter_list|()
-block|{
-return|return
-operator|new
-name|DB2PkGenerator
-argument_list|(
-name|this
-argument_list|)
-return|;
-block|}
 annotation|@
 name|Override
 specifier|protected
