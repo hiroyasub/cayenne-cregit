@@ -143,6 +143,20 @@ name|cayenne
 operator|.
 name|query
 operator|.
+name|ObjectSelect
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
 name|Query
 import|;
 end_import
@@ -158,20 +172,6 @@ operator|.
 name|query
 operator|.
 name|QueryMetadata
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|SelectQuery
 import|;
 end_import
 
@@ -383,26 +383,23 @@ decl_stmt|;
 comment|// always wrap a query in a Incremental*Query, to ensure cache key is
 comment|// client-generated (e.g. see CAY-1003 - client and server can be in different
 comment|// timezones, so the key can be messed up)
-comment|// there are some serious pagination optimizations for SelectQuery on the
-comment|// server-side, so use a special wrapper that is itself a subclass of
-comment|// SelectQuery
+comment|// there are some serious pagination optimizations for ObjectSelect on the
+comment|// server-side, so use a special wrapper that is itself a subclass of ObjectSelect
 if|if
 condition|(
 name|query
 operator|instanceof
-name|SelectQuery
+name|ObjectSelect
 condition|)
 block|{
 name|query
 operator|=
 operator|new
 name|IncrementalSelectQuery
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|(
 operator|(
-name|SelectQuery
+name|ObjectSelect
 argument_list|<
 name|Object
 argument_list|>
