@@ -271,7 +271,7 @@ name|assertNotNull
 argument_list|(
 name|query
 operator|.
-name|getQualifier
+name|getWhere
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -281,7 +281,7 @@ literal|"(name = \"aa\") and (db:ID>= 7) and ((e2.name = \"bb\") or (db:e2.ID !=
 argument_list|,
 name|query
 operator|.
-name|getQualifier
+name|getWhere
 argument_list|()
 operator|.
 name|toString
@@ -292,7 +292,7 @@ name|assertNotNull
 argument_list|(
 name|query
 operator|.
-name|getPrefetchTree
+name|getPrefetches
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -301,7 +301,7 @@ name|children
 init|=
 name|query
 operator|.
-name|getPrefetchTree
+name|getPrefetches
 argument_list|()
 operator|.
 name|getChildren
@@ -352,7 +352,7 @@ literal|500
 argument_list|,
 name|query
 operator|.
-name|getFetchLimit
+name|getLimit
 argument_list|()
 argument_list|)
 expr_stmt|;

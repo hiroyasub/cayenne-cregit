@@ -153,7 +153,21 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|ObjectSelect
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|query
+operator|.
+name|PrefetchTreeNode
 import|;
 end_import
 
@@ -242,7 +256,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A descriptor of SelectQuery loaded from EOModel. It is an informal  * "decorator" of Cayenne SelectQuery to provide access to the extra information  * of WebObjects EOFetchSpecification.  *   * @since 1.1  */
+comment|/**  * A descriptor of SelectQuery loaded from EOModel. It is an informal  * "decorator" of Cayenne SelectQuery to provide access to the extra information  * of WebObjects EOFetchSpecification.  *   * @since 1.1  * @since 4.3 this query extends {@link ObjectSelect}  */
 end_comment
 
 begin_class
@@ -253,7 +267,7 @@ parameter_list|<
 name|T
 parameter_list|>
 extends|extends
-name|SelectQuery
+name|ObjectSelect
 argument_list|<
 name|T
 argument_list|>
@@ -287,6 +301,17 @@ name|plistMap
 parameter_list|)
 block|{
 name|super
+argument_list|()
+expr_stmt|;
+name|entityName
+argument_list|(
+name|root
+operator|.
+name|getName
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|setRoot
 argument_list|(
 name|root
 argument_list|)
@@ -316,8 +341,8 @@ argument_list|>
 name|plistMap
 parameter_list|)
 block|{
-name|setDistinct
-argument_list|(
+if|if
+condition|(
 literal|"YES"
 operator|.
 name|equalsIgnoreCase
@@ -332,8 +357,12 @@ argument_list|(
 literal|"usesDistinct"
 argument_list|)
 argument_list|)
-argument_list|)
+condition|)
+block|{
+name|distinct
+argument_list|()
 expr_stmt|;
+block|}
 name|Object
 name|fetchLimit
 init|=
@@ -360,7 +389,7 @@ operator|instanceof
 name|Number
 condition|)
 block|{
-name|setFetchLimit
+name|limit
 argument_list|(
 operator|(
 operator|(
@@ -376,7 +405,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|setFetchLimit
+name|limit
 argument_list|(
 name|Integer
 operator|.
@@ -489,7 +518,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|addOrdering
+name|orderBy
 argument_list|(
 name|key
 argument_list|,
@@ -544,9 +573,7 @@ name|isEmpty
 argument_list|()
 condition|)
 block|{
-name|this
-operator|.
-name|setQualifier
+name|where
 argument_list|(
 name|makeQualifier
 argument_list|(
@@ -598,7 +625,7 @@ name|hasNext
 argument_list|()
 condition|)
 block|{
-name|addPrefetch
+name|prefetch
 argument_list|(
 operator|(
 name|String
@@ -607,6 +634,10 @@ name|it
 operator|.
 name|next
 argument_list|()
+argument_list|,
+name|PrefetchTreeNode
+operator|.
+name|UNDEFINED_SEMANTICS
 argument_list|)
 expr_stmt|;
 block|}
@@ -624,10 +655,8 @@ literal|"rawRowKeyPaths"
 argument_list|)
 condition|)
 block|{
-name|setFetchingDataRows
-argument_list|(
-literal|true
-argument_list|)
+name|fetchDataRows
+argument_list|()
 expr_stmt|;
 block|}
 block|}
