@@ -73,20 +73,6 @@ name|SQLAction
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|SelectQuery
-import|;
-end_import
-
 begin_comment
 comment|/**  * @since 4.1  */
 end_comment
@@ -110,32 +96,6 @@ argument_list|(
 name|dataNode
 argument_list|)
 expr_stmt|;
-block|}
-annotation|@
-name|Override
-specifier|public
-parameter_list|<
-name|T
-parameter_list|>
-name|SQLAction
-name|objectSelectAction
-parameter_list|(
-name|SelectQuery
-argument_list|<
-name|T
-argument_list|>
-name|query
-parameter_list|)
-block|{
-return|return
-operator|new
-name|DerbySelectAction
-argument_list|(
-name|query
-argument_list|,
-name|dataNode
-argument_list|)
-return|;
 block|}
 comment|/**      * @since 4.2      */
 annotation|@

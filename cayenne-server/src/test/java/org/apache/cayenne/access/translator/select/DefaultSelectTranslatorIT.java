@@ -183,20 +183,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|query
-operator|.
-name|SelectQuery
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|test
 operator|.
 name|jdbc
@@ -1592,8 +1578,6 @@ block|}
 comment|/** 	 * Tests query creation with "distinct" specified. 	 */
 annotation|@
 name|Test
-annotation|@
-name|Deprecated
 specifier|public
 name|void
 name|testCreateSqlString2
@@ -1602,15 +1586,15 @@ throws|throws
 name|Exception
 block|{
 comment|// query with "distinct" set
-name|SelectQuery
+name|ObjectSelect
 argument_list|<
 name|Artist
 argument_list|>
 name|q
 init|=
-operator|new
-name|SelectQuery
-argument_list|<>
+name|ObjectSelect
+operator|.
+name|query
 argument_list|(
 name|Artist
 operator|.
@@ -1619,10 +1603,8 @@ argument_list|)
 decl_stmt|;
 name|q
 operator|.
-name|setDistinct
-argument_list|(
-literal|true
-argument_list|)
+name|distinct
+argument_list|()
 expr_stmt|;
 name|String
 name|generatedSql

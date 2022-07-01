@@ -87,20 +87,6 @@ name|Select
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|SelectQuery
-import|;
-end_import
-
 begin_comment
 comment|/**  * A {@link SelectTranslator} factory that delegates translator creation to  * DbAdapter.  *   * @since 4.0  */
 end_comment
@@ -132,30 +118,6 @@ name|entityResolver
 parameter_list|)
 block|{
 if|if
-condition|(
-name|query
-operator|instanceof
-name|SelectQuery
-condition|)
-block|{
-return|return
-name|adapter
-operator|.
-name|getSelectTranslator
-argument_list|(
-operator|(
-name|SelectQuery
-argument_list|<
-name|?
-argument_list|>
-operator|)
-name|query
-argument_list|,
-name|entityResolver
-argument_list|)
-return|;
-block|}
-if|else if
 condition|(
 name|query
 operator|instanceof

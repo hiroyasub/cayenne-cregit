@@ -108,7 +108,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Preprocessor and router of SelectQuery prefetches.  * Copy of {@link SelectQueryPrefetchRouterAction}.  *  * @since 4.2  */
+comment|/**  * Preprocessor and router of SelectQuery prefetches.  *  * @since 4.2  */
 end_comment
 
 begin_class

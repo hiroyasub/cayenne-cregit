@@ -253,20 +253,6 @@ name|SQLAction
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|SelectQuery
-import|;
-end_import
-
 begin_comment
 comment|/**  * A Cayenne extension point that abstracts the differences between specifics of  * JDBC interfaces to various databases. Cayenne already ships with a number of  * built-in adapters for most common databases and users can provide their own  * custom adapters.  */
 end_comment
@@ -280,22 +266,6 @@ comment|/** 	 * Returns a String used to terminate a batch in command-line tools
 name|String
 name|getBatchTerminator
 parameter_list|()
-function_decl|;
-comment|/**      * Returns a SelectTranslator that works with the adapter target database.      *      * @since 4.0      * @deprecated since 4.2 as {@link SelectQuery} is deprecated.      * {@link #getSelectTranslator(FluentSelect, EntityResolver)} replaces this method.      */
-annotation|@
-name|Deprecated
-name|SelectTranslator
-name|getSelectTranslator
-parameter_list|(
-name|SelectQuery
-argument_list|<
-name|?
-argument_list|>
-name|query
-parameter_list|,
-name|EntityResolver
-name|entityResolver
-parameter_list|)
 function_decl|;
 comment|/** 	 * @since 4.2 	 */
 name|SelectTranslator

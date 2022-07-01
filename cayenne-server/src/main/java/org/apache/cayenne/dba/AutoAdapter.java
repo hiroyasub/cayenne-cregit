@@ -293,20 +293,6 @@ name|SQLAction
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|SelectQuery
-import|;
-end_import
-
 begin_comment
 comment|/**  * A DbAdapter that automatically detects the kind of database it is running on  * and instantiates an appropriate DB-specific adapter, delegating all  * subsequent method calls to this adapter.  *  * @since 1.2  */
 end_comment
@@ -430,37 +416,6 @@ name|adapterProvider
 operator|.
 name|get
 argument_list|()
-return|;
-block|}
-comment|/** 	 * @since 4.0 	 */
-annotation|@
-name|Override
-annotation|@
-name|Deprecated
-specifier|public
-name|SelectTranslator
-name|getSelectTranslator
-parameter_list|(
-name|SelectQuery
-argument_list|<
-name|?
-argument_list|>
-name|query
-parameter_list|,
-name|EntityResolver
-name|entityResolver
-parameter_list|)
-block|{
-return|return
-name|getAdapter
-argument_list|()
-operator|.
-name|getSelectTranslator
-argument_list|(
-name|query
-argument_list|,
-name|entityResolver
-argument_list|)
 return|;
 block|}
 comment|/** 	 * @since 4.2 	 */

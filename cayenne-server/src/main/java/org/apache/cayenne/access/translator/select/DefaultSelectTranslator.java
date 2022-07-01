@@ -137,22 +137,8 @@ name|FluentSelect
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|query
-operator|.
-name|SelectQuery
-import|;
-end_import
-
 begin_comment
-comment|/**  * Default translator of select queries ({@link SelectQuery} or {@link FluentSelect}).  *  * @since 4.2  */
+comment|/**  * Default translator of select queries {@link FluentSelect}.  *  * @since 4.2  */
 end_comment
 
 begin_class
@@ -343,39 +329,6 @@ argument_list|,
 name|entityResolver
 argument_list|,
 literal|null
-argument_list|)
-expr_stmt|;
-block|}
-comment|/**      * @deprecated since 4.2 as {@link SelectQuery} is deprecated.      */
-annotation|@
-name|Deprecated
-specifier|public
-name|DefaultSelectTranslator
-parameter_list|(
-name|SelectQuery
-argument_list|<
-name|?
-argument_list|>
-name|query
-parameter_list|,
-name|DbAdapter
-name|adapter
-parameter_list|,
-name|EntityResolver
-name|entityResolver
-parameter_list|)
-block|{
-name|this
-argument_list|(
-operator|new
-name|SelectQueryWrapper
-argument_list|(
-name|query
-argument_list|)
-argument_list|,
-name|adapter
-argument_list|,
-name|entityResolver
 argument_list|)
 expr_stmt|;
 block|}

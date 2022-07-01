@@ -260,7 +260,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A selecting query providing chainable API. This is an alternative to  * {@link SelectQuery} when you want to use a fluent API. For example, the following  * is a convenient way to return a record:  *<pre>  * {@code  * Artist a = ObjectSelect  *      .query(Artist.class)  *      .where(Artist.NAME.eq("Picasso"))  *      .selectOne(context);  * }  *</pre>  *  * @since 4.0  */
+comment|/**  * A selecting query providing chainable API.  *<p>  * For example, the following is a convenient way to return a record:  *<pre>  * {@code  * Artist a = ObjectSelect  *      .query(Artist.class)  *      .where(Artist.NAME.eq("Picasso"))  *      .selectOne(context);  * }  *</pre>  *  * @since 4.0  */
 end_comment
 
 begin_class

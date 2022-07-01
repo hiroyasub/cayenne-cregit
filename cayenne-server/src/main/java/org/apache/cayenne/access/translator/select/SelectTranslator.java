@@ -85,12 +85,12 @@ name|cayenne
 operator|.
 name|query
 operator|.
-name|SelectQuery
+name|ObjectSelect
 import|;
 end_import
 
 begin_comment
-comment|/**  * An abstraction of {@link SelectQuery} translator.  *   * @since 4.0 this is an interface.  */
+comment|/**  * An abstraction of {@link ObjectSelect} translator.  *   * @since 4.0 this is an interface.  */
 end_comment
 
 begin_interface
