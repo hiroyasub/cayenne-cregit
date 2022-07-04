@@ -87,9 +87,9 @@ name|this
 argument_list|(
 name|logger
 argument_list|,
-name|DefaultTransactionDescriptor
+name|TransactionDescriptor
 operator|.
-name|getInstance
+name|defaultDescriptor
 argument_list|()
 argument_list|)
 expr_stmt|;

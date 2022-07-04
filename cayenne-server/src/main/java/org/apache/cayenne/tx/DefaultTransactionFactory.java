@@ -136,9 +136,9 @@ block|{
 return|return
 name|createTransaction
 argument_list|(
-name|DefaultTransactionDescriptor
+name|TransactionDescriptor
 operator|.
-name|getInstance
+name|defaultDescriptor
 argument_list|()
 argument_list|)
 return|;

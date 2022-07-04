@@ -127,9 +127,9 @@ operator|.
 name|getInstance
 argument_list|()
 argument_list|,
-name|DefaultTransactionDescriptor
+name|TransactionDescriptor
 operator|.
-name|getInstance
+name|defaultDescriptor
 argument_list|()
 argument_list|)
 return|;
@@ -160,9 +160,9 @@ name|op
 argument_list|,
 name|callback
 argument_list|,
-name|DefaultTransactionDescriptor
+name|TransactionDescriptor
 operator|.
-name|getInstance
+name|defaultDescriptor
 argument_list|()
 argument_list|)
 return|;

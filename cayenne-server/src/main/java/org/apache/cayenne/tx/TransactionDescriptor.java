@@ -57,6 +57,32 @@ operator|-
 literal|1
 decl_stmt|;
 specifier|private
+specifier|static
+specifier|final
+name|TransactionDescriptor
+name|DEFAULT_DESCRIPTOR
+init|=
+name|builder
+argument_list|()
+operator|.
+name|propagation
+argument_list|(
+name|TransactionPropagation
+operator|.
+name|NESTED
+argument_list|)
+operator|.
+name|isolation
+argument_list|(
+name|TransactionDescriptor
+operator|.
+name|ISOLATION_DEFAULT
+argument_list|)
+operator|.
+name|build
+argument_list|()
+decl_stmt|;
+specifier|private
 name|int
 name|isolation
 decl_stmt|;
@@ -96,7 +122,7 @@ return|return
 name|propagation
 return|;
 block|}
-comment|/**      * @return custom connection supplier, passed by user      */
+comment|/**      * @return custom connection supplier, passed by user      * @since 4.2      */
 specifier|public
 name|Supplier
 argument_list|<
@@ -109,6 +135,7 @@ return|return
 name|connectionSupplier
 return|;
 block|}
+comment|/**      * @return TransactionDescriptor Builder      * @since 4.2      */
 specifier|public
 specifier|static
 name|Builder
@@ -121,7 +148,18 @@ name|Builder
 argument_list|()
 return|;
 block|}
-comment|/**      * Builder class for the TransactionDescriptor.      */
+comment|/**      * Returns descriptor with the {@link TransactionPropagation#NESTED} propagation      * and the {@link #ISOLATION_DEFAULT} isolation level      * @return default descriptor      * @since 4.2      */
+specifier|public
+specifier|static
+name|TransactionDescriptor
+name|defaultDescriptor
+parameter_list|()
+block|{
+return|return
+name|DEFAULT_DESCRIPTOR
+return|;
+block|}
+comment|/**      * Builder class for the TransactionDescriptor.      * @since 4.2      */
 specifier|public
 specifier|static
 class|class

@@ -16,44 +16,18 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * @since 4.1  */
+comment|/**  * @since 4.1  * @deprecated since 4.2, use {@link TransactionDescriptor#defaultDescriptor()}  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|DefaultTransactionDescriptor
 extends|extends
 name|TransactionDescriptor
 block|{
-specifier|private
-specifier|static
-specifier|final
-name|TransactionDescriptor
-name|instance
-init|=
-name|TransactionDescriptor
-operator|.
-name|builder
-argument_list|()
-operator|.
-name|isolation
-argument_list|(
-name|TransactionDescriptor
-operator|.
-name|ISOLATION_DEFAULT
-argument_list|)
-operator|.
-name|propagation
-argument_list|(
-name|TransactionPropagation
-operator|.
-name|NESTED
-argument_list|)
-operator|.
-name|build
-argument_list|()
-decl_stmt|;
 specifier|public
 specifier|static
 name|TransactionDescriptor
@@ -61,7 +35,10 @@ name|getInstance
 parameter_list|()
 block|{
 return|return
-name|instance
+name|TransactionDescriptor
+operator|.
+name|defaultDescriptor
+argument_list|()
 return|;
 block|}
 block|}
