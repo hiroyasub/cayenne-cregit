@@ -87,12 +87,6 @@ name|SERVER_RESOURCE_LOCATOR
 init|=
 literal|"cayenne.server.resource_locator"
 decl_stmt|;
-comment|/**      * A server-side DI container key for the Map&lt;String, String&gt; storing      * event bridge properties passed to the ROP client on bootstrap.      */
-name|String
-name|SERVER_ROP_EVENT_BRIDGE_PROPERTIES_MAP
-init|=
-literal|"cayenne.server.rop_event_bridge_properties"
-decl_stmt|;
 comment|// Runtime properties
 name|String
 name|JDBC_DRIVER_PROPERTY
@@ -165,12 +159,6 @@ name|String
 name|SERVER_EXTERNAL_TX_PROPERTY
 init|=
 literal|"cayenne.server.external_tx"
-decl_stmt|;
-comment|/**      * The name of the {@link org.apache.cayenne.event.EventBridgeFactory} that      * is passed from the ROP server to the client. Client would instantiate the      * factory to receive events from the server. Note that this property is      * stored in {@link #SERVER_ROP_EVENT_BRIDGE_PROPERTIES_MAP}, not      * {@link #PROPERTIES_MAP}.      */
-name|String
-name|SERVER_ROP_EVENT_BRIDGE_FACTORY_PROPERTY
-init|=
-literal|"cayenne.server.rop_event_bridge_factory"
 decl_stmt|;
 comment|/**      * A property that defines a maximum number of ID qualifiers in where clause      * of queries that are generated for example in      * {@link org.apache.cayenne.access.IncrementalFaultList} or in      * DISJOINT_BY_ID prefetch processing. This is needed to avoid where clause      * size limitations and memory usage efficiency.      */
 name|String

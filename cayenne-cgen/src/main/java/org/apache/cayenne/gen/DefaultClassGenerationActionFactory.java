@@ -65,17 +65,6 @@ block|{
 name|ClassGenerationAction
 name|classGenerationAction
 init|=
-name|cgenConfiguration
-operator|.
-name|isClient
-argument_list|()
-condition|?
-operator|new
-name|ClientClassGenerationAction
-argument_list|(
-name|cgenConfiguration
-argument_list|)
-else|:
 operator|new
 name|ClassGenerationAction
 argument_list|(

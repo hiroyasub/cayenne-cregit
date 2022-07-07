@@ -497,8 +497,6 @@ operator|==
 literal|null
 condition|)
 block|{
-comment|// Registry will be null in cayenne-client context.
-comment|// Maybe we shouldn't create cache key at all in that case...
 name|out
 operator|.
 name|append

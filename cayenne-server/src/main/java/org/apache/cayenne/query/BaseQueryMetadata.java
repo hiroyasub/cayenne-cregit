@@ -471,8 +471,6 @@ name|?
 argument_list|>
 operator|)
 name|root
-argument_list|,
-literal|true
 argument_list|)
 expr_stmt|;
 if|if

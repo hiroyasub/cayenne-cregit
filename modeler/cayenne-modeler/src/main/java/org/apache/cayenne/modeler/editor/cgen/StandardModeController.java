@@ -133,13 +133,6 @@ parameter_list|)
 block|{
 name|cgenConfiguration
 operator|.
-name|setClient
-argument_list|(
-literal|false
-argument_list|)
-expr_stmt|;
-name|cgenConfiguration
-operator|.
 name|setTemplate
 argument_list|(
 name|ClassGenerationAction

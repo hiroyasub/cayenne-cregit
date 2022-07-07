@@ -119,9 +119,7 @@ name|cgenConfiguration
 operator|=
 operator|new
 name|CgenConfiguration
-argument_list|(
-literal|false
-argument_list|)
+argument_list|()
 expr_stmt|;
 name|action
 operator|=

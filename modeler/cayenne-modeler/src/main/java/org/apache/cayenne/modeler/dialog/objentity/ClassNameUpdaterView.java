@@ -126,10 +126,6 @@ name|JDialog
 block|{
 specifier|protected
 name|JCheckBox
-name|clientClass
-decl_stmt|;
-specifier|protected
-name|JCheckBox
 name|serverClass
 decl_stmt|;
 specifier|protected
@@ -150,21 +146,8 @@ operator|new
 name|JCheckBox
 argument_list|()
 expr_stmt|;
-name|clientClass
-operator|=
-operator|new
-name|JCheckBox
-argument_list|()
-expr_stmt|;
 comment|// make invisible by default
 name|serverClass
-operator|.
-name|setVisible
-argument_list|(
-literal|false
-argument_list|)
-expr_stmt|;
-name|clientClass
 operator|.
 name|setVisible
 argument_list|(
@@ -233,13 +216,6 @@ operator|.
 name|append
 argument_list|(
 name|serverClass
-argument_list|)
-expr_stmt|;
-name|builder
-operator|.
-name|append
-argument_list|(
-name|clientClass
 argument_list|)
 expr_stmt|;
 name|JPanel
@@ -316,15 +292,6 @@ argument_list|(
 literal|"Update Entity Class Name"
 argument_list|)
 expr_stmt|;
-block|}
-specifier|public
-name|JCheckBox
-name|getClientClass
-parameter_list|()
-block|{
-return|return
-name|clientClass
-return|;
 block|}
 specifier|public
 name|JCheckBox

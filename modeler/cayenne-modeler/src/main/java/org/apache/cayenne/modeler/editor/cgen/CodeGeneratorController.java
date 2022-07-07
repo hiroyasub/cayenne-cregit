@@ -793,16 +793,6 @@ condition|)
 block|{
 name|modeController
 operator|=
-name|cgenConfiguration
-operator|.
-name|isClient
-argument_list|()
-condition|?
-name|generatorSelector
-operator|.
-name|getClientGeneratorController
-argument_list|()
-else|:
 name|generatorSelector
 operator|.
 name|getStandartController
@@ -1314,9 +1304,7 @@ name|cgenConfiguration
 operator|=
 operator|new
 name|CgenConfiguration
-argument_list|(
-literal|false
-argument_list|)
+argument_list|()
 expr_stmt|;
 name|cgenConfiguration
 operator|.

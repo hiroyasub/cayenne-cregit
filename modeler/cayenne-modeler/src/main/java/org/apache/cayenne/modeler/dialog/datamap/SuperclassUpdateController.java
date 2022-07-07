@@ -155,10 +155,6 @@ init|=
 literal|"Do not override existing non-empty superclasses"
 decl_stmt|;
 specifier|protected
-name|boolean
-name|clientUpdate
-decl_stmt|;
-specifier|protected
 name|DefaultsPreferencesView
 name|view
 decl_stmt|;
@@ -170,9 +166,6 @@ name|mediator
 parameter_list|,
 name|DataMap
 name|dataMap
-parameter_list|,
-name|boolean
-name|clientUpdate
 parameter_list|)
 block|{
 name|super
@@ -181,12 +174,6 @@ name|mediator
 argument_list|,
 name|dataMap
 argument_list|)
-expr_stmt|;
-name|this
-operator|.
-name|clientUpdate
-operator|=
-name|clientUpdate
 expr_stmt|;
 block|}
 comment|/**      * Creates and runs superclass update dialog.      */
@@ -403,13 +390,6 @@ name|getSuperclass
 parameter_list|()
 block|{
 return|return
-name|clientUpdate
-condition|?
-name|dataMap
-operator|.
-name|getDefaultClientSuperclass
-argument_list|()
-else|:
 name|dataMap
 operator|.
 name|getDefaultSuperclass
@@ -425,13 +405,6 @@ name|entity
 parameter_list|)
 block|{
 return|return
-name|clientUpdate
-condition|?
-name|entity
-operator|.
-name|getClientSuperClassName
-argument_list|()
-else|:
 name|entity
 operator|.
 name|getSuperClassName
@@ -449,21 +422,6 @@ name|String
 name|superClassName
 parameter_list|)
 block|{
-if|if
-condition|(
-name|clientUpdate
-condition|)
-block|{
-name|entity
-operator|.
-name|setClientSuperClassName
-argument_list|(
-name|superClassName
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
 name|entity
 operator|.
 name|setSuperClassName
@@ -471,7 +429,6 @@ argument_list|(
 name|superClassName
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 end_class

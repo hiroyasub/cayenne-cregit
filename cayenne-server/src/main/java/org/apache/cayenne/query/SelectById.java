@@ -2263,8 +2263,6 @@ operator|.
 name|getObjEntity
 argument_list|(
 name|entityType
-argument_list|,
-literal|true
 argument_list|)
 return|;
 block|}

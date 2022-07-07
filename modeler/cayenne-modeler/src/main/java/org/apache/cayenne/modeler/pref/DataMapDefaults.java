@@ -170,9 +170,6 @@ name|updateSuperclassPackage
 parameter_list|(
 name|DataMap
 name|dataMap
-parameter_list|,
-name|boolean
-name|isClient
 parameter_list|)
 block|{
 name|String
@@ -201,15 +198,6 @@ block|{
 name|String
 name|mapPackage
 init|=
-operator|(
-name|isClient
-operator|)
-condition|?
-name|dataMap
-operator|.
-name|getDefaultClientPackage
-argument_list|()
-else|:
 name|dataMap
 operator|.
 name|getDefaultPackage
