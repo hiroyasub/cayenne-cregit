@@ -27,18 +27,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|CayenneRuntimeException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|configuration
 operator|.
 name|DataChannelDescriptorLoader
@@ -56,20 +44,6 @@ operator|.
 name|configuration
 operator|.
 name|DataMapLoader
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|configuration
-operator|.
-name|DataNodeDescriptor
 import|;
 end_import
 
@@ -547,22 +521,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project
-operator|.
-name|extension
-operator|.
-name|ProjectExtension
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|resource
 operator|.
 name|Resource
@@ -665,7 +623,7 @@ name|nio
 operator|.
 name|charset
 operator|.
-name|Charset
+name|StandardCharsets
 import|;
 end_import
 
@@ -831,55 +789,7 @@ name|junit
 operator|.
 name|Assert
 operator|.
-name|assertEquals
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertFalse
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertNotNull
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|assertTrue
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|junit
-operator|.
-name|Assert
-operator|.
-name|fail
+name|*
 import|;
 end_import
 
@@ -903,79 +813,7 @@ name|mockito
 operator|.
 name|Mockito
 operator|.
-name|doNothing
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|mockito
-operator|.
-name|Mockito
-operator|.
-name|doThrow
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|mockito
-operator|.
-name|Mockito
-operator|.
-name|mock
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|mockito
-operator|.
-name|Mockito
-operator|.
-name|never
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|mockito
-operator|.
-name|Mockito
-operator|.
-name|times
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|mockito
-operator|.
-name|Mockito
-operator|.
-name|verify
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|mockito
-operator|.
-name|Mockito
-operator|.
-name|when
+name|*
 import|;
 end_import
 
@@ -1207,8 +1045,6 @@ specifier|public
 name|DataMap
 name|load
 parameter_list|()
-throws|throws
-name|SQLException
 block|{
 name|DataMap
 name|map
@@ -1437,8 +1273,6 @@ specifier|public
 name|DataMap
 name|load
 parameter_list|()
-throws|throws
-name|SQLException
 block|{
 name|DataMap
 name|dataMap
@@ -1566,9 +1400,6 @@ name|FileProjectSaver
 argument_list|(
 name|Collections
 operator|.
-expr|<
-name|ProjectExtension
-operator|>
 name|emptyList
 argument_list|()
 argument_list|)
@@ -1669,23 +1500,8 @@ expr_stmt|;
 block|}
 block|}
 argument_list|,
-operator|new
-name|DataMapLoader
-argument_list|()
-block|{
-annotation|@
-name|Override
-specifier|public
-name|DataMap
-name|load
-parameter_list|(
-name|Resource
 name|configurationResource
-parameter_list|)
-throws|throws
-name|CayenneRuntimeException
-block|{
-return|return
+lambda|->
 operator|new
 name|DataMapBuilder
 argument_list|()
@@ -1767,9 +1583,6 @@ argument_list|)
 operator|.
 name|build
 argument_list|()
-return|;
-block|}
-block|}
 argument_list|,
 name|dbLoader
 argument_list|)
@@ -1880,8 +1693,6 @@ specifier|public
 name|DataMap
 name|load
 parameter_list|()
-throws|throws
-name|SQLException
 block|{
 name|DataMap
 name|dataMap
@@ -2323,15 +2134,9 @@ name|adapterFactory
 operator|.
 name|createAdapter
 argument_list|(
-operator|(
-name|DataNodeDescriptor
-operator|)
 name|any
 argument_list|()
 argument_list|,
-operator|(
-name|DataSource
-operator|)
 name|any
 argument_list|()
 argument_list|)
@@ -2368,9 +2173,6 @@ name|dataSourceFactory
 operator|.
 name|getDataSource
 argument_list|(
-operator|(
-name|DataNodeDescriptor
-operator|)
 name|any
 argument_list|()
 argument_list|)
@@ -2407,9 +2209,6 @@ name|mergerTokenFactoryProvider
 operator|.
 name|get
 argument_list|(
-operator|(
-name|DbAdapter
-operator|)
 name|any
 argument_list|()
 argument_list|)
@@ -3052,25 +2851,22 @@ argument_list|,
 operator|(
 literal|"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
 operator|+
-literal|"<domain xmlns=\"http://cayenne.apache.org/schema/10/domain\"\n"
+literal|"<domain xmlns=\"http://cayenne.apache.org/schema/11/domain\"\n"
 operator|+
 literal|"\t xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n"
 operator|+
-literal|"\t xsi:schemaLocation=\"http://cayenne.apache.org/schema/10/domain https://cayenne.apache.org/schema/10/domain.xsd\"\n"
+literal|"\t xsi:schemaLocation=\"http://cayenne.apache.org/schema/11/domain https://cayenne.apache.org/schema/11/domain.xsd\"\n"
 operator|+
-literal|"\t project-version=\"10\">\n"
+literal|"\t project-version=\"11\">\n"
 operator|+
 literal|"</domain>"
 operator|)
 operator|.
 name|getBytes
 argument_list|(
-name|Charset
+name|StandardCharsets
 operator|.
-name|forName
-argument_list|(
-literal|"UTF-8"
-argument_list|)
+name|UTF_8
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3349,13 +3145,13 @@ argument_list|,
 operator|(
 literal|"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
 operator|+
-literal|"<domain xmlns=\"http://cayenne.apache.org/schema/10/domain\"\n"
+literal|"<domain xmlns=\"http://cayenne.apache.org/schema/11/domain\"\n"
 operator|+
 literal|"\t xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n"
 operator|+
-literal|"\t xsi:schemaLocation=\"http://cayenne.apache.org/schema/10/domain https://cayenne.apache.org/schema/10/domain.xsd\"\n"
+literal|"\t xsi:schemaLocation=\"http://cayenne.apache.org/schema/11/domain https://cayenne.apache.org/schema/11/domain.xsd\"\n"
 operator|+
-literal|"\t project-version=\"10\">\n"
+literal|"\t project-version=\"11\">\n"
 operator|+
 literal|"\t<map name=\"testSaveLoaded4\"/>\n"
 operator|+
@@ -3364,12 +3160,9 @@ operator|)
 operator|.
 name|getBytes
 argument_list|(
-name|Charset
+name|StandardCharsets
 operator|.
-name|forName
-argument_list|(
-literal|"UTF-8"
-argument_list|)
+name|UTF_8
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3458,13 +3251,13 @@ argument_list|,
 operator|(
 literal|"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
 operator|+
-literal|"<data-map xmlns=\"http://cayenne.apache.org/schema/10/modelMap\"\n"
+literal|"<data-map xmlns=\"http://cayenne.apache.org/schema/11/modelMap\"\n"
 operator|+
 literal|"\t xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n"
 operator|+
-literal|"\t xsi:schemaLocation=\"http://cayenne.apache.org/schema/10/modelMap https://cayenne.apache.org/schema/10/modelMap.xsd\"\n"
+literal|"\t xsi:schemaLocation=\"http://cayenne.apache.org/schema/11/modelMap https://cayenne.apache.org/schema/11/modelMap.xsd\"\n"
 operator|+
-literal|"\t project-version=\"10\">\n"
+literal|"\t project-version=\"11\">\n"
 operator|+
 literal|"\t<db-entity name=\"test\">\n"
 operator|+
@@ -3477,12 +3270,9 @@ operator|)
 operator|.
 name|getBytes
 argument_list|(
-name|Charset
+name|StandardCharsets
 operator|.
-name|forName
-argument_list|(
-literal|"UTF-8"
-argument_list|)
+name|UTF_8
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3625,9 +3415,7 @@ name|tokens
 init|=
 operator|new
 name|LinkedList
-argument_list|<
-name|MergerToken
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|tokens
@@ -3725,9 +3513,7 @@ name|res
 init|=
 operator|new
 name|LinkedList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for

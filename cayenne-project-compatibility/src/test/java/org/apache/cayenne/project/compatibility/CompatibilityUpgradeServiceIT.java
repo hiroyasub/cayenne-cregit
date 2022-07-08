@@ -228,7 +228,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"10"
+literal|"11"
 argument_list|,
 name|domainDocument
 operator|.
@@ -269,7 +269,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"10"
+literal|"11"
 argument_list|,
 name|dataMapDocument
 operator|.
@@ -428,7 +428,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"10"
+literal|"11"
 argument_list|,
 name|dataMapDocument
 operator|.
