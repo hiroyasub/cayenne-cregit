@@ -385,7 +385,7 @@ specifier|final
 name|String
 name|SCHEMA_XSD
 init|=
-literal|"http://cayenne.apache.org/schema/10/modelMap"
+literal|"http://cayenne.apache.org/schema/11/modelMap"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -393,7 +393,7 @@ specifier|final
 name|String
 name|SCHEMA_XSD_LOCATION
 init|=
-literal|"https://cayenne.apache.org/schema/10/modelMap.xsd"
+literal|"https://cayenne.apache.org/schema/11/modelMap.xsd"
 decl_stmt|;
 specifier|protected
 name|String

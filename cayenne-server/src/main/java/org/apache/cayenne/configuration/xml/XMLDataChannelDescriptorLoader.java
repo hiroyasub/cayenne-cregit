@@ -321,7 +321,7 @@ index|[]
 name|SUPPORTED_PROJECT_VERSIONS
 init|=
 block|{
-literal|"10"
+literal|"11"
 block|}
 decl_stmt|;
 static|static

@@ -171,7 +171,7 @@ specifier|final
 name|String
 name|SCHEMA_XSD
 init|=
-literal|"http://cayenne.apache.org/schema/10/domain"
+literal|"http://cayenne.apache.org/schema/11/domain"
 decl_stmt|;
 specifier|public
 specifier|static
@@ -179,7 +179,7 @@ specifier|final
 name|String
 name|SCHEMA_XSD_LOCATION
 init|=
-literal|"https://cayenne.apache.org/schema/10/domain.xsd"
+literal|"https://cayenne.apache.org/schema/11/domain.xsd"
 decl_stmt|;
 specifier|protected
 name|String
