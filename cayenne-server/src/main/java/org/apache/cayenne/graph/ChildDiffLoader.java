@@ -256,7 +256,6 @@ name|ChildDiffLoader
 implements|implements
 name|GraphChangeHandler
 block|{
-comment|// TODO: andrus 04/05/2009 - replace with PropertyChangeProcessingStrategy enum used in ROP?
 specifier|static
 specifier|final
 name|ThreadLocal
