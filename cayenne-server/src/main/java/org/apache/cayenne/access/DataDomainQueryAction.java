@@ -1944,6 +1944,15 @@ condition|(
 name|cache
 condition|)
 block|{
+name|boolean
+name|wasResponseNull
+init|=
+operator|(
+name|response
+operator|==
+literal|null
+operator|)
+decl_stmt|;
 name|List
 name|cachedResults
 init|=
@@ -1964,6 +1973,8 @@ condition|(
 name|response
 operator|==
 literal|null
+operator|||
+name|wasResponseNull
 condition|)
 block|{
 name|response
