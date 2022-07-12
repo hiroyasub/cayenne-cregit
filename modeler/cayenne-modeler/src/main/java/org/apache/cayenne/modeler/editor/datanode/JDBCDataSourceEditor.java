@@ -51,9 +51,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conn
+name|configuration
 operator|.
-name|DataSourceInfo
+name|DataSourceDescriptor
 import|;
 end_import
 
@@ -234,7 +234,7 @@ operator|.
 name|setDataSourceDescriptor
 argument_list|(
 operator|new
-name|DataSourceInfo
+name|DataSourceDescriptor
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -420,8 +420,8 @@ condition|)
 block|{
 return|return;
 block|}
-name|DataSourceInfo
-name|projectDSI
+name|DataSourceDescriptor
+name|projectDataSourceDescriptor
 init|=
 name|getNode
 argument_list|()
@@ -502,7 +502,7 @@ name|dataSource
 operator|.
 name|copyTo
 argument_list|(
-name|projectDSI
+name|projectDataSourceDescriptor
 argument_list|)
 condition|)
 block|{

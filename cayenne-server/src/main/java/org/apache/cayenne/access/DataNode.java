@@ -522,10 +522,6 @@ name|adapter
 decl_stmt|;
 specifier|protected
 name|String
-name|dataSourceLocation
-decl_stmt|;
-specifier|protected
-name|String
 name|dataSourceFactory
 decl_stmt|;
 specifier|protected

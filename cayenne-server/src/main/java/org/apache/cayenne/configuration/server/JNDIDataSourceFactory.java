@@ -104,10 +104,12 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Locates DataSource mapped via JNDI.  *   * @since 3.1  */
+comment|/**  * Locates DataSource mapped via JNDI.  *   * @since 3.1  * @deprecated since 4.3, unused by Cayenne  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 specifier|public
 class|class
 name|JNDIDataSourceFactory

@@ -93,6 +93,12 @@ name|ServerCaseDataSourceFactory
 name|factory
 parameter_list|)
 block|{
+name|this
+operator|.
+name|factory
+operator|=
+name|factory
+expr_stmt|;
 block|}
 specifier|public
 name|DataSource

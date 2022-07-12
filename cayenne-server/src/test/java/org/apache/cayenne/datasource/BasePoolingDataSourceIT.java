@@ -43,9 +43,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conn
+name|configuration
 operator|.
-name|DataSourceInfo
+name|DataSourceDescriptor
 import|;
 end_import
 
@@ -176,7 +176,7 @@ decl_stmt|;
 annotation|@
 name|Inject
 specifier|private
-name|DataSourceInfo
+name|DataSourceDescriptor
 name|dataSourceInfo
 decl_stmt|;
 annotation|@

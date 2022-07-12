@@ -69,9 +69,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|server
-operator|.
-name|DbAdapterFactory
+name|DataSourceDescriptor
 import|;
 end_import
 
@@ -83,9 +81,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conn
+name|configuration
 operator|.
-name|DataSourceInfo
+name|server
+operator|.
+name|DbAdapterFactory
 import|;
 end_import
 
@@ -1305,7 +1305,7 @@ name|boolean
 name|copyTo
 parameter_list|(
 specifier|final
-name|DataSourceInfo
+name|DataSourceDescriptor
 name|dataSourceInfo
 parameter_list|)
 block|{
@@ -1443,7 +1443,7 @@ name|boolean
 name|copyFrom
 parameter_list|(
 specifier|final
-name|DataSourceInfo
+name|DataSourceDescriptor
 name|dataSourceInfo
 parameter_list|)
 block|{

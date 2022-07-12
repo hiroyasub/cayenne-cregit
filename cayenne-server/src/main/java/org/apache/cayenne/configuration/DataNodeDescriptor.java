@@ -53,20 +53,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conn
-operator|.
-name|DataSourceInfo
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|resource
 operator|.
 name|Resource
@@ -198,10 +184,8 @@ specifier|protected
 name|String
 name|schemaUpdateStrategyType
 decl_stmt|;
-comment|// TODO: andrus, 12.13.2009: replace funky DataSourceInfo with a cleaner new class
-comment|// (DataSourceDescriptor?)
 specifier|protected
-name|DataSourceInfo
+name|DataSourceDescriptor
 name|dataSourceDescriptor
 decl_stmt|;
 specifier|protected
@@ -679,7 +663,7 @@ name|schemaUpdateStrategyClass
 expr_stmt|;
 block|}
 specifier|public
-name|DataSourceInfo
+name|DataSourceDescriptor
 name|getDataSourceDescriptor
 parameter_list|()
 block|{
@@ -691,7 +675,7 @@ specifier|public
 name|void
 name|setDataSourceDescriptor
 parameter_list|(
-name|DataSourceInfo
+name|DataSourceDescriptor
 name|dataSourceDescriptor
 parameter_list|)
 block|{

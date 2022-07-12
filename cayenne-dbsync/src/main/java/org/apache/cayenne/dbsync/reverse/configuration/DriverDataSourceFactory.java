@@ -63,9 +63,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|server
-operator|.
-name|DataSourceFactory
+name|DataSourceDescriptor
 import|;
 end_import
 
@@ -77,9 +75,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conn
+name|configuration
 operator|.
-name|DataSourceInfo
+name|server
+operator|.
+name|DataSourceFactory
 import|;
 end_import
 
@@ -166,8 +166,8 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|DataSourceInfo
-name|properties
+name|DataSourceDescriptor
+name|dataSourceDescriptor
 init|=
 name|nodeDescriptor
 operator|.
@@ -176,7 +176,7 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-name|properties
+name|dataSourceDescriptor
 operator|==
 literal|null
 condition|)
@@ -199,7 +199,7 @@ name|objectFactory
 operator|.
 name|getJavaClass
 argument_list|(
-name|properties
+name|dataSourceDescriptor
 operator|.
 name|getJdbcDriver
 argument_list|()
@@ -217,17 +217,17 @@ name|DriverDataSource
 argument_list|(
 name|driver
 argument_list|,
-name|properties
+name|dataSourceDescriptor
 operator|.
 name|getDataSourceUrl
 argument_list|()
 argument_list|,
-name|properties
+name|dataSourceDescriptor
 operator|.
 name|getUserName
 argument_list|()
 argument_list|,
-name|properties
+name|dataSourceDescriptor
 operator|.
 name|getPassword
 argument_list|()

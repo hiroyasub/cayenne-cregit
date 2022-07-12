@@ -39,9 +39,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conn
+name|configuration
 operator|.
-name|DataSourceInfo
+name|DataSourceDescriptor
 import|;
 end_import
 
@@ -103,7 +103,7 @@ name|DataNodeDescriptor
 name|nodeDescriptor
 decl_stmt|;
 specifier|private
-name|DataSourceInfo
+name|DataSourceDescriptor
 name|dataSourceDescriptor
 decl_stmt|;
 name|DataNodeChildrenHandler
@@ -228,7 +228,7 @@ block|{
 name|dataSourceDescriptor
 operator|=
 operator|new
-name|DataSourceInfo
+name|DataSourceDescriptor
 argument_list|()
 expr_stmt|;
 return|return

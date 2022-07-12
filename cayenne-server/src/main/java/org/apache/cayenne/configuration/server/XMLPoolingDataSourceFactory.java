@@ -87,7 +87,7 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|RuntimeProperties
+name|DataSourceDescriptor
 import|;
 end_import
 
@@ -99,9 +99,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conn
+name|configuration
 operator|.
-name|DataSourceInfo
+name|RuntimeProperties
 import|;
 end_import
 
@@ -239,7 +239,7 @@ parameter_list|)
 throws|throws
 name|Exception
 block|{
-name|DataSourceInfo
+name|DataSourceDescriptor
 name|descriptor
 init|=
 name|nodeDescriptor

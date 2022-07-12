@@ -27,9 +27,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conn
+name|unit
 operator|.
-name|DataSourceInfo
+name|UnitDataSourceDescriptor
 import|;
 end_import
 
@@ -170,9 +170,9 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|DataSourceInfo
+name|UnitDataSourceDescriptor
 argument_list|>
-name|connectionInfos
+name|connectionDescriptors
 decl_stmt|;
 comment|/** 	 * Constructor for ConnectionProperties. 	 */
 name|ConnectionProperties
@@ -186,7 +186,7 @@ argument_list|>
 name|props
 parameter_list|)
 block|{
-name|connectionInfos
+name|connectionDescriptors
 operator|=
 operator|new
 name|HashMap
@@ -204,10 +204,10 @@ name|props
 argument_list|)
 control|)
 block|{
-name|DataSourceInfo
+name|UnitDataSourceDescriptor
 name|dsi
 init|=
-name|buildDataSourceInfo
+name|buildDataSourceDescriptor
 argument_list|(
 name|props
 operator|.
@@ -282,7 +282,7 @@ empty_stmt|;
 end_empty_stmt
 
 begin_expr_stmt
-name|connectionInfos
+name|connectionDescriptors
 operator|.
 name|put
 argument_list|(
@@ -300,7 +300,7 @@ name|size
 parameter_list|()
 block|{
 return|return
-name|connectionInfos
+name|connectionDescriptors
 operator|.
 name|size
 argument_list|()
@@ -313,7 +313,7 @@ comment|/** 	 * Returns DataSourceInfo object for a symbolic name. If name does 
 end_comment
 
 begin_function
-name|DataSourceInfo
+name|UnitDataSourceDescriptor
 name|getConnection
 parameter_list|(
 name|String
@@ -321,7 +321,7 @@ name|name
 parameter_list|)
 block|{
 return|return
-name|connectionInfos
+name|connectionDescriptors
 operator|.
 name|get
 argument_list|(
@@ -337,8 +337,8 @@ end_comment
 
 begin_function
 specifier|private
-name|DataSourceInfo
-name|buildDataSourceInfo
+name|UnitDataSourceDescriptor
+name|buildDataSourceDescriptor
 parameter_list|(
 name|Map
 argument_list|<
@@ -349,11 +349,11 @@ argument_list|>
 name|props
 parameter_list|)
 block|{
-name|DataSourceInfo
+name|UnitDataSourceDescriptor
 name|dsi
 init|=
 operator|new
-name|DataSourceInfo
+name|UnitDataSourceDescriptor
 argument_list|()
 decl_stmt|;
 name|String

@@ -73,9 +73,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conn
+name|configuration
 operator|.
-name|DataSourceInfo
+name|DataSourceDescriptor
 import|;
 end_import
 
@@ -189,7 +189,7 @@ name|DbAdapter
 name|adapter
 decl_stmt|;
 specifier|private
-name|DataSourceInfo
+name|DataSourceDescriptor
 name|dataSourceInfo
 decl_stmt|;
 specifier|private
@@ -219,7 +219,7 @@ name|adapterTypesMap
 parameter_list|,
 annotation|@
 name|Inject
-name|DataSourceInfo
+name|DataSourceDescriptor
 name|dataSourceInfo
 parameter_list|,
 annotation|@
@@ -272,9 +272,12 @@ name|adapterTypesMap
 operator|.
 name|get
 argument_list|(
-name|dataSourceInfo
+name|adapter
 operator|.
-name|getAdapterClassName
+name|getClass
+argument_list|()
+operator|.
+name|getName
 argument_list|()
 argument_list|)
 decl_stmt|;
@@ -291,9 +294,12 @@ name|IllegalStateException
 argument_list|(
 literal|"Unmapped adapter type: "
 operator|+
-name|dataSourceInfo
+name|adapter
 operator|.
-name|getAdapterClassName
+name|getClass
+argument_list|()
+operator|.
+name|getName
 argument_list|()
 argument_list|)
 throw|;

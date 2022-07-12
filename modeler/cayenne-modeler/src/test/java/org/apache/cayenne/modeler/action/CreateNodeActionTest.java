@@ -53,9 +53,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conn
+name|configuration
 operator|.
-name|DataSourceInfo
+name|DataSourceDescriptor
 import|;
 end_import
 
@@ -166,11 +166,11 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|DataSourceInfo
+name|DataSourceDescriptor
 name|ds1
 init|=
 operator|new
-name|DataSourceInfo
+name|DataSourceDescriptor
 argument_list|()
 decl_stmt|;
 name|node

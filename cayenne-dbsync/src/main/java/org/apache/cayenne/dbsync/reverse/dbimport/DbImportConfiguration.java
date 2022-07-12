@@ -75,9 +75,9 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|conn
+name|configuration
 operator|.
-name|DataSourceInfo
+name|DataSourceDescriptor
 import|;
 end_import
 
@@ -362,7 +362,7 @@ literal|".map.xml"
 decl_stmt|;
 specifier|private
 specifier|final
-name|DataSourceInfo
+name|DataSourceDescriptor
 name|dataSourceInfo
 decl_stmt|;
 specifier|private
@@ -431,7 +431,7 @@ operator|.
 name|dataSourceInfo
 operator|=
 operator|new
-name|DataSourceInfo
+name|DataSourceDescriptor
 argument_list|()
 expr_stmt|;
 name|this
@@ -1230,7 +1230,7 @@ argument_list|()
 return|;
 block|}
 specifier|public
-name|DataSourceInfo
+name|DataSourceDescriptor
 name|getDataSourceInfo
 parameter_list|()
 block|{

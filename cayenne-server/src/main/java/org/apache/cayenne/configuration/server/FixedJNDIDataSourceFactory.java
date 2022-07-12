@@ -36,6 +36,8 @@ comment|/**  * @since 4.0  */
 end_comment
 
 begin_class
+annotation|@
+name|Deprecated
 class|class
 name|FixedJNDIDataSourceFactory
 extends|extends
