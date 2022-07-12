@@ -372,11 +372,7 @@ operator|new
 name|Object
 index|[]
 block|{
-operator|new
-name|Integer
-argument_list|(
 literal|2
-argument_list|)
 block|}
 argument_list|)
 expr_stmt|;
@@ -540,11 +536,7 @@ operator|new
 name|Object
 index|[]
 block|{
-operator|new
-name|Integer
-argument_list|(
 literal|2
-argument_list|)
 block|}
 argument_list|)
 expr_stmt|;

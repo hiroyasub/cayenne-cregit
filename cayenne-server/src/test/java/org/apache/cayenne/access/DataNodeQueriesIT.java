@@ -526,7 +526,7 @@ name|put
 argument_list|(
 literal|"id"
 argument_list|,
-literal|1l
+literal|1L
 argument_list|)
 expr_stmt|;
 name|bindings
@@ -623,7 +623,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|1l
+literal|1L
 argument_list|,
 name|tArtist
 operator|.

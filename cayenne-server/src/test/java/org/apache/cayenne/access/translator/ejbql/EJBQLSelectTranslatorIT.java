@@ -1445,11 +1445,7 @@ name|params
 operator|.
 name|put
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 literal|1
-argument_list|)
 argument_list|,
 literal|"X"
 argument_list|)
@@ -1458,11 +1454,7 @@ name|params
 operator|.
 name|put
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 literal|2
-argument_list|)
 argument_list|,
 literal|"Y"
 argument_list|)

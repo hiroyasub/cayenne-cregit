@@ -982,11 +982,7 @@ argument_list|)
 expr_stmt|;
 name|assertBindingValue
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 literal|5
-argument_list|)
 argument_list|,
 name|compiled
 operator|.
@@ -1131,11 +1127,7 @@ argument_list|)
 expr_stmt|;
 name|assertBindingValue
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 literal|3
-argument_list|)
 argument_list|,
 name|compiled
 operator|.

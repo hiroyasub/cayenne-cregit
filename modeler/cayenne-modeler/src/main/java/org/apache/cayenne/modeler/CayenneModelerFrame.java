@@ -3723,7 +3723,7 @@ operator|)
 name|event
 operator|)
 operator|.
-name|getModifiers
+name|getModifiersEx
 argument_list|()
 operator|==
 name|Toolkit
@@ -3731,7 +3731,7 @@ operator|.
 name|getDefaultToolkit
 argument_list|()
 operator|.
-name|getMenuShortcutKeyMask
+name|getMenuShortcutKeyMaskEx
 argument_list|()
 operator|&&
 operator|(

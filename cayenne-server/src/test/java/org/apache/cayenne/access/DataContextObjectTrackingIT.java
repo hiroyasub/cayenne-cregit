@@ -526,11 +526,7 @@ name|put
 argument_list|(
 literal|"ARTIST_ID"
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 literal|1
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|row
@@ -703,11 +699,7 @@ name|put
 argument_list|(
 literal|"ARTIST_ID"
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 literal|1
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|row

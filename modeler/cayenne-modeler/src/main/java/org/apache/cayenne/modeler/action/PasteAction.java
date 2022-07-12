@@ -676,7 +676,7 @@ operator|.
 name|getDefaultToolkit
 argument_list|()
 operator|.
-name|getMenuShortcutKeyMask
+name|getMenuShortcutKeyMaskEx
 argument_list|()
 argument_list|)
 return|;

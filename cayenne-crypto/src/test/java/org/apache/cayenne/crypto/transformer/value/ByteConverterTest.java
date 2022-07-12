@@ -67,8 +67,9 @@ parameter_list|()
 block|{
 name|assertEquals
 argument_list|(
-operator|new
 name|Byte
+operator|.
+name|valueOf
 argument_list|(
 operator|(
 name|byte
@@ -93,8 +94,9 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
 name|Byte
+operator|.
+name|valueOf
 argument_list|(
 operator|(
 name|byte

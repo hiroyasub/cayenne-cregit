@@ -226,11 +226,7 @@ name|put
 argument_list|(
 name|query
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 name|resultCount
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

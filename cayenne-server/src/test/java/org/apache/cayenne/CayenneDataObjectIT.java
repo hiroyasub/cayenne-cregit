@@ -507,11 +507,7 @@ name|o2
 operator|.
 name|setInteger
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 literal|55
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|o1
@@ -537,11 +533,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 literal|55
-argument_list|)
 argument_list|,
 name|o1
 operator|.

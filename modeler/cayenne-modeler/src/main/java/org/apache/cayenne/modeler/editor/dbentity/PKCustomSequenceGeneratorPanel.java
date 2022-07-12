@@ -631,11 +631,7 @@ operator|.
 name|getKeyCacheSize
 argument_list|()
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 name|cacheSize
-argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -643,11 +639,7 @@ name|generator
 operator|.
 name|setKeyCacheSize
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 name|cacheSize
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|mediator

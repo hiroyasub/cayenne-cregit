@@ -67,8 +67,9 @@ parameter_list|()
 block|{
 name|assertEquals
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|6
 argument_list|)
@@ -98,8 +99,9 @@ parameter_list|()
 block|{
 name|assertEquals
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|1542
 argument_list|)
@@ -132,8 +134,9 @@ block|{
 comment|// 16 + 256*7 + 256*256* 6
 name|assertEquals
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|395024
 argument_list|)

@@ -257,11 +257,7 @@ name|query
 operator|.
 name|setRoot
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 literal|1
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|fail

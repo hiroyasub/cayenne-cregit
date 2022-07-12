@@ -503,7 +503,7 @@ name|Collections
 operator|.
 name|singletonList
 argument_list|(
-literal|2l
+literal|2L
 argument_list|)
 argument_list|,
 name|context

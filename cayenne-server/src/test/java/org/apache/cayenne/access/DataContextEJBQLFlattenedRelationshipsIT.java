@@ -597,9 +597,7 @@ name|ids
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Iterator
@@ -750,9 +748,7 @@ name|ids
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Iterator
@@ -804,11 +800,7 @@ name|ids
 operator|.
 name|contains
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 literal|1
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -959,9 +951,7 @@ name|ids
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Iterator
@@ -1013,11 +1003,7 @@ name|ids
 operator|.
 name|contains
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 literal|1
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1118,9 +1104,7 @@ name|ids
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Iterator
@@ -1172,11 +1156,7 @@ name|ids
 operator|.
 name|contains
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 literal|1
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1251,9 +1231,7 @@ name|ids
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Iterator
@@ -1305,11 +1283,7 @@ name|ids
 operator|.
 name|contains
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 literal|1
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1319,11 +1293,7 @@ name|ids
 operator|.
 name|contains
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 literal|2
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1423,9 +1393,7 @@ name|ids
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Iterator
@@ -1477,11 +1445,7 @@ name|ids
 operator|.
 name|contains
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 literal|2
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1491,11 +1455,7 @@ name|ids
 operator|.
 name|contains
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 literal|3
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1582,9 +1542,7 @@ name|ids
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Iterator
@@ -1636,11 +1594,7 @@ name|ids
 operator|.
 name|contains
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 literal|1
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1676,7 +1630,7 @@ decl_stmt|;
 comment|// TODO fails but not because of flattened relationship,
 comment|// the reason is that property "ft3Array" inside the subquery
 comment|// parses as unmapped
-comment|/*          * List<?> objects = context.performQuery(query); assertNotNull(objects);          * assertFalse(objects.isEmpty()); assertEquals(1, objects.size()); Set<Object>          * ids = new HashSet<Object>(); Iterator<?> it = objects.iterator(); while          * (it.hasNext()) { Object id = Cayenne.pkForObject((Persistent) it.next());          * ids.add(id); } assertTrue(ids.contains(new Integer(2)));          */
+comment|/*          * List<?> objects = context.performQuery(query); assertNotNull(objects);          * assertFalse(objects.isEmpty()); assertEquals(1, objects.size()); Set<Object>          * ids = new HashSet<>(); Iterator<?> it = objects.iterator(); while          * (it.hasNext()) { Object id = Cayenne.pkForObject((Persistent) it.next());          * ids.add(id); } assertTrue(ids.contains(2));          */
 block|}
 annotation|@
 name|Test
@@ -1750,9 +1704,7 @@ name|ids
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 name|Iterator
@@ -1804,11 +1756,7 @@ name|ids
 operator|.
 name|contains
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 literal|2
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

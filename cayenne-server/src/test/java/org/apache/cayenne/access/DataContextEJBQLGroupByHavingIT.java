@@ -862,11 +862,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Long
-argument_list|(
-literal|3
-argument_list|)
+literal|3L
 argument_list|,
 name|row0
 index|[
@@ -911,11 +907,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Long
-argument_list|(
-literal|2l
-argument_list|)
+literal|2L
 argument_list|,
 name|row1
 index|[
@@ -1037,11 +1029,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Long
-argument_list|(
-literal|1
-argument_list|)
+literal|1L
 argument_list|,
 name|row0
 index|[
@@ -1096,11 +1084,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Long
-argument_list|(
-literal|2
-argument_list|)
+literal|2L
 argument_list|,
 name|row1
 index|[
@@ -1155,11 +1139,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Long
-argument_list|(
-literal|2
-argument_list|)
+literal|2L
 argument_list|,
 name|row2
 index|[
@@ -1260,11 +1240,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Long
-argument_list|(
-literal|1
-argument_list|)
+literal|1L
 argument_list|,
 name|row0
 index|[
@@ -1348,7 +1324,7 @@ comment|// assertTrue(data.get(0) instanceof Object[]);
 comment|//
 comment|// for(int i = 0; i< data.size(); i++) {
 comment|// Object[] row = (Object[]) data.get(i);
-comment|// assertEquals(new Long(1), row[0]);
+comment|// assertEquals(1L, row[0]);
 comment|// }
 block|}
 annotation|@
@@ -1454,11 +1430,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Long
-argument_list|(
-literal|2
-argument_list|)
+literal|2L
 argument_list|,
 name|row0
 index|[
@@ -1570,11 +1542,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Long
-argument_list|(
-literal|3l
-argument_list|)
+literal|3L
 argument_list|,
 name|row0
 index|[
@@ -1686,11 +1654,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Long
-argument_list|(
-literal|3l
-argument_list|)
+literal|3L
 argument_list|,
 name|row0
 index|[

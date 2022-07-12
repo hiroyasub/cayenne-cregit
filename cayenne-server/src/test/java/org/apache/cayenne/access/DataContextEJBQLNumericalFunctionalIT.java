@@ -763,11 +763,7 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Long
-argument_list|(
-literal|1l
-argument_list|)
+literal|1L
 argument_list|,
 name|notUpdated
 argument_list|)
@@ -842,11 +838,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Long
-argument_list|(
-literal|3l
-argument_list|)
+literal|3L
 argument_list|,
 name|notUpdated
 argument_list|)

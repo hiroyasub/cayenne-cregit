@@ -460,9 +460,6 @@ operator|&&
 name|this
 operator|.
 name|keyCacheSize
-operator|.
-name|intValue
-argument_list|()
 operator|<
 literal|1
 condition|)

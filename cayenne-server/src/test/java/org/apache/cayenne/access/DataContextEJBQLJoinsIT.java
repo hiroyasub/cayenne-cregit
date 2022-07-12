@@ -936,9 +936,7 @@ name|ids
 init|=
 operator|new
 name|HashSet
-argument_list|<
-name|Object
-argument_list|>
+argument_list|<>
 argument_list|(
 literal|2
 argument_list|)
@@ -992,7 +990,7 @@ name|ids
 operator|.
 name|contains
 argument_list|(
-literal|33001l
+literal|33001L
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1002,7 +1000,7 @@ name|ids
 operator|.
 name|contains
 argument_list|(
-literal|33005l
+literal|33005L
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -379,7 +379,7 @@ decl_stmt|;
 name|Long
 name|bigintValue
 init|=
-literal|5326457654783454355l
+literal|5326457654783454355L
 decl_stmt|;
 name|test
 operator|.
@@ -511,7 +511,7 @@ decl_stmt|;
 name|Long
 name|bigintValue
 init|=
-literal|5326457654783454355l
+literal|5326457654783454355L
 decl_stmt|;
 name|test
 operator|.

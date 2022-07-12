@@ -413,7 +413,7 @@ name|Integer
 operator|.
 name|MAX_VALUE
 operator|*
-literal|2l
+literal|2L
 argument_list|)
 expr_stmt|;
 if|if

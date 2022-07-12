@@ -447,8 +447,9 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|61
 argument_list|)
@@ -727,8 +728,6 @@ specifier|public
 name|void
 name|test_SelectQuery
 parameter_list|()
-throws|throws
-name|SQLException
 block|{
 name|ObjectContext
 name|context
@@ -945,8 +944,6 @@ specifier|public
 name|void
 name|test_SelectNumeric
 parameter_list|()
-throws|throws
-name|SQLException
 block|{
 name|ObjectContext
 name|context

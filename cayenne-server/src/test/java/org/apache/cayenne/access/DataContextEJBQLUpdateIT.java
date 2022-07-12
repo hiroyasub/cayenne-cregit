@@ -438,11 +438,7 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Long
-argument_list|(
-literal|2l
-argument_list|)
+literal|2L
 argument_list|,
 name|notUpdated
 argument_list|)
@@ -517,11 +513,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Long
-argument_list|(
-literal|1l
-argument_list|)
+literal|1L
 argument_list|,
 name|notUpdated
 argument_list|)
@@ -564,11 +556,7 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Long
-argument_list|(
-literal|2l
-argument_list|)
+literal|2L
 argument_list|,
 name|notUpdated
 argument_list|)
@@ -643,11 +631,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Long
-argument_list|(
-literal|0l
-argument_list|)
+literal|0L
 argument_list|,
 name|notUpdated
 argument_list|)
@@ -690,11 +674,7 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Long
-argument_list|(
-literal|2l
-argument_list|)
+literal|2L
 argument_list|,
 name|notUpdated
 argument_list|)
@@ -769,11 +749,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Long
-argument_list|(
-literal|0l
-argument_list|)
+literal|0L
 argument_list|,
 name|notUpdated
 argument_list|)
@@ -788,7 +764,7 @@ comment|// EJBQLQuery check = new EJBQLQuery("select count(p) from Painting p "
 comment|// + "WHERE p.paintingTitle is NULL or p.estimatedPrice<= 5000");
 comment|//
 comment|// Object notUpdated = Cayenne.objectForQuery(context, check);
-comment|// assertEquals(new Long(2l), notUpdated);
+comment|// assertEquals(2L, notUpdated);
 comment|//
 comment|// String ejbql = "UPDATE Painting AS p SET p.estimatedPrice = p.estimatedPrice * 2";
 comment|// EJBQLQuery query = new EJBQLQuery(ejbql);
@@ -801,7 +777,7 @@ comment|// assertEquals(1, count.length);
 comment|// assertEquals(2, count[0]);
 comment|//
 comment|// notUpdated = Cayenne.objectForQuery(context, check);
-comment|// assertEquals(new Long(0l), notUpdated);
+comment|// assertEquals(0L, notUpdated);
 comment|// }
 annotation|@
 name|Test
@@ -840,11 +816,7 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Long
-argument_list|(
-literal|2l
-argument_list|)
+literal|2L
 argument_list|,
 name|notUpdated
 argument_list|)
@@ -919,11 +891,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Long
-argument_list|(
-literal|0l
-argument_list|)
+literal|0L
 argument_list|,
 name|notUpdated
 argument_list|)
@@ -966,11 +934,7 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Long
-argument_list|(
-literal|2l
-argument_list|)
+literal|2L
 argument_list|,
 name|notUpdated
 argument_list|)
@@ -1045,11 +1009,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Long
-argument_list|(
-literal|0l
-argument_list|)
+literal|0L
 argument_list|,
 name|notUpdated
 argument_list|)
@@ -1117,11 +1077,7 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Long
-argument_list|(
-literal|2l
-argument_list|)
+literal|2L
 argument_list|,
 name|notUpdated
 argument_list|)
@@ -1205,11 +1161,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Long
-argument_list|(
-literal|0l
-argument_list|)
+literal|0L
 argument_list|,
 name|notUpdated
 argument_list|)

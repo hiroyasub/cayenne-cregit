@@ -484,11 +484,7 @@ name|addParameter
 argument_list|(
 literal|"paintingPrice"
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 literal|3000
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// since stored procedure commits its stuff, we must use an explicit
@@ -1140,11 +1136,7 @@ name|addParameter
 argument_list|(
 literal|"paintingPrice"
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 literal|3000
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|List
@@ -1301,11 +1293,7 @@ name|addParameter
 argument_list|(
 literal|"paintingPrice"
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 literal|3000
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|q
@@ -1397,11 +1385,7 @@ name|addParameter
 argument_list|(
 literal|"paintingPrice"
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 literal|3000
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|q
@@ -1631,11 +1615,7 @@ name|addParameter
 argument_list|(
 literal|"in_param"
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 literal|20
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|List
@@ -1956,11 +1936,7 @@ name|addParameter
 argument_list|(
 literal|"paintingPrice"
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 literal|3000
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// TESTING THIS ***

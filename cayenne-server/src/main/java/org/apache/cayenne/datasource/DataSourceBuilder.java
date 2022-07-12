@@ -312,6 +312,9 @@ name|Driver
 operator|)
 name|driverClass
 operator|.
+name|getDeclaredConstructor
+argument_list|()
+operator|.
 name|newInstance
 argument_list|()
 return|;

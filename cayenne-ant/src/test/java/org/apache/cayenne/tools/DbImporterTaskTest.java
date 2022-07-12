@@ -285,16 +285,6 @@ name|java
 operator|.
 name|sql
 operator|.
-name|SQLException
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|sql
-operator|.
 name|Statement
 import|;
 end_import
@@ -918,13 +908,7 @@ name|DbImportConfiguration
 name|dbImportConfiguration
 parameter_list|)
 throws|throws
-name|ClassNotFoundException
-throws|,
-name|IllegalAccessException
-throws|,
-name|InstantiationException
-throws|,
-name|SQLException
+name|Exception
 block|{
 name|Class
 operator|.
@@ -935,6 +919,9 @@ operator|.
 name|getDriver
 argument_list|()
 argument_list|)
+operator|.
+name|getDeclaredConstructor
+argument_list|()
 operator|.
 name|newInstance
 argument_list|()
@@ -1279,6 +1266,9 @@ name|getDriver
 argument_list|()
 argument_list|)
 operator|.
+name|getDeclaredConstructor
+argument_list|()
+operator|.
 name|newInstance
 argument_list|()
 expr_stmt|;
@@ -1296,7 +1286,6 @@ operator|.
 name|getUrl
 argument_list|()
 argument_list|)
-init|;
 init|)
 block|{
 comment|// TODO: move parsing SQL files to a common utility (DBHelper?) .
@@ -1310,7 +1299,6 @@ name|c
 operator|.
 name|createStatement
 argument_list|()
-init|;
 init|)
 block|{
 for|for

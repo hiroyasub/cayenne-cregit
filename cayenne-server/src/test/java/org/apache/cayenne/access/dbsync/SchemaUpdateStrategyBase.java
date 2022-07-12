@@ -242,8 +242,6 @@ specifier|public
 name|void
 name|cleanUpDB
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|DataMap
 name|map
@@ -324,6 +322,9 @@ name|setSchemaUpdateStrategy
 argument_list|(
 name|type
 operator|.
+name|getDeclaredConstructor
+argument_list|()
+operator|.
 name|newInstance
 argument_list|()
 argument_list|)
@@ -345,9 +346,7 @@ name|present
 init|=
 operator|new
 name|ArrayList
-argument_list|<
-name|String
-argument_list|>
+argument_list|<>
 argument_list|()
 decl_stmt|;
 for|for
@@ -579,7 +578,6 @@ argument_list|()
 operator|.
 name|getConnection
 argument_list|()
-init|;
 init|)
 block|{
 try|try
@@ -607,7 +605,6 @@ block|{
 name|tableLabel
 block|}
 argument_list|)
-init|;
 init|)
 block|{
 while|while

@@ -226,11 +226,7 @@ init|=
 operator|new
 name|ListResponse
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 literal|67
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|ListResponse
@@ -270,11 +266,7 @@ argument_list|()
 operator|.
 name|contains
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 literal|67
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

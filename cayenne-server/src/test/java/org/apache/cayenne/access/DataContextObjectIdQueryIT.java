@@ -526,7 +526,7 @@ name|Artist
 operator|.
 name|class
 argument_list|,
-literal|44l
+literal|44L
 argument_list|)
 decl_stmt|;
 name|assertNotNull
@@ -578,7 +578,7 @@ name|Artist
 operator|.
 name|ARTIST_ID_PK_COLUMN
 argument_list|,
-literal|44l
+literal|44L
 argument_list|)
 argument_list|,
 literal|false

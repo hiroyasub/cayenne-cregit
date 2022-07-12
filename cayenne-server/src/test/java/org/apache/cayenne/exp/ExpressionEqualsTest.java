@@ -100,11 +100,7 @@ name|matchExp
 argument_list|(
 literal|"aa"
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 literal|3
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|assertEquals
@@ -191,11 +187,7 @@ name|matchExp
 argument_list|(
 literal|"aa"
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 literal|3
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|assertEquals

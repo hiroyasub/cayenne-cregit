@@ -369,12 +369,12 @@ operator|.
 name|getDefaultToolkit
 argument_list|()
 operator|.
-name|getMenuShortcutKeyMask
+name|getMenuShortcutKeyMaskEx
 argument_list|()
 operator||
 name|InputEvent
 operator|.
-name|SHIFT_MASK
+name|SHIFT_DOWN_MASK
 argument_list|)
 return|;
 block|}

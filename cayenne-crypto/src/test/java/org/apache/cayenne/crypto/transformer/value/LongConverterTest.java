@@ -68,10 +68,11 @@ block|{
 comment|// 256*256* 6 + 256*7 + 16
 name|assertEquals
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
-literal|395024
+literal|395024L
 argument_list|)
 argument_list|,
 operator|new
@@ -106,10 +107,11 @@ block|{
 comment|// 6*256*256*256*256 + 7*256*256*256 + 16*256*256 + 17*256 + 99
 name|assertEquals
 argument_list|(
-operator|new
 name|Long
+operator|.
+name|valueOf
 argument_list|(
-literal|25888297315l
+literal|25888297315L
 argument_list|)
 argument_list|,
 operator|new
@@ -193,7 +195,7 @@ name|Long
 operator|.
 name|MAX_VALUE
 operator|-
-literal|1l
+literal|1L
 operator|)
 argument_list|)
 argument_list|)
@@ -257,7 +259,7 @@ name|Short
 operator|.
 name|MAX_VALUE
 operator|-
-literal|1l
+literal|1L
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -278,7 +280,7 @@ operator|.
 name|toBytes
 argument_list|(
 operator|-
-literal|7l
+literal|7L
 argument_list|)
 argument_list|)
 expr_stmt|;

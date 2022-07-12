@@ -200,11 +200,7 @@ name|editors
 operator|.
 name|put
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 name|row
-argument_list|)
 argument_list|,
 name|editor
 argument_list|)
@@ -426,11 +422,7 @@ name|editors
 operator|.
 name|get
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 name|row
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

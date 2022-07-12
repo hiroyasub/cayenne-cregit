@@ -367,11 +367,7 @@ name|Application
 name|application
 parameter_list|)
 throws|throws
-name|ClassNotFoundException
-throws|,
-name|IllegalAccessException
-throws|,
-name|InstantiationException
+name|Exception
 block|{
 return|return
 name|application
@@ -393,6 +389,9 @@ argument_list|(
 literal|0
 argument_list|)
 argument_list|)
+operator|.
+name|getDeclaredConstructor
+argument_list|()
 operator|.
 name|newInstance
 argument_list|()

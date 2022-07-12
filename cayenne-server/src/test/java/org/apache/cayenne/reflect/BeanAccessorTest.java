@@ -271,11 +271,7 @@ name|setValue
 argument_list|(
 name|o1
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 literal|5
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|assertEquals
@@ -290,11 +286,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 literal|5
-argument_list|)
 argument_list|,
 name|accessor
 operator|.

@@ -319,7 +319,7 @@ argument_list|)
 operator|.
 name|insert
 argument_list|(
-literal|1l
+literal|1L
 argument_list|,
 literal|"ArtistToTestResult"
 argument_list|)
@@ -354,7 +354,7 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|1l
+literal|1L
 argument_list|,
 name|selectResult
 operator|.
@@ -410,7 +410,7 @@ comment|// TODO: is that correct to use Long (coming from DbAttribute) type for
 comment|// ARTIST_ID instead of Integer (coming from #result(..))?
 name|assertEquals
 argument_list|(
-literal|1l
+literal|1L
 argument_list|,
 name|selectResult
 operator|.
@@ -468,7 +468,7 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|1l
+literal|1L
 argument_list|,
 name|selectResult
 operator|.
@@ -526,7 +526,7 @@ argument_list|)
 decl_stmt|;
 name|assertEquals
 argument_list|(
-literal|1l
+literal|1L
 argument_list|,
 name|selectResult
 operator|.

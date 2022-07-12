@@ -1437,11 +1437,7 @@ name|Artist
 operator|.
 name|ARTIST_ID_PK_COLUMN
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 literal|33002
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|Object

@@ -49,10 +49,6 @@ name|assertNull
 import|;
 end_import
 
-begin_comment
-comment|/**  */
-end_comment
-
 begin_class
 specifier|public
 class|class
@@ -98,8 +94,6 @@ specifier|public
 name|void
 name|testSize
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|DbKeyGenerator
 name|generator
@@ -112,17 +106,14 @@ name|generator
 operator|.
 name|setKeyCacheSize
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 literal|3
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|3
 argument_list|)
@@ -137,12 +128,8 @@ name|generator
 operator|.
 name|setKeyCacheSize
 argument_list|(
-operator|new
-name|Integer
-argument_list|(
 operator|-
 literal|1
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|assertNull

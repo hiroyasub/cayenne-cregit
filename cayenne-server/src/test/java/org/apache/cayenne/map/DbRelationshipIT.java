@@ -299,11 +299,7 @@ decl_stmt|;
 name|Integer
 name|id
 init|=
-operator|new
-name|Integer
-argument_list|(
 literal|44
-argument_list|)
 decl_stmt|;
 name|map
 operator|.

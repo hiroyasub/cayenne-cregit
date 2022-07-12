@@ -327,11 +327,7 @@ name|setValue
 argument_list|(
 name|object
 argument_list|,
-operator|new
-name|Integer
-argument_list|(
 literal|6
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|assertEquals

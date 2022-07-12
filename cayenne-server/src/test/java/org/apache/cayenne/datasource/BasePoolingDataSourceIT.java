@@ -171,7 +171,7 @@ specifier|final
 name|long
 name|QUEUE_WAIT_TIME
 init|=
-literal|1000l
+literal|1000L
 decl_stmt|;
 annotation|@
 name|Inject

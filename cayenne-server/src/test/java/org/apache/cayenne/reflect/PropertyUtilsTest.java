@@ -1448,8 +1448,9 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-operator|new
 name|Integer
+operator|.
+name|valueOf
 argument_list|(
 literal|25
 argument_list|)
@@ -1828,9 +1829,7 @@ name|class
 argument_list|,
 operator|new
 name|Converter
-argument_list|<
-name|Date
-argument_list|>
+argument_list|<>
 argument_list|()
 block|{
 annotation|@
@@ -1965,7 +1964,9 @@ name|GregorianCalendar
 argument_list|(
 literal|2013
 argument_list|,
-literal|7
+name|Calendar
+operator|.
+name|AUGUST
 argument_list|,
 literal|1
 argument_list|,
@@ -2064,10 +2065,8 @@ argument_list|,
 literal|null
 argument_list|)
 expr_stmt|;
-name|assertEquals
+name|assertFalse
 argument_list|(
-literal|false
-argument_list|,
 name|o1
 operator|.
 name|isBooleanField

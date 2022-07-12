@@ -257,11 +257,7 @@ name|insert
 argument_list|(
 literal|44001
 argument_list|,
-operator|new
-name|Long
-argument_list|(
-literal|744073709551715l
-argument_list|)
+literal|744073709551715L
 argument_list|)
 expr_stmt|;
 block|}
@@ -297,7 +293,7 @@ name|setParameter
 argument_list|(
 literal|1
 argument_list|,
-literal|744073709551615l
+literal|744073709551615L
 argument_list|)
 expr_stmt|;
 name|List

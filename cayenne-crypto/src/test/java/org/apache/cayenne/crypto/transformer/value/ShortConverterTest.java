@@ -67,8 +67,9 @@ parameter_list|()
 block|{
 name|assertEquals
 argument_list|(
-operator|new
 name|Short
+operator|.
+name|valueOf
 argument_list|(
 operator|(
 name|short
@@ -101,8 +102,9 @@ parameter_list|()
 block|{
 name|assertEquals
 argument_list|(
-operator|new
 name|Short
+operator|.
+name|valueOf
 argument_list|(
 operator|(
 name|short

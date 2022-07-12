@@ -838,6 +838,9 @@ name|ObjectNameGenerator
 operator|)
 name|generatorClass
 operator|.
+name|getDeclaredConstructor
+argument_list|()
+operator|.
 name|newInstance
 argument_list|()
 return|;
