@@ -1951,25 +1951,6 @@ name|BIT
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * @deprecated 	 *  	 *             Returns true if supplied type can have a length attribute as 	 *             a part of column definition. 	 */
-specifier|public
-specifier|static
-name|boolean
-name|supportsLength
-parameter_list|(
-name|int
-name|type
-parameter_list|)
-block|{
-return|return
-name|JdbcAdapter
-operator|.
-name|supportsLength
-argument_list|(
-name|type
-argument_list|)
-return|;
-block|}
 comment|// TODO: redo all isXyz as an internal enum over types, where each enum object knows whether it is this or that kind
 comment|/** 	 * Returns true if supplied type is a character type. 	 * @since 4.0 	 * @param type JDBC type 	 * @return true if supplied type is a character type. 	 */
 specifier|public

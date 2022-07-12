@@ -586,13 +586,6 @@ specifier|protected
 name|boolean
 name|caseInsensitiveCollations
 decl_stmt|;
-comment|/**      * @since 3.1      * @deprecated since 4.0 BatchQueryBuilderfactory is attached to the DataNode.      */
-annotation|@
-name|Inject
-specifier|protected
-name|BatchTranslatorFactory
-name|batchQueryBuilderFactory
-decl_stmt|;
 annotation|@
 name|Inject
 specifier|protected
@@ -1071,24 +1064,6 @@ comment|/**      * Returns true if supplied type can have a length attribute as 
 specifier|public
 name|boolean
 name|typeSupportsLength
-parameter_list|(
-name|int
-name|type
-parameter_list|)
-block|{
-return|return
-name|JdbcAdapter
-operator|.
-name|supportsLength
-argument_list|(
-name|type
-argument_list|)
-return|;
-block|}
-comment|/**      * Returns true if supplied type can have a length attribute as a part of      * column definition      *<p/>      * TODO: this is a static method only to support the deprecated method      * {@link TypesMapping#supportsLength(int)} When the deprecated method is      * removed this body should be moved in to {@link #typeSupportsLength(int)}      *      * @deprecated      */
-specifier|static
-name|boolean
-name|supportsLength
 parameter_list|(
 name|int
 name|type
