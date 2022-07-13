@@ -99,24 +99,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|access
-operator|.
-name|sqlbuilder
-operator|.
-name|sqltree
-operator|.
-name|WhereNode
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|exp
 operator|.
 name|ExpressionFactory
@@ -180,6 +162,18 @@ operator|.
 name|CoreMatchers
 operator|.
 name|instanceOf
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|hamcrest
+operator|.
+name|MatcherAssert
+operator|.
+name|assertThat
 import|;
 end_import
 

@@ -187,11 +187,11 @@ begin_import
 import|import static
 name|org
 operator|.
-name|junit
+name|hamcrest
 operator|.
-name|Assert
+name|MatcherAssert
 operator|.
-name|assertEquals
+name|assertThat
 import|;
 end_import
 
@@ -203,7 +203,7 @@ name|junit
 operator|.
 name|Assert
 operator|.
-name|assertThat
+name|assertEquals
 import|;
 end_import
 

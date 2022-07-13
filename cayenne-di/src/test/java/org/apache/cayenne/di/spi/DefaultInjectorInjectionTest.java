@@ -27,20 +27,6 @@ name|cayenne
 operator|.
 name|di
 operator|.
-name|DIRuntimeException
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|di
-operator|.
 name|Key
 import|;
 end_import
@@ -464,18 +450,6 @@ operator|.
 name|util
 operator|.
 name|Map
-import|;
-end_import
-
-begin_import
-import|import static
-name|org
-operator|.
-name|hamcrest
-operator|.
-name|CoreMatchers
-operator|.
-name|instanceOf
 import|;
 end_import
 
