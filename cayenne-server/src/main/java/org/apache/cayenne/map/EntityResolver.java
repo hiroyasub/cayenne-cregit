@@ -281,6 +281,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|di
+operator|.
+name|AdhocObjectFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|reflect
 operator|.
 name|ClassDescriptor
@@ -625,6 +639,12 @@ specifier|transient
 name|EntitySorter
 name|entitySorter
 decl_stmt|;
+comment|/**      * @since 4.3      */
+specifier|protected
+specifier|transient
+name|AdhocObjectFactory
+name|objectFactory
+decl_stmt|;
 comment|/**      * Creates new empty EntityResolver.      */
 specifier|public
 name|EntityResolver
@@ -870,10 +890,15 @@ name|?
 argument_list|>
 name|entityClass
 init|=
-name|entity
+name|objectFactory
 operator|.
 name|getJavaClass
+argument_list|(
+name|entity
+operator|.
+name|getJavaClassName
 argument_list|()
+argument_list|)
 decl_stmt|;
 comment|// load annotated methods
 for|for
@@ -1943,7 +1968,7 @@ block|}
 comment|/**      * @since 4.2      */
 specifier|public
 name|void
-name|setValueComparisionStrategyFactory
+name|setValueComparisonStrategyFactory
 parameter_list|(
 name|ValueComparisonStrategyFactory
 name|valueComparisonStrategyFactory
@@ -1980,6 +2005,32 @@ parameter_list|()
 block|{
 return|return
 name|entitySorter
+return|;
+block|}
+comment|/**      * @since 4.3      */
+specifier|public
+name|void
+name|setObjectFactory
+parameter_list|(
+name|AdhocObjectFactory
+name|objectFactory
+parameter_list|)
+block|{
+name|this
+operator|.
+name|objectFactory
+operator|=
+name|objectFactory
+expr_stmt|;
+block|}
+comment|/**      * @since 4.3      */
+specifier|public
+name|AdhocObjectFactory
+name|getObjectFactory
+parameter_list|()
+block|{
+return|return
+name|objectFactory
 return|;
 block|}
 block|}

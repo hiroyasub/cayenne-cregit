@@ -1942,43 +1942,20 @@ argument_list|<
 name|?
 argument_list|>
 name|entityType
-decl_stmt|;
-try|try
-block|{
-name|entityType
-operator|=
-name|Util
+init|=
+name|entityResolver
+operator|.
+name|getObjectFactory
+argument_list|()
 operator|.
 name|getJavaClass
 argument_list|(
 name|entity
 operator|.
-name|getClassName
+name|getJavaClassName
 argument_list|()
 argument_list|)
-expr_stmt|;
-block|}
-catch|catch
-parameter_list|(
-name|ClassNotFoundException
-name|e
-parameter_list|)
-block|{
-throw|throw
-operator|new
-name|CayenneRuntimeException
-argument_list|(
-literal|"Class not found: "
-operator|+
-name|entity
-operator|.
-name|getClassName
-argument_list|()
-argument_list|,
-name|e
-argument_list|)
-throw|;
-block|}
+decl_stmt|;
 comment|// ensure that we don't register the same callback for multiple
 comment|// classes in the same hierarchy, so find the topmost type using
 comment|// a given annotation and register it once

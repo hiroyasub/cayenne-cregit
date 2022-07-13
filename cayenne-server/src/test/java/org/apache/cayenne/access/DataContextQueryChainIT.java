@@ -217,8 +217,6 @@ name|context
 decl_stmt|;
 annotation|@
 name|Test
-annotation|@
-name|Deprecated
 specifier|public
 name|void
 name|testSelectQuery
