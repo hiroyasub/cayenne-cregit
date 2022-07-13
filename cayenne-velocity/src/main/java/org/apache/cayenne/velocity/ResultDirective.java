@@ -968,6 +968,11 @@ name|ColumnDescriptor
 name|columnDescriptor
 parameter_list|)
 block|{
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
 name|Collection
 argument_list|<
 name|Object

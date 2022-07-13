@@ -19,18 +19,15 @@ begin_comment
 comment|/**  * A helper class to do property type conversions.  *   * @since 1.2  */
 end_comment
 
-begin_class
+begin_interface
 specifier|public
-specifier|abstract
-class|class
+interface|interface
 name|Converter
 parameter_list|<
 name|T
 parameter_list|>
 block|{
 comment|/** 	 * Converts object to supported class without doing any type checking. 	 * @param value  	 * 		the object to convert; the source 	 * @param type 	 * 		the Class to convert the value to; the destination type 	 * @return 	 * 		an object of type @code{type}. If the conversion fails an exception will be thrown. If value is null then the result will be null. 	 */
-specifier|protected
-specifier|abstract
 name|T
 name|convert
 parameter_list|(
@@ -45,7 +42,7 @@ name|type
 parameter_list|)
 function_decl|;
 block|}
-end_class
+end_interface
 
 end_unit
 

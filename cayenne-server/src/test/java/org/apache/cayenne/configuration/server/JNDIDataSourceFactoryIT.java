@@ -197,6 +197,8 @@ end_import
 
 begin_class
 annotation|@
+name|Deprecated
+annotation|@
 name|UseServerRuntime
 argument_list|(
 name|CayenneProjects

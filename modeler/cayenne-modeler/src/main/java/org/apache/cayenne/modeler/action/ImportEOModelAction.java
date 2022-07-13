@@ -866,9 +866,6 @@ block|{
 name|CreateNodeAction
 name|nodeBuilder
 init|=
-operator|(
-name|CreateNodeAction
-operator|)
 name|getApplication
 argument_list|()
 operator|.

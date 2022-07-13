@@ -1827,26 +1827,12 @@ name|Date
 operator|.
 name|class
 argument_list|,
-operator|new
-name|Converter
-argument_list|<>
-argument_list|()
-block|{
-annotation|@
-name|Override
-specifier|protected
-name|Date
-name|convert
 parameter_list|(
-name|Object
 name|value
 parameter_list|,
-name|Class
-argument_list|<
-name|Date
-argument_list|>
 name|type
 parameter_list|)
+lambda|->
 block|{
 if|if
 condition|(
@@ -1933,7 +1919,6 @@ operator|+
 literal|"' to a Date"
 argument_list|)
 throw|;
-block|}
 block|}
 argument_list|)
 expr_stmt|;

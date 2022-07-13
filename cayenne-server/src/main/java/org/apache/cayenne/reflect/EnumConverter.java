@@ -64,10 +64,13 @@ parameter_list|<
 name|T
 extends|extends
 name|Enum
+parameter_list|<
+name|T
+parameter_list|>
 operator|&
 name|ExtendedEnumeration
 parameter_list|>
-extends|extends
+implements|implements
 name|Converter
 argument_list|<
 name|T
@@ -80,7 +83,7 @@ name|SuppressWarnings
 argument_list|(
 literal|"unchecked"
 argument_list|)
-specifier|protected
+specifier|public
 name|T
 name|convert
 parameter_list|(

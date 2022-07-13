@@ -738,14 +738,10 @@ name|callbackTimes
 operator|.
 name|add
 argument_list|(
-operator|new
-name|Long
-argument_list|(
 name|System
 operator|.
 name|currentTimeMillis
 argument_list|()
-argument_list|)
 argument_list|)
 expr_stmt|;
 try|try

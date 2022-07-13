@@ -5491,6 +5491,9 @@ index|[]
 name|path
 parameter_list|,
 name|Comparator
+argument_list|<
+name|ConfigurationNode
+argument_list|>
 name|comparator
 parameter_list|)
 block|{
@@ -5544,6 +5547,9 @@ name|DefaultMutableTreeNode
 name|treeNode
 parameter_list|,
 name|Comparator
+argument_list|<
+name|ConfigurationNode
+argument_list|>
 name|comparator
 parameter_list|)
 block|{

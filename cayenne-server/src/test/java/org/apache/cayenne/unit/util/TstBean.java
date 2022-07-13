@@ -192,11 +192,7 @@ name|this
 operator|.
 name|integer
 operator|=
-operator|new
-name|Integer
-argument_list|(
 name|intValue
-argument_list|)
 expr_stmt|;
 block|}
 specifier|public
@@ -208,11 +204,7 @@ parameter_list|)
 block|{
 name|integer
 operator|=
-operator|new
-name|Integer
-argument_list|(
 name|intValue
-argument_list|)
 expr_stmt|;
 block|}
 specifier|public

@@ -986,11 +986,10 @@ name|tArtist
 operator|.
 name|insert
 argument_list|(
-operator|new
-name|Long
-argument_list|(
+operator|(
+name|long
+operator|)
 name|i
-argument_list|)
 argument_list|,
 literal|"Artist"
 operator|+
