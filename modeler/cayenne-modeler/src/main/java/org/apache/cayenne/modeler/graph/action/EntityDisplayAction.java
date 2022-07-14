@@ -158,6 +158,7 @@ name|CayenneAction
 name|delegate
 decl_stmt|;
 specifier|private
+specifier|final
 name|GraphBuilder
 name|builder
 decl_stmt|;
@@ -310,6 +311,13 @@ name|display
 parameter_list|()
 block|{
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|entity
 init|=
 name|builder

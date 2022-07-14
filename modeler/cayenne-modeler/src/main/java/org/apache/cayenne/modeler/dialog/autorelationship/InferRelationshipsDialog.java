@@ -204,6 +204,9 @@ name|strategyLabel
 decl_stmt|;
 specifier|protected
 name|JComboBox
+argument_list|<
+name|String
+argument_list|>
 name|strategyCombo
 decl_stmt|;
 specifier|public
@@ -280,6 +283,7 @@ name|strategyCombo
 operator|=
 operator|new
 name|JComboBox
+argument_list|<>
 argument_list|()
 expr_stmt|;
 name|strategyCombo
@@ -529,6 +533,9 @@ return|;
 block|}
 specifier|public
 name|JComboBox
+argument_list|<
+name|String
+argument_list|>
 name|getStrategyCombo
 parameter_list|()
 block|{

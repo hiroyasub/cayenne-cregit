@@ -86,6 +86,13 @@ name|DataMapDisplayEvent
 block|{
 specifier|protected
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|entity
 decl_stmt|;
 comment|/**      * If true, the event causes entity editor to switch to the main entity tab.      */
@@ -111,6 +118,13 @@ name|Object
 name|src
 parameter_list|,
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|entity
 parameter_list|)
 block|{
@@ -135,6 +149,13 @@ name|Object
 name|src
 parameter_list|,
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|entity
 parameter_list|,
 name|DataMap
@@ -165,6 +186,13 @@ name|Object
 name|src
 parameter_list|,
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|entity
 parameter_list|,
 name|DataMap
@@ -203,6 +231,13 @@ block|}
 comment|/**      * Returns entity associated with this event.      */
 specifier|public
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|getEntity
 parameter_list|()
 block|{
@@ -262,6 +297,13 @@ name|void
 name|setEntity
 parameter_list|(
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|entity
 parameter_list|)
 block|{

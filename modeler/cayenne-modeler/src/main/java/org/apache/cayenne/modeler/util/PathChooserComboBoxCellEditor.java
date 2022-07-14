@@ -350,15 +350,18 @@ comment|/**  * This class used as cell editor, when you need to  * choose path i
 end_comment
 
 begin_class
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"WeakerAccess"
-argument_list|)
 specifier|public
 specifier|abstract
 class|class
 name|PathChooserComboBoxCellEditor
+parameter_list|<
+name|T
+extends|extends
+name|CayenneTableModel
+parameter_list|<
+name|?
+parameter_list|>
+parameter_list|>
 extends|extends
 name|AbstractCellEditor
 implements|implements
@@ -416,7 +419,7 @@ specifier|abstract
 name|Object
 name|getCurrentNodeToInitializeCombo
 parameter_list|(
-name|CayenneTableModel
+name|T
 name|model
 parameter_list|,
 name|int
@@ -428,7 +431,7 @@ specifier|abstract
 name|String
 name|getPathToInitializeCombo
 parameter_list|(
-name|CayenneTableModel
+name|T
 name|model
 parameter_list|,
 name|int
@@ -439,7 +442,7 @@ specifier|protected
 name|void
 name|initializeCombo
 parameter_list|(
-name|CayenneTableModel
+name|T
 name|model
 parameter_list|,
 name|int
@@ -1472,11 +1475,6 @@ literal|"icon-arrow-closed.png"
 argument_list|)
 decl_stmt|;
 annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
-annotation|@
 name|Override
 specifier|public
 name|Component
@@ -1553,6 +1551,9 @@ argument_list|)
 condition|)
 block|{
 name|ListCellRenderer
+argument_list|<
+name|Object
+argument_list|>
 name|leafRenderer
 init|=
 name|CellRenderers

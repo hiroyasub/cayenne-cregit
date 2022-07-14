@@ -4303,6 +4303,13 @@ name|e
 parameter_list|)
 block|{
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|entity
 init|=
 name|e
@@ -5113,6 +5120,13 @@ name|this
 argument_list|,
 operator|(
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 operator|)
 name|obj
 argument_list|)

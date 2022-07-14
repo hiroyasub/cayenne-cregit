@@ -245,6 +245,13 @@ name|e
 parameter_list|)
 block|{
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|entity
 init|=
 literal|null
@@ -325,6 +332,13 @@ name|void
 name|showEntity
 parameter_list|(
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|entity
 parameter_list|)
 block|{

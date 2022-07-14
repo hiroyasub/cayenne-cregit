@@ -131,7 +131,7 @@ specifier|default
 name|String
 name|quotedIdentifier
 parameter_list|(
-name|Entity
+name|DbEntity
 name|entity
 parameter_list|,
 name|String
@@ -168,7 +168,7 @@ specifier|default
 name|void
 name|quotedIdentifier
 parameter_list|(
-name|Entity
+name|DbEntity
 name|entity
 parameter_list|,
 name|CharSequence

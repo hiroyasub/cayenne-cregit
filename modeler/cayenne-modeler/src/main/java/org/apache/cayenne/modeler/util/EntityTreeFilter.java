@@ -62,6 +62,13 @@ name|Object
 name|node
 parameter_list|,
 name|Attribute
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|attr
 parameter_list|)
 function_decl|;
@@ -73,6 +80,13 @@ name|Object
 name|node
 parameter_list|,
 name|Relationship
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|rel
 parameter_list|)
 function_decl|;

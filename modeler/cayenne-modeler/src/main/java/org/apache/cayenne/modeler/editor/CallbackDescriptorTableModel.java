@@ -224,6 +224,9 @@ block|}
 comment|/**      * Returns Java class of the internal list elements.      */
 specifier|public
 name|Class
+argument_list|<
+name|String
+argument_list|>
 name|getElementsClass
 parameter_list|()
 block|{

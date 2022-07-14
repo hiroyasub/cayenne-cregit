@@ -27,7 +27,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|Entity
+name|DbEntity
 import|;
 end_import
 
@@ -104,7 +104,7 @@ block|}
 annotation|@
 name|Override
 specifier|protected
-name|Entity
+name|DbEntity
 name|getEntity
 parameter_list|()
 block|{

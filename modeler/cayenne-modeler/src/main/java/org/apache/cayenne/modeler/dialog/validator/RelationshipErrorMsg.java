@@ -188,13 +188,27 @@ name|map
 decl_stmt|;
 specifier|protected
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|entity
 decl_stmt|;
 specifier|protected
 name|Relationship
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|rel
 decl_stmt|;
-comment|/**      * Constructor for RelationshipErrorMsg.      *       * @param result      */
+comment|/**      * Constructor for RelationshipErrorMsg.      */
 specifier|public
 name|RelationshipErrorMsg
 parameter_list|(
@@ -219,6 +233,13 @@ name|rel
 operator|=
 operator|(
 name|Relationship
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 operator|)
 name|object
 expr_stmt|;

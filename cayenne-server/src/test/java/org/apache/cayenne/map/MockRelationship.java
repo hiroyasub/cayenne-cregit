@@ -78,7 +78,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|Entity
+name|MockEntity
 name|getTargetEntity
 parameter_list|()
 block|{
@@ -103,7 +103,7 @@ block|}
 annotation|@
 name|Override
 specifier|public
-name|Relationship
+name|MockRelationship
 name|getReverseRelationship
 parameter_list|()
 block|{

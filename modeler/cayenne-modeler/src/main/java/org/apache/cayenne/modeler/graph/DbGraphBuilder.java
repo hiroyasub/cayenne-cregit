@@ -77,7 +77,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|Entity
+name|DbAttribute
 import|;
 end_import
 
@@ -91,7 +91,21 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|Relationship
+name|DbEntity
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
+name|DbRelationship
 import|;
 end_import
 
@@ -250,6 +264,13 @@ class|class
 name|DbGraphBuilder
 extends|extends
 name|BaseGraphBuilder
+argument_list|<
+name|DbEntity
+argument_list|,
+name|DbAttribute
+argument_list|,
+name|DbRelationship
+argument_list|>
 implements|implements
 name|DbEntityListener
 implements|,
@@ -277,9 +298,7 @@ name|Override
 specifier|protected
 name|Collection
 argument_list|<
-name|?
-extends|extends
-name|Entity
+name|DbEntity
 argument_list|>
 name|getEntities
 parameter_list|(
@@ -300,7 +319,7 @@ specifier|protected
 name|void
 name|postProcessEntity
 parameter_list|(
-name|Entity
+name|DbEntity
 name|entity
 parameter_list|,
 name|DefaultGraphCell
@@ -344,10 +363,10 @@ block|}
 annotation|@
 name|Override
 specifier|protected
-name|EntityCellMetadata
+name|DbEntityCellMetadata
 name|getCellMetadata
 parameter_list|(
-name|Entity
+name|DbEntity
 name|e
 parameter_list|)
 block|{
@@ -370,7 +389,7 @@ specifier|protected
 name|DefaultEdge
 name|createRelationshipCell
 parameter_list|(
-name|Relationship
+name|DbRelationship
 name|rel
 parameter_list|)
 block|{
@@ -509,6 +528,9 @@ return|return;
 block|}
 name|insertEntityCell
 argument_list|(
+operator|(
+name|DbEntity
+operator|)
 name|e
 operator|.
 name|getEntity
@@ -531,6 +553,9 @@ argument_list|)
 expr_stmt|;
 name|updateEntityCell
 argument_list|(
+operator|(
+name|DbEntity
+operator|)
 name|e
 operator|.
 name|getEntity
@@ -548,6 +573,9 @@ parameter_list|)
 block|{
 name|removeEntityCell
 argument_list|(
+operator|(
+name|DbEntity
+operator|)
 name|e
 operator|.
 name|getEntity
@@ -565,6 +593,9 @@ parameter_list|)
 block|{
 name|updateEntityCell
 argument_list|(
+operator|(
+name|DbEntity
+operator|)
 name|e
 operator|.
 name|getEntity
@@ -582,6 +613,9 @@ parameter_list|)
 block|{
 name|updateEntityCell
 argument_list|(
+operator|(
+name|DbEntity
+operator|)
 name|e
 operator|.
 name|getEntity
@@ -599,6 +633,9 @@ parameter_list|)
 block|{
 name|updateEntityCell
 argument_list|(
+operator|(
+name|DbEntity
+operator|)
 name|e
 operator|.
 name|getEntity
@@ -626,6 +663,9 @@ parameter_list|)
 block|{
 name|updateRelationshipCell
 argument_list|(
+operator|(
+name|DbRelationship
+operator|)
 name|e
 operator|.
 name|getRelationship
@@ -648,6 +688,9 @@ argument_list|)
 expr_stmt|;
 name|removeRelationshipCell
 argument_list|(
+operator|(
+name|DbRelationship
+operator|)
 name|e
 operator|.
 name|getRelationship

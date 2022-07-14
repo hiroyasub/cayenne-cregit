@@ -174,9 +174,16 @@ name|map
 decl_stmt|;
 specifier|protected
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|entity
 decl_stmt|;
-comment|/**      * Constructor for EntityErrorMsg.      *       * @param result      */
+comment|/**      * Constructor for EntityErrorMsg.      */
 specifier|public
 name|EntityErrorMsg
 parameter_list|(
@@ -201,6 +208,13 @@ name|entity
 operator|=
 operator|(
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 operator|)
 name|object
 expr_stmt|;

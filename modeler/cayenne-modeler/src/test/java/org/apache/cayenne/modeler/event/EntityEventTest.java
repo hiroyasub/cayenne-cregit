@@ -134,8 +134,6 @@ specifier|public
 name|void
 name|testConstructor1
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Object
 name|src
@@ -144,7 +142,7 @@ operator|new
 name|Object
 argument_list|()
 decl_stmt|;
-name|Entity
+name|DbEntity
 name|d
 init|=
 operator|new
@@ -191,8 +189,6 @@ specifier|public
 name|void
 name|testConstructor2
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Object
 name|src
@@ -201,7 +197,7 @@ operator|new
 name|Object
 argument_list|()
 decl_stmt|;
-name|Entity
+name|DbEntity
 name|d
 init|=
 operator|new
@@ -260,8 +256,6 @@ specifier|public
 name|void
 name|testEntity
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Object
 name|src
@@ -270,7 +264,7 @@ operator|new
 name|Object
 argument_list|()
 decl_stmt|;
-name|Entity
+name|DbEntity
 name|d
 init|=
 operator|new
@@ -314,10 +308,8 @@ specifier|public
 name|void
 name|testNameChange1
 parameter_list|()
-throws|throws
-name|Exception
 block|{
-name|Entity
+name|DbEntity
 name|d
 init|=
 operator|new
@@ -369,10 +361,8 @@ specifier|public
 name|void
 name|testNameChange2
 parameter_list|()
-throws|throws
-name|Exception
 block|{
-name|Entity
+name|DbEntity
 name|d
 init|=
 operator|new

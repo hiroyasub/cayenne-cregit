@@ -639,6 +639,13 @@ name|e
 parameter_list|)
 block|{
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|entity
 init|=
 name|e
@@ -745,6 +752,13 @@ return|return;
 block|}
 comment|// update relationship selection
 name|Relationship
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 index|[]
 name|rels
 init|=
@@ -873,6 +887,13 @@ condition|)
 return|return;
 comment|// update attribute selection
 name|Attribute
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 index|[]
 name|attrs
 init|=

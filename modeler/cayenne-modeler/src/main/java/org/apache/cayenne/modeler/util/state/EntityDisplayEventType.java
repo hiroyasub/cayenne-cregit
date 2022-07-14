@@ -227,6 +227,13 @@ block|{
 return|return;
 block|}
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|entity
 init|=
 name|getLastEntity
@@ -422,6 +429,13 @@ expr_stmt|;
 block|}
 block|}
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|getLastEntity
 parameter_list|(
 name|DataMap

@@ -1076,6 +1076,13 @@ name|TreePath
 name|buildTreePath
 parameter_list|(
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|entity
 parameter_list|)
 block|{

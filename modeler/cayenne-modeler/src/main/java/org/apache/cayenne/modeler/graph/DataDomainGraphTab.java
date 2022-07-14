@@ -352,6 +352,9 @@ name|mediator
 decl_stmt|;
 comment|/**      * Diagram selection combo      */
 name|JComboBox
+argument_list|<
+name|String
+argument_list|>
 name|diagramCombo
 decl_stmt|;
 comment|/**      * Scrollpane that the graph will be added to      */
@@ -668,6 +671,13 @@ block|{
 comment|// selecting an event
 comment|// choose type of diagram
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|entity
 init|=
 operator|(

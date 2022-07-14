@@ -495,6 +495,13 @@ return|return
 operator|(
 operator|(
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 operator|)
 name|object
 operator|)

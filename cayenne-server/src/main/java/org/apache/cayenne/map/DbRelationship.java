@@ -219,23 +219,6 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
-annotation|@
-name|Override
-specifier|public
-name|DbEntity
-name|getSourceEntity
-parameter_list|()
-block|{
-return|return
-operator|(
-name|DbEntity
-operator|)
-name|super
-operator|.
-name|getSourceEntity
-argument_list|()
-return|;
-block|}
 comment|/**      * @since 3.1      */
 specifier|public
 parameter_list|<
@@ -404,11 +387,6 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Returns a Collection of target attributes.      *       * @since 1.1      */
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
 specifier|public
 name|Collection
 argument_list|<
@@ -427,11 +405,6 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Returns a Collection of source attributes.      *       * @since 1.1      */
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
 specifier|public
 name|Collection
 argument_list|<
@@ -694,7 +667,7 @@ return|return
 literal|null
 return|;
 block|}
-name|Entity
+name|DbEntity
 name|src
 init|=
 name|this

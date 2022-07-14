@@ -215,7 +215,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|Entity
+name|ObjAttribute
 import|;
 end_import
 
@@ -229,7 +229,7 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|ObjAttribute
+name|ObjEntity
 import|;
 end_import
 
@@ -863,18 +863,22 @@ return|;
 block|}
 block|}
 specifier|protected
+specifier|static
 class|class
 name|PostprocessorFactory
 block|{
 specifier|private
+specifier|final
 name|QueryMetadata
 name|queryMetadata
 decl_stmt|;
 specifier|private
+specifier|final
 name|ExtendedTypeMap
 name|extendedTypes
 decl_stmt|;
 specifier|private
+specifier|final
 name|Map
 argument_list|<
 name|ObjAttribute
@@ -884,6 +888,7 @@ argument_list|>
 name|attributeOverrides
 decl_stmt|;
 specifier|private
+specifier|final
 name|RowDescriptor
 name|rowDescriptor
 decl_stmt|;
@@ -1032,7 +1037,7 @@ operator|.
 name|getKey
 argument_list|()
 decl_stmt|;
-name|Entity
+name|ObjEntity
 name|entity
 init|=
 name|attribute
@@ -1151,6 +1156,9 @@ block|{
 continue|continue;
 block|}
 name|ExtendedType
+argument_list|<
+name|?
+argument_list|>
 name|converter
 init|=
 name|extendedTypes

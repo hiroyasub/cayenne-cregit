@@ -74,25 +74,23 @@ name|Object
 name|node
 parameter_list|,
 name|Attribute
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|attr
 parameter_list|)
 block|{
-if|if
-condition|(
+return|return
 operator|!
 operator|(
 name|node
 operator|instanceof
 name|Attribute
 operator|)
-condition|)
-block|{
-return|return
-literal|true
-return|;
-block|}
-return|return
-literal|false
 return|;
 block|}
 specifier|public
@@ -103,6 +101,13 @@ name|Object
 name|node
 parameter_list|,
 name|Relationship
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|rel
 parameter_list|)
 block|{
@@ -120,7 +125,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/**          * We do not allow A->B->A chains, where relationships          * are to-one          */
+comment|/*          * We do not allow A->B->A chains, where relationships          * are to-one          */
 name|DbRelationship
 name|prev
 init|=

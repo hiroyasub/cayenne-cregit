@@ -764,6 +764,13 @@ condition|)
 return|return;
 comment|// update attribute selection
 name|Attribute
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 index|[]
 name|attrs
 init|=

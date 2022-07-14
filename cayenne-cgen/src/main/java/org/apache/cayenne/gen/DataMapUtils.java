@@ -99,20 +99,6 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|Entity
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
 name|ObjAttribute
 import|;
 end_import
@@ -396,6 +382,9 @@ block|}
 comment|/** 	 * Get all parameter names that used in query qualifier. 	 * 	 * @param query select query descriptor 	 * @return Parameter names. 	 */
 specifier|public
 name|Collection
+argument_list|<
+name|String
+argument_list|>
 name|getParameterNames
 parameter_list|(
 name|SelectQueryDescriptor
@@ -415,7 +404,8 @@ block|{
 return|return
 name|Collections
 operator|.
-name|EMPTY_SET
+name|emptySet
+argument_list|()
 return|;
 block|}
 name|Map
@@ -638,6 +628,9 @@ block|}
 comment|/** 	 * Get list of parameter names in the same order as in qualifier. 	 *  	 * @param qualifierString 	 *            to be parsed 	 * @return List of parameter names. 	 */
 specifier|private
 name|Set
+argument_list|<
+name|String
+argument_list|>
 name|parseQualifier
 parameter_list|(
 name|String
@@ -724,6 +717,11 @@ name|query
 parameter_list|)
 block|{
 name|Map
+argument_list|<
+name|String
+argument_list|,
+name|String
+argument_list|>
 name|queryParameters
 init|=
 name|queriesMap
@@ -908,7 +906,7 @@ name|component
 init|=
 operator|(
 operator|(
-name|Entity
+name|ObjEntity
 operator|)
 name|root
 operator|)

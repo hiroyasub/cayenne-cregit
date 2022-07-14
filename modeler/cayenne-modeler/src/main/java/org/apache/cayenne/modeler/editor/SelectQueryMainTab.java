@@ -1303,6 +1303,13 @@ name|checkExpression
 argument_list|(
 operator|(
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 operator|)
 name|query
 operator|.
@@ -1346,6 +1353,13 @@ name|void
 name|checkExpression
 parameter_list|(
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|root
 parameter_list|,
 name|Expression

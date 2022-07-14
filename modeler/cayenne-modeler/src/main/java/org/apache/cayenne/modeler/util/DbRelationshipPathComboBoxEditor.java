@@ -193,6 +193,9 @@ class|class
 name|DbRelationshipPathComboBoxEditor
 extends|extends
 name|PathChooserComboBoxCellEditor
+argument_list|<
+name|ObjRelationshipTableModel
+argument_list|>
 implements|implements
 name|FocusListener
 block|{
@@ -365,7 +368,7 @@ specifier|protected
 name|void
 name|initializeCombo
 parameter_list|(
-name|CayenneTableModel
+name|ObjRelationshipTableModel
 name|model
 parameter_list|,
 name|int
@@ -391,12 +394,7 @@ name|comboBoxPathChooser
 operator|.
 name|setSelectedItem
 argument_list|(
-operator|(
-operator|(
-name|ObjRelationshipTableModel
-operator|)
 name|model
-operator|)
 operator|.
 name|getRelationship
 argument_list|(
@@ -845,7 +843,7 @@ specifier|protected
 name|Object
 name|getCurrentNodeToInitializeCombo
 parameter_list|(
-name|CayenneTableModel
+name|ObjRelationshipTableModel
 name|model
 parameter_list|,
 name|int
@@ -870,7 +868,7 @@ specifier|protected
 name|String
 name|getPathToInitializeCombo
 parameter_list|(
-name|CayenneTableModel
+name|ObjRelationshipTableModel
 name|model
 parameter_list|,
 name|int
@@ -880,12 +878,7 @@ block|{
 name|String
 name|pathString
 init|=
-operator|(
-operator|(
-name|ObjRelationshipTableModel
-operator|)
 name|model
-operator|)
 operator|.
 name|getRelationship
 argument_list|(

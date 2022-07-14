@@ -757,7 +757,7 @@ operator|.
 name|createReverseRelationship
 argument_list|()
 decl_stmt|;
-name|Entity
+name|DbEntity
 name|targetEntity
 init|=
 name|reverse
@@ -817,7 +817,7 @@ specifier|private
 name|String
 name|getUniqueRelationshipName
 parameter_list|(
-name|Entity
+name|DbEntity
 name|entity
 parameter_list|)
 block|{

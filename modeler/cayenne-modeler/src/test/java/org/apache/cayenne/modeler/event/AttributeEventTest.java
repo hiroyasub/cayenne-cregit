@@ -98,8 +98,6 @@ specifier|public
 name|void
 name|testAttribute
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Object
 name|src
@@ -108,7 +106,7 @@ operator|new
 name|Object
 argument_list|()
 decl_stmt|;
-name|Attribute
+name|DbAttribute
 name|a
 init|=
 operator|new

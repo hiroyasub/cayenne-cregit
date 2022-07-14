@@ -73,6 +73,20 @@ name|cayenne
 operator|.
 name|map
 operator|.
+name|DbEntity
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|DbJoin
 import|;
 end_import
@@ -88,20 +102,6 @@ operator|.
 name|map
 operator|.
 name|DbRelationship
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|Entity
 import|;
 end_import
 
@@ -709,7 +709,7 @@ argument_list|(
 name|strategyClass
 argument_list|)
 expr_stmt|;
-comment|/**              * Be user-friendly and update preferences with specified strategy              */
+comment|/*              * Be user-friendly and update preferences with specified strategy              */
 if|if
 condition|(
 name|strategy
@@ -738,6 +738,7 @@ name|setModel
 argument_list|(
 operator|new
 name|DefaultComboBoxModel
+argument_list|<>
 argument_list|(
 name|NameGeneratorPreferences
 operator|.
@@ -1014,7 +1015,7 @@ specifier|private
 name|String
 name|uniqueRelName
 parameter_list|(
-name|Entity
+name|DbEntity
 name|entity
 parameter_list|,
 name|String

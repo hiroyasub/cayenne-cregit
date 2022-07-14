@@ -257,20 +257,6 @@ name|cayenne
 operator|.
 name|map
 operator|.
-name|Entity
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
 name|ObjAttribute
 import|;
 end_import
@@ -300,20 +286,6 @@ operator|.
 name|map
 operator|.
 name|ObjRelationship
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|Relationship
 import|;
 end_import
 
@@ -2581,11 +2553,6 @@ expr_stmt|;
 block|}
 block|}
 comment|/**      * Places in objectTargets list all ObjEntities for specified DbEntity      */
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
 specifier|protected
 name|void
 name|updateTargetCombo
@@ -3385,7 +3352,7 @@ name|void
 name|connectEnds
 parameter_list|()
 block|{
-name|Relationship
+name|DbRelationship
 name|last
 init|=
 literal|null
@@ -3417,7 +3384,7 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
-name|Entity
+name|DbEntity
 name|target
 init|=
 name|getEndEntity
@@ -3444,7 +3411,7 @@ operator|)
 condition|)
 block|{
 comment|// try to connect automatically, if we can't use dummy connector
-name|Entity
+name|DbEntity
 name|source
 init|=
 operator|(
@@ -3468,7 +3435,7 @@ operator|!=
 literal|null
 condition|)
 block|{
-name|Relationship
+name|DbRelationship
 name|anyConnector
 init|=
 name|source
@@ -3489,9 +3456,6 @@ name|dbRelationships
 operator|.
 name|add
 argument_list|(
-operator|(
-name|DbRelationship
-operator|)
 name|anyConnector
 argument_list|)
 expr_stmt|;
@@ -3648,6 +3612,9 @@ expr_stmt|;
 block|}
 specifier|public
 name|List
+argument_list|<
+name|String
+argument_list|>
 name|getMapKeys
 parameter_list|()
 block|{

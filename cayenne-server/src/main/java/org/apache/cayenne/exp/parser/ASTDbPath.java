@@ -350,6 +350,13 @@ name|evaluateEntityNode
 argument_list|(
 operator|(
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 operator|)
 name|o
 argument_list|)
@@ -1018,11 +1025,20 @@ name|DB_PATH
 return|;
 block|}
 comment|/** 	 * Helper method to evaluate path expression with Cayenne Entity. 	 */
+annotation|@
+name|Override
 specifier|protected
 name|CayenneMapEntry
 name|evaluateEntityNode
 parameter_list|(
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|entity
 parameter_list|)
 block|{

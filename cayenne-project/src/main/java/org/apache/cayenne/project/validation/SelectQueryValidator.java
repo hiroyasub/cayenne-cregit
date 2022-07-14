@@ -185,6 +185,13 @@ argument_list|)
 expr_stmt|;
 comment|// Resolve root to Entity for further validation
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|root
 init|=
 name|validateRoot
@@ -279,6 +286,13 @@ name|void
 name|validatePrefetch
 parameter_list|(
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|root
 parameter_list|,
 name|String
@@ -297,6 +311,13 @@ name|QueryDescriptor
 name|query
 parameter_list|,
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|root
 parameter_list|,
 name|Ordering
@@ -368,6 +389,13 @@ name|void
 name|validateQualifier
 parameter_list|(
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|root
 parameter_list|,
 name|Expression
@@ -380,6 +408,13 @@ block|{
 comment|// TODO: andrus 03/10/2010 - should this be implemented?
 block|}
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|validateRoot
 parameter_list|(
 name|QueryDescriptor
@@ -464,6 +499,13 @@ operator|)
 condition|?
 operator|(
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 operator|)
 name|query
 operator|.
@@ -486,6 +528,13 @@ block|{
 return|return
 operator|(
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 operator|)
 name|query
 operator|.

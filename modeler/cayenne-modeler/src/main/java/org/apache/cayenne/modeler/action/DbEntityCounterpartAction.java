@@ -128,7 +128,7 @@ block|}
 annotation|@
 name|Override
 specifier|protected
-name|Entity
+name|ObjEntity
 name|getEntity
 parameter_list|()
 block|{

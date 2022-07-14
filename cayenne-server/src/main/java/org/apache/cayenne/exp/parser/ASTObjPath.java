@@ -314,6 +314,13 @@ name|evaluateEntityNode
 argument_list|(
 operator|(
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 operator|)
 name|o
 argument_list|)

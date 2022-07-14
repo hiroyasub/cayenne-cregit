@@ -482,6 +482,13 @@ name|evaluateEntityNode
 argument_list|(
 operator|(
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 operator|)
 name|o
 argument_list|)
@@ -503,6 +510,13 @@ name|CayenneMapEntry
 name|evaluateEntityNode
 parameter_list|(
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|entity
 parameter_list|)
 block|{

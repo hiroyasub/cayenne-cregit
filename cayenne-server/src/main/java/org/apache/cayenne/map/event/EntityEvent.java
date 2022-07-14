@@ -44,6 +44,13 @@ name|MapEvent
 block|{
 specifier|protected
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|entity
 decl_stmt|;
 comment|/** Creates a Entity change event. */
@@ -54,6 +61,13 @@ name|Object
 name|src
 parameter_list|,
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|entity
 parameter_list|)
 block|{
@@ -76,6 +90,13 @@ name|Object
 name|src
 parameter_list|,
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|entity
 parameter_list|,
 name|int
@@ -103,6 +124,13 @@ name|Object
 name|src
 parameter_list|,
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|entity
 parameter_list|,
 name|String
@@ -125,6 +153,13 @@ block|}
 comment|/** Returns entity object associated with this event. */
 specifier|public
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|getEntity
 parameter_list|()
 block|{
@@ -138,6 +173,13 @@ name|void
 name|setEntity
 parameter_list|(
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|entity
 parameter_list|)
 block|{

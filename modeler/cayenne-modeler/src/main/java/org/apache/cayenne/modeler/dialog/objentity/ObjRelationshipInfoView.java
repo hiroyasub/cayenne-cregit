@@ -297,12 +297,12 @@ decl_stmt|;
 specifier|private
 specifier|static
 specifier|final
-name|Object
+name|String
 index|[]
 name|DELETE_RULES
 init|=
 operator|new
-name|Object
+name|String
 index|[]
 block|{
 name|DeleteRule
@@ -401,6 +401,9 @@ name|targetCombo
 decl_stmt|;
 specifier|private
 name|JComboBox
+argument_list|<
+name|String
+argument_list|>
 name|deleteRule
 decl_stmt|;
 specifier|private
@@ -1185,6 +1188,9 @@ return|;
 block|}
 specifier|public
 name|JComboBox
+argument_list|<
+name|String
+argument_list|>
 name|getTargetCombo
 parameter_list|()
 block|{
@@ -1218,6 +1224,9 @@ return|;
 block|}
 specifier|public
 name|JComboBox
+argument_list|<
+name|String
+argument_list|>
 name|getDeleteRule
 parameter_list|()
 block|{

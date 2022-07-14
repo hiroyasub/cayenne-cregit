@@ -183,31 +183,31 @@ name|Entity
 parameter_list|<
 name|E
 parameter_list|,
-name|T
+name|A
 parameter_list|,
-name|U
+name|R
 parameter_list|>
 parameter_list|,
-name|T
+name|A
 extends|extends
 name|Attribute
 parameter_list|<
 name|E
 parameter_list|,
-name|T
+name|A
 parameter_list|,
-name|U
+name|R
 parameter_list|>
 parameter_list|,
-name|U
+name|R
 extends|extends
 name|Relationship
 parameter_list|<
 name|E
 parameter_list|,
-name|T
+name|A
 parameter_list|,
-name|U
+name|R
 parameter_list|>
 parameter_list|>
 implements|implements
@@ -248,7 +248,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|T
+name|A
 argument_list|>
 name|attributes
 init|=
@@ -263,7 +263,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|U
+name|R
 argument_list|>
 name|relationships
 init|=
@@ -427,7 +427,7 @@ expr_stmt|;
 block|}
 comment|/**      * Returns attribute with name<code>attributeName</code> or null if no attribute      * with this name exists.      */
 specifier|public
-name|T
+name|A
 name|getAttribute
 parameter_list|(
 name|String
@@ -448,7 +448,7 @@ specifier|public
 name|void
 name|addAttribute
 parameter_list|(
-name|T
+name|A
 name|attribute
 parameter_list|)
 block|{
@@ -472,7 +472,7 @@ throw|;
 block|}
 comment|// block overrides
 comment|// TODO: change method signature to return replaced attribute and make sure the Modeler handles it...
-name|T
+name|A
 name|existingAttribute
 init|=
 name|attributes
@@ -598,7 +598,7 @@ specifier|public
 name|void
 name|updateAttribute
 parameter_list|(
-name|T
+name|A
 name|attribute
 parameter_list|)
 block|{
@@ -629,7 +629,7 @@ expr_stmt|;
 block|}
 comment|/**      * Returns relationship with name<code>relName</code>. Will return null if no      * relationship with this name exists in the entity.      */
 specifier|public
-name|U
+name|R
 name|getRelationship
 parameter_list|(
 name|String
@@ -650,7 +650,7 @@ specifier|public
 name|void
 name|addRelationship
 parameter_list|(
-name|U
+name|R
 name|relationship
 parameter_list|)
 block|{
@@ -771,11 +771,24 @@ argument_list|,
 name|relationship
 argument_list|)
 expr_stmt|;
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unchecked"
+argument_list|)
+name|E
+name|sourceEntity
+init|=
+operator|(
+name|E
+operator|)
+name|this
+decl_stmt|;
 name|relationship
 operator|.
 name|setSourceEntity
 argument_list|(
-name|this
+name|sourceEntity
 argument_list|)
 expr_stmt|;
 block|}
@@ -813,7 +826,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|U
+name|R
 argument_list|>
 name|getRelationshipMap
 parameter_list|()
@@ -831,7 +844,7 @@ return|;
 block|}
 comment|/**      * Returns a relationship that has a specified entity as a target. If there is more      * than one relationship for the same target, it is unpredictable which one will be      * returned.      *       * @since 1.1      */
 specifier|public
-name|U
+name|R
 name|getAnyRelationship
 parameter_list|(
 name|E
@@ -853,7 +866,7 @@ return|;
 block|}
 for|for
 control|(
-name|U
+name|R
 name|r
 range|:
 name|getRelationships
@@ -883,7 +896,7 @@ comment|/**      * Returns an unmodifiable collection of Relationships that exis
 specifier|public
 name|Collection
 argument_list|<
-name|U
+name|R
 argument_list|>
 name|getRelationships
 parameter_list|()
@@ -908,7 +921,7 @@ name|Map
 argument_list|<
 name|String
 argument_list|,
-name|T
+name|A
 argument_list|>
 name|getAttributeMap
 parameter_list|()
@@ -928,7 +941,7 @@ comment|/**      * Returns an unmodifiable collection of entity attributes.     
 specifier|public
 name|Collection
 argument_list|<
-name|T
+name|A
 argument_list|>
 name|getAttributes
 parameter_list|()
@@ -964,9 +977,9 @@ comment|/**      * Convenience method returning the last component in the path i
 specifier|public
 name|PathComponent
 argument_list|<
-name|T
+name|A
 argument_list|,
-name|U
+name|R
 argument_list|>
 name|lastPathComponent
 parameter_list|(
@@ -986,9 +999,9 @@ for|for
 control|(
 name|PathComponent
 argument_list|<
-name|T
+name|A
 argument_list|,
-name|U
+name|R
 argument_list|>
 name|component
 range|:
@@ -1024,17 +1037,17 @@ block|}
 specifier|private
 name|PathComponent
 argument_list|<
-name|T
+name|A
 argument_list|,
-name|U
+name|R
 argument_list|>
 name|lastPathComponent
 parameter_list|(
 name|PathComponent
 argument_list|<
-name|T
+name|A
 argument_list|,
-name|U
+name|R
 argument_list|>
 name|component
 parameter_list|)
@@ -1056,9 +1069,9 @@ for|for
 control|(
 name|PathComponent
 argument_list|<
-name|T
+name|A
 argument_list|,
-name|U
+name|R
 argument_list|>
 name|subcomponent
 range|:
@@ -1104,9 +1117,9 @@ name|Iterable
 argument_list|<
 name|PathComponent
 argument_list|<
-name|T
+name|A
 argument_list|,
-name|U
+name|R
 argument_list|>
 argument_list|>
 name|resolvePath
@@ -1185,9 +1198,9 @@ name|Entity
 argument_list|<
 name|E
 argument_list|,
-name|T
+name|A
 argument_list|,
-name|U
+name|R
 argument_list|>
 name|currentEntity
 decl_stmt|;
@@ -1273,7 +1286,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|// see if this is an attribute
-name|T
+name|A
 name|attr
 init|=
 name|currentEntity
@@ -1317,7 +1330,7 @@ return|return
 name|attr
 return|;
 block|}
-name|U
+name|R
 name|rel
 init|=
 name|currentEntity

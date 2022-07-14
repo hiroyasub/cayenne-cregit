@@ -387,10 +387,6 @@ parameter_list|)
 block|{
 return|return
 name|object
-operator|!=
-literal|null
-operator|&&
-name|object
 operator|instanceof
 name|Attribute
 return|;

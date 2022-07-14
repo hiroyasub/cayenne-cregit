@@ -188,13 +188,27 @@ name|map
 decl_stmt|;
 specifier|protected
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|entity
 decl_stmt|;
 specifier|protected
 name|Attribute
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|attribute
 decl_stmt|;
-comment|/**      * Constructor for AttributeErrorMsg.      *       * @param result      */
+comment|/**      * Constructor for AttributeErrorMsg.      */
 specifier|public
 name|AttributeErrorMsg
 parameter_list|(
@@ -219,6 +233,13 @@ name|attribute
 operator|=
 operator|(
 name|Attribute
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 operator|)
 name|object
 expr_stmt|;
@@ -281,8 +302,8 @@ argument_list|,
 name|domain
 argument_list|)
 decl_stmt|;
-comment|// must first display entity, and then switch to relationship display .. so fire
-comment|// twice
+comment|// must first display entity, and then switch to relationship display ..
+comment|// so fire twice
 if|if
 condition|(
 name|entity
