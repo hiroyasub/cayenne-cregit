@@ -102,12 +102,22 @@ name|JPanel
 block|{
 specifier|protected
 name|JTextField
+name|factoryName
+decl_stmt|;
+specifier|protected
+name|JTextField
 name|locationHint
 decl_stmt|;
 specifier|public
 name|CustomDataSourceView
 parameter_list|()
 block|{
+name|factoryName
+operator|=
+operator|new
+name|JTextFieldUndoable
+argument_list|()
+expr_stmt|;
 name|locationHint
 operator|=
 operator|new
@@ -144,14 +154,23 @@ name|builder
 operator|.
 name|appendSeparator
 argument_list|(
-literal|"Custom Configuration"
+literal|"Custom Data Source Factory"
 argument_list|)
 expr_stmt|;
 name|builder
 operator|.
 name|append
 argument_list|(
-literal|"Location Hint:"
+literal|"Factory Class:"
+argument_list|,
+name|factoryName
+argument_list|)
+expr_stmt|;
+name|builder
+operator|.
+name|append
+argument_list|(
+literal|"Location Hint (optional):"
 argument_list|,
 name|locationHint
 argument_list|)
@@ -187,6 +206,15 @@ parameter_list|()
 block|{
 return|return
 name|locationHint
+return|;
+block|}
+specifier|public
+name|JTextField
+name|getFactoryName
+parameter_list|()
+block|{
+return|return
+name|factoryName
 return|;
 block|}
 block|}
