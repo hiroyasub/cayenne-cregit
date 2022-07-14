@@ -1552,6 +1552,13 @@ name|void
 name|postProcessEntity
 parameter_list|(
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|entity
 parameter_list|,
 name|DefaultGraphCell

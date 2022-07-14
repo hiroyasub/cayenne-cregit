@@ -201,6 +201,13 @@ class|class
 name|ObjRelationship
 extends|extends
 name|Relationship
+argument_list|<
+name|ObjEntity
+argument_list|,
+name|ObjAttribute
+argument_list|,
+name|ObjRelationship
+argument_list|>
 implements|implements
 name|ConfigurationNode
 block|{
@@ -243,6 +250,7 @@ literal|2
 argument_list|)
 decl_stmt|;
 comment|/**      * Db-relationships path that is set but not yet parsed (turned into      * List&lt;DbRelationship&gt;) Used during map loading      */
+specifier|volatile
 name|String
 name|deferredPath
 decl_stmt|;
@@ -661,7 +669,7 @@ return|return
 literal|null
 return|;
 block|}
-name|Entity
+name|ObjEntity
 name|source
 init|=
 name|getSourceEntity
@@ -1041,9 +1049,6 @@ if|if
 condition|(
 name|isQualifiedEntity
 argument_list|(
-operator|(
-name|ObjEntity
-operator|)
 name|getTargetEntity
 argument_list|()
 argument_list|)
@@ -1094,18 +1099,13 @@ operator|.
 name|getReverseRelationship
 argument_list|()
 decl_stmt|;
-if|if
-condition|(
+return|return
+operator|!
 name|reverseRelationship
 operator|.
 name|isToDependentPK
 argument_list|()
-condition|)
-block|{
-return|return
-literal|false
 return|;
-block|}
 block|}
 return|return
 literal|true
@@ -1882,7 +1882,7 @@ block|}
 catch|catch
 parameter_list|(
 name|ExpressionException
-name|ex
+name|ignored
 parameter_list|)
 block|{
 block|}

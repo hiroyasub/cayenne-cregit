@@ -127,6 +127,13 @@ class|class
 name|ObjAttribute
 extends|extends
 name|Attribute
+argument_list|<
+name|ObjEntity
+argument_list|,
+name|ObjAttribute
+argument_list|,
+name|ObjRelationship
+argument_list|>
 implements|implements
 name|ConfigurationNode
 block|{

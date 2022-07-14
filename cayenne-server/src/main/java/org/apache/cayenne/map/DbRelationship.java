@@ -165,6 +165,13 @@ class|class
 name|DbRelationship
 extends|extends
 name|Relationship
+argument_list|<
+name|DbEntity
+argument_list|,
+name|DbAttribute
+argument_list|,
+name|DbRelationship
+argument_list|>
 implements|implements
 name|ConfigurationNode
 block|{

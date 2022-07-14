@@ -63,7 +63,7 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|Attribute
+name|MockAttribute
 name|a
 init|=
 operator|new
@@ -102,14 +102,14 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
-name|Attribute
+name|MockAttribute
 name|a
 init|=
 operator|new
 name|MockAttribute
 argument_list|()
 decl_stmt|;
-name|Entity
+name|MockEntity
 name|tstEntity
 init|=
 operator|new

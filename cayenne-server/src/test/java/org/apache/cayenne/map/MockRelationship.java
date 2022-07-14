@@ -49,6 +49,13 @@ class|class
 name|MockRelationship
 extends|extends
 name|Relationship
+argument_list|<
+name|MockEntity
+argument_list|,
+name|MockAttribute
+argument_list|,
+name|MockRelationship
+argument_list|>
 block|{
 specifier|public
 name|MockRelationship

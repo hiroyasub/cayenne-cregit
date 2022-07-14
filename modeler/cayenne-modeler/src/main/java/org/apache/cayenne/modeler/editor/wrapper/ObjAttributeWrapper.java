@@ -176,14 +176,17 @@ name|ObjAttribute
 argument_list|>
 block|{
 specifier|private
+specifier|final
 name|ObjAttribute
 name|objAttribute
 decl_stmt|;
 specifier|private
+specifier|final
 name|ValidationResult
 name|validationResult
 decl_stmt|;
 specifier|private
+specifier|final
 name|ObjAttributeWrapperValidator
 name|validator
 init|=
@@ -192,7 +195,7 @@ name|ObjAttributeWrapperValidator
 argument_list|()
 decl_stmt|;
 comment|// TODO: for now name is only wrapped attribute we validating but this
-comment|// can be extended to other ObjAttribute fields as well
+comment|//       can be extended to other ObjAttribute fields as well
 specifier|private
 name|String
 name|name
@@ -376,7 +379,7 @@ specifier|public
 name|void
 name|setEntity
 parameter_list|(
-name|Entity
+name|ObjEntity
 name|entity
 parameter_list|)
 block|{
@@ -469,7 +472,7 @@ block|{
 return|return
 name|objAttribute
 operator|.
-name|getClass
+name|getJavaClass
 argument_list|()
 return|;
 block|}

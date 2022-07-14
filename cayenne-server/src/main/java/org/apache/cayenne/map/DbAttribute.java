@@ -113,6 +113,13 @@ class|class
 name|DbAttribute
 extends|extends
 name|Attribute
+argument_list|<
+name|DbEntity
+argument_list|,
+name|DbAttribute
+argument_list|,
+name|DbRelationship
+argument_list|>
 implements|implements
 name|ConfigurationNode
 block|{

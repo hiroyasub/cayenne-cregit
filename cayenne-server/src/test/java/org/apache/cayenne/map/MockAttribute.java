@@ -53,6 +53,13 @@ class|class
 name|MockAttribute
 extends|extends
 name|Attribute
+argument_list|<
+name|MockEntity
+argument_list|,
+name|MockAttribute
+argument_list|,
+name|MockRelationship
+argument_list|>
 block|{
 specifier|public
 name|MockAttribute

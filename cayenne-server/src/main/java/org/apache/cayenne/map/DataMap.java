@@ -1139,7 +1139,7 @@ parameter_list|)
 block|{
 for|for
 control|(
-name|Entity
+name|DbEntity
 name|entity
 range|:
 operator|new
@@ -2744,7 +2744,7 @@ block|{
 comment|// take a copy since we're going to modify the entity
 for|for
 control|(
-name|Relationship
+name|DbRelationship
 name|rel
 range|:
 operator|new
@@ -2950,7 +2950,7 @@ block|{
 comment|// take a copy since we're going to modify the entity
 for|for
 control|(
-name|Relationship
+name|ObjRelationship
 name|relationship
 range|:
 operator|new
@@ -3366,6 +3366,13 @@ name|e
 parameter_list|)
 block|{
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|entity
 init|=
 name|e
@@ -3489,6 +3496,13 @@ name|e
 parameter_list|)
 block|{
 name|Entity
+argument_list|<
+name|?
+argument_list|,
+name|?
+argument_list|,
+name|?
+argument_list|>
 name|entity
 init|=
 name|e
