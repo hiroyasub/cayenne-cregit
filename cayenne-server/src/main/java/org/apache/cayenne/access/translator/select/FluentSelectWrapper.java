@@ -141,6 +141,8 @@ specifier|final
 name|FluentSelect
 argument_list|<
 name|?
+argument_list|,
+name|?
 argument_list|>
 name|select
 decl_stmt|;
@@ -149,6 +151,8 @@ name|FluentSelectWrapper
 parameter_list|(
 name|FluentSelect
 argument_list|<
+name|?
+argument_list|,
 name|?
 argument_list|>
 name|select
@@ -269,6 +273,8 @@ name|Override
 specifier|public
 name|FluentSelect
 argument_list|<
+name|?
+argument_list|,
 name|?
 argument_list|>
 name|unwrap

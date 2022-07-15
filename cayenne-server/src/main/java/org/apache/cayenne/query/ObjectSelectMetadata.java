@@ -272,6 +272,8 @@ parameter_list|(
 name|FluentSelect
 argument_list|<
 name|?
+argument_list|,
+name|?
 argument_list|>
 name|query
 parameter_list|,
@@ -668,6 +670,8 @@ parameter_list|(
 name|FluentSelect
 argument_list|<
 name|?
+argument_list|,
+name|?
 argument_list|>
 name|query
 parameter_list|)
@@ -694,6 +698,8 @@ name|resolveQualifierAliases
 parameter_list|(
 name|FluentSelect
 argument_list|<
+name|?
+argument_list|,
 name|?
 argument_list|>
 name|query
@@ -728,6 +734,8 @@ parameter_list|(
 name|FluentSelect
 argument_list|<
 name|?
+argument_list|,
+name|?
 argument_list|>
 name|query
 parameter_list|)
@@ -760,6 +768,8 @@ name|resolveOrderingAliases
 parameter_list|(
 name|FluentSelect
 argument_list|<
+name|?
+argument_list|,
 name|?
 argument_list|>
 name|query

@@ -6214,6 +6214,8 @@ parameter_list|(
 name|FluentSelect
 argument_list|<
 name|?
+argument_list|,
+name|?
 argument_list|>
 name|subQuery
 parameter_list|)
@@ -6238,6 +6240,8 @@ name|notExists
 parameter_list|(
 name|FluentSelect
 argument_list|<
+name|?
+argument_list|,
 name|?
 argument_list|>
 name|subQuery

@@ -120,6 +120,8 @@ block|{
 name|FluentSelect
 argument_list|<
 name|?
+argument_list|,
+name|?
 argument_list|>
 name|query
 decl_stmt|;
@@ -138,6 +140,8 @@ name|route
 parameter_list|(
 name|FluentSelect
 argument_list|<
+name|?
+argument_list|,
 name|?
 argument_list|>
 name|query
