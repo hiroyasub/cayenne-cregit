@@ -2194,6 +2194,7 @@ return|return
 name|this
 return|;
 block|}
+comment|/** 	 * Map result of this query by processing with a given function. 	 *<br/> 	 * Could be used to map plain Object[] to some domain-specific object. 	 *<br/> 	 *<b>Note:</b> this method could be called multiple time, result will be mapped by all functions in the call order. 	 * @param mapper function that maps result to the required type. 	 * @return this query with changed result type 	 * @param<E> new result type 	 * 	 * @see ColumnSelect#map(Function) 	 * 	 * @since 4.2 	 */
 annotation|@
 name|SuppressWarnings
 argument_list|(

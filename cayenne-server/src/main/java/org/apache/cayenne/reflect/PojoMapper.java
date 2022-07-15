@@ -76,7 +76,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Simple mapper of Object[] to POJO class. This class relies on field order, so use with caution.  * @param<T> type of object to produce  * @since 4.2  */
+comment|/**  * Simple mapper of Object[] to a POJO class.  * Target class must have default constructor and at least as many fields as a processed array.  *<br/>  *<b>Note:</b> Current implementation relies on the field order,  * so use with caution as this order may vary on different JDK platforms.  * @param<T> type of object to produce  *  * @see org.apache.cayenne.query.ColumnSelect#map(Function)  * @see org.apache.cayenne.query.SQLSelect#map(Function)  *  * @since 4.2  */
 end_comment
 
 begin_class
@@ -97,6 +97,7 @@ argument_list|>
 block|{
 specifier|private
 specifier|static
+specifier|final
 name|MethodHandles
 operator|.
 name|Lookup
