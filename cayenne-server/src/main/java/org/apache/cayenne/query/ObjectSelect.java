@@ -694,11 +694,6 @@ argument_list|)
 return|;
 block|}
 comment|/**      * Forces query to fetch DataRows. This automatically changes whatever      * result type was set previously to "DataRow".      *      * @return this object      */
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
 specifier|public
 name|ObjectSelect
 argument_list|<
@@ -715,13 +710,8 @@ literal|true
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
-name|ObjectSelect
-argument_list|<
-name|DataRow
-argument_list|>
-operator|)
-name|this
+name|castSelf
+argument_list|()
 return|;
 block|}
 comment|/**      *<p>Select only specific properties.</p>      *<p>Can be any properties that can be resolved against root entity type      * (root entity's properties, function call expressions, properties of relationships, etc).</p>      *<p>      *<pre>      * {@code      * List<Object[]> columns = ObjectSelect.query(Artist.class)      *                                    .columns(Artist.ARTIST_NAME, Artist.DATE_OF_BIRTH)      *                                    .select(context);      * }      *</pre>      *      * @param properties array of properties to select      * @see ObjectSelect#column(Property)      */

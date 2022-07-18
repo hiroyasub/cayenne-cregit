@@ -319,11 +319,6 @@ argument_list|()
 return|;
 block|}
 comment|/**      *<p>Add properties to select.</p>      *<p>Can be any properties that can be resolved against root entity type      * (root entity properties, function call expressions, properties of relationships, etc).</p>      *<p>      *<pre>      * {@code      * List<Object[]> columns = ObjectSelect.columnQuery(Artist.class, Artist.ARTIST_NAME)      *                                    .columns(Artist.ARTIST_SALARY, Artist.DATE_OF_BIRTH)      *                                    .select(context);      * }      *</pre>      *      * @param properties array of properties to select      * @see ColumnSelect#column(Property)      * @see ColumnSelect#columns(Collection)      */
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
 specifier|public
 name|ColumnSelect
 argument_list|<
@@ -390,22 +385,11 @@ operator|=
 literal|false
 expr_stmt|;
 return|return
-operator|(
-name|ColumnSelect
-argument_list|<
-name|Object
-index|[]
-argument_list|>
-operator|)
-name|this
+name|castSelf
+argument_list|()
 return|;
 block|}
 comment|/**      *<p>Add properties to select.</p>      *<p>Can be any properties that can be resolved against root entity type      * (root entity properties, function call expressions, properties of relationships, etc).</p>      *<p>      * @param properties collection of properties,<b>must</b> contain at least one element      * @see ColumnSelect#columns(Property[])      */
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
 specifier|public
 name|ColumnSelect
 argument_list|<
@@ -491,21 +475,10 @@ operator|=
 literal|false
 expr_stmt|;
 return|return
-operator|(
-name|ColumnSelect
-argument_list|<
-name|Object
-index|[]
-argument_list|>
-operator|)
-name|this
+name|castSelf
+argument_list|()
 return|;
 block|}
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
 specifier|protected
 parameter_list|<
 name|E
@@ -565,13 +538,8 @@ name|property
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
-name|ColumnSelect
-argument_list|<
-name|E
-argument_list|>
-operator|)
-name|this
+name|castSelf
+argument_list|()
 return|;
 block|}
 comment|/**      *<p>Shortcut for {@link #columns(Property[])} columns}(Property.COUNT)</p>      */
@@ -935,11 +903,6 @@ name|metaData
 return|;
 block|}
 comment|/**      * Maps result of this query by processing with a given function.      *<br/>      * Could be used to map plain Object[] to some domain-specific object.      *<br/>      *<b>Note:</b> this method could be called multiple time, result will be mapped by all functions in the call order.      * @param mapper function that maps result to the required type.      * @return this query with changed result type      * @param<E> new result type      *      * @since 4.2      */
-annotation|@
-name|SuppressWarnings
-argument_list|(
-literal|"unchecked"
-argument_list|)
 specifier|public
 parameter_list|<
 name|E
@@ -968,13 +931,8 @@ name|mapper
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
-name|ColumnSelect
-argument_list|<
-name|E
-argument_list|>
-operator|)
-name|this
+name|castSelf
+argument_list|()
 return|;
 block|}
 block|}
