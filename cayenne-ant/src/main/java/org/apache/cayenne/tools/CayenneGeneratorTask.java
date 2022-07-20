@@ -308,11 +308,11 @@ name|embeddablesupertemplate
 decl_stmt|;
 specifier|protected
 name|String
-name|querytemplate
+name|datamaptemplate
 decl_stmt|;
 specifier|protected
 name|String
-name|querysupertemplate
+name|datamapsupertemplate
 decl_stmt|;
 specifier|protected
 name|Boolean
@@ -750,11 +750,11 @@ name|createpropertynames
 operator|!=
 literal|null
 operator|||
-name|querytemplate
+name|datamaptemplate
 operator|!=
 literal|null
 operator|||
-name|querysupertemplate
+name|datamapsupertemplate
 operator|!=
 literal|null
 operator|||
@@ -1130,11 +1130,11 @@ name|cgenConfiguration
 operator|.
 name|setDataMapTemplate
 argument_list|(
-name|querytemplate
+name|datamaptemplate
 operator|!=
 literal|null
 condition|?
-name|querytemplate
+name|datamaptemplate
 else|:
 name|cgenConfiguration
 operator|.
@@ -1146,11 +1146,11 @@ name|cgenConfiguration
 operator|.
 name|setDataMapSuperTemplate
 argument_list|(
-name|querysupertemplate
+name|datamapsupertemplate
 operator|!=
 literal|null
 condition|?
-name|querysupertemplate
+name|datamapsupertemplate
 else|:
 name|cgenConfiguration
 operator|.
@@ -1235,7 +1235,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|querytemplate
+name|datamaptemplate
 operator|==
 literal|null
 condition|)
@@ -1480,36 +1480,36 @@ operator|=
 name|supertemplate
 expr_stmt|;
 block|}
-comment|/**      * Sets<code>querytemplate</code> property.      */
+comment|/**      * Sets<code>datamaptemplate</code> property.      * @since 4.3 querytemplate renamed to datamaptemplate      */
 specifier|public
 name|void
-name|setQueryTemplate
+name|setDataMapTemplate
 parameter_list|(
 name|String
-name|querytemplate
+name|datamaptemplate
 parameter_list|)
 block|{
 name|this
 operator|.
-name|querytemplate
+name|datamaptemplate
 operator|=
-name|querytemplate
+name|datamaptemplate
 expr_stmt|;
 block|}
-comment|/**      * Sets<code>querysupertemplate</code> property.      */
+comment|/**      * Sets<code>datamapsupertemplate</code> property.      * @since 4.3 querysupertemplate renamed to datamapsupertemplate      */
 specifier|public
 name|void
-name|setQuerySupertemplate
+name|setDataMapSupertemplate
 parameter_list|(
 name|String
-name|querysupertemplate
+name|datamapsupertemplate
 parameter_list|)
 block|{
 name|this
 operator|.
-name|querysupertemplate
+name|datamapsupertemplate
 operator|=
-name|querysupertemplate
+name|datamapsupertemplate
 expr_stmt|;
 block|}
 comment|/**      * Sets<code>usepkgpath</code> property.      */

@@ -379,7 +379,7 @@ specifier|private
 name|File
 name|map
 decl_stmt|;
-comment|/** 	 * Specifies generator iteration target.&quot;entity&quot; performs one 	 * iteration for each selected entity.&quot;datamap&quot; performs one 	 * iteration per datamap (This is always one iteration since cgen currently 	 * supports specifying one-and-only-one datamap). (Default is&quot;entity&quot;) 	 */
+comment|/** 	 * Specifies generator iteration target.&quot;entity&quot; performs one 	 * iteration for each selected entity.&quot;datamap&quot; performs one 	 * iteration per datamap (This is always one iteration since cgen currently 	 * supports specifying one-and-only-one datamap). 	 * (Default is&quot;entity&quot;) 	 */
 annotation|@
 name|Parameter
 specifier|private
@@ -465,19 +465,21 @@ specifier|private
 name|boolean
 name|force
 decl_stmt|;
+comment|/** 	 * Location of Velocity template file for DataMap class generation. 	 * DataMap class provides utilities for usage of the Cayenne queries stored in the DataMap. 	 * If omitted, default template is used. 	 * 	 * @since 4.3 renamed from queryTemplate 	 */
 annotation|@
 name|Parameter
 specifier|private
 name|String
-name|queryTemplate
+name|dataMapTemplate
 decl_stmt|;
+comment|/** 	 * Location of Velocity template file for DataMap superclass generation. 	 * DataMap class provides utilities for usage of the Cayenne queries stored in the DataMap. 	 * If omitted, default template is used. 	 * Ignored unless<code>makepairs</code> set to<code>true</code>. 	 * 	 * @since 4.3 renamed from querySuperTemplate 	 */
 annotation|@
 name|Parameter
 specifier|private
 name|String
-name|querySuperTemplate
+name|dataMapSuperTemplate
 decl_stmt|;
-comment|/**      * If set to<code>true</code>, will generate PK attributes as Properties.      * Default is<code>false</code>.      * @since 4.1      */
+comment|/**      * If set to<code>true</code>, will generate Properties for PK attributes.      * Default is<code>false</code>. 	 * 	 * @see org.apache.cayenne.exp.property.IdProperty and its implementations      * @since 4.1      */
 annotation|@
 name|Parameter
 specifier|private
@@ -897,11 +899,11 @@ literal|null
 operator|||
 name|force
 operator|||
-name|queryTemplate
+name|dataMapTemplate
 operator|!=
 literal|null
 operator|||
-name|querySuperTemplate
+name|dataMapSuperTemplate
 operator|!=
 literal|null
 operator|||
@@ -1318,11 +1320,11 @@ name|cgenConfiguration
 operator|.
 name|setDataMapTemplate
 argument_list|(
-name|queryTemplate
+name|dataMapTemplate
 operator|!=
 literal|null
 condition|?
-name|queryTemplate
+name|dataMapTemplate
 else|:
 name|cgenConfiguration
 operator|.
@@ -1334,11 +1336,11 @@ name|cgenConfiguration
 operator|.
 name|setDataMapSuperTemplate
 argument_list|(
-name|querySuperTemplate
+name|dataMapSuperTemplate
 operator|!=
 literal|null
 condition|?
-name|querySuperTemplate
+name|dataMapSuperTemplate
 else|:
 name|cgenConfiguration
 operator|.
@@ -1423,7 +1425,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|queryTemplate
+name|dataMapTemplate
 operator|==
 literal|null
 condition|)
