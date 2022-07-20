@@ -1708,7 +1708,7 @@ argument_list|)
 operator|.
 name|simpleTag
 argument_list|(
-literal|"queryTemplate"
+literal|"dataMapTemplate"
 argument_list|,
 name|separatorsToUnix
 argument_list|(
@@ -1720,7 +1720,7 @@ argument_list|)
 operator|.
 name|simpleTag
 argument_list|(
-literal|"querySuperTemplate"
+literal|"dataMapSuperTemplate"
 argument_list|,
 name|separatorsToUnix
 argument_list|(
