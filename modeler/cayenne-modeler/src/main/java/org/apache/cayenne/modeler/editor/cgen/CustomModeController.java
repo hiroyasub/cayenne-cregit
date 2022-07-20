@@ -799,7 +799,7 @@ name|getNameByPath
 argument_list|(
 name|cgenConfiguration
 operator|.
-name|getQueryTemplate
+name|getDataMapTemplate
 argument_list|()
 argument_list|,
 name|cgenConfiguration
@@ -821,7 +821,7 @@ name|getNameByPath
 argument_list|(
 name|cgenConfiguration
 operator|.
-name|getQuerySuperTemplate
+name|getDataMapSuperTemplate
 argument_list|()
 argument_list|,
 name|cgenConfiguration
@@ -964,7 +964,7 @@ argument_list|)
 expr_stmt|;
 name|cgenConfiguration
 operator|.
-name|setQueryTemplate
+name|setDataMapTemplate
 argument_list|(
 name|ClassGenerationAction
 operator|.
@@ -994,7 +994,7 @@ argument_list|)
 expr_stmt|;
 name|cgenConfiguration
 operator|.
-name|setQueryTemplate
+name|setDataMapTemplate
 argument_list|(
 name|ClassGenerationAction
 operator|.

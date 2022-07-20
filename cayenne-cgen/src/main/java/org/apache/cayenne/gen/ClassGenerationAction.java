@@ -239,20 +239,6 @@ name|velocity
 operator|.
 name|app
 operator|.
-name|Velocity
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|velocity
-operator|.
-name|app
-operator|.
 name|VelocityEngine
 import|;
 end_import
@@ -445,14 +431,6 @@ name|String
 name|WILDCARD
 init|=
 literal|"*"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|CGEN_ROOT_PATH
-init|=
-literal|"cayenne.cgen.rootpath"
 decl_stmt|;
 comment|/** 	 * @since 4.1 	 */
 specifier|protected
@@ -738,7 +716,7 @@ case|:
 return|return
 name|cgenConfiguration
 operator|.
-name|getQueryTemplate
+name|getDataMapTemplate
 argument_list|()
 return|;
 case|case
@@ -747,7 +725,7 @@ case|:
 return|return
 name|cgenConfiguration
 operator|.
-name|getQuerySuperTemplate
+name|getDataMapSuperTemplate
 argument_list|()
 return|;
 default|default:

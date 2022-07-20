@@ -1771,6 +1771,7 @@ throw|;
 block|}
 block|}
 block|}
+specifier|static
 class|class
 name|SaveUnit
 block|{

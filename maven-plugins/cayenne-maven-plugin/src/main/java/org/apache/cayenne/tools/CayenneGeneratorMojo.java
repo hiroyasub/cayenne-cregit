@@ -1316,7 +1316,7 @@ argument_list|)
 expr_stmt|;
 name|cgenConfiguration
 operator|.
-name|setQueryTemplate
+name|setDataMapTemplate
 argument_list|(
 name|queryTemplate
 operator|!=
@@ -1326,13 +1326,13 @@ name|queryTemplate
 else|:
 name|cgenConfiguration
 operator|.
-name|getQueryTemplate
+name|getDataMapTemplate
 argument_list|()
 argument_list|)
 expr_stmt|;
 name|cgenConfiguration
 operator|.
-name|setQuerySuperTemplate
+name|setDataMapSuperTemplate
 argument_list|(
 name|querySuperTemplate
 operator|!=
@@ -1342,7 +1342,7 @@ name|querySuperTemplate
 else|:
 name|cgenConfiguration
 operator|.
-name|getQuerySuperTemplate
+name|getDataMapSuperTemplate
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1430,7 +1430,7 @@ condition|)
 block|{
 name|cgenConfiguration
 operator|.
-name|setQueryTemplate
+name|setDataMapTemplate
 argument_list|(
 name|ClassGenerationAction
 operator|.

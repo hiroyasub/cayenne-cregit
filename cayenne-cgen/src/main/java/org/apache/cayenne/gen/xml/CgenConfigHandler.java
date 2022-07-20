@@ -864,7 +864,7 @@ return|return;
 block|}
 name|configuration
 operator|.
-name|setQueryTemplate
+name|setDataMapTemplate
 argument_list|(
 name|template
 argument_list|)
@@ -895,7 +895,7 @@ return|return;
 block|}
 name|configuration
 operator|.
-name|setQuerySuperTemplate
+name|setDataMapSuperTemplate
 argument_list|(
 name|template
 argument_list|)

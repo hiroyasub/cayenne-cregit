@@ -652,7 +652,7 @@ argument_list|()
 decl_stmt|;
 name|cgenConfiguration
 operator|.
-name|setQueryTemplate
+name|setDataMapTemplate
 argument_list|(
 name|Application
 operator|.
@@ -724,7 +724,7 @@ argument_list|()
 decl_stmt|;
 name|cgenConfiguration
 operator|.
-name|setQuerySuperTemplate
+name|setDataMapSuperTemplate
 argument_list|(
 name|Application
 operator|.

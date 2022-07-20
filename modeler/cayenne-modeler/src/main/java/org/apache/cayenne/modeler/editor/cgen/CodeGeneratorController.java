@@ -221,50 +221,6 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|di
-operator|.
-name|DIBootstrap
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|di
-operator|.
-name|Module
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|di
-operator|.
-name|spi
-operator|.
-name|ModuleLoader
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
 name|gen
 operator|.
 name|CgenConfiguration
@@ -564,7 +520,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 4.1  * A controller for the class generator dialog.  */
+comment|/**  * Main controller for the code generation UI.  *  * @since 4.1  */
 end_comment
 
 begin_class
