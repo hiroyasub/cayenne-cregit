@@ -53,9 +53,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
+name|project
 operator|.
-name|xml
+name|compatibility
+operator|.
+name|configuration
 operator|.
 name|CompatibilityDataChannelDescriptorLoader
 import|;
@@ -69,9 +71,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|configuration
+name|project
 operator|.
-name|xml
+name|compatibility
+operator|.
+name|configuration
 operator|.
 name|CompatibilityDataMapLoader
 import|;

@@ -80,6 +80,7 @@ comment|/**  * @since 4.1  */
 end_comment
 
 begin_class
+specifier|public
 specifier|final
 class|class
 name|DataChannelHandler
@@ -115,6 +116,7 @@ decl_stmt|;
 name|DataChannelDescriptor
 name|descriptor
 decl_stmt|;
+specifier|public
 name|DataChannelHandler
 parameter_list|(
 name|XMLDataChannelDescriptorLoader

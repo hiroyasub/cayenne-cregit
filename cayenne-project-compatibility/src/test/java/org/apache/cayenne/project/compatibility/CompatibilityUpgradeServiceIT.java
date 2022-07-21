@@ -148,8 +148,6 @@ specifier|public
 name|void
 name|testUpgradeFullProjectDom
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Injector
 name|injector
@@ -334,8 +332,6 @@ specifier|public
 name|void
 name|testUpgradeStandAloneDataMapDom
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|Injector
 name|injector
