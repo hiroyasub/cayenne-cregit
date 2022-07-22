@@ -158,7 +158,7 @@ block|{
 specifier|public
 specifier|static
 class|class
-name|Ð¡genWindowsConfigurationTest
+name|CgenWindowsConfigurationTest
 block|{
 name|CgenConfiguration
 name|configuration
@@ -850,7 +850,7 @@ block|}
 specifier|public
 specifier|static
 class|class
-name|Ð¡genUnixConfigurationTest
+name|CgenUnixConfigurationTest
 block|{
 name|CgenConfiguration
 name|configuration
