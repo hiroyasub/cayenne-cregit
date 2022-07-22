@@ -95,7 +95,7 @@ name|mockito
 operator|.
 name|Mockito
 operator|.
-name|verifyZeroInteractions
+name|verifyNoMoreInteractions
 import|;
 end_import
 
@@ -395,7 +395,7 @@ argument_list|,
 name|afterId
 argument_list|)
 expr_stmt|;
-name|verifyZeroInteractions
+name|verifyNoMoreInteractions
 argument_list|(
 name|diffChecker
 argument_list|)
@@ -536,7 +536,7 @@ argument_list|,
 name|afterId
 argument_list|)
 expr_stmt|;
-name|verifyZeroInteractions
+name|verifyNoMoreInteractions
 argument_list|(
 name|diffChecker
 argument_list|)

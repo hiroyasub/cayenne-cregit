@@ -99,7 +99,7 @@ name|mockito
 operator|.
 name|Mockito
 operator|.
-name|verifyZeroInteractions
+name|verifyNoInteractions
 import|;
 end_import
 
@@ -280,7 +280,7 @@ argument_list|(
 name|descriptor
 argument_list|)
 expr_stmt|;
-name|verifyZeroInteractions
+name|verifyNoInteractions
 argument_list|(
 name|descriptor
 argument_list|)
