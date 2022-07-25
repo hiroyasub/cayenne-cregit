@@ -491,6 +491,16 @@ operator|new
 name|DBConnectionInfo
 argument_list|()
 expr_stmt|;
+comment|// DataSource may not be initialized, so warn connection wizard
+name|this
+operator|.
+name|connectionInfo
+operator|.
+name|setAllowDataSourceFailure
+argument_list|(
+literal|true
+argument_list|)
+expr_stmt|;
 name|this
 operator|.
 name|generatorDefaults
