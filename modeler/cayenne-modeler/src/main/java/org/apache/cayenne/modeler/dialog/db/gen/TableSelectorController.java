@@ -272,6 +272,12 @@ comment|/**  */
 end_comment
 
 begin_class
+annotation|@
+name|SuppressWarnings
+argument_list|(
+literal|"unused"
+argument_list|)
+comment|// methods are used in bindings by name
 specifier|public
 class|class
 name|TableSelectorController
@@ -722,9 +728,7 @@ name|tables
 operator|=
 operator|new
 name|ArrayList
-argument_list|<
-name|DbEntity
-argument_list|>
+argument_list|<>
 argument_list|()
 expr_stmt|;
 for|for
@@ -758,10 +762,9 @@ operator|.
 name|clear
 argument_list|()
 expr_stmt|;
-comment|// if there were errors, filter out those related to
-comment|// non-derived DbEntities...
+comment|// if there were errors, filter out those related to non-derived DbEntities...
 comment|// TODO: this is inefficient.. we need targeted validation
-comment|// instead of doing it on the whole project
+comment|//       instead of doing it on the whole project
 name|Project
 name|project
 init|=
@@ -852,9 +855,6 @@ argument_list|()
 decl_stmt|;
 name|failedEntity
 operator|=
-operator|(
-name|DbEntity
-operator|)
 name|failedAttribute
 operator|.
 name|getEntity
@@ -884,9 +884,6 @@ argument_list|()
 decl_stmt|;
 name|failedEntity
 operator|=
-operator|(
-name|DbEntity
-operator|)
 name|failedRelationship
 operator|.
 name|getSourceEntity
@@ -975,8 +972,7 @@ control|)
 block|{
 if|if
 condition|(
-literal|false
-operator|==
+operator|!
 name|excludedTables
 operator|.
 name|containsKey
