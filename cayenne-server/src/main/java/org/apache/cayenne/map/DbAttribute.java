@@ -131,7 +131,7 @@ specifier|protected
 name|boolean
 name|generated
 decl_stmt|;
-comment|// The length of CHAR or VARCHAr or max num of digits for DECIMAL.
+comment|// The length of CHAR or VARCHAR or max num of digits for DECIMAL.
 specifier|protected
 name|int
 name|maxLength
@@ -148,8 +148,7 @@ operator|-
 literal|1
 decl_stmt|;
 comment|/**      * @since 3.0      */
-comment|// must call it 'attributePrecison' as 'precision' in 1.2 really meant
-comment|// 'scale'
+comment|// must call it 'attributePrecision' as 'precision' in 1.2 really meant 'scale'
 specifier|protected
 name|int
 name|attributePrecision

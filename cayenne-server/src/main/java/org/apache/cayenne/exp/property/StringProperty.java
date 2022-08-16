@@ -710,6 +710,9 @@ operator|=
 operator|(
 operator|(
 name|BaseProperty
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|arg
 operator|)

@@ -84,7 +84,7 @@ argument_list|<
 name|E
 argument_list|>
 block|{
-comment|/**      * Returns a version of this property that represents an OUTER join. It is      * up to caller to ensure that the property corresponds to a relationship,      * as "outer" attributes make no sense.      */
+comment|/**      * Returns a version of this property that represents an OUTER join.      */
 name|BaseProperty
 argument_list|<
 name|E
@@ -215,6 +215,7 @@ name|DISJOINT_BY_ID_PREFETCH_SEMANTICS
 argument_list|)
 return|;
 block|}
+comment|/**      * Constructs a new property path by appending the argument to the existing property separated by a dot.      *      * @param property to append to path      * @return a newly created Property object.      */
 specifier|default
 parameter_list|<
 name|T
@@ -257,6 +258,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
+comment|/**      * Constructs a new property path by appending the argument to the existing property separated by a dot.      *      * @param property to append to path      * @return a newly created Property object.      */
 specifier|default
 parameter_list|<
 name|T

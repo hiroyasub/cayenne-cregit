@@ -84,7 +84,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Property that represents to-one relationships.  *<p>  * Usage examples in where clause:<pre>{@code  * ObjectSelect.query(Paintings.class)  *      .where(Painting.TO_ARTIST.dot(Artist.ARTIST_NAME).eq("Pablo Picasso"));}</pre>  *<p>  * Usage examples in column select, in this case full Artist entity will be  * returned in the result:<pre>{@code  * ObjectSelect  *      .columnQuery(Paintings.class, Painting.PAINTING_TITLE, Painting.TO_ARTIST);}</pre>  *  * @see org.apache.cayenne.exp.property  * @since 4.2  */
+comment|/**  * Property that represents to-one relationships.  *<p>  * Usage examples in where clause:<pre>{@code  * ObjectSelect.query(Paintings.class)  *      .where(Painting.TO_ARTIST.dot(Artist.ARTIST_NAME).eq("Pablo Picasso"));}</pre>  *<p>  * Usage examples in column select, in this case full Artist entity will be returned as the result:  *<pre>{@code  * ObjectSelect  *      .columnQuery(Paintings.class, Painting.PAINTING_TITLE, Painting.TO_ARTIST);}  *</pre>  *  * @see org.apache.cayenne.exp.property  * @since 4.2  */
 end_comment
 
 begin_class
