@@ -3397,9 +3397,13 @@ argument_list|)
 expr_stmt|;
 name|a1
 operator|.
-name|addToPaintingArray
+name|addToManyTarget
 argument_list|(
+literal|"paintingArray"
+argument_list|,
 name|painting
+argument_list|,
+literal|true
 argument_list|)
 expr_stmt|;
 name|assertEquals
