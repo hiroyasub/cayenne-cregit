@@ -264,7 +264,7 @@ name|res
 operator|.
 name|contains
 argument_list|(
-literal|"org.apache.cayenne.exp.property.EntityProperty"
+literal|"org.apache.cayenne.exp.property.ListProperty"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -414,7 +414,7 @@ name|res
 operator|.
 name|contains
 argument_list|(
-literal|"org.apache.cayenne.exp.property.EntityProperty"
+literal|"org.apache.cayenne.exp.property.ListProperty"
 argument_list|)
 argument_list|)
 expr_stmt|;
