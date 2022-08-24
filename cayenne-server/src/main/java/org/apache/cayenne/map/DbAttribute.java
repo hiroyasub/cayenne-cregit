@@ -802,6 +802,21 @@ operator|=
 name|scale
 expr_stmt|;
 block|}
+comment|/**      * @return java class guessed by the JDBC type of this attribute      * @since 4.3      */
+specifier|public
+name|String
+name|getJavaClass
+parameter_list|()
+block|{
+return|return
+name|TypesMapping
+operator|.
+name|getJavaBySqlType
+argument_list|(
+name|this
+argument_list|)
+return|;
+block|}
 annotation|@
 name|Override
 specifier|public

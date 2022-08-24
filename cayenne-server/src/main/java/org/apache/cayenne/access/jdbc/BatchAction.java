@@ -1301,12 +1301,10 @@ index|]
 operator|.
 name|setJavaClass
 argument_list|(
-name|TypesMapping
-operator|.
-name|getJavaBySqlType
-argument_list|(
 name|key
-argument_list|)
+operator|.
+name|getJavaClass
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|builder

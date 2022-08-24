@@ -294,12 +294,10 @@ name|this
 operator|.
 name|javaClass
 operator|=
-name|TypesMapping
-operator|.
-name|getJavaBySqlType
-argument_list|(
 name|attribute
-argument_list|)
+operator|.
+name|getJavaClass
+argument_list|()
 expr_stmt|;
 if|if
 condition|(

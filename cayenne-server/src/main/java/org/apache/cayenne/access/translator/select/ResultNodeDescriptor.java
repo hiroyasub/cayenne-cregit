@@ -446,13 +446,11 @@ literal|null
 condition|)
 block|{
 return|return
-name|TypesMapping
-operator|.
-name|getJavaBySqlType
-argument_list|(
 name|getDbAttribute
 argument_list|()
-argument_list|)
+operator|.
+name|getJavaClass
+argument_list|()
 return|;
 block|}
 return|return
