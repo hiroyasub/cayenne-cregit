@@ -1093,8 +1093,7 @@ name|getValue
 argument_list|()
 condition|)
 block|{
-comment|// if attribute type is the same as column, there is no
-comment|// conflict
+comment|// if attribute type is the same as column, there is no conflict
 if|if
 condition|(
 operator|!

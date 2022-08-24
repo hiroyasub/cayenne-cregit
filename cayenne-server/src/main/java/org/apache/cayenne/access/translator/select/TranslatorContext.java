@@ -388,8 +388,8 @@ name|int
 name|rootSegmentEnd
 decl_stmt|;
 comment|// should current entity be linked to root object
-comment|// (prefetch entity should, while unrelated entity in a column select should't)
-comment|// this flag can be removed if logic that converts result row into an object tree allow random order of columns if a row.
+comment|// (prefetch entity should, while unrelated entity in a column select shouldn't)
+comment|// this flag can be removed if logic that converts result row into an object tree allows random order of columns in a row.
 specifier|private
 name|boolean
 name|appendResultToRoot

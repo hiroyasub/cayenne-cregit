@@ -376,6 +376,9 @@ argument_list|(
 operator|(
 operator|(
 name|Supplier
+argument_list|<
+name|?
+argument_list|>
 operator|)
 name|next
 operator|.

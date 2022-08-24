@@ -1187,14 +1187,11 @@ operator|.
 name|getGeneratedKeys
 argument_list|()
 decl_stmt|;
-comment|// TODO: andrus, 7/4/2007 - (1) get the type of meaningful PK's from
-comment|// their
-comment|// ObjAttributes; (2) use a different form of Statement.execute -
-comment|// "execute(String,String[])" to be able to map generated column names
-comment|// (this way
-comment|// we can support multiple columns.. although need to check how well
-comment|// this works
-comment|// with most common drivers)
+comment|// TODO: andrus, 7/4/2007 -
+comment|//  	(1) get the type of meaningful PK's from their ObjAttributes;
+comment|//  	(2) use a different form of Statement.execute - "execute(String,String[])" to be able to map
+comment|//  		generated column names (this way we can support multiple columns.. although need to check how well
+comment|// 			this works with most common drivers)
 name|RowDescriptorBuilder
 name|builder
 init|=
