@@ -1938,13 +1938,20 @@ name|EmbeddedAttribute
 name|embeddedAttribute
 parameter_list|)
 block|{
-comment|// TODO: andrus, 11/19/2007 = avoid creation of descriptor for every
-comment|// property of
-comment|// embeddable; look up reusable descriptor instead.
+comment|// TODO: andrus, 11/19/2007 = avoid creation of descriptor for every property of embeddable;
+comment|//       look up reusable descriptor instead.
 return|return
 operator|new
 name|FieldEmbeddableDescriptor
 argument_list|(
+name|descriptorMap
+operator|.
+name|getResolver
+argument_list|()
+operator|.
+name|getObjectFactory
+argument_list|()
+argument_list|,
 name|embeddedAttribute
 operator|.
 name|getEmbeddable
