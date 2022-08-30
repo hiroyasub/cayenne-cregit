@@ -74,6 +74,7 @@ name|BaseCayenneTask
 extends|extends
 name|DefaultTask
 block|{
+comment|/**      * DataMap XML file to use as a base for DB importing.      */
 annotation|@
 name|Internal
 specifier|private

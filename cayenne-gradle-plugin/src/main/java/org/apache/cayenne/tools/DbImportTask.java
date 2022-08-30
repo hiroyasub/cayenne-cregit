@@ -462,6 +462,7 @@ name|DbImportTask
 extends|extends
 name|BaseCayenneTask
 block|{
+comment|/**      * Java class implementing org.apache.cayenne.dba.DbAdapter. This attribute      * is optional, the default is AutoAdapter, i.e. Cayenne would try to guess      * the DB type.      */
 annotation|@
 name|Input
 annotation|@
@@ -470,6 +471,7 @@ specifier|private
 name|String
 name|adapter
 decl_stmt|;
+comment|/**      * Connection properties.      *      * @since 4.0      */
 annotation|@
 name|Internal
 specifier|private
@@ -490,6 +492,7 @@ operator|new
 name|DbImportConfig
 argument_list|()
 decl_stmt|;
+comment|/**      * An object that contains reverse engineering rules.      */
 annotation|@
 name|Internal
 specifier|private
@@ -523,6 +526,7 @@ name|void
 name|runImport
 parameter_list|()
 block|{
+comment|// check missing data source parameters
 name|dataSource
 operator|.
 name|validate

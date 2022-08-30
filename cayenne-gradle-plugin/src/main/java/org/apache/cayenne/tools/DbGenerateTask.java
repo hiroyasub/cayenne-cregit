@@ -430,6 +430,7 @@ name|DbGenerateTask
 extends|extends
 name|BaseCayenneTask
 block|{
+comment|/**      * Java class implementing org.apache.cayenne.dba.DbAdapter. While this      * attribute is optional (a generic JdbcAdapter is used if not set), it is      * highly recommended to specify correct target adapter.      */
 annotation|@
 name|Input
 annotation|@
@@ -438,6 +439,7 @@ specifier|private
 name|String
 name|adapter
 decl_stmt|;
+comment|/**      * Connection properties.      *      * @since 4.0      */
 annotation|@
 name|Internal
 specifier|private
@@ -448,18 +450,21 @@ operator|new
 name|DataSourceConfig
 argument_list|()
 decl_stmt|;
+comment|/**      * Defines whether cdbgen should drop the tables before attempting to create      * new ones. Default is<code>false</code>.      */
 annotation|@
 name|Input
 specifier|private
 name|boolean
 name|dropTables
 decl_stmt|;
+comment|/**      * Defines whether cdbgen should drop Cayenne primary key support objects.      * Default is<code>false</code>.      */
 annotation|@
 name|Input
 specifier|private
 name|boolean
 name|dropPK
 decl_stmt|;
+comment|/**      * Defines whether cdbgen should create new tables. Default is      *<code>true</code>.      */
 annotation|@
 name|Input
 specifier|private
@@ -468,6 +473,7 @@ name|createTables
 init|=
 literal|true
 decl_stmt|;
+comment|/**      * Defines whether cdbgen should create Cayenne-specific auto PK objects.      * Default is<code>true</code>.      */
 annotation|@
 name|Input
 specifier|private
@@ -476,6 +482,7 @@ name|createPK
 init|=
 literal|true
 decl_stmt|;
+comment|/**      * Defines whether cdbgen should create foreign key copnstraints. Default is      *<code>true</code>.      */
 annotation|@
 name|Input
 specifier|private
@@ -507,6 +514,7 @@ parameter_list|()
 throws|throws
 name|GradleException
 block|{
+comment|// check missing data source parameter
 name|dataSource
 operator|.
 name|validate
@@ -842,6 +850,7 @@ name|build
 argument_list|()
 return|;
 block|}
+comment|/**      * Loads and returns DataMap based on<code>map</code> attribute.      */
 name|DataMap
 name|loadDataMap
 parameter_list|(
