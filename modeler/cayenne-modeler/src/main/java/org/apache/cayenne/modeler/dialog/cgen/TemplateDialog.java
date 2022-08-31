@@ -61,7 +61,7 @@ name|editor
 operator|.
 name|cgen
 operator|.
-name|CustomModeController
+name|StandardModeController
 import|;
 end_import
 
@@ -398,7 +398,7 @@ lambda|->
 block|{
 operator|(
 operator|(
-name|CustomModeController
+name|StandardModeController
 operator|)
 name|parent
 operator|)
