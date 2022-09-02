@@ -1571,6 +1571,15 @@ return|return
 name|dataMapSuperTemplate
 return|;
 block|}
+specifier|public
+name|TextAdapter
+name|getSuperPkg
+parameter_list|()
+block|{
+return|return
+name|superPkg
+return|;
+block|}
 block|}
 end_class
 
