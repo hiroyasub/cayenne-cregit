@@ -596,6 +596,24 @@ name|CUSTOM_OP
 init|=
 literal|53
 decl_stmt|;
+comment|/** 	 * @since 4.3 	 */
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|ALL
+init|=
+literal|54
+decl_stmt|;
+comment|/** 	 * @since 4.3 	 */
+specifier|public
+specifier|static
+specifier|final
+name|int
+name|ANY
+init|=
+literal|55
+decl_stmt|;
 specifier|protected
 name|int
 name|type

@@ -904,7 +904,9 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * @return property that will be translated relative to parent query      */
+comment|/**      * @inheritDoc      */
+annotation|@
+name|Override
 specifier|public
 name|StringProperty
 argument_list|<
