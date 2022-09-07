@@ -136,6 +136,10 @@ name|addButton
 decl_stmt|;
 specifier|protected
 name|JButton
+name|createFromDefaultButton
+decl_stmt|;
+specifier|protected
+name|JButton
 name|removeButton
 decl_stmt|;
 specifier|protected
@@ -153,6 +157,14 @@ operator|new
 name|JButton
 argument_list|(
 literal|"Add Template"
+argument_list|)
+expr_stmt|;
+name|createFromDefaultButton
+operator|=
+operator|new
+name|JButton
+argument_list|(
+literal|"Create from default"
 argument_list|)
 expr_stmt|;
 name|removeButton
@@ -220,6 +232,13 @@ name|builder
 operator|.
 name|append
 argument_list|(
+name|createFromDefaultButton
+argument_list|)
+expr_stmt|;
+name|builder
+operator|.
+name|append
+argument_list|(
 name|removeButton
 argument_list|)
 expr_stmt|;
@@ -231,7 +250,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 name|JScrollPane
-name|ScrollPane
+name|scrollPane
 init|=
 operator|new
 name|JScrollPane
@@ -239,7 +258,7 @@ argument_list|(
 name|table
 argument_list|)
 decl_stmt|;
-name|ScrollPane
+name|scrollPane
 operator|.
 name|setBorder
 argument_list|(
@@ -251,7 +270,7 @@ argument_list|)
 expr_stmt|;
 name|add
 argument_list|(
-name|ScrollPane
+name|scrollPane
 argument_list|,
 name|BorderLayout
 operator|.
@@ -287,6 +306,15 @@ parameter_list|()
 block|{
 return|return
 name|addButton
+return|;
+block|}
+specifier|public
+name|JButton
+name|getCreateFromDefaultButton
+parameter_list|()
+block|{
+return|return
+name|createFromDefaultButton
 return|;
 block|}
 specifier|public
