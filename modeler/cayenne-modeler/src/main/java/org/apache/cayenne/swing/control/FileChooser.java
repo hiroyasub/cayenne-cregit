@@ -845,6 +845,13 @@ name|currentDirectory
 operator|=
 name|currentDirectory
 expr_stmt|;
+name|this
+operator|.
+name|setFile
+argument_list|(
+name|currentDirectory
+argument_list|)
+expr_stmt|;
 name|firePropertyChange
 argument_list|(
 name|CURRENT_DIRECTORY_PROPERTY
