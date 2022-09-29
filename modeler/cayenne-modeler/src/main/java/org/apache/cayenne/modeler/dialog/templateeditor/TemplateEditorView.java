@@ -315,7 +315,7 @@ decl_stmt|;
 specifier|protected
 name|JComboBox
 argument_list|<
-name|Object
+name|String
 argument_list|>
 name|entityComboBox
 decl_stmt|;
@@ -504,7 +504,13 @@ argument_list|(
 name|entityNames
 operator|.
 name|toArray
-argument_list|()
+argument_list|(
+operator|new
+name|String
+index|[
+literal|0
+index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|this

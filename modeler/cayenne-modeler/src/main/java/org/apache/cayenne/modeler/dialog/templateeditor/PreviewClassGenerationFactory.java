@@ -138,6 +138,11 @@ name|metadataUtils
 decl_stmt|;
 annotation|@
 name|Inject
+argument_list|(
+name|TemplateEditorController
+operator|.
+name|TEMPLATE_EDITOR_WRITER
+argument_list|)
 specifier|private
 name|StringWriter
 name|writer
