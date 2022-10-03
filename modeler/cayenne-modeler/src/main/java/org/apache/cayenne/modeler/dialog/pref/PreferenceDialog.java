@@ -721,9 +721,13 @@ argument_list|)
 expr_stmt|;
 name|view
 operator|.
-name|setModal
+name|setModalityType
 argument_list|(
-literal|true
+name|Dialog
+operator|.
+name|ModalityType
+operator|.
+name|MODELESS
 argument_list|)
 expr_stmt|;
 block|}

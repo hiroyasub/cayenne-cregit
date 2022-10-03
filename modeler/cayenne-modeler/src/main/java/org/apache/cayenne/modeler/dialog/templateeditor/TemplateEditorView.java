@@ -213,7 +213,7 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|JDialog
+name|JFrame
 import|;
 end_import
 
@@ -286,7 +286,7 @@ specifier|public
 class|class
 name|TemplateEditorView
 extends|extends
-name|JDialog
+name|JFrame
 block|{
 specifier|protected
 name|RSyntaxTextArea

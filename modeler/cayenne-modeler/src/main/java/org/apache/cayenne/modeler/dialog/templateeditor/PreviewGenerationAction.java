@@ -99,6 +99,16 @@ name|java
 operator|.
 name|io
 operator|.
+name|StringWriter
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|io
+operator|.
 name|Writer
 import|;
 end_import
@@ -125,7 +135,7 @@ extends|extends
 name|ClassGenerationAction
 block|{
 specifier|private
-name|Writer
+name|StringWriter
 name|writer
 decl_stmt|;
 specifier|public
@@ -154,7 +164,7 @@ specifier|public
 name|void
 name|setWriter
 parameter_list|(
-name|Writer
+name|StringWriter
 name|writer
 parameter_list|)
 block|{
@@ -175,6 +185,17 @@ name|TemplateType
 name|templateType
 parameter_list|)
 block|{
+comment|// clear and return
+name|writer
+operator|.
+name|getBuffer
+argument_list|()
+operator|.
+name|setLength
+argument_list|(
+literal|0
+argument_list|)
+expr_stmt|;
 return|return
 name|writer
 return|;
