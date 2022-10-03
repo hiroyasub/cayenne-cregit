@@ -45,7 +45,7 @@ name|javax
 operator|.
 name|swing
 operator|.
-name|JDialog
+name|JFrame
 import|;
 end_import
 
@@ -145,7 +145,7 @@ parameter_list|,
 name|File
 name|dest
 parameter_list|,
-name|JDialog
+name|JFrame
 name|view
 parameter_list|)
 block|{
