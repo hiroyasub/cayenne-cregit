@@ -271,7 +271,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns property descriptor for specified property.      *       * @param properyName      *            path to the property      * @return property descriptor,<code>null</code> if not found      */
+comment|/**      * Returns property descriptor for specified property.      *       * @param propertyName      *            path to the property      * @return property descriptor,<code>null</code> if not found      */
 specifier|public
 specifier|static
 name|PropertyDescriptor
@@ -281,7 +281,7 @@ name|Persistent
 name|object
 parameter_list|,
 name|String
-name|properyName
+name|propertyName
 parameter_list|)
 block|{
 name|ClassDescriptor
@@ -308,7 +308,7 @@ name|descriptor
 operator|.
 name|getProperty
 argument_list|(
-name|properyName
+name|propertyName
 argument_list|)
 return|;
 block|}
@@ -672,7 +672,6 @@ return|;
 block|}
 specifier|private
 specifier|static
-specifier|final
 name|Object
 name|readSimpleProperty
 parameter_list|(
