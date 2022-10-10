@@ -198,8 +198,6 @@ block|,
 name|DATA_SOURCES_KEY
 block|,
 name|CLASS_PATH_KEY
-block|,
-name|TEMPLATES_KEY
 block|}
 decl_stmt|;
 specifier|protected
@@ -667,17 +665,6 @@ name|CLASS_PATH_KEY
 argument_list|,
 operator|new
 name|ClasspathPreferences
-argument_list|(
-name|this
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|registerPanel
-argument_list|(
-name|TEMPLATES_KEY
-argument_list|,
-operator|new
-name|TemplatePreferences
 argument_list|(
 name|this
 argument_list|)
