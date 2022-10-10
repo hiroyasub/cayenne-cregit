@@ -2240,6 +2240,41 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
+comment|/** 	 * {@inheritDoc} 	 * 	 * @since 4.3 	 */
+annotation|@
+name|Override
+specifier|public
+name|void
+name|removeUserProperty
+parameter_list|(
+name|String
+name|key
+parameter_list|)
+block|{
+name|getUserProperties
+argument_list|()
+operator|.
+name|remove
+argument_list|(
+name|key
+argument_list|)
+expr_stmt|;
+block|}
+comment|/** 	 * {@inheritDoc} 	 * 	 * @since 4.3 	 */
+annotation|@
+name|Override
+specifier|public
+name|void
+name|clearUserProperties
+parameter_list|()
+block|{
+name|getUserProperties
+argument_list|()
+operator|.
+name|clear
+argument_list|()
+expr_stmt|;
+block|}
 comment|/** 	 * If ObjEntity qualifier is set, asks it to inject initial value to an 	 * object. Also performs all Persistent initialization operations 	 */
 specifier|protected
 name|void
