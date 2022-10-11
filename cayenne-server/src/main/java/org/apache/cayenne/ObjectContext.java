@@ -447,6 +447,19 @@ name|Object
 name|value
 parameter_list|)
 function_decl|;
+comment|/**      * Removes a user-defined property.      *      * @since 4.3      */
+name|void
+name|removeUserProperty
+parameter_list|(
+name|String
+name|key
+parameter_list|)
+function_decl|;
+comment|/**      * Removes all user-defined properties.      *      * @since 4.3      */
+name|void
+name|clearUserProperties
+parameter_list|()
+function_decl|;
 block|}
 end_interface
 
