@@ -13,7 +13,9 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
-name|dialog
+name|editor
+operator|.
+name|cgen
 operator|.
 name|templateeditor
 package|;
