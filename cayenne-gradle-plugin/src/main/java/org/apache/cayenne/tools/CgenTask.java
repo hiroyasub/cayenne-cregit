@@ -155,6 +155,20 @@ name|cayenne
 operator|.
 name|gen
 operator|.
+name|CgenTemplate
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|gen
+operator|.
 name|TemplateType
 import|;
 end_import
@@ -436,7 +450,7 @@ specifier|private
 name|Boolean
 name|createPropertyNames
 decl_stmt|;
-comment|/**      * Force run (skip check for files modification time)      * @since 4.1      */
+comment|/**      * Force run (skip check for files modification time)      *      * @since 4.1      */
 annotation|@
 name|Input
 specifier|private
@@ -461,7 +475,7 @@ specifier|private
 name|String
 name|dataMapSuperTemplate
 decl_stmt|;
-comment|/**      * If set to<code>true</code>, will generate PK attributes as Properties.      * Default is<code>false</code>.      * @since 4.1      */
+comment|/**      * If set to<code>true</code>, will generate PK attributes as Properties.      * Default is<code>false</code>.      *      * @since 4.1      */
 annotation|@
 name|Input
 annotation|@
@@ -470,7 +484,7 @@ specifier|private
 name|Boolean
 name|createPKProperties
 decl_stmt|;
-comment|/**      * Optional path (classpath or filesystem) to external velocity tool configuration file      * @since 4.2      */
+comment|/**      * Optional path (classpath or filesystem) to external velocity tool configuration file      *      * @since 4.2      */
 annotation|@
 name|Input
 annotation|@
@@ -1144,7 +1158,17 @@ name|superTemplate
 operator|!=
 literal|null
 condition|?
+operator|new
+name|CgenTemplate
+argument_list|(
 name|superTemplate
+argument_list|,
+literal|true
+argument_list|,
+name|TemplateType
+operator|.
+name|ENTITY_SUPERCLASS
+argument_list|)
 else|:
 name|cgenConfiguration
 operator|.
@@ -1160,7 +1184,17 @@ name|template
 operator|!=
 literal|null
 condition|?
+operator|new
+name|CgenTemplate
+argument_list|(
 name|template
+argument_list|,
+literal|true
+argument_list|,
+name|TemplateType
+operator|.
+name|ENTITY_SUBCLASS
+argument_list|)
 else|:
 name|cgenConfiguration
 operator|.
@@ -1176,7 +1210,17 @@ name|embeddableSuperTemplate
 operator|!=
 literal|null
 condition|?
+operator|new
+name|CgenTemplate
+argument_list|(
 name|embeddableSuperTemplate
+argument_list|,
+literal|true
+argument_list|,
+name|TemplateType
+operator|.
+name|EMBEDDABLE_SUPERCLASS
+argument_list|)
 else|:
 name|cgenConfiguration
 operator|.
@@ -1192,7 +1236,17 @@ name|embeddableTemplate
 operator|!=
 literal|null
 condition|?
+operator|new
+name|CgenTemplate
+argument_list|(
 name|embeddableTemplate
+argument_list|,
+literal|true
+argument_list|,
+name|TemplateType
+operator|.
+name|EMBEDDABLE_SUBCLASS
+argument_list|)
 else|:
 name|cgenConfiguration
 operator|.
@@ -1240,7 +1294,17 @@ name|dataMapTemplate
 operator|!=
 literal|null
 condition|?
+operator|new
+name|CgenTemplate
+argument_list|(
 name|dataMapTemplate
+argument_list|,
+literal|true
+argument_list|,
+name|TemplateType
+operator|.
+name|DATAMAP_SUBCLASS
+argument_list|)
 else|:
 name|cgenConfiguration
 operator|.
@@ -1256,7 +1320,17 @@ name|dataMapSuperTemplate
 operator|!=
 literal|null
 condition|?
+operator|new
+name|CgenTemplate
+argument_list|(
 name|dataMapSuperTemplate
+argument_list|,
+literal|true
+argument_list|,
+name|TemplateType
+operator|.
+name|DATAMAP_SUPERCLASS
+argument_list|)
 else|:
 name|cgenConfiguration
 operator|.
@@ -1320,7 +1394,7 @@ name|TemplateType
 operator|.
 name|ENTITY_SINGLE_CLASS
 operator|.
-name|pathFromSourceRoot
+name|defaultTemplate
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1340,7 +1414,7 @@ name|TemplateType
 operator|.
 name|EMBEDDABLE_SINGLE_CLASS
 operator|.
-name|pathFromSourceRoot
+name|defaultTemplate
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1360,7 +1434,7 @@ name|TemplateType
 operator|.
 name|DATAMAP_SINGLE_CLASS
 operator|.
-name|pathFromSourceRoot
+name|defaultTemplate
 argument_list|()
 argument_list|)
 expr_stmt|;

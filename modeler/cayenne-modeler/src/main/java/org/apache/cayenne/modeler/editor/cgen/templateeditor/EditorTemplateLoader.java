@@ -224,6 +224,9 @@ name|getTemplateByType
 argument_list|(
 name|type
 argument_list|)
+operator|.
+name|getData
+argument_list|()
 return|;
 block|}
 block|}

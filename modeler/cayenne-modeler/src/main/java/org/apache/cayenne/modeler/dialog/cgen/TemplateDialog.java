@@ -373,7 +373,7 @@ name|TemplateType
 operator|.
 name|ENTITY_SUBCLASS
 operator|.
-name|pathFromSourceRoot
+name|defaultTemplate
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -393,7 +393,7 @@ name|TemplateType
 operator|.
 name|ENTITY_SUPERCLASS
 operator|.
-name|pathFromSourceRoot
+name|defaultTemplate
 argument_list|()
 argument_list|)
 expr_stmt|;

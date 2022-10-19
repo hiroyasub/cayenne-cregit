@@ -228,6 +228,9 @@ name|configuration
 operator|.
 name|getTemplate
 argument_list|()
+operator|.
+name|getData
+argument_list|()
 decl_stmt|;
 name|assertEquals
 argument_list|(

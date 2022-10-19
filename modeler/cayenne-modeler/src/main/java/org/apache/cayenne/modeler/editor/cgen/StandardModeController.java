@@ -560,6 +560,9 @@ name|cgenConfiguration
 operator|.
 name|getTemplate
 argument_list|()
+operator|.
+name|getData
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -571,7 +574,7 @@ name|TemplateType
 operator|.
 name|ENTITY_SUBCLASS
 operator|.
-name|pathFromSourceRoot
+name|defaultTemplate
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -586,6 +589,9 @@ name|cgenConfiguration
 operator|.
 name|getEmbeddableTemplate
 argument_list|()
+operator|.
+name|getData
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -597,7 +603,7 @@ name|TemplateType
 operator|.
 name|EMBEDDABLE_SUBCLASS
 operator|.
-name|pathFromSourceRoot
+name|defaultTemplate
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -612,6 +618,9 @@ name|cgenConfiguration
 operator|.
 name|getDataMapTemplate
 argument_list|()
+operator|.
+name|getData
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -623,7 +632,7 @@ name|TemplateType
 operator|.
 name|DATAMAP_SUBCLASS
 operator|.
-name|pathFromSourceRoot
+name|defaultTemplate
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -644,6 +653,9 @@ name|cgenConfiguration
 operator|.
 name|getTemplate
 argument_list|()
+operator|.
+name|getData
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -655,7 +667,7 @@ name|TemplateType
 operator|.
 name|ENTITY_SINGLE_CLASS
 operator|.
-name|pathFromSourceRoot
+name|defaultTemplate
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -670,6 +682,9 @@ name|cgenConfiguration
 operator|.
 name|getEmbeddableTemplate
 argument_list|()
+operator|.
+name|getData
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -681,7 +696,7 @@ name|TemplateType
 operator|.
 name|EMBEDDABLE_SINGLE_CLASS
 operator|.
-name|pathFromSourceRoot
+name|defaultTemplate
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -696,6 +711,9 @@ name|cgenConfiguration
 operator|.
 name|getDataMapTemplate
 argument_list|()
+operator|.
+name|getData
+argument_list|()
 argument_list|)
 condition|)
 block|{
@@ -707,7 +725,7 @@ name|TemplateType
 operator|.
 name|DATAMAP_SINGLE_CLASS
 operator|.
-name|pathFromSourceRoot
+name|defaultTemplate
 argument_list|()
 argument_list|)
 expr_stmt|;

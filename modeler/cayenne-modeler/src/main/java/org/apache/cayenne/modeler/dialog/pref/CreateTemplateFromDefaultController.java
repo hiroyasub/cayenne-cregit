@@ -989,11 +989,7 @@ operator|.
 name|separator
 operator|+
 name|prefix
-operator|+
-name|typeByName
-operator|.
-name|fullFileName
-argument_list|()
+comment|/*+typeByName.fullFileName()*/
 decl_stmt|;
 name|createTemplateFile
 argument_list|(
