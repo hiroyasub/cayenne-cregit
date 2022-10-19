@@ -629,6 +629,15 @@ operator|.
 name|updateSelectedEntities
 argument_list|()
 expr_stmt|;
+name|getParentController
+argument_list|()
+operator|.
+name|getStandardModeController
+argument_list|()
+operator|.
+name|updateTemplateEditorButtons
+argument_list|()
+expr_stmt|;
 block|}
 comment|/**      * An action that updates entity check boxes in response to the Select All state      * change.      */
 annotation|@
