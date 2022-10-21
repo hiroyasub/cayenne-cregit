@@ -756,7 +756,6 @@ operator|!=
 literal|null
 return|;
 block|}
-specifier|private
 name|CgenConfiguration
 name|buildConfiguration
 parameter_list|(

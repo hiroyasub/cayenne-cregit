@@ -977,7 +977,6 @@ name|cgenConfiguration
 argument_list|)
 return|;
 block|}
-specifier|private
 name|CgenConfiguration
 name|buildConfiguration
 parameter_list|(

@@ -113,6 +113,15 @@ argument_list|()
 return|;
 block|}
 block|}
+specifier|public
+name|TemplateType
+name|getType
+parameter_list|()
+block|{
+return|return
+name|type
+return|;
+block|}
 block|}
 end_class
 
