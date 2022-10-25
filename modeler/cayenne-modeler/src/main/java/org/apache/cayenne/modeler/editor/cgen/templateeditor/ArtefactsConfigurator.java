@@ -68,6 +68,7 @@ specifier|public
 interface|interface
 name|ArtefactsConfigurator
 block|{
+comment|/**      * adds selected artefact to action for generating class preview.      *      * @param action class preview generating action      * @param artifactName name of artifact to add      */
 name|void
 name|config
 parameter_list|(

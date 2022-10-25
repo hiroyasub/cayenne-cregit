@@ -856,6 +856,7 @@ name|cgenConfiguration
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * Adds or removes mark "edited" to template labels.      * @param configuration      */
 specifier|public
 name|void
 name|updateTemplatesLabels
@@ -1037,6 +1038,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/**      * locks or unlocks buttons depending on the state of the window. Tooltips are changing too.      * The button locking is affected:      * - is template editor window open      * - is MakePairs checkbox selected      * - is any artefact of appropriate type selected      */
 specifier|public
 name|void
 name|updateTemplateEditorButtons
