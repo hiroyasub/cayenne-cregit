@@ -115,6 +115,13 @@ implements|implements
 name|Serializable
 block|{
 name|GraphBuilder
+argument_list|<
+name|E
+argument_list|,
+name|A
+argument_list|,
+name|R
+argument_list|>
 name|builder
 decl_stmt|;
 name|String
@@ -130,6 +137,13 @@ block|}
 name|EntityCellMetadata
 parameter_list|(
 name|GraphBuilder
+argument_list|<
+name|E
+argument_list|,
+name|A
+argument_list|,
+name|R
+argument_list|>
 name|builder
 parameter_list|,
 name|String

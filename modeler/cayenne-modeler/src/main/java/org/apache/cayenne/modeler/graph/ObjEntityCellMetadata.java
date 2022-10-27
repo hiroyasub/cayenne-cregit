@@ -93,6 +93,13 @@ block|{
 name|ObjEntityCellMetadata
 parameter_list|(
 name|GraphBuilder
+argument_list|<
+name|ObjEntity
+argument_list|,
+name|ObjAttribute
+argument_list|,
+name|ObjRelationship
+argument_list|>
 name|builder
 parameter_list|,
 name|String
