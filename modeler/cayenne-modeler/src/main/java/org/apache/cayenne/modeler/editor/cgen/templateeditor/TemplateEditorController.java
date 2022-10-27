@@ -414,10 +414,6 @@ operator|new
 name|EditorTemplateSaver
 argument_list|(
 name|configuration
-argument_list|,
-name|this
-operator|.
-name|editorView
 argument_list|)
 expr_stmt|;
 name|configureEditorView
@@ -837,6 +833,11 @@ argument_list|(
 name|templateType
 argument_list|,
 name|isTemplateDefault
+argument_list|,
+name|editorView
+operator|.
+name|getTemplateText
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|parentController

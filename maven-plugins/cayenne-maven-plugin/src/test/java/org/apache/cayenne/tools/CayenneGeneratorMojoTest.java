@@ -117,6 +117,14 @@ extends|extends
 name|AbstractMojoTestCase
 block|{
 specifier|public
+specifier|static
+specifier|final
+name|String
+name|TEST_TEMPLATE_PATH
+init|=
+literal|"src/test/resources/cgen/project-to-test/testTemplate.vm"
+decl_stmt|;
+specifier|public
 name|void
 name|testCgenExecution
 parameter_list|()
@@ -492,7 +500,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"testPath"
+name|TEST_TEMPLATE_PATH
 argument_list|,
 name|cgenConfiguration
 operator|.
@@ -531,7 +539,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"testPath"
+name|TEST_TEMPLATE_PATH
 argument_list|,
 name|cgenConfiguration
 operator|.
@@ -570,7 +578,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"testPath"
+name|TEST_TEMPLATE_PATH
 argument_list|,
 name|cgenConfiguration
 operator|.
@@ -609,7 +617,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"testPath"
+name|TEST_TEMPLATE_PATH
 argument_list|,
 name|cgenConfiguration
 operator|.
@@ -648,7 +656,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"testPath"
+name|TEST_TEMPLATE_PATH
 argument_list|,
 name|cgenConfiguration
 operator|.
@@ -687,7 +695,7 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"testPath"
+name|TEST_TEMPLATE_PATH
 argument_list|,
 name|cgenConfiguration
 operator|.

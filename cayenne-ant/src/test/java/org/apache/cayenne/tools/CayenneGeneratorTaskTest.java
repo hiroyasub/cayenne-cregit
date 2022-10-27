@@ -727,7 +727,10 @@ argument_list|)
 expr_stmt|;
 name|assertEquals
 argument_list|(
-literal|"target\\testrun\\velotemplate.vm"
+name|convertPath
+argument_list|(
+literal|"target/testrun/velotemplate.vm"
+argument_list|)
 argument_list|,
 name|convertPath
 argument_list|(
