@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Interface for classes that are interested in ProjectSaved events.  */
+comment|/**  * Interface for classes that are interested in ProjectSaved events.  *  * @since 4.3  */
 end_comment
 
 begin_interface
