@@ -292,7 +292,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A ProjectSaver saving project configuration to the file system.  *   * @since 3.1  */
+comment|/**  * A ProjectSaver saving project configuration to the file system.  *  * @since 3.1  */
 end_comment
 
 begin_class
@@ -1391,15 +1391,9 @@ operator|==
 literal|null
 condition|)
 block|{
-name|unit
-operator|.
-name|node
-operator|.
-name|acceptVisitor
-argument_list|(
-operator|new
-name|ConfigurationSourceSetter
-argument_list|(
+name|URLResource
+name|targetUrlResource
+init|=
 operator|new
 name|URLResource
 argument_list|(
@@ -1411,6 +1405,19 @@ operator|.
 name|toURL
 argument_list|()
 argument_list|)
+decl_stmt|;
+name|unit
+operator|.
+name|node
+operator|.
+name|acceptVisitor
+argument_list|(
+operator|new
+name|ConfigurationSourceSetter
+argument_list|(
+name|targetUrlResource
+argument_list|,
+name|nameMapper
 argument_list|)
 argument_list|)
 expr_stmt|;
