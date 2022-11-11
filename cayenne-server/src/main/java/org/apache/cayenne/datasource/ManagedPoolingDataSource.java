@@ -105,6 +105,7 @@ implements|,
 name|ScopeEventListener
 block|{
 specifier|private
+specifier|final
 name|PoolingDataSourceManager
 name|dataSourceManager
 decl_stmt|;
@@ -212,7 +213,7 @@ name|canExpandSize
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Calls {@link #shutdown()} to drain the underlying pool, close open 	 * connections and block the DataSource from creating any new connections. 	 */
+comment|/** 	 * Calls {@link #close()} to drain the underlying pool, close open 	 * connections and block the DataSource from creating any new connections. 	 */
 annotation|@
 name|Override
 specifier|public
@@ -342,7 +343,6 @@ throws|throws
 name|SQLException
 block|{
 return|return
-operator|(
 name|ManagedPoolingDataSource
 operator|.
 name|class
@@ -351,10 +351,7 @@ name|equals
 argument_list|(
 name|iface
 argument_list|)
-operator|)
-condition|?
-literal|true
-else|:
+operator|||
 name|dataSource
 operator|.
 name|isWrapperFor

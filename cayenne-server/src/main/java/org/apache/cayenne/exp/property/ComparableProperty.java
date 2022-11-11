@@ -412,7 +412,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a "< ALL (subquery)" SQL      * @since 5.0      */
+comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a "&lt; ALL (subquery)" SQL      * @since 5.0      */
 specifier|default
 name|Expression
 name|ltAll
@@ -424,7 +424,7 @@ argument_list|>
 name|subquery
 parameter_list|)
 block|{
-name|assertValidateSubqueryForComparison
+name|assertSubqueryIsValidForComparison
 argument_list|(
 name|subquery
 argument_list|)
@@ -446,7 +446,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a "<= ALL (subquery)" SQL      * @since 5.0      */
+comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a "&lt;= ALL (subquery)" SQL      * @since 5.0      */
 specifier|default
 name|Expression
 name|lteAll
@@ -458,7 +458,7 @@ argument_list|>
 name|subquery
 parameter_list|)
 block|{
-name|assertValidateSubqueryForComparison
+name|assertSubqueryIsValidForComparison
 argument_list|(
 name|subquery
 argument_list|)
@@ -480,7 +480,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a "> ALL (subquery)" SQL      * @since 5.0      */
+comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a "&gt; ALL (subquery)" SQL      * @since 5.0      */
 specifier|default
 name|Expression
 name|gtAll
@@ -492,7 +492,7 @@ argument_list|>
 name|subquery
 parameter_list|)
 block|{
-name|assertValidateSubqueryForComparison
+name|assertSubqueryIsValidForComparison
 argument_list|(
 name|subquery
 argument_list|)
@@ -514,7 +514,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a ">= ALL (subquery)" SQL      * @since 5.0      */
+comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a "&gt;= ALL (subquery)" SQL      * @since 5.0      */
 specifier|default
 name|Expression
 name|gteAll
@@ -526,7 +526,7 @@ argument_list|>
 name|subquery
 parameter_list|)
 block|{
-name|assertValidateSubqueryForComparison
+name|assertSubqueryIsValidForComparison
 argument_list|(
 name|subquery
 argument_list|)
@@ -548,7 +548,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a "< ANY (subquery)" SQL      * @since 5.0      */
+comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a "&lt; ANY (subquery)" SQL      * @since 5.0      */
 specifier|default
 name|Expression
 name|ltAny
@@ -560,7 +560,7 @@ argument_list|>
 name|subquery
 parameter_list|)
 block|{
-name|assertValidateSubqueryForComparison
+name|assertSubqueryIsValidForComparison
 argument_list|(
 name|subquery
 argument_list|)
@@ -582,7 +582,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a "<= ANY (subquery)" SQL      * @since 5.0      */
+comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a "&lt;= ANY (subquery)" SQL      * @since 5.0      */
 specifier|default
 name|Expression
 name|lteAny
@@ -594,7 +594,7 @@ argument_list|>
 name|subquery
 parameter_list|)
 block|{
-name|assertValidateSubqueryForComparison
+name|assertSubqueryIsValidForComparison
 argument_list|(
 name|subquery
 argument_list|)
@@ -616,7 +616,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a "> ANY (subquery)" SQL      * @since 5.0      */
+comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a "&gt; ANY (subquery)" SQL      * @since 5.0      */
 specifier|default
 name|Expression
 name|gtAny
@@ -628,7 +628,7 @@ argument_list|>
 name|subquery
 parameter_list|)
 block|{
-name|assertValidateSubqueryForComparison
+name|assertSubqueryIsValidForComparison
 argument_list|(
 name|subquery
 argument_list|)
@@ -650,7 +650,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a ">= ANY (subquery)" SQL      * @since 5.0      */
+comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a "&gt;= ANY (subquery)" SQL      * @since 5.0      */
 specifier|default
 name|Expression
 name|gteAny
@@ -662,7 +662,7 @@ argument_list|>
 name|subquery
 parameter_list|)
 block|{
-name|assertValidateSubqueryForComparison
+name|assertSubqueryIsValidForComparison
 argument_list|(
 name|subquery
 argument_list|)
@@ -690,7 +690,7 @@ parameter_list|<
 name|E
 parameter_list|>
 name|void
-name|assertValidateSubqueryForComparison
+name|assertSubqueryIsValidForComparison
 parameter_list|(
 name|ColumnSelect
 argument_list|<
