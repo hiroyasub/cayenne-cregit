@@ -1767,7 +1767,7 @@ name|properties
 argument_list|)
 expr_stmt|;
 block|}
-comment|/**      * Utility method to perform (re)cast this type, doesn't perform any checks, so use with caution.      *      * @return<code>this</code> casted to the type E      * @param<E> type to cast to      * @since 4.3      */
+comment|/**      * Utility method to perform (re)cast this type, doesn't perform any checks, so use with caution.      *      * @return<code>this</code> casted to the type E      * @param<E> type to cast to      * @since 5.0      */
 annotation|@
 name|SuppressWarnings
 argument_list|(

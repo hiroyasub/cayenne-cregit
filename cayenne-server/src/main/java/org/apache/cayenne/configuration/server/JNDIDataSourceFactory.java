@@ -104,7 +104,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Locates DataSource mapped via JNDI.  *   * @since 3.1  * @deprecated since 4.3, unused by Cayenne  */
+comment|/**  * Locates DataSource mapped via JNDI.  *   * @since 3.1  * @deprecated since 5.0, unused by Cayenne  */
 end_comment
 
 begin_class

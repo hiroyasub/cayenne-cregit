@@ -639,7 +639,7 @@ specifier|transient
 name|EntitySorter
 name|entitySorter
 decl_stmt|;
-comment|/**      * @since 4.3      */
+comment|/**      * @since 5.0      */
 specifier|protected
 specifier|transient
 name|AdhocObjectFactory
@@ -2007,7 +2007,7 @@ return|return
 name|entitySorter
 return|;
 block|}
-comment|/**      * @since 4.3      */
+comment|/**      * @since 5.0      */
 specifier|public
 name|void
 name|setObjectFactory
@@ -2023,7 +2023,7 @@ operator|=
 name|objectFactory
 expr_stmt|;
 block|}
-comment|/**      * @since 4.3      */
+comment|/**      * @since 5.0      */
 specifier|public
 name|AdhocObjectFactory
 name|getObjectFactory

@@ -1462,7 +1462,7 @@ operator|=
 name|supertemplate
 expr_stmt|;
 block|}
-comment|/**      * Sets<code>datamaptemplate</code> property.      * @since 4.3 querytemplate renamed to datamaptemplate      */
+comment|/**      * Sets<code>datamaptemplate</code> property.      * @since 5.0 querytemplate renamed to datamaptemplate      */
 specifier|public
 name|void
 name|setDataMapTemplate
@@ -1478,7 +1478,7 @@ operator|=
 name|datamaptemplate
 expr_stmt|;
 block|}
-comment|/**      * Sets<code>datamapsupertemplate</code> property.      * @since 4.3 querysupertemplate renamed to datamapsupertemplate      */
+comment|/**      * Sets<code>datamapsupertemplate</code> property.      * @since 5.0 querysupertemplate renamed to datamapsupertemplate      */
 specifier|public
 name|void
 name|setDataMapSupertemplate

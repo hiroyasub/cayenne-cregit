@@ -321,12 +321,12 @@ specifier|private
 name|String
 name|embeddableSuperTemplate
 decl_stmt|;
-comment|/**      * @since 4.3 renamed from queryTemplate      */
+comment|/**      * @since 5.0 renamed from queryTemplate      */
 specifier|private
 name|String
 name|dataMapTemplate
 decl_stmt|;
-comment|/**      * @since 4.3 renamed from querySuperTemplate      */
+comment|/**      * @since 5.0 renamed from querySuperTemplate      */
 specifier|private
 name|String
 name|dataMapSuperTemplate

@@ -412,7 +412,7 @@ argument_list|()
 argument_list|)
 return|;
 block|}
-comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a "< ALL (subquery)" SQL      * @since 4.3      */
+comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a "< ALL (subquery)" SQL      * @since 5.0      */
 specifier|default
 name|Expression
 name|ltAll
@@ -446,7 +446,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a "<= ALL (subquery)" SQL      * @since 4.3      */
+comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a "<= ALL (subquery)" SQL      * @since 5.0      */
 specifier|default
 name|Expression
 name|lteAll
@@ -480,7 +480,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a "> ALL (subquery)" SQL      * @since 4.3      */
+comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a "> ALL (subquery)" SQL      * @since 5.0      */
 specifier|default
 name|Expression
 name|gtAll
@@ -514,7 +514,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a ">= ALL (subquery)" SQL      * @since 4.3      */
+comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a ">= ALL (subquery)" SQL      * @since 5.0      */
 specifier|default
 name|Expression
 name|gteAll
@@ -548,7 +548,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a "< ANY (subquery)" SQL      * @since 4.3      */
+comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a "< ANY (subquery)" SQL      * @since 5.0      */
 specifier|default
 name|Expression
 name|ltAny
@@ -582,7 +582,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a "<= ANY (subquery)" SQL      * @since 4.3      */
+comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a "<= ANY (subquery)" SQL      * @since 5.0      */
 specifier|default
 name|Expression
 name|lteAny
@@ -616,7 +616,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a "> ANY (subquery)" SQL      * @since 4.3      */
+comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a "> ANY (subquery)" SQL      * @since 5.0      */
 specifier|default
 name|Expression
 name|gtAny
@@ -650,7 +650,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a ">= ANY (subquery)" SQL      * @since 4.3      */
+comment|/**      * @param subquery to use, must be a single column query.      * @return {@link Expression} that translates to a ">= ANY (subquery)" SQL      * @since 5.0      */
 specifier|default
 name|Expression
 name|gteAny

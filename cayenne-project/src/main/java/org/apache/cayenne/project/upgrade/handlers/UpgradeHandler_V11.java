@@ -108,7 +108,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Upgrade handler for the project version "11" introduced by 4.3.M1 release.  * Changes highlight:  *      - schemas version update  *      - ROP removal  *      - cgen schema changes  *  * @since 4.3  */
+comment|/**  * Upgrade handler for the project version "11" introduced by 5.0.M1 release.  * Changes highlight:  *      - schemas version update  *      - ROP removal  *      - cgen schema changes  *  * @since 5.0  */
 end_comment
 
 begin_class

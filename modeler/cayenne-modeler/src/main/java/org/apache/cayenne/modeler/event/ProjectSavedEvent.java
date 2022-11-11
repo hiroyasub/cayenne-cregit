@@ -28,7 +28,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Triggered when project is saved completely.  *  * @since 4.3  */
+comment|/**  * Triggered when project is saved completely.  *  * @since 5.0  */
 end_comment
 
 begin_class

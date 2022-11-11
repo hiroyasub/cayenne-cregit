@@ -419,7 +419,7 @@ name|H2SQLTreeProcessor
 argument_list|()
 return|;
 block|}
-comment|/**      * @return translator factory for EJBQL queries      * @since 4.3      */
+comment|/**      * @return translator factory for EJBQL queries      * @since 5.0      */
 annotation|@
 name|Override
 specifier|protected

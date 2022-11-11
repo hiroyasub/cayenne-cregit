@@ -246,7 +246,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A descriptor of SelectQuery loaded from EOModel. It is an informal  * "decorator" of Cayenne SelectQuery to provide access to the extra information  * of WebObjects EOFetchSpecification.  *   * @since 1.1  * @since 4.3 this query extends {@link ObjectSelect}  */
+comment|/**  * A descriptor of SelectQuery loaded from EOModel. It is an informal  * "decorator" of Cayenne SelectQuery to provide access to the extra information  * of WebObjects EOFetchSpecification.  *   * @since 1.1  * @since 5.0 this query extends {@link ObjectSelect}  */
 end_comment
 
 begin_class

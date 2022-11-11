@@ -64,7 +64,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Helper JavaBean class that holds DataSource information for the Cayenne-managed DataSource.  * @since 4.3  */
+comment|/**  * Helper JavaBean class that holds DataSource information for the Cayenne-managed DataSource.  * @since 5.0  */
 end_comment
 
 begin_class

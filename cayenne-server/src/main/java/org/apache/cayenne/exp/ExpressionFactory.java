@@ -6393,7 +6393,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @since 4.3 	 */
+comment|/** 	 * @since 5.0 	 */
 specifier|public
 specifier|static
 name|Expression
@@ -6418,7 +6418,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/** 	 * @since 4.3 	 */
+comment|/** 	 * @since 5.0 	 */
 specifier|public
 specifier|static
 name|Expression

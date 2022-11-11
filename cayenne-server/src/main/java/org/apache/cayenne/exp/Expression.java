@@ -596,7 +596,7 @@ name|CUSTOM_OP
 init|=
 literal|53
 decl_stmt|;
-comment|/** 	 * @since 4.3 	 */
+comment|/** 	 * @since 5.0 	 */
 specifier|public
 specifier|static
 specifier|final
@@ -605,7 +605,7 @@ name|ALL
 init|=
 literal|54
 decl_stmt|;
-comment|/** 	 * @since 4.3 	 */
+comment|/** 	 * @since 5.0 	 */
 specifier|public
 specifier|static
 specifier|final

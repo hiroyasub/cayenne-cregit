@@ -2240,7 +2240,7 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * {@inheritDoc} 	 * 	 * @since 4.3 	 */
+comment|/** 	 * {@inheritDoc} 	 * 	 * @since 5.0 	 */
 annotation|@
 name|Override
 specifier|public
@@ -2260,7 +2260,7 @@ name|key
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * {@inheritDoc} 	 * 	 * @since 4.3 	 */
+comment|/** 	 * {@inheritDoc} 	 * 	 * @since 5.0 	 */
 annotation|@
 name|Override
 specifier|public

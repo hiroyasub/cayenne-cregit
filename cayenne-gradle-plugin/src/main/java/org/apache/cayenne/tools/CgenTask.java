@@ -443,7 +443,7 @@ specifier|private
 name|boolean
 name|force
 decl_stmt|;
-comment|/**      * Location of Velocity template file for DataMap class generation.      * DataMap class provides utilities for usage of the Cayenne queries stored in the DataMap.      * If omitted, default template is used.      *      * @since 4.3 renamed from queryTemplate      */
+comment|/**      * Location of Velocity template file for DataMap class generation.      * DataMap class provides utilities for usage of the Cayenne queries stored in the DataMap.      * If omitted, default template is used.      *      * @since 5.0 renamed from queryTemplate      */
 annotation|@
 name|Input
 annotation|@
@@ -452,7 +452,7 @@ specifier|private
 name|String
 name|dataMapTemplate
 decl_stmt|;
-comment|/**      * Location of Velocity template file for DataMap superclass generation.      * DataMap class provides utilities for usage of the Cayenne queries stored in the DataMap.      * If omitted, default template is used.      * Ignored unless<code>makepairs</code> set to<code>true</code>.      *      * @since 4.3 renamed from querySuperTemplate      */
+comment|/**      * Location of Velocity template file for DataMap superclass generation.      * DataMap class provides utilities for usage of the Cayenne queries stored in the DataMap.      * If omitted, default template is used.      * Ignored unless<code>makepairs</code> set to<code>true</code>.      *      * @since 5.0 renamed from querySuperTemplate      */
 annotation|@
 name|Input
 annotation|@

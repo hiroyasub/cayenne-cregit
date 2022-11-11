@@ -802,7 +802,7 @@ operator|=
 name|scale
 expr_stmt|;
 block|}
-comment|/**      * @return java class guessed by the JDBC type of this attribute      * @since 4.3      */
+comment|/**      * @return java class guessed by the JDBC type of this attribute      * @since 5.0      */
 specifier|public
 name|String
 name|getJavaClass
