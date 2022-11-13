@@ -348,19 +348,19 @@ argument_list|)
 expr_stmt|;
 name|ProjectModule
 operator|.
-name|contributeExtensions
+name|extend
 argument_list|(
 name|binder
 argument_list|)
 operator|.
-name|add
+name|addExtension
 argument_list|(
 name|CgenExtension
 operator|.
 name|class
 argument_list|)
 operator|.
-name|add
+name|addExtension
 argument_list|(
 name|InfoExtension
 operator|.
@@ -402,6 +402,7 @@ name|class
 argument_list|)
 expr_stmt|;
 block|}
+comment|// TODO: either convert to an Extender to make non-public
 specifier|public
 specifier|static
 name|ListBuilder

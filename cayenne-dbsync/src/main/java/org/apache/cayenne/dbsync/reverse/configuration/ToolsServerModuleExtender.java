@@ -11,9 +11,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|project
+name|dbsync
 operator|.
-name|extension
+name|reverse
+operator|.
+name|configuration
 package|;
 end_package
 
@@ -27,38 +29,65 @@ name|cayenne
 operator|.
 name|configuration
 operator|.
-name|ConfigurationNodeVisitor
+name|server
+operator|.
+name|ServerModuleExtender
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|di
+operator|.
+name|Binder
 import|;
 end_import
 
 begin_comment
-comment|/**  *<p>DataMap XML file extension mechanics.</p>  *<p>  *     Can be used to enhance datamap.map.xml files with additional (really random) information.  *     By default extensions not used by {@link org.apache.cayenne.configuration.server.ServerRuntime}  *     so they can safely store big chunks of data.  *</p>  *<p>  *     Extensions can be contributed by {@link org.apache.cayenne.project.ProjectModuleExtender#addExtension(ProjectExtension)}  *     {@link org.apache.cayenne.project.ProjectModule} currently used by Modeler and cli tools, e.g. cdbimport and cgen.  *</p>  *  * @since 4.1  */
+comment|// this class exists so that ToolsModule can call "initAllExtensions()" that is protected in ServerModuleExtender.
 end_comment
 
-begin_interface
-specifier|public
-interface|interface
-name|ProjectExtension
+begin_class
+class|class
+name|ToolsServerModuleExtender
+extends|extends
+name|ServerModuleExtender
 block|{
-comment|/**      * @return delegate that handle loading phase of XML processing      */
-name|LoaderDelegate
-name|createLoaderDelegate
-parameter_list|()
-function_decl|;
-comment|/**      * @return delegate that handle saving phase of XML processing      */
-name|SaverDelegate
-name|createSaverDelegate
-parameter_list|()
-function_decl|;
-name|ConfigurationNodeVisitor
-argument_list|<
-name|String
-argument_list|>
-name|createNamingDelegate
-parameter_list|()
-function_decl|;
+specifier|public
+name|ToolsServerModuleExtender
+parameter_list|(
+name|Binder
+name|binder
+parameter_list|)
+block|{
+name|super
+argument_list|(
+name|binder
+argument_list|)
+expr_stmt|;
 block|}
-end_interface
+annotation|@
+name|Override
+specifier|protected
+name|ServerModuleExtender
+name|initAllExtensions
+parameter_list|()
+block|{
+return|return
+name|super
+operator|.
+name|initAllExtensions
+argument_list|()
+return|;
+block|}
+block|}
+end_class
 
 end_unit
 

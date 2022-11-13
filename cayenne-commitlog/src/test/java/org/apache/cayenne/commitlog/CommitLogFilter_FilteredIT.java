@@ -364,10 +364,14 @@ argument_list|()
 operator|.
 name|addModule
 argument_list|(
+name|b
+lambda|->
 name|CommitLogModule
 operator|.
 name|extend
-argument_list|()
+argument_list|(
+name|b
+argument_list|)
 operator|.
 name|commitLogAnnotationEntitiesOnly
 argument_list|()
@@ -376,9 +380,6 @@ name|addListener
 argument_list|(
 name|mockListener
 argument_list|)
-operator|.
-name|module
-argument_list|()
 argument_list|)
 return|;
 block|}

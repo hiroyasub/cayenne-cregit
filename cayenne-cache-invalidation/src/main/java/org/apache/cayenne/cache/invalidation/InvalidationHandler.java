@@ -19,6 +19,18 @@ end_package
 
 begin_import
 import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|Persistent
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -39,18 +51,6 @@ name|Function
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|Persistent
-import|;
-end_import
-
 begin_comment
 comment|/**  * A pluggable handler to invalidate cache groups on changes in certain objects.  * @since 4.0  */
 end_comment
@@ -60,7 +60,7 @@ specifier|public
 interface|interface
 name|InvalidationHandler
 block|{
-comment|/**      * @return invalidation function or null if there is nothing to invalidate      */
+comment|/**      * @return invalidation function or null if this handler does not support invalidation of the given type.      */
 name|Function
 argument_list|<
 name|Persistent
