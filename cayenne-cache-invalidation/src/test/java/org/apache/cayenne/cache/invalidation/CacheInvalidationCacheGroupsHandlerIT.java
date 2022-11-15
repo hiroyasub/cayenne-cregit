@@ -214,21 +214,6 @@ annotation|@
 name|Override
 specifier|protected
 name|Module
-name|extendInvalidationModule
-parameter_list|()
-block|{
-return|return
-name|binder
-lambda|->
-block|{
-comment|// do nothing module
-block|}
-return|;
-block|}
-annotation|@
-name|Override
-specifier|protected
-name|Module
 name|buildCustomModule
 parameter_list|()
 block|{

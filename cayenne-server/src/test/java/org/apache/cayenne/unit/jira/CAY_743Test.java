@@ -195,12 +195,12 @@ argument_list|)
 expr_stmt|;
 name|ServerModule
 operator|.
-name|contributeProjectLocations
+name|extend
 argument_list|(
 name|binder
 argument_list|)
 operator|.
-name|add
+name|addProjectLocation
 argument_list|(
 literal|"cay743/cayenne-domain.xml"
 argument_list|)

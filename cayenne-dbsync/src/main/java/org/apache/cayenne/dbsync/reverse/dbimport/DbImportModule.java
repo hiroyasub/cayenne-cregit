@@ -376,12 +376,12 @@ argument_list|)
 expr_stmt|;
 name|ProjectModule
 operator|.
-name|contributeExtensions
+name|extend
 argument_list|(
 name|binder
 argument_list|)
 operator|.
-name|add
+name|addExtension
 argument_list|(
 name|DbImportExtension
 operator|.

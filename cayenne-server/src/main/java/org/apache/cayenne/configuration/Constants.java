@@ -23,9 +23,11 @@ name|apache
 operator|.
 name|cayenne
 operator|.
-name|di
+name|access
 operator|.
-name|Binder
+name|types
+operator|.
+name|ExtendedType
 import|;
 end_import
 
@@ -39,7 +41,7 @@ interface|interface
 name|Constants
 block|{
 comment|// DI "collections"
-comment|/**      * A DI container key for the Map&lt;String, String&gt; storing properties      * used by built-in Cayenne service.      *      * @see org.apache.cayenne.configuration.server.ServerModule#contributeProperties(Binder).      */
+comment|/**      * A DI container key for the Map&lt;String, String&gt; storing properties      * used by built-in Cayenne service.      *      * @see org.apache.cayenne.configuration.server.ServerModuleExtender#setProperty(String, Object)      */
 name|String
 name|PROPERTIES_MAP
 init|=
@@ -51,7 +53,7 @@ name|SERVER_ADAPTER_DETECTORS_LIST
 init|=
 literal|"cayenne.server.adapter_detectors"
 decl_stmt|;
-comment|/**      * A DI container key for the List&lt;Object&gt; storing lifecycle events listeners.      *      * @see org.apache.cayenne.configuration.server.ServerModule#contributeDomainListeners(Binder).      */
+comment|/**      * A DI container key for the List&lt;Object&gt; storing lifecycle events listeners.      *      * @see org.apache.cayenne.configuration.server.ServerModuleExtender#addListener(Object)       */
 name|String
 name|SERVER_DOMAIN_LISTENERS_LIST
 init|=
@@ -63,19 +65,19 @@ name|SERVER_PROJECT_LOCATIONS_LIST
 init|=
 literal|"cayenne.server.project_locations"
 decl_stmt|;
-comment|/**      * A DI container key for the List&lt;ExtendedType&gt; storing default      * adapter-agnostic ExtendedTypes.      *      * @see org.apache.cayenne.configuration.server.ServerModule#contributeDefaultTypes(Binder).      */
+comment|/**      * A DI container key for the List&lt;ExtendedType&gt; storing default      * adapter-agnostic ExtendedTypes.      *      * @see org.apache.cayenne.configuration.server.ServerModuleExtender#addDefaultExtendedType(ExtendedType)       */
 name|String
 name|SERVER_DEFAULT_TYPES_LIST
 init|=
 literal|"cayenne.server.default_types"
 decl_stmt|;
-comment|/**      * A DI container key for the List&lt;ExtendedType&gt; storing a      * user-provided ExtendedTypes.      *      * @see org.apache.cayenne.configuration.server.ServerModule#contributeUserTypes(Binder).      */
+comment|/**      * A DI container key for the List&lt;ExtendedType&gt; storing a      * user-provided ExtendedTypes.      *      * @see org.apache.cayenne.configuration.server.ServerModuleExtender#addUserExtendedType(ExtendedType)       */
 name|String
 name|SERVER_USER_TYPES_LIST
 init|=
 literal|"cayenne.server.user_types"
 decl_stmt|;
-comment|/**      * A DI container key for the List&lt;ExtendedTypeFactory&gt; storing      * default and user-provided ExtendedTypeFactories.      *      * @see org.apache.cayenne.configuration.server.ServerModule#contributeTypeFactories(Binder).      */
+comment|/**      * A DI container key for the List&lt;ExtendedTypeFactory&gt; storing      * default and user-provided ExtendedTypeFactories.      *      * @see org.apache.cayenne.configuration.server.ServerModuleExtender#addExtendedTypeFactory(Class)       */
 name|String
 name|SERVER_TYPE_FACTORIES_LIST
 init|=
@@ -178,7 +180,7 @@ name|QUERY_EXECUTION_TIME_LOGGING_THRESHOLD_PROPERTY
 init|=
 literal|"cayenne.server.query_execution_time_logging_threshold"
 decl_stmt|;
-comment|/**      * Snapshot cache max size      *      * @see org.apache.cayenne.configuration.server.ServerModule#setSnapshotCacheSize(Binder, int)      * @since 4.0      */
+comment|/**      * Snapshot cache max size      *      * @see org.apache.cayenne.configuration.server.ServerModuleExtender#snapshotCacheSize(int)       * @since 4.0      */
 name|String
 name|SNAPSHOT_CACHE_SIZE_PROPERTY
 init|=

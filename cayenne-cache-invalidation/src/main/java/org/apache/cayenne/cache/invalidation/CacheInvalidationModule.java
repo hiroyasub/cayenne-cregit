@@ -75,20 +75,6 @@ name|Module
 import|;
 end_import
 
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|tx
-operator|.
-name|TransactionFilter
-import|;
-end_import
-
 begin_comment
 comment|/**  * This module is autoloaded, all extensions should be done via {@link CacheInvalidationModuleExtender}.  *  * @since 4.0  */
 end_comment
@@ -100,6 +86,14 @@ name|CacheInvalidationModule
 implements|implements
 name|Module
 block|{
+comment|/**      * @deprecated in favor of {@link #extend(Binder)}      */
+annotation|@
+name|Deprecated
+argument_list|(
+name|since
+operator|=
+literal|"5.0"
+argument_list|)
 specifier|static
 name|ListBuilder
 argument_list|<
@@ -122,17 +116,22 @@ name|class
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a new "extender" to customize the defaults provided by this module.      *      * @return a new "extender" to customize the defaults provided by this module.      */
+comment|/**      * Returns a new "extender" to customize the defaults provided by this module.      *      * @return a new "extender" to customize the defaults provided by this module.      * @since 5.0      */
 specifier|public
 specifier|static
 name|CacheInvalidationModuleExtender
 name|extend
-parameter_list|()
+parameter_list|(
+name|Binder
+name|binder
+parameter_list|)
 block|{
 return|return
 operator|new
 name|CacheInvalidationModuleExtender
-argument_list|()
+argument_list|(
+name|binder
+argument_list|)
 return|;
 block|}
 annotation|@
@@ -161,35 +160,36 @@ operator|.
 name|class
 argument_list|)
 expr_stmt|;
-name|contributeInvalidationHandler
+name|extend
 argument_list|(
 name|binder
 argument_list|)
 operator|.
-name|add
+name|initAllExtensions
+argument_list|()
+operator|.
+name|addHandler
 argument_list|(
 name|CacheGroupsHandler
 operator|.
 name|class
 argument_list|)
 expr_stmt|;
-comment|// want the filter to be INSIDE transaction by default
+comment|// want the filter to be INSIDE transactions by default
 name|ServerModule
 operator|.
-name|contributeDomainSyncFilters
+name|extend
 argument_list|(
 name|binder
 argument_list|)
 operator|.
-name|insertBefore
+name|addSyncFilter
 argument_list|(
 name|CacheInvalidationFilter
 operator|.
 name|class
 argument_list|,
-name|TransactionFilter
-operator|.
-name|class
+literal|true
 argument_list|)
 expr_stmt|;
 block|}
