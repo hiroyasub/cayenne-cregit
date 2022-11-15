@@ -417,7 +417,7 @@ argument_list|)
 expr_stmt|;
 name|graph
 operator|.
-name|add
+name|addWithOverride
 argument_list|(
 name|key
 argument_list|,
@@ -464,7 +464,7 @@ argument_list|)
 expr_stmt|;
 name|graph
 operator|.
-name|add
+name|addWithOverride
 argument_list|(
 name|before
 argument_list|,
@@ -567,7 +567,7 @@ control|)
 block|{
 name|graph
 operator|.
-name|add
+name|addWithOverride
 argument_list|(
 name|key
 argument_list|,
@@ -631,7 +631,7 @@ control|)
 block|{
 name|graph
 operator|.
-name|add
+name|addWithOverride
 argument_list|(
 name|before
 argument_list|,
