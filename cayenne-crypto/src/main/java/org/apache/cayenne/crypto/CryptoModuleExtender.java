@@ -291,7 +291,7 @@ name|columnMapperType
 decl_stmt|;
 specifier|private
 name|String
-name|cipherAlgoritm
+name|cipherAlgorithm
 decl_stmt|;
 specifier|private
 name|String
@@ -382,7 +382,7 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|cipherAlgoritm
+name|cipherAlgorithm
 operator|=
 name|Objects
 operator|.
@@ -993,7 +993,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|cipherAlgoritm
+name|cipherAlgorithm
 operator|!=
 literal|null
 condition|)
@@ -1006,7 +1006,7 @@ name|CryptoConstants
 operator|.
 name|CIPHER_ALGORITHM
 argument_list|,
-name|cipherAlgoritm
+name|cipherAlgorithm
 argument_list|)
 expr_stmt|;
 block|}
