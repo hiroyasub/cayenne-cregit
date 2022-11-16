@@ -230,6 +230,23 @@ if|if
 condition|(
 name|javaMajorVersion
 operator|>=
+literal|19
+condition|)
+block|{
+name|versions
+operator|=
+operator|new
+name|String
+index|[]
+block|{
+literal|"7.6"
+block|}
+expr_stmt|;
+block|}
+if|else if
+condition|(
+name|javaMajorVersion
+operator|>=
 literal|17
 condition|)
 block|{
