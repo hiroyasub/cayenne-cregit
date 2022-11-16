@@ -23,10 +23,6 @@ begin_comment
 comment|/**  * @since 4.0  */
 end_comment
 
-begin_comment
-comment|// we can't use<byte[]> , so parameterizing this converter to Object
-end_comment
-
 begin_class
 specifier|public
 class|class
@@ -34,7 +30,8 @@ name|BytesToBytesConverter
 implements|implements
 name|BytesConverter
 argument_list|<
-name|Object
+name|byte
+index|[]
 argument_list|>
 block|{
 specifier|public
@@ -42,7 +39,8 @@ specifier|static
 specifier|final
 name|BytesConverter
 argument_list|<
-name|Object
+name|byte
+index|[]
 argument_list|>
 name|INSTANCE
 init|=
@@ -57,22 +55,20 @@ name|byte
 index|[]
 name|toBytes
 parameter_list|(
-name|Object
+name|byte
+index|[]
 name|value
 parameter_list|)
 block|{
 return|return
-operator|(
-name|byte
-index|[]
-operator|)
 name|value
 return|;
 block|}
 annotation|@
 name|Override
 specifier|public
-name|Object
+name|byte
+index|[]
 name|fromBytes
 parameter_list|(
 name|byte

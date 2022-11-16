@@ -355,9 +355,7 @@ operator|.
 name|KS1_JCEKS
 argument_list|)
 decl_stmt|;
-name|Module
-name|module
-init|=
+return|return
 name|b
 lambda|->
 block|{
@@ -405,9 +403,6 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-decl_stmt|;
-return|return
-name|module
 return|;
 block|}
 block|}
