@@ -16,7 +16,7 @@ package|;
 end_package
 
 begin_comment
-comment|/**  * @since 4.3  */
+comment|/**  * @since 5.0  */
 end_comment
 
 begin_class

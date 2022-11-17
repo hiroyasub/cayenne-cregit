@@ -184,7 +184,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Performs a preset of action to generate a class preview in the template editor  *  * @since 4.3  */
+comment|/**  * Performs a preset of action to generate a class preview in the template editor  *  * @since 5.0  */
 end_comment
 
 begin_class
