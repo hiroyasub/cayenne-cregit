@@ -13,7 +13,9 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
-name|dialog
+name|editor
+operator|.
+name|cgen
 operator|.
 name|templateeditor
 package|;
@@ -139,7 +141,7 @@ decl_stmt|;
 annotation|@
 name|Inject
 argument_list|(
-name|TemplateEditorController
+name|PreviewActionConfigurator
 operator|.
 name|TEMPLATE_EDITOR_WRITER
 argument_list|)

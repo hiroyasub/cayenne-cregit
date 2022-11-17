@@ -865,20 +865,6 @@ name|path
 argument_list|)
 return|;
 block|}
-comment|/**      * Returns a new instance of CodeTemplateManager.      */
-specifier|public
-name|CodeTemplateManager
-name|getCodeTemplateManager
-parameter_list|()
-block|{
-return|return
-operator|new
-name|CodeTemplateManager
-argument_list|(
-name|this
-argument_list|)
-return|;
-block|}
 comment|/**      * Reinitializes ModelerClassLoader from preferences.      */
 specifier|public
 name|void

@@ -15,6 +15,16 @@ name|gen
 package|;
 end_package
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Arrays
+import|;
+end_import
+
 begin_comment
 comment|/**  * Defines class generation template types.  *   * @since 3.0  */
 end_comment
@@ -30,7 +40,7 @@ literal|false
 argument_list|,
 literal|"Single Entity Class"
 argument_list|,
-literal|"singleclass"
+literal|"templates/v4_1/singleclass.vm"
 argument_list|)
 block|,
 name|ENTITY_SUPERCLASS
@@ -39,7 +49,7 @@ literal|true
 argument_list|,
 literal|"Entity Superclass"
 argument_list|,
-literal|"superclass"
+literal|"templates/v4_1/superclass.vm"
 argument_list|)
 block|,
 name|ENTITY_SUBCLASS
@@ -48,7 +58,7 @@ literal|false
 argument_list|,
 literal|"Entity Subclass"
 argument_list|,
-literal|"subclass"
+literal|"templates/v4_1/subclass.vm"
 argument_list|)
 block|,
 name|EMBEDDABLE_SINGLE_CLASS
@@ -57,7 +67,7 @@ literal|false
 argument_list|,
 literal|"Single Embeddable Class"
 argument_list|,
-literal|"embeddable-singleclass"
+literal|"templates/v4_1/embeddable-singleclass.vm"
 argument_list|)
 block|,
 name|EMBEDDABLE_SUPERCLASS
@@ -66,7 +76,7 @@ literal|true
 argument_list|,
 literal|"Embeddable Superclass"
 argument_list|,
-literal|"embeddable-superclass"
+literal|"templates/v4_1/embeddable-superclass.vm"
 argument_list|)
 block|,
 name|EMBEDDABLE_SUBCLASS
@@ -75,7 +85,7 @@ literal|false
 argument_list|,
 literal|"Embeddable Subclass"
 argument_list|,
-literal|"embeddable-subclass"
+literal|"templates/v4_1/embeddable-subclass.vm"
 argument_list|)
 block|,
 name|DATAMAP_SINGLE_CLASS
@@ -84,7 +94,7 @@ literal|false
 argument_list|,
 literal|"Single DataMap Class"
 argument_list|,
-literal|"datamap-singleclass"
+literal|"templates/v4_1/datamap-singleclass.vm"
 argument_list|)
 block|,
 name|DATAMAP_SUPERCLASS
@@ -93,7 +103,7 @@ literal|true
 argument_list|,
 literal|"DataMap Superclass"
 argument_list|,
-literal|"datamap-superclass"
+literal|"templates/v4_1/datamap-superclass.vm"
 argument_list|)
 block|,
 name|DATAMAP_SUBCLASS
@@ -102,7 +112,7 @@ literal|false
 argument_list|,
 literal|"DataMap Subclass"
 argument_list|,
-literal|"datamap-subclass"
+literal|"templates/v4_1/datamap-subclass.vm"
 argument_list|)
 block|;
 specifier|private
@@ -117,24 +127,8 @@ name|readableName
 decl_stmt|;
 specifier|private
 specifier|final
-name|String
-name|fileName
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|EXTENSION
-init|=
-literal|".vm"
-decl_stmt|;
-specifier|private
-specifier|static
-specifier|final
-name|String
-name|TEMPLATES_DIR
-init|=
-literal|"templates/v4_1/"
+name|CgenTemplate
+name|defaultTemplate
 decl_stmt|;
 name|TemplateType
 parameter_list|(
@@ -145,7 +139,7 @@ name|String
 name|readableName
 parameter_list|,
 name|String
-name|fileName
+name|defaultTemplate
 parameter_list|)
 block|{
 name|this
@@ -162,9 +156,17 @@ name|readableName
 expr_stmt|;
 name|this
 operator|.
-name|fileName
+name|defaultTemplate
 operator|=
-name|fileName
+operator|new
+name|CgenTemplate
+argument_list|(
+name|defaultTemplate
+argument_list|,
+literal|true
+argument_list|,
+name|this
+argument_list|)
 expr_stmt|;
 block|}
 specifier|public
@@ -187,35 +189,23 @@ return|;
 block|}
 specifier|public
 name|String
-name|fileName
-parameter_list|()
-block|{
-return|return
-name|fileName
-return|;
-block|}
-specifier|public
-name|String
-name|fullFileName
-parameter_list|()
-block|{
-return|return
-name|fileName
-operator|+
-name|EXTENSION
-return|;
-block|}
-specifier|public
-name|String
 name|pathFromSourceRoot
 parameter_list|()
 block|{
 return|return
-name|TEMPLATES_DIR
-operator|+
-name|fileName
-operator|+
-name|EXTENSION
+name|defaultTemplate
+operator|.
+name|getData
+argument_list|()
+return|;
+block|}
+specifier|public
+name|CgenTemplate
+name|defaultTemplate
+parameter_list|()
+block|{
+return|return
+name|defaultTemplate
 return|;
 block|}
 specifier|public
@@ -261,44 +251,36 @@ return|;
 block|}
 specifier|public
 specifier|static
-name|TemplateType
-name|byPath
+name|boolean
+name|isDefault
 parameter_list|(
 name|String
-name|path
+name|templateText
 parameter_list|)
 block|{
-for|for
-control|(
-name|TemplateType
-name|templateType
-range|:
-name|TemplateType
+return|return
+name|Arrays
 operator|.
+name|stream
+argument_list|(
 name|values
 argument_list|()
-control|)
-block|{
-if|if
-condition|(
-name|templateType
+argument_list|)
+operator|.
+name|anyMatch
+argument_list|(
+name|t
+lambda|->
+name|t
 operator|.
 name|pathFromSourceRoot
 argument_list|()
 operator|.
 name|equals
 argument_list|(
-name|path
+name|templateText
 argument_list|)
-condition|)
-block|{
-return|return
-name|templateType
-return|;
-block|}
-block|}
-return|return
-literal|null
+argument_list|)
 return|;
 block|}
 block|}

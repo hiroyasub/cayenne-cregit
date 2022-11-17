@@ -155,6 +155,20 @@ name|cayenne
 operator|.
 name|gen
 operator|.
+name|CgenTemplate
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|gen
+operator|.
 name|TemplateType
 import|;
 end_import
@@ -284,7 +298,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * Maven mojo to perform class generation from data cgenConfiguration. This class is an Maven  * adapter to DefaultClassGenerator class.  *   * @since 3.0  */
+comment|/**  * Maven mojo to perform class generation from data cgenConfiguration. This class is an Maven  * adapter to DefaultClassGenerator class.  *  * @since 3.0  */
 end_comment
 
 begin_class
@@ -320,14 +334,14 @@ index|[
 literal|0
 index|]
 decl_stmt|;
-comment|/** 	 * Path to additional DataMap XML files to use for class generation. 	 */
+comment|/**      * Path to additional DataMap XML files to use for class generation.      */
 annotation|@
 name|Parameter
 specifier|private
 name|File
 name|additionalMaps
 decl_stmt|;
-comment|/** 	 * Default destination directory for Java classes (ignoring their package names). 	 */
+comment|/**      * Default destination directory for Java classes (ignoring their package names).      */
 annotation|@
 name|Parameter
 argument_list|(
@@ -339,49 +353,49 @@ specifier|private
 name|File
 name|defaultDir
 decl_stmt|;
-comment|/** 	 * Destination directory for Java classes (ignoring their package names). 	 */
+comment|/**      * Destination directory for Java classes (ignoring their package names).      */
 annotation|@
 name|Parameter
 specifier|private
 name|File
 name|destDir
 decl_stmt|;
-comment|/** 	 * Specify generated file encoding if different from the default on current 	 * platform. Target encoding must be supported by the JVM running Maven 	 * build. Standard encodings supported by Java on all platforms are 	 * US-ASCII, ISO-8859-1, UTF-8, UTF-16BE, UTF-16LE, UTF-16. See Sun Java 	 * Docs for java.nio.charset.Charset for more information. 	 */
+comment|/**      * Specify generated file encoding if different from the default on current      * platform. Target encoding must be supported by the JVM running Maven      * build. Standard encodings supported by Java on all platforms are      * US-ASCII, ISO-8859-1, UTF-8, UTF-16BE, UTF-16LE, UTF-16. See Sun Java      * Docs for java.nio.charset.Charset for more information.      */
 annotation|@
 name|Parameter
 specifier|private
 name|String
 name|encoding
 decl_stmt|;
-comment|/** 	 * Entities (expressed as a perl5 regex) to exclude from template 	 * generation. (Default is to include all entities in the DataMap). 	 */
+comment|/**      * Entities (expressed as a perl5 regex) to exclude from template      * generation. (Default is to include all entities in the DataMap).      */
 annotation|@
 name|Parameter
 specifier|private
 name|String
 name|excludeEntities
 decl_stmt|;
-comment|/** 	 * Entities (expressed as a perl5 regex) to include in template generation. 	 * (Default is to include all entities in the DataMap). 	 */
+comment|/**      * Entities (expressed as a perl5 regex) to include in template generation.      * (Default is to include all entities in the DataMap).      */
 annotation|@
 name|Parameter
 specifier|private
 name|String
 name|includeEntities
 decl_stmt|;
-comment|/** 	 * @since 4.1 	 * Embeddables (expressed as a perl5 regex) to exclude from template 	 * generation. (Default is to include all embeddables in the DataMap). 	 */
+comment|/**      * @since 4.1      * Embeddables (expressed as a perl5 regex) to exclude from template      * generation. (Default is to include all embeddables in the DataMap).      */
 annotation|@
 name|Parameter
 specifier|private
 name|String
 name|excludeEmbeddables
 decl_stmt|;
-comment|/** 	 * If set to<code>true</code>, will generate subclass/superclass pairs, 	 * with all generated code included in superclass (default is 	 *<code>true</code>). 	 */
+comment|/**      * If set to<code>true</code>, will generate subclass/superclass pairs,      * with all generated code included in superclass (default is      *<code>true</code>).      */
 annotation|@
 name|Parameter
 specifier|private
 name|Boolean
 name|makePairs
 decl_stmt|;
-comment|/** 	 * DataMap XML file to use as a base for class generation. 	 */
+comment|/**      * DataMap XML file to use as a base for class generation.      */
 annotation|@
 name|Parameter
 argument_list|(
@@ -393,63 +407,63 @@ specifier|private
 name|File
 name|map
 decl_stmt|;
-comment|/** 	 * Specifies generator iteration target.&quot;entity&quot; performs one 	 * iteration for each selected entity.&quot;datamap&quot; performs one 	 * iteration per datamap (This is always one iteration since cgen currently 	 * supports specifying one-and-only-one datamap). 	 * (Default is&quot;entity&quot;) 	 */
+comment|/**      * Specifies generator iteration target.&quot;entity&quot; performs one      * iteration for each selected entity.&quot;datamap&quot; performs one      * iteration per datamap (This is always one iteration since cgen currently      * supports specifying one-and-only-one datamap).      * (Default is&quot;entity&quot;)      */
 annotation|@
 name|Parameter
 specifier|private
 name|String
 name|mode
 decl_stmt|;
-comment|/** 	 * Name of file for generated output. (Default is&quot;*.java&quot;) 	 */
+comment|/**      * Name of file for generated output. (Default is&quot;*.java&quot;)      */
 annotation|@
 name|Parameter
 specifier|private
 name|String
 name|outputPattern
 decl_stmt|;
-comment|/** 	 * If set to<code>true</code>, will overwrite older versions of generated 	 * classes. Ignored unless makepairs is set to<code>false</code>. 	 */
+comment|/**      * If set to<code>true</code>, will overwrite older versions of generated      * classes. Ignored unless makepairs is set to<code>false</code>.      */
 annotation|@
 name|Parameter
 specifier|private
 name|Boolean
 name|overwrite
 decl_stmt|;
-comment|/** 	 * Java package name of generated superclasses. Ignored unless 	 *<code>makepairs</code> set to<code>true</code>. If omitted, each 	 * superclass will be assigned the same package as subclass. Note that 	 * having superclass in a different package would only make sense when 	 *<code>usepkgpath</code> is set to<code>true</code>. Otherwise classes 	 * from different packages will end up in the same directory. 	 */
+comment|/**      * Java package name of generated superclasses. Ignored unless      *<code>makepairs</code> set to<code>true</code>. If omitted, each      * superclass will be assigned the same package as subclass. Note that      * having superclass in a different package would only make sense when      *<code>usepkgpath</code> is set to<code>true</code>. Otherwise classes      * from different packages will end up in the same directory.      */
 annotation|@
 name|Parameter
 specifier|private
 name|String
 name|superPkg
 decl_stmt|;
-comment|/** 	 * Location of Velocity template file for Entity superclass generation. 	 * Ignored unless<code>makepairs</code> set to<code>true</code>. If 	 * omitted, default template is used. 	 */
+comment|/**      * Location of Velocity template file for Entity superclass generation.      * Ignored unless<code>makepairs</code> set to<code>true</code>. If      * omitted, default template is used.      */
 annotation|@
 name|Parameter
 specifier|private
 name|String
 name|superTemplate
 decl_stmt|;
-comment|/** 	 * Location of Velocity template file for Entity class generation. If 	 * omitted, default template is used. 	 */
+comment|/**      * Location of Velocity template file for Entity class generation. If      * omitted, default template is used.      */
 annotation|@
 name|Parameter
 specifier|private
 name|String
 name|template
 decl_stmt|;
-comment|/** 	 * Location of Velocity template file for Embeddable superclass generation. 	 * Ignored unless<code>makepairs</code> set to<code>true</code>. If 	 * omitted, default template is used. 	 */
+comment|/**      * Location of Velocity template file for Embeddable superclass generation.      * Ignored unless<code>makepairs</code> set to<code>true</code>. If      * omitted, default template is used.      */
 annotation|@
 name|Parameter
 specifier|private
 name|String
 name|embeddableSuperTemplate
 decl_stmt|;
-comment|/** 	 * Location of Velocity template file for Embeddable class generation. If 	 * omitted, default template is used. 	 */
+comment|/**      * Location of Velocity template file for Embeddable class generation. If      * omitted, default template is used.      */
 annotation|@
 name|Parameter
 specifier|private
 name|String
 name|embeddableTemplate
 decl_stmt|;
-comment|/** 	 * If set to<code>true</code> (default), a directory tree will be generated 	 * in "destDir" corresponding to the class package structure, if set to 	 *<code>false</code>, classes will be generated in&quot;destDir&quot; 	 * ignoring their package. 	 */
+comment|/**      * If set to<code>true</code> (default), a directory tree will be generated      * in "destDir" corresponding to the class package structure, if set to      *<code>false</code>, classes will be generated in&quot;destDir&quot;      * ignoring their package.      */
 annotation|@
 name|Parameter
 specifier|private
@@ -463,7 +477,7 @@ specifier|private
 name|Boolean
 name|createPropertyNames
 decl_stmt|;
-comment|/** 	 * If set to<code>true</code>, will skip file modification time validation and regenerate all. 	 * Default is<code>false</code>. 	 * 	 * @since 4.1 	 */
+comment|/**      * If set to<code>true</code>, will skip file modification time validation and regenerate all.      * Default is<code>false</code>.      *      * @since 4.1      */
 annotation|@
 name|Parameter
 argument_list|(
@@ -479,28 +493,28 @@ specifier|private
 name|boolean
 name|force
 decl_stmt|;
-comment|/** 	 * Location of Velocity template file for DataMap class generation. 	 * DataMap class provides utilities for usage of the Cayenne queries stored in the DataMap. 	 * If omitted, default template is used. 	 * 	 * @since 5.0 renamed from queryTemplate 	 */
+comment|/**      * Location of Velocity template file for DataMap class generation.      * DataMap class provides utilities for usage of the Cayenne queries stored in the DataMap.      * If omitted, default template is used.      *      * @since 5.0 renamed from queryTemplate      */
 annotation|@
 name|Parameter
 specifier|private
 name|String
 name|dataMapTemplate
 decl_stmt|;
-comment|/** 	 * Location of Velocity template file for DataMap superclass generation. 	 * DataMap class provides utilities for usage of the Cayenne queries stored in the DataMap. 	 * If omitted, default template is used. 	 * Ignored unless<code>makepairs</code> set to<code>true</code>. 	 * 	 * @since 5.0 renamed from querySuperTemplate 	 */
+comment|/**      * Location of Velocity template file for DataMap superclass generation.      * DataMap class provides utilities for usage of the Cayenne queries stored in the DataMap.      * If omitted, default template is used.      * Ignored unless<code>makepairs</code> set to<code>true</code>.      *      * @since 5.0 renamed from querySuperTemplate      */
 annotation|@
 name|Parameter
 specifier|private
 name|String
 name|dataMapSuperTemplate
 decl_stmt|;
-comment|/**      * If set to<code>true</code>, will generate Properties for PK attributes.      * Default is<code>false</code>. 	 * 	 * @see org.apache.cayenne.exp.property.IdProperty and its implementations      * @since 4.1      */
+comment|/**      * If set to<code>true</code>, will generate Properties for PK attributes.      * Default is<code>false</code>.      *      * @see org.apache.cayenne.exp.property.IdProperty and its implementations      * @since 4.1      */
 annotation|@
 name|Parameter
 specifier|private
 name|Boolean
 name|createPKProperties
 decl_stmt|;
-comment|/**      * Optional path (classpath or filesystem) to external velocity tool configuration file      * @since 4.2       */
+comment|/**      * Optional path (classpath or filesystem) to external velocity tool configuration file      *      * @since 4.2      */
 annotation|@
 name|Parameter
 specifier|private
@@ -777,7 +791,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/** 	 * Loads and returns DataMap based on<code>cgenConfiguration</code> attribute. 	 */
+comment|/**      * Loads and returns DataMap based on<code>cgenConfiguration</code> attribute.      */
 specifier|protected
 name|File
 index|[]
@@ -930,7 +944,7 @@ operator|!=
 literal|null
 return|;
 block|}
-comment|/** 	 * Factory method to create internal class generator. Called from 	 * constructor. 	 */
+comment|/**      * Factory method to create internal class generator. Called from      * constructor.      */
 specifier|private
 name|ClassGenerationAction
 name|createGenerator
@@ -963,7 +977,6 @@ name|cgenConfiguration
 argument_list|)
 return|;
 block|}
-specifier|private
 name|CgenConfiguration
 name|buildConfiguration
 parameter_list|(
@@ -1242,7 +1255,17 @@ name|superTemplate
 operator|!=
 literal|null
 condition|?
+operator|new
+name|CgenTemplate
+argument_list|(
 name|superTemplate
+argument_list|,
+literal|true
+argument_list|,
+name|TemplateType
+operator|.
+name|ENTITY_SUPERCLASS
+argument_list|)
 else|:
 name|cgenConfiguration
 operator|.
@@ -1258,7 +1281,17 @@ name|template
 operator|!=
 literal|null
 condition|?
+operator|new
+name|CgenTemplate
+argument_list|(
 name|template
+argument_list|,
+literal|true
+argument_list|,
+name|TemplateType
+operator|.
+name|ENTITY_SUBCLASS
+argument_list|)
 else|:
 name|cgenConfiguration
 operator|.
@@ -1274,7 +1307,17 @@ name|embeddableSuperTemplate
 operator|!=
 literal|null
 condition|?
+operator|new
+name|CgenTemplate
+argument_list|(
 name|embeddableSuperTemplate
+argument_list|,
+literal|true
+argument_list|,
+name|TemplateType
+operator|.
+name|EMBEDDABLE_SUPERCLASS
+argument_list|)
 else|:
 name|cgenConfiguration
 operator|.
@@ -1290,7 +1333,17 @@ name|embeddableTemplate
 operator|!=
 literal|null
 condition|?
+operator|new
+name|CgenTemplate
+argument_list|(
 name|embeddableTemplate
+argument_list|,
+literal|true
+argument_list|,
+name|TemplateType
+operator|.
+name|EMBEDDABLE_SUBCLASS
+argument_list|)
 else|:
 name|cgenConfiguration
 operator|.
@@ -1338,7 +1391,17 @@ name|dataMapTemplate
 operator|!=
 literal|null
 condition|?
+operator|new
+name|CgenTemplate
+argument_list|(
 name|dataMapTemplate
+argument_list|,
+literal|true
+argument_list|,
+name|TemplateType
+operator|.
+name|DATAMAP_SUBCLASS
+argument_list|)
 else|:
 name|cgenConfiguration
 operator|.
@@ -1354,7 +1417,17 @@ name|dataMapSuperTemplate
 operator|!=
 literal|null
 condition|?
+operator|new
+name|CgenTemplate
+argument_list|(
 name|dataMapSuperTemplate
+argument_list|,
+literal|true
+argument_list|,
+name|TemplateType
+operator|.
+name|DATAMAP_SUPERCLASS
+argument_list|)
 else|:
 name|cgenConfiguration
 operator|.
@@ -1418,7 +1491,7 @@ name|TemplateType
 operator|.
 name|ENTITY_SINGLE_CLASS
 operator|.
-name|pathFromSourceRoot
+name|defaultTemplate
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1438,7 +1511,7 @@ name|TemplateType
 operator|.
 name|EMBEDDABLE_SINGLE_CLASS
 operator|.
-name|pathFromSourceRoot
+name|defaultTemplate
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1458,7 +1531,7 @@ name|TemplateType
 operator|.
 name|DATAMAP_SINGLE_CLASS
 operator|.
-name|pathFromSourceRoot
+name|defaultTemplate
 argument_list|()
 argument_list|)
 expr_stmt|;
