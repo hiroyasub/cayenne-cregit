@@ -43,16 +43,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|net
-operator|.
-name|URLDecoder
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|ArrayList
@@ -205,8 +195,6 @@ specifier|public
 name|void
 name|testGradleVersionsCompatibility
 parameter_list|()
-throws|throws
-name|Exception
 block|{
 name|String
 index|[]
@@ -239,7 +227,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"7.6"
+literal|"7.6-rc-3"
 block|}
 expr_stmt|;
 block|}
