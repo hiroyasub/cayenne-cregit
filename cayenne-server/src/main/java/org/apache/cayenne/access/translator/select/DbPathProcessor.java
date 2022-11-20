@@ -288,6 +288,13 @@ name|alias
 argument_list|)
 throw|;
 block|}
+name|entity
+operator|=
+name|relationship
+operator|.
+name|getTargetEntity
+argument_list|()
+expr_stmt|;
 name|processRelationship
 argument_list|(
 name|relationship
