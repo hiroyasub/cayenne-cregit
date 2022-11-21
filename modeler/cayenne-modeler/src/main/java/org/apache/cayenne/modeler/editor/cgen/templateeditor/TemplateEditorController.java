@@ -532,6 +532,16 @@ name|this
 operator|.
 name|editorView
 operator|.
+name|getEditingTemplatePane
+argument_list|()
+operator|.
+name|discardAllEdits
+argument_list|()
+expr_stmt|;
+name|this
+operator|.
+name|editorView
+operator|.
 name|editingTemplatePane
 operator|.
 name|setCaretPosition
