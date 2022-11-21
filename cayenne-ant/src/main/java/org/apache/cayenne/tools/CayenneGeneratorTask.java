@@ -27,6 +27,26 @@ end_import
 
 begin_import
 import|import
+name|java
+operator|.
+name|util
+operator|.
+name|ArrayList
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
 name|org
 operator|.
 name|apache
@@ -114,6 +134,20 @@ operator|.
 name|gen
 operator|.
 name|CgenConfiguration
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|gen
+operator|.
+name|CgenConfigList
 import|;
 end_import
 
@@ -228,7 +262,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * An Ant task to perform class generation based on CayenneDataMap.  *   * @since 3.0  */
+comment|/**  * An Ant task to perform class generation based on CayenneDataMap.  *  * @since 3.0  */
 end_comment
 
 begin_class
@@ -343,7 +377,7 @@ specifier|protected
 name|Boolean
 name|createpkproperties
 decl_stmt|;
-comment|/**      * Optional path (classpath or filesystem) to external velocity tool configuration file      * @since 4.2       */
+comment|/**      * Optional path (classpath or filesystem) to external velocity tool configuration file      * @since 4.2      */
 specifier|protected
 name|String
 name|externaltoolconfig
@@ -458,14 +492,17 @@ operator|.
 name|getMainDataMap
 argument_list|()
 decl_stmt|;
+for|for
+control|(
 name|ClassGenerationAction
 name|generatorAction
-init|=
-name|createGenerator
+range|:
+name|createGenerators
 argument_list|(
 name|dataMap
 argument_list|)
-decl_stmt|;
+control|)
+block|{
 name|CayenneGeneratorEntityFilterAction
 name|filterEntityAction
 init|=
@@ -607,6 +644,7 @@ name|execute
 argument_list|()
 expr_stmt|;
 block|}
+block|}
 catch|catch
 parameter_list|(
 name|Exception
@@ -636,22 +674,42 @@ expr_stmt|;
 block|}
 block|}
 specifier|private
+name|List
+argument_list|<
 name|ClassGenerationAction
-name|createGenerator
+argument_list|>
+name|createGenerators
 parameter_list|(
 name|DataMap
 name|dataMap
 parameter_list|)
 block|{
-name|CgenConfiguration
-name|cgenConfiguration
+name|List
+argument_list|<
+name|ClassGenerationAction
+argument_list|>
+name|actions
 init|=
-name|buildConfiguration
+operator|new
+name|ArrayList
+argument_list|<>
+argument_list|()
+decl_stmt|;
+for|for
+control|(
+name|CgenConfiguration
+name|configuration
+range|:
+name|buildConfigurations
 argument_list|(
 name|dataMap
 argument_list|)
-decl_stmt|;
-return|return
+control|)
+block|{
+name|actions
+operator|.
+name|add
+argument_list|(
 name|injector
 operator|.
 name|getInstance
@@ -663,8 +721,13 @@ argument_list|)
 operator|.
 name|createAction
 argument_list|(
-name|cgenConfiguration
+name|configuration
 argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|actions
 return|;
 block|}
 specifier|private
@@ -756,15 +819,29 @@ operator|!=
 literal|null
 return|;
 block|}
+name|List
+argument_list|<
 name|CgenConfiguration
-name|buildConfiguration
+argument_list|>
+name|buildConfigurations
 parameter_list|(
 name|DataMap
 name|dataMap
 parameter_list|)
 block|{
+name|List
+argument_list|<
 name|CgenConfiguration
-name|cgenConfiguration
+argument_list|>
+name|configurations
+init|=
+operator|new
+name|ArrayList
+argument_list|<>
+argument_list|()
+decl_stmt|;
+name|CgenConfigList
+name|cgenConfigList
 init|=
 name|injector
 operator|.
@@ -779,7 +856,7 @@ name|get
 argument_list|(
 name|dataMap
 argument_list|,
-name|CgenConfiguration
+name|CgenConfigList
 operator|.
 name|class
 argument_list|)
@@ -797,20 +874,45 @@ argument_list|(
 literal|"Using cgen config from pom.xml"
 argument_list|)
 expr_stmt|;
-return|return
+name|configurations
+operator|.
+name|add
+argument_list|(
 name|cgenConfigFromPom
 argument_list|(
 name|dataMap
 argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|configurations
 return|;
 block|}
 if|else if
 condition|(
-name|cgenConfiguration
+name|cgenConfigList
 operator|!=
 literal|null
 condition|)
 block|{
+for|for
+control|(
+name|CgenConfiguration
+name|cgenConfiguration
+range|:
+name|cgenConfigList
+operator|.
+name|getAll
+argument_list|()
+control|)
+block|{
+name|configurations
+operator|.
+name|add
+argument_list|(
+name|cgenConfiguration
+argument_list|)
+expr_stmt|;
 name|logger
 operator|.
 name|info
@@ -826,12 +928,13 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 name|useConfigFromDataMap
 operator|=
 literal|true
 expr_stmt|;
 return|return
-name|cgenConfiguration
+name|configurations
 return|;
 block|}
 else|else
@@ -843,12 +946,13 @@ argument_list|(
 literal|"Using default cgen config."
 argument_list|)
 expr_stmt|;
+name|CgenConfiguration
 name|cgenConfiguration
-operator|=
+init|=
 operator|new
 name|CgenConfiguration
 argument_list|()
-expr_stmt|;
+decl_stmt|;
 name|cgenConfiguration
 operator|.
 name|setDataMap
@@ -856,8 +960,15 @@ argument_list|(
 name|dataMap
 argument_list|)
 expr_stmt|;
-return|return
+name|configurations
+operator|.
+name|add
+argument_list|(
 name|cgenConfiguration
+argument_list|)
+expr_stmt|;
+return|return
+name|configurations
 return|;
 block|}
 block|}
@@ -1376,7 +1487,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/**      * Sets the map.      *       * @param map The map to set      */
+comment|/**      * Sets the map.      *      * @param map The map to set      */
 specifier|public
 name|void
 name|setMap
@@ -1392,7 +1503,7 @@ operator|=
 name|map
 expr_stmt|;
 block|}
-comment|/**      * Sets the additional DataMaps.      *       * @param additionalMapsPath The additional DataMaps to set      */
+comment|/**      * Sets the additional DataMaps.      *      * @param additionalMapsPath The additional DataMaps to set      */
 specifier|public
 name|void
 name|setAdditionalMaps

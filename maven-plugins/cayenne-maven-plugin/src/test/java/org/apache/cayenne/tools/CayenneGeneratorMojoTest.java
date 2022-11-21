@@ -98,6 +98,16 @@ import|;
 end_import
 
 begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|List
+import|;
+end_import
+
+begin_import
 import|import static
 name|org
 operator|.
@@ -403,18 +413,29 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
+name|List
+argument_list|<
 name|CgenConfiguration
-name|cgenConfiguration
+argument_list|>
+name|cgenConfigurations
 init|=
 name|myMojo
 operator|.
-name|buildConfiguration
+name|buildConfigurations
 argument_list|(
 operator|new
 name|DataMap
 argument_list|()
 argument_list|)
 decl_stmt|;
+for|for
+control|(
+name|CgenConfiguration
+name|cgenConfiguration
+range|:
+name|cgenConfigurations
+control|)
+block|{
 name|assertEquals
 argument_list|(
 literal|"UTF-8"
@@ -721,6 +742,7 @@ name|getType
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 specifier|public
 name|void
