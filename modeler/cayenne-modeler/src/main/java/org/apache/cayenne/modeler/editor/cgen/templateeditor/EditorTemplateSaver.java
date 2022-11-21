@@ -190,7 +190,7 @@ name|CgenTemplate
 argument_list|(
 name|template
 argument_list|,
-literal|false
+name|isDefault
 argument_list|,
 name|TemplateType
 operator|.
@@ -213,7 +213,7 @@ name|CgenTemplate
 argument_list|(
 name|template
 argument_list|,
-literal|false
+name|isDefault
 argument_list|,
 name|TemplateType
 operator|.
@@ -236,7 +236,7 @@ name|CgenTemplate
 argument_list|(
 name|template
 argument_list|,
-literal|false
+name|isDefault
 argument_list|,
 name|TemplateType
 operator|.
@@ -259,7 +259,7 @@ name|CgenTemplate
 argument_list|(
 name|template
 argument_list|,
-literal|false
+name|isDefault
 argument_list|,
 name|TemplateType
 operator|.
@@ -282,7 +282,7 @@ name|CgenTemplate
 argument_list|(
 name|template
 argument_list|,
-literal|false
+name|isDefault
 argument_list|,
 name|TemplateType
 operator|.
@@ -305,7 +305,7 @@ name|CgenTemplate
 argument_list|(
 name|template
 argument_list|,
-literal|false
+name|isDefault
 argument_list|,
 name|TemplateType
 operator|.
