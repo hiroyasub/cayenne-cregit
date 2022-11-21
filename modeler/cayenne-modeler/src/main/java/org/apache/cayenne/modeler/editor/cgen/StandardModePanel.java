@@ -141,6 +141,16 @@ name|javax
 operator|.
 name|swing
 operator|.
+name|BorderFactory
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
 name|JButton
 import|;
 end_import
@@ -172,6 +182,18 @@ operator|.
 name|swing
 operator|.
 name|JTextField
+import|;
+end_import
+
+begin_import
+import|import
+name|javax
+operator|.
+name|swing
+operator|.
+name|border
+operator|.
+name|Border
 import|;
 end_import
 
@@ -276,6 +298,24 @@ decl_stmt|;
 specifier|private
 name|JLabel
 name|datamapSuperTemplateLbl
+decl_stmt|;
+specifier|static
+specifier|final
+name|Border
+name|CGEN_PANEL_BORDER
+init|=
+name|BorderFactory
+operator|.
+name|createEmptyBorder
+argument_list|(
+literal|5
+argument_list|,
+literal|13
+argument_list|,
+literal|5
+argument_list|,
+literal|13
+argument_list|)
 decl_stmt|;
 specifier|public
 name|StandardModePanel
@@ -546,7 +586,7 @@ init|=
 operator|new
 name|FormLayout
 argument_list|(
-literal|"left:10dlu, 3dlu, 90dlu, 3dlu, pref, 3dlu, 50dlu, 3dlu, 20dlu"
+literal|"left:10dlu, 3dlu, 97dlu, 3dlu, 40dlu, 3dlu, 50dlu, 3dlu, 20dlu"
 argument_list|,
 literal|"p, 3dlu, p, 10dlu, 11*(p, 3dlu),10dlu,9*(p, 3dlu)"
 argument_list|)
@@ -1108,6 +1148,16 @@ literal|5
 argument_list|,
 literal|40
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|builder
+operator|.
+name|getPanel
+argument_list|()
+operator|.
+name|setBorder
+argument_list|(
+name|CGEN_PANEL_BORDER
 argument_list|)
 expr_stmt|;
 name|add

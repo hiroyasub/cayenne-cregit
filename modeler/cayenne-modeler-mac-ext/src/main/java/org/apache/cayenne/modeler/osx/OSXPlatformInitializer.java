@@ -455,7 +455,7 @@ name|getName
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// next two is custom made for Cayenne's MainToolBar
+comment|// next two is custom-made for Cayenne's MainToolBar
 name|UIManager
 operator|.
 name|put
@@ -643,6 +643,26 @@ name|BorderFactory
 operator|.
 name|createEmptyBorder
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|UIManager
+operator|.
+name|put
+argument_list|(
+literal|"CheckBoxHeader.border"
+argument_list|,
+name|BorderFactory
+operator|.
+name|createEmptyBorder
+argument_list|(
+literal|0
+argument_list|,
+literal|9
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|// MacOS BigSur needs additional style tweaking for the tabs active state
