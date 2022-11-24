@@ -370,6 +370,14 @@ specifier|public
 name|CgenConfiguration
 parameter_list|()
 block|{
+name|this
+operator|.
+name|name
+operator|=
+name|CgenConfigList
+operator|.
+name|DEFAULT_CONFIG_NAME
+expr_stmt|;
 comment|/*          * {@link #isDefault()} method should be in sync with the following values          */
 name|this
 operator|.
@@ -2010,7 +2018,7 @@ name|TemplateType
 operator|.
 name|ENTITY_SUBCLASS
 operator|.
-name|pathFromSourceRoot
+name|defaultTemplate
 argument_list|()
 argument_list|)
 operator|&&
@@ -2022,7 +2030,7 @@ name|TemplateType
 operator|.
 name|ENTITY_SUPERCLASS
 operator|.
-name|pathFromSourceRoot
+name|defaultTemplate
 argument_list|()
 argument_list|)
 operator|&&
