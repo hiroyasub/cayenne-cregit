@@ -183,6 +183,16 @@ name|java
 operator|.
 name|util
 operator|.
+name|List
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
 name|regex
 operator|.
 name|Pattern
@@ -629,18 +639,29 @@ operator|.
 name|execute
 argument_list|()
 expr_stmt|;
+name|List
+argument_list|<
 name|CgenConfiguration
-name|cgenConfiguration
+argument_list|>
+name|configurations
 init|=
 name|task
 operator|.
-name|buildConfiguration
+name|buildConfigurations
 argument_list|(
 operator|new
 name|DataMap
 argument_list|()
 argument_list|)
 decl_stmt|;
+for|for
+control|(
+name|CgenConfiguration
+name|cgenConfiguration
+range|:
+name|configurations
+control|)
+block|{
 comment|// check results
 name|assertEquals
 argument_list|(
@@ -994,6 +1015,7 @@ name|getType
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/**      * Test single classes generation including full package path.      */
 annotation|@
