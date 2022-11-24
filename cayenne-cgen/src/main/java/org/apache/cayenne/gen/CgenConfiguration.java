@@ -378,7 +378,7 @@ name|CgenConfigList
 operator|.
 name|DEFAULT_CONFIG_NAME
 expr_stmt|;
-comment|/*          * {@link #isDefault()} method should be in sync with the following values          */
+comment|/**          * {@link #isDefault()} method should be in sync with the following values          */
 name|this
 operator|.
 name|outputPattern
@@ -403,10 +403,19 @@ name|makePairs
 operator|=
 literal|true
 expr_stmt|;
-name|setArtifactsGenerationMode
-argument_list|(
-literal|"entity"
-argument_list|)
+name|this
+operator|.
+name|createPKProperties
+operator|=
+literal|true
+expr_stmt|;
+name|this
+operator|.
+name|artifactsGenerationMode
+operator|=
+name|ArtifactsGenerationMode
+operator|.
+name|ENTITY
 expr_stmt|;
 name|this
 operator|.
@@ -452,14 +461,6 @@ operator|new
 name|ArrayList
 argument_list|<>
 argument_list|()
-expr_stmt|;
-name|this
-operator|.
-name|artifactsGenerationMode
-operator|=
-name|ArtifactsGenerationMode
-operator|.
-name|ENTITY
 expr_stmt|;
 name|this
 operator|.
@@ -1989,15 +1990,13 @@ parameter_list|()
 block|{
 comment|// this must be is sync with actual default values
 return|return
-name|isMakePairs
-argument_list|()
+name|makePairs
 operator|&&
 name|usePkgPath
 operator|&&
 operator|!
 name|overwrite
 operator|&&
-operator|!
 name|createPKProperties
 operator|&&
 operator|!
