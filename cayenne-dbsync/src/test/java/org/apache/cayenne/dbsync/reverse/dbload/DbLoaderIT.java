@@ -521,7 +521,7 @@ expr_stmt|;
 comment|// DbRelationship
 name|assertEquals
 argument_list|(
-literal|4
+literal|5
 argument_list|,
 name|artist
 operator|.
