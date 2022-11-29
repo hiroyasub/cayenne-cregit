@@ -398,6 +398,12 @@ else|else
 block|{
 if|if
 condition|(
+operator|!
+name|next
+operator|.
+name|isEmpty
+argument_list|()
+operator|&&
 name|next
 operator|.
 name|charAt
