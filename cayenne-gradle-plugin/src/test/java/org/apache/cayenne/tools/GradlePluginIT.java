@@ -227,7 +227,7 @@ operator|new
 name|String
 index|[]
 block|{
-literal|"7.6-rc-3"
+literal|"7.6"
 block|}
 expr_stmt|;
 block|}
