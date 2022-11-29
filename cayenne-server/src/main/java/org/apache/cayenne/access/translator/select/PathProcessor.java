@@ -163,7 +163,7 @@ specifier|final
 name|String
 name|DB_PATH_ALIAS_INDICATOR
 init|=
-literal|"^"
+literal|"db:"
 decl_stmt|;
 specifier|protected
 specifier|final
