@@ -1689,7 +1689,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/**      * Returns whether an entity is not connected to any other TODO: not fine      * algorithm, it iterates through all entities and all rels      */
+comment|/**      * Returns whether an entity is not connected to any other      * TODO: not fine algorithm, it iterates through all entities and all rels      */
 specifier|protected
 name|boolean
 name|isIsolated

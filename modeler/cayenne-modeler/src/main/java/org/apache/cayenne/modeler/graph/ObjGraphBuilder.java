@@ -279,7 +279,7 @@ name|java
 operator|.
 name|awt
 operator|.
-name|*
+name|Color
 import|;
 end_import
 
@@ -715,9 +715,6 @@ argument_list|(
 name|this
 argument_list|,
 name|e
-operator|.
-name|getName
-argument_list|()
 argument_list|)
 return|;
 block|}
