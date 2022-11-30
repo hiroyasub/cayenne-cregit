@@ -21,16 +21,6 @@ end_package
 
 begin_import
 import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Optional
-import|;
-end_import
-
-begin_import
-import|import
 name|org
 operator|.
 name|apache
@@ -124,6 +114,16 @@ operator|.
 name|map
 operator|.
 name|ObjRelationship
+import|;
+end_import
+
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Optional
 import|;
 end_import
 
@@ -305,6 +305,20 @@ name|alias
 argument_list|)
 throw|;
 block|}
+name|pathSplitAliases
+operator|.
+name|put
+argument_list|(
+name|DB_PATH_ALIAS_INDICATOR
+operator|+
+name|next
+argument_list|,
+name|relationship
+operator|.
+name|getDbRelationshipPath
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|processRelationship
 argument_list|(
 name|relationship
@@ -640,6 +654,8 @@ name|currentAlias
 operator|!=
 literal|null
 condition|?
+name|DB_PATH_ALIAS_INDICATOR
+operator|+
 name|currentAlias
 else|:
 name|relationship
