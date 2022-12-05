@@ -1550,6 +1550,11 @@ if|if
 condition|(
 name|usingPrimitives
 operator|&&
+name|dbAttribute
+operator|.
+name|isMandatory
+argument_list|()
+operator|&&
 operator|(
 name|primitiveType
 operator|=
