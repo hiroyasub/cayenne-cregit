@@ -1486,7 +1486,7 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"'rootPath' attribute is missing."
+literal|"Output directory is not set."
 argument_list|)
 throw|;
 block|}
@@ -1520,7 +1520,9 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"can't create directory"
+literal|"Can't create output directory '%s'"
+argument_list|,
+name|dir
 argument_list|)
 throw|;
 block|}
@@ -1540,7 +1542,9 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"'destDir' is not a directory."
+literal|"'%s' is not a directory."
+argument_list|,
+name|dir
 argument_list|)
 throw|;
 block|}
@@ -1559,7 +1563,7 @@ throw|throw
 operator|new
 name|CayenneRuntimeException
 argument_list|(
-literal|"Do not have write permissions for %s"
+literal|"No write permission for the output directory '%s'"
 argument_list|,
 name|dir
 argument_list|)
