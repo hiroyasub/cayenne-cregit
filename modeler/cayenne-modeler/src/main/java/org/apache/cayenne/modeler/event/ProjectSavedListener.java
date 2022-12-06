@@ -39,7 +39,7 @@ extends|extends
 name|EventListener
 block|{
 name|void
-name|updateNamesAfterSaving
+name|onProjectSaved
 parameter_list|(
 name|ProjectSavedEvent
 name|e

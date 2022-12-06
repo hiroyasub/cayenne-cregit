@@ -4975,11 +4975,6 @@ name|ProjectSavedEvent
 name|e
 parameter_list|)
 block|{
-name|setDirty
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
 for|for
 control|(
 name|ProjectSavedListener
@@ -4997,7 +4992,7 @@ control|)
 block|{
 name|eventListener
 operator|.
-name|updateNamesAfterSaving
+name|onProjectSaved
 argument_list|(
 name|e
 argument_list|)

@@ -463,7 +463,8 @@ argument_list|(
 operator|new
 name|ProjectSavedEvent
 argument_list|(
-name|this
+name|getProjectController
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
