@@ -288,7 +288,7 @@ name|setText
 argument_list|(
 name|cgenConfiguration
 operator|.
-name|buildPath
+name|buildOutputPath
 argument_list|()
 operator|.
 name|toString

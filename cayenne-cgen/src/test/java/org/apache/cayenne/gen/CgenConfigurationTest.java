@@ -240,7 +240,7 @@ argument_list|)
 decl_stmt|;
 name|configuration
 operator|.
-name|setRelPath
+name|updateRelativeOutputPath
 argument_list|(
 name|relPath
 operator|.
@@ -269,7 +269,7 @@ name|relPath
 argument_list|,
 name|configuration
 operator|.
-name|buildPath
+name|buildOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -305,7 +305,7 @@ argument_list|)
 decl_stmt|;
 name|configuration
 operator|.
-name|setRelPath
+name|updateRelativeOutputPath
 argument_list|(
 name|relPath
 operator|.
@@ -334,7 +334,7 @@ name|relPath
 argument_list|,
 name|configuration
 operator|.
-name|buildPath
+name|buildOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -370,7 +370,7 @@ argument_list|)
 decl_stmt|;
 name|configuration
 operator|.
-name|setRelPath
+name|updateRelativeOutputPath
 argument_list|(
 name|relPath
 operator|.
@@ -399,7 +399,7 @@ name|relPath
 argument_list|,
 name|configuration
 operator|.
-name|buildPath
+name|buildOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -435,7 +435,7 @@ argument_list|)
 decl_stmt|;
 name|configuration
 operator|.
-name|setRelPath
+name|updateRelativeOutputPath
 argument_list|(
 name|relPath
 operator|.
@@ -464,7 +464,7 @@ name|relPath
 argument_list|,
 name|configuration
 operator|.
-name|buildPath
+name|buildOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -500,7 +500,7 @@ argument_list|)
 decl_stmt|;
 name|configuration
 operator|.
-name|setRelPath
+name|updateRelativeOutputPath
 argument_list|(
 name|relPath
 operator|.
@@ -529,7 +529,7 @@ name|relPath
 argument_list|,
 name|configuration
 operator|.
-name|buildPath
+name|buildOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -565,7 +565,7 @@ argument_list|)
 decl_stmt|;
 name|configuration
 operator|.
-name|setRelPath
+name|updateRelativeOutputPath
 argument_list|(
 name|relPath
 operator|.
@@ -594,7 +594,7 @@ name|relPath
 argument_list|,
 name|configuration
 operator|.
-name|buildPath
+name|buildOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -637,7 +637,7 @@ argument_list|)
 decl_stmt|;
 name|configuration
 operator|.
-name|setRelPath
+name|updateRelativeOutputPath
 argument_list|(
 name|relPath
 operator|.
@@ -666,7 +666,7 @@ name|relPath
 argument_list|,
 name|configuration
 operator|.
-name|buildPath
+name|buildOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -702,7 +702,7 @@ argument_list|)
 decl_stmt|;
 name|configuration
 operator|.
-name|setRelPath
+name|setRelativePath
 argument_list|(
 name|relPath
 argument_list|)
@@ -728,7 +728,7 @@ argument_list|)
 argument_list|,
 name|configuration
 operator|.
-name|buildPath
+name|buildOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -761,7 +761,7 @@ argument_list|)
 expr_stmt|;
 name|configuration
 operator|.
-name|setRelPath
+name|updateRelativeOutputPath
 argument_list|(
 literal|"invalidRoot:\\test"
 argument_list|)
@@ -795,7 +795,7 @@ argument_list|)
 expr_stmt|;
 name|configuration
 operator|.
-name|setRelPath
+name|updateRelativeOutputPath
 argument_list|(
 literal|"C:\\test1\\test2\\test3"
 argument_list|)
@@ -810,7 +810,7 @@ parameter_list|()
 block|{
 name|configuration
 operator|.
-name|setRelPath
+name|updateRelativeOutputPath
 argument_list|(
 literal|"C:\\test1\\test2\\test3"
 argument_list|)
@@ -841,7 +841,7 @@ argument_list|)
 argument_list|,
 name|configuration
 operator|.
-name|buildPath
+name|buildOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -932,7 +932,7 @@ argument_list|)
 decl_stmt|;
 name|configuration
 operator|.
-name|setRelPath
+name|updateRelativeOutputPath
 argument_list|(
 name|relPath
 operator|.
@@ -961,7 +961,7 @@ name|relPath
 argument_list|,
 name|configuration
 operator|.
-name|buildPath
+name|buildOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -997,7 +997,7 @@ argument_list|)
 decl_stmt|;
 name|configuration
 operator|.
-name|setRelPath
+name|updateRelativeOutputPath
 argument_list|(
 name|relPath
 operator|.
@@ -1026,7 +1026,7 @@ name|relPath
 argument_list|,
 name|configuration
 operator|.
-name|buildPath
+name|buildOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1062,7 +1062,7 @@ argument_list|)
 decl_stmt|;
 name|configuration
 operator|.
-name|setRelPath
+name|updateRelativeOutputPath
 argument_list|(
 name|relPath
 operator|.
@@ -1091,7 +1091,7 @@ name|relPath
 argument_list|,
 name|configuration
 operator|.
-name|buildPath
+name|buildOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1127,7 +1127,7 @@ argument_list|)
 decl_stmt|;
 name|configuration
 operator|.
-name|setRelPath
+name|updateRelativeOutputPath
 argument_list|(
 name|relPath
 operator|.
@@ -1161,7 +1161,7 @@ argument_list|)
 argument_list|,
 name|configuration
 operator|.
-name|buildPath
+name|buildOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1204,7 +1204,7 @@ argument_list|)
 decl_stmt|;
 name|configuration
 operator|.
-name|setRelPath
+name|updateRelativeOutputPath
 argument_list|(
 name|relPath
 operator|.
@@ -1233,7 +1233,7 @@ name|relPath
 argument_list|,
 name|configuration
 operator|.
-name|buildPath
+name|buildOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1259,7 +1259,7 @@ argument_list|)
 expr_stmt|;
 name|configuration
 operator|.
-name|setRelPath
+name|updateRelativeOutputPath
 argument_list|(
 literal|""
 argument_list|)
@@ -1290,7 +1290,7 @@ argument_list|)
 argument_list|,
 name|configuration
 operator|.
-name|buildPath
+name|buildOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1323,7 +1323,7 @@ argument_list|)
 expr_stmt|;
 name|configuration
 operator|.
-name|setRelPath
+name|updateRelativeOutputPath
 argument_list|(
 literal|"/test1/test2/test3"
 argument_list|)
@@ -1357,7 +1357,7 @@ argument_list|)
 expr_stmt|;
 name|configuration
 operator|.
-name|setRelPath
+name|updateRelativeOutputPath
 argument_list|(
 literal|"test1/test2/test3"
 argument_list|)
@@ -1372,7 +1372,7 @@ parameter_list|()
 block|{
 name|configuration
 operator|.
-name|setRelPath
+name|updateRelativeOutputPath
 argument_list|(
 literal|"/test1/test2/test3"
 argument_list|)
@@ -1403,7 +1403,7 @@ argument_list|)
 argument_list|,
 name|configuration
 operator|.
-name|buildPath
+name|buildOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;

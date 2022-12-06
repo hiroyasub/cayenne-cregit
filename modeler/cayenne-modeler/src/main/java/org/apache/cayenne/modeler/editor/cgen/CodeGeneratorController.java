@@ -2837,6 +2837,26 @@ name|e
 parameter_list|)
 block|{
 comment|// update path input
+if|if
+condition|(
+name|getStandardModeController
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|getStandardModeController
+argument_list|()
+operator|.
+name|getView
+argument_list|()
+operator|!=
+literal|null
+operator|&&
+name|cgenConfiguration
+operator|!=
+literal|null
+condition|)
+block|{
 name|getStandardModeController
 argument_list|()
 operator|.
@@ -2857,6 +2877,7 @@ name|toString
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 specifier|private
 specifier|final

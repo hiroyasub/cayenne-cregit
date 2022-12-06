@@ -1462,7 +1462,7 @@ argument_list|)
 expr_stmt|;
 name|cgenConfiguration
 operator|.
-name|setRelPath
+name|updateRelativeOutputPath
 argument_list|(
 literal|"."
 argument_list|)
@@ -1596,7 +1596,7 @@ argument_list|)
 expr_stmt|;
 name|cgenConfiguration
 operator|.
-name|setRelPath
+name|updateRelativeOutputPath
 argument_list|(
 literal|"."
 argument_list|)

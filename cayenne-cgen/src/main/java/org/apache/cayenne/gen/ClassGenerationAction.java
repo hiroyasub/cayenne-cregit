@@ -1472,7 +1472,7 @@ name|dir
 init|=
 name|cgenConfiguration
 operator|.
-name|buildPath
+name|buildOutputPath
 argument_list|()
 decl_stmt|;
 if|if
@@ -1753,7 +1753,7 @@ name|File
 argument_list|(
 name|cgenConfiguration
 operator|.
-name|buildPath
+name|buildOutputPath
 argument_list|()
 operator|.
 name|toString
@@ -1871,7 +1871,7 @@ name|requireNonNull
 argument_list|(
 name|cgenConfiguration
 operator|.
-name|buildPath
+name|buildOutputPath
 argument_list|()
 argument_list|)
 operator|.

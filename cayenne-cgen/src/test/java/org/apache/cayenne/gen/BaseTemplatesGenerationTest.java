@@ -805,7 +805,7 @@ argument_list|)
 expr_stmt|;
 name|cgenConfiguration
 operator|.
-name|setRelPath
+name|setRelativePath
 argument_list|(
 name|Paths
 operator|.

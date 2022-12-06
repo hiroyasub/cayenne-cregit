@@ -115,18 +115,6 @@ name|nio
 operator|.
 name|file
 operator|.
-name|Path
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|nio
-operator|.
-name|file
-operator|.
 name|Paths
 import|;
 end_import
@@ -248,7 +236,7 @@ throw|;
 block|}
 name|cgenByDataMap
 operator|.
-name|setRelPath
+name|updateRelativeOutputPath
 argument_list|(
 name|text
 argument_list|)

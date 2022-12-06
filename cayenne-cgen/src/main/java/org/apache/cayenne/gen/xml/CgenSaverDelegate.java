@@ -405,7 +405,7 @@ name|prevPath
 init|=
 name|cgenConfiguration
 operator|.
-name|buildPath
+name|buildOutputPath
 argument_list|()
 decl_stmt|;
 if|if
@@ -459,7 +459,7 @@ expr_stmt|;
 block|}
 name|cgenConfiguration
 operator|.
-name|setRelPath
+name|setRelativePath
 argument_list|(
 name|relPath
 argument_list|)
