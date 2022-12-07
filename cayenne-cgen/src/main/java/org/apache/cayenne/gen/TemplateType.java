@@ -15,18 +15,8 @@ name|gen
 package|;
 end_package
 
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
-name|Arrays
-import|;
-end_import
-
 begin_comment
-comment|/**  * Defines class generation template types.  *   * @since 3.0  */
+comment|/**  * Defines class generation template types.  *  * @since 3.0  */
 end_comment
 
 begin_enum
@@ -217,20 +207,18 @@ name|String
 name|templateText
 parameter_list|)
 block|{
-return|return
-name|Arrays
-operator|.
-name|stream
-argument_list|(
+for|for
+control|(
+name|TemplateType
+name|type
+range|:
 name|values
 argument_list|()
-argument_list|)
-operator|.
-name|anyMatch
-argument_list|(
-name|t
-lambda|->
-name|t
+control|)
+block|{
+if|if
+condition|(
+name|type
 operator|.
 name|pathFromSourceRoot
 argument_list|()
@@ -239,7 +227,15 @@ name|equals
 argument_list|(
 name|templateText
 argument_list|)
-argument_list|)
+condition|)
+block|{
+return|return
+literal|true
+return|;
+block|}
+block|}
+return|return
+literal|false
 return|;
 block|}
 block|}

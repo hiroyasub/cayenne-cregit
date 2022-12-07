@@ -26,7 +26,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * @since 5.0  */
+comment|/**  * Template source for the class generation.  * Could be either some resource (file or classpath resource) or just text.  *  * @since 5.0  */
 end_comment
 
 begin_class
