@@ -689,7 +689,7 @@ return|return;
 block|}
 name|configuration
 operator|.
-name|setRelativePath
+name|updateOutputPath
 argument_list|(
 name|Paths
 operator|.

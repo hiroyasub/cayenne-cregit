@@ -358,7 +358,7 @@ name|ifPresent
 argument_list|(
 name|cgenConfiguration
 operator|::
-name|updateRelativeOutputPath
+name|updateOutputPath
 argument_list|)
 expr_stmt|;
 block|}
@@ -372,7 +372,7 @@ block|{
 comment|// Update relative path to match with the new root
 name|cgenConfiguration
 operator|.
-name|updateRelativeOutputPath
+name|updateOutputPath
 argument_list|(
 name|prevOutputPath
 argument_list|)
@@ -392,7 +392,7 @@ comment|// No path was set, and we are not in the Maven tree.
 comment|// Set output dir match with the root, nothing else we could do here
 name|cgenConfiguration
 operator|.
-name|updateRelativeOutputPath
+name|updateOutputPath
 argument_list|(
 name|baseDirectory
 argument_list|)

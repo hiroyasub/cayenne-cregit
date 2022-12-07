@@ -208,7 +208,7 @@ argument_list|)
 expr_stmt|;
 name|config
 operator|.
-name|setRelativePath
+name|updateOutputPath
 argument_list|(
 name|Paths
 operator|.

@@ -1156,7 +1156,7 @@ argument_list|)
 expr_stmt|;
 name|cgenConfiguration
 operator|.
-name|setRelativePath
+name|updateOutputPath
 argument_list|(
 name|defaultDir
 operator|.
@@ -1198,7 +1198,7 @@ argument_list|)
 expr_stmt|;
 name|cgenConfiguration
 operator|.
-name|setRelativePath
+name|updateOutputPath
 argument_list|(
 name|destDir
 operator|!=

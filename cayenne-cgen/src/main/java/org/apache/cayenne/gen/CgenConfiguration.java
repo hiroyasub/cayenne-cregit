@@ -41,18 +41,6 @@ begin_import
 import|import
 name|java
 operator|.
-name|nio
-operator|.
-name|file
-operator|.
-name|Paths
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
 name|util
 operator|.
 name|ArrayList
@@ -718,7 +706,7 @@ return|return
 name|rootProjectPath
 return|;
 block|}
-comment|/**      * TODO: this should be used in loadin and sa      * @param rootProjectPath root path for the Cayenne project this config relates to      */
+comment|/**      * @param rootProjectPath root path for the Cayenne project this config relates to      * @see #updateOutputPath(Path)      */
 specifier|public
 name|void
 name|setRootPath
@@ -758,23 +746,7 @@ operator|=
 name|rootProjectPath
 expr_stmt|;
 block|}
-comment|/**      * Directly set relative (to {@code rootProjectPath}) output directory      *      * @param relPath to set      * @since 5.0 renamed from {@code setRelPath()}*      */
-specifier|public
-name|void
-name|setRelativePath
-parameter_list|(
-name|Path
-name|relPath
-parameter_list|)
-block|{
-name|this
-operator|.
-name|cgenOutputRelativePath
-operator|=
-name|relPath
-expr_stmt|;
-block|}
-comment|/**      * @return cgen output relative path      * TODO: used only it tests, maybe should be hidden completely      */
+comment|/**      * @return cgen output relative path      */
 specifier|public
 name|Path
 name|getRelPath
@@ -784,30 +756,10 @@ return|return
 name|cgenOutputRelativePath
 return|;
 block|}
-comment|/**      * TODO: used only by TextInput in the Cgen UI, review this      *      * @param pathStr to update relative path with      * @since 5.0 renamed from {@code setRelPath()}      */
+comment|/**      * Method that calculates output path based on provided {@code Path} and {@code rootProjectPath}      * @param path to update relative path with      * @see #setRootPath(Path)      * @since 5.0      */
 specifier|public
 name|void
-name|updateRelativeOutputPath
-parameter_list|(
-name|String
-name|pathStr
-parameter_list|)
-block|{
-name|updateRelativeOutputPath
-argument_list|(
-name|Paths
-operator|.
-name|get
-argument_list|(
-name|pathStr
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-comment|/**      * @param path  to update relative path with      * @since 5.0      */
-specifier|public
-name|void
-name|updateRelativeOutputPath
+name|updateOutputPath
 parameter_list|(
 name|Path
 name|path
@@ -862,7 +814,7 @@ operator|=
 name|path
 expr_stmt|;
 block|}
-comment|/**      * TODO: used for the XML serialization, could be changed      * @return normalized relative path      * @since 5.0 renamed from {@code buildRelPath()} and made package private      */
+comment|/**      * @return normalized relative path      * @since 5.0 renamed from {@code buildRelPath()} and made package private      */
 name|String
 name|getNormalizedRelativePath
 parameter_list|()
@@ -893,7 +845,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * TODO: change return type to Optional&lt;Path&gt;      * @return calculated output directory      * @since 5.0 renamed from {@code buildPath()}      */
+comment|/**      * This method calculates effective output directory for the class generator.      * It uses {@code rootProjectPath} and {@code cgenOutputRelativePath}.      *      * @return calculated output directory      * @see #setRootPath(Path)      * @see #updateOutputPath(Path)      * @since 5.0 renamed from {@code buildPath()}      */
 specifier|public
 name|Path
 name|buildOutputPath
@@ -906,6 +858,24 @@ operator|==
 literal|null
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|cgenOutputRelativePath
+operator|.
+name|isAbsolute
+argument_list|()
+condition|)
+block|{
+throw|throw
+operator|new
+name|ValidationException
+argument_list|(
+literal|"Output directory is a relative path but no root is set."
+argument_list|)
+throw|;
+block|}
+comment|// this should be only in case this is a new unsaved project
 return|return
 name|cgenOutputRelativePath
 return|;
@@ -917,6 +887,7 @@ operator|==
 literal|null
 condition|)
 block|{
+comment|// this case should be invalid, but let the caller deal with it
 return|return
 literal|null
 return|;
