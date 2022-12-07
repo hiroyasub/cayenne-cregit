@@ -548,9 +548,10 @@ argument_list|(
 name|dataMap
 argument_list|)
 expr_stmt|;
-name|Path
-name|basePath
-init|=
+name|cgenConfiguration
+operator|.
+name|updateOutputPath
+argument_list|(
 name|Paths
 operator|.
 name|get
@@ -560,12 +561,6 @@ operator|.
 name|initOutputFolder
 argument_list|()
 argument_list|)
-decl_stmt|;
-name|cgenConfiguration
-operator|.
-name|setRootPath
-argument_list|(
-name|basePath
 argument_list|)
 expr_stmt|;
 name|Preferences
