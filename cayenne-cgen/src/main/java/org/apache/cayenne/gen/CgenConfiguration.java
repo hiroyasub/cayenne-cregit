@@ -858,24 +858,7 @@ operator|==
 literal|null
 condition|)
 block|{
-if|if
-condition|(
-operator|!
-name|cgenOutputRelativePath
-operator|.
-name|isAbsolute
-argument_list|()
-condition|)
-block|{
-throw|throw
-operator|new
-name|ValidationException
-argument_list|(
-literal|"Output directory is a relative path but no root is set."
-argument_list|)
-throw|;
-block|}
-comment|// this should be only in case this is a new unsaved project
+comment|// this could be an unsaved project or direct usage in tools (Ant, Maven or Gradle)
 return|return
 name|cgenOutputRelativePath
 return|;
