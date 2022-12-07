@@ -230,7 +230,7 @@ throw|throw
 operator|new
 name|ValidationException
 argument_list|(
-literal|"You should save project to use rel path as output directory "
+literal|"You should save project to use relative path as an output directory."
 argument_list|)
 throw|;
 block|}

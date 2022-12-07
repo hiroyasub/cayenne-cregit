@@ -1532,6 +1532,7 @@ block|}
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @param dataMap loaded cgen config related to      * @return base path to the Cayenne project      */
 specifier|private
 name|Path
 name|buildRootPath

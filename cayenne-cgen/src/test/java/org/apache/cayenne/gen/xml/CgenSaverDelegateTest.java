@@ -164,7 +164,7 @@ name|Paths
 operator|.
 name|get
 argument_list|(
-literal|"../java"
+literal|""
 argument_list|)
 argument_list|,
 name|config
@@ -173,6 +173,7 @@ name|getRelPath
 argument_list|()
 argument_list|)
 expr_stmt|;
+comment|// TODO: do we care about this case?
 block|}
 annotation|@
 name|Test

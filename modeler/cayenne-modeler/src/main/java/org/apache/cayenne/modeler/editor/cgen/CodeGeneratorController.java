@@ -2870,7 +2870,7 @@ name|setText
 argument_list|(
 name|cgenConfiguration
 operator|.
-name|getRootPath
+name|buildOutputPath
 argument_list|()
 operator|.
 name|toString

@@ -1156,11 +1156,11 @@ argument_list|)
 expr_stmt|;
 name|cgenConfiguration
 operator|.
-name|updateRelativeOutputPath
+name|setRelativePath
 argument_list|(
 name|defaultDir
 operator|.
-name|getPath
+name|toPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1196,10 +1196,9 @@ argument_list|(
 name|dataMap
 argument_list|)
 expr_stmt|;
-comment|// TODO: check this call, CayenneGeneratorTask and CgenTask use setRelPath()
 name|cgenConfiguration
 operator|.
-name|updateRelativeOutputPath
+name|setRelativePath
 argument_list|(
 name|destDir
 operator|!=
@@ -1207,12 +1206,12 @@ literal|null
 condition|?
 name|destDir
 operator|.
-name|getPath
+name|toPath
 argument_list|()
 else|:
 name|defaultDir
 operator|.
-name|getPath
+name|toPath
 argument_list|()
 argument_list|)
 expr_stmt|;

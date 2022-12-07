@@ -248,6 +248,16 @@ name|Serializable
 implements|,
 name|XMLSerializable
 block|{
+comment|/**      * Should point to the directory that holds Cayenne project XML.      * Could be null in some cases now.      */
+specifier|private
+name|Path
+name|rootProjectPath
+decl_stmt|;
+comment|/**      * Target directory for generated classes, relative to the {@code rootProjectPath}      * (if root path is set, and it's possible to relativize).      */
+specifier|private
+name|Path
+name|cgenOutputRelativePath
+decl_stmt|;
 specifier|private
 name|Collection
 argument_list|<
@@ -302,14 +312,6 @@ decl_stmt|;
 specifier|private
 name|boolean
 name|makePairs
-decl_stmt|;
-specifier|private
-name|Path
-name|rootPath
-decl_stmt|;
-specifier|private
-name|Path
-name|relPath
 decl_stmt|;
 specifier|private
 name|boolean
@@ -713,16 +715,16 @@ name|getRootPath
 parameter_list|()
 block|{
 return|return
-name|rootPath
+name|rootProjectPath
 return|;
 block|}
-comment|/**      * @param rootPath absolute target path for the cgen generation      */
+comment|/**      * TODO: this should be used in loadin and sa      * @param rootProjectPath root path for the Cayenne project this config relates to      */
 specifier|public
 name|void
 name|setRootPath
 parameter_list|(
 name|Path
-name|rootPath
+name|rootProjectPath
 parameter_list|)
 block|{
 if|if
@@ -732,7 +734,7 @@ name|Objects
 operator|.
 name|requireNonNull
 argument_list|(
-name|rootPath
+name|rootProjectPath
 argument_list|)
 operator|.
 name|isAbsolute
@@ -743,26 +745,20 @@ throw|throw
 operator|new
 name|ValidationException
 argument_list|(
-literal|"Root path : "
-operator|+
-literal|'"'
-operator|+
-name|rootPath
-operator|+
-literal|'"'
-operator|+
-literal|"should be absolute"
+literal|"Project root path '%s' should be absolute."
+argument_list|,
+name|rootProjectPath
 argument_list|)
 throw|;
 block|}
 name|this
 operator|.
-name|rootPath
+name|rootProjectPath
 operator|=
-name|rootPath
+name|rootProjectPath
 expr_stmt|;
 block|}
-comment|/**      * Directly set relative (to {@code rootPath}) output directory      * @param relPath to set      * @since 5.0 renamed from {@code setRelPath()}      */
+comment|/**      * Directly set relative (to {@code rootProjectPath}) output directory      *      * @param relPath to set      * @since 5.0 renamed from {@code setRelPath()}*      */
 specifier|public
 name|void
 name|setRelativePath
@@ -773,21 +769,22 @@ parameter_list|)
 block|{
 name|this
 operator|.
-name|relPath
+name|cgenOutputRelativePath
 operator|=
 name|relPath
 expr_stmt|;
 block|}
+comment|/**      * @return cgen output relative path      * TODO: used only it tests, maybe should be hidden completely      */
 specifier|public
 name|Path
 name|getRelPath
 parameter_list|()
 block|{
 return|return
-name|relPath
+name|cgenOutputRelativePath
 return|;
 block|}
-comment|/**      * @param pathStr to update relative path with      * @since 5.0 renamed from {@code setRelPath()}      */
+comment|/**      * TODO: used only by TextInput in the Cgen UI, review this      *      * @param pathStr to update relative path with      * @since 5.0 renamed from {@code setRelPath()}      */
 specifier|public
 name|void
 name|updateRelativeOutputPath
@@ -796,19 +793,29 @@ name|String
 name|pathStr
 parameter_list|)
 block|{
-name|Path
-name|path
-init|=
+name|updateRelativeOutputPath
+argument_list|(
 name|Paths
 operator|.
 name|get
 argument_list|(
 name|pathStr
 argument_list|)
-decl_stmt|;
+argument_list|)
+expr_stmt|;
+block|}
+comment|/**      * @param path  to update relative path with      * @since 5.0      */
+specifier|public
+name|void
+name|updateRelativeOutputPath
+parameter_list|(
+name|Path
+name|path
+parameter_list|)
+block|{
 if|if
 condition|(
-name|rootPath
+name|rootProjectPath
 operator|!=
 literal|null
 condition|)
@@ -820,7 +827,7 @@ operator|.
 name|isAbsolute
 argument_list|()
 operator|&&
-name|rootPath
+name|rootProjectPath
 operator|.
 name|getRoot
 argument_list|()
@@ -836,9 +843,9 @@ condition|)
 block|{
 name|this
 operator|.
-name|relPath
+name|cgenOutputRelativePath
 operator|=
-name|rootPath
+name|rootProjectPath
 operator|.
 name|relativize
 argument_list|(
@@ -850,23 +857,23 @@ block|}
 block|}
 name|this
 operator|.
-name|relPath
+name|cgenOutputRelativePath
 operator|=
 name|path
 expr_stmt|;
 block|}
-comment|/**      * @return normalized relative path      * @since 5.0 renamed from {@code buildRelPath()} and made package private      */
+comment|/**      * TODO: used for the XML serialization, could be changed      * @return normalized relative path      * @since 5.0 renamed from {@code buildRelPath()} and made package private      */
 name|String
 name|getNormalizedRelativePath
 parameter_list|()
 block|{
 if|if
 condition|(
-name|relPath
+name|cgenOutputRelativePath
 operator|==
 literal|null
 operator|||
-name|relPath
+name|cgenOutputRelativePath
 operator|.
 name|toString
 argument_list|()
@@ -880,13 +887,13 @@ literal|"."
 return|;
 block|}
 return|return
-name|relPath
+name|cgenOutputRelativePath
 operator|.
 name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * @return calculated output directory      * @since 5.0 renamed from {@code buildPath()}      */
+comment|/**      * TODO: change return type to Optional&lt;Path&gt;      * @return calculated output directory      * @since 5.0 renamed from {@code buildPath()}      */
 specifier|public
 name|Path
 name|buildOutputPath
@@ -894,32 +901,49 @@ parameter_list|()
 block|{
 if|if
 condition|(
-name|rootPath
+name|rootProjectPath
 operator|==
 literal|null
 condition|)
 block|{
 return|return
-name|relPath
+name|cgenOutputRelativePath
 return|;
 block|}
 if|if
 condition|(
-name|relPath
+name|cgenOutputRelativePath
 operator|==
 literal|null
 condition|)
 block|{
 return|return
-name|rootPath
+literal|null
 return|;
 block|}
+if|if
+condition|(
+name|cgenOutputRelativePath
+operator|.
+name|isAbsolute
+argument_list|()
+condition|)
+block|{
 return|return
-name|rootPath
+name|cgenOutputRelativePath
+operator|.
+name|normalize
+argument_list|()
+return|;
+block|}
+else|else
+block|{
+return|return
+name|rootProjectPath
 operator|.
 name|resolve
 argument_list|(
-name|relPath
+name|cgenOutputRelativePath
 argument_list|)
 operator|.
 name|toAbsolutePath
@@ -928,6 +952,7 @@ operator|.
 name|normalize
 argument_list|()
 return|;
+block|}
 block|}
 specifier|public
 name|boolean
