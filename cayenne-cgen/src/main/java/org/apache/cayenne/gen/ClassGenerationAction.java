@@ -1327,6 +1327,16 @@ argument_list|,
 literal|"false"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|cgenConfiguration
+operator|.
+name|getRootPath
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
 name|props
 operator|.
 name|put
@@ -1339,6 +1349,7 @@ name|getRootPath
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 else|else
 block|{
