@@ -2746,7 +2746,7 @@ condition|(
 operator|!
 name|cgenConfiguration
 operator|.
-name|getExcludeEntityArtifacts
+name|getExcludedEntityArtifacts
 argument_list|()
 operator|.
 name|contains

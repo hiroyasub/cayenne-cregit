@@ -756,7 +756,7 @@ return|return;
 block|}
 name|configuration
 operator|.
-name|loadEntities
+name|parseExcludedEntities
 argument_list|(
 name|entities
 argument_list|)
@@ -787,7 +787,7 @@ return|return;
 block|}
 name|configuration
 operator|.
-name|loadEmbeddables
+name|parseExcludedEmbeddables
 argument_list|(
 name|embeddables
 argument_list|)
@@ -1468,12 +1468,12 @@ argument_list|)
 expr_stmt|;
 name|configuration
 operator|.
-name|resolveExcludeEntities
+name|resolveExcludedEntities
 argument_list|()
 expr_stmt|;
 name|configuration
 operator|.
-name|resolveExcludeEmbeddables
+name|resolveExcludedEmbeddables
 argument_list|()
 expr_stmt|;
 name|CgenConfigList
