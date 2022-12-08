@@ -256,7 +256,7 @@ argument_list|)
 argument_list|,
 name|configuration
 operator|.
-name|getRelPath
+name|getRawOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -318,7 +318,7 @@ argument_list|)
 argument_list|,
 name|configuration
 operator|.
-name|getRelPath
+name|getRawOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -380,7 +380,7 @@ argument_list|)
 argument_list|,
 name|configuration
 operator|.
-name|getRelPath
+name|getRawOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -442,7 +442,7 @@ argument_list|)
 argument_list|,
 name|configuration
 operator|.
-name|getRelPath
+name|getRawOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -504,7 +504,7 @@ argument_list|)
 argument_list|,
 name|configuration
 operator|.
-name|getRelPath
+name|getRawOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -566,7 +566,7 @@ argument_list|)
 argument_list|,
 name|configuration
 operator|.
-name|getRelPath
+name|getRawOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -635,7 +635,7 @@ argument_list|)
 argument_list|,
 name|configuration
 operator|.
-name|getRelPath
+name|getRawOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -692,7 +692,7 @@ name|relPath
 argument_list|,
 name|configuration
 operator|.
-name|getRelPath
+name|getRawOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -769,7 +769,7 @@ argument_list|)
 argument_list|,
 name|configuration
 operator|.
-name|getRelPath
+name|getRawOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -891,7 +891,7 @@ argument_list|)
 argument_list|,
 name|configuration
 operator|.
-name|getRelPath
+name|getRawOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -953,7 +953,7 @@ argument_list|)
 argument_list|,
 name|configuration
 operator|.
-name|getRelPath
+name|getRawOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1015,7 +1015,7 @@ argument_list|)
 argument_list|,
 name|configuration
 operator|.
-name|getRelPath
+name|getRawOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1077,7 +1077,7 @@ argument_list|)
 argument_list|,
 name|configuration
 operator|.
-name|getRelPath
+name|getRawOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1151,7 +1151,7 @@ argument_list|)
 argument_list|,
 name|configuration
 operator|.
-name|getRelPath
+name|getRawOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1208,7 +1208,7 @@ argument_list|)
 argument_list|,
 name|configuration
 operator|.
-name|getRelPath
+name|getRawOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -1336,7 +1336,7 @@ argument_list|)
 argument_list|,
 name|configuration
 operator|.
-name|getRelPath
+name|getRawOutputPath
 argument_list|()
 argument_list|)
 expr_stmt|;

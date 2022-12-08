@@ -382,14 +382,14 @@ if|else if
 condition|(
 name|cgenConfiguration
 operator|.
-name|getRelPath
+name|buildOutputPath
 argument_list|()
 operator|==
 literal|null
 condition|)
 block|{
 comment|// No path was set, and we are not in the Maven tree.
-comment|// Set output dir match with the root, nothing else we could do here
+comment|// Set output dir match with the root, nothing else we could do here.
 name|cgenConfiguration
 operator|.
 name|updateOutputPath

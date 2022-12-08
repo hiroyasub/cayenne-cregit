@@ -244,7 +244,7 @@ decl_stmt|;
 comment|/**      * Target directory for generated classes, relative to the {@code rootProjectPath}      * (if root path is set, and it's possible to relativize).      */
 specifier|private
 name|Path
-name|cgenOutputRelativePath
+name|cgenOutputPath
 decl_stmt|;
 specifier|private
 name|Collection
@@ -746,17 +746,17 @@ operator|=
 name|rootProjectPath
 expr_stmt|;
 block|}
-comment|/**      * @return cgen output relative path      */
+comment|/**      * Method returns output path as is, without any processing.      * @return cgen output relative path      * @see #buildOutputPath()      * @since 5.0 renamed from {@code getRelPath()}      */
 specifier|public
 name|Path
-name|getRelPath
+name|getRawOutputPath
 parameter_list|()
 block|{
 return|return
-name|cgenOutputRelativePath
+name|cgenOutputPath
 return|;
 block|}
-comment|/**      * Method that calculates output path based on provided {@code Path} and {@code rootProjectPath}      * @param path to update relative path with      * @see #setRootPath(Path)      * @since 5.0      */
+comment|/**      * Method that updates output path based on provided {@code Path} and {@code rootProjectPath}      *      * @param path to update output path with, could be an absolute path or a path      *             relative to the {@code rootProjectPath} or cgen tool environment      * @see #setRootPath(Path)      * @since 5.0      */
 specifier|public
 name|void
 name|updateOutputPath
@@ -795,7 +795,7 @@ condition|)
 block|{
 name|this
 operator|.
-name|cgenOutputRelativePath
+name|cgenOutputPath
 operator|=
 name|rootProjectPath
 operator|.
@@ -809,23 +809,23 @@ block|}
 block|}
 name|this
 operator|.
-name|cgenOutputRelativePath
+name|cgenOutputPath
 operator|=
 name|path
 expr_stmt|;
 block|}
 comment|/**      * @return normalized relative path      * @since 5.0 renamed from {@code buildRelPath()} and made package private      */
 name|String
-name|getNormalizedRelativePath
+name|getNormalizedOutputPath
 parameter_list|()
 block|{
 if|if
 condition|(
-name|cgenOutputRelativePath
+name|cgenOutputPath
 operator|==
 literal|null
 operator|||
-name|cgenOutputRelativePath
+name|cgenOutputPath
 operator|.
 name|toString
 argument_list|()
@@ -839,13 +839,13 @@ literal|"."
 return|;
 block|}
 return|return
-name|cgenOutputRelativePath
+name|cgenOutputPath
 operator|.
 name|toString
 argument_list|()
 return|;
 block|}
-comment|/**      * This method calculates effective output directory for the class generator.      * It uses {@code rootProjectPath} and {@code cgenOutputRelativePath}.      *      * @return calculated output directory      * @see #setRootPath(Path)      * @see #updateOutputPath(Path)      * @since 5.0 renamed from {@code buildPath()}      */
+comment|/**      * This method calculates effective output directory for the class generator.      * It uses {@code cgenOutputPath} and {@code rootProjectPath} (if set).      *      * @return calculated output directory      * @see #setRootPath(Path)      * @see #updateOutputPath(Path)      * @since 5.0 renamed from {@code buildPath()}      */
 specifier|public
 name|Path
 name|buildOutputPath
@@ -860,12 +860,12 @@ condition|)
 block|{
 comment|// this could be an unsaved project or direct usage in tools (Ant, Maven or Gradle)
 return|return
-name|cgenOutputRelativePath
+name|cgenOutputPath
 return|;
 block|}
 if|if
 condition|(
-name|cgenOutputRelativePath
+name|cgenOutputPath
 operator|==
 literal|null
 condition|)
@@ -877,14 +877,14 @@ return|;
 block|}
 if|if
 condition|(
-name|cgenOutputRelativePath
+name|cgenOutputPath
 operator|.
 name|isAbsolute
 argument_list|()
 condition|)
 block|{
 return|return
-name|cgenOutputRelativePath
+name|cgenOutputPath
 operator|.
 name|normalize
 argument_list|()
@@ -897,7 +897,7 @@ name|rootProjectPath
 operator|.
 name|resolve
 argument_list|(
-name|cgenOutputRelativePath
+name|cgenOutputPath
 argument_list|)
 operator|.
 name|toAbsolutePath
@@ -1706,7 +1706,7 @@ literal|"destDir"
 argument_list|,
 name|separatorsToUnix
 argument_list|(
-name|getNormalizedRelativePath
+name|getNormalizedOutputPath
 argument_list|()
 argument_list|)
 argument_list|)
