@@ -510,7 +510,7 @@ name|dataMapArtifactsNames
 operator|.
 name|contains
 argument_list|(
-literal|"queryDescriptor"
+literal|"dataMap"
 argument_list|)
 argument_list|)
 expr_stmt|;

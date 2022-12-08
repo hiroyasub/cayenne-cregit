@@ -37,6 +37,20 @@ name|cayenne
 operator|.
 name|map
 operator|.
+name|DataMap
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|map
+operator|.
 name|Embeddable
 import|;
 end_import
@@ -52,20 +66,6 @@ operator|.
 name|map
 operator|.
 name|ObjEntity
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|map
-operator|.
-name|QueryDescriptor
 import|;
 end_import
 
@@ -355,16 +355,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|Objects
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|Properties
 import|;
 end_import
@@ -410,7 +400,7 @@ name|CUSTOM_TEMPLATE_REPO
 init|=
 literal|"customTemplateRepo"
 decl_stmt|;
-comment|/** 	 * @since 4.1 	 */
+comment|/**      * @since 4.1      */
 specifier|protected
 name|CgenConfiguration
 name|cgenConfiguration
@@ -441,7 +431,7 @@ specifier|private
 name|MetadataUtils
 name|metadataUtils
 decl_stmt|;
-comment|/** 	Optionally allows user-defined tools besides {@link ImportUtils} for working with velocity templates.<br/> 	To use this feature, either set the java system property {@code -Dorg.apache.velocity.tools=tools.properties} 	or set the {@code externalToolConfig} property to "tools.properties" in {@code CgenConfiguration}. Then  	create the file "tools.properties" in the working directory or in the root of the classpath with content  	like this:<pre> 	tools.toolbox = application 	tools.application.myTool = com.mycompany.MyTool</pre> 	Then the methods in the MyTool class will be available for use in the template like ${myTool.myMethod(arg)} 	 */
+comment|/**      * Optionally allows user-defined tools besides {@link ImportUtils} for working with velocity templates.<br/>      * To use this feature, either set the java system property {@code -Dorg.apache.velocity.tools=tools.properties}      * or set the {@code externalToolConfig} property to "tools.properties" in {@code CgenConfiguration}. Then      * create the file "tools.properties" in the working directory or in the root of the classpath with content      * like this:      *<pre>      * tools.toolbox = application      * tools.application.myTool = com.mycompany.MyTool</pre>      * Then the methods in the MyTool class will be available for use in the template like ${myTool.myMethod(arg)}      */
 specifier|public
 name|ClassGenerationAction
 parameter_list|(
@@ -783,7 +773,7 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * VelocityContext initialization method called once per each artifact and 	 * template type combination. 	 */
+comment|/**      * VelocityContext initialization method called once per each artifact and      * template type combination.      */
 name|void
 name|resetContextForArtifactTemplate
 parameter_list|(
@@ -847,7 +837,7 @@ name|context
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Adds entities to the internal entity list. 	 * @param entities collection 	 * 	 * @since 4.0 throws exception 	 */
+comment|/**      * Adds entities to the internal entity list.      *      * @param entities collection      * @since 4.0 throws exception      */
 specifier|public
 name|void
 name|addEntities
@@ -928,19 +918,19 @@ expr_stmt|;
 block|}
 block|}
 block|}
+comment|/**      * @param dataMap to add to the list of artifacts to generate      * @since 5.0 replaces removed {@code addQueries()} method      */
 specifier|public
 name|void
-name|addQueries
+name|addDataMap
 parameter_list|(
-name|Collection
-argument_list|<
-name|QueryDescriptor
-argument_list|>
-name|queries
+name|DataMap
+name|dataMap
 parameter_list|)
 block|{
+comment|// data map should be used only in ArtifactsGenerationMode.ALL
 if|if
 condition|(
+operator|!
 name|cgenConfiguration
 operator|.
 name|getArtifactsGenerationMode
@@ -957,15 +947,8 @@ argument_list|()
 argument_list|)
 condition|)
 block|{
-comment|// TODO: andrus 10.12.2010 - why not also check for empty query list??
-comment|// Or create a better API for enabling DataMapArtifact
-if|if
-condition|(
-name|queries
-operator|!=
-literal|null
-condition|)
-block|{
+return|return;
+block|}
 name|Artifact
 name|artifact
 init|=
@@ -977,7 +960,10 @@ operator|.
 name|getDataMap
 argument_list|()
 argument_list|,
-name|queries
+name|dataMap
+operator|.
+name|getQueryDescriptors
+argument_list|()
 argument_list|)
 decl_stmt|;
 if|if
@@ -1003,9 +989,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-block|}
-block|}
-comment|/** 	 * @since 4.1 	 */
+comment|/**      * @since 4.1      */
 specifier|public
 name|void
 name|prepareArtifacts
@@ -1087,19 +1071,16 @@ argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|addQueries
+name|addDataMap
 argument_list|(
 name|cgenConfiguration
 operator|.
 name|getDataMap
 argument_list|()
-operator|.
-name|getQueryDescriptors
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-comment|/** 	 * Executes class generation once per each artifact. 	 */
+comment|/**      * Executes class generation once per each artifact.      */
 specifier|public
 name|void
 name|execute
@@ -1132,9 +1113,7 @@ block|}
 block|}
 finally|finally
 block|{
-comment|// must reset engine at the end of class generator run to avoid
-comment|// memory
-comment|// leaks and stale templates
+comment|// must reset engine at the end of class generator run to avoid memory leaks and stale templates
 name|templateCache
 operator|.
 name|clear
@@ -1142,7 +1121,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-comment|/** 	 * Executes class generation for a single artifact. 	 */
+comment|/**      * Executes class generation for a single artifact.      */
 specifier|protected
 name|void
 name|execute
@@ -1318,7 +1297,9 @@ name|props
 operator|.
 name|put
 argument_list|(
-literal|"resource.loaders"
+name|RuntimeConstants
+operator|.
+name|RESOURCE_LOADERS
 argument_list|,
 literal|"cayenne"
 argument_list|)
@@ -1346,16 +1327,6 @@ argument_list|,
 literal|"false"
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|cgenConfiguration
-operator|.
-name|getRootPath
-argument_list|()
-operator|!=
-literal|null
-condition|)
-block|{
 name|props
 operator|.
 name|put
@@ -1366,18 +1337,14 @@ name|cgenConfiguration
 operator|.
 name|getRootPath
 argument_list|()
-operator|.
-name|toString
-argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 else|else
 block|{
 name|props
 operator|.
-name|setProperty
+name|put
 argument_list|(
 name|RuntimeConstants
 operator|.
@@ -1388,7 +1355,7 @@ argument_list|)
 expr_stmt|;
 name|props
 operator|.
-name|setProperty
+name|put
 argument_list|(
 literal|"resource.loader.string.class"
 argument_list|,
@@ -1402,7 +1369,7 @@ argument_list|)
 expr_stmt|;
 name|props
 operator|.
-name|setProperty
+name|put
 argument_list|(
 literal|"resource.loader.string.repository.name"
 argument_list|,
@@ -1424,26 +1391,12 @@ name|CgenTemplate
 name|template
 parameter_list|)
 block|{
-name|StringResourceLoader
-operator|.
-name|setRepository
-argument_list|(
-name|CUSTOM_TEMPLATE_REPO
-argument_list|,
-operator|new
-name|StringResourceRepositoryImpl
-argument_list|()
-argument_list|)
-expr_stmt|;
 name|StringResourceRepository
 name|repo
 init|=
-name|StringResourceLoader
-operator|.
-name|getRepository
-argument_list|(
-name|CUSTOM_TEMPLATE_REPO
-argument_list|)
+operator|new
+name|StringResourceRepositoryImpl
+argument_list|()
 decl_stmt|;
 name|repo
 operator|.
@@ -1460,8 +1413,17 @@ name|getData
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|StringResourceLoader
+operator|.
+name|setRepository
+argument_list|(
+name|CUSTOM_TEMPLATE_REPO
+argument_list|,
+name|repo
+argument_list|)
+expr_stmt|;
 block|}
-comment|/** 	 * Validates the state of this class generator. 	 * Throws CayenneRuntimeException if it is in an inconsistent state. 	 * Called internally from "execute". 	 */
+comment|/**      * Validates the state of this class generator.      * Throws CayenneRuntimeException if it is in an inconsistent state.      * Called internally from "execute".      */
 specifier|protected
 name|void
 name|validateAttributes
@@ -1570,7 +1532,7 @@ argument_list|)
 throw|;
 block|}
 block|}
-comment|/** 	 * Opens a Writer to write generated output. Returned Writer is mapped to a 	 * filesystem file (although subclasses may override that). File location is 	 * determined from the current state of VelocityContext and the TemplateType 	 * passed as a parameter. Writer encoding is determined from the value of 	 * the "encoding" property. 	 */
+comment|/**      * Opens a Writer to write generated output. Returned Writer is mapped to a      * filesystem file (although subclasses may override that). File location is      * determined from the current state of VelocityContext and the TemplateType      * passed as a parameter. Writer encoding is determined from the value of      * the "encoding" property.      */
 specifier|protected
 name|Writer
 name|openWriter
@@ -1682,7 +1644,7 @@ name|out
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Returns a target file where a generated superclass must be saved. If null 	 * is returned, class shouldn't be generated. 	 */
+comment|/**      * Returns a target file where a generated superclass must be saved. If null      * is returned, class shouldn't be generated.      */
 specifier|private
 name|File
 name|fileForSuperclass
@@ -1792,7 +1754,7 @@ return|return
 name|dest
 return|;
 block|}
-comment|/** 	 * Returns a target file where a generated class must be saved. If null is 	 * returned, class shouldn't be generated. 	 */
+comment|/**      * Returns a target file where a generated class must be saved. If null is      * returned, class shouldn't be generated.      */
 specifier|private
 name|File
 name|fileForClass
@@ -1933,7 +1895,7 @@ return|return
 name|dest
 return|;
 block|}
-comment|/** 	 * Ignore if the destination is newer than the map 	 * (internal timestamp), i.e. has been generated after the map was 	 * last saved AND the template is older than the destination file 	 */
+comment|/**      * Ignore if the destination is newer than the map      * (internal timestamp), i.e. has been generated after the map was      * last saved AND the template is older than the destination file      */
 specifier|protected
 name|boolean
 name|fileNeedUpdate
@@ -2001,7 +1963,7 @@ return|return
 literal|true
 return|;
 block|}
-comment|/** 	 * Is file modified after internal timestamp (usually equal to mtime of datamap file) 	 */
+comment|/**      * Is file modified after internal timestamp (usually equal to mtime of datamap file)      */
 specifier|protected
 name|boolean
 name|isOld
@@ -2022,7 +1984,7 @@ name|getTimestamp
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Returns a File object corresponding to a directory where files that 	 * belong to<code>pkgName</code> package should reside. Creates any missing 	 * diectories below<code>dest</code>. 	 */
+comment|/**      * Returns a File object corresponding to a directory where files that      * belong to<code>pkgName</code> package should reside. Creates any missing      * diectories below<code>dest</code>.      */
 specifier|private
 name|File
 name|mkpath
@@ -2107,7 +2069,7 @@ return|return
 name|fullPath
 return|;
 block|}
-comment|/** 	 * Injects an optional logger that will be used to trace generated files at 	 * the info level. 	 */
+comment|/**      * Injects an optional logger that will be used to trace generated files at      * the info level.      */
 specifier|public
 name|void
 name|setLogger
@@ -2123,7 +2085,7 @@ operator|=
 name|logger
 expr_stmt|;
 block|}
-comment|/** 	 * @since 4.1 	 */
+comment|/**      * @since 4.1      */
 specifier|public
 name|CgenConfiguration
 name|getCgenConfiguration
@@ -2133,7 +2095,7 @@ return|return
 name|cgenConfiguration
 return|;
 block|}
-comment|/** 	 * Sets an optional shared VelocityContext. Useful with tools like VPP that 	 * can set custom values in the context, not known to Cayenne. 	 */
+comment|/**      * Sets an optional shared VelocityContext. Useful with tools like VPP that      * can set custom values in the context, not known to Cayenne.      */
 specifier|public
 name|void
 name|setContext

@@ -806,12 +806,9 @@ argument_list|)
 expr_stmt|;
 name|generator
 operator|.
-name|addQueries
+name|addDataMap
 argument_list|(
 name|dataMap
-operator|.
-name|getQueryDescriptors
-argument_list|()
 argument_list|)
 expr_stmt|;
 block|}

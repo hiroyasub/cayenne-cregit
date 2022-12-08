@@ -160,11 +160,7 @@ comment|/**  * Velocity template resource loader customized for Cayenne use. Sup
 end_comment
 
 begin_comment
-comment|// must be public top-level class as it is
-end_comment
-
-begin_comment
-comment|// instantiated via reflection by Velocity
+comment|// must be public top-level class as it is instantiated via reflection by Velocity
 end_comment
 
 begin_class
@@ -188,33 +184,18 @@ name|ExtProperties
 name|configuration
 parameter_list|)
 block|{
-name|String
-name|rootPathStr
-init|=
+name|root
+operator|=
+operator|(
+name|Path
+operator|)
 name|configuration
 operator|.
-name|getString
+name|getProperty
 argument_list|(
 literal|"root"
 argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|rootPathStr
-operator|!=
-literal|null
-condition|)
-block|{
-name|root
-operator|=
-name|Paths
-operator|.
-name|get
-argument_list|(
-name|rootPathStr
-argument_list|)
 expr_stmt|;
-block|}
 block|}
 comment|/**      * Returns resource as InputStream. Searches resource in a following places:      *<ol>      *<li>thread class loader</li>      *<li>this class's class loader</li>      *<li>tries a path relative to a<i>root</i> path, if set</li>      *<li>an absolute path</li>      *</ol>      */
 annotation|@
@@ -382,12 +363,10 @@ name|name
 argument_list|)
 decl_stmt|;
 return|return
-operator|(
 name|file
 operator|.
 name|canRead
 argument_list|()
-operator|)
 condition|?
 operator|new
 name|BufferedReader
