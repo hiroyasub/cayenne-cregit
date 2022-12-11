@@ -221,6 +221,10 @@ specifier|protected
 name|JTextComponent
 name|textComponent
 decl_stmt|;
+specifier|protected
+name|boolean
+name|isDataValid
+decl_stmt|;
 specifier|public
 name|TextAdapter
 parameter_list|(
@@ -661,6 +665,15 @@ argument_list|(
 name|defaultToolTip
 argument_list|)
 expr_stmt|;
+block|}
+specifier|public
+name|boolean
+name|isDataValid
+parameter_list|()
+block|{
+return|return
+name|isDataValid
+return|;
 block|}
 block|}
 end_class
