@@ -220,7 +220,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|StandardModeController
+name|CgenConfigController
 extends|extends
 name|CayenneController
 block|{
@@ -229,7 +229,7 @@ name|CgenConfiguration
 name|cgenConfiguration
 decl_stmt|;
 specifier|protected
-name|StandardModePanel
+name|CgenConfigPanel
 name|view
 decl_stmt|;
 specifier|protected
@@ -237,8 +237,8 @@ name|DataMapDefaults
 name|preferences
 decl_stmt|;
 specifier|protected
-name|CodeGeneratorController
-name|codeGeneratorController
+name|CgenController
+name|cgenController
 decl_stmt|;
 specifier|private
 name|boolean
@@ -253,9 +253,9 @@ init|=
 literal|" (edited)"
 decl_stmt|;
 specifier|public
-name|StandardModeController
+name|CgenConfigController
 parameter_list|(
-name|CodeGeneratorController
+name|CgenController
 name|parent
 parameter_list|)
 block|{
@@ -266,7 +266,7 @@ argument_list|)
 expr_stmt|;
 name|this
 operator|.
-name|codeGeneratorController
+name|cgenController
 operator|=
 name|parent
 expr_stmt|;
@@ -275,7 +275,7 @@ operator|.
 name|view
 operator|=
 operator|new
-name|StandardModePanel
+name|CgenConfigPanel
 argument_list|(
 name|getParentController
 argument_list|()
@@ -668,13 +668,13 @@ argument_list|)
 expr_stmt|;
 block|}
 specifier|protected
-name|CodeGeneratorController
+name|CgenController
 name|getParentController
 parameter_list|()
 block|{
 return|return
 operator|(
-name|CodeGeneratorController
+name|CgenController
 operator|)
 name|getParent
 argument_list|()
@@ -867,7 +867,7 @@ expr_stmt|;
 block|}
 block|}
 specifier|public
-name|StandardModePanel
+name|CgenConfigPanel
 name|getView
 parameter_list|()
 block|{
@@ -1616,12 +1616,12 @@ expr_stmt|;
 block|}
 block|}
 specifier|public
-name|CodeGeneratorController
+name|CgenController
 name|getCodeGeneratorController
 parameter_list|()
 block|{
 return|return
-name|codeGeneratorController
+name|cgenController
 return|;
 block|}
 specifier|public

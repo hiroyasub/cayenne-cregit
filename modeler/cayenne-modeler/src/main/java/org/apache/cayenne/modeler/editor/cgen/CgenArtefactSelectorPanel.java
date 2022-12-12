@@ -108,7 +108,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|ClassesTabPanel
+name|CgenArtefactSelectorPanel
 extends|extends
 name|JPanel
 block|{
@@ -116,7 +116,7 @@ specifier|protected
 name|JTable
 name|table
 decl_stmt|;
-name|ClassesTabPanel
+name|CgenArtefactSelectorPanel
 parameter_list|()
 block|{
 name|this
