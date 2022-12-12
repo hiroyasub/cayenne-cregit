@@ -329,6 +329,15 @@ literal|true
 argument_list|)
 expr_stmt|;
 block|}
+name|getView
+argument_list|()
+operator|.
+name|getOutputFolder
+argument_list|()
+operator|.
+name|updateModel
+argument_list|()
+expr_stmt|;
 block|}
 specifier|public
 specifier|abstract
