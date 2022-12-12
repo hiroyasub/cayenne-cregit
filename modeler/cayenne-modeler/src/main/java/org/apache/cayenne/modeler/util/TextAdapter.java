@@ -188,7 +188,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * A validating adapter for JTextComponent. Implement {@link #updateModel(String)}to  * initialize model on text change.  *   */
+comment|/**  * A validating adapter for JTextComponent. Implement {@link #updateModel(String)} initialize model on text change.  */
 end_comment
 
 begin_class
