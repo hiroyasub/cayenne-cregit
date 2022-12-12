@@ -13,9 +13,7 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
-name|editor
-operator|.
-name|cgen
+name|util
 package|;
 end_package
 
@@ -112,6 +110,7 @@ comment|/**  *  * @since 4.2  */
 end_comment
 
 begin_class
+specifier|public
 class|class
 name|CheckBoxHeader
 extends|extends
