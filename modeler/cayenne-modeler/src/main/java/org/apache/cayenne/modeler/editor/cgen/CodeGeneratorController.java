@@ -27,6 +27,18 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|CayenneRuntimeException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|configuration
 operator|.
 name|BaseConfigurationNodeVisitor
@@ -346,6 +358,26 @@ operator|.
 name|editor
 operator|.
 name|DbImportController
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|modeler
+operator|.
+name|editor
+operator|.
+name|cgen
+operator|.
+name|domain
+operator|.
+name|CgenTab
 import|;
 end_import
 
@@ -1255,6 +1287,39 @@ name|getView
 argument_list|()
 argument_list|,
 literal|"Class generation finished"
+argument_list|)
+expr_stmt|;
+block|}
+catch|catch
+parameter_list|(
+name|CayenneRuntimeException
+name|e
+parameter_list|)
+block|{
+name|LOGGER
+operator|.
+name|error
+argument_list|(
+literal|"Error generating classes"
+argument_list|,
+name|e
+argument_list|)
+expr_stmt|;
+name|JOptionPane
+operator|.
+name|showMessageDialog
+argument_list|(
+name|this
+operator|.
+name|getView
+argument_list|()
+argument_list|,
+literal|"Error generating classes - "
+operator|+
+name|e
+operator|.
+name|getUnlabeledMessage
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -2807,7 +2872,7 @@ return|return
 name|cgenConfiguration
 return|;
 block|}
-comment|/**      * Update cgen path if project is saved and no path is already set manually      * @param e event we are processing      */
+comment|/**      * Update cgen path if project is saved and no path is already set manually      *      * @param e event we are processing      */
 specifier|public
 name|void
 name|onProjectSaved
