@@ -1557,12 +1557,13 @@ operator|.
 name|YES_NO_OPTION
 argument_list|)
 decl_stmt|;
-comment|// result "0" mean selecting YES
 if|if
 condition|(
 name|result
 operator|==
-literal|0
+name|JOptionPane
+operator|.
+name|OK_OPTION
 condition|)
 block|{
 if|if
@@ -1643,9 +1644,6 @@ init|=
 name|standardModeController
 operator|.
 name|getView
-argument_list|()
-operator|.
-name|getOutputFolder
 argument_list|()
 operator|.
 name|isDataValid
