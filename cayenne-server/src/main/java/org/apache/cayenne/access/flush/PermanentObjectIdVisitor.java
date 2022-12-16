@@ -747,11 +747,10 @@ name|put
 argument_list|(
 name|dbAttrName
 argument_list|,
-operator|new
 name|IdGenerationMarker
-argument_list|(
-name|id
-argument_list|)
+operator|.
+name|marker
+argument_list|()
 argument_list|)
 expr_stmt|;
 continue|continue;
