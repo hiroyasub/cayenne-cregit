@@ -325,6 +325,22 @@ name|exp
 operator|.
 name|property
 operator|.
+name|SelfProperty
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|exp
+operator|.
+name|property
+operator|.
 name|SetProperty
 import|;
 end_import
@@ -957,7 +973,7 @@ name|importUtils
 operator|.
 name|addType
 argument_list|(
-name|EntityProperty
+name|SelfProperty
 operator|.
 name|class
 operator|.
@@ -1255,7 +1271,7 @@ name|String
 operator|.
 name|format
 argument_list|(
-literal|"public static final EntityProperty<%s> SELF = PropertyFactory.createSelf(%s.class);"
+literal|"public static final SelfProperty<%s> SELF = PropertyFactory.createSelf(%s.class);"
 argument_list|,
 name|propertyType
 argument_list|,
