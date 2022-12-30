@@ -388,10 +388,6 @@ name|adapter
 decl_stmt|;
 specifier|private
 name|boolean
-name|usePrimitives
-decl_stmt|;
-specifier|private
-name|boolean
 name|useJava7Types
 decl_stmt|;
 specifier|private
@@ -615,15 +611,21 @@ operator|=
 name|meaningfulPkTables
 expr_stmt|;
 block|}
+comment|/**      * @deprecated since 5.0      * @return false      */
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isUsePrimitives
 parameter_list|()
 block|{
 return|return
-name|usePrimitives
+literal|false
 return|;
 block|}
+comment|/**      * does nothing      * @param usePrimitives not used      * @deprecated since 5.0      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setUsePrimitives
@@ -632,12 +634,6 @@ name|boolean
 name|usePrimitives
 parameter_list|)
 block|{
-name|this
-operator|.
-name|usePrimitives
-operator|=
-name|usePrimitives
-expr_stmt|;
 block|}
 specifier|public
 name|boolean

@@ -298,9 +298,7 @@ literal|"        IncludeColumn: includeColumn\n"
 operator|+
 literal|"      IncludeTable: table3\n"
 operator|+
-literal|"        IncludeColumn: includeColumn\n\n"
-operator|+
-literal|"  Use primitives"
+literal|"        IncludeColumn: includeColumn\n"
 argument_list|,
 name|engineering
 operator|.
@@ -423,9 +421,7 @@ literal|"      IncludeTable: table1\n"
 operator|+
 literal|"        IncludeColumn: includeColumn\n"
 operator|+
-literal|"      ExcludeTable: table2\n\n"
-operator|+
-literal|"  Use primitives"
+literal|"      ExcludeTable: table2\n"
 argument_list|,
 name|engineering
 operator|.
@@ -528,9 +524,7 @@ literal|"      IncludeTable: null\n"
 operator|+
 literal|"        ExcludeColumn: calculated_.*\n"
 operator|+
-literal|"      ExcludeTable: SYS_.*\n\n"
-operator|+
-literal|"  Use primitives"
+literal|"      ExcludeTable: SYS_.*\n"
 argument_list|,
 name|engineering
 operator|.
@@ -586,9 +580,7 @@ literal|"  Catalog: null\n"
 operator|+
 literal|"    Schema: s\n"
 operator|+
-literal|"      IncludeTable: null\n\n"
-operator|+
-literal|"  Use primitives"
+literal|"      IncludeTable: null\n"
 argument_list|,
 name|engineering
 operator|.
@@ -1018,9 +1010,7 @@ literal|"    ExcludeColumn: c_xxx2\n"
 operator|+
 literal|"    IncludeProcedure: p7\n"
 operator|+
-literal|"    ExcludeProcedure: p8\n\n"
-operator|+
-literal|"  Use primitives"
+literal|"    ExcludeProcedure: p8\n"
 argument_list|,
 name|engineering
 operator|.
@@ -1137,9 +1127,7 @@ literal|"      IncludeProcedure: p7\n"
 operator|+
 literal|"      ExcludeProcedure: p6\n"
 operator|+
-literal|"      ExcludeProcedure: p8\n\n"
-operator|+
-literal|"  Use primitives"
+literal|"      ExcludeProcedure: p8\n"
 argument_list|,
 name|engineering
 operator|.
