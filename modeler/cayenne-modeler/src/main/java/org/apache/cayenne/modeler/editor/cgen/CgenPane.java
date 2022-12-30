@@ -174,7 +174,7 @@ end_comment
 begin_class
 specifier|public
 class|class
-name|CodeGeneratorPane
+name|CgenPane
 extends|extends
 name|JPanel
 block|{
@@ -206,7 +206,7 @@ name|JSplitPane
 name|splitPane
 decl_stmt|;
 specifier|public
-name|CodeGeneratorPane
+name|CgenPane
 parameter_list|(
 name|Component
 name|generatorPanel
@@ -381,7 +381,7 @@ name|configPanel
 operator|.
 name|setBorder
 argument_list|(
-name|StandardModePanel
+name|CgenConfigPanel
 operator|.
 name|CGEN_PANEL_BORDER
 argument_list|)

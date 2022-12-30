@@ -91,7 +91,7 @@ name|editor
 operator|.
 name|cgen
 operator|.
-name|StandardModeController
+name|CgenConfigController
 import|;
 end_import
 
@@ -242,7 +242,7 @@ name|configuration
 decl_stmt|;
 specifier|private
 specifier|final
-name|StandardModeController
+name|CgenConfigController
 name|parentController
 decl_stmt|;
 specifier|private
@@ -281,7 +281,7 @@ decl_stmt|;
 specifier|public
 name|TemplateEditorController
 parameter_list|(
-name|StandardModeController
+name|CgenConfigController
 name|parentController
 parameter_list|,
 name|TemplateType

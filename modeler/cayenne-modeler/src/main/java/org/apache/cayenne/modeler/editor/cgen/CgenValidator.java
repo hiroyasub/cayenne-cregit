@@ -233,7 +233,7 @@ end_comment
 
 begin_class
 class|class
-name|ClassGenerationValidator
+name|CgenValidator
 block|{
 name|ValidationResult
 name|getValidationResult

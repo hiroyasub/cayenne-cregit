@@ -27,20 +27,6 @@ name|cayenne
 operator|.
 name|modeler
 operator|.
-name|Application
-import|;
-end_import
-
-begin_import
-import|import
-name|org
-operator|.
-name|apache
-operator|.
-name|cayenne
-operator|.
-name|modeler
-operator|.
 name|ProjectController
 import|;
 end_import
@@ -59,7 +45,7 @@ name|editor
 operator|.
 name|cgen
 operator|.
-name|CodeGeneratorController
+name|CgenController
 import|;
 end_import
 
@@ -164,8 +150,8 @@ name|JScrollPane
 name|dbImportScrollPane
 decl_stmt|;
 specifier|private
-name|CodeGeneratorController
-name|codeGeneratorController
+name|CgenController
+name|cgenController
 decl_stmt|;
 specifier|private
 name|JScrollPane
@@ -234,10 +220,10 @@ argument_list|(
 name|dbImportView
 argument_list|)
 expr_stmt|;
-name|codeGeneratorController
+name|cgenController
 operator|=
 operator|new
-name|CodeGeneratorController
+name|CgenController
 argument_list|(
 name|mediator
 argument_list|)
@@ -247,7 +233,7 @@ operator|=
 operator|new
 name|JScrollPane
 argument_list|(
-name|codeGeneratorController
+name|cgenController
 operator|.
 name|getView
 argument_list|()
@@ -285,7 +271,7 @@ name|isCgenTabActive
 argument_list|()
 condition|)
 block|{
-name|codeGeneratorController
+name|cgenController
 operator|.
 name|initFromModel
 argument_list|()
