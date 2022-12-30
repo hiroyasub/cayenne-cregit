@@ -710,7 +710,7 @@ name|T
 extends|extends
 name|Persistent
 parameter_list|>
-name|EntityProperty
+name|SelfProperty
 argument_list|<
 name|T
 argument_list|>
@@ -724,8 +724,12 @@ name|type
 parameter_list|)
 block|{
 return|return
-name|createEntity
+operator|new
+name|SelfProperty
+argument_list|<>
 argument_list|(
+literal|null
+argument_list|,
 name|ExpressionFactory
 operator|.
 name|fullObjectExp
