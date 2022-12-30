@@ -184,13 +184,6 @@ name|stripFromTableNames
 init|=
 literal|""
 decl_stmt|;
-comment|/**      *<p>If true, would use primitives instead of numeric and boolean classes.</p>      *<p>Default is<b>"true"</b>, i.e. primitives will be used.</p>      */
-specifier|private
-name|boolean
-name|usePrimitives
-init|=
-literal|true
-decl_stmt|;
 comment|/**      * Use old Java 7 date types      */
 specifier|private
 name|boolean
@@ -329,16 +322,6 @@ argument_list|(
 name|original
 operator|.
 name|isUseJava7Types
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|this
-operator|.
-name|setUsePrimitives
-argument_list|(
-name|original
-operator|.
-name|isUsePrimitives
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -661,19 +644,6 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|usePrimitives
-condition|)
-block|{
-name|res
-operator|.
-name|append
-argument_list|(
-literal|"\n  Use primitives"
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
 name|useJava7Types
 condition|)
 block|{
@@ -746,13 +716,16 @@ return|return
 name|stripFromTableNames
 return|;
 block|}
+comment|/**      * @return false      * @deprecated since 5.0      */
+annotation|@
+name|Deprecated
 specifier|public
 name|boolean
 name|isUsePrimitives
 parameter_list|()
 block|{
 return|return
-name|usePrimitives
+literal|false
 return|;
 block|}
 specifier|public
@@ -854,6 +827,9 @@ operator|=
 name|stripFromTableNames
 expr_stmt|;
 block|}
+comment|/**      * does nothing      * @deprecated since 5.0      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setUsePrimitives
@@ -862,12 +838,6 @@ name|boolean
 name|usePrimitives
 parameter_list|)
 block|{
-name|this
-operator|.
-name|usePrimitives
-operator|=
-name|usePrimitives
-expr_stmt|;
 block|}
 specifier|public
 name|void
@@ -1151,21 +1121,6 @@ argument_list|(
 name|this
 operator|.
 name|isUseJava7Types
-argument_list|()
-argument_list|)
-argument_list|)
-operator|.
-name|simpleTag
-argument_list|(
-literal|"usePrimitives"
-argument_list|,
-name|Boolean
-operator|.
-name|toString
-argument_list|(
-name|this
-operator|.
-name|isUsePrimitives
 argument_list|()
 argument_list|)
 argument_list|)

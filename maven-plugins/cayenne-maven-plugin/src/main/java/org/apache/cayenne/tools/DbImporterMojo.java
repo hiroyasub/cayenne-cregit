@@ -1039,16 +1039,6 @@ argument_list|)
 expr_stmt|;
 name|config
 operator|.
-name|setUsePrimitives
-argument_list|(
-name|dbImportConfig
-operator|.
-name|isUsePrimitives
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|config
-operator|.
 name|setUseJava7Types
 argument_list|(
 name|dbImportConfig

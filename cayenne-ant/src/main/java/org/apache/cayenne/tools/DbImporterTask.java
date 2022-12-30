@@ -553,15 +553,6 @@ name|this
 operator|.
 name|config
 operator|.
-name|setUsePrimitives
-argument_list|(
-literal|true
-argument_list|)
-expr_stmt|;
-name|this
-operator|.
-name|config
-operator|.
 name|setUseJava7Types
 argument_list|(
 literal|false
@@ -1363,6 +1354,9 @@ name|username
 argument_list|)
 expr_stmt|;
 block|}
+comment|/**      * @deprecated since 5.0      */
+annotation|@
+name|Deprecated
 specifier|public
 name|void
 name|setUsePrimitives
@@ -1371,13 +1365,6 @@ name|boolean
 name|flag
 parameter_list|)
 block|{
-name|config
-operator|.
-name|setUsePrimitives
-argument_list|(
-name|flag
-argument_list|)
-expr_stmt|;
 block|}
 comment|/**      * @since 4.0      */
 specifier|public
