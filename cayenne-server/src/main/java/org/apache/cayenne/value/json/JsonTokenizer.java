@@ -206,6 +206,17 @@ comment|// skip whitespace
 name|skipWhitespace
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|position
+operator|==
+name|data
+operator|.
+name|length
+condition|)
+block|{
+break|break;
+block|}
 name|JsonToken
 name|token
 init|=
