@@ -1017,11 +1017,6 @@ argument_list|(
 literal|"gallery2"
 argument_list|)
 expr_stmt|;
-name|context
-operator|.
-name|commitChanges
-argument_list|()
-expr_stmt|;
 name|Artist
 name|updatedArtist1
 init|=
@@ -1045,11 +1040,6 @@ name|setArtistName
 argument_list|(
 literal|"artist11"
 argument_list|)
-expr_stmt|;
-name|context
-operator|.
-name|commitChanges
-argument_list|()
 expr_stmt|;
 name|context
 operator|.
