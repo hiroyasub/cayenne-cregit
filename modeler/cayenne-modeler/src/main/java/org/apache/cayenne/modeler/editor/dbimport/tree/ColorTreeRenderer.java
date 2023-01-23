@@ -1154,6 +1154,10 @@ literal|null
 decl_stmt|;
 while|while
 condition|(
+name|selectedNode
+operator|!=
+literal|null
+operator|&&
 operator|!
 name|selectedNode
 operator|.

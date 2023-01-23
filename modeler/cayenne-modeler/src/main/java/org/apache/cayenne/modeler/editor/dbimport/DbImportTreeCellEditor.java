@@ -679,6 +679,16 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+name|tree
+operator|.
+name|getSelectionPath
+argument_list|()
+operator|!=
+literal|null
+condition|)
+block|{
 name|DbImportTreeNode
 name|selectedNode
 init|=
@@ -708,6 +718,7 @@ argument_list|(
 name|selectedNode
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 specifier|private
 name|boolean
