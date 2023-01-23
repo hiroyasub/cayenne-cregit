@@ -173,6 +173,22 @@ name|access
 operator|.
 name|types
 operator|.
+name|JsonType
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|access
+operator|.
+name|types
+operator|.
 name|ValueObjectTypeRegistry
 import|;
 end_import
@@ -372,7 +388,7 @@ import|;
 end_import
 
 begin_comment
-comment|/**  * DbAdapter implementation for the<a href="http://hsqldb.sourceforge.net/">  * HSQLDB RDBMS</a>. Sample connection settings to use with HSQLDB are shown  * below:  *   *<pre>  *        test-hsqldb.jdbc.username = test  *        test-hsqldb.jdbc.password = secret  *        test-hsqldb.jdbc.url = jdbc:hsqldb:hsql://serverhostname  *        test-hsqldb.jdbc.driver = org.hsqldb.jdbcDriver  *</pre>  */
+comment|/**  * DbAdapter implementation for the<a href="http://hsqldb.sourceforge.net/">  * HSQLDB RDBMS</a>. Sample connection settings to use with HSQLDB are shown  * below:  *  *<pre>  *        test-hsqldb.jdbc.username = test  *        test-hsqldb.jdbc.password = secret  *        test-hsqldb.jdbc.url = jdbc:hsqldb:hsql://serverhostname  *        test-hsqldb.jdbc.driver = org.hsqldb.jdbcDriver  *</pre>  */
 end_comment
 
 begin_class
@@ -493,14 +509,32 @@ name|map
 argument_list|)
 expr_stmt|;
 comment|// create specially configured CharType handler
+name|CharType
+name|charType
+init|=
+operator|new
+name|CharType
+argument_list|(
+literal|true
+argument_list|,
+literal|true
+argument_list|)
+decl_stmt|;
+name|map
+operator|.
+name|registerType
+argument_list|(
+name|charType
+argument_list|)
+expr_stmt|;
 name|map
 operator|.
 name|registerType
 argument_list|(
 operator|new
-name|CharType
+name|JsonType
 argument_list|(
-literal|true
+name|charType
 argument_list|,
 literal|true
 argument_list|)
@@ -547,7 +581,7 @@ return|return
 name|translatorFactory
 return|;
 block|}
-comment|/** 	 * Generate fully-qualified name for 1.8 and on. Subclass generates 	 * unqualified name. 	 *  	 * @since 1.2 	 */
+comment|/** 	 * Generate fully-qualified name for 1.8 and on. Subclass generates 	 * unqualified name. 	 * 	 * @since 1.2 	 */
 specifier|protected
 name|String
 name|getTableName
@@ -565,7 +599,7 @@ name|entity
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Returns DbEntity schema name for 1.8 and on. Subclass generates 	 * unqualified name. 	 *  	 * @since 1.2 	 */
+comment|/** 	 * Returns DbEntity schema name for 1.8 and on. Subclass generates 	 * unqualified name. 	 * 	 * @since 1.2 	 */
 specifier|protected
 name|String
 name|getSchemaName
@@ -581,7 +615,7 @@ name|getSchema
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Uses special action builder to create the right action. 	 *  	 * @since 1.2 	 */
+comment|/** 	 * Uses special action builder to create the right action. 	 * 	 * @since 1.2 	 */
 annotation|@
 name|Override
 specifier|public
@@ -608,7 +642,7 @@ argument_list|)
 argument_list|)
 return|;
 block|}
-comment|/** 	 * Returns a DDL string to create a unique constraint over a set of columns. 	 *  	 * @since 1.1 	 */
+comment|/** 	 * Returns a DDL string to create a unique constraint over a set of columns. 	 * 	 * @since 1.1 	 */
 annotation|@
 name|Override
 specifier|public
@@ -817,7 +851,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Adds an ADD CONSTRAINT clause to a relationship constraint. 	 *  	 * @see JdbcAdapter#createFkConstraint(DbRelationship) 	 */
+comment|/** 	 * Adds an ADD CONSTRAINT clause to a relationship constraint. 	 * 	 * @see JdbcAdapter#createFkConstraint(DbRelationship) 	 */
 annotation|@
 name|Override
 specifier|public
@@ -1076,7 +1110,7 @@ name|toString
 argument_list|()
 return|;
 block|}
-comment|/** 	 * Uses "CREATE CACHED TABLE" instead of "CREATE TABLE". 	 *  	 * @since 1.2 	 */
+comment|/** 	 * Uses "CREATE CACHED TABLE" instead of "CREATE TABLE". 	 * 	 * @since 1.2 	 */
 annotation|@
 name|Override
 specifier|public
