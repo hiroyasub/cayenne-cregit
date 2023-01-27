@@ -419,7 +419,7 @@ block|}
 annotation|@
 name|Override
 specifier|protected
-name|void
+name|boolean
 name|processCharData
 parameter_list|(
 name|String
@@ -498,6 +498,9 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+return|return
+literal|true
+return|;
 block|}
 specifier|private
 name|void
