@@ -1424,7 +1424,7 @@ condition|)
 block|{
 name|DbImportSorter
 operator|.
-name|sortNodeWithAllChildren
+name|sortSubtree
 argument_list|(
 operator|(
 name|DbImportTreeNode

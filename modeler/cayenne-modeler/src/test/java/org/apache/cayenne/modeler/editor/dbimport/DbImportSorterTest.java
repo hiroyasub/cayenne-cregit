@@ -241,7 +241,7 @@ parameter_list|()
 block|{
 name|DbImportSorter
 operator|.
-name|sortNode
+name|sortSingleNode
 argument_list|(
 name|node
 argument_list|)
@@ -310,7 +310,7 @@ parameter_list|()
 block|{
 name|DbImportSorter
 operator|.
-name|sortNodeWithAllChildren
+name|sortSubtree
 argument_list|(
 name|node
 argument_list|)

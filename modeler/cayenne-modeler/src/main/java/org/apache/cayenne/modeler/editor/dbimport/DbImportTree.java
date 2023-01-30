@@ -505,6 +505,13 @@ argument_list|,
 name|root
 argument_list|)
 expr_stmt|;
+name|DbImportSorter
+operator|.
+name|sortSubtree
+argument_list|(
+name|root
+argument_list|)
+expr_stmt|;
 name|model
 operator|.
 name|reload
@@ -1664,13 +1671,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|DbImportSorter
-operator|.
-name|sortNode
-argument_list|(
-name|parent
-argument_list|)
-expr_stmt|;
 block|}
 specifier|public
 name|void

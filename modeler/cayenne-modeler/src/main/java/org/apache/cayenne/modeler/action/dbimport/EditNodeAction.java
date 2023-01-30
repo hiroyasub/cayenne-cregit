@@ -407,7 +407,7 @@ block|}
 block|}
 name|DbImportSorter
 operator|.
-name|sortNode
+name|sortSingleNode
 argument_list|(
 name|selectedElement
 operator|.
