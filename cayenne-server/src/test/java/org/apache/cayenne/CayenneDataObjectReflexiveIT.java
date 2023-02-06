@@ -184,7 +184,7 @@ name|void
 name|addReflexiveParentAndChild
 parameter_list|()
 block|{
-comment|// can add Reflexive Parent (that belongsTo Other) and Child, 100 times
+comment|// can add Reflexive Parent and Child, 100 times
 specifier|final
 name|int
 name|attempts
@@ -211,7 +211,6 @@ name|i
 operator|++
 control|)
 block|{
-comment|// when parent is created and associated to "Other"
 specifier|final
 name|Reflexive
 name|parent
