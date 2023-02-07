@@ -270,6 +270,19 @@ operator|.
 name|commitChanges
 argument_list|()
 expr_stmt|;
+comment|// unset parent so that DBCleaner.clean() will work correctly
+name|child
+operator|.
+name|setToParent
+argument_list|(
+literal|null
+argument_list|)
+expr_stmt|;
+name|context
+operator|.
+name|commitChanges
+argument_list|()
+expr_stmt|;
 block|}
 catch|catch
 parameter_list|(
@@ -436,6 +449,19 @@ argument_list|)
 expr_stmt|;
 try|try
 block|{
+name|context
+operator|.
+name|commitChanges
+argument_list|()
+expr_stmt|;
+comment|// unset parent so that DBCleaner.clean() will work correctly
+name|child
+operator|.
+name|setToParent
+argument_list|(
+literal|null
+argument_list|)
+expr_stmt|;
 name|context
 operator|.
 name|commitChanges
