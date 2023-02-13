@@ -269,6 +269,38 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|testcontainers
+operator|.
+name|shaded
+operator|.
+name|org
+operator|.
+name|hamcrest
+operator|.
+name|MatcherAssert
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|testcontainers
+operator|.
+name|shaded
+operator|.
+name|org
+operator|.
+name|hamcrest
+operator|.
+name|Matchers
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|sql
@@ -493,15 +525,22 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 name|String
-name|string
+name|pattern
 init|=
-literal|"SELECT t0.SURNAME, t0.ID FROM ArtistLazy t0"
+literal|"SELECT t0.SURNAME( c0)?, t0.ID( c1)? FROM ArtistLazy t0"
 decl_stmt|;
-name|assertEquals
+name|MatcherAssert
+operator|.
+name|assertThat
 argument_list|(
 name|sql
 argument_list|,
-name|string
+name|Matchers
+operator|.
+name|matchesPattern
+argument_list|(
+name|pattern
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|ColumnSelect
@@ -757,15 +796,24 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 name|String
-name|string
+name|pattern
 init|=
-literal|"SELECT t0.ARTIST_ID, t0.ID, t1.ID, t1.SURNAME FROM PaintingLazy t0 LEFT JOIN ArtistLazy t1 ON t0.ARTIST_ID = t1.ID"
+literal|"SELECT t0.ARTIST_ID( c0)?, t0.ID( c1)?, t1.ID( c2)?, t1.SURNAME( c3)?"
+operator|+
+literal|" FROM PaintingLazy t0 LEFT JOIN ArtistLazy t1 ON t0.ARTIST_ID = t1.ID"
 decl_stmt|;
-name|assertEquals
+name|MatcherAssert
+operator|.
+name|assertThat
 argument_list|(
 name|sql
 argument_list|,
-name|string
+name|Matchers
+operator|.
+name|matchesPattern
+argument_list|(
+name|pattern
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
