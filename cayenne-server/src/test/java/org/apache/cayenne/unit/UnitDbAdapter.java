@@ -812,6 +812,16 @@ name|supportsLobs
 argument_list|()
 return|;
 block|}
+comment|/**      * Returns true if the target database has native json data type.      */
+specifier|public
+name|boolean
+name|supportsJsonType
+parameter_list|()
+block|{
+return|return
+literal|false
+return|;
+block|}
 specifier|public
 name|boolean
 name|supportsBinaryPK
