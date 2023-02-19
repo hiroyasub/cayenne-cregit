@@ -41,6 +41,22 @@ name|JsonUtils
 import|;
 end_import
 
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|value
+operator|.
+name|json
+operator|.
+name|MalformedJsonException
+import|;
+end_import
+
 begin_comment
 comment|/**  * A Cayenne-supported values object that holds Json string.  *  * @since 4.2  */
 end_comment
@@ -55,6 +71,7 @@ specifier|final
 name|String
 name|json
 decl_stmt|;
+comment|/**      *      * @param json json string representation      * @throws MalformedJsonException if json is empty or blank      */
 specifier|public
 name|Json
 parameter_list|(
@@ -62,6 +79,22 @@ name|String
 name|json
 parameter_list|)
 block|{
+if|if
+condition|(
+name|json
+operator|.
+name|isBlank
+argument_list|()
+condition|)
+block|{
+throw|throw
+operator|new
+name|MalformedJsonException
+argument_list|(
+literal|"Unexpected EOF"
+argument_list|)
+throw|;
+block|}
 name|this
 operator|.
 name|json
