@@ -208,6 +208,27 @@ argument_list|(
 literal|'}'
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|State
+operator|.
+name|ARRAY
+operator|.
+name|equals
+argument_list|(
+name|currentState
+argument_list|()
+argument_list|)
+condition|)
+block|{
+name|builder
+operator|.
+name|append
+argument_list|(
+literal|", "
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 annotation|@
 name|Override
