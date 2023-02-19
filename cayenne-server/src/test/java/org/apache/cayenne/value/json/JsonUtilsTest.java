@@ -447,6 +447,206 @@ literal|null
 block|}
 block|,
 block|{
+literal|"{\"objects\": [{\"id\": 1}, {\"id\": 2}]}"
+block|,
+literal|"{\"objects\":\n[\n{\n\"id\": 1\n},\n{\n\"id\": 2\n}\n]}"
+block|,
+literal|null
+block|}
+block|,
+block|{
+literal|"["
+operator|+
+literal|"{"
+operator|+
+literal|"\"_id\": \"63f218c8ae709e45c7b32c5f\", "
+operator|+
+literal|"\"index\": 0, "
+operator|+
+literal|"\"guid\": \"b3c2b147-9031-40ee-b2a9-fabbd7f5da81\", "
+operator|+
+literal|"\"isActive\": false, "
+operator|+
+literal|"\"balance\": \"$2,836.15\", "
+operator|+
+literal|"\"picture\": \"http://placehold.it/32x32\", "
+operator|+
+literal|"\"age\": 21, "
+operator|+
+literal|"\"eyeColor\": \"green\", "
+operator|+
+literal|"\"name\": \"Ratliff Martin\", "
+operator|+
+literal|"\"gender\": \"male\", "
+operator|+
+literal|"\"company\": \"PLASMOSIS\", "
+operator|+
+literal|"\"email\": \"ratliffmartin@plasmosis.com\", "
+operator|+
+literal|"\"phone\": \"+1 (897) 415-2945\", "
+operator|+
+literal|"\"address\": \"241 Foster Avenue, Outlook, New Jersey, 1479\", "
+operator|+
+literal|"\"about\": \"pariatur irure qui consequat excepteur laborum nulla\", "
+operator|+
+literal|"\"registered\": \"2018-05-18T08:04:15 -03:00\", "
+operator|+
+literal|"\"latitude\": -51.195497, "
+operator|+
+literal|"\"longitude\": 163.317807, "
+operator|+
+literal|"\"tags\": ["
+operator|+
+literal|"\"exercitation\", "
+operator|+
+literal|"\"nulla\", "
+operator|+
+literal|"\"labore\", "
+operator|+
+literal|"\"enim\", "
+operator|+
+literal|"\"ad\", "
+operator|+
+literal|"\"anim\", "
+operator|+
+literal|"\"excepteur\""
+operator|+
+literal|"], "
+operator|+
+literal|"\"friends\": ["
+operator|+
+literal|"{"
+operator|+
+literal|"\"id\": 0, "
+operator|+
+literal|"\"name\": \"Rowena Benson\""
+operator|+
+literal|"}, "
+operator|+
+literal|"{"
+operator|+
+literal|"\"id\": 1, "
+operator|+
+literal|"\"name\": \"Bird Mclaughlin\""
+operator|+
+literal|"}, "
+operator|+
+literal|"{"
+operator|+
+literal|"\"id\": 2, "
+operator|+
+literal|"\"name\": \"Mabel James\""
+operator|+
+literal|"}"
+operator|+
+literal|"], "
+operator|+
+literal|"\"greeting\": \"Hello, Ratliff Martin! You have 2 unread messages.\", "
+operator|+
+literal|"\"favoriteFruit\": \"strawberry\""
+operator|+
+literal|"}"
+operator|+
+literal|"]"
+block|,
+literal|"[\n"
+operator|+
+literal|"  {\n"
+operator|+
+literal|"    \"_id\": \"63f218c8ae709e45c7b32c5f\",\n"
+operator|+
+literal|"    \"index\": 0,\n"
+operator|+
+literal|"    \"guid\": \"b3c2b147-9031-40ee-b2a9-fabbd7f5da81\",\n"
+operator|+
+literal|"    \"isActive\": false,\n"
+operator|+
+literal|"    \"balance\": \"$2,836.15\",\n"
+operator|+
+literal|"    \"picture\": \"http://placehold.it/32x32\",\n"
+operator|+
+literal|"    \"age\": 21,\n"
+operator|+
+literal|"    \"eyeColor\": \"green\",\n"
+operator|+
+literal|"    \"name\": \"Ratliff Martin\",\n"
+operator|+
+literal|"    \"gender\": \"male\",\n"
+operator|+
+literal|"    \"company\": \"PLASMOSIS\",\n"
+operator|+
+literal|"    \"email\": \"ratliffmartin@plasmosis.com\",\n"
+operator|+
+literal|"    \"phone\": \"+1 (897) 415-2945\",\n"
+operator|+
+literal|"    \"address\": \"241 Foster Avenue, Outlook, New Jersey, 1479\",\n"
+operator|+
+literal|"    \"about\": \"pariatur irure qui consequat excepteur laborum nulla\",\n"
+operator|+
+literal|"    \"registered\": \"2018-05-18T08:04:15 -03:00\",\n"
+operator|+
+literal|"    \"latitude\": -51.195497,\n"
+operator|+
+literal|"    \"longitude\": 163.317807,\n"
+operator|+
+literal|"    \"tags\": [\n"
+operator|+
+literal|"      \"exercitation\",\n"
+operator|+
+literal|"      \"nulla\",\n"
+operator|+
+literal|"      \"labore\",\n"
+operator|+
+literal|"      \"enim\",\n"
+operator|+
+literal|"      \"ad\",\n"
+operator|+
+literal|"      \"anim\",\n"
+operator|+
+literal|"      \"excepteur\"\n"
+operator|+
+literal|"    ],\n"
+operator|+
+literal|"    \"friends\": [\n"
+operator|+
+literal|"      {\n"
+operator|+
+literal|"        \"id\": 0,\n"
+operator|+
+literal|"        \"name\": \"Rowena Benson\"\n"
+operator|+
+literal|"      },\n"
+operator|+
+literal|"      {\n"
+operator|+
+literal|"        \"id\": 1,\n"
+operator|+
+literal|"        \"name\": \"Bird Mclaughlin\"\n"
+operator|+
+literal|"      },\n"
+operator|+
+literal|"      {\n"
+operator|+
+literal|"        \"id\": 2,\n"
+operator|+
+literal|"        \"name\": \"Mabel James\"\n"
+operator|+
+literal|"      }\n"
+operator|+
+literal|"    ],\n"
+operator|+
+literal|"    \"greeting\": \"Hello, Ratliff Martin! You have 2 unread messages.\",\n"
+operator|+
+literal|"    \"favoriteFruit\": \"strawberry\"\n"
+operator|+
+literal|"  }\n"
+operator|+
+literal|"]"
+block|,
+literal|null
+block|}
+block|,
+block|{
 literal|""
 block|,
 literal|""
