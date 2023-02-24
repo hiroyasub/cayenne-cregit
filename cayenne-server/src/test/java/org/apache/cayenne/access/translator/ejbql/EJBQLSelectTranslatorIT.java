@@ -1603,7 +1603,7 @@ literal|"SELECT "
 operator|+
 literal|"#result('t0.ESTIMATED_PRICE' 'java.math.BigDecimal' 'sc0' 'sc0' 3), "
 operator|+
-literal|"#result('t1.ARTIST_NAME' 'java.lang.String' 'sc1' 'sc1' 12) FROM"
+literal|"#result('t1.ARTIST_NAME' 'java.lang.String' 'sc1' 'sc1' 1) FROM"
 argument_list|)
 argument_list|)
 expr_stmt|;
