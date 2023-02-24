@@ -279,7 +279,7 @@ name|assertEquals
 argument_list|(
 name|Types
 operator|.
-name|VARCHAR
+name|CHAR
 argument_list|,
 name|a
 operator|.
