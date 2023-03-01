@@ -95,6 +95,22 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|dba
+operator|.
+name|oracle
+operator|.
+name|OracleAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|di
 operator|.
 name|Inject
@@ -162,6 +178,34 @@ operator|.
 name|testmap
 operator|.
 name|Painting
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|unit
+operator|.
+name|OracleUnitDbAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|unit
+operator|.
+name|UnitDbAdapter
 import|;
 end_import
 
@@ -269,6 +313,18 @@ name|org
 operator|.
 name|junit
 operator|.
+name|Assume
+operator|.
+name|assumeFalse
+import|;
+end_import
+
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
 name|Assert
 operator|.
 name|assertEquals
@@ -313,6 +369,12 @@ name|ObjectSelect_RunIT
 extends|extends
 name|ServerCase
 block|{
+annotation|@
+name|Inject
+specifier|private
+name|UnitDbAdapter
+name|unitDbAdapter
+decl_stmt|;
 annotation|@
 name|Inject
 specifier|private
@@ -1386,6 +1448,16 @@ name|void
 name|test_Select_CustomFunction
 parameter_list|()
 block|{
+comment|// TODO: This will fail for Oracle, so skip for now.
+comment|//       It is necessary to provide connection with "fixedString=true" property somehow.
+comment|//       Also see CAY-1470.
+name|assumeFalse
+argument_list|(
+name|unitDbAdapter
+operator|instanceof
+name|OracleUnitDbAdapter
+argument_list|)
+expr_stmt|;
 name|Artist
 name|a
 init|=

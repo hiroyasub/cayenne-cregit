@@ -216,11 +216,12 @@ name|onlyGenericNumberType
 argument_list|()
 condition|)
 block|{
+comment|// All integer types are mapped to NUMERIC in Oracle DB.
 name|assertEquals
 argument_list|(
 name|Types
 operator|.
-name|INTEGER
+name|NUMERIC
 argument_list|,
 name|a
 operator|.
@@ -613,6 +614,39 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// check integer
+comment|// All integer types are mapped to NUMERIC in Oracle DB.
+if|if
+condition|(
+name|accessStackAdapter
+operator|.
+name|onlyGenericNumberType
+argument_list|()
+condition|)
+block|{
+name|assertEquals
+argument_list|(
+name|msgForTypeMismatch
+argument_list|(
+name|Types
+operator|.
+name|NUMERIC
+argument_list|,
+name|integerAttr
+argument_list|)
+argument_list|,
+name|Types
+operator|.
+name|NUMERIC
+argument_list|,
+name|integerAttr
+operator|.
+name|getType
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|assertEquals
 argument_list|(
 name|msgForTypeMismatch
@@ -634,6 +668,7 @@ name|getType
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 comment|// check float
 name|assertTrue
 argument_list|(
@@ -675,6 +710,39 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 comment|// check smallint
+comment|// All integer types are mapped to NUMERIC in Oracle DB.
+if|if
+condition|(
+name|accessStackAdapter
+operator|.
+name|onlyGenericNumberType
+argument_list|()
+condition|)
+block|{
+name|assertEquals
+argument_list|(
+name|msgForTypeMismatch
+argument_list|(
+name|Types
+operator|.
+name|NUMERIC
+argument_list|,
+name|smallintAttr
+argument_list|)
+argument_list|,
+name|Types
+operator|.
+name|NUMERIC
+argument_list|,
+name|smallintAttr
+operator|.
+name|getType
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|assertTrue
 argument_list|(
 name|msgForTypeMismatch
@@ -705,6 +773,7 @@ name|getType
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 specifier|private
 name|void

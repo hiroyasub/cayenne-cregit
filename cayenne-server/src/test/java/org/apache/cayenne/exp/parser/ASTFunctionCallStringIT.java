@@ -121,6 +121,34 @@ name|cayenne
 operator|.
 name|unit
 operator|.
+name|OracleUnitDbAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|unit
+operator|.
+name|UnitDbAdapter
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
+name|unit
+operator|.
 name|di
 operator|.
 name|server
@@ -199,6 +227,18 @@ name|assertNull
 import|;
 end_import
 
+begin_import
+import|import static
+name|org
+operator|.
+name|junit
+operator|.
+name|Assume
+operator|.
+name|assumeFalse
+import|;
+end_import
+
 begin_comment
 comment|/**  * @since 4.0  */
 end_comment
@@ -217,6 +257,12 @@ name|ASTFunctionCallStringIT
 extends|extends
 name|ServerCase
 block|{
+annotation|@
+name|Inject
+specifier|private
+name|UnitDbAdapter
+name|unitDbAdapter
+decl_stmt|;
 annotation|@
 name|Inject
 specifier|private
@@ -336,6 +382,16 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+comment|// TODO: This will fail for Oracle, so skip for now.
+comment|//       It is necessary to provide connection with "fixedString=true" property somehow.
+comment|//       Also see CAY-1470.
+name|assumeFalse
+argument_list|(
+name|unitDbAdapter
+operator|instanceof
+name|OracleUnitDbAdapter
+argument_list|)
+expr_stmt|;
 name|Artist
 name|a1
 init|=
@@ -393,6 +449,16 @@ parameter_list|()
 throws|throws
 name|Exception
 block|{
+comment|// TODO: This will fail for Oracle, so skip for now.
+comment|//       It is necessary to provide connection with "fixedString=true" property somehow.
+comment|//       Also see CAY-1470.
+name|assumeFalse
+argument_list|(
+name|unitDbAdapter
+operator|instanceof
+name|OracleUnitDbAdapter
+argument_list|)
+expr_stmt|;
 name|Artist
 name|a1
 init|=
