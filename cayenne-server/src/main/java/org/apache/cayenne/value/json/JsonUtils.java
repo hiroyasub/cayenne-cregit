@@ -17,6 +17,16 @@ name|json
 package|;
 end_package
 
+begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Objects
+import|;
+end_import
+
 begin_comment
 comment|/**  * Simple utils to process JSON.  *  * @since 4.2  * @see org.apache.cayenne.value.Json  */
 end_comment
@@ -86,10 +96,12 @@ name|process
 argument_list|()
 decl_stmt|;
 return|return
-name|object1
+name|Objects
 operator|.
 name|equals
 argument_list|(
+name|object1
+argument_list|,
 name|object2
 argument_list|)
 return|;
