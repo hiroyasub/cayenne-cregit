@@ -674,10 +674,27 @@ name|boolean
 name|allowNulls
 parameter_list|)
 block|{
+if|if
+condition|(
+literal|"json"
+operator|.
+name|equalsIgnoreCase
+argument_list|(
+name|typeName
+argument_list|)
+condition|)
+block|{
+name|type
+operator|=
+name|Types
+operator|.
+name|OTHER
+expr_stmt|;
+block|}
 comment|// "bytea" maps to pretty much any binary type, so
 comment|// it is up to us to select the most sensible default.
 comment|// And the winner is LONGVARBINARY
-if|if
+if|else if
 condition|(
 name|BYTEA
 operator|.
