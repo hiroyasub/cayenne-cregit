@@ -110,7 +110,7 @@ annotation|@
 name|Documented
 annotation|@
 name|Inherited
-comment|/**  * Annotation provides the ability to add additional modules in declarative way  *  * @since 4.3  */
+comment|/**  * Annotation provides the ability to add additional modules in declarative way  *  * @since 5.0  */
 specifier|public
 annotation_defn|@interface
 name|InjectExtraModules
