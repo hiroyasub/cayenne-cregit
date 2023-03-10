@@ -187,6 +187,26 @@ end_import
 
 begin_import
 import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|Logger
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|slf4j
+operator|.
+name|LoggerFactory
+import|;
+end_import
+
+begin_import
+import|import
 name|java
 operator|.
 name|util
@@ -1247,6 +1267,21 @@ name|Integer
 argument_list|>
 name|selectorToExpressionBridge
 decl_stmt|;
+specifier|private
+specifier|static
+specifier|final
+name|Logger
+name|logger
+init|=
+name|LoggerFactory
+operator|.
+name|getLogger
+argument_list|(
+name|EOFetchSpecificationParser
+operator|.
+name|class
+argument_list|)
+decl_stmt|;
 comment|/** 		 * selectorToExpressionBridge is just a mapping of EOModeler's selector 		 * types to Cayenne Expression types. 		 *  		 * @return HashMap of Expression types, keyed by the corresponding 		 *         selector name 		 */
 specifier|static
 specifier|synchronized
@@ -2185,9 +2220,24 @@ name|Exception
 name|dbpathEx
 parameter_list|)
 block|{
-return|return
-literal|null
-return|;
+name|logger
+operator|.
+name|warn
+argument_list|(
+literal|"Couldn't find "
+operator|+
+name|keyExp
+operator|+
+literal|" in "
+operator|+
+name|entity
+operator|.
+name|getName
+argument_list|()
+operator|+
+literal|" in EOModel"
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 try|try
@@ -2233,6 +2283,16 @@ name|ExpressionException
 name|e
 parameter_list|)
 block|{
+name|logger
+operator|.
+name|warn
+argument_list|(
+name|e
+operator|.
+name|getUnlabeledMessage
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
 literal|null
 return|;
