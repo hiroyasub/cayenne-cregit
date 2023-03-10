@@ -153,6 +153,14 @@ specifier|public
 specifier|static
 specifier|final
 name|String
+name|JSON_PROJECT
+init|=
+literal|"cayenne-json.xml"
+decl_stmt|;
+specifier|public
+specifier|static
+specifier|final
+name|String
 name|LIFECYCLE_CALLBACKS_ORDER_PROJECT
 init|=
 literal|"cayenne-lifecycle-callbacks-order.xml"
