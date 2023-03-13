@@ -65,6 +65,20 @@ name|apache
 operator|.
 name|cayenne
 operator|.
+name|di
+operator|.
+name|DIRuntimeException
+import|;
+end_import
+
+begin_import
+import|import
+name|org
+operator|.
+name|apache
+operator|.
+name|cayenne
+operator|.
 name|map
 operator|.
 name|DbAttribute
@@ -728,7 +742,7 @@ else|:
 literal|null
 return|;
 block|}
-comment|/** Refreshes DbEntity to current db entity within ObjEntity. */
+comment|/**      * Refreshes DbEntity to current db entity within ObjEntity.      */
 specifier|public
 name|void
 name|resetDbEntity
@@ -1100,14 +1114,14 @@ name|getJavaClass
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|// have to catch the exception here to make sure that
-comment|// exceptional situations
-comment|// (class doesn't exist, for example) don't prevent the gui
-comment|// from properly updating.
+comment|// have to catch the exception here to make sure that exceptional situations
+comment|// (class doesn't exist, for example) don't prevent the gui from properly updating.
 block|}
 catch|catch
 parameter_list|(
 name|CayenneRuntimeException
+decl||
+name|DIRuntimeException
 name|cre
 parameter_list|)
 block|{
