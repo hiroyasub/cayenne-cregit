@@ -105,7 +105,7 @@ name|di
 operator|.
 name|server
 operator|.
-name|ServerCaseExtraModulesProperties
+name|ServerCaseExtraModules
 import|;
 end_import
 
@@ -227,14 +227,14 @@ name|binder
 operator|.
 name|bind
 argument_list|(
-name|ServerCaseExtraModulesProperties
+name|ServerCaseExtraModules
 operator|.
 name|class
 argument_list|)
 operator|.
 name|to
 argument_list|(
-name|ServerCaseExtraModulesProperties
+name|ServerCaseExtraModules
 operator|.
 name|class
 argument_list|)

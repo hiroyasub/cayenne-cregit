@@ -161,7 +161,7 @@ name|properties
 parameter_list|,
 annotation|@
 name|Inject
-name|ServerCaseExtraModulesProperties
+name|ServerCaseExtraModules
 name|extraModulesProperties
 parameter_list|,
 annotation|@

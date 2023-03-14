@@ -239,7 +239,7 @@ name|di
 operator|.
 name|server
 operator|.
-name|InjectExtraModules
+name|ExtraModules
 import|;
 end_import
 
@@ -340,15 +340,11 @@ operator|.
 name|TESTMAP_PROJECT
 argument_list|)
 annotation|@
-name|InjectExtraModules
+name|ExtraModules
 argument_list|(
-name|extraModules
-operator|=
-block|{
 name|ServerCaseSyncModule
 operator|.
 name|class
-block|}
 argument_list|)
 specifier|public
 class|class

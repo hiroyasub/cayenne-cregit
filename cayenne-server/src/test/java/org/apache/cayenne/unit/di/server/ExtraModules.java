@@ -95,6 +95,10 @@ name|RUNTIME
 import|;
 end_import
 
+begin_comment
+comment|/**  * Annotation provides the ability to add additional modules in declarative way  *  * @since 5.0  */
+end_comment
+
 begin_annotation_defn
 annotation|@
 name|Retention
@@ -110,18 +114,18 @@ annotation|@
 name|Documented
 annotation|@
 name|Inherited
-comment|/**  * Annotation provides the ability to add additional modules in declarative way  *  * @since 5.0  */
 specifier|public
 annotation_defn|@interface
-name|InjectExtraModules
+name|ExtraModules
 block|{
 name|Class
+argument_list|<
+name|?
+argument_list|>
 index|[]
-name|extraModules
-argument_list|()
-expr|default
-block|{}
-expr_stmt|;
+name|value
+parameter_list|()
+function_decl|;
 block|}
 end_annotation_defn
 

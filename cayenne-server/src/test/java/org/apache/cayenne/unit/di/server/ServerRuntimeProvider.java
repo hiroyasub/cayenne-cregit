@@ -236,8 +236,8 @@ name|ServerCaseProperties
 name|properties
 decl_stmt|;
 specifier|private
-name|ServerCaseExtraModulesProperties
-name|extraModulesProperties
+name|ServerCaseExtraModules
+name|extraModules
 decl_stmt|;
 specifier|private
 name|ServerCaseDataSourceFactory
@@ -269,8 +269,8 @@ name|properties
 parameter_list|,
 annotation|@
 name|Inject
-name|ServerCaseExtraModulesProperties
-name|extraModulesProperties
+name|ServerCaseExtraModules
+name|extraModules
 parameter_list|,
 annotation|@
 name|Inject
@@ -300,9 +300,9 @@ name|properties
 expr_stmt|;
 name|this
 operator|.
-name|extraModulesProperties
+name|extraModules
 operator|=
-name|extraModulesProperties
+name|extraModules
 expr_stmt|;
 name|this
 operator|.
@@ -369,7 +369,7 @@ name|modules
 operator|.
 name|addAll
 argument_list|(
-name|extraModulesProperties
+name|extraModules
 operator|.
 name|getExtraModules
 argument_list|()

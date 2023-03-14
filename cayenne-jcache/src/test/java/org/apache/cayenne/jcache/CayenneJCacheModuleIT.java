@@ -219,7 +219,7 @@ name|di
 operator|.
 name|server
 operator|.
-name|InjectExtraModules
+name|ExtraModules
 import|;
 end_import
 
@@ -300,6 +300,16 @@ import|;
 end_import
 
 begin_import
+import|import
+name|java
+operator|.
+name|util
+operator|.
+name|Objects
+import|;
+end_import
+
+begin_import
 import|import static
 name|org
 operator|.
@@ -320,17 +330,13 @@ operator|.
 name|TESTMAP_PROJECT
 argument_list|)
 annotation|@
-name|InjectExtraModules
+name|ExtraModules
 argument_list|(
-name|extraModules
-operator|=
-block|{
 name|CayenneJCacheModuleIT
 operator|.
-name|CustomServerCase
+name|EhCacheModule
 operator|.
 name|class
-block|}
 argument_list|)
 specifier|public
 class|class
@@ -596,18 +602,13 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
-specifier|protected
+specifier|public
 specifier|static
 class|class
-name|CustomServerCase
+name|EhCacheModule
 implements|implements
 name|Module
 block|{
-specifier|public
-name|CustomServerCase
-parameter_list|()
-block|{
-block|}
 annotation|@
 name|Override
 specifier|public
@@ -673,12 +674,17 @@ try|try
 block|{
 name|configURI
 operator|=
+name|Objects
+operator|.
+name|requireNonNull
+argument_list|(
 name|getClass
 argument_list|()
 operator|.
 name|getResource
 argument_list|(
 literal|"/eh-cache.xml"
+argument_list|)
 argument_list|)
 operator|.
 name|toURI
