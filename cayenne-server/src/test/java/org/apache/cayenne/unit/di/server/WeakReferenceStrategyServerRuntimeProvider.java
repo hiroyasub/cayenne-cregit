@@ -161,6 +161,11 @@ name|properties
 parameter_list|,
 annotation|@
 name|Inject
+name|ServerCaseExtraModulesProperties
+name|extraModulesProperties
+parameter_list|,
+annotation|@
+name|Inject
 name|Provider
 argument_list|<
 name|DbAdapter
@@ -178,6 +183,8 @@ argument_list|(
 name|dataSourceFactory
 argument_list|,
 name|properties
+argument_list|,
+name|extraModulesProperties
 argument_list|,
 name|dbAdapterProvider
 argument_list|,
