@@ -261,16 +261,6 @@ name|java
 operator|.
 name|util
 operator|.
-name|LinkedHashMap
-import|;
-end_import
-
-begin_import
-import|import
-name|java
-operator|.
-name|util
-operator|.
 name|LinkedHashSet
 import|;
 end_import
@@ -718,7 +708,7 @@ argument_list|()
 expr_stmt|;
 block|}
 comment|// divide attributes by type
-name|LinkedHashMap
+name|TreeMap
 argument_list|<
 name|String
 argument_list|,
@@ -727,11 +717,11 @@ argument_list|>
 name|embAttributes
 init|=
 operator|new
-name|LinkedHashMap
+name|TreeMap
 argument_list|<>
 argument_list|()
 decl_stmt|;
-name|LinkedHashMap
+name|TreeMap
 argument_list|<
 name|String
 argument_list|,
@@ -740,7 +730,7 @@ argument_list|>
 name|objAttributes
 init|=
 operator|new
-name|LinkedHashMap
+name|TreeMap
 argument_list|<>
 argument_list|()
 decl_stmt|;
@@ -792,12 +782,7 @@ name|encoder
 operator|.
 name|nested
 argument_list|(
-operator|new
-name|TreeMap
-argument_list|<>
-argument_list|(
 name|embAttributes
-argument_list|)
 argument_list|,
 name|delegate
 argument_list|)
@@ -806,12 +791,7 @@ name|encoder
 operator|.
 name|nested
 argument_list|(
-operator|new
-name|TreeMap
-argument_list|<>
-argument_list|(
 name|objAttributes
-argument_list|)
 argument_list|,
 name|delegate
 argument_list|)
